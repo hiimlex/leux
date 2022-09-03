@@ -1,0 +1,17 @@
+{
+  "name": "leux",
+  "version": "1.0.0",
+  "description": "React components library",
+  "main": "index.ts",
+  "scripts": {},
+  "keywords": [
+    "react"
+  ],
+  "author": "hiimlex",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^18.0.18",
+    "react": "^18.2.0",
+    "typescript": "^4.8.2"
+  }
+}
