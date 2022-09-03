@@ -1,17 +1,43 @@
 {
-  "name": "leux",
-  "version": "1.0.0",
-  "description": "React components library",
-  "main": "index.ts",
-  "scripts": {},
-  "keywords": [
-    "react"
-  ],
-  "author": "hiimlex",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/react": "^18.0.18",
-    "react": "^18.2.0",
-    "typescript": "^4.8.2"
-  }
+	"name": "@hiimlex/leux",
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/hiimlex"
+	},
+	"version": "0.0.1",
+	"description": "React components library",
+	"scripts": {
+		"rollup": "rollup -c"
+	},
+	"keywords": [
+		"react"
+	],
+	"author": "hiimlex",
+	"license": "ISC",
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^22.0.2",
+		"@rollup/plugin-node-resolve": "^13.3.0",
+		"@rollup/plugin-typescript": "^8.4.0",
+		"@types/react": "^18.0.18",
+		"eslint": "^8.2.0",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-config-node": "^4.1.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-import": "^2.25.3",
+		"eslint-plugin-jsx-a11y": "^6.5.1",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.28.0",
+		"eslint-plugin-react-hooks": "^4.3.0",
+		"prettier": "^2.7.1",
+		"react": "^18.2.0",
+		"rollup": "^2.79.0",
+		"rollup-plugin-dts": "^4.2.2",
+		"typescript": "^4.8.2"
+	},
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"files": [
+		"dist"
+	],
+	"types": "dist/index.d.ts"
 }
