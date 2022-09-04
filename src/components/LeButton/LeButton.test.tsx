@@ -1,10 +1,10 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import Button from "./Button";
+import LeButton from "./LeButton";
 
 describe("Button", () => {
 	test("renders Button component", () => {
-		render(<Button label="The label of the button" />);
+		render(<LeButton label="The label of the button" />);
 	});
 });

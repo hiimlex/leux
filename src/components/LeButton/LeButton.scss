@@ -1,0 +1,44 @@
+.le__button {
+	font-weight: bold;
+	outline: none;
+	border-radius: 4px;
+	transition: all 0.15s ease-in-out;
+	cursor: pointer;
+
+	&.le__button--filled {
+		border: none !important;
+	}
+
+	&.le__button--small {
+		padding: 0.4rem 0.7rem;
+		font-size: 0.75rem;
+	}
+
+	&.le__button--medium {
+		padding: 0.5rem 0.8rem;
+		font-size: 0.8rem;
+	}
+
+	&.le__button--large {
+		padding: 0.6rem 0.9rem;
+		font-size: 0.85rem;
+	}
+
+	&.le__button--default {
+		color: #3c3c3c;
+		background: #e0e0e0;
+
+		&:hover {
+			background: #d0d0d0;
+		}
+	}
+
+	&.le__button--primary {
+		color: #fff;
+		background: #3f3fb7;
+
+		&:hover {
+			background: rgba(#3f3fb7, 0.9);
+		}
+	}
+}
