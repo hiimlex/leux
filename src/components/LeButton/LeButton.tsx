@@ -7,11 +7,11 @@ export type LeButtonTypes = "filled";
 
 export interface LeButtonProps {
 	label: string;
-	variant: LeButtonVariants;
-	type: LeButtonTypes;
-	size: LeSizes;
+	variant?: LeButtonVariants;
+	type?: LeButtonTypes;
+	size?: LeSizes;
 	disabled?: boolean | (() => boolean);
-	onClick: (event?: MouseEvent<HTMLButtonElement>) => void;
+	onClick?: (event?: MouseEvent<HTMLButtonElement>) => void;
 }
 
 const LeButton = ({
@@ -52,10 +52,16 @@ const LeButton = ({
 		}
 	};
 
+	const handleOnCLick = (event: MouseEvent<HTMLButtonElement>) => {
+		if (onClick) {
+			onClick(event);
+		}
+	};
+
 	return (
 		<button
 			className={getClassNames()}
-			onClick={(event) => onClick(event)}
+			onClick={(event) => handleOnCLick(event)}
 			disabled={getDisabled()}
 		>
 			{label}
