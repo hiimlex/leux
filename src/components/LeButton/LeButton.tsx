@@ -41,10 +41,14 @@ const LeButton = ({
 
 	return (
 		<button
+			className={
+				`le-button le-button--${variant} le-button--${size} le-button--${type}` +
+				(state && state.disabled ? " le-button--disabled" : "")
+			}
 			onClick={(event) => handleOnCLick(event)}
 			disabled={state?.disabled}
 		>
-			{label}
+			{label} {state?.disabled && "disabled"}
 		</button>
 	);
 };
