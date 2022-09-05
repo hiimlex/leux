@@ -1,1 +1,2 @@
-export * from "./LeButton";
+export { default as LeButton } from "./LeButton";
+

@@ -1,20 +1,11 @@
 import React, { MouseEvent } from "react";
-import { LeSizes } from "src/types";
+import {
+	LeButtonState,
+	LeButtonTypes,
+	LeButtonVariants,
+	LeSizes,
+} from "src/types";
 import "./LeButton.scss";
-
-export type LeButtonVariants =
-	| "primary"
-	| "secondary"
-	| "success"
-	| "danger"
-	| "warning"
-	| "default";
-
-export type LeButtonTypes = "filled";
-
-export interface LeButtonState {
-	disabled?: boolean;
-}
 
 export interface LeButtonProps {
 	label: string;

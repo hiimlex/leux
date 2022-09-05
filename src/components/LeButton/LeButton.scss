@@ -1,17 +1,17 @@
 @import "../../styles/variables.scss";
 
-.le__button {
+.le-button {
 	font-weight: bold;
 	outline: none;
 	border-radius: 4px;
 	transition: all 0.15s ease-in-out;
 	cursor: pointer;
 
-	&.le__button--filled {
+	&.le-button--filled {
 		border: none !important;
 
 		@each $color, $value in $variant-colors {
-			&.le__button--#{$color} {
+			&.le-button--#{$color} {
 				color: $color-light-text;
 				background: $value;
 
@@ -26,22 +26,22 @@
 		}
 	}
 
-	&.le__button--small {
+	&.le-button--small {
 		padding: 0.4rem 0.7rem;
 		font-size: 0.7rem;
 	}
 
-	&.le__button--medium {
+	&.le-button--medium {
 		padding: 0.5rem 0.8rem;
 		font-size: 0.8rem;
 	}
 
-	&.le__button--large {
+	&.le-button--large {
 		padding: 0.6rem 0.9rem;
 		font-size: 0.9rem;
 	}
 
-	&.le__button--disabled {
+	&.le-button--disabled {
 		cursor: not-allowed !important;
 		background: #afafaf !important;
 		color: #3c3c3c !important;
