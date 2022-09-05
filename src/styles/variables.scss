@@ -16,3 +16,52 @@ $variant-colors: (
 	warning: $color-variant-warning,
 	default: $color-variant-default,
 );
+
+$text-typography: (
+	h1: 2.5rem bold -1.5px,
+	h2: 2rem 600 -0.5px,
+	h3: 1.75rem 500 0,
+	h4: 1.5rem 500 0.25px,
+	h5: 1.25rem 500 0,
+	h6: 1rem 400 0.15px,
+	subtitle-1: 1rem 400 0.15px,
+	subtitle-2: 0.875rem 600 0.1px,
+	body-1: 1rem 400 0.5px,
+	body-2: 0.875rem 500 0.25px,
+	button: 0.875rem 600 1.25px,
+	caption: 0.75rem 400 1.4px,
+	overline: 0.625rem 400 1.5px,
+);
+
+$text-colors: (
+	dark: $color-dark-text,
+	light: $color-light-text,
+);
+
+@each $color, $value in $variant-colors {
+	.le-color-text--#{$color} {
+		color: $value;
+	}
+}
+
+@each $color, $value in $text-colors {
+	.le-color-text--#{$color} {
+		color: $value;
+	}
+}
+
+@each $typography, $font, $weight, $spacing in $text-typography {
+	.le-text--#{$typography} {
+		font-size: $font;
+		font-weight: $weight;
+		letter-spacing: $spacing;
+
+		@if $typography == "button" {
+			text-transform: uppercase;
+		}
+
+		@if $typography == "overline" {
+			text-transform: uppercase;
+		}
+	}
+}

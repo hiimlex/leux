@@ -1,6 +1,6 @@
 import React from "react";
 import "./LeGlobalStyle.scss";
 
-const LeGlobalStyle = () => <div className="le-global"></div>;
+const LeGlobalStyle = () => {};
 
 export default LeGlobalStyle;
