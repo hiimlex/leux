@@ -1,0 +1,18 @@
+$color-variant-primary: #3680e7;
+$color-variant-secondary: #8ca9d5;
+$color-variant-success: #70c1b3;
+$color-variant-danger: #f25f5c;
+$color-variant-warning: #ffd166;
+$color-variant-default: #e3e6ed;
+
+$color-dark-text: #3c3c3c;
+$color-light-text: #ffffff;
+
+$variant-colors: (
+	primary: $color-variant-primary,
+	secondary: $color-variant-secondary,
+	success: $color-variant-success,
+	danger: $color-variant-danger,
+	warning: $color-variant-warning,
+	default: $color-variant-default,
+);

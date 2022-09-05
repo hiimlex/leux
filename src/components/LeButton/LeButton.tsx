@@ -1,57 +1,38 @@
 import React, { MouseEvent } from "react";
-import { LeSizes } from "../../types";
+import { LeSizes } from "src/types";
 import "./LeButton.scss";
 
-export type LeButtonVariants = "default" | "primary";
+export type LeButtonVariants =
+	| "primary"
+	| "secondary"
+	| "success"
+	| "danger"
+	| "warning"
+	| "default";
+
 export type LeButtonTypes = "filled";
+
+export interface LeButtonState {
+	disabled?: boolean;
+}
 
 export interface LeButtonProps {
 	label: string;
 	variant?: LeButtonVariants;
 	type?: LeButtonTypes;
 	size?: LeSizes;
-	disabled?: boolean | (() => boolean);
 	onClick?: (event?: MouseEvent<HTMLButtonElement>) => void;
+	state?: LeButtonState;
 }
 
 const LeButton = ({
 	label,
 	variant = "default",
 	size = "medium",
-	disabled,
 	type = "filled",
 	onClick,
+	state,
 }: LeButtonProps) => {
-	const getClassNames = (): string => {
-		const classNames = ["le__button"];
-
-		if (variant) {
-			classNames.push(`le__button--${variant}`);
-		}
-
-		if (size) {
-			classNames.push(`le__button--${size}`);
-		}
-
-		if (type) {
-			classNames.push(`le__button--${type}`);
-		}
-
-		return classNames.join(" ");
-	};
-
-	const getDisabled = (): boolean => {
-		if (!disabled) {
-			return false;
-		}
-
-		if (typeof disabled === "function") {
-			return disabled();
-		} else {
-			return disabled;
-		}
-	};
-
 	const handleOnCLick = (event: MouseEvent<HTMLButtonElement>) => {
 		if (onClick) {
 			onClick(event);
@@ -60,9 +41,8 @@ const LeButton = ({
 
 	return (
 		<button
-			className={getClassNames()}
 			onClick={(event) => handleOnCLick(event)}
-			disabled={getDisabled()}
+			disabled={state?.disabled}
 		>
 			{label}
 		</button>

@@ -26,10 +26,10 @@ export default [
 		],
 		plugins: [
 			peerDepsExternal(),
-			resolve(),
 			commonjs(),
-			typescript({ tsconfig: "./tsconfig.json" }),
+			typescript({ tsconfig: "./tsconfig.json", exclude: ["./web"] }),
 			postcss(),
+			resolve(),
 			terser(),
 		],
 	},

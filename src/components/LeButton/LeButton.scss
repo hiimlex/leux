@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .le__button {
 	font-weight: bold;
 	outline: none;
@@ -7,11 +9,26 @@
 
 	&.le__button--filled {
 		border: none !important;
+
+		@each $color, $value in $variant-colors {
+			&.le__button--#{$color} {
+				color: $color-light-text;
+				background: $value;
+
+				&:hover {
+					background: darken($value, 10%);
+				}
+
+				@if $color == "default" {
+					color: $color-dark-text;
+				}
+			}
+		}
 	}
 
 	&.le__button--small {
 		padding: 0.4rem 0.7rem;
-		font-size: 0.75rem;
+		font-size: 0.7rem;
 	}
 
 	&.le__button--medium {
@@ -21,24 +38,16 @@
 
 	&.le__button--large {
 		padding: 0.6rem 0.9rem;
-		font-size: 0.85rem;
+		font-size: 0.9rem;
 	}
 
-	&.le__button--default {
-		color: #3c3c3c;
-		background: #e0e0e0;
+	&.le__button--disabled {
+		cursor: not-allowed !important;
+		background: #afafaf !important;
+		color: #3c3c3c !important;
 
 		&:hover {
-			background: #d0d0d0;
-		}
-	}
-
-	&.le__button--primary {
-		color: #fff;
-		background: #3f3fb7;
-
-		&:hover {
-			background: rgba(#3f3fb7, 0.9);
+			background: #afafaf !important;
 		}
 	}
 }
