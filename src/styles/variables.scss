@@ -39,29 +39,29 @@ $text-colors: (
 );
 
 @each $color, $value in $variant-colors {
-	.le-color-text--#{$color} {
+	.le-color-text-#{$color} {
 		color: $value;
 	}
 }
 
 @each $color, $value in $text-colors {
-	.le-color-text--#{$color} {
+	.le-color-text-#{$color} {
 		color: $value;
 	}
 }
 
-@each $typography, $font, $weight, $spacing in $text-typography {
+@each $typography, $values in $text-typography {
 	.le-text--#{$typography} {
-		font-size: $font;
-		font-weight: $weight;
-		letter-spacing: $spacing;
+		font-size: nth($values, 1) !important;
+		font-weight: nth($values, 2) !important;
+		letter-spacing: nth($values, 3) !important;
 
 		@if $typography == "button" {
-			text-transform: uppercase;
+			text-transform: uppercase !important;
 		}
 
 		@if $typography == "overline" {
-			text-transform: uppercase;
+			text-transform: uppercase !important;
 		}
 	}
 }
