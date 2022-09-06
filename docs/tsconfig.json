@@ -16,9 +16,10 @@
 		"noEmit": true,
 		"jsx": "react-jsx",
 		"paths": {
-			"src/*": ["./src/*"],
-			"@hiimlex/leux": ["../src/"],
-		}
+			"@/*": ["src/*"],
+			"@hiimlex/leux": ["../src/"]
+		},
+		"baseUrl": "./"
 	},
 	"include": ["src"],
 	"references": [{ "path": "./tsconfig.node.json" }]

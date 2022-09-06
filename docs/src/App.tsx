@@ -1,11 +1,12 @@
-import { LeButton, LeGlobalStyle } from "@hiimlex/leux";
+import { Header } from "@/components/Header";
+import AppRouter from "@/core/router/AppRouter";
 
 function App() {
 	return (
-		<div>
-			<LeGlobalStyle />
-			<LeButton label="Teste" />
-		</div>
+		<>
+			<Header />
+			<AppRouter />
+		</>
 	);
 }
 
