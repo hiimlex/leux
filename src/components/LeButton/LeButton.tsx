@@ -1,10 +1,10 @@
 import React, { MouseEvent } from "react";
+import { LeSizes } from "src/types";
 import {
 	LeButtonState,
 	LeButtonTypes,
 	LeButtonVariants,
-	LeSizes,
-} from "src/types";
+} from "./LeButton.model";
 import "./LeButton.scss";
 
 export interface LeButtonProps {

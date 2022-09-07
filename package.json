@@ -1,18 +1,28 @@
 {
-	"name": "@hiimlex/leux",
-	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/hiimlex"
-	},
-	"version": "0.1.10",
+	"name": "leux",
+	"version": "0.0.1",
 	"description": "React components library",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org"
+	},
 	"scripts": {
 		"rollup": "rollup -c",
 		"test": "jest",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hiimlex/leux.git"
+	},
+	"bugs": {
+		"url": "https://github.com/hiimlex/leux/issues"
+	},
 	"keywords": [
-		"react"
+		"react",
+		"components",
+		"ui",
+		"library"
 	],
 	"author": "hiimlex",
 	"license": "ISC",
@@ -71,8 +81,7 @@
 		"webpack": "^5.74.0"
 	},
 	"peerDependencies": {
-		"react": "^18.2.0",
-		"webpack": "*"
+		"react": "^18.2.0"
 	},
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
