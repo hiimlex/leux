@@ -4,6 +4,7 @@ import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
 
+import path from "path";
 import { terser } from "rollup-plugin-terser";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
@@ -32,7 +33,10 @@ export default [
 				include: ["src/**/*"],
 				exclude: ["docs", "dist", "node_modules", ".vscode", ".storybook"],
 			}),
-			postcss(),
+			postcss({
+				extract: "leux.min.css",
+				minimize: true,
+			}),
 			resolve(),
 			terser(),
 		],
