@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import "./variables.scss";
 
 body {
 	font-family: "Poppins", sans-serif;
@@ -12,4 +13,38 @@ body {
 	margin: 0;
 	outline: none;
 	box-sizing: border-box;
+}
+
+@each $color, $value in $variant-colors {
+	.le-color-text--#{$color} {
+		color: $value !important;
+	}
+}
+
+@each $color, $value in $text-colors {
+	.le-color-text--#{$color} {
+		color: $value !important;
+	}
+}
+
+@each $typography, $values in $text-typography {
+	.le-text--#{$typography} {
+		font-size: nth($values, 1) !important;
+		font-weight: nth($values, 2) !important;
+		letter-spacing: nth($values, 3) !important;
+
+		@if $typography == "button" {
+			text-transform: uppercase !important;
+		}
+
+		@if $typography == "overline" {
+			text-transform: uppercase !important;
+		}
+	}
+}
+
+@each $justify in $justify-classes {
+	.le-justify-content--#{$justify} {
+		justify-content: $justify;
+	}
 }
