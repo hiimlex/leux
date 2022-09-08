@@ -1,10 +1,15 @@
+import { LeRenderDocPage } from "@/components";
+import { ReactComponent as OverviewMD } from "@/pages/overview.md";
 import { Route, Routes } from "react-router-dom";
-import { Overview } from "@/pages/";
 
 const AppRouter = () => {
 	return (
 		<Routes>
-			<Route path="/" element={<Overview />} />
+			<Route path="/" element={<LeRenderDocPage markdown={<div />} />} />
+			<Route
+				path="/overview"
+				element={<LeRenderDocPage markdown={<OverviewMD />} />}
+			/>
 		</Routes>
 	);
 };

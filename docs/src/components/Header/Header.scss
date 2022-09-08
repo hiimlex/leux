@@ -12,7 +12,7 @@
 	.le-app-header--content {
 		padding: 4px 16px;
 		width: 100%;
-		max-width: 1400px;
+		max-width: 1280px;
 
 		display: flex;
 		align-items: center;
@@ -77,6 +77,8 @@
 					justify-content: center;
 
 					transition: all 0.1s ease-in-out;
+
+					color: $color-dark-text;
 
 					&:active,
 					&:visited,

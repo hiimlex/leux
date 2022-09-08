@@ -1,6 +1,6 @@
-import "./Header.scss";
-import { FaReact, FaGithub } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import "./Header.scss";
 
 const Header = () => {
 	return (
@@ -30,4 +30,4 @@ const Header = () => {
 	);
 };
 
-export { Header };
+export default Header;
