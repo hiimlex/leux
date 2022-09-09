@@ -20,6 +20,7 @@ const VariantPreview = () => (
 		<div className="le-preview">
 			<LeButton variant="primary">Primary</LeButton>
 			<LeButton variant="secondary">Secondary</LeButton>
+			<LeButton variant="success">Success</LeButton>
 			<LeButton variant="warning">Warning</LeButton>
 			<LeButton variant="danger">Danger</LeButton>
 			<LeButton variant="default">Default</LeButton>
@@ -28,6 +29,7 @@ const VariantPreview = () => (
 			language="jsx"
 			children={`<LeButton variant="primary">Primary</LeButton>
 <LeButton variant="secondary">Secondary</LeButton>
+<LeButton variant="success">Success</LeButton>
 <LeButton variant="warning">Warning</LeButton>
 <LeButton variant="danger">Danger</LeButton>
 <LeButton variant="default">Default</LeButton>`}
@@ -78,6 +80,7 @@ const LeButtonPage = () => {
 	leButtonAttr["VariantPreview"] = VariantPreview;
 	leButtonAttr["SizePreview"] = SizePreview;
 	leButtonAttr["StatePreview"] = StatePreview;
+	leButtonAttr["Code"] = Code;
 
 	return (
 		<React.Fragment>

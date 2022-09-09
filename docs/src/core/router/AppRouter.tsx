@@ -18,22 +18,25 @@ const AppRouter = () => {
 				element={<LeRenderDocPage doc={<OverviewPage />} />}
 			/>
 			<Route
-				path="components/button"
-				element={<LeRenderDocPage doc={<LeButtonPage />} />}
-			/>
-			<Route
 				path="started/installation"
 				element={<LeRenderDocPage doc={<InstallationPage />} />}
 			/>
 			<Route
-				path="layout/topography"
+				path="started/lecss"
+				element={<LeRenderDocPage doc={<LeCSSPage />} />}
+			/>
+			<Route
+				path="layout/letopography"
 				element={<LeRenderDocPage doc={<LeTopographyPage />} />}
 			/>
 			<Route
-				path="components/lecss"
+				path="started/lecss"
 				element={<LeRenderDocPage doc={<LeCSSPage />} />}
 			/>
-
+			<Route
+				path="components/lebutton"
+				element={<LeRenderDocPage doc={<LeButtonPage />} />}
+			/>
 			<Route path="*" element={<Navigate to="started/overview" replace />} />
 		</Routes>
 	);

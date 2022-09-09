@@ -1,8 +1,13 @@
+
+@import "../../core/styles/variables.scss";
+
 .le-markdown {
+	color: $color-dark-text;
+
 	pre {
 		width: 100%;
-		padding: 12px !important;
-		border-radius: 8px;
+		padding: 4px !important;
+		border-radius: 4px;
 		font-weight: 500;
 		margin: 12px 0;
 
@@ -16,7 +21,7 @@
 	}
 
 	code {
-		background: #efefef;
+		background: $color-light-text;
 		padding: 2px 4px;
 		border-radius: 4px;
 		font-weight: 500;
@@ -27,7 +32,7 @@
 		padding: 8px;
 		margin: 8px 0;
 		border-radius: 8px;
-		border: 1px solid #efefef;
+		border: 1px solid $color-light-text;
 
 		* {
 			margin-right: 12px;
@@ -37,5 +42,25 @@
 	ul {
 		margin: 12px 0;
 		font-size: 0.875rem;
+	}
+
+	table {
+		font-size: 0.875rem;
+	}
+
+	table, th, td {
+		border: 1px solid $color-dark-text;
+		border-collapse: collapse;
+	}
+
+	table th, table td {
+		padding: 8px;
+		text-align: justify;
+
+		pre {
+			padding: 0;
+			margin: 0;
+			border-radius: 4px;
+		}
 	}
 }

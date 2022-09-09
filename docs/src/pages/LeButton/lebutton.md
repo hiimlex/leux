@@ -1,4 +1,4 @@
-## Button Component
+## LeButton
 
 Button component is used to fire events. Commom used on forms, modals, panels and more.
 
@@ -36,3 +36,38 @@ Use the `state` prop object to control that visual states from button. The defau
 </div>
 
 ### API Reference
+
+Props summary
+
+<div>
+<table width="100%" border="0">
+<thead>
+<tr>
+<th>Prop</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td width="30%">variant</td>
+<td>primary, secondary, success, danger, warning, default</td>
+</tr>
+<tr>
+<td width="30%">size</td>
+<td>small, medium, large</td>
+</tr>
+<tr>
+<td width="30%">state</td>
+<td><Code language="jsx" children="{ disabled: boolean }"></Code></td>
+</tr>
+<tr>
+<td width="30%">onClick</td>
+<td><Code language="jsx" children="() => void"></Code></td>
+</tr>
+<tr>
+<td width="30%">type</td>
+<td>filled</td>
+</tr>
+</tbody>
+</table>
+</div>

@@ -1,4 +1,4 @@
-## LeCSS Component
+## LeCSS
 
 LeCSS component it's a component that allows you to use the classes and styles from the library CSS in your own components.
 

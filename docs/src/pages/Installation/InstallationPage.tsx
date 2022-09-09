@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 const NpmCode = () => (
 	<Code language="bash" style={dracula}>
 		{`npm install leux
-// or
+
 yarn install leux`}
 	</Code>
 );
