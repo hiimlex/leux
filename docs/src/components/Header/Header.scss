@@ -9,6 +9,9 @@
 	justify-content: center;
 	border-bottom: 1px solid $color-variant-default;
 
+	position: fixed;
+	background: white;
+
 	.le-app-header--content {
 		padding: 4px 16px;
 		width: 100%;

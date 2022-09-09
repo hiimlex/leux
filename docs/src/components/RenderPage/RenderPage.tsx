@@ -1,12 +1,12 @@
-import React, { ReactElement } from "react";
+import { ReactElement } from "react";
 import "./RenderPage.scss";
 
 interface RenderPageProps {
-	markdown: ReactElement;
+	doc: ReactElement;
 }
 
-const RenderDocPage = ({ markdown }: RenderPageProps) => {
-	return <div className="le-markdown" children={markdown}></div>;
+const RenderDocPage = ({ doc }: RenderPageProps) => {
+	return <div className="le-markdown" children={doc}></div>;
 };
 
 export default RenderDocPage;

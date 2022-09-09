@@ -5,6 +5,6 @@ import LeButton from "./LeButton";
 
 describe("Button", () => {
 	test("renders Button component", () => {
-		render(<LeButton label="The label of the button" />);
+		render(<LeButton />);
 	});
 });

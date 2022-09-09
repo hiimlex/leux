@@ -1,0 +1,41 @@
+.le-markdown {
+	pre {
+		width: 100%;
+		padding: 12px !important;
+		border-radius: 8px;
+		font-weight: 500;
+		margin: 12px 0;
+
+		code {
+			background: transparent;
+			border-radius: 0;
+			font-weight: 500;
+			font-size: 0.875rem;
+			padding: 0;
+		}
+	}
+
+	code {
+		background: #efefef;
+		padding: 2px 4px;
+		border-radius: 4px;
+		font-weight: 500;
+		font-size: 0.75rem;
+	}
+
+	.le-preview {
+		padding: 8px;
+		margin: 8px 0;
+		border-radius: 8px;
+		border: 1px solid #efefef;
+
+		* {
+			margin-right: 12px;
+		}
+	}
+
+	ul {
+		margin: 12px 0;
+		font-size: 0.875rem;
+	}
+}

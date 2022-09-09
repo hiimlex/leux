@@ -1,5 +1,4 @@
 import { FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import "./Header.scss";
 
 const Header = () => {
@@ -15,12 +14,11 @@ const Header = () => {
 				<div className="flex-1"></div>
 				<nav className="le-nav">
 					<span className="le-nav--item le-text--body-1">
-						<Link to="overview" className="le-nav--link">
-							Docs
-						</Link>
-					</span>
-					<span className="le-nav--item le-text--body-1">
-						<a className="le-nav--link">
+						<a
+							className="le-nav--link"
+							href="https://github.com/hiimlex/leux"
+							target="__blank"
+						>
 							<FaGithub size="1.25rem"></FaGithub>
 						</a>
 					</span>

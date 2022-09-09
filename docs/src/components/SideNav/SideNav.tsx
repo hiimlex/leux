@@ -1,5 +1,5 @@
 import "./SideNav.scss";
-import { NavLink } from "react-router-dom";
+import { matchRoutes, NavLink, useLocation } from "react-router-dom";
 
 interface ILink {
 	name: string;
@@ -7,16 +7,29 @@ interface ILink {
 }
 
 const LINKS: Record<string, ILink[]> = {
-	"Getting Started": [{ name: "Overview", path: "/overview" }],
-	Layout: [],
-	Components: [],
+	"Getting Started": [
+		{ name: "Overview", path: "/started/overview" },
+		{ name: "Installation", path: "/started/installation" },
+	],
+	Layout: [
+		{
+			name: "Topography",
+			path: "/layout/topography",
+		},
+	],
+	Components: [
+		{ name: "Button", path: "/components/button" },
+		{ name: "LeCSS", path: "/components/lecss" },
+	],
 };
 
 const SideNav = () => {
+	const location = useLocation();
+
 	return (
 		<aside className="le-sidenav">
 			{Object.keys(LINKS).map((category) => (
-				<section className="le-sidenav--section">
+				<section key={category} className="le-sidenav--section">
 					<div className="le-sidenav--header">
 						<span className="le-text--subtitle-2">{category}</span>
 					</div>
