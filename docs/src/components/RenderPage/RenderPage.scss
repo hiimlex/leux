@@ -1,0 +1,69 @@
+
+@import "../../core/styles/variables.scss";
+
+.le-markdown {
+	color: $color-dark-text;
+
+	pre {
+		width: 100%;
+		padding: 6px !important;
+		border-radius: 4px;
+		font-weight: 500;
+		margin: 12px 0;
+
+		code {
+			background: transparent;
+			border-radius: 0;
+			font-weight: 500;
+			font-size: 0.875rem;
+			padding: 0;
+		}
+	}
+
+	code {
+		background: $color-light-text;
+		padding: 2px 4px;
+		border-radius: 4px;
+		font-weight: 500;
+		font-size: 0.75rem;
+	}
+
+	.le-preview {
+		padding: 8px;
+		margin: 8px 0;
+		border-radius: 8px;
+		border: 1px solid $color-light-text;
+
+		* {
+			margin-right: 12px;
+		}
+	}
+
+	ul {
+		margin: 12px 0;
+		font-size: 0.875rem;
+	}
+
+	table {
+		font-size: 0.875rem;
+		background: $color-light-text;
+		width: 100%;
+	}
+
+	table, th, td {
+		border: 1px solid $color-dark-text;
+		border-collapse: collapse;
+		border-radius: 4px !important;
+	}
+
+	table th, table td {
+		padding: 8px;
+		text-align: justify;
+
+		pre {
+			padding: 0;
+			margin: 0;
+			border-radius: 4px;
+		}
+	}
+}

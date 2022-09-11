@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import "./variables.scss";
+
+body {
+	font-family: "Poppins", sans-serif;
+	font-size: 62.5%;
+	padding: 0;
+	margin: 0;
+}
+
+* {
+	font-family: "Poppins", sans-serif;
+	outline: none;
+	box-sizing: border-box;
+}
+
+@each $color, $value in $variant-colors {
+	.le-color-text--#{$color} {
+		color: $value !important;
+	}
+}
+
+@each $color, $value in $text-colors {
+	.le-color-text--#{$color} {
+		color: $value !important;
+	}
+}
+
+@each $typography, $values in $text-typography {
+	.le-text--#{$typography} {
+		font-size: nth($values, 1) !important;
+		font-weight: nth($values, 2) !important;
+		letter-spacing: nth($values, 3) !important;
+
+		@if $typography == "button" {
+			text-transform: uppercase !important;
+		}
+
+		@if $typography == "overline" {
+			text-transform: uppercase !important;
+		}
+	}
+}
+
+@each $justify in $justify-classes {
+	.le-justify-content--#{$justify} {
+		justify-content: $justify;
+	}
+}
+
+h1 {
+	font-size: 2.5rem;
+	font-weight: bold;
+	letter-spacing: -1.5px;
+	margin: 20px 0;
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: 600;
+	letter-spacing: -0.5px;
+	margin: 18px 0;
+}
+
+h3 {
+	font-size: 1.75rem;
+	font-weight: 500;
+	letter-spacing: 0;
+	margin: 16px 0;
+}
+
+h4 {
+	font-size: 1.5rem;
+	font-weight: 500;
+	letter-spacing: 0.25px;
+	margin: 15px 0;
+}
+
+h5 {
+	font-size: 1.25rem;
+	font-weight: 500;
+	letter-spacing: 0;
+	margin: 14px 0;
+}
+
+h6 {
+	font-size: 1rem;
+	font-weight: 400;
+	letter-spacing: 0.15px;
+	margin: 14px 0;
+}
+
+p {
+	font-size: 0.875rem;
+	font-weight: 400;
+	letter-spacing: 0.5px;
+	margin: 12px 0;
+}

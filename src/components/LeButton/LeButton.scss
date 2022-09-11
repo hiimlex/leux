@@ -1,0 +1,54 @@
+@import "../../styles/variables.scss";
+
+.le-button {
+	font-weight: 600;
+	outline: none;
+	border-radius: 4px;
+	transition: all 0.15s ease-in-out;
+	cursor: pointer;
+
+	&.le-button--filled {
+		border: none !important;
+
+		@each $color, $value in $variant-colors {
+			&.le-button--#{$color} {
+				color: $color-light-text;
+				background: $value;
+
+				&:hover {
+					background: darken($value, 10%);
+				}
+
+				@if $color == "default" {
+					color: $color-dark-text;
+				}
+			}
+		}
+	}
+
+	&.le-button--small {
+		padding: 0.4rem 0.7rem;
+		font-size: 0.625rem;
+	}
+
+	&.le-button--medium {
+		padding: 0.5rem 0.8rem;
+		font-size: 0.875rem;
+	}
+
+	&.le-button--large {
+		padding: 0.6rem 0.9rem;
+		font-size: 1rem;
+	}
+
+	&.le-button--disabled {
+		cursor: not-allowed !important;
+		background: #afafaf !important;
+		color: #3c3c3c !important;
+
+		&:hover {
+			background: #afafaf !important;
+		}
+	}
+}
+
