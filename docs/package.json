@@ -15,7 +15,8 @@
 		"react-icons": "^4.4.0",
 		"react-router-dom": "^6.3.0",
 		"react-syntax-highlighter": "^15.5.0",
-		"sass": "^1.54.8"
+		"sass": "^1.54.8",
+		"leux": "../src"
 	},
 	"devDependencies": {
 		"@types/react": "^18.0.17",

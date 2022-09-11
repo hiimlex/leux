@@ -13,7 +13,7 @@ Topography component is a layout component. It is used to create headings, parag
 
 ##### Type
 
-Use the `type` prop to change the size of the button. The type prop can be set to `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `subtitle-1`, `subtitle-2`, `body-1`, `body-2`, `caption`, `overline` or `button`. There is no default type.
+Use the `type` prop to change the text variant. The type prop can be set to `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `subtitle-1`, `subtitle-2`, `body-1`, `body-2`, `caption`, `overline` or `button`. There is no default type.
 
 <div>
 <LeTopography type="h1">h1. Heading</LeTopography>
@@ -42,14 +42,14 @@ Props Summary
 <table width="100%" border="0">
 <thead>
 <tr>
-<th>Prop</th>
-<th>Type</th>
+<th width="30%">Prop</th>
+<th width="70%">Type</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td width="30%">type</td>
-<td>h1, h2, h3, h4, h5, h6, subtitle-1, subtitle-2, body-1, body-2, caption, overline, button</td>
+<td width="70%">h1, h2, h3, h4, h5, h6, subtitle-1, subtitle-2, body-1, body-2, caption, overline, button</td>
 </tr>
 </tbody>
 </table>

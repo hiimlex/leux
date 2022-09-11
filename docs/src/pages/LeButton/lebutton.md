@@ -4,9 +4,7 @@ Button component is used to fire events. Commom used on forms, modals, panels an
 
 ##### Usage
 
-<div>
-	<ImportCode></ImportCode>
-</div>
+<div><ButtonImportPreview></ButtonImportPreview></div>
 
 - **Button**: the button component
 - **LeButtonProps**: the button props
@@ -15,25 +13,19 @@ Button component is used to fire events. Commom used on forms, modals, panels an
 
 Use the `variant` prop to change the button color theme. The default variant is `primary`.
 
-<div>
-<VariantPreview></VariantPreview>
-<div>
+<div><ButtonVariantPreview></ButtonVariantPreview><div>
 
 ##### Sizes
 
 Use the `size` prop to change the size of the button. The default size is `medium`
 
-<div>
-<SizePreview></SizePreview>
-</div>
+<div><ButtonSizePreview></ButtonSizePreview></div>
 
 ##### State Object
 
 Use the `state` prop object to control that visual states from button. The default state is `{}`.
 
-<div>
-<StatePreview></StatePreview>
-</div>
+<div><ButtonStatePreview></ButtonStatePreview></div>
 
 ### API Reference
 
@@ -43,30 +35,30 @@ Props summary
 <table width="100%" border="0">
 <thead>
 <tr>
-<th>Prop</th>
-<th>Type</th>
+<th width="30%">Prop</th>
+<th width="70%">Type</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td width="30%">variant</td>
-<td>primary, secondary, success, danger, warning, default</td>
+<td width="70%">primary, secondary, success, danger, warning, default</td>
 </tr>
 <tr>
 <td width="30%">size</td>
-<td>small, medium, large</td>
+<td width="70%">small, medium, large</td>
 </tr>
 <tr>
 <td width="30%">state</td>
-<td><Code language="jsx" children="{ disabled: boolean }"></Code></td>
+<td width="70%"><Code language="jsx" children="{ disabled: boolean }"></Code></td>
 </tr>
 <tr>
 <td width="30%">onClick</td>
-<td><Code language="jsx" children="() => void"></Code></td>
+<td width="70%"><Code language="jsx" children="() => void"></Code></td>
 </tr>
 <tr>
 <td width="30%">type</td>
-<td>filled</td>
+<td width="70%">filled</td>
 </tr>
 </tbody>
 </table>

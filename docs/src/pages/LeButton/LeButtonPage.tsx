@@ -7,7 +7,7 @@ import {
 	ReactComponent as LeButtonMD,
 } from "./lebutton.md";
 
-const ImportCode = () => (
+const ButtonImportPreview = () => (
 	<Code
 		language="jsx"
 		children={`import { LeButton, LeButtonProps } from 'leux';`}
@@ -15,7 +15,7 @@ const ImportCode = () => (
 	></Code>
 );
 
-const VariantPreview = () => (
+const ButtonVariantPreview = () => (
 	<>
 		<div className="le-preview">
 			<LeButton variant="primary">Primary</LeButton>
@@ -38,7 +38,7 @@ const VariantPreview = () => (
 	</>
 );
 
-const SizePreview = () => (
+const ButtonSizePreview = () => (
 	<>
 		<div className="le-preview">
 			<LeButton variant="default" size="small">
@@ -59,7 +59,7 @@ const SizePreview = () => (
 	</>
 );
 
-const StatePreview = () => (
+const ButtonStatePreview = () => (
 	<>
 		<div className="le-preview">
 			<LeButton variant="default" state={{ disabled: true }}>
@@ -76,10 +76,10 @@ const StatePreview = () => (
 
 const LeButtonPage = () => {
 	leButtonAttr["LeButton"] = LeButton;
-	leButtonAttr["ImportCode"] = ImportCode;
-	leButtonAttr["VariantPreview"] = VariantPreview;
-	leButtonAttr["SizePreview"] = SizePreview;
-	leButtonAttr["StatePreview"] = StatePreview;
+	leButtonAttr["ButtonImportPreview"] = ButtonImportPreview;
+	leButtonAttr["ButtonVariantPreview"] = ButtonVariantPreview;
+	leButtonAttr["ButtonSizePreview"] = ButtonSizePreview;
+	leButtonAttr["ButtonStatePreview"] = ButtonStatePreview;
 	leButtonAttr["Code"] = Code;
 
 	return (
