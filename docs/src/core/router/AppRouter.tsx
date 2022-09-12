@@ -2,11 +2,12 @@ import { LeRenderDocPage } from "@/components";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import {
+	ButtonPage,
+	CSSPage,
 	InstallationPage,
-	LeButtonPage,
-	LeCSSPage,
-	LeTopographyPage,
+	NotFoundPage,
 	OverviewPage,
+	TopographyPage,
 } from "@/pages";
 
 const AppRouter = () => {
@@ -22,22 +23,19 @@ const AppRouter = () => {
 				element={<LeRenderDocPage doc={<InstallationPage />} />}
 			/>
 			<Route
-				path="started/lecss"
-				element={<LeRenderDocPage doc={<LeCSSPage />} />}
+				path="started/css"
+				element={<LeRenderDocPage doc={<CSSPage />} />}
 			/>
 			<Route
-				path="layout/letopography"
-				element={<LeRenderDocPage doc={<LeTopographyPage />} />}
+				path="layout/topography"
+				element={<LeRenderDocPage doc={<TopographyPage />} />}
 			/>
 			<Route
-				path="started/lecss"
-				element={<LeRenderDocPage doc={<LeCSSPage />} />}
+				path="components/button"
+				element={<LeRenderDocPage doc={<ButtonPage />} />}
 			/>
-			<Route
-				path="components/lebutton"
-				element={<LeRenderDocPage doc={<LeButtonPage />} />}
-			/>
-			<Route path="*" element={<Navigate to="started/overview" replace />} />
+			<Route path="*" element={<LeRenderDocPage doc={<NotFoundPage />} />} />
+			<Route path="**" element={<LeRenderDocPage doc={<NotFoundPage />} />} />
 		</Routes>
 	);
 };

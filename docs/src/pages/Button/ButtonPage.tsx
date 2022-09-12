@@ -5,7 +5,8 @@ import { LeButton } from "../../../../src";
 import {
 	attributes as leButtonAttr,
 	ReactComponent as LeButtonMD,
-} from "./lebutton.md";
+} from "./button.md";
+import { LeSourceButton } from "@/components";
 
 const ButtonImportPreview = () => (
 	<Code
@@ -74,13 +75,14 @@ const ButtonStatePreview = () => (
 	</>
 );
 
-const LeButtonPage = () => {
+const ButtonPage = () => {
 	leButtonAttr["LeButton"] = LeButton;
 	leButtonAttr["ButtonImportPreview"] = ButtonImportPreview;
 	leButtonAttr["ButtonVariantPreview"] = ButtonVariantPreview;
 	leButtonAttr["ButtonSizePreview"] = ButtonSizePreview;
 	leButtonAttr["ButtonStatePreview"] = ButtonStatePreview;
 	leButtonAttr["Code"] = Code;
+	leButtonAttr["LeSourceButton"] = LeSourceButton;
 
 	return (
 		<React.Fragment>
@@ -89,4 +91,4 @@ const LeButtonPage = () => {
 	);
 };
 
-export default LeButtonPage;
+export default ButtonPage;

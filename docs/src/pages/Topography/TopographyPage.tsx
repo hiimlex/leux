@@ -7,6 +7,8 @@ import {
 	ReactComponent as TopographyMD,
 } from "./topography.md";
 
+import { LeSourceButton } from "@/components";
+
 const ImportPreview = () => (
 	<Code
 		language="jsx"
@@ -37,10 +39,11 @@ const CodePreview = () => (
 	</>
 );
 
-const LeTopographyPage = () => {
+const TopographyPage = () => {
 	topographyAttr["LeTopography"] = LeTopography;
 	topographyAttr["ImportPreview"] = ImportPreview;
 	topographyAttr["CodePreview"] = CodePreview;
+	topographyAttr["LeSourceButton"] = LeSourceButton;
 
 	return (
 		<React.Fragment>
@@ -49,4 +52,4 @@ const LeTopographyPage = () => {
 	);
 };
 
-export default LeTopographyPage;
+export default TopographyPage;

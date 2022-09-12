@@ -1,8 +1,12 @@
 ## LeTopography
 
-Topography component is a layout component. It is used to create headings, paragraphs, and other text elements.
+Topography is a layout component. It is used to create headings, paragraphs, and other text elements.
 
-##### Usage
+<div>
+<LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/LeTopography"></LeSourceButton>
+</div>
+
+#### Import
 
 <div>
 <ImportPreview></ImportPreview>
@@ -11,7 +15,7 @@ Topography component is a layout component. It is used to create headings, parag
 - **LeTopography**: the topography component
 - **LeTopographyProps**: the topography props
 
-##### Type
+#### Type
 
 Use the `type` prop to change the text variant. The type prop can be set to `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `subtitle-1`, `subtitle-2`, `body-1`, `body-2`, `caption`, `overline` or `button`. There is no default type.
 
@@ -34,7 +38,7 @@ Use the `type` prop to change the text variant. The type prop can be set to `h1`
 <CodePreview></CodePreview>
 </div>
 
-### API Reference
+#### API Reference
 
 Props Summary
 

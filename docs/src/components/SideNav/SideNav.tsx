@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./SideNav.scss";
 
 interface ILink {
@@ -10,20 +10,30 @@ const LINKS: Record<string, ILink[]> = {
 	"Getting Started": [
 		{ name: "Overview", path: "/started/overview" },
 		{ name: "Installation", path: "/started/installation" },
-		{ name: "LeCSS", path: "/started/lecss" },
+		{ name: "CSS", path: "/started/css" },
 	],
 	Layout: [
 		{
-			name: "LeTopography",
-			path: "/layout/letopography",
+			name: "Topography",
+			path: "/layout/topography",
+		},
+		{
+			name: "Box",
+			path: "/layout/box",
+		},
+		{
+			name: "Container",
+			path: "/layout/container",
+		},
+		{
+			name: "Grid",
+			path: "/layout/grid",
 		},
 	],
-	Components: [{ name: "LeButton", path: "/components/lebutton" }],
+	Components: [{ name: "Button", path: "/components/button" }],
 };
 
 const SideNav = () => {
-	const location = useLocation();
-
 	return (
 		<aside className="le-sidenav">
 			{Object.keys(LINKS).map((category) => (
