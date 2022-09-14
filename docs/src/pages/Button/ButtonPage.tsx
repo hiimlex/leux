@@ -1,7 +1,7 @@
 import React from "react";
 import Code from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { LeButton } from "../../../../src";
+import { Button } from "../../../../src";
 import {
 	attributes as leButtonAttr,
 	ReactComponent as LeButtonMD,
@@ -19,21 +19,44 @@ const ButtonImportPreview = () => (
 const ButtonVariantPreview = () => (
 	<>
 		<div className="le-preview">
-			<LeButton variant="primary">Primary</LeButton>
-			<LeButton variant="secondary">Secondary</LeButton>
-			<LeButton variant="success">Success</LeButton>
-			<LeButton variant="warning">Warning</LeButton>
-			<LeButton variant="danger">Danger</LeButton>
-			<LeButton variant="default">Default</LeButton>
+			<Button variant="primary">Primary</Button>
+			<Button variant="secondary">Secondary</Button>
+			<Button variant="success">Success</Button>
+			<Button variant="warning">Warning</Button>
+			<Button variant="danger">Danger</Button>
+			<Button variant="default">Default</Button>
 		</div>
 		<Code
 			language="jsx"
-			children={`<LeButton variant="primary">Primary</LeButton>
-<LeButton variant="secondary">Secondary</LeButton>
-<LeButton variant="success">Success</LeButton>
-<LeButton variant="warning">Warning</LeButton>
-<LeButton variant="danger">Danger</LeButton>
-<LeButton variant="default">Default</LeButton>`}
+			children={`<Button variant="primary">Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="success">Success</Button>
+<Button variant="warning">Warning</Button>
+<Button variant="danger">Danger</Button>
+<Button variant="default">Default</Button>`}
+			style={dracula}
+		></Code>
+	</>
+);
+
+const ButtonTypePreview = () => (
+	<>
+		<div className="le-preview">
+			<Button variant="primary" type="filled">
+				Filled
+			</Button>
+			<Button variant="primary" type="outlined">
+				Outlined
+			</Button>
+			<Button variant="primary" type="ghost">
+				Ghost
+			</Button>
+		</div>
+		<Code
+			language="jsx"
+			children={`<Button variant="default" type="filled">Filled</Button>
+<Button variant="default" type="outlined">Outlined</Button>
+<Button variant="primary" type="ghost">Ghost</Button>`}
 			style={dracula}
 		></Code>
 	</>
@@ -42,19 +65,19 @@ const ButtonVariantPreview = () => (
 const ButtonSizePreview = () => (
 	<>
 		<div className="le-preview">
-			<LeButton variant="default" size="small">
+			<Button variant="default" size="small">
 				Small
-			</LeButton>
-			<LeButton variant="default">Medium</LeButton>
-			<LeButton variant="default" size="large">
+			</Button>
+			<Button variant="default">Medium</Button>
+			<Button variant="default" size="large">
 				Large
-			</LeButton>
+			</Button>
 		</div>
 		<Code
 			language="jsx"
-			children={`<LeButton variant="default" size="small">Small</LeButton>
-<LeButton variant="default">Medium</LeButton>
-<LeButton variant="default" size="large">Large</LeButton>`}
+			children={`<Button variant="default" size="small">Small</Button>
+<Button variant="default">Medium</Button>
+<Button variant="default" size="large">Large</Button>`}
 			style={dracula}
 		></Code>
 	</>
@@ -63,21 +86,22 @@ const ButtonSizePreview = () => (
 const ButtonStatePreview = () => (
 	<>
 		<div className="le-preview">
-			<LeButton variant="default" state={{ disabled: true }}>
+			<Button variant="default" state={{ disabled: true }}>
 				Disabled
-			</LeButton>
+			</Button>
 		</div>
 		<Code
 			language="jsx"
-			children={`<LeButton variant="default" state={{ disabled: true }}>Disabled</LeButton>`}
+			children={`<Button variant="default" state={{ disabled: true }}>Disabled</Button>`}
 			style={dracula}
 		></Code>
 	</>
 );
 
 const ButtonPage = () => {
-	leButtonAttr["LeButton"] = LeButton;
+	leButtonAttr["Button"] = Button;
 	leButtonAttr["ButtonImportPreview"] = ButtonImportPreview;
+	leButtonAttr["ButtonTypePreview"] = ButtonTypePreview;
 	leButtonAttr["ButtonVariantPreview"] = ButtonVariantPreview;
 	leButtonAttr["ButtonSizePreview"] = ButtonSizePreview;
 	leButtonAttr["ButtonStatePreview"] = ButtonStatePreview;

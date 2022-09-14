@@ -6,10 +6,9 @@
 	border-radius: 4px;
 	transition: all 0.15s ease-in-out;
 	cursor: pointer;
+	border: none;
 
 	&.le-button--filled {
-		border: none !important;
-
 		@each $color, $value in $variant-colors {
 			&.le-button--#{$color} {
 				color: $color-light-text;
@@ -21,6 +20,55 @@
 
 				@if $color == "default" {
 					color: $color-dark-text;
+				}
+			}
+		}
+	}
+
+	&.le-button--outlined {
+		border: 1px solid;
+
+		@each $color, $value in $variant-colors {
+			&.le-button--#{$color} {
+				color: $value;
+				background: transparent;
+				border-color: $value;
+
+				&:hover {
+					background: rgba($value, 0.25);
+					color: $value;
+				}
+
+				@if $color == "default" {
+					color: $color-dark-text;
+					border-color: $value;
+
+					&:hover {
+						color: $color-dark-text;
+						border-color: darken($value, 20%);
+					}
+				}
+			}
+		}
+	}
+
+	&.le-button--ghost {
+		@each $color, $value in $variant-colors {
+			&.le-button--#{$color} {
+				color: $value;
+				background: transparent;
+
+				&:hover {
+					background: rgba($value, 25%);
+					color: $value;
+				}
+
+				@if $color == "default" {
+					color: $color-dark-text;
+
+					&:hover {
+						color: $color-dark-text;
+					}
 				}
 			}
 		}
@@ -51,4 +99,3 @@
 		}
 	}
 }
-
