@@ -35,7 +35,6 @@ const AppRouter = () => {
 				element={<LeRenderDocPage doc={<ButtonPage />} />}
 			/>
 			<Route path="*" element={<LeRenderDocPage doc={<NotFoundPage />} />} />
-			<Route path="**" element={<LeRenderDocPage doc={<NotFoundPage />} />} />
 		</Routes>
 	);
 };

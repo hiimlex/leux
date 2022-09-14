@@ -7,7 +7,7 @@ import {
 	ReactComponent as TopographyMD,
 } from "./topography.md";
 
-import { LeSourceButton } from "@/components";
+import { LeAnchorLink, LeSourceButton } from "@/components";
 
 const ImportPreview = () => (
 	<Code
@@ -44,6 +44,7 @@ const TopographyPage = () => {
 	topographyAttr["ImportPreview"] = ImportPreview;
 	topographyAttr["CodePreview"] = CodePreview;
 	topographyAttr["LeSourceButton"] = LeSourceButton;
+	topographyAttr["LeAnchorLink"] = LeAnchorLink;
 
 	return (
 		<React.Fragment>

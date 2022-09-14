@@ -22,7 +22,7 @@ const LeTopography = ({ type, children }: LeTopographyProps) => {
 		return typesArr[type]();
 	};
 
-	return <>{handleType()}</>;
+	return <React.Fragment>{handleType()}</React.Fragment>;
 };
 
 export default LeTopography;

@@ -1,0 +1,11 @@
+@import "../../core/styles/variables.scss";
+
+.le-anchor {
+	cursor: pointer;
+	color: $color-dark-text;
+	text-decoration: underline;
+
+	&:hover {
+		color: $color-variant-primary;
+	}
+}

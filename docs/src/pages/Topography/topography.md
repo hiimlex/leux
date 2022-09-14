@@ -52,7 +52,7 @@ Props Summary
 </thead>
 <tbody>
 <tr>
-<td width="30%">type</td>
+<td width="30%"><LeAnchorLink to="type">type</LeAnchorLink></td>
 <td width="70%">h1, h2, h3, h4, h5, h6, subtitle-1, subtitle-2, body-1, body-2, caption, overline, button</td>
 </tr>
 </tbody>

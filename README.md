@@ -39,6 +39,7 @@ To upload the CSS styles, you can move the **leux.min.css** from the **node_modu
 ## Next steps:
 - [ ] components
 	- [X] Button
+	- [X] Topography
 	- [ ] Grid
 	- [ ] Form
 		- [ ] Input
@@ -48,16 +49,14 @@ To upload the CSS styles, you can move the **leux.min.css** from the **node_modu
 		- [ ] Radio
 		- [ ] Switch
 	- [ ] Table
-	- [ ] Pagination
 	- [ ] Modal
 	- [ ] Tooltip
 	- [ ] Popover
 	- [ ] Toast
 	- [ ] Collapse
 	- [ ] Dropdown
-	- [ ] Carousel
 	- [ ] Progress/Spinner
-	- [ ] Card
+	- [ ] Box
 	- [ ] Badge
 	- [ ] Alert
 	- [ ] Breadcrumb
