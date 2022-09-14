@@ -1,15 +1,26 @@
 import React, { MouseEvent } from "react";
-import { LeButtonProps } from "./LeButton.model";
-import "./LeButton.scss";
+import { LeSizes } from "src/types";
+import { ButtonState, ButtonTypes, ButtonVariants } from "./Button.model";
+import "./Button.scss";
 
-const LeButton = ({
+interface ButtonProps {
+	label?: string;
+	variant?: ButtonVariants;
+	type?: ButtonTypes;
+	size?: LeSizes;
+	onClick?: (event?: MouseEvent<HTMLButtonElement>) => void;
+	state?: ButtonState;
+	children?: React.ReactNode;
+}
+
+const Button = ({
 	variant = "default",
 	size = "medium",
 	type = "filled",
 	onClick,
 	state,
 	children,
-}: LeButtonProps) => {
+}: ButtonProps) => {
 	const handleOnCLick = (event: MouseEvent<HTMLButtonElement>) => {
 		if (onClick) {
 			onClick(event);
@@ -30,4 +41,4 @@ const LeButton = ({
 	);
 };
 
-export default LeButton;
+export { Button, ButtonProps };

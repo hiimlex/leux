@@ -1,7 +1,12 @@
 import React from "react";
-import { LeTopographyProps } from "./LeTopography.model";
+import { TopographyTypes } from "./Topography.model";
 
-const LeTopography = ({ type, children }: LeTopographyProps) => {
+interface TopographyProps {
+	children: React.ReactNode;
+	type: TopographyTypes;
+}
+
+const Topography = ({ type, children }: TopographyProps) => {
 	const handleType = () => {
 		const typesArr: Record<string, () => React.ReactElement> = {
 			h1: () => <h1 className="le-text--h1">{children}</h1>,
@@ -22,7 +27,7 @@ const LeTopography = ({ type, children }: LeTopographyProps) => {
 		return typesArr[type]();
 	};
 
-	return <>{handleType()}</>;
+	return <React.Fragment>{handleType()}</React.Fragment>;
 };
 
-export default LeTopography;
+export { Topography, TopographyProps };

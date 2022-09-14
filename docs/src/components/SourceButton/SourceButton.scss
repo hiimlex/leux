@@ -1,0 +1,26 @@
+@import "../../core/styles/variables.scss";
+
+.le-source--button {
+	padding: 8px 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 100%;
+
+	font-size: 0.875rem;
+	color: $color-dark-text;
+	border: 1px solid $color-variant-default;
+	border-radius: 8px;
+	background: white;
+	cursor: pointer;
+	transition: all 0.1s ease-in-out;
+
+	.le-source--icon {
+		margin-right: 6px;
+	}
+
+	&:hover {
+		color: $color-dark-text;
+		background: rgba(#afafaf, 0.15);
+	}
+}
