@@ -20,6 +20,12 @@ body {
 	}
 }
 
+@each $color, $value in $variant-colors {
+	.le-bg--#{$color} {
+		background: $value !important;
+	}
+}
+
 @each $color, $value in $text-colors {
 	.le-color-text--#{$color} {
 		color: $value !important;

@@ -1,4 +1,3 @@
-
 @import "../../core/styles/variables.scss";
 
 .le-markdown {
@@ -34,7 +33,7 @@
 		border-radius: 8px;
 		border: 1px solid $color-light-text;
 
-		* {
+		button {
 			margin-right: 12px;
 		}
 	}
@@ -50,13 +49,16 @@
 		width: 100%;
 	}
 
-	table, th, td {
+	table,
+	th,
+	td {
 		border: 1px solid $color-dark-text;
 		border-collapse: collapse;
 		border-radius: 4px !important;
 	}
 
-	table th, table td {
+	table th,
+	table td {
 		padding: 8px;
 		text-align: justify;
 

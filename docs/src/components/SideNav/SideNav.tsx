@@ -18,16 +18,12 @@ const LINKS: Record<string, ILink[]> = {
 			path: "/layout/topography",
 		},
 		{
-			name: "Box",
-			path: "/layout/box",
-		},
-		{
-			name: "Container",
-			path: "/layout/container",
-		},
-		{
 			name: "Grid",
 			path: "/layout/grid",
+		},
+		{
+			name: "Box",
+			path: "/layout/box",
 		},
 	],
 	Components: [{ name: "Button", path: "/components/button" }],

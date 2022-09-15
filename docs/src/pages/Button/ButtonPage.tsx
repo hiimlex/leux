@@ -45,10 +45,10 @@ const ButtonTypePreview = () => (
 			<Button variant="primary" type="filled">
 				Filled
 			</Button>
-			<Button variant="primary" type="outlined">
+			<Button variant="success" type="outlined">
 				Outlined
 			</Button>
-			<Button variant="primary" type="ghost">
+			<Button variant="danger" type="ghost">
 				Ghost
 			</Button>
 		</div>

@@ -2,8 +2,10 @@ import { LeRenderDocPage } from "@/components";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import {
+	BoxPage,
 	ButtonPage,
 	CSSPage,
+	GridPage,
 	InstallationPage,
 	NotFoundPage,
 	OverviewPage,
@@ -29,6 +31,14 @@ const AppRouter = () => {
 			<Route
 				path="layout/topography"
 				element={<LeRenderDocPage doc={<TopographyPage />} />}
+			/>
+			<Route
+				path="layout/grid"
+				element={<LeRenderDocPage doc={<GridPage />} />}
+			/>
+			<Route
+				path="layout/box"
+				element={<LeRenderDocPage doc={<BoxPage />} />}
 			/>
 			<Route
 				path="components/button"

@@ -6,16 +6,13 @@ Button component is used to fire events. Commom used on forms, modals, panels an
 <LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/LeButton"></LeSourceButton>
 </div>
 
-### Import
+#### Import
 
 <div><ButtonImportPreview></ButtonImportPreview></div>
 
 - **Button**: the button component
 - **LeButtonProps**: the button props
 
-### Usage
-
-Props and examples of the button component.
 
 ##### Types
 
