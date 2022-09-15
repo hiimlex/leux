@@ -44,7 +44,7 @@ To upload the CSS styles, you can move the **leux.min.css** from the **node_modu
 - [ ] components
 	- [X] Button
 	- [X] Topography
-	- [ ] Grid
+	- [X] Grid
 	- [ ] Form
 		- [ ] Input
 		- [ ] Select
