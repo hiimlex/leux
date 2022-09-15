@@ -25,7 +25,7 @@ const AppRouter = () => {
 				element={<LeRenderDocPage doc={<InstallationPage />} />}
 			/>
 			<Route
-				path="started/css"
+				path="started/lecss"
 				element={<LeRenderDocPage doc={<CSSPage />} />}
 			/>
 			<Route
