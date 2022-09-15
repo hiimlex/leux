@@ -9,7 +9,7 @@ interface TopographyProps {
 const Topography = ({ type, children }: TopographyProps) => {
 	const handleType = () => {
 		const typesArr: Record<string, () => React.ReactElement> = {
-			h1: () => <h1 className="le-text--h1">{children}</h1>,
+			h1: () => <h1 className={"le-text--h1"}>{children}</h1>,
 			h2: () => <h2 className="le-text--h2">{children}</h2>,
 			h3: () => <h3 className="le-text--h3">{children}</h3>,
 			h4: () => <h4 className="le-text--h4">{children}</h4>,

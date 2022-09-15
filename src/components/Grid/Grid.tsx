@@ -1,14 +1,22 @@
 import React from "react";
 
 interface GridProps {
-	cols?: string | number;
-	rows?: string | number;
-	gap?: { row?: number; col?: number };
-	width?: string;
+	cols?: React.CSSProperties["gridTemplateColumns"] | number;
+	rows?: React.CSSProperties["gridTemplateRows"] | number;
+	gap?: { row?: React.CSSProperties["rowGap"] ; col?: React.CSSProperties["columnGap"] };
+	width?: React.CSSProperties["width"];
+	padding?: React.CSSProperties["padding"];
 	children?: React.ReactNode;
 }
 
-const Grid = ({ rows, cols, gap, width = "100%", children }: GridProps) => {
+const Grid = ({
+	rows,
+	cols,
+	gap,
+	width = "100%",
+	padding,
+	children,
+}: GridProps) => {
 	const handleColumns = () => {
 		if (typeof cols === "number") {
 			return `repeat(${cols}, 1fr)`;
@@ -30,10 +38,11 @@ const Grid = ({ rows, cols, gap, width = "100%", children }: GridProps) => {
 			style={{
 				display: "grid",
 				width,
+				padding,
 				gridTemplateColumns: handleColumns(),
 				gridTemplateRows: handleRows(),
-				rowGap: gap && gap.row ? `${gap.row}px` : "0px",
-				columnGap: gap && gap.col ? `${gap.col}px` : "0px",
+				rowGap: gap && gap.row,
+				columnGap: gap && gap.col,
 			}}
 		>
 			{children}

@@ -36,6 +36,11 @@ yarn add leux
 
 To upload the CSS styles, you can move the **leux.min.css** from the **node_modules/leux/dist** folder to your project folder and import it in your **index.html** file.
 
+### To-do
+
+- implements the rowSpan on grid
+- Documentation of box component
+
 ## Next steps:
 - [ ] components
 	- [X] Button

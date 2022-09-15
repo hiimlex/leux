@@ -1,16 +1,21 @@
 import React from "react";
-import { ButtonVariants } from "../Button";
+import { LeVariants } from "src/types";
+import "./Box.scss";
 
-export type BoxVariants = ButtonVariants;
+export type BoxVariants = LeVariants;
 
 interface BoxProps {
-	width?: string;
-	height?: string;
-	padding?: number;
-	margin?: number;
-	borderRadius?: number;
+	centered?: boolean;
 	bgColor?: BoxVariants;
+	width?: React.CSSProperties["width"];
+	height?: React.CSSProperties["height"];
+	padding?: React.CSSProperties["margin"];
+	margin?: React.CSSProperties["margin"];
+	borderRadius?: React.CSSProperties["borderRadius"];
+	customClass?: string;
+	customStyles?: React.CSSProperties;
 	children?: React.ReactNode;
+	textColor?: "dark" | "light" | "darker" | "lighter";
 }
 
 const Box = ({
@@ -21,11 +26,20 @@ const Box = ({
 	height,
 	bgColor,
 	borderRadius,
+	customClass,
+	customStyles,
+	centered,
+	textColor,
 }: BoxProps) => {
 	return (
 		<div
-			style={{ padding, margin, height, width, borderRadius }}
-			className={bgColor ? `le-bg--${bgColor}` : ""}
+			style={{ padding, margin, height, width, borderRadius, ...customStyles }}
+			className={
+				(bgColor ? `le-bg--${bgColor}` : "") +
+				(customClass ? " " + customClass : "") +
+				(centered ? " le-box--centered" : "") +
+				(textColor ? " le-color-text--" + textColor : "")
+			}
 		>
 			{children}
 		</div>
