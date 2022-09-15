@@ -38,7 +38,6 @@ To upload the CSS styles, you can move the **leux.min.css** from the **node_modu
 
 ### To-do
 
-- implements the rowSpan on grid
 - Documentation of box component
 
 ## Next steps:

@@ -1,9 +1,13 @@
 import React from "react";
+import { Box, BoxProps } from "../Box";
 
 interface GridProps {
 	cols?: React.CSSProperties["gridTemplateColumns"] | number;
 	rows?: React.CSSProperties["gridTemplateRows"] | number;
-	gap?: { row?: React.CSSProperties["rowGap"] ; col?: React.CSSProperties["columnGap"] };
+	gap?: {
+		row?: React.CSSProperties["rowGap"];
+		col?: React.CSSProperties["columnGap"];
+	};
 	width?: React.CSSProperties["width"];
 	padding?: React.CSSProperties["padding"];
 	children?: React.ReactNode;

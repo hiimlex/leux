@@ -16,6 +16,10 @@ interface BoxProps {
 	customStyles?: React.CSSProperties;
 	children?: React.ReactNode;
 	textColor?: "dark" | "light" | "darker" | "lighter";
+	gridSpan?: {
+		row?: number;
+		col?: number;
+	};
 }
 
 const Box = ({
@@ -30,10 +34,28 @@ const Box = ({
 	customStyles,
 	centered,
 	textColor,
+	gridSpan,
 }: BoxProps) => {
+	const handleGridSpan = () => {
+		if (gridSpan) {
+			return {
+				gridRowEnd: `span ${gridSpan.row}`,
+				gridColumnEnd: `span ${gridSpan.col}`,
+			};
+		}
+	};
+
 	return (
 		<div
-			style={{ padding, margin, height, width, borderRadius, ...customStyles }}
+			style={{
+				padding,
+				margin,
+				height,
+				width,
+				borderRadius,
+				...handleGridSpan(),
+				...customStyles,
+			}}
 			className={
 				(bgColor ? `le-bg--${bgColor}` : "") +
 				(customClass ? " " + customClass : "") +
@@ -46,4 +68,4 @@ const Box = ({
 	);
 };
 
-export { Box };
+export { Box, BoxProps };
