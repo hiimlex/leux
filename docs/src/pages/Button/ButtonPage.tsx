@@ -11,7 +11,7 @@ import { LeSourceButton } from "@/components";
 const ButtonImportPreview = () => (
 	<Code
 		language="jsx"
-		children={`import { LeButton, LeButtonProps } from 'leux';`}
+		children={`import { Button, ButtonProps } from 'leux';`}
 		style={dracula}
 	></Code>
 );

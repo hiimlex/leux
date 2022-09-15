@@ -1,6 +1,6 @@
 ## Topography
 
-Topography is a layout component. It is used to create headings, paragraphs, and other text elements.
+Topography is a layout component. It is used to create headings, paragraphs, and other text elements overriding the parent style.
 
 <div>
 <LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/LeTopography"></LeSourceButton>
