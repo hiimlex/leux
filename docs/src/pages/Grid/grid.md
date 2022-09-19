@@ -9,7 +9,7 @@ Grid component allows you to create a grid layout. It is based on the CSS Grid.
 #### Import
 
 <div>
-	<ImportPreview></ImportPreview>
+	<GridImportPreview></GridImportPreview>
 </div>
 
 - **Grid**: grid container
@@ -41,7 +41,7 @@ Use the `gap` prop to change the space between the grid cols and rows.
 
 #### Span
 
-To increase the size of a item on grid, use the `gridSpan` props from <NavLink to="/layout/box#gridSpan">Box component</NavLink>.
+To increase the size of a item on grid, use the `gridSpan` props from <NavLink to="/layout/box#span">Box component</NavLink>.
 
 <div>
 	<GridSpanPreview></GridSpanPreview>

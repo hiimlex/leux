@@ -1,9 +1,18 @@
-import { LeSourceButton } from "@/components";
-import React from "react";
-import { ReactComponent as BoxMD, attributes as boxAttr } from "./box.md";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { ReactComponent as BoxMD } from "./box.md";
+import { boxAttr } from "./BoxAttributes";
 
 const BoxPage = () => {
-	boxAttr["LeSourceButton"] = LeSourceButton;
+	const location = useLocation();
+
+	const handleHashScroll = () => {
+		console.log(location);
+	};
+
+	useEffect(() => {
+		handleHashScroll();
+	}, []);
 
 	return (
 		<React.Fragment>
