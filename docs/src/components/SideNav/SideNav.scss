@@ -4,40 +4,48 @@
 	width: 180px;
 	padding-left: 0;
 	height: 100vh;
-	position: fixed;
-
-	padding-top: 80px;
+	margin-top: 32px;
+	margin-right: 12px;
 
 	display: flex;
 	flex-direction: column;
 
 	color: $color-dark-text;
+	position: relative;
 
-	.le-sidenav--section {
-		display: flex;
-		flex-direction: column;
+	.fixed-content {
+		position: fixed;
 
-		margin: 4px 0;
-
-		.le-sidenav--header {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-		}
-
-		.le-sidenav--links {
+		.le-sidenav--section {
 			display: flex;
 			flex-direction: column;
 
-			a {
-				margin: 6px;
-				margin-left: 18px;
-				color: $color-dark-text;
-				text-decoration: none;
-				font-weight: 400;
+			margin: 4px 0;
 
-				&.active {
-					font-weight: 600 !important;
+			.le-sidenav--header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			.le-sidenav--links {
+				display: flex;
+				flex-direction: column;
+
+				a {
+					margin: 6px;
+					margin-left: 18px;
+					color: $color-dark-text;
+					text-decoration: none;
+					font-weight: 400;
+
+					&.active {
+						font-weight: bold !important;
+					}
+
+					&:hover {
+						font-weight: 500;
+					}
 				}
 			}
 		}

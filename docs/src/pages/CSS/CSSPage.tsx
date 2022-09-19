@@ -1,7 +1,7 @@
 import React from "react";
 import Code from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { attributes as leCssAttr, ReactComponent as LeCSSMD } from "./lecss.md";
+import { attributes as leCssAttr, ReactComponent as LeCSSMD } from "./css.md";
 import { LeSourceButton } from "@/components";
 
 const LeCSSImportCode = () => (
@@ -12,15 +12,9 @@ const LeCSSImportCode = () => (
 	></Code>
 );
 
-const CSSPage = () => {
-	leCssAttr["LeCSSImportCode"] = LeCSSImportCode;
-	leCssAttr["LeSourceButton"] = LeSourceButton;
+leCssAttr["LeCSSImportCode"] = LeCSSImportCode;
+leCssAttr["LeSourceButton"] = LeSourceButton;
 
-	return (
-		<React.Fragment>
-			<LeCSSMD {...leCssAttr} />
-		</React.Fragment>
-	);
-};
+const CSSPage = () => <LeCSSMD {...leCssAttr} />;
 
 export default CSSPage;

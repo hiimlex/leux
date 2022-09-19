@@ -21,16 +21,10 @@ const LinkCode = () => (
 	</Code>
 );
 
-const InstallationPage = () => {
-	installationAttr["NpmCode"] = NpmCode;
-	installationAttr["LinkCode"] = LinkCode;
-	installationAttr["NavLink"] = NavLink;
+installationAttr["NpmCode"] = NpmCode;
+installationAttr["LinkCode"] = LinkCode;
+installationAttr["NavLink"] = NavLink;
 
-	return (
-		<React.Fragment>
-			<InstallationMD {...installationAttr} />
-		</React.Fragment>
-	);
-};
+const InstallationPage = () => <InstallationMD {...installationAttr} />;
 
 export default InstallationPage;

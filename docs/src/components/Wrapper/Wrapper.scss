@@ -13,11 +13,20 @@
 		flex: 1;
 
 		padding: 0 16px;
+		margin-top: 65px;
 
 		.le-docs {
-			margin-left: 180px;
-			padding: 65px 12px;
+			padding: 12px;
 			width: 100%;
+
+			.le-footer {
+				padding: 12px;
+				width: 100%;
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
 		}
 	}
 }

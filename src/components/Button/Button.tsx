@@ -4,13 +4,14 @@ import { ButtonState, ButtonTypes, ButtonVariants } from "./Button.model";
 import "./Button.scss";
 
 interface ButtonProps {
-	label?: string;
 	variant?: ButtonVariants;
 	type?: ButtonTypes;
 	size?: LeSizes;
 	onClick?: (event?: MouseEvent<HTMLButtonElement>) => void;
 	state?: ButtonState;
 	children?: React.ReactNode;
+	customClass?: string;
+	customStyles?: React.CSSProperties;
 }
 
 const Button = ({
@@ -20,6 +21,8 @@ const Button = ({
 	onClick,
 	state,
 	children,
+	customClass,
+	customStyles,
 }: ButtonProps) => {
 	const handleOnCLick = (event: MouseEvent<HTMLButtonElement>) => {
 		if (onClick) {
@@ -31,12 +34,15 @@ const Button = ({
 		<button
 			className={
 				`le-button le-button--${variant} le-button--${size} le-button--${type}` +
-				(state && state.disabled ? " le-button--disabled" : "")
+				(state && state.disabled ? " le-button--disabled" : "") +
+				(customClass ? ` ${customClass}` : "")
 			}
+			data-testid="leuxButton"
 			onClick={(event) => handleOnCLick(event)}
 			disabled={state?.disabled}
+			style={customStyles}
 		>
-			{children || ""}
+			{children}
 		</button>
 	);
 };

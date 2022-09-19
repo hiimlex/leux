@@ -36,11 +36,16 @@ yarn add leux
 
 To upload the CSS styles, you can move the **leux.min.css** from the **node_modules/leux/dist** folder to your project folder and import it in your **index.html** file.
 
+### To-do
+
+- Create a custom syntax highlighter with refractor
+- Add scroll activation on anchor links
+
 ## Next steps:
 - [ ] components
 	- [X] Button
 	- [X] Topography
-	- [ ] Grid
+	- [X] Grid
 	- [ ] Form
 		- [ ] Input
 		- [ ] Select
@@ -56,7 +61,7 @@ To upload the CSS styles, you can move the **leux.min.css** from the **node_modu
 	- [ ] Collapse
 	- [ ] Dropdown
 	- [ ] Progress/Spinner
-	- [ ] Box
+	- [X] Box
 	- [ ] Badge
 	- [ ] Alert
 	- [ ] Breadcrumb

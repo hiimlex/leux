@@ -7,7 +7,8 @@
 	},
 	"scripts": {
 		"build": "rollup -c",
-		"test": "jest"
+		"test": "jest",
+		"test:watch": "jest --watch"
 	},
 	"repository": {
 		"type": "git",
@@ -32,6 +33,7 @@
 		"@rollup/plugin-commonjs": "^22.0.2",
 		"@rollup/plugin-node-resolve": "^13.3.0",
 		"@rollup/plugin-typescript": "^8.4.0",
+		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.4.0",
 		"@types/jest": "^29.0.0",
 		"@types/react": "^18.0.18",

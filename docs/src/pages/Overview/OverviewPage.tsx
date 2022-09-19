@@ -6,14 +6,8 @@ import {
 	attributes as overviewAttr,
 } from "./overview.md";
 
-const OverviewPage = () => {
-	overviewAttr["NavLink"] = NavLink;
+overviewAttr["NavLink"] = NavLink;
 
-	return (
-		<React.Fragment>
-			<OverviewMD {...overviewAttr} />
-		</React.Fragment>
-	);
-};
+const OverviewPage = () => <OverviewMD {...overviewAttr} />;
 
 export default OverviewPage;

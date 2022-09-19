@@ -1,12 +1,12 @@
-## LeTopography
+## Topography
 
-Topography is a layout component. It is used to create headings, paragraphs, and other text elements.
+Topography is a layout component. It is used to create headings, paragraphs, and other text elements overriding the parent style.
 
 <div>
 <LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/LeTopography"></LeSourceButton>
 </div>
 
-### Import
+#### Import
 
 <div>
 <ImportPreview></ImportPreview>
@@ -15,11 +15,7 @@ Topography is a layout component. It is used to create headings, paragraphs, and
 - **LeTopography**: the topography component
 - **LeTopographyProps**: the topography props
 
-### Usage
-
-Props and examples of the topography component.
-
-##### Type
+#### Type
 
 Use the `type` prop to change the text variant. There's no default type.
 
@@ -42,7 +38,15 @@ Use the `type` prop to change the text variant. There's no default type.
 <CodePreview></CodePreview>
 </div>
 
-#### API Reference
+#### Custom CSS and Classes
+
+Use the `customClass` and `customStyles` prop to add custom CSS to the component.
+
+<div>
+<TopographyCustomPreview></TopographyCustomPreview>
+</div>
+
+### API Reference
 
 Props Summary
 
@@ -50,15 +54,29 @@ Props Summary
 <table width="100%" border="0">
 <thead>
 <tr>
-<th width="30%">Prop</th>
+<th width="10%">Prop</th>
 <th width="70%">Type</th>
+<th width="20%">Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td width="30%">type</td>
-<td width="70%">h1, h2, h3, h4, h5, h6, subtitle-1, subtitle-2, body-1, body-2, caption, overline, button</td>
+<td>type</td>
+<td><Code children="'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'subtitle-1' | 'subtitle-2' | 'body-1' | 'body-2' | 'caption' | 'overline' | 'button'" language="jsx"></Code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>customClass</td>
+<td><Code children="'string'" language="jsx"></Code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>customStyles</td>
+<td><Code children="React.CSSProperties" language="jsx"></Code></td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
 </div>
+
+<hr />

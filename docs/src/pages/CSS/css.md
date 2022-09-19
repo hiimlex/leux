@@ -13,3 +13,5 @@ To load all the styles, import the LeCSS Component at the top of your `main.(jsx
 <div>
 <LeCSSImportCode></LeCSSImportCode>
 </div>
+
+<hr />
