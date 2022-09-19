@@ -1,5 +1,5 @@
-import { LeSideNav } from "..";
-import { Topography } from "../../../../src";
+import { LeSideAnchorNav, LeSideNav } from "..";
+import { Footer } from "../Footer";
 import "./Wrapper.scss";
 
 interface WrapperProps {
@@ -14,12 +14,9 @@ const Wrapper = ({ children }: WrapperProps) => {
 					<LeSideNav></LeSideNav>
 					<main className="le-docs">
 						{children}
-						<footer className="le-footer">
-							<Topography type="body-1">
-								Designed and developed by <b>@hiimlex</b>.
-							</Topography>
-						</footer>
+						<Footer />
 					</main>
+					<LeSideAnchorNav />
 				</div>
 			</div>
 		</>

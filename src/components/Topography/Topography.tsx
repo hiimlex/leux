@@ -56,7 +56,7 @@ const Topography = ({
 			),
 			"subtitle-2": () => (
 				<h6
-					className={"le-text--subtitle-1 " + customClass}
+					className={"le-text--subtitle-2 " + customClass}
 					style={customStyles}
 				>
 					{children}

@@ -11,7 +11,6 @@
 		margin: 12px 0;
 
 		code {
-			background: transparent;
 			border-radius: 0;
 			font-weight: 500;
 			font-size: 0.875rem;
@@ -20,7 +19,6 @@
 	}
 
 	code {
-		background: $color-light-text;
 		padding: 2px 4px;
 		border-radius: 4px;
 		font-weight: 500;
@@ -67,5 +65,11 @@
 			margin: 0;
 			border-radius: 4px;
 		}
+	}
+
+	hr {
+		margin: 12px 0;
+		margin-top: 24px;
+		border-color: #efefef33;
 	}
 }

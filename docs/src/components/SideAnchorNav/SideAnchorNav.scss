@@ -1,0 +1,25 @@
+@import "../../core/styles/variables.scss";
+
+.le-anchor-nav {
+	width: 180px;
+	overflow: hidden;
+	margin-left: 12px;
+	margin-top: 32px;
+
+	position: relative;
+
+	.fixed-content {
+		position: fixed;
+		width: 180px;
+
+		.le-anchor-links {
+			display: flex;
+			flex-direction: column;
+
+			.le-anchor-link {
+				margin: 6px 0;
+				cursor: pointer;
+			}
+		}
+	}
+}

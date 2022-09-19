@@ -13,31 +13,31 @@ Button component is used to fire events. Commom used on forms, modals, panels an
 - **Button**: the button component
 - **LeButtonProps**: the button props
 
-##### Types
+#### Types
 
 Use the `type` prop to change the button type.
 
 <div><ButtonTypePreview></ButtonTypePreview></div>
 
-##### Variants
+#### Variants
 
 Use the `variant` prop to change the button color theme.
 
 <div><ButtonVariantPreview></ButtonVariantPreview><div>
 
-##### Sizes
+#### Sizes
 
 Use the `size` prop to change the size of the button.
 
 <div><ButtonSizePreview></ButtonSizePreview></div>
 
-##### State
+#### State
 
 Use the `state` prop object to control that visual states from button.
 
 <div><ButtonStatePreview></ButtonStatePreview></div>
 
-##### Action
+#### Action
 
 Use the `onClick` prop to trigger an action when the button is clicked.
 
@@ -93,3 +93,5 @@ Use the `onClick` prop to trigger an action when the button is clicked.
 </tbody>
 </table>
 </div>
+
+<hr />

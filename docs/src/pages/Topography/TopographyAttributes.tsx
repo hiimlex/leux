@@ -1,16 +1,21 @@
 import { LeAnchorLink, LeSourceButton } from "@/components";
+
 import Code from "react-syntax-highlighter";
+
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 import { Topography } from "../../../../src";
 import { attributes as topographyAttr } from "./topography.md";
-const ImportPreview = () => (
-	<Code
-		language="jsx"
-		children={`import { Topography, TopographyProps } from 'leux';`}
-		style={dracula}
-	/>
-);
+
+const ImportPreview = () => {
+	return (
+		<Code
+			language="jsx"
+			children={`import { Topography, TopographyProps } from 'leux';`}
+			style={dracula}
+		/>
+	);
+};
 
 const CodePreview = () => (
 	<>

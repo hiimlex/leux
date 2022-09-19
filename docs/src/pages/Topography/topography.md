@@ -15,7 +15,7 @@ Topography is a layout component. It is used to create headings, paragraphs, and
 - **LeTopography**: the topography component
 - **LeTopographyProps**: the topography props
 
-##### Type
+#### Type
 
 Use the `type` prop to change the text variant. There's no default type.
 
@@ -38,7 +38,7 @@ Use the `type` prop to change the text variant. There's no default type.
 <CodePreview></CodePreview>
 </div>
 
-##### Custom CSS and Classes
+#### Custom CSS and Classes
 
 Use the `customClass` and `customStyles` prop to add custom CSS to the component.
 
@@ -46,7 +46,7 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the component
 <TopographyCustomPreview></TopographyCustomPreview>
 </div>
 
-#### API Reference
+### API Reference
 
 Props Summary
 
@@ -78,3 +78,5 @@ Props Summary
 </tbody>
 </table>
 </div>
+
+<hr />

@@ -38,6 +38,8 @@ The Box component can also be styled using custom CSS and classes.
 	<BoxCustomPreview></BoxCustomPreview>
 </div>
 
+<hr />
+
 #### Centered
 
 The content of Box component can be centered using the `center` prop.
@@ -115,3 +117,5 @@ The Box component can be used to create a grid layout. Check <NavLink to="/layou
 </tbody>
 </table>
 </div>
+
+<hr />

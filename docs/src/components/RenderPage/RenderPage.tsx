@@ -8,14 +8,14 @@ interface RenderPageProps {
 }
 
 const RenderDocPage = ({ doc }: RenderPageProps) => {
-	const { hash } = useLocation();
+	const { hash, pathname } = useLocation();
 
 	const handleHashScroll = () => {
 		if (hash) {
 			const element = document.getElementById(hash.replace("#", ""));
 
 			if (element) {
-				animateScroll.scrollTo(element.offsetTop - 65);
+				animateScroll.scrollTo(element.offsetTop - 90);
 			}
 		} else {
 			animateScroll.scrollToTop();
@@ -24,7 +24,7 @@ const RenderDocPage = ({ doc }: RenderPageProps) => {
 
 	useEffect(() => {
 		handleHashScroll();
-	}, []);
+	}, [pathname]);
 
 	return <div className="le-markdown" children={doc}></div>;
 };
