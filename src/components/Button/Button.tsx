@@ -4,7 +4,6 @@ import { ButtonState, ButtonTypes, ButtonVariants } from "./Button.model";
 import "./Button.scss";
 
 interface ButtonProps {
-	label?: string;
 	variant?: ButtonVariants;
 	type?: ButtonTypes;
 	size?: LeSizes;
@@ -38,11 +37,12 @@ const Button = ({
 				(state && state.disabled ? " le-button--disabled" : "") +
 				(customClass ? ` ${customClass}` : "")
 			}
+			data-testid="leuxButton"
 			onClick={(event) => handleOnCLick(event)}
 			disabled={state?.disabled}
 			style={customStyles}
 		>
-			{children || ""}
+			{children}
 		</button>
 	);
 };

@@ -4,7 +4,7 @@ import React from "react";
 import { Topography } from "./Topography";
 
 describe("LeTopography test", () => {
-	test("renders LeTopography component", () => {
+	it("should render a Topography H1 component", () => {
 		render(<Topography type="h1" children="Test" />);
 	});
 });
