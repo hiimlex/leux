@@ -11,7 +11,7 @@
 	&.le-button--filled {
 		@each $color, $value in $variant-colors {
 			&.le-button--#{$color} {
-				color: $color-light-text;
+				color: $color-lighter-text;
 				background: $value;
 
 				&:hover {

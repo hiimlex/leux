@@ -46,6 +46,72 @@ The content of Box component can be centered using the `center` prop.
 	<BoxCenteredPreview></BoxCenteredPreview>
 </div>
 
-#### Span
+#### Grid Span
 
 The Box component can be used to create a grid layout. Check <NavLink to="/layout/grid#span">this</NavLink> session to see how to create a grid layout.
+
+### API Reference
+
+<div>
+<table width="100%">
+<thead>
+<tr>
+<th width="10%">Key</th>
+<th width="70%">Prop</th>
+<th width="20%">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>centered</td>
+<td><Code children="'boolean'" language="jsx"></Code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>bgColor</td>
+<td><Code children="'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'" language="jsx"></Code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>width</td>
+<td><Code children="React.CSSProperties['width']" language="jsx"></Code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>height</td>
+<td><Code children="React.CSSProperties['height']" language="jsx"></Code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>margin</td>
+<td><Code children="React.CSSProperties['margin']" language="jsx"></Code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>borderRadius</td>
+<td><Code children="React.CSSProperties['borderRadius']" language="jsx"></Code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>textColor</td>
+<td><Code children="'dark' | 'light' | 'darker' | 'lighter'" language="jsx"></Code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>gridSpan</td>
+<td><Code children="{ 'row': 1, 'col': 0 }" language="jsx"></Code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>customClass</td>
+<td><Code children="'string'" language="jsx"></Code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>customStyles</td>
+<td><Code children="React.CSSProperties" language="jsx"></Code></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>

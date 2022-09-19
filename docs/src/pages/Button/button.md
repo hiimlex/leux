@@ -37,6 +37,12 @@ Use the `state` prop object to control that visual states from button.
 
 <div><ButtonStatePreview></ButtonStatePreview></div>
 
+##### Action
+
+Use the `onClick` prop to trigger an action when the button is clicked.
+
+<div><ButtonActionPreview></ButtonActionPreview></div>
+
 ### API Reference
 
 <div>
@@ -50,29 +56,39 @@ Use the `state` prop object to control that visual states from button.
 </thead>
 <tbody>
 <tr>
-<td width="10%">type</td>
-<td width="70%"><Code language="jsx" children="'filled' | 'outlined' | 'ghost'"></Code></td>
-<td width="20%"><Code language="jsx" children="'filled'"></td>
+<td>type</td>
+<td><Code language="jsx" children="'filled' | 'outlined' | 'ghost'"></Code></td>
+<td><Code language="jsx" children="'filled'"></td>
 </tr>
 <tr>
-<td width="10%">variant</td>
-<td width="70%"><Code language="jsx" children="'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'"></Code></td>
-<td width="20%"><Code language="jsx" children="'primary'"></td>
+<td>variant</td>
+<td><Code language="jsx" children="'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'"></Code></td>
+<td><Code language="jsx" children="'primary'"></td>
 </tr>
 <tr>
-<td width="10%">size</td>
-<td width="70%"><Code language="jsx" children="'small' | 'medium' | 'large'"></Code></td>
-<td width="20%"><Code language="jsx" children="'medium'"></td>
+<td>size</td>
+<td><Code language="jsx" children="'small' | 'medium' | 'large'"></Code></td>
+<td><Code language="jsx" children="'medium'"></td>
 </tr>
 <tr>
-<td width="10%">state</td>
-<td width="70%"><Code language="jsx" children="{ disabled: boolean }"></Code></td>
-<td width="20%"><Code language="jsx" children="{}"></td>
+<td>state</td>
+<td><Code language="jsx" children="{ disabled: boolean }"></Code></td>
+<td><Code language="jsx" children="{}"></td>
 </tr>
 <tr>
-<td width="10%">onClick</td>
-<td width="70%"><Code language="jsx" children="() => void"></Code></td>
-<td width="70%">-</td>
+<td>onClick</td>
+<td><Code language="jsx" children="() => void"></Code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>customClass</td>
+<td><Code children="'string'" language="jsx"></Code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>customStyles</td>
+<td><Code children="React.CSSProperties" language="jsx"></Code></td>
+<td>-</td>
 </tr>
 </tbody>
 </table>

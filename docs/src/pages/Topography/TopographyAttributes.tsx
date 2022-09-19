@@ -34,10 +34,37 @@ const CodePreview = () => (
 	</>
 );
 
+const TopographyCustomPreview = () => (
+	<>
+		<div className="le-preview">
+			<Topography
+				type="body-1"
+				customClass="le-color-text--danger"
+				customStyles={{ fontWeight: "bold" }}
+			>
+				Custom CSS
+			</Topography>
+		</div>
+		<Code
+			language="jsx"
+			style={dracula}
+			children={`<Topography
+	type="body-1"
+	customClass="le-text-color--danger"
+	customStyles={{ fontWeight: "bold" }}
+>
+	Custom CSS
+</Topography>`}
+		></Code>
+	</>
+);
+
 topographyAttr["Topography"] = Topography;
 topographyAttr["ImportPreview"] = ImportPreview;
+topographyAttr["TopographyCustomPreview"] = TopographyCustomPreview;
 topographyAttr["CodePreview"] = CodePreview;
 topographyAttr["LeSourceButton"] = LeSourceButton;
 topographyAttr["LeAnchorLink"] = LeAnchorLink;
+topographyAttr["Code"] = Code;
 
 export { topographyAttr };

@@ -113,6 +113,7 @@ const BoxCustomPreview = () => {
 		display: "flex",
 		alignItems: "center",
 		justifyContent: "center",
+		padding: 12,
 	}}
 >
 	with custom CSS and Classes
@@ -154,5 +155,6 @@ boxAttr["BoxCssPreview"] = BoxCssPreview;
 boxAttr["BoxCustomPreview"] = BoxCustomPreview;
 boxAttr["BoxCenteredPreview"] = BoxCenteredPreview;
 boxAttr["NavLink"] = NavLink;
+boxAttr["Code"] = Code;
 
 export { boxAttr };

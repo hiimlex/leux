@@ -11,6 +11,8 @@ interface GridProps {
 	width?: React.CSSProperties["width"];
 	padding?: React.CSSProperties["padding"];
 	children?: React.ReactNode;
+	customStyles?: React.CSSProperties;
+	customClass?: string;
 }
 
 const Grid = ({
@@ -20,6 +22,8 @@ const Grid = ({
 	width = "100%",
 	padding,
 	children,
+	customClass,
+	customStyles,
 }: GridProps) => {
 	const handleColumns = () => {
 		if (typeof cols === "number") {
@@ -47,7 +51,9 @@ const Grid = ({
 				gridTemplateRows: handleRows(),
 				rowGap: gap && gap.row,
 				columnGap: gap && gap.col,
+				...customStyles,
 			}}
+			className={customClass}
 		>
 			{children}
 		</div>

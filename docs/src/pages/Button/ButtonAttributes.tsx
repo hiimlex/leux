@@ -94,11 +94,29 @@ const ButtonStatePreview = () => (
 	</>
 );
 
+const ButtonActionPreview = () => {
+	return (
+		<>
+			<div className="le-preview">
+				<Button onClick={() => alert("Hello World!")} variant="success">
+					Alert
+				</Button>
+			</div>
+			<Code
+				language="jsx"
+				children={`<Button onClick={() => alert("Hello World!")}>Alert</Button>`}
+				style={dracula}
+			></Code>
+		</>
+	);
+};
+
 buttonAttr["ButtonImportPreview"] = ButtonImportPreview;
 buttonAttr["ButtonTypePreview"] = ButtonTypePreview;
 buttonAttr["ButtonVariantPreview"] = ButtonVariantPreview;
 buttonAttr["ButtonSizePreview"] = ButtonSizePreview;
 buttonAttr["ButtonStatePreview"] = ButtonStatePreview;
+buttonAttr["ButtonActionPreview"] = ButtonActionPreview;
 buttonAttr["Code"] = Code;
 buttonAttr["Button"] = Button;
 buttonAttr["LeSourceButton"] = LeSourceButton;

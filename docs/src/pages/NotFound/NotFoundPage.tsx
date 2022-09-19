@@ -4,10 +4,8 @@ import {
 	attributes as notFoundAttr,
 } from "./NotFound.md";
 
-const NotFoundPage = () => {
-	notFoundAttr["NavLink"] = NavLink;
+notFoundAttr["NavLink"] = NavLink;
 
-	return <NotFoundMD {...notFoundAttr}></NotFoundMD>;
-};
+const NotFoundPage = () => <NotFoundMD {...notFoundAttr}></NotFoundMD>;
 
 export default NotFoundPage;

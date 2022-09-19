@@ -16,34 +16,34 @@ body {
 
 @each $color, $value in $variant-colors {
 	.le-color-text--#{$color} {
-		color: $value !important;
+		color: $value;
 	}
 }
 
 @each $color, $value in $variant-colors {
 	.le-bg--#{$color} {
-		background: $value !important;
+		background: $value;
 	}
 }
 
 @each $color, $value in $text-colors {
 	.le-color-text--#{$color} {
-		color: $value !important;
+		color: $value;
 	}
 }
 
 @each $typography, $values in $text-typography {
 	.le-text--#{$typography} {
-		font-size: nth($values, 1) !important;
-		font-weight: nth($values, 2) !important;
-		letter-spacing: nth($values, 3) !important;
+		font-size: nth($values, 1);
+		font-weight: nth($values, 2);
+		letter-spacing: nth($values, 3);
 
 		@if $typography == "button" {
-			text-transform: uppercase !important;
+			text-transform: uppercase;
 		}
 
 		@if $typography == "overline" {
-			text-transform: uppercase !important;
+			text-transform: uppercase;
 		}
 	}
 }
