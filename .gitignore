@@ -3,5 +3,3 @@ node_modules
 dist
 storybook-static
 web
-package-lock.json
-coverage
