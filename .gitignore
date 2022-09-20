@@ -4,3 +4,4 @@ dist
 storybook-static
 web
 package-lock.json
+coverage
