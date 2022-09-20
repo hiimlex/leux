@@ -17,32 +17,56 @@ const Topography = ({
 	const handleType = () => {
 		const typesArr: Record<string, () => React.ReactElement> = {
 			h1: () => (
-				<h1 className={"le-text--h1 " + customClass} style={customStyles}>
+				<h1
+					className={"le-text--h1 " + customClass}
+					style={customStyles}
+					data-testid="leuxTopography"
+				>
 					{children}
 				</h1>
 			),
 			h2: () => (
-				<h2 className={"le-text--h2 " + customClass} style={customStyles}>
+				<h2
+					className={"le-text--h2 " + customClass}
+					style={customStyles}
+					data-testid="leuxTopography"
+				>
 					{children}
 				</h2>
 			),
 			h3: () => (
-				<h3 className={"le-text--h3 " + customClass} style={customStyles}>
+				<h3
+					className={"le-text--h3 " + customClass}
+					style={customStyles}
+					data-testid="leuxTopography"
+				>
 					{children}
 				</h3>
 			),
 			h4: () => (
-				<h4 className={"le-text--h4 " + customClass} style={customStyles}>
+				<h4
+					className={"le-text--h4 " + customClass}
+					style={customStyles}
+					data-testid="leuxTopography"
+				>
 					{children}
 				</h4>
 			),
 			h5: () => (
-				<h5 className={"le-text--h5 " + customClass} style={customStyles}>
+				<h5
+					className={"le-text--h5 " + customClass}
+					style={customStyles}
+					data-testid="leuxTopography"
+				>
 					{children}
 				</h5>
 			),
 			h6: () => (
-				<h6 className={"le-text--h6 " + customClass} style={customStyles}>
+				<h6
+					className={"le-text--h6 " + customClass}
+					style={customStyles}
+					data-testid="leuxTopography"
+				>
 					{children}
 				</h6>
 			),
@@ -50,6 +74,7 @@ const Topography = ({
 				<h6
 					className={"le-text--subtitle-1 " + customClass}
 					style={customStyles}
+					data-testid="leuxTopography"
 				>
 					{children}
 				</h6>
@@ -58,22 +83,35 @@ const Topography = ({
 				<h6
 					className={"le-text--subtitle-2 " + customClass}
 					style={customStyles}
+					data-testid="leuxTopography"
 				>
 					{children}
 				</h6>
 			),
 			"body-1": () => (
-				<p className={"le-text--body-1 " + customClass} style={customStyles}>
+				<p
+					className={"le-text--body-1 " + customClass}
+					style={customStyles}
+					data-testid="leuxTopography"
+				>
 					{children}
 				</p>
 			),
 			"body-2": () => (
-				<p className={"le-text--body-2 " + customClass} style={customStyles}>
+				<p
+					className={"le-text--body-2 " + customClass}
+					style={customStyles}
+					data-testid="leuxTopography"
+				>
 					{children}
 				</p>
 			),
 			button: () => (
-				<p className={"le-text--button " + customClass} style={customStyles}>
+				<p
+					className={"le-text--button " + customClass}
+					style={customStyles}
+					data-testid="leuxTopography"
+				>
 					{children}
 				</p>
 			),
@@ -81,6 +119,7 @@ const Topography = ({
 				<span
 					className={"le-text--overline " + customClass}
 					style={customStyles}
+					data-testid="leuxTopography"
 				>
 					{children}
 				</span>
@@ -89,6 +128,7 @@ const Topography = ({
 				<span
 					className={"le-text--caption " + customClass}
 					style={customStyles}
+					data-testid="leuxTopography"
 				>
 					{children}
 				</span>
