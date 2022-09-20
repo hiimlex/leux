@@ -5,6 +5,8 @@
 	overflow: hidden;
 	margin-left: 12px;
 	margin-top: 32px;
+	color: $color-dark-text;
+
 
 	position: relative;
 
@@ -18,10 +20,12 @@
 
 			.le-anchor-link {
 				margin: 6px 0;
+				font-weight: 400;
 				cursor: pointer;
 
 				&.active {
-					font-weight: 500;
+					font-weight: bold;
+					color: $color-darker-text;
 				}
 			}
 		}
