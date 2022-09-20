@@ -1,1 +1,1 @@
-export { default } from "./LeCSS";
+export * from "./LeCSS";

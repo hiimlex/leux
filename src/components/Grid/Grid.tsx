@@ -1,5 +1,4 @@
 import React from "react";
-import { Box, BoxProps } from "../Box";
 
 interface GridProps {
 	cols?: React.CSSProperties["gridTemplateColumns"] | number;
@@ -54,6 +53,7 @@ const Grid = ({
 				...customStyles,
 			}}
 			className={customClass}
+			data-testid="leuxGrid"
 		>
 			{children}
 		</div>

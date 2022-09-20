@@ -62,6 +62,7 @@ const Box = ({
 				(centered ? " le-box--centered" : "") +
 				(textColor ? " le-color-text--" + textColor : "")
 			}
+			data-testid="leuxBox"
 		>
 			{children}
 		</div>

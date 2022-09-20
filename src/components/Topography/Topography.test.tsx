@@ -5,7 +5,7 @@ import { Topography } from "./Topography";
 
 import "@testing-library/jest-dom";
 
-describe("LeTopography test", () => {
+describe("Topography component test", () => {
 	it("should render a Topography H1 component", () => {
 		const { getByTestId } = render(<Topography type="h1" children="Test" />);
 
