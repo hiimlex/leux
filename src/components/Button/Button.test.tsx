@@ -4,7 +4,7 @@ import { Button } from "./Button";
 
 import "@testing-library/jest-dom";
 
-describe("Button test", () => {
+describe("Button component test", () => {
 	it("should render Button component", () => {
 		const { getByTestId } = render(<Button children="Button test" />);
 
