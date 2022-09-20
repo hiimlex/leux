@@ -17,7 +17,7 @@ const RenderDocPage = ({ doc }: RenderPageProps) => {
 			if (element) {
 				animateScroll.scrollTo(element.offsetTop - 90);
 			}
-		} else {
+		} else if (document.documentElement.scrollTop > 0) {
 			animateScroll.scrollToTop();
 		}
 	};

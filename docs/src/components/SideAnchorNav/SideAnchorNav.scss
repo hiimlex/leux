@@ -19,6 +19,10 @@
 			.le-anchor-link {
 				margin: 6px 0;
 				cursor: pointer;
+
+				&.active {
+					font-weight: 500;
+				}
 			}
 		}
 	}

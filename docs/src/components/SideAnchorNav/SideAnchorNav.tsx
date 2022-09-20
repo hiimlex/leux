@@ -7,10 +7,13 @@ import "./SideAnchorNav.scss";
 interface AnchorLink {
 	label: string;
 	href: string;
+	element: HTMLElement;
 }
 
 const SideAnchorNav = () => {
 	const [anchors, setAnchors] = useState<AnchorLink[]>([]);
+	const [activeAnchor, setActiveAnchor] = useState("");
+
 	const { pathname } = useLocation();
 
 	const getAllAnchors = () => {
@@ -20,7 +23,7 @@ const SideAnchorNav = () => {
 			const anchor = el as HTMLElement;
 
 			if (anchor.id) {
-				anchors.push({ href: el.id, label: anchor.innerText });
+				anchors.push({ href: el.id, label: anchor.innerText, element: anchor });
 			}
 		});
 
@@ -30,6 +33,46 @@ const SideAnchorNav = () => {
 	useEffect(() => {
 		getAllAnchors();
 	}, [pathname]);
+
+	const [scrollTop, setScrollTop] = useState(document.body.scrollTop);
+
+	const handleActiveAnchor = () => {
+		const active = anchors.find(({ element }, index) => {
+			const {
+				offsetTop: elementOffset,
+				clientHeight: elementHeight,
+				scrollHeight: elementScrollHeight,
+			} = element;
+
+			const { scrollHeight, clientHeight } = document.documentElement;
+
+			if (scrollTop + clientHeight >= scrollHeight) {
+				return index === anchors.length - 1;
+			}
+
+			return elementOffset >= scrollTop;
+		});
+
+		if (active) {
+			setActiveAnchor(active.href);
+		}
+	};
+
+	useEffect(() => {
+		handleActiveAnchor();
+	});
+
+	useEffect(() => {
+		const onScroll = (e: any) => {
+			setScrollTop(e.target.documentElement.scrollTop);
+		};
+
+		handleActiveAnchor();
+
+		window.addEventListener("scroll", onScroll);
+
+		return () => window.removeEventListener("scroll", onScroll);
+	}, [scrollTop]);
 
 	return (
 		<nav className="le-anchor-nav">
@@ -42,7 +85,10 @@ const SideAnchorNav = () => {
 							key={index}
 							to={href}
 							offset={-95}
-							className="le-anchor-link le-text--body-1"
+							className={
+								"le-anchor-link le-text--body-1" +
+								(activeAnchor === href ? " active" : "")
+							}
 						>
 							{label}
 						</Link>

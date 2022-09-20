@@ -1,4 +1,4 @@
-@import "src/core/styles/variables.scss";
+@import "../../core/styles/variables.scss";
 
 .le-sidenav {
 	width: 180px;
@@ -40,7 +40,8 @@
 					font-weight: 400;
 
 					&.active {
-						font-weight: bold !important;
+						color: $color-variant-primary;
+						font-weight: 600 !important;
 					}
 
 					&:hover {
