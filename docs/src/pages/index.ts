@@ -6,3 +6,4 @@ export { default as CSSPage } from "./CSS";
 export { default as NotFoundPage } from "./NotFound";
 export { default as GridPage } from "./Grid";
 export { default as BoxPage } from "./Box";
+export { default as BadgePage } from "./Badge";

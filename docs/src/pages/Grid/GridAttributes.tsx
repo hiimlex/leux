@@ -7,7 +7,7 @@ import { attributes as gridAttr } from "./grid.md";
 
 const GridImportPreview = () => {
 	return (
-		<Code children={`import {  Grid, Box } from 'leux'`} style={dracula} />
+		<Code children={`import {  Grid, GridProps, Box } from 'leux'`} style={dracula} />
 	);
 };
 

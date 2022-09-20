@@ -9,7 +9,7 @@ const ImportPreview = () => {
 	return (
 		<Code
 			children={`import { Box } from 'leux';`}
-			language="jsx"
+			language="javascript"
 			style={dracula}
 		/>
 	);

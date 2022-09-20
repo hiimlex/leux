@@ -1,26 +1,6 @@
 import React from "react";
-import { LeVariants } from "src/types";
+import { BoxProps } from "./Box.model";
 import "./Box.scss";
-
-export type BoxVariants = LeVariants;
-
-interface BoxProps {
-	centered?: boolean;
-	bgColor?: BoxVariants;
-	width?: React.CSSProperties["width"];
-	height?: React.CSSProperties["height"];
-	padding?: React.CSSProperties["margin"];
-	margin?: React.CSSProperties["margin"];
-	borderRadius?: React.CSSProperties["borderRadius"];
-	customClass?: string;
-	customStyles?: React.CSSProperties;
-	children?: React.ReactNode;
-	textColor?: "dark" | "light" | "darker" | "lighter";
-	gridSpan?: {
-		row?: number;
-		col?: number;
-	};
-}
 
 const Box = ({
 	width,
@@ -69,4 +49,4 @@ const Box = ({
 	);
 };
 
-export { Box, BoxProps };
+export { Box };

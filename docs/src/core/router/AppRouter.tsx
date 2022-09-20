@@ -2,6 +2,7 @@ import { LeRenderDocPage } from "@/components";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import {
+	BadgePage,
 	BoxPage,
 	ButtonPage,
 	CSSPage,
@@ -43,6 +44,10 @@ const AppRouter = () => {
 			<Route
 				path="components/button"
 				element={<LeRenderDocPage doc={<ButtonPage />} />}
+			/>
+			<Route
+				path="components/badge"
+				element={<LeRenderDocPage doc={<BadgePage />} />}
 			/>
 			<Route path="*" element={<LeRenderDocPage doc={<NotFoundPage />} />} />
 		</Routes>

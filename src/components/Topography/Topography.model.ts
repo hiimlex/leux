@@ -1,4 +1,6 @@
-export type TopographyTypes =
+import React from "react";
+
+type TopographyTypes =
 	| "h1"
 	| "h2"
 	| "h3"
@@ -12,3 +14,12 @@ export type TopographyTypes =
 	| "caption"
 	| "button"
 	| "overline";
+
+interface TopographyProps {
+	children?: React.ReactNode;
+	type: TopographyTypes;
+	customClass?: string;
+	customStyles?: React.CSSProperties;
+}
+
+export { TopographyProps, TopographyTypes };

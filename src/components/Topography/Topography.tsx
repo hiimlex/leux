@@ -1,12 +1,5 @@
 import React from "react";
-import { TopographyTypes } from "./Topography.model";
-
-interface TopographyProps {
-	children?: React.ReactNode;
-	type: TopographyTypes;
-	customClass?: string;
-	customStyles?: React.CSSProperties;
-}
+import { TopographyProps } from "./Topography.model";
 
 const Topography = ({
 	type,
@@ -137,4 +130,4 @@ const Topography = ({
 	return <div>{typesArr[type] ? typesArr[type] : typesArr["body-1"]}</div>;
 };
 
-export { Topography, TopographyProps };
+export { Topography };

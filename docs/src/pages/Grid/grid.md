@@ -12,8 +12,9 @@ Grid component allows you to create a grid layout. It is based on the CSS Grid.
 	<GridImportPreview></GridImportPreview>
 </div>
 
-- **Grid**: grid container
-- **Box**: recommended component to use as grid items
+- **Grid** is the grid container
+- **GridProps** is the props type
+- **Box** is the recommended component to use as grid item
 
 #### Col
 

@@ -1,0 +1,56 @@
+@import "../../styles/variables.scss";
+
+.le-badge {
+	font-weight: 600;
+	outline: none;
+	border-radius: 4px;
+	border: none;
+
+	&--filled {
+		@each $color, $value in $variant-colors {
+			&.le-badge--#{$color} {
+				color: $color-lighter-text;
+				background: $value;
+
+				@if $color == "default" {
+					color: $color-dark-text;
+				}
+			}
+		}
+	}
+
+	&--outlined {
+		border: 1px solid;
+
+		@each $color, $value in $variant-colors {
+			&.le-badge--#{$color} {
+				color: $value;
+				background: transparent;
+				border-color: $value;
+
+				@if $color == "default" {
+					color: $color-dark-text;
+					border-color: $value;
+				}
+			}
+		}
+	}
+
+	&--ghost {
+		@each $color, $value in $variant-colors {
+			&.le-badge--#{$color} {
+				color: $value;
+				background: rgba($value, 25%);
+
+				@if $color == "default" {
+					color: $color-dark-text;
+					background: rgba($value, 25%);
+				}
+			}
+		}
+	}
+
+	&--small {}
+	&--medium {}
+	&--large {}
+}

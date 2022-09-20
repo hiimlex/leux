@@ -3,7 +3,7 @@
 Topography is a layout component. It is used to create headings, paragraphs, and other text elements overriding the parent style.
 
 <div>
-<LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/LeTopography"></LeSourceButton>
+<LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/Topography"></LeSourceButton>
 </div>
 
 #### Import
@@ -12,8 +12,8 @@ Topography is a layout component. It is used to create headings, paragraphs, and
 <ImportPreview></ImportPreview>
 </div>
 
-- **LeTopography**: the topography component
-- **LeTopographyProps**: the topography props
+- **LeTopography** is the text component
+- **LeTopographyProps** is the props type
 
 #### Type
 
@@ -47,8 +47,6 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the component
 </div>
 
 ### API Reference
-
-Props Summary
 
 <div>
 <table width="100%" border="0">

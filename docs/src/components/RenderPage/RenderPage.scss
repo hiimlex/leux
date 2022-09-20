@@ -15,6 +15,7 @@
 			font-weight: 500;
 			font-size: 0.875rem;
 			padding: 0;
+			background: transparent;
 		}
 	}
 
@@ -23,6 +24,7 @@
 		border-radius: 4px;
 		font-weight: 500;
 		font-size: 0.75rem;
+		background: #ececec;
 	}
 
 	.le-preview {
@@ -33,6 +35,10 @@
 
 		button {
 			margin-right: 12px;
+		}
+
+		.le-badge {
+			margin-right: 12px !important;
 		}
 	}
 

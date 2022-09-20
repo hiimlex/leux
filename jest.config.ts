@@ -4,7 +4,7 @@ const config: Config = {
 	projects: [
 		{
 			displayName: "lib",
-			testMatch: ["<rootDir>/src/**/*.test.tsx"],
+			testMatch: ["<rootDir>/src/**/*.(spec|test).tsx"],
 			testEnvironment: "jsdom",
 			moduleNameMapper: {
 				".(css|less|scss)$": "identity-obj-proxy",

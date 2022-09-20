@@ -23,7 +23,7 @@ const ButtonVariantPreview = () => (
 			<Button variant="default">Default</Button>
 		</div>
 		<Code
-			language="jsx"
+			language="javascript|html"
 			children={`<Button variant="primary">Primary</Button>
 <Button variant="secondary">Secondary</Button>
 <Button variant="success">Success</Button>

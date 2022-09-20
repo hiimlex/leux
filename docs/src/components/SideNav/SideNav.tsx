@@ -26,7 +26,10 @@ const LINKS: Record<string, ILink[]> = {
 			path: "/layout/box",
 		},
 	],
-	Components: [{ name: "Button", path: "/components/button" }],
+	Components: [
+		{ name: "Button", path: "/components/button" },
+		{ name: "Badge", path: "/components/badge" },
+	],
 };
 
 const SideNav = () => {

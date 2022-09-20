@@ -8,7 +8,7 @@
 	cursor: pointer;
 	border: none;
 
-	&.le-button--filled {
+	&--filled {
 		@each $color, $value in $variant-colors {
 			&.le-button--#{$color} {
 				color: $color-lighter-text;
@@ -25,7 +25,7 @@
 		}
 	}
 
-	&.le-button--outlined {
+	&--outlined {
 		border: 1px solid;
 
 		@each $color, $value in $variant-colors {
@@ -52,7 +52,7 @@
 		}
 	}
 
-	&.le-button--ghost {
+	&--ghost {
 		@each $color, $value in $variant-colors {
 			&.le-button--#{$color} {
 				color: $value;
@@ -74,22 +74,22 @@
 		}
 	}
 
-	&.le-button--small {
+	&--small {
 		padding: 0.4rem 0.7rem;
 		font-size: 0.75rem;
 	}
 
-	&.le-button--medium {
+	&--medium {
 		padding: 0.5rem 0.8rem;
 		font-size: 0.875rem;
 	}
 
-	&.le-button--large {
+	&--large {
 		padding: 0.6rem 0.9rem;
 		font-size: 1rem;
 	}
 
-	&.le-button--disabled {
+	&--disabled {
 		cursor: not-allowed !important;
 		background: #afafaf !important;
 		color: #3c3c3c !important;

@@ -1,18 +1,6 @@
 import React, { MouseEvent } from "react";
-import { LeSizes } from "src/types";
-import { ButtonState, ButtonTypes, ButtonVariants } from "./Button.model";
+import { ButtonProps } from "./Button.model";
 import "./Button.scss";
-
-interface ButtonProps {
-	variant?: ButtonVariants;
-	type?: ButtonTypes;
-	size?: LeSizes;
-	onClick?: (event?: MouseEvent<HTMLButtonElement>) => void;
-	state?: ButtonState;
-	children?: React.ReactNode;
-	customClass?: string;
-	customStyles?: React.CSSProperties;
-}
 
 const Button = ({
 	variant = "default",
@@ -47,4 +35,4 @@ const Button = ({
 	);
 };
 
-export { Button, ButtonProps };
+export { Button };
