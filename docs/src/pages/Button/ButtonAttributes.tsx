@@ -50,9 +50,9 @@ const ButtonTypePreview = () => (
 		</div>
 		<Code
 			language="jsx"
-			children={`<Button variant="default" type="filled">Filled</Button>
-<Button variant="default" type="outlined">Outlined</Button>
-<Button variant="primary" type="ghost">Ghost</Button>`}
+			children={`<Button variant="success" type="filled">Filled</Button>
+<Button variant="success" type="outlined">Outlined</Button>
+<Button variant="danger" type="ghost">Ghost</Button>`}
 			style={dracula}
 		></Code>
 	</>

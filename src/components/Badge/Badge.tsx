@@ -3,10 +3,10 @@ import { BadgeProps } from "./Badge.model";
 import "./Badge.scss";
 
 const Badge = ({
-	type = "filled",
+	type = "ghost",
 	variant = "default",
 	children,
-	size,
+	size = "medium",
 	customStyles,
 	customClass,
 }: BadgeProps) => {

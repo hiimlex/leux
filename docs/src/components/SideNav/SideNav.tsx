@@ -6,7 +6,7 @@ interface ILink {
 	path: string;
 }
 
-const LINKS: Record<string, ILink[]> = {
+export const LINKS: Record<string, ILink[]> = {
 	"Getting Started": [
 		{ name: "Overview", path: "/started/overview" },
 		{ name: "Installation", path: "/started/installation" },

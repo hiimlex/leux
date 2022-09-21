@@ -1,6 +1,6 @@
 import React from "react";
 
-type BadgeTypes = "filled" | "outlined" | "ghost";
+type BadgeTypes = "dashed" | "ghost" | "outlined";
 type BadgeVariants =
 	| "primary"
 	| "secondary"

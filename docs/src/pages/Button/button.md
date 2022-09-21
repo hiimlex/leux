@@ -93,5 +93,3 @@ Use the `onClick` prop to trigger an action when the button is clicked.
 </tbody>
 </table>
 </div>
-
-<hr />

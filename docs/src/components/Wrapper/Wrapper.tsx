@@ -1,5 +1,4 @@
 import { LeSideAnchorNav, LeSideNav } from "..";
-import { Footer } from "../Footer";
 import "./Wrapper.scss";
 
 interface WrapperProps {
@@ -12,10 +11,7 @@ const Wrapper = ({ children }: WrapperProps) => {
 			<div className="le-md--container">
 				<div className="le-md--content">
 					<LeSideNav></LeSideNav>
-					<main className="le-docs">
-						{children}
-						<Footer />
-					</main>
+					<main className="le-docs">{children}</main>
 					<LeSideAnchorNav />
 				</div>
 			</div>

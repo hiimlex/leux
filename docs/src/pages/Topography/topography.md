@@ -76,5 +76,3 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the component
 </tbody>
 </table>
 </div>
-
-<hr />

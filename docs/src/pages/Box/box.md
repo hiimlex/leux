@@ -12,7 +12,7 @@ The Box component is a simple wrapper component that can be used to display data
 	<ImportPreview></ImportPreview>
 </div>
 
-- **Box** - The Box component
+- **Box** is The Box component
 
 #### Full usage
 
@@ -115,5 +115,3 @@ The Box component can be used to create a grid layout. Check <NavLink to="/layou
 </tbody>
 </table>
 </div>
-
-<hr />

@@ -98,5 +98,3 @@ To increase the size of a item on grid, use the `gridSpan` props from <NavLink t
 </tbody>
 </table>
 </div>
-
-<hr />

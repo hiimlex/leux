@@ -32,6 +32,10 @@
 		margin: 8px 0;
 		border-radius: 8px;
 		border: 1px solid $color-light-text;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
 
 		button {
 			margin-right: 12px;

@@ -5,9 +5,10 @@ import "./RenderPage.scss";
 
 interface RenderPageProps {
 	doc: ReactElement;
+	title: string;
 }
 
-const RenderDocPage = ({ doc }: RenderPageProps) => {
+const RenderDocPage = ({ doc, title }: RenderPageProps) => {
 	const { hash, pathname } = useLocation();
 
 	const handleHashScroll = () => {
@@ -22,8 +23,13 @@ const RenderDocPage = ({ doc }: RenderPageProps) => {
 		}
 	};
 
+	const handlePageTitle = () => {
+		document.title = `LeUX - ${title}`;
+	};
+
 	useEffect(() => {
 		handleHashScroll();
+		handlePageTitle();
 	}, [pathname]);
 
 	return <div className="le-markdown" children={doc}></div>;
