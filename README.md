@@ -72,7 +72,7 @@ To upload the CSS styles, you can move the **leux.min.css** from the **node_modu
   - [ ] Dropdown
   - [ ] Progress/Spinner
   - [x] Box
-  - [ ] Badge
+  - [X] Badge
   - [ ] Alert
   - [ ] Breadcrumb
 - [ ] add more tests
