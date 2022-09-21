@@ -48,7 +48,6 @@ To upload the CSS styles, you can move the **leux.min.css** from the **node_modu
 
 - Create a custom syntax highlighter with refractor
 - Setup github actions and build gh-pages
-- Badge component
 
 ## Next steps:
 
