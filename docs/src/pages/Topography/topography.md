@@ -68,17 +68,17 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the component
 <tbody>
 <tr>
 <td>type</td>
-<td><Code children="'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'subtitle-1' | 'subtitle-2' | 'body-1' | 'body-2' | 'caption' | 'overline' | 'button'" language="jsx"></Code></td>
+<td><LeHighlighter code="'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'subtitle-1' | 'subtitle-2' | 'body-1' | 'body-2' | 'caption' | 'overline' | 'button'" language="tsx"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>customClass</td>
-<td><Code children="'string'" language="jsx"></Code></td>
+<td><LeHighlighter code="'string'" language="tsx"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>customStyles</td>
-<td><Code children="React.CSSProperties" language="jsx"></Code></td>
+<td><LeHighlighter code="React.CSSProperties" language="tsx"></LeHighlighter></td>
 <td>-</td>
 </tr>
 </tbody>

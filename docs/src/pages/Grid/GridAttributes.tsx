@@ -1,13 +1,14 @@
-import { LeSourceButton } from "@/components";
+import { LeHighlighter, LeSourceButton } from "@/components";
 import { NavLink } from "react-router-dom";
-import Code from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { Box, Grid, Topography } from "../../../../src";
+import { Box, BoxVariants, Grid, Topography } from "../../../../src";
 import { attributes as gridAttr } from "./grid.md";
 
 const GridImportPreview = () => {
 	return (
-		<Code children={`import {  Grid, GridProps, Box } from 'leux'`} style={dracula} />
+		<LeHighlighter
+			language="tsx"
+			code={`import {  Grid, GridProps, Box } from 'leux'`}
+		/>
 	);
 };
 
@@ -16,7 +17,7 @@ const GridColPreview = () => {
 		<>
 			<div className="le-preview">
 				<Grid cols={3}>
-					{["primary", "success", "danger"].map((item) => (
+					{(["primary", "success", "danger"] as BoxVariants[]).map((item) => (
 						<Box
 							key={item}
 							bgColor={item}
@@ -30,10 +31,9 @@ const GridColPreview = () => {
 					))}
 				</Grid>
 			</div>
-			<Code
-				language="jsx"
-				style={dracula}
-				children={`<Grid cols={3}>
+			<LeHighlighter
+				language="tsx"
+				code={`<Grid cols={3}>
 	{["primary", "success", "danger"].map((item) => (
 		<Box
 			key={item}
@@ -57,7 +57,7 @@ const GridRowPreview = () => {
 		<>
 			<div className="le-preview">
 				<Grid rows={3}>
-					{["primary", "success", "danger"].map((item) => (
+					{(["primary", "success", "danger"] as BoxVariants[]).map((item) => (
 						<Box
 							key={item}
 							bgColor={item}
@@ -71,10 +71,9 @@ const GridRowPreview = () => {
 					))}
 				</Grid>
 			</div>
-			<Code
-				language="jsx"
-				style={dracula}
-				children={`<Grid rows={3}>
+			<LeHighlighter
+				language="tsx"
+				code={`<Grid rows={3}>
 	{["primary", "success", "danger"].map((item) => (
 		<Box
 			key={item}
@@ -112,9 +111,9 @@ const GridGapPreview = () => {
 					))}
 				</Grid>
 			</div>
-			<Code
-				language="jsx"
-				children={`<Grid cols={3} rows={3} gap={{ col: 5, row: 5 }} width="25%" padding="12px">
+			<LeHighlighter
+				language="tsx"
+				code={`<Grid cols={3} rows={3} gap={{ col: 5, row: 5 }} width="25%" padding="12px">
 	{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
 		<Box
 			key={item}
@@ -128,7 +127,6 @@ const GridGapPreview = () => {
 		</Box>
 	))}
 </Grid>`}
-				style={dracula}
 			/>
 		</>
 	);
@@ -170,9 +168,9 @@ const GridSpanPreview = () => {
 					))}
 				</Grid>
 			</div>
-			<Code
-				language="jsx"
-				children={`<Grid cols={4} rows={2} gap={{ row: 12, col: 12 }}>
+			<LeHighlighter
+				language="tsx"
+				code={`<Grid cols={4} rows={2} gap={{ row: 12, col: 12 }}>
 	<Box
 		padding={4}
 		bgColor="success"
@@ -203,7 +201,6 @@ const GridSpanPreview = () => {
 		</Box>
 	))}
 </Grid>`}
-				style={dracula}
 			/>
 		</>
 	);
@@ -216,6 +213,6 @@ gridAttr["GridRowPreview"] = GridRowPreview;
 gridAttr["GridGapPreview"] = GridGapPreview;
 gridAttr["GridSpanPreview"] = GridSpanPreview;
 gridAttr["NavLink"] = NavLink;
-gridAttr["Code"] = Code;
+gridAttr["LeHighlighter"] = LeHighlighter;
 
 export { gridAttr };

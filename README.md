@@ -46,7 +46,6 @@ To upload the CSS styles, you can move the **leux.min.css** from the **node_modu
 
 ### 📌 To-do
 
-- Create a custom syntax highlighter with refractor
 - Setup github actions and build gh-pages
 
 ## Next steps:
@@ -71,7 +70,7 @@ To upload the CSS styles, you can move the **leux.min.css** from the **node_modu
   - [ ] Dropdown
   - [ ] Progress/Spinner
   - [x] Box
-  - [X] Badge
+  - [x] Badge
   - [ ] Alert
   - [ ] Breadcrumb
 - [ ] add more tests

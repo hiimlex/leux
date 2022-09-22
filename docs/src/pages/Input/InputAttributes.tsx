@@ -1,15 +1,12 @@
-import { attributes as inputAttr } from "./input.md";
-import Code from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { LeHighlighter, LeSourceButton } from "@/components";
 import { useState } from "react";
 import { Input, Topography } from "../../../../src";
-import { LeSourceButton } from "@/components";
+import { attributes as inputAttr } from "./input.md";
 
 const InputImportPreview = () => (
-	<Code
-		children={`import { Input, InputProps } from 'leux';`}
-		style={dracula}
-		language="javascript"
+	<LeHighlighter
+		code={`import { Input, InputProps } from 'leux';`}
+		language="tsx"
 	/>
 );
 
@@ -19,10 +16,9 @@ const InputVariantPreview = () => (
 			<Input variant="filled" placeholder="Placeholder" />
 			<Input variant="outlined" placeholder="Placeholder" />
 		</div>
-		<Code
-			language="html"
-			style={dracula}
-			children={`<Input variant="filled" placeholder="Placeholder" />
+		<LeHighlighter
+			language="tsx"
+			code={`<Input variant="filled" placeholder="Placeholder" />
 <Input variant="outlined" placeholder="Placeholder" />`}
 		/>
 	</>
@@ -35,10 +31,9 @@ const InputSizePreview = () => (
 			<Input variant="outlined" placeholder="Medium" size="medium" />
 			<Input variant="outlined" placeholder="Large" size="large" />
 		</div>
-		<Code
-			language="html"
-			style={dracula}
-			children={`<Input variant="filled" placeholder="Small" size="small" />
+		<LeHighlighter
+			language="tsx"
+			code={`<Input variant="filled" placeholder="Small" size="small" />
 <Input variant="outlined" placeholder="Medium" size="medium" />
 <Input variant="outlined" placeholder="Large" size="large" />`}
 		/>
@@ -51,11 +46,10 @@ const InputFocusPreview = () => (
 			<Input placeholder="Focus" focusStyle />
 			<Input placeholder="Focus" focusStyle={false} />
 		</div>
-		<Code
-			children={`<Input placeholder="Focus" focusStyle />
+		<LeHighlighter
+			code={`<Input placeholder="Focus" focusStyle />
 <Input placeholder="Focus" focusStyle={false} />`}
-			style={dracula}
-			language="html"
+			language="tsx"
 		/>
 	</>
 );
@@ -76,10 +70,9 @@ const InputActionPreview = () => {
 					}}
 				/>
 			</div>
-			<Code
-				language="html"
-				style={dracula}
-				children={`<Topography type="body-2">type to see the value here: {value}</Topography>
+			<LeHighlighter
+				language="tsx"
+				code={`<Topography type="body-2">type to see the value here: {value}</Topography>
 <Input
 	key="preview"
 	placeholder="Action"
@@ -98,10 +91,9 @@ const InputStatePreview = () => {
 			<div className="le-preview">
 				<Input state={{ disabled: true }} placeholder="Disabled" />
 			</div>
-			<Code
-				children={`<Input state={{ disabled: true }} placeholder="Disabled" />`}
-				language="html"
-				style={dracula}
+			<LeHighlighter
+				code={`<Input state={{ disabled: true }} placeholder="Disabled" />`}
+				language="tsx"
 			/>
 		</>
 	);

@@ -38,9 +38,9 @@ const Box = ({
 			}}
 			className={
 				(bgColor ? `le-bg--${bgColor}` : "") +
-				(customClass ? " " + customClass : "") +
+				(customClass ? ` ${customClass}` : "") +
 				(centered ? " le-box--centered" : "") +
-				(textColor ? " le-color-text--" + textColor : "")
+				(textColor ? ` le-color-text--${textColor}` : "")
 			}
 			data-testid="leuxBox"
 		>

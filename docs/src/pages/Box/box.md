@@ -79,52 +79,52 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the Box compo
 <tbody>
 <tr>
 <td>centered</td>
-<td><Code children="'boolean'" language="jsx"></Code></td>
+<td><LeHighlighter code="'boolean'" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>bgColor</td>
-<td><Code children="'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'" language="jsx"></Code></td>
+<td><LeHighlighter code="'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>width</td>
-<td><Code children="React.CSSProperties['width']" language="jsx"></Code></td>
+<td><LeHighlighter code="React.CSSProperties['width']" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>height</td>
-<td><Code children="React.CSSProperties['height']" language="jsx"></Code></td>
+<td><LeHighlighter code="React.CSSProperties['height']" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>margin</td>
-<td><Code children="React.CSSProperties['margin']" language="jsx"></Code></td>
+<td><LeHighlighter code="React.CSSProperties['margin']" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>borderRadius</td>
-<td><Code children="React.CSSProperties['borderRadius']" language="jsx"></Code></td>
+<td><LeHighlighter code="React.CSSProperties['borderRadius']" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>textColor</td>
-<td><Code children="'dark' | 'light' | 'darker' | 'lighter'" language="jsx"></Code></td>
+<td><LeHighlighter code="'dark' | 'light' | 'darker' | 'lighter'" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>gridSpan</td>
-<td><Code children="{ 'row': 1, 'col': 0 }" language="jsx"></Code></td>
+<td><LeHighlighter code="{ 'row': 1, 'col': 0 }" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>customClass</td>
-<td><Code children="'string'" language="jsx"></Code></td>
+<td><LeHighlighter code="'string'" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>customStyles</td>
-<td><Code children="React.CSSProperties" language="jsx"></Code></td>
+<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 </tbody>

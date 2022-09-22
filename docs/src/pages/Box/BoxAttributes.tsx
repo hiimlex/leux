@@ -1,16 +1,13 @@
-import { LeSourceButton } from "@/components";
+import { LeHighlighter, LeSourceButton } from "@/components";
 import { NavLink } from "react-router-dom";
-import Code from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { Box } from "../../../../src";
 import { attributes as boxAttr } from "./box.md";
 
 const ImportPreview = () => {
 	return (
-		<Code
-			children={`import { Box, BoxProps } from 'leux';`}
-			language="javascript"
-			style={dracula}
+		<LeHighlighter
+			code={`import { Box, BoxProps } from 'leux';`}
+			language="tsx"
 		/>
 	);
 };
@@ -30,10 +27,9 @@ const BoxCssPreview = () => {
 					CSS Properties example
 				</Box>
 			</div>
-			<Code
-				language="jsx"
-				style={dracula}
-				children={`<Box
+			<LeHighlighter
+				language="tsx"
+				code={`<Box
 	padding="30px"
 	height="100px"
 	width="100px"
@@ -67,10 +63,9 @@ const BoxCompletePreview = () => {
 					Complete box
 				</Box>
 			</div>
-			<Code
-				language="jsx"
-				style={dracula}
-				children={`<Box
+			<LeHighlighter
+				language="tsx"
+				code={`<Box
 	customClass="le-text--body-1"
 	customStyles={{ fontWeight: 600 }}
 	bgColor="primary"
@@ -104,10 +99,9 @@ const BoxCustomPreview = () => {
 					with custom CSS and Classes
 				</Box>
 			</div>
-			<Code
-				style={dracula}
-				language="jsx"
-				children={`<Box
+			<LeHighlighter
+				language="tsx"
+				code={`<Box
 	customClass="le-color-text--primary le-bg--default le-text--body-2"
 	customStyles={{
 		display: "flex",
@@ -137,10 +131,9 @@ const BoxCenteredPreview = () => {
 					text will be centered
 				</Box>
 			</div>
-			<Code
-				language="jsx"
-				style={dracula}
-				children={`<Box centered padding={12} bgColor="default" textColor="darker">
+			<LeHighlighter
+				language="tsx"
+				code={`<Box centered padding={12} bgColor="default" textColor="darker">
 	text will be centered
 </Box>`}
 			/>
@@ -155,6 +148,6 @@ boxAttr["BoxCssPreview"] = BoxCssPreview;
 boxAttr["BoxCustomPreview"] = BoxCustomPreview;
 boxAttr["BoxCenteredPreview"] = BoxCenteredPreview;
 boxAttr["NavLink"] = NavLink;
-boxAttr["Code"] = Code;
+boxAttr["LeHighlighter"] = LeHighlighter;
 
 export { boxAttr };

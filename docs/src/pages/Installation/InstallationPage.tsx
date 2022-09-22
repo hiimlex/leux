@@ -1,24 +1,24 @@
-import React from "react";
-import {
-	ReactComponent as InstallationMD,
-	attributes as installationAttr,
-} from "./installation.md";
-import Code from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { LeHighlighter } from "@/components";
 import { NavLink } from "react-router-dom";
+import {
+	attributes as installationAttr,
+	ReactComponent as InstallationMD,
+} from "./installation.md";
 
 const NpmCode = () => (
-	<Code language="bash" style={dracula}>
-		{`npm install leux
+	<LeHighlighter
+		language="bash"
+		code={`npm install leux
 
 yarn install leux`}
-	</Code>
+	/>
 );
 
 const LinkCode = () => (
-	<Code language="html" style={dracula}>
-		{`<link rel="stylesheet" href="leux.min.css" />`}
-	</Code>
+	<LeHighlighter
+		language="tsx"
+		code={`<link rel="stylesheet" href="leux.min.css" />`}
+	/>
 );
 
 installationAttr["NpmCode"] = NpmCode;

@@ -71,37 +71,37 @@ Use the `onClick` prop to trigger an action when the button is clicked.
 <tbody>
 <tr>
 <td>type</td>
-<td><Code language="jsx" children="'filled' | 'outlined' | 'ghost'"></Code></td>
-<td><Code language="jsx" children="'filled'"></td>
+<td><LeHighlighter language="tsx" code="'filled' | 'outlined' | 'ghost'" style="soft"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="'filled'" style="soft"></td>
 </tr>
 <tr>
 <td>variant</td>
-<td><Code language="jsx" children="'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'"></Code></td>
-<td><Code language="jsx" children="'primary'"></td>
+<td><LeHighlighter language="tsx" code="'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'" style="soft"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="'primary'" style="soft"></td>
 </tr>
 <tr>
 <td>size</td>
-<td><Code language="jsx" children="'small' | 'medium' | 'large'"></Code></td>
-<td><Code language="jsx" children="'medium'"></td>
+<td><LeHighlighter language="tsx" code="'small' | 'medium' | 'large'" style="soft"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="'medium'" style="soft"></td>
 </tr>
 <tr>
 <td>state</td>
-<td><Code language="jsx" children="{ disabled: boolean }"></Code></td>
-<td><Code language="jsx" children="{}"></td>
+<td><LeHighlighter language="tsx" code="{ disabled: boolean }" style="soft"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="{}" style="soft"></td>
 </tr>
 <tr>
 <td>onClick</td>
-<td><Code language="jsx" children="() => void"></Code></td>
+<td><LeHighlighter language="tsx" code="() => void" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>customClass</td>
-<td><Code children="'string'" language="jsx"></Code></td>
+<td><LeHighlighter code="'string'" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>customStyles</td>
-<td><Code children="React.CSSProperties" language="jsx"></Code></td>
+<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 </tbody>

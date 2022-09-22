@@ -1,16 +1,13 @@
 import { attributes as badgeAttr } from "./badge.md";
 
-import Code from "react-syntax-highlighter";
-
-import { LeSourceButton } from "@/components";
+import { LeHighlighter, LeSourceButton } from "@/components";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { Badge } from "../../../../src";
 
 const BadgeImportPreview = () => (
-	<Code
-		children={`import { Badge, BadgeProps } from 'leux';`}
-		style={dracula}
-		language="javascript|html"
+	<LeHighlighter
+		code={`import { Badge, BadgeProps } from 'leux';`}
+		language="tsx"
 	/>
 );
 
@@ -27,11 +24,10 @@ const BadgeTypePreview = () => (
 				Ghost
 			</Badge>
 		</div>
-		<Code
-			children={`<Badge type="dashed">Dashed</Badge>
+		<LeHighlighter
+			code={`<Badge type="dashed">Dashed</Badge>
 <Badge type="ghost">Ghost</Badge>`}
-			style={dracula}
-			language="html"
+			language="tsx"
 		/>
 	</>
 );
@@ -46,15 +42,14 @@ const BadgeVariantPreview = () => (
 			<Badge variant="warning">Warning</Badge>
 			<Badge variant="default">Default</Badge>
 		</div>
-		<Code
-			children={`<Badge variant="primary">Primary</Badge>
+		<LeHighlighter
+			code={`<Badge variant="primary">Primary</Badge>
 <Badge variant="secondary">Secondary</Badge>
 <Badge variant="success">Success</Badge>
 <Badge variant="danger">Danger</Badge>
 <Badge variant="warning">Warning</Badge>
 <Badge variant="default">Default</Badge>`}
-			style={dracula}
-			language="html"
+			language="tsx"
 		/>
 	</>
 );
@@ -66,8 +61,8 @@ const BadgeSizePreview = () => (
 			<Badge size="medium">Medium</Badge>
 			<Badge size="large">Large</Badge>
 		</div>
-		<Code
-			children={`<Badge size="small" variant="primary">
+		<LeHighlighter
+			code={`<Badge size="small" variant="primary">
 	Small
 </Badge>
 <Badge size="medium" variant="success">
@@ -76,8 +71,7 @@ const BadgeSizePreview = () => (
 <Badge size="large" variant="danger">
 	Large
 </Badge>`}
-			style={dracula}
-			language="html"
+			language="tsx"
 		/>
 	</>
 );
@@ -93,16 +87,15 @@ const BadgeCustomPreview = () => (
 				Custom Badge
 			</Badge>
 		</div>
-		<Code
-			children={`<Badge
+		<LeHighlighter
+			code={`<Badge
 	customClass="le-bg--primary"
 	type="dashed"
 	customStyles={{ color: "purple", borderColor: "purple" }}
 >
 	Custom Badge
 </Badge>`}
-			style={dracula}
-			language="html"
+			language="tsx"
 		/>
 	</>
 );
@@ -113,6 +106,6 @@ badgeAttr["BadgeTypePreview"] = BadgeTypePreview;
 badgeAttr["BadgeVariantPreview"] = BadgeVariantPreview;
 badgeAttr["BadgeSizePreview"] = BadgeSizePreview;
 badgeAttr["BadgeCustomPreview"] = BadgeCustomPreview;
-badgeAttr["Code"] = Code;
+badgeAttr["LeHighlighter"] = LeHighlighter;
 
 export { badgeAttr };

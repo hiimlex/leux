@@ -74,37 +74,37 @@ To increase the size of a item on grid, use the `gridSpan` props from <NavLink t
 <tbody>
 <tr>
 <td>cols</td>
-<td><Code language="jsx" children="React.CSSProperties['gridTemplateColumns']"></Code></td>
+<td><LeHighlighter language="tsx" code="React.CSSProperties['gridTemplateColumns']"></LeHighlighter></td>
 <td width="20%">-</td>
 </tr>
 <tr>
 <td>rows</td>
-<td><Code language="jsx" children="React.CSSProperties['gridTemplateRows']"></Code></td>
+<td><LeHighlighter language="tsx" code="React.CSSProperties['gridTemplateRows']"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>gap</td>
-<td><Code language="jsx" children="{ 'col': React.CSSProperties['columnGap'], 'row': React.CSSProperties['rowGap'] }"></Code></td>
+<td><LeHighlighter language="tsx" code="{ 'col': React.CSSProperties['columnGap'], 'row': React.CSSProperties['rowGap'] }"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>width</td>
-<td><Code language="jsx" children="React.CSSProperties['width']"></Code></td>
-<td><Code language="jsx" children="'100%'"></Code></td>
+<td><LeHighlighter language="tsx" code="React.CSSProperties['width']"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="'100%'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>padding</td>
-<td><Code language="jsx" children="React.CSSProperties['padding']"></Code></td>
+<td><LeHighlighter language="tsx" code="React.CSSProperties['padding']"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>customClass</td>
-<td><Code children="'string'" language="jsx"></Code></td>
+<td><LeHighlighter code="'string'" language="tsx"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>customStyles</td>
-<td><Code children="React.CSSProperties" language="jsx"></Code></td>
+<td><LeHighlighter code="React.CSSProperties" language="tsx"></LeHighlighter></td>
 <td>-</td>
 </tr>
 </tbody>
