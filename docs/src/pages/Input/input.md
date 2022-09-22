@@ -18,6 +18,17 @@ Input component is used to that allows users enter text.
 
 <br/>
 
+#### Field Key
+
+Use the `fieldKey` prop to set the name and id of the input.
+
+<div>
+<InputKeyPreview>
+</InputKeyPreview>
+</div>
+
+<br />
+
 #### Variant
 
 Use the `variant` prop to change the appearance of the input field.
@@ -75,8 +86,82 @@ Use the `state` prop to control the field states.
 
 Use the `customClass` and `customStyles` prop to add custom CSS to the Input component.
 
+<div>
+<InputCustomPreview>
+</InputCustomPreview>
+</div>
+
 <br />
 
 ### API Reference
+
+<div>
+<table width="100%" border="0">
+<thead>
+<tr>
+<th width="10%">Prop</th>
+<th>Type</th>
+<th width="20%">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fieldKey</td>
+<td><LeHighlighter language="tsx" code="string" style="soft"></LeHighlighter></td>
+<td>-</td>
+</tr>
+<tr>
+<td>type</td>
+<td><LeHighlighter language="tsx" code="'text' | 'password' | 'email'" style="soft"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="'filled'" style="soft"></LeHighlighter></td>
+</tr>
+<tr>
+<td>size</td>
+<td><LeHighlighter language="tsx" code="'small' | 'medium' | 'large'" style="soft"></LeHighlighter></td>
+<td>-</td>
+</tr>
+<tr>
+<td>variant</td>
+<td><LeHighlighter language="tsx" code="'outlined' | 'filled'" style="soft"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="'filled'" style="soft"></LeHighlighter></td>
+</tr>
+<tr>
+<td>width</td>
+<td><LeHighlighter language="tsx" code="React.CSSProperties['width']" style="soft"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="'auto'" style="soft"></LeHighlighter></td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td><LeHighlighter language="tsx" code="string" style="soft"></LeHighlighter></td>
+<td>-</td>
+</tr>
+<tr>
+<td>focusStyle</td>
+<td><LeHighlighter code="boolean" language="tsx" style="soft"></LeHighlighter></td>
+<td><LeHighlighter code="true" language="tsx" style="soft"></LeHighlighter></td>
+</tr>
+<tr>
+<td>onChange</td>
+<td><LeHighlighter code="(e: React.ChangeEvent<HTMLInputElement) => void" language="tsx" style="soft"></LeHighlighter></td>
+<td>-</td>
+</tr>
+<tr>
+<td>state</td>
+<td><LeHighlighter code="{ disabled?: boolean; }" language="tsx" style="soft"></LeHighlighter></td>
+<td>-</td>
+</tr>
+<tr>
+<td>customClass</td>
+<td><LeHighlighter code="string" language="tsx" style="soft"></LeHighlighter></td>
+<td>-</td>
+</tr>
+<tr>
+<td>customStyles</td>
+<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft"></LeHighlighter></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 <br/>

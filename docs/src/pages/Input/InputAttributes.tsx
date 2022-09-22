@@ -10,6 +10,24 @@ const InputImportPreview = () => (
 	/>
 );
 
+const InputKeyPreview = () => (
+	<>
+		<div className="le-preview le-input-group">
+			<Topography type="body-1">
+				Inspect element to see the id and name attributes
+			</Topography>
+			<Input fieldKey="key" placeholder="Key" />
+		</div>
+		<LeHighlighter
+			code={`<Topography type="body-1">
+	Inspect element to see the id and name attributes
+</Topography>
+<Input fieldKey="key" placeholder="Key" />`}
+			language="tsx"
+		/>
+	</>
+);
+
 const InputVariantPreview = () => (
 	<>
 		<div className="le-preview le-input-group">
@@ -72,14 +90,22 @@ const InputActionPreview = () => {
 			</div>
 			<LeHighlighter
 				language="tsx"
-				code={`<Topography type="body-2">type to see the value here: {value}</Topography>
-<Input
-	key="preview"
-	placeholder="Action"
-	onChange={(e) => {
-		setValue(e.target.value);
-	}}
-/>`}
+				code={`const Component = () = {
+	const [value, setValue] = useState("");
+
+	return (
+		<>
+			<Topography type="body-2">type to see the value here: {value}</Topography>
+			<Input
+				key="preview"
+				placeholder="Action"
+				onChange={(e) => {
+					setValue(e.target.value);
+				}}
+			/>
+		</>
+	)
+}`}
 			/>
 		</>
 	);
@@ -99,6 +125,36 @@ const InputStatePreview = () => {
 	);
 };
 
+const InputCustomPreview = () => {
+	return (
+		<>
+			<div className="le-preview">
+				<Input
+					placeholder="Custom input"
+					customStyles={{
+						color: "red",
+						borderColor: "green",
+						backgroundColor: "blue",
+					}}
+					customClass="le-text--h6"
+				/>
+			</div>
+			<LeHighlighter
+				code={`<Input
+	placeholder="Custom input"
+	customStyles={{
+		color: "red",
+		borderColor: "green",
+		backgroundColor: "blue",
+	}}
+	customClass="le-text--h6"
+/>`}
+				language="tsx"
+			/>
+		</>
+	);
+};
+
 inputAttr["InputImportPreview"] = InputImportPreview;
 inputAttr["LeSourceButton"] = LeSourceButton;
 inputAttr["InputVariantPreview"] = InputVariantPreview;
@@ -106,5 +162,8 @@ inputAttr["InputSizePreview"] = InputSizePreview;
 inputAttr["InputActionPreview"] = InputActionPreview;
 inputAttr["InputFocusPreview"] = InputFocusPreview;
 inputAttr["InputStatePreview"] = InputStatePreview;
+inputAttr["InputCustomPreview"] = InputCustomPreview;
+inputAttr["InputKeyPreview"] = InputKeyPreview;
+inputAttr["LeHighlighter"] = LeHighlighter;
 
 export { inputAttr };

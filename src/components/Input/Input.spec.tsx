@@ -6,7 +6,7 @@ import React from "react";
 
 describe("Input component test", () => {
 	it("should render Input component", () => {
-		const { getByTestId } = render(<Input type="text" key="test" />);
+		const { getByTestId } = render(<Input type="text" fieldKey="test" />);
 
 		const input = getByTestId("leuxInput");
 

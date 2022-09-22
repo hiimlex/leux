@@ -4,7 +4,7 @@ import { InputProps } from "./Input.model";
 import "./Input.scss";
 
 const Input = ({
-	key,
+	fieldKey,
 	type = "text",
 	variant = "filled",
 	placeholder,
@@ -18,8 +18,8 @@ const Input = ({
 }: InputProps) => {
 	return (
 		<input
-			id={key}
-			name={key}
+			id={fieldKey}
+			name={fieldKey}
 			type={type}
 			placeholder={placeholder}
 			onChange={onChange}

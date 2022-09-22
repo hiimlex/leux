@@ -5,7 +5,7 @@ type InputSizes = "small" | "medium" | "large";
 type InputVariant = "outlined" | "filled";
 
 interface InputProps {
-	key?: string;
+	fieldKey?: string;
 	type?: InputTypes;
 	size?: InputSizes;
 	variant?: InputVariant;
