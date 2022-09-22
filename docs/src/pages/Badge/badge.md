@@ -15,8 +15,8 @@ Badge Component is used to display relevant informations like tags, versions, fo
 </BadgeImportPreview>
 </div>
 
-- **Badge** is the main component
-- **BadgeProps** is the type of props
+- **Badge**: the main component.
+- **BadgeProps**: the prop types.
 
 <br/>
 

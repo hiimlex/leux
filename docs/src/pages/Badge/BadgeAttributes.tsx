@@ -80,7 +80,7 @@ const BadgeCustomPreview = () => (
 	<>
 		<div className="le-preview">
 			<Badge
-				customClass="le-bg--primary"
+				customClass="le-color-bg--primary"
 				type="dashed"
 				customStyles={{ color: "purple", borderColor: "purple" }}
 			>
@@ -89,7 +89,7 @@ const BadgeCustomPreview = () => (
 		</div>
 		<LeHighlighter
 			code={`<Badge
-	customClass="le-bg--primary"
+	customClass="le-color-bg--primary"
 	type="dashed"
 	customStyles={{ color: "purple", borderColor: "purple" }}
 >

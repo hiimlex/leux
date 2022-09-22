@@ -14,8 +14,8 @@ Topography is a layout component. It is used to create headings, paragraphs, and
 <ImportPreview></ImportPreview>
 </div>
 
-- **LeTopography** is the text component
-- **LeTopographyProps** is the props type
+- **LeTopography**: the main component.
+- **LeTopographyProps**: the prop types.
 
 <br/>
 
@@ -57,7 +57,7 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the component
 ### API Reference
 
 <div>
-<table width="100%" border="0">
+<table>
 <thead>
 <tr>
 <th width="10%">Prop</th>
@@ -68,7 +68,8 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the component
 <tbody>
 <tr>
 <td>type</td>
-<td><LeHighlighter code="'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'subtitle-1' | 'subtitle-2' | 'body-1' | 'body-2' | 'caption' | 'overline' | 'button'" language="tsx"></LeHighlighter></td>
+<td><LeHighlighter code="'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'subtitle-1' |
+'subtitle-2' | 'body-1' | 'body-2' | 'caption' | 'overline' | 'button'" language="tsx"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
@@ -84,5 +85,3 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the component
 </tbody>
 </table>
 </div>
-
-<br/>

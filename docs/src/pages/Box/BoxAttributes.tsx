@@ -88,7 +88,7 @@ const BoxCustomPreview = () => {
 		<>
 			<div className="le-preview">
 				<Box
-					customClass="le-color-text--primary le-bg--default le-text--body-2"
+					customClass="le-color-text--primary le-color-bg--default le-text--body-2"
 					customStyles={{
 						display: "flex",
 						alignItems: "center",
@@ -102,7 +102,7 @@ const BoxCustomPreview = () => {
 			<LeHighlighter
 				language="tsx"
 				code={`<Box
-	customClass="le-color-text--primary le-bg--default le-text--body-2"
+	customClass="le-color-text--primary le-color-bg--default le-text--body-2"
 	customStyles={{
 		display: "flex",
 		alignItems: "center",

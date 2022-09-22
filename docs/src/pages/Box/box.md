@@ -14,8 +14,8 @@ The Box component is a simple wrapper component that can be used to display data
 	<ImportPreview></ImportPreview>
 </div>
 
-- **Box** is The Box component
-- **BoxProps** is The Box component
+- **Box**: the main component.
+- **BoxProps**: the prop types.
 
 <br/>
 

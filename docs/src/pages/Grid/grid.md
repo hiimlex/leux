@@ -14,9 +14,9 @@ Grid component allows you to create a grid layout. It is based on the CSS Grid.
 	<GridImportPreview></GridImportPreview>
 </div>
 
-- **Grid** is the grid container
-- **GridProps** is the props type
-- **Box** is the recommended component to use as grid item
+- **Grid**: the grid container.
+- **GridProps**: the grid prop types.
+- **Box**: the grid item.
 
 <br/>
 
@@ -74,37 +74,37 @@ To increase the size of a item on grid, use the `gridSpan` props from <NavLink t
 <tbody>
 <tr>
 <td>cols</td>
-<td><LeHighlighter language="tsx" code="React.CSSProperties['gridTemplateColumns']"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="React.CSSProperties['gridTemplateColumns']" style="soft"></LeHighlighter></td>
 <td width="20%">-</td>
 </tr>
 <tr>
 <td>rows</td>
-<td><LeHighlighter language="tsx" code="React.CSSProperties['gridTemplateRows']"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="React.CSSProperties['gridTemplateRows']" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>gap</td>
-<td><LeHighlighter language="tsx" code="{ 'col': React.CSSProperties['columnGap'], 'row': React.CSSProperties['rowGap'] }"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="{ 'col': React.CSSProperties['columnGap'], 'row': React.CSSProperties['rowGap'] }" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>width</td>
-<td><LeHighlighter language="tsx" code="React.CSSProperties['width']"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="'100%'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="React.CSSProperties['width']" style="soft"></LeHighlighter></td>
+<td>-</td>
 </tr>
 <tr>
 <td>padding</td>
-<td><LeHighlighter language="tsx" code="React.CSSProperties['padding']"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="React.CSSProperties['padding']" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>customClass</td>
-<td><LeHighlighter code="'string'" language="tsx"></LeHighlighter></td>
+<td><LeHighlighter code="'string'" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>customStyles</td>
-<td><LeHighlighter code="React.CSSProperties" language="tsx"></LeHighlighter></td>
+<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 </tbody>
