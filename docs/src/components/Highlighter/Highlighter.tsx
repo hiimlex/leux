@@ -17,33 +17,6 @@ Refractor.registerLanguage(jsx);
 Refractor.registerLanguage(tsx);
 Refractor.registerLanguage(bash);
 
-const unsecuredCopyToClipboard = (text: string) => {
-	const textArea = document.createElement("textarea");
-	textArea.value = text;
-	document.body.appendChild(textArea);
-	textArea.focus();
-	textArea.select();
-	try {
-		document.execCommand("copy");
-	} catch (err) {
-		console.error("Unable to copy to clipboard", err);
-	}
-	document.body.removeChild(textArea);
-};
-
-/**
- * Copies the text passed as param to the system clipboard
- * Check if using HTTPS and navigator.clipboard is available
- * Then uses standard clipboard API, otherwise uses fallback
- */
-const copyToClipboard = (content: string) => {
-	if (window.isSecureContext && navigator.clipboard) {
-		navigator.clipboard.writeText(content);
-	} else {
-		unsecuredCopyToClipboard(content);
-	}
-};
-
 const Highlighter = ({
 	code,
 	language,
@@ -53,7 +26,7 @@ const Highlighter = ({
 	const [copied, setCopied] = useState(false);
 
 	const handleCopyToClipboard = () => {
-		copyToClipboard(code);
+		navigator.clipboard.writeText(code);
 		setCopied(true);
 
 		setTimeout(() => {

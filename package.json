@@ -1,6 +1,7 @@
 {
 	"name": "leux",
 	"version": "0.0.10",
+	"homepage": "http://alexalves.me/leux/",
 	"description": "React components library",
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org"
