@@ -1,2 +1,2 @@
 export * from "./Input";
-export * from "./input.model";
+export * from "./Input.model";
