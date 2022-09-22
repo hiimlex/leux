@@ -44,7 +44,11 @@ const SideNav = () => {
 						</div>
 						<div className="le-sidenav--links">
 							{LINKS[category].map(({ name, path }) => (
-								<NavLink key={path} to={path} className="le-text--body-1">
+								<NavLink
+									key={path}
+									to={"/leux" + path}
+									className="le-text--body-1"
+								>
 									{name}
 								</NavLink>
 							))}

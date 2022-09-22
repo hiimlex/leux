@@ -17,7 +17,6 @@ const LinkCode = () => (
 );
 
 leCssAttr["LeCSSImportCode"] = LeCSSImportCode;
-leCssAttr["LeSourceButton"] = LeSourceButton;
 leCssAttr["LinkCode"] = LinkCode;
 
 const CSSPage = () => <LeCSSMD {...leCssAttr} />;

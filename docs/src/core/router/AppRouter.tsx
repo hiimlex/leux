@@ -17,45 +17,45 @@ import {
 const AppRouter = () => {
 	return (
 		<Routes>
-			<Route path="/" element={<Navigate to="started/overview" replace />} />
+			<Route path="/leux" element={<Navigate to="started/overview" replace />} />
 			<Route
-				path="started/overview"
+				path="/leux/started/overview"
 				element={<LeRenderDocPage doc={<OverviewPage />} title="Overview" />}
 			/>
 			<Route
-				path="started/installation"
+				path="/leux/started/installation"
 				element={
 					<LeRenderDocPage doc={<InstallationPage />} title="Installation" />
 				}
 			/>
 			<Route
-				path="started/lecss"
+				path="/leux/started/lecss"
 				element={<LeRenderDocPage doc={<CSSPage />} title="LeCSS" />}
 			/>
 			<Route
-				path="layout/topography"
+				path="/leux/layout/topography"
 				element={
 					<LeRenderDocPage doc={<TopographyPage />} title="Topography" />
 				}
 			/>
 			<Route
-				path="layout/grid"
+				path="/leux/layout/grid"
 				element={<LeRenderDocPage doc={<GridPage />} title="Grid" />}
 			/>
 			<Route
-				path="layout/box"
+				path="/leux/layout/box"
 				element={<LeRenderDocPage doc={<BoxPage />} title="Box" />}
 			/>
 			<Route
-				path="components/button"
+				path="/leux/components/button"
 				element={<LeRenderDocPage doc={<ButtonPage />} title="Button" />}
 			/>
 			<Route
-				path="components/badge"
+				path="/leux/components/badge"
 				element={<LeRenderDocPage doc={<BadgePage />} title="Badge" />}
 			/>
 			<Route
-				path="components/input"
+				path="/leux/components/input"
 				element={<LeRenderDocPage doc={<InputPage />} title="Input" />}
 			/>
 			<Route
