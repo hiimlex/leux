@@ -47,9 +47,7 @@ const Highlighter = ({
 						color={copied ? "#efefef" : "#afafaf"}
 						onClick={handleCopyToClipboard}
 					/>
-					{copied && (
-						<span className="le-highlighter--copy--text">COPIED</span>
-					)}
+					{copied && <span className="le-highlighter--copy--text">COPIED</span>}
 				</span>
 			)}
 		</div>
