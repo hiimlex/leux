@@ -7,7 +7,7 @@ const ImportPreview = () => {
 	return (
 		<LeHighlighter
 			language="tsx"
-			code={`import { Topography, TopographyProps } from 'leux';`}
+			code={`import { Topography, TopographyProps } from "leux";`}
 		/>
 	);
 };
@@ -16,19 +16,23 @@ const CodePreview = () => (
 	<>
 		<LeHighlighter
 			language="tsx"
-			code={`<Topography type="h1">h1. Heading</Topography>
-<Topography type="h2">h2. Heading</Topography>
-<Topography type="h3">h3. Heading</Topography>
-<Topography type="h4">h4. Heading</Topography>
-<Topography type="h5">h5. Heading</Topography>
-<Topography type="h6">h6. Heading</Topography>
-<Topography type="subtitle-1">subtitle-1. Subtitle</Topography>
-<Topography type="subtitle-2">subtitle-1. Subtitle</Topography>
-<Topography type="body-1">body-1. Body</Topography>
-<Topography type="subtitle-2">subtitle-1. Subtitle</Topography>
-<Topography type="caption">caption. Caption</Topography>
-<Topography type="button">button. Button</Topography>
-<LeTopography type="overline">overline. Overline</LeTopography>`}
+			code={`const Component = () => (
+	<>
+		<Topography type="h1">h1. Heading</Topography>
+		<Topography type="h2">h2. Heading</Topography>
+		<Topography type="h3">h3. Heading</Topography>
+		<Topography type="h4">h4. Heading</Topography>
+		<Topography type="h5">h5. Heading</Topography>
+		<Topography type="h6">h6. Heading</Topography>
+		<Topography type="subtitle-1">subtitle-1. Subtitle</Topography>
+		<Topography type="subtitle-2">subtitle-1. Subtitle</Topography>
+		<Topography type="body-1">body-1. Body</Topography>
+		<Topography type="subtitle-2">subtitle-1. Subtitle</Topography>
+		<Topography type="caption">caption. Caption</Topography>
+		<Topography type="button">button. Button</Topography>
+		<LeTopography type="overline">overline. Overline</LeTopography>
+	</>
+);`}
 		/>
 	</>
 );
@@ -46,13 +50,15 @@ const TopographyCustomPreview = () => (
 		</div>
 		<LeHighlighter
 			language="tsx"
-			code={`<Topography
-	type="body-1"
-	customClass="le-text-color--danger"
-	customStyles={{ fontWeight: "bold" }}
->
-	Custom CSS
-</Topography>`}
+			code={`const Component = () => (
+	<Topography
+		type="body-1"
+		customClass="le-text-color--danger"
+		customStyles={{ fontWeight: "bold" }}
+	>
+		Custom CSS
+	</Topography>
+);`}
 		/>
 	</>
 );

@@ -7,7 +7,7 @@ const GridImportPreview = () => {
 	return (
 		<LeHighlighter
 			language="tsx"
-			code={`import {  Grid, GridProps, Box } from 'leux'`}
+			code={`import { Grid, GridProps, Box } from "leux";`}
 		/>
 	);
 };
@@ -33,20 +33,22 @@ const GridColPreview = () => {
 			</div>
 			<LeHighlighter
 				language="tsx"
-				code={`<Grid cols={3}>
-	{["primary", "success", "danger"].map((item) => (
-		<Box
-			key={item}
-			bgColor={item}
-			padding={12}
-			customStyles={{ textTransform: "capitalize" }}
-			textColor="lighter"
-			centered
-		>
-			<Topography type="body-1">{item} BG</Topography>
-		</Box>
-	))}
-</Grid>`}
+				code={`const Component = () => (
+	<Grid cols={3}>
+		{(["primary", "success", "danger"] as BoxVariants[]).map((item) => (
+			<Box
+				key={item}
+				bgColor={item}
+				padding={12}
+				customStyles={{ textTransform: "capitalize" }}
+				textColor="lighter"
+				centered
+			>
+				<Topography type="body-1">{item} BG</Topography>
+			</Box>
+		))}
+	</Grid>
+);`}
 			/>
 		</>
 	);
@@ -73,20 +75,22 @@ const GridRowPreview = () => {
 			</div>
 			<LeHighlighter
 				language="tsx"
-				code={`<Grid rows={3}>
-	{["primary", "success", "danger"].map((item) => (
-		<Box
-			key={item}
-			bgColor={item}
-			padding={12}
-			customStyles={{ textTransform: "capitalize" }}
-			textColor="lighter"
-			centered
-		>
-			<Topography type="body-1">{item} BG</Topography>
-		</Box>
-	))}
-</Grid>`}
+				code={`const Component = () => (
+	<Grid rows={3}>
+		{(["primary", "success", "danger"] as BoxVariants[]).map((item) => (
+			<Box
+				key={item}
+				bgColor={item}
+				padding={12}
+				customStyles={{ textTransform: "capitalize" }}
+				textColor="lighter"
+				centered
+			>
+				<Topography type="body-1">{item} BG</Topography>
+			</Box>
+		))}
+	</Grid>
+);`}
 			/>
 		</>
 	);
@@ -113,20 +117,22 @@ const GridGapPreview = () => {
 			</div>
 			<LeHighlighter
 				language="tsx"
-				code={`<Grid cols={3} rows={3} gap={{ col: 5, row: 5 }} width="25%" padding="12px">
-	{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
-		<Box
-			key={item}
-			padding={4}
-			bgColor="default"
-			textColor="darker"
-			centered
-			borderRadius="12px"
-		>
-			<Topography type="body-1">{item}</Topography>
-		</Box>
-	))}
-</Grid>`}
+				code={`const Component = () => (
+	<Grid cols={3} rows={3} gap={{ col: 5, row: 5 }} width="25%" padding="12px">
+		{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
+			<Box
+				key={item}
+				padding={4}
+				bgColor="default"
+				textColor="darker"
+				centered
+				borderRadius="12px"
+			>
+				<Topography type="body-1">{item}</Topography>
+			</Box>
+		))}
+	</Grid>
+);`}
 			/>
 		</>
 	);
@@ -170,37 +176,39 @@ const GridSpanPreview = () => {
 			</div>
 			<LeHighlighter
 				language="tsx"
-				code={`<Grid cols={4} rows={2} gap={{ row: 12, col: 12 }}>
-	<Box
-		padding={4}
-		bgColor="success"
-		textColor="darker"
-		centered
-		gridSpan={{ row: 2 }}
-	>
-		<Topography type="body-1">2 rows and 1 col</Topography>
-	</Box>
-	<Box
-		padding={4}
-		bgColor="danger"
-		textColor="darker"
-		centered
-		gridSpan={{ col: 2 }}
-	>
-		<Topography type="body-1">1 row and 2 cols</Topography>
-	</Box>
-	{[1, 2, 3, 4].map((item) => (
+				code={`const Component = () => (
+	<Grid cols={4} rows={2} gap={{ row: 12, col: 12 }}>
 		<Box
-			key={item}
 			padding={4}
-			bgColor="default"
+			bgColor="success"
 			textColor="darker"
 			centered
+			gridSpan={{ row: 2 }}
 		>
-			<Topography type="body-1">1 col</Topography>
+			<Topography type="body-1">2 rows and 1 col</Topography>
 		</Box>
-	))}
-</Grid>`}
+		<Box
+			padding={4}
+			bgColor="danger"
+			textColor="darker"
+			centered
+			gridSpan={{ col: 2 }}
+		>
+			<Topography type="body-1">1 row and 2 cols</Topography>
+		</Box>
+		{[1, 2, 3, 4].map((item) => (
+			<Box
+				key={item}
+				padding={4}
+				bgColor="default"
+				textColor="darker"
+				centered
+			>
+				<Topography type="body-1">1 col</Topography>
+			</Box>
+		))}
+	</Grid>
+);`}
 			/>
 		</>
 	);

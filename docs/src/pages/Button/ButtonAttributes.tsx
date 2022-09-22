@@ -6,7 +6,7 @@ import { attributes as buttonAttr } from "./button.md";
 const ButtonImportPreview = () => (
 	<LeHighlighter
 		language="tsx"
-		code={`import { Button, ButtonProps } from 'leux';`}
+		code={`import { Button, ButtonProps } from "leux";`}
 	/>
 );
 
@@ -31,7 +31,7 @@ const ButtonVariantPreview = () => (
 		<Button variant="danger">Danger</Button>
 		<Button variant="default">Default</Button>
 	</>
-)`}
+);`}
 		/>
 	</>
 );
@@ -63,7 +63,7 @@ const ButtonTypePreview = () => (
 			Ghost
 		</Button>
 	</>
-)`}
+);`}
 		/>
 	</>
 );
@@ -87,7 +87,7 @@ const ButtonSizePreview = () => (
 		<Button variant="default">Medium</Button>
 		<Button variant="default" size="large">Large</Button>
 	</>
-)`}
+);`}
 		/>
 	</>
 );
@@ -134,7 +134,7 @@ const ButtonStatePreview = () => {
 			</Button>
 		</>
 	);
-}`}
+};`}
 			/>
 		</>
 	);
@@ -155,9 +155,10 @@ const ButtonActionPreview = () => {
 				code={`const Component = () => {
 	const handleOnClick = () => alert("Hello World!");
 
-	return <Button onClick={handleOnClick} variant="success">Alert</Button>;
-}
-`}
+	return (
+		<Button onClick={handleOnClick} variant="success">Alert</Button>
+	);
+};`}
 			/>
 		</>
 	);

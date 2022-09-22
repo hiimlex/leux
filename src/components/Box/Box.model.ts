@@ -25,4 +25,4 @@ interface BoxProps {
 	};
 }
 
-export { BoxVariants, BoxProps };
+export { BoxVariants, BoxProps, BoxTextColor };

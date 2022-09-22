@@ -1,5 +1,40 @@
 .le-highlighter {
+	position: relative;
+	height: auto;
+	z-index: 0;
+
 	&--dracula {
+		.le-highlighter--copy {
+			position: absolute;
+			top: 12px;
+			right: 12px;
+			cursor: pointer;
+
+			display: flex;
+			flex-direction: row;
+			height: auto;
+			align-items: center;
+			justify-content: center;
+
+			svg {
+				transition: all 0.2s ease-in-out;
+			}
+
+			&--text {
+				transition: all 0.2s ease-in-out;
+				font-size: 0.825rem;
+				color: #efefef;
+				letter-spacing: 1.5px;
+				margin-left: 8px;
+			}
+
+			&:hover {
+				svg {
+					fill: #efefef;
+				}
+			}
+		}
+
 		pre::-webkit-scrollbar {
 			width: 14px;
 		}
