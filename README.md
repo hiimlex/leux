@@ -22,6 +22,8 @@
 
 > A awesome React component library. (**_Work in progress_**)
 
+[Docs](https://hiimlex.github.io/leux/)
+
 ## 🎈 Overview
 
 Leux is a simple, lightweight, and fast React framework. It's built with the latest web technologies and is fully responsive.
