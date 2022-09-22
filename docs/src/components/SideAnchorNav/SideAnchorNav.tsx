@@ -38,11 +38,7 @@ const SideAnchorNav = () => {
 
 	const handleActiveAnchor = () => {
 		const active = anchors.find(({ element }, index) => {
-			const {
-				offsetTop: elementOffset,
-				clientHeight: elementHeight,
-				scrollHeight: elementScrollHeight,
-			} = element;
+			const { offsetTop: elementOffset } = element;
 
 			const { scrollHeight, clientHeight } = document.documentElement;
 
@@ -77,8 +73,6 @@ const SideAnchorNav = () => {
 	return (
 		<nav className="le-anchor-nav">
 			<div className="fixed-content">
-				<Topography type="subtitle-2">TOPICs</Topography>
-
 				<div className="le-anchor-links">
 					{anchors.map(({ href, label }, index) => (
 						<Link

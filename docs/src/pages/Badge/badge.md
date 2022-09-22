@@ -6,6 +6,8 @@ Badge Component is used to display relevant informations like tags, versions, fo
 <LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/Badge"></LeSourceButton>
 </div>
 
+<br/>
+
 #### Import
 
 <div>
@@ -13,8 +15,10 @@ Badge Component is used to display relevant informations like tags, versions, fo
 </BadgeImportPreview>
 </div>
 
-- **Badge** is the main component
-- **BadgeProps** is the type of props
+- **Badge**: the main component.
+- **BadgeProps**: the prop types.
+
+<br/>
 
 #### Types
 
@@ -25,6 +29,8 @@ Use the `type` prop to change the badge style type.
 </BadgeTypePreview>
 </div>
 
+<br/>
+
 #### Variants
 
 Use the `variant` prop to change the badge color theme.
@@ -33,6 +39,8 @@ Use the `variant` prop to change the badge color theme.
 <BadgeVariantPreview>
 </BadgeVariantPreview>
 </div>
+
+<br/>
 
 #### Sizes
 
@@ -43,14 +51,18 @@ Use the `size` prop to change the badge size.
 </BadgeSizePreview>
 </div>
 
-#### Custom CSS and Classes
+<br/>
 
-Use the `customClass` and `customStyles` prop to add custom CSS to the component.
+#### Custom
+
+Use the `customClass` and `customStyles` prop to add custom CSS to the Badge component.
 
 <div>
 <BadgeCustomPreview>
 </BadgeCustomPreview>
 </div>
+
+<br/>
 
 ### API Reference
 
@@ -66,29 +78,31 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the component
 <tbody>
 <tr>
 <td>type</td>
-<td><Code children="'dashed' | 'ghost' | 'outlined'" language="jsx"></Code></td>
+<td><LeHighlighter code="'dashed' | 'ghost' | 'outlined'" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>variant</td>
-<td><Code children="'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'" language="jsx"></Code></td>
+<td><LeHighlighter code="'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>size</td>
-<td><Code children="'small' | 'medium' | 'large'" language="jsx"></Code></td>
+<td><LeHighlighter code="'small' | 'medium' | 'large'" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>customStyles</td>
-<td><Code children="React.CSSProperties" language="jsx"></Code></td>
+<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>customClasses</td>
-<td><Code children="'string'" language="jsx"></Code></td>
+<td><LeHighlighter code="'string'" language="tsx" style="soft"></LeHighlighter></td>
 <td>-</td>
 </tr>
 </tbody>
 </table>
 </div>
+
+<br/>

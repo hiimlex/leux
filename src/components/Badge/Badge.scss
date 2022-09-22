@@ -48,11 +48,6 @@
 			&.le-badge--#{$color} {
 				color: $value;
 				background: rgba($value, 30%);
-
-				@if $color == "default" {
-					color: $color-dark-text;
-					background: rgba($value, 30%);
-				}
 			}
 		}
 	}

@@ -37,10 +37,10 @@ const Box = ({
 				...customStyles,
 			}}
 			className={
-				(bgColor ? `le-bg--${bgColor}` : "") +
-				(customClass ? " " + customClass : "") +
+				(bgColor ? `le-color-bg--${bgColor}` : "") +
+				(customClass ? ` ${customClass}` : "") +
 				(centered ? " le-box--centered" : "") +
-				(textColor ? " le-color-text--" + textColor : "")
+				(textColor ? ` le-color-text--${textColor}` : "")
 			}
 			data-testid="leuxBox"
 		>

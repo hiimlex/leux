@@ -1,0 +1,58 @@
+@import "../../styles/variables.scss";
+
+.le-input {
+	border-radius: 4px;
+	outline: 0;
+	border: 0;
+	font-weight: 500;
+	line-height: 100%;
+	font-family: "Poppins", sans-serif;
+
+	&--filled {
+		background-color: $color-variant-border;
+		color: $color-dark-text;
+	}
+	&--outlined {
+		border: 1px solid $color-variant-border;
+		color: $color-dark-text;
+	}
+
+	&--small {
+		font-size: 0.75rem;
+		padding: 0.5rem 0.75rem;
+	}
+	&--medium {
+		font-size: 0.875rem;
+		padding: 0.625rem 0.875rem;
+	}
+
+	&--large {
+		font-size: 1rem;
+		padding: 0.75rem 1.125rem;
+	}
+
+	&--focus {
+		&:focus {
+			outline: 2px solid $color-variant-primary;
+		}
+	}
+
+	&::placeholder {
+		color: $color-placeholder-text;
+		opacity: 1;
+	}
+
+	&:-ms-input-placeholder {
+		color: $color-placeholder-text;
+	}
+
+	&::-ms-input-placeholder {
+		color: $color-placeholder-text;
+	}
+
+	&--disabled {
+		cursor: not-allowed !important;
+		background: $color-variant-disabled !important;
+		color: $color-darker-text !important;
+	}
+}

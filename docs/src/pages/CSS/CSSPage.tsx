@@ -1,19 +1,23 @@
-import React from "react";
-import Code from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { LeHighlighter, LeSourceButton } from "@/components";
 import { attributes as leCssAttr, ReactComponent as LeCSSMD } from "./css.md";
-import { LeSourceButton } from "@/components";
 
 const LeCSSImportCode = () => (
-	<Code
-		language="jsx"
-		children={`import { LeCSS } from 'leux';`}
-		style={dracula}
-	></Code>
+	<LeHighlighter
+		language="tsx"
+		code={`import { LeCSS as _LeCSS } from 'leux';
+// import as _underscore to prevent unused variables`}
+	/>
+);
+
+const LinkCode = () => (
+	<LeHighlighter
+		language="tsx"
+		code={`<link rel="stylesheet" href="leux.min.css" />`}
+	/>
 );
 
 leCssAttr["LeCSSImportCode"] = LeCSSImportCode;
-leCssAttr["LeSourceButton"] = LeSourceButton;
+leCssAttr["LinkCode"] = LinkCode;
 
 const CSSPage = () => <LeCSSMD {...leCssAttr} />;
 

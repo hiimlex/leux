@@ -1,6 +1,6 @@
 {
 	"name": "leux",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"description": "React components library",
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org"

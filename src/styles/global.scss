@@ -8,8 +8,11 @@ body {
 	margin: 0;
 }
 
-* {
+button {
 	font-family: "Poppins", sans-serif;
+}
+
+* {
 	outline: none;
 	box-sizing: border-box;
 }
@@ -21,7 +24,7 @@ body {
 }
 
 @each $color, $value in $variant-colors {
-	.le-bg--#{$color} {
+	.le-color-bg--#{$color} {
 		background: $value;
 	}
 }
@@ -101,6 +104,10 @@ p {
 	font-weight: 400;
 	letter-spacing: 0.5px;
 	margin: 12px 0;
+}
+
+.le-text--link {
+	cursor: pointer;
 }
 
 ::-webkit-scrollbar {

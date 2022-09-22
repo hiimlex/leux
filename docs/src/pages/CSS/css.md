@@ -1,14 +1,14 @@
-## LeCSS
+## CSS
 
-LeCSS is a component that allows you to use classes and styles from the CSS library in your own components.
+To load the CSS styles, move the **leux.min.css** file from the **node_modules/leux/dist** folder to your project folder and import it in your **index.html** file.
 
 <div>
-<LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/LeCSS"></LeSourceButton>
+<LinkCode></LinkCode>
 </div>
 
-#### Import
+## Import
 
-To load all the styles, import the LeCSS Component at the top of your `main.(jsx|tsx)` file.
+The other way to load the CSS styles, is importing the LeCSS at the top of your `main.(jsx|tsx)` file.
 
 <div>
 <LeCSSImportCode></LeCSSImportCode>

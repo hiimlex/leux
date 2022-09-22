@@ -1,5 +1,8 @@
 import { FaGithub } from "react-icons/fa";
+import { Topography } from "../../../../src";
 import "./Header.scss";
+
+import { version } from "../../../../package.json";
 
 const Header = () => (
 	<header className="le-app-header">
@@ -12,11 +15,29 @@ const Header = () => (
 			</div>
 			<div className="flex-1"></div>
 			<nav className="le-nav">
+				<span className="le-nav--item">
+					<a
+						className="le-nav--link"
+						target="_blank"
+						href="https://linktr.ee/yuninho"
+					>
+						<Topography type="body-1">Find author</Topography>
+					</a>
+				</span>
+				<span className="le-nav--item">
+					<a
+						className="le-nav--link"
+						target="_blank"
+						href="https://www.npmjs.com/package/leux"
+					>
+						<Topography type="body-1">v{version}</Topography>
+					</a>
+				</span>
 				<span className="le-nav--item le-text--body-1">
 					<a
 						className="le-nav--link"
 						href="https://github.com/hiimlex/leux"
-						target="__blank"
+						target="_blank"
 					>
 						<FaGithub size="1.25rem"></FaGithub>
 					</a>
