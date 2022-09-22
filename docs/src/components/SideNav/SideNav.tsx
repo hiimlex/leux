@@ -29,6 +29,7 @@ export const LINKS: Record<string, ILink[]> = {
 	Components: [
 		{ name: "Button", path: "/components/button" },
 		{ name: "Badge", path: "/components/badge" },
+		{ name: "Input", path: "/components/input" },
 	],
 };
 

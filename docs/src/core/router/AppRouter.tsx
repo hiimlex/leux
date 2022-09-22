@@ -7,6 +7,7 @@ import {
 	ButtonPage,
 	CSSPage,
 	GridPage,
+	InputPage,
 	InstallationPage,
 	NotFoundPage,
 	OverviewPage,
@@ -52,6 +53,10 @@ const AppRouter = () => {
 			<Route
 				path="components/badge"
 				element={<LeRenderDocPage doc={<BadgePage />} title="Badge" />}
+			/>
+			<Route
+				path="components/input"
+				element={<LeRenderDocPage doc={<InputPage />} title="Input" />}
 			/>
 			<Route
 				path="*"

@@ -8,7 +8,7 @@ import { attributes as boxAttr } from "./box.md";
 const ImportPreview = () => {
 	return (
 		<Code
-			children={`import { Box } from 'leux';`}
+			children={`import { Box, BoxProps } from 'leux';`}
 			language="javascript"
 			style={dracula}
 		/>

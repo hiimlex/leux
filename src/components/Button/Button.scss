@@ -91,11 +91,7 @@
 
 	&--disabled {
 		cursor: not-allowed !important;
-		background: #afafaf !important;
-		color: #3c3c3c !important;
-
-		&:hover {
-			background: #afafaf !important;
-		}
+		background: $color-variant-disabled !important;
+		color: $color-darker-text !important;
 	}
 }

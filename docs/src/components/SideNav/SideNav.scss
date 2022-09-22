@@ -38,10 +38,10 @@
 					color: $color-dark-text;
 					text-decoration: none;
 					font-weight: 400;
+					transition: all 0.1s ease-in-out;
 
 					&.active {
-						color: $color-variant-primary;
-						font-weight: 600 !important;
+						font-weight: bold !important;
 					}
 
 					&:hover {

@@ -6,6 +6,8 @@ Badge Component is used to display relevant informations like tags, versions, fo
 <LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/Badge"></LeSourceButton>
 </div>
 
+<br/>
+
 #### Import
 
 <div>
@@ -16,6 +18,8 @@ Badge Component is used to display relevant informations like tags, versions, fo
 - **Badge** is the main component
 - **BadgeProps** is the type of props
 
+<br/>
+
 #### Types
 
 Use the `type` prop to change the badge style type.
@@ -24,6 +28,8 @@ Use the `type` prop to change the badge style type.
 <BadgeTypePreview>
 </BadgeTypePreview>
 </div>
+
+<br/>
 
 #### Variants
 
@@ -34,6 +40,8 @@ Use the `variant` prop to change the badge color theme.
 </BadgeVariantPreview>
 </div>
 
+<br/>
+
 #### Sizes
 
 Use the `size` prop to change the badge size.
@@ -43,14 +51,18 @@ Use the `size` prop to change the badge size.
 </BadgeSizePreview>
 </div>
 
-#### Custom CSS and Classes
+<br/>
 
-Use the `customClass` and `customStyles` prop to add custom CSS to the component.
+#### Custom
+
+Use the `customClass` and `customStyles` prop to add custom CSS to the Badge component.
 
 <div>
 <BadgeCustomPreview>
 </BadgeCustomPreview>
 </div>
+
+<br/>
 
 ### API Reference
 
@@ -92,3 +104,5 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the component
 </tbody>
 </table>
 </div>
+
+<br/>
