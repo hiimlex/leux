@@ -22,7 +22,7 @@
 
 > A awesome React component library. (**_Work in progress_**)
 
-[Docs](https://hiimlex.github.io/leux/)
+[Docs](https://leux.vercel.app/)
 
 ## 🎈 Overview
 
@@ -46,10 +46,6 @@ yarn add leux
 
 To upload the CSS styles, you can move the **leux.min.css** from the **node_modules/leux/dist** folder to your project folder and import it in your **index.html** file.
 
-### 📌 To-do
-
-- Setup github actions and build gh-pages
-
 ## Next steps:
 
 - [ ] components
@@ -57,7 +53,7 @@ To upload the CSS styles, you can move the **leux.min.css** from the **node_modu
   - [x] Topography
   - [x] Grid
   - [ ] Form
-    - [X] Input
+    - [x] Input
     - [ ] Select
     - [ ] Checkbox
     - [ ] Textarea
