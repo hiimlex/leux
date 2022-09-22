@@ -6,7 +6,7 @@ import { Badge } from "../../../../src";
 
 const BadgeImportPreview = () => (
 	<LeHighlighter
-		code={`import { Badge, BadgeProps } from 'leux';`}
+		code={`import { Badge, BadgeProps } from "leux";`}
 		language="tsx"
 	/>
 );
@@ -25,8 +25,12 @@ const BadgeTypePreview = () => (
 			</Badge>
 		</div>
 		<LeHighlighter
-			code={`<Badge type="dashed">Dashed</Badge>
-<Badge type="ghost">Ghost</Badge>`}
+			code={`const Component = () => (
+	<>
+		<Badge type="dashed">Dashed</Badge>
+		<Badge type="ghost">Ghost</Badge>)
+	</>
+);`}
 			language="tsx"
 		/>
 	</>
@@ -43,12 +47,16 @@ const BadgeVariantPreview = () => (
 			<Badge variant="default">Default</Badge>
 		</div>
 		<LeHighlighter
-			code={`<Badge variant="primary">Primary</Badge>
-<Badge variant="secondary">Secondary</Badge>
-<Badge variant="success">Success</Badge>
-<Badge variant="danger">Danger</Badge>
-<Badge variant="warning">Warning</Badge>
-<Badge variant="default">Default</Badge>`}
+			code={`const Component = () => (
+	<>
+		<Badge variant="primary">Primary</Badge>
+		<Badge variant="secondary">Secondary</Badge>
+		<Badge variant="success">Success</Badge>
+		<Badge variant="danger">Danger</Badge>
+		<Badge variant="warning">Warning</Badge>
+		<Badge variant="default">Default</Badge>
+	</>
+);`}
 			language="tsx"
 		/>
 	</>
@@ -62,15 +70,19 @@ const BadgeSizePreview = () => (
 			<Badge size="large">Large</Badge>
 		</div>
 		<LeHighlighter
-			code={`<Badge size="small" variant="primary">
-	Small
-</Badge>
-<Badge size="medium" variant="success">
-	Medium
-</Badge>
-<Badge size="large" variant="danger">
-	Large
-</Badge>`}
+			code={`const Component = () => (
+	<>
+		<Badge size="small" variant="primary">
+			Small
+		</Badge>
+		<Badge size="medium" variant="success">
+			Medium
+		</Badge>
+		<Badge size="large" variant="danger">
+			Large
+		</Badge>
+	</>
+);`}
 			language="tsx"
 		/>
 	</>
@@ -88,13 +100,15 @@ const BadgeCustomPreview = () => (
 			</Badge>
 		</div>
 		<LeHighlighter
-			code={`<Badge
-	customClass="le-color-bg--primary"
-	type="dashed"
-	customStyles={{ color: "purple", borderColor: "purple" }}
->
-	Custom Badge
-</Badge>`}
+			code={`const Component = () => (
+	<Badge
+		customClass="le-color-bg--primary"
+		type="dashed"
+		customStyles={{ color: "purple", borderColor: "purple" }}
+	>
+		Custom Badge
+	</Badge>
+);`}
 			language="tsx"
 		/>
 	</>

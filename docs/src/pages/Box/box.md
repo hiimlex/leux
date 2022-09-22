@@ -68,7 +68,7 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the Box compo
 ### API Reference
 
 <div>
-<table width="100%">
+<table>
 <thead>
 <tr>
 <th width="10%">Key</th>
@@ -79,52 +79,52 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the Box compo
 <tbody>
 <tr>
 <td>centered</td>
-<td><LeHighlighter code="'boolean'" language="tsx" style="soft"></LeHighlighter></td>
+<td><LeHighlighter code="'boolean'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>bgColor</td>
-<td><LeHighlighter code="'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'" language="tsx" style="soft"></LeHighlighter></td>
+<td><LeHighlighter code="'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>width</td>
-<td><LeHighlighter code="React.CSSProperties['width']" language="tsx" style="soft"></LeHighlighter></td>
+<td><LeHighlighter code="React.CSSProperties['width']" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>height</td>
-<td><LeHighlighter code="React.CSSProperties['height']" language="tsx" style="soft"></LeHighlighter></td>
+<td><LeHighlighter code="React.CSSProperties['height']" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>margin</td>
-<td><LeHighlighter code="React.CSSProperties['margin']" language="tsx" style="soft"></LeHighlighter></td>
+<td><LeHighlighter code="React.CSSProperties['margin']" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>borderRadius</td>
-<td><LeHighlighter code="React.CSSProperties['borderRadius']" language="tsx" style="soft"></LeHighlighter></td>
+<td><LeHighlighter code="React.CSSProperties['borderRadius']" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>textColor</td>
-<td><LeHighlighter code="'dark' | 'light' | 'darker' | 'lighter'" language="tsx" style="soft"></LeHighlighter></td>
+<td><LeHighlighter code="'dark' | 'light' | 'darker' | 'lighter'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>gridSpan</td>
-<td><LeHighlighter code="{ 'row': 1, 'col': 0 }" language="tsx" style="soft"></LeHighlighter></td>
+<td><LeHighlighter code="{ 'row': 1, 'col': 0 }" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>customClass</td>
-<td><LeHighlighter code="'string'" language="tsx" style="soft"></LeHighlighter></td>
+<td><LeHighlighter code="'string'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>customStyles</td>
-<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft"></LeHighlighter></td>
+<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 </tbody>

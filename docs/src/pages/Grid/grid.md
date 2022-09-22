@@ -74,37 +74,37 @@ To increase the size of a item on grid, use the `gridSpan` props from <NavLink t
 <tbody>
 <tr>
 <td>cols</td>
-<td><LeHighlighter language="tsx" code="React.CSSProperties['gridTemplateColumns']" style="soft"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="React.CSSProperties['gridTemplateColumns']" style="soft" copy="'off'"></LeHighlighter></td>
 <td width="20%">-</td>
 </tr>
 <tr>
 <td>rows</td>
-<td><LeHighlighter language="tsx" code="React.CSSProperties['gridTemplateRows']" style="soft"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="React.CSSProperties['gridTemplateRows']" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>gap</td>
-<td><LeHighlighter language="tsx" code="{ 'col': React.CSSProperties['columnGap'], 'row': React.CSSProperties['rowGap'] }" style="soft"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="{ 'col': React.CSSProperties['columnGap'], 'row': React.CSSProperties['rowGap'] }" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>width</td>
-<td><LeHighlighter language="tsx" code="React.CSSProperties['width']" style="soft"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="React.CSSProperties['width']" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>padding</td>
-<td><LeHighlighter language="tsx" code="React.CSSProperties['padding']" style="soft"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="React.CSSProperties['padding']" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>customClass</td>
-<td><LeHighlighter code="'string'" language="tsx" style="soft"></LeHighlighter></td>
+<td><LeHighlighter code="'string'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
 <td>customStyles</td>
-<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft"></LeHighlighter></td>
+<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 </tbody>

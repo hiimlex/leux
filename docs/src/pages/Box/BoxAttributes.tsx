@@ -6,7 +6,7 @@ import { attributes as boxAttr } from "./box.md";
 const ImportPreview = () => {
 	return (
 		<LeHighlighter
-			code={`import { Box, BoxProps } from 'leux';`}
+			code={`import { Box, BoxProps } from "leux";`}
 			language="tsx"
 		/>
 	);
@@ -29,17 +29,18 @@ const BoxCssPreview = () => {
 			</div>
 			<LeHighlighter
 				language="tsx"
-				code={`<Box
-	padding="30px"
-	height="100px"
-	width="100px"
-	borderRadius="100%"
-	margin="12px"
-	bgColor="default"
->
-	CSS Properties example
-</Box>
-			`}
+				code={`const Component = () => (
+	<Box
+		padding="30px"
+		height="100px"
+		width="100px"
+		borderRadius="100%"
+		margin="12px"
+		bgColor="default"
+	>
+		CSS Properties example
+	</Box>
+);`}
 			/>
 		</>
 	);
@@ -65,19 +66,21 @@ const BoxCompletePreview = () => {
 			</div>
 			<LeHighlighter
 				language="tsx"
-				code={`<Box
-	customClass="le-text--body-1"
-	customStyles={{ fontWeight: 600 }}
-	bgColor="primary"
-	textColor="lighter"
-	centered
-	padding={12}
-	borderRadius={12}
-	margin={12}
-	width="fill-container"
->
-	Complete box
-</Box>`}
+				code={`const Component = () => (
+	<Box
+		customClass="le-text--body-1"
+		customStyles={{ fontWeight: 600 }}
+		bgColor="primary"
+		textColor="lighter"
+		centered
+		padding={12}
+		borderRadius={12}
+		margin={12}
+		width="fill-container"
+	>
+		Complete box
+	</Box>
+);`}
 			/>
 		</>
 	);
@@ -101,17 +104,19 @@ const BoxCustomPreview = () => {
 			</div>
 			<LeHighlighter
 				language="tsx"
-				code={`<Box
-	customClass="le-color-text--primary le-color-bg--default le-text--body-2"
-	customStyles={{
-		display: "flex",
-		alignItems: "center",
-		justifyContent: "center",
-		padding: 12,
-	}}
->
-	with custom CSS and Classes
-</Box>`}
+				code={`const Component = () => (
+	<Box
+		customClass="le-color-text--primary le-color-bg--default le-text--body-2"
+		customStyles={{
+			display: "flex",
+			alignItems: "center",
+			justifyContent: "center",
+			padding: 12,
+		}}
+	>
+		with custom CSS and Classes
+	</Box>
+);`}
 			/>
 		</>
 	);
@@ -133,9 +138,11 @@ const BoxCenteredPreview = () => {
 			</div>
 			<LeHighlighter
 				language="tsx"
-				code={`<Box centered padding={12} bgColor="default" textColor="darker">
-	text will be centered
-</Box>`}
+				code={`const Component = () = (
+	<Box centered padding={12} bgColor="default" textColor="darker">
+		text will be centered
+	</Box>
+);`}
 			/>
 		</>
 	);

@@ -20,4 +20,4 @@ interface InputProps {
 	};
 }
 
-export { InputProps };
+export { InputProps, InputSizes, InputTypes, InputVariant };

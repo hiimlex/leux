@@ -19,4 +19,4 @@ interface BadgeProps {
 	customStyles?: React.CSSProperties;
 }
 
-export { BadgeProps, BadgeTypes };
+export { BadgeProps, BadgeTypes, BadgeSizes, BadgeVariants };

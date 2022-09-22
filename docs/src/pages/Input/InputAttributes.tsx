@@ -1,6 +1,12 @@
 import { LeHighlighter, LeSourceButton } from "@/components";
 import { useState } from "react";
-import { Input, Topography } from "../../../../src";
+import {
+	Button,
+	Input,
+	InputSizes,
+	InputVariant,
+	Topography,
+} from "../../../../src";
 import { attributes as inputAttr } from "./input.md";
 
 const InputImportPreview = () => (
@@ -19,10 +25,14 @@ const InputKeyPreview = () => (
 			<Input fieldKey="key" placeholder="Key" />
 		</div>
 		<LeHighlighter
-			code={`<Topography type="body-1">
-	Inspect element to see the id and name attributes
-</Topography>
-<Input fieldKey="key" placeholder="Key" />`}
+			code={`const Component = () => (
+	<>
+		<Topography type="body-1">
+			Inspect element to see the id and name attributes
+		</Topography>
+		<Input fieldKey="key" placeholder="Key" />
+	</>
+);`}
 			language="tsx"
 		/>
 	</>
@@ -31,13 +41,17 @@ const InputKeyPreview = () => (
 const InputVariantPreview = () => (
 	<>
 		<div className="le-preview le-input-group">
-			<Input variant="filled" placeholder="Placeholder" />
-			<Input variant="outlined" placeholder="Placeholder" />
+			{(["filled", "outlined"] as InputVariant[]).map((variant, index) => (
+				<Input key={index} variant={variant} placeholder="Placeholder" />
+			))}
 		</div>
 		<LeHighlighter
 			language="tsx"
-			code={`<Input variant="filled" placeholder="Placeholder" />
-<Input variant="outlined" placeholder="Placeholder" />`}
+			code={`const Component = () => (
+	{(["filled", "outlined"] as InputVariant[]).map((variant, index) => (
+		<Input key={index} variant={variant} placeholder="Placeholder" />
+	))}
+);`}
 		/>
 	</>
 );
@@ -45,15 +59,22 @@ const InputVariantPreview = () => (
 const InputSizePreview = () => (
 	<>
 		<div className="le-preview le-input-group">
-			<Input variant="outlined" placeholder="Small" size="small" />
-			<Input variant="outlined" placeholder="Medium" size="medium" />
-			<Input variant="outlined" placeholder="Large" size="large" />
+			{(["small", "medium", "large"] as InputSizes[]).map((size, index) => (
+				<Input key={index} variant="outlined" placeholder={size} size={size} />
+			))}
 		</div>
 		<LeHighlighter
 			language="tsx"
-			code={`<Input variant="filled" placeholder="Small" size="small" />
-<Input variant="outlined" placeholder="Medium" size="medium" />
-<Input variant="outlined" placeholder="Large" size="large" />`}
+			code={`const Component = () => (
+	{(["small", "medium", "large"] as InputSizes[]).map((size, index) => (
+		<Input
+			key={index}
+			variant="outlined"
+			placeholder={size}
+			size={size}
+		/>
+	))}
+);`}
 		/>
 	</>
 );
@@ -65,8 +86,12 @@ const InputFocusPreview = () => (
 			<Input placeholder="Focus" focusStyle={false} />
 		</div>
 		<LeHighlighter
-			code={`<Input placeholder="Focus" focusStyle />
-<Input placeholder="Focus" focusStyle={false} />`}
+			code={`const Component = () => (
+	<>
+		<Input placeholder="Focus" focusStyle />
+		<Input placeholder="Focus" focusStyle={false} />
+	</>
+);`}
 			language="tsx"
 		/>
 	</>
@@ -112,13 +137,55 @@ const InputActionPreview = () => {
 };
 
 const InputStatePreview = () => {
+	const [disabled, setDisabled] = useState(true);
+	const [value, setValue] = useState("");
+	const handleOnClick = () => setDisabled(!disabled);
+	const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setValue(e.target.value);
+	};
+
 	return (
 		<>
-			<div className="le-preview">
-				<Input state={{ disabled: true }} placeholder="Disabled" />
+			<div className="le-preview le-input-group">
+				<Button
+					variant={disabled ? "danger" : "primary"}
+					onClick={handleOnClick}
+				>
+					{disabled ? "off" : "on"}
+				</Button>
+				<Topography type="body-1">Value: {value}</Topography>
+				<Input
+					state={{ disabled }}
+					placeholder="Disabled"
+					onChange={handleOnChange}
+				/>
 			</div>
 			<LeHighlighter
-				code={`<Input state={{ disabled: true }} placeholder="Disabled" />`}
+				code={`const Component = () => {
+	const [disabled, setDisabled] = useState(true);
+	const [value, setValue] = useState("");
+	const handleOnClick = () => setDisabled(!disabled);
+	const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setValue(e.target.value);
+	}
+
+	return (
+		<>
+			<Button
+				variant={disabled ? "danger" : "primary"}
+				onClick={handleOnClick}
+			>
+				{disabled ? "off" : "on"}
+			</Button>
+			<Topography type="body-1">Value: {}</Topography>
+			<Input
+				state={{ disabled }}
+				placeholder="Disabled"
+				onChange={handleOnChange}
+			/>
+		</>
+	)
+};`}
 				language="tsx"
 			/>
 		</>
@@ -140,15 +207,16 @@ const InputCustomPreview = () => {
 				/>
 			</div>
 			<LeHighlighter
-				code={`<Input
-	placeholder="Custom input"
-	customStyles={{
-		color: "red",
-		borderColor: "green",
-		backgroundColor: "blue",
-	}}
-	customClass="le-text--h6"
-/>`}
+				code={`const Component = () => (
+	<Input
+		placeholder="Custom input"
+		customStyles={{
+			color: "red",
+			borderColor: "green",
+			backgroundColor: "blue",
+		}}
+		customClass="le-text--h6"
+	/>`}
 				language="tsx"
 			/>
 		</>

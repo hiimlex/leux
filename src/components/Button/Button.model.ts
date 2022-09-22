@@ -27,4 +27,4 @@ interface ButtonProps {
 	customStyles?: React.CSSProperties;
 }
 
-export { ButtonProps, ButtonVariants, ButtonTypes, ButtonState };
+export { ButtonProps, ButtonVariants, ButtonTypes, ButtonState, ButtonSizes };
