@@ -30,7 +30,7 @@ const CodePreview = () => (
 		<Topography type="subtitle-2">subtitle-1. Subtitle</Topography>
 		<Topography type="caption">caption. Caption</Topography>
 		<Topography type="button">button. Button</Topography>
-		<LeTopography type="overline">overline. Overline</LeTopography>
+		<Topography type="overline">overline. Overline</Topography>
 	</>
 );`}
 		/>
