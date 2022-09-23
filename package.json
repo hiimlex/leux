@@ -1,7 +1,7 @@
 {
 	"name": "leux",
 	"version": "0.1.1",
-	"homepage": "https://leux.vercel.app/layout/topography",
+	"homepage": "https://leux.vercel.app/",
 	"description": "React components library",
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org"
