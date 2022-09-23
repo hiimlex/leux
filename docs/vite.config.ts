@@ -26,5 +26,5 @@ export default defineConfig(async () => ({
 			allow: [".."],
 		},
 	},
-	base: "./",
+	base: "/leux/",
 }));
