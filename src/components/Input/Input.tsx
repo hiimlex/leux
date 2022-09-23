@@ -23,7 +23,7 @@ const Input = ({
 			type={type}
 			placeholder={placeholder}
 			onChange={onChange}
-			style={{ width: width, ...customStyles }}
+			style={{ width, ...customStyles }}
 			className={
 				"le-input" +
 				(variant ? ` le-input--${variant}` : "") +

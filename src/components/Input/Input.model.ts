@@ -3,6 +3,9 @@ import React from "react";
 type InputTypes = "text" | "password" | "email";
 type InputSizes = "small" | "medium" | "large";
 type InputVariant = "outlined" | "filled";
+type InputState = {
+	disabled?: boolean;
+};
 
 interface InputProps {
 	fieldKey?: string;
@@ -15,9 +18,7 @@ interface InputProps {
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 	customStyles?: React.CSSProperties;
 	customClass?: string;
-	state?: {
-		disabled?: boolean;
-	};
+	state?: InputState;
 }
 
-export { InputProps, InputSizes, InputTypes, InputVariant };
+export { InputProps, InputSizes, InputTypes, InputVariant, InputState };
