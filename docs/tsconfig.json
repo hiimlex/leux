@@ -20,6 +20,15 @@
 		},
 		"baseUrl": "./"
 	},
-	"include": ["src", "declaration.d.ts"],
+	"include": [
+		"src/vite-env.d.ts",
+		"src/vite.d.ts",
+		"src/scss.d.ts",
+		"src/pages/md.d.ts",
+		"src/**/*.ts",
+		"src/**/*.d.ts",
+		"src/**/*.tsx",
+		"src/**/*.tsx"
+	],
 	"references": [{ "path": "./tsconfig.node.json" }]
 }
