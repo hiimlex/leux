@@ -11,6 +11,7 @@ import {
 	InstallationPage,
 	NotFoundPage,
 	OverviewPage,
+	SelectPage,
 	TopographyPage,
 } from "@/pages";
 
@@ -57,6 +58,10 @@ const AppRouter = () => {
 			<Route
 				path="/components/input"
 				element={<LeRenderDocPage doc={<InputPage />} title="Input" />}
+			/>
+			<Route
+				path="/components/select"
+				element={<LeRenderDocPage doc={<SelectPage />} title="Select" />}
 			/>
 			<Route
 				path="*"
