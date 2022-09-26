@@ -44,7 +44,11 @@
 			align-items: flex-start;
 
 			.le-input {
-				margin: 12px 0;
+				margin: 6px 0;
+			}
+
+			.le-select {
+				margin: 6px 0;
 			}
 		}
 
@@ -87,6 +91,11 @@
 			border-radius: 4px;
 			background-color: $color-light-text !important;
 			padding: 0 !important;
+
+			code {
+				display: flex;
+				flex-wrap: wrap;
+			}
 		}
 	}
 

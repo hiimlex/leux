@@ -1,18 +1,17 @@
 @import "../../core/styles/variables.scss";
 
 .le-anchor-nav {
-	width: 180px;
+	width: 132px;
 	overflow: hidden;
 	margin-left: 12px;
 	margin-top: 32px;
 	color: $color-dark-text;
 
-
 	position: relative;
 
 	.fixed-content {
 		position: fixed;
-		width: 180px;
+		width: 132px;
 
 		.le-anchor-links {
 			display: flex;

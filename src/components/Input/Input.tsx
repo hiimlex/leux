@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { InputProps } from "./Input.model";
 
 import "./Input.scss";
@@ -16,9 +16,12 @@ const Input = ({
 	customStyles,
 	state,
 }: InputProps) => {
+	const inputRef = useRef<HTMLInputElement>(null);
+
 	return (
 		<input
 			id={fieldKey}
+			ref={inputRef}
 			name={fieldKey}
 			type={type}
 			placeholder={placeholder}

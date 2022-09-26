@@ -16,12 +16,24 @@
 	.le-app-header--content {
 		padding: 4px 16px;
 		width: 100%;
-		max-width: 1280px;
+		max-width: 1080px;
 
 		display: flex;
 		align-items: center;
 		flex-direction: row;
 		justify-content: flex-start;
+
+		&--md {
+			max-width: 1080px;
+		}
+
+		&--lg {
+			max-width: 1280px;
+		}
+
+		&--xl {
+			max-width: 1440px;
+		}
 
 		.flex-1 {
 			display: flex;

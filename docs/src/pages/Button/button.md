@@ -96,7 +96,7 @@ Use the `onClick` prop to trigger an action when the button is clicked.
 </tr>
 <tr>
 <td>customClass</td>
-<td><LeHighlighter code="'string'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>

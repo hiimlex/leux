@@ -71,15 +71,15 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the Box compo
 <table>
 <thead>
 <tr>
-<th width="10%">Key</th>
-<th width="70%">Prop</th>
+<th width="10%">Prop</th>
+<th width="70%">Type</th>
 <th width="20%">Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>centered</td>
-<td><LeHighlighter code="'boolean'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter code="boolean" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
@@ -119,7 +119,7 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the Box compo
 </tr>
 <tr>
 <td>customClass</td>
-<td><LeHighlighter code="'string'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>

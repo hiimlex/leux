@@ -74,7 +74,7 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the component
 </tr>
 <tr>
 <td>customClass</td>
-<td><LeHighlighter code="'string'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>

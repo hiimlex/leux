@@ -1,7 +1,7 @@
 @import "../../core/styles/variables.scss";
 
 .le-sidenav {
-	width: 180px;
+	width: 132px;
 	padding-left: 0;
 	height: 100vh;
 	margin-top: 32px;
@@ -15,6 +15,7 @@
 
 	.fixed-content {
 		position: fixed;
+		width: 132px;
 
 		.le-sidenav--section {
 			display: flex;
@@ -31,9 +32,10 @@
 			.le-sidenav--links {
 				display: flex;
 				flex-direction: column;
+				flex-wrap: wrap;
 
 				a {
-					margin: 6px;
+					margin: 6px 0;
 					margin-left: 18px;
 					color: $color-dark-text;
 					text-decoration: none;

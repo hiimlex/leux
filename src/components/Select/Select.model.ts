@@ -13,7 +13,6 @@ type SelectState = {
 
 interface SelectProps {
 	fieldKey?: string;
-	options?: SelectOption[];
 	size?: SelectSizes;
 	placeholder?: string;
 	width?: React.CSSProperties["width"];
@@ -22,9 +21,9 @@ interface SelectProps {
 	onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 	customStyles?: React.CSSProperties;
 	customClass?: string;
-	optionCustomStyles?: React.CSSProperties;
-	optionCustomClass?: string;
 	state?: SelectState;
+	children?: React.ReactNode;
+	defaultValue?: string;
 }
 
 export { SelectProps, SelectSizes, SelectOption, SelectState, SelectTypes };

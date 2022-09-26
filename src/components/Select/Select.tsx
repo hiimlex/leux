@@ -1,54 +1,53 @@
-import React from "react";
+import React, { useRef } from "react";
+import { Option } from "../Option";
 import { SelectProps } from "./Select.model";
 import "./Select.scss";
 
 const Select = ({
-	options,
 	customClass,
 	customStyles,
 	fieldKey,
-	focusStyle,
+	focusStyle = true,
 	onChange,
 	placeholder,
-	size,
+	size = "medium",
 	state,
-	type,
+	type = "filled",
 	width,
-	optionCustomClass,
-	optionCustomStyles,
+	children,
+	defaultValue,
 }: SelectProps) => {
+	const selectRef = useRef<HTMLSelectElement>(null);
+
 	return (
 		<select
 			id={fieldKey}
+			ref={selectRef}
 			name={fieldKey}
 			onChange={onChange}
-			placeholder={placeholder}
 			style={{ width, ...customStyles }}
 			className={
 				"le-select" +
 				(type ? ` le-select--${type}` : "") +
 				(size ? ` le-select--${size}` : "") +
-				(focusStyle ? ` ${focusStyle}` : "") +
+				(focusStyle ? ` le-select--focus` : "") +
 				(customClass ? ` ${customClass}` : "") +
 				(state && state.disabled ? " le-select--disabled" : "")
 			}
 			disabled={state && state.disabled}
+			defaultValue={defaultValue || (placeholder && "")}
 			data-testid="leuxSelect"
 		>
-			{options &&
-				options.map(({ value, label }) => (
-					<option
-						key={value}
-						value={value}
-						className={
-							"le-select--option" +
-							(optionCustomClass ? ` ${optionCustomClass}` : "")
-						}
-						style={optionCustomStyles}
-					>
-						{label}
-					</option>
-				))}
+			{placeholder && (
+				<Option
+					value=""
+					state={{ disabled: true }}
+					customStyles={{ display: "none" }}
+				>
+					{placeholder}
+				</Option>
+			)}
+			{children}
 		</select>
 	);
 };
