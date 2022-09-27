@@ -16,7 +16,18 @@ const Input = ({
 	customStyles,
 	state,
 }: InputProps) => {
+	const [value, setValue] = React.useState<string>("");
+
 	const inputRef = useRef<HTMLInputElement>(null);
+
+	const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const { value } = event.target;
+		setValue(value);
+
+		if (onChange) {
+			onChange(value, event);
+		}
+	};
 
 	return (
 		<input
@@ -25,7 +36,7 @@ const Input = ({
 			name={fieldKey}
 			type={type}
 			placeholder={placeholder}
-			onChange={onChange}
+			onChange={handleOnChange}
 			style={{ width, ...customStyles }}
 			className={
 				"le-input" +

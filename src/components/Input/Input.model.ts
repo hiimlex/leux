@@ -15,7 +15,7 @@ interface InputProps {
 	width?: React.CSSProperties["width"];
 	placeholder?: string;
 	focusStyle?: boolean;
-	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	onChange?: (value: string, event?: React.ChangeEvent<HTMLInputElement>) => void;
 	customStyles?: React.CSSProperties;
 	customClass?: string;
 	state?: InputState;

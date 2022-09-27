@@ -12,8 +12,7 @@ const SourceButton = ({ url }: SourceButtonProps) => {
 
 	return (
 		<button className="le-source--button" onClick={navigateToSource}>
-			<FaGithub size={"1rem"} className="le-source--icon" />
-			Source
+			<FaGithub size={"1rem"} className="le-source--icon" /> Code
 		</button>
 	);
 };

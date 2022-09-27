@@ -23,11 +23,11 @@ function useBreakpoint(): LeBreakpointType {
 	const updateBreakpoint = () => {
 		const { innerWidth: width } = window;
 
-		if (width < 1080) {
+		if (width <= 1080) {
 			setBreakpoint({ breakpoint: "sm" });
-		} else if (width < 1280) {
+		} else if (width <= 1280) {
 			setBreakpoint({ breakpoint: "md" });
-		} else if (width < 1440) {
+		} else if (width <= 1440) {
 			setBreakpoint({ breakpoint: "lg" });
 		} else {
 			setBreakpoint({ breakpoint: "xl" });

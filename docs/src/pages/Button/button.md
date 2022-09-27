@@ -12,8 +12,8 @@ Button component is used to fire events. Commom used on forms, modals, panels an
 
 <div><ButtonImportPreview></ButtonImportPreview></div>
 
-- **Button** is the main component
-- **LeButtonProps** is the props type
+- **Button** - the button component
+- **ButtonProps** - the props type
 
 <br/>
 

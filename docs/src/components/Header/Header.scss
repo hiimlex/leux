@@ -23,6 +23,10 @@
 		flex-direction: row;
 		justify-content: flex-start;
 
+		&--sm {
+			max-width: 798px;
+		}
+
 		&--md {
 			max-width: 1080px;
 		}

@@ -99,6 +99,7 @@ const InputFocusPreview = () => (
 
 const InputActionPreview = () => {
 	const [value, setValue] = useState("");
+	const handleOnChange = (value: string) => setValue(value);
 
 	return (
 		<>
@@ -108,15 +109,14 @@ const InputActionPreview = () => {
 				</Topography>
 				<Input
 					placeholder="Action"
-					onChange={(e) => {
-						setValue(e.target.value);
-					}}
+					onChange={handleOnChange}
 				/>
 			</div>
 			<LeHighlighter
 				language="tsx"
 				code={`const Component = () = {
 	const [value, setValue] = useState("");
+	const handleOnChange = (value: string) => setValue(value);
 
 	return (
 		<>
@@ -124,9 +124,7 @@ const InputActionPreview = () => {
 			<Input
 				key="preview"
 				placeholder="Action"
-				onChange={(e) => {
-					setValue(e.target.value);
-				}}
+				onChange={handleOnChange}
 			/>
 		</>
 	)
@@ -140,9 +138,7 @@ const InputStatePreview = () => {
 	const [disabled, setDisabled] = useState(true);
 	const [value, setValue] = useState("");
 	const handleOnClick = () => setDisabled(!disabled);
-	const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setValue(e.target.value);
-	};
+	const handleOnChange = (value: string) => setValue(value)
 
 	return (
 		<>
@@ -165,9 +161,7 @@ const InputStatePreview = () => {
 	const [disabled, setDisabled] = useState(true);
 	const [value, setValue] = useState("");
 	const handleOnClick = () => setDisabled(!disabled);
-	const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setValue(e.target.value);
-	}
+	const handleOnChange = (value: string) => setValue(value)
 
 	return (
 		<>

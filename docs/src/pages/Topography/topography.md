@@ -14,8 +14,8 @@ Topography is a layout component. It is used to create headings, paragraphs, and
 <ImportPreview></ImportPreview>
 </div>
 
-- **LeTopography**: the main component.
-- **LeTopographyProps**: the prop types.
+- **Topography** - the main component.
+- **TopographyProps** - the prop types.
 
 <br/>
 
