@@ -2,18 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { SelectOption, SelectProps, SelectState } from "./Select.model";
 import "./Select.scss";
 
-const handleLabel = (values?: string[]): string => {
-	if (values && values.length) {
-		if (values.length > 1) {
-			return values.join(", ");
-		}
-
-		return values[0];
-	}
-
-	return "";
-};
-
 const Select = ({
 	customClass,
 	customStyles,
@@ -23,16 +11,47 @@ const Select = ({
 	placeholder,
 	size = "medium",
 	state = {},
-	type = "filled",
+	variant = "filled",
 	width,
 	defaultValue,
-	multiple,
-	options,
+	multiple = false,
+	options = [],
+	clickHide = true,
+	clickOutsideHide = true,
+	optionCustomClass,
+	optionCustomStyles,
 }: SelectProps) => {
-	const [optionsArr, setOptionArr] = useState<SelectOption[]>(options);
+	const [optionsArr, setOptionArr] = useState<SelectOption[]>(
+		options.map((el) => {
+			if (el.state) {
+				if (!Object.prototype.hasOwnProperty.call(el.state, "selected")) {
+					el.state = { ...el.state, selected: false };
+				}
 
-	const [label, setLabel] = useState<string>(handleLabel(defaultValue));
-	const [selectedValue, setSelectedValue] = useState<string[]>(
+				if (defaultValue && defaultValue.includes(el.value)) {
+					el.state = { ...el.state, selected: true };
+				}
+			} else {
+				el.state = {
+					selected: false,
+				};
+			}
+
+			return el;
+		})
+	);
+
+	const initialLabel = optionsArr
+		.map((el) => {
+			if (defaultValue && defaultValue.includes(el.value)) {
+				return el.label;
+			}
+		})
+		.filter((el) => el)
+		.join(", ");
+
+	const [label, setLabel] = useState<string>(initialLabel);
+	const [_selectedValue, setSelectedValue] = useState<string[]>(
 		defaultValue || []
 	);
 
@@ -46,38 +65,46 @@ const Select = ({
 	};
 
 	const handleOnChange = (value: string) => {
+		if (!multiple) {
+			optionsArr.forEach((option) => {
+				if (option.state && !option.state.disabled) {
+					if (option.value === value) {
+						option.state.selected = !option.state.selected;
+					} else {
+						option.state.selected = false;
+					}
+				}
+			});
+		} else {
+			optionsArr.forEach((option) => {
+				if (option.state && !option.state.disabled) {
+					if (option.value === value) {
+						option.state.selected = !option.state.selected;
+					}
+				}
+			});
+		}
+
+		const selectedValues = optionsArr
+			.filter((option) => option.state && option.state.selected)
+			.map((el) => el.value);
+
+		const selectedLabels = optionsArr
+			.filter((option) => option.state && option.state.selected)
+			.map((el) => el.label)
+			.filter((el) => el);
+
+		setSelectedValue(selectedValues);
+		setLabel(
+			selectedLabels.length > 1 ? selectedLabels.join(", ") : selectedLabels[0]
+		);
+
 		if (onChange) {
-			if (!multiple) {
-				optionsArr.forEach((option) => {
-					if (!option.state.disabled) {
-						if (option.value === value) {
-							option.state.selected = !option.state.selected;
-						} else {
-							option.state.selected = false;
-						}
-					}
-				});
-			} else {
-				optionsArr.forEach((option) => {
-					if (!option.state.disabled) {
-						if (option.value === value) {
-							option.state.selected = !option.state.selected;
-						}
-					}
-				});
-			}
-
-			const selectedValues = optionsArr
-				.filter((option) => option.state.selected)
-				.map((el) => el.value);
-
-			const selectedLabels = optionsArr
-				.filter((option) => option.state.selected)
-				.map((el) => el.label);
-
-			setSelectedValue(selectedValues);
-			setLabel(handleLabel(selectedLabels));
 			onChange(selectedValues);
+		}
+
+		if (clickHide) {
+			handleFocus();
 		}
 	};
 
@@ -87,13 +114,15 @@ const Select = ({
 				dropdownRef.current &&
 				!dropdownRef.current.contains(event.target as Node) &&
 				inputRef.current &&
-				!inputRef.current.contains(event.target as Node)
+				!inputRef.current.contains(event.target as Node) &&
+				clickOutsideHide
 			) {
 				setIsFocused(false);
 			}
 		}
 
 		document.addEventListener("mousedown", handleClickOutside);
+
 		return () => {
 			document.removeEventListener("mousedown", handleClickOutside);
 		};
@@ -103,7 +132,7 @@ const Select = ({
 		<div
 			className={
 				"le-select" +
-				(type ? ` le-select--${type}` : "") +
+				(variant ? ` le-select--${variant}` : "") +
 				(size ? ` le-select--${size}` : "") +
 				(focusStyle && isFocused ? ` le-select--focus` : "") +
 				(customClass ? ` ${customClass}` : "") +
@@ -126,24 +155,31 @@ const Select = ({
 			/>
 			{isFocused && (
 				<div ref={dropdownRef} className="le-select--dropdown">
-					{optionsArr.length &&
-						optionsArr.map((option) => (
-							<div
-								key={option.value}
-								onClick={() => {
-									if (!option.state.disabled) {
-										handleOnChange(option.value);
+					{optionsArr.length
+						? optionsArr.map((option) => (
+								<div
+									key={option.value}
+									onClick={() => {
+										if (option.state && !option.state.disabled) {
+											handleOnChange(option.value);
+										}
+									}}
+									className={
+										"le-option" +
+										(option.state && option.state.selected
+											? " le-option--selected"
+											: "") +
+										(option.state && option.state.disabled
+											? " le-option--disabled"
+											: "") +
+										(optionCustomClass ? ` ${optionCustomClass}` : "")
 									}
-								}}
-								className={
-									"le-option" +
-									(option.state.selected ? " le-option--selected" : "") +
-									(option.state.disabled ? " le-option--disabled" : "")
-								}
-							>
-								{option.label}
-							</div>
-						))}
+									style={optionCustomStyles}
+								>
+									{option.label}
+								</div>
+						  ))
+						: null}
 				</div>
 			)}
 		</div>

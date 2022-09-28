@@ -102,6 +102,7 @@
 		cursor: default;
 		overflow: hidden;
 		overflow-y: auto;
+		color: inherit;
 
 		.le-option {
 			line-height: 100%;
@@ -110,6 +111,7 @@
 			cursor: pointer;
 			width: 100%;
 			transition: inherit;
+			color: inherit;
 
 			&:hover {
 				background-color: rgba($color-variant-primary, 0.2);

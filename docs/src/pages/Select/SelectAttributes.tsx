@@ -11,27 +11,37 @@ const SelectImportPreview = () => (
 );
 
 const SelectOptionPreview = () => {
-	const [value, setValue] = useState<string[]>([]);
-	const handleOnChange = (values: string[]) => setValue(values);
+	const [value, setValue] = useState([""]);
+	const handleValueChange = (value: string[]) => setValue(value);
 
 	return (
 		<>
 			<div className="le-preview le-input-group">
-				{value.join(", ")}
+				<Topography type="body-1">Select with options: {value[0]}</Topography>
 				<Select
 					placeholder="Normal"
-					multiple
 					options={[
 						{ label: "A", value: "a", state: { selected: false } },
 						{ label: "B", value: "b", state: { selected: false } },
 					]}
-					onChange={handleOnChange}
+					onChange={handleValueChange}
 				></Select>
 			</div>
 			<LeHighlighter
 				code={`const Component = () => {
 	return (
 		<>
+			<Topography type="body-1">
+				Select with options: {value[0]}
+			</Topography>
+			<Select
+				placeholder="Normal"
+				options={[
+					{ label: "A", value: "a", state: { selected: false } },
+					{ label: "B", value: "b", state: { selected: false } },
+				]}
+				onChange={handleValueChange}
+			></Select>
 		</>
 	)
 };`}
@@ -44,10 +54,27 @@ const SelectOptionPreview = () => {
 const SelectKeyPreview = () => {
 	return (
 		<>
-			<div className="le-preview"></div>
+			<div className="le-preview">
+				<Select
+					fieldKey="key"
+					placeholder="with key"
+					options={[
+						{ label: "Key 1", state: { selected: false }, value: "key1" },
+					]}
+				/>
+			</div>
 			<LeHighlighter
 				code={`const Component = () => {
 	return (
+		<>
+			<Select
+				fieldKey="key"
+				placeholder="with key"
+				options={[
+					{ label: "Key 1", state: { selected: false }, value: "key1" },
+				]}
+			/>
+		</>
 	)
 };`}
 				language="tsx"
@@ -59,11 +86,48 @@ const SelectKeyPreview = () => {
 const SelectVariantPreview = () => {
 	return (
 		<>
-			<div className="le-preview le-input-group"></div>
+			<div className="le-preview le-input-group">
+				<Select
+					options={[
+						{ label: "Filled 1", value: "filled1", state: { selected: false } },
+					]}
+					placeholder="Filled"
+					variant="filled"
+				/>
+				<Select
+					options={[
+						{
+							label: "Outlined 1",
+							value: "outlined1",
+							state: { selected: false },
+						},
+					]}
+					placeholder="Outlined"
+					variant="outlined"
+				/>
+			</div>
 			<LeHighlighter
 				code={`const Component = () => {
 	return (
 		<>
+			<Select
+				options={[
+					{ label: "Filled 1", value: "filled1", state: { selected: false } },
+				]}
+				placeholder="Filled"
+				variant="filled"
+			/>
+			<Select
+				options={[
+					{
+						label: "Outlined 1",
+						value: "outlined1",
+						state: { selected: false },
+					},
+				]}
+				placeholder="Outlined"
+				variant="outlined"
+			/>
 		</>
 	);
 };`}
@@ -76,11 +140,42 @@ const SelectVariantPreview = () => {
 const SelectSizePreview = () => {
 	return (
 		<>
-			<div className="le-preview le-input-group"></div>
+			<div className="le-preview le-input-group">
+				<Select
+					options={[{ label: "Small", value: "small" }]}
+					size="small"
+					placeholder="small"
+				/>
+				<Select
+					options={[{ label: "Medium", value: "medium" }]}
+					size="medium"
+					placeholder="medium"
+				/>
+				<Select
+					options={[{ label: "Large", value: "large" }]}
+					size="large"
+					placeholder="large"
+				/>
+			</div>
 			<LeHighlighter
 				code={`const Component = () => {
 	return (
 		<>
+			<Select
+				options={[{ label: "Small", value: "small" }]}
+				size="small"
+				placeholder="small"
+			/>
+			<Select
+				options={[{ label: "Medium", value: "medium" }]}
+				size="medium"
+				placeholder="medium"
+			/>
+			<Select
+				options={[{ label: "Large", value: "large" }]}
+				size="large"
+				placeholder="large"
+			/>
 		</>
 	)
 }`}
@@ -91,9 +186,22 @@ const SelectSizePreview = () => {
 };
 
 const SelectFocusStylePreview = () => {
+	const [value, setValue] = useState<string[]>([]);
+	const handleValueChange = (value: string[]) => setValue(value);
+
 	return (
 		<>
-			<div className="le-preview le-input-group"></div>
+			<div className="le-preview le-input-group">
+				<Select
+					options={[
+						{ label: "Yes", value: "yes" },
+						{ label: "No", value: "no" },
+					]}
+					placeholder="apply focus style ?"
+					onChange={handleValueChange}
+					focusStyle={value[0] === "yes"}
+				/>
+			</div>
 			<LeHighlighter
 				code={`const Component = () => {
 	return (

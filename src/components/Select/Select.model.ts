@@ -3,14 +3,14 @@ import React from "react";
 type SelectOption = {
 	value: string;
 	label: string;
-	state: {
+	state?: {
 		disabled?: boolean;
-		selected: boolean;
+		selected?: boolean;
 	};
 };
 
 type SelectSizes = "small" | "medium" | "large";
-type SelectTypes = "filled" | "outlined";
+type SelectVariant = "filled" | "outlined";
 type SelectState = {
 	disabled?: boolean;
 };
@@ -20,12 +20,9 @@ interface SelectProps {
 	size?: SelectSizes;
 	placeholder?: string;
 	width?: React.CSSProperties["width"];
-	type?: SelectTypes;
+	variant?: SelectVariant;
 	focusStyle?: boolean;
-	onChange?: (
-		value: string[],
-		event?: React.ChangeEvent<HTMLSelectElement>
-	) => void;
+	onChange?: (value: string[]) => void;
 	customStyles?: React.CSSProperties;
 	customClass?: string;
 	state?: SelectState;
@@ -34,6 +31,8 @@ interface SelectProps {
 	options: SelectOption[];
 	optionCustomClass?: string;
 	optionCustomStyles?: React.CSSProperties;
+	clickHide?: boolean;
+	clickOutsideHide?: boolean;
 }
 
-export { SelectProps, SelectSizes, SelectOption, SelectState, SelectTypes };
+export { SelectProps, SelectSizes, SelectOption, SelectState, SelectVariant };
