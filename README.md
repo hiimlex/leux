@@ -46,6 +46,12 @@ yarn add leux
 
 To upload the CSS styles, you can move the **leux.min.css** from the **node_modules/leux/dist** folder to your project folder and import it in your **index.html** file.
 
+### To-do
+
+- Finish select documentation
+- Add husky and lint-staged
+- improve tests and test coverage
+
 ## Next steps:
 
 - [ ] components

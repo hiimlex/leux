@@ -8,7 +8,7 @@ import { Select } from "./Select";
 
 describe("Select component test", () => {
 	it("should render a Select component", () => {
-		const { getByTestId } = render(<Select />);
+		const { getByTestId } = render(<Select options={[]} />);
 
 		const select = getByTestId("leuxSelect");
 
