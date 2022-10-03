@@ -23,16 +23,19 @@ interface SelectProps {
 	variant?: SelectVariant;
 	focusStyle?: boolean;
 	onChange?: (value: string[]) => void;
-	customStyles?: React.CSSProperties;
-	customClass?: string;
 	state?: SelectState;
 	defaultValue?: string[];
 	multiple?: boolean;
 	options: SelectOption[];
+	clickOptionHide?: boolean;
+	clickOutsideHide?: boolean;
+	valueSeparator?: string;
+	selectCustomClass?: string;
+	selectCustomStyles?: React.CSSProperties;
 	optionCustomClass?: string;
 	optionCustomStyles?: React.CSSProperties;
-	clickHide?: boolean;
-	clickOutsideHide?: boolean;
+	dropdownCustomClass?: string;
+	dropdownCustomStyles?: React.CSSProperties;
 }
 
 export { SelectProps, SelectSizes, SelectOption, SelectState, SelectVariant };

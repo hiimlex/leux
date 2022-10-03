@@ -60,7 +60,13 @@
 		font-weight: inherit;
 		line-height: inherit;
 		font-size: inherit;
-		cursor: pointer;
+		cursor: default;
+		position: relative;
+		padding-right: 24px !important;
+
+		&:placeholder-shown {
+			text-overflow: ellipsis;
+		}
 
 		&::placeholder {
 			color: $color-placeholder-text;
@@ -108,10 +114,8 @@
 			line-height: 100%;
 			font-size: inherit;
 			padding: 0.625rem;
-			cursor: pointer;
 			width: 100%;
 			transition: inherit;
-			color: inherit;
 
 			&:hover {
 				background-color: rgba($color-variant-primary, 0.2);
@@ -121,6 +125,47 @@
 				background-color: $color-variant-primary !important;
 				color: white !important;
 			}
+		}
+	}
+
+	&--actions {
+		position: absolute;
+		width: fit-content;
+		height: 100%;
+		color: red;
+		top: 0;
+		bottom: 0;
+		right: 4px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0 0.5rem;
+		transition: all 0.1s ease-in-out;
+
+		&--arrow {
+			margin-bottom: 4px;
+			border: solid $color-placeholder-text;
+			border-width: 0 2px 2px 0;
+			display: flex;
+
+			padding: 2px 2px;
+			padding-left: 4px;
+			padding-top: 4px;
+
+			transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
+
+			&.focused {
+				border-color: $color-variant-primary;
+			}
+		}
+	}
+
+	&--disabled {
+		input {
+			cursor: not-allowed !important;
+			background: $color-variant-disabled !important;
+			color: $color-darker-text !important;
 		}
 	}
 }

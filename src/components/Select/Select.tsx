@@ -1,10 +1,31 @@
-import React, { useEffect, useRef, useState } from "react";
-import { SelectOption, SelectProps, SelectState } from "./Select.model";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { SelectOption, SelectProps } from "./Select.model";
 import "./Select.scss";
 
+const mappedOptions = (
+	options: SelectOption[],
+	defaultValue?: string[]
+): SelectOption[] => {
+	return options.map((el) => {
+		if (el.state) {
+			if (!Object.prototype.hasOwnProperty.call(el.state, "selected")) {
+				el.state = { ...el.state, selected: false };
+			}
+
+			if (defaultValue && defaultValue.includes(el.value)) {
+				el.state = { ...el.state, selected: true };
+			}
+		} else {
+			el.state = {
+				selected: false,
+			};
+		}
+
+		return el;
+	});
+};
+
 const Select = ({
-	customClass,
-	customStyles,
 	fieldKey,
 	focusStyle = true,
 	onChange,
@@ -16,49 +37,40 @@ const Select = ({
 	defaultValue,
 	multiple = false,
 	options = [],
-	clickHide = true,
+	clickOptionHide = true,
 	clickOutsideHide = true,
-	optionCustomClass,
+	valueSeparator = ", ",
 	optionCustomStyles,
+	optionCustomClass,
+	selectCustomClass,
+	selectCustomStyles,
+	dropdownCustomClass,
+	dropdownCustomStyles,
 }: SelectProps) => {
-	const [optionsArr, setOptionArr] = useState<SelectOption[]>(
-		options.map((el) => {
-			if (el.state) {
-				if (!Object.prototype.hasOwnProperty.call(el.state, "selected")) {
-					el.state = { ...el.state, selected: false };
-				}
-
-				if (defaultValue && defaultValue.includes(el.value)) {
-					el.state = { ...el.state, selected: true };
-				}
-			} else {
-				el.state = {
-					selected: false,
-				};
-			}
-
-			return el;
-		})
-	);
-
-	const initialLabel = optionsArr
-		.map((el) => {
-			if (defaultValue && defaultValue.includes(el.value)) {
-				return el.label;
-			}
-		})
-		.filter((el) => el)
-		.join(", ");
-
-	const [label, setLabel] = useState<string>(initialLabel);
-	const [_selectedValue, setSelectedValue] = useState<string[]>(
-		defaultValue || []
-	);
-
-	const [isFocused, setIsFocused] = useState(false);
-
 	const inputRef = useRef<HTMLInputElement>(null);
 	const dropdownRef = useRef<HTMLDivElement>(null);
+	const arrowRef = useRef<HTMLDivElement>(null);
+
+	const [optionsArr, _setOptionArr] = useState<SelectOption[]>(
+		mappedOptions(options, defaultValue)
+	);
+	const [selectedValue, setSelectedValue] = useState<string[]>(
+		defaultValue || []
+	);
+	const [isFocused, setIsFocused] = useState(false);
+
+	const getLabel = useMemo((): string => {
+		return optionsArr
+			.map((el) => {
+				if (selectedValue && selectedValue.includes(el.value)) {
+					return el.label;
+				}
+			})
+			.filter((el) => el)
+			.join(valueSeparator);
+	}, [selectedValue]);
+
+	const [label, setLabel] = useState<string>(getLabel);
 
 	const handleFocus = () => {
 		setIsFocused((curr) => !curr);
@@ -92,41 +104,64 @@ const Select = ({
 		const selectedLabels = optionsArr
 			.filter((option) => option.state && option.state.selected)
 			.map((el) => el.label)
-			.filter((el) => el);
+			.filter((el) => el)
+			.join(valueSeparator);
 
 		setSelectedValue(selectedValues);
-		setLabel(
-			selectedLabels.length > 1 ? selectedLabels.join(", ") : selectedLabels[0]
-		);
+		setLabel(selectedLabels);
 
 		if (onChange) {
 			onChange(selectedValues);
 		}
 
-		if (clickHide) {
+		if (clickOptionHide) {
+			handleFocus();
+		}
+	};
+
+	const handleClickOutside = (event: any) => {
+		if (
+			dropdownRef.current &&
+			!dropdownRef.current.contains(event.target as Node) &&
+			inputRef.current &&
+			!inputRef.current.contains(event.target as Node) &&
+			arrowRef.current &&
+			!arrowRef.current.contains(event.target as Node)
+		) {
+			setIsFocused(false);
+		}
+	};
+
+	const handleInputClick = (e: React.MouseEvent) => {
+		e.preventDefault();
+		e.stopPropagation();
+
+		if (!state.disabled) {
 			handleFocus();
 		}
 	};
 
 	useEffect(() => {
-		function handleClickOutside(event: any) {
-			if (
-				dropdownRef.current &&
-				!dropdownRef.current.contains(event.target as Node) &&
-				inputRef.current &&
-				!inputRef.current.contains(event.target as Node) &&
-				clickOutsideHide
-			) {
-				setIsFocused(false);
-			}
+		if (clickOutsideHide) {
+			document.addEventListener("mousedown", handleClickOutside);
 		}
 
 		document.addEventListener("mousedown", handleClickOutside);
 
+		if (!clickOutsideHide) {
+			document.removeEventListener("mousedown", handleClickOutside);
+		}
+
 		return () => {
 			document.removeEventListener("mousedown", handleClickOutside);
 		};
-	}, [dropdownRef]);
+	}, [dropdownRef, clickOutsideHide]);
+
+	useEffect(() => {
+		if (isFocused) {
+			setIsFocused(false);
+		}
+	}, [state.disabled]);
 
 	return (
 		<div
@@ -135,7 +170,6 @@ const Select = ({
 				(variant ? ` le-select--${variant}` : "") +
 				(size ? ` le-select--${size}` : "") +
 				(focusStyle && isFocused ? ` le-select--focus` : "") +
-				(customClass ? ` ${customClass}` : "") +
 				(state && state.disabled ? " le-select--disabled" : "")
 			}
 		>
@@ -143,18 +177,39 @@ const Select = ({
 				id={fieldKey}
 				ref={inputRef}
 				name={fieldKey}
-				style={{ width, ...customStyles }}
-				className="le-select--input"
+				style={{ width, ...selectCustomStyles }}
+				className={
+					"le-select--input" +
+					(selectCustomClass ? ` ${selectCustomClass}` : "")
+				}
 				disabled={state && state.disabled}
 				placeholder={placeholder}
 				data-testid="leuxSelect"
 				multiple={multiple}
 				readOnly
 				value={label}
-				onClick={handleFocus}
+				onClick={handleInputClick}
 			/>
-			{isFocused && (
-				<div ref={dropdownRef} className="le-select--dropdown">
+			<div
+				ref={arrowRef}
+				className="le-select--actions"
+				onClick={handleInputClick}
+			>
+				<div
+					className={
+						"le-select--actions--arrow" + (isFocused ? " focused" : "")
+					}
+				></div>
+			</div>
+			{isFocused && !state.disabled && (
+				<div
+					ref={dropdownRef}
+					className={
+						"le-select--dropdown" +
+						(dropdownCustomClass ? ` ${dropdownCustomClass}` : "")
+					}
+					style={dropdownCustomStyles}
+				>
 					{optionsArr.length
 						? optionsArr.map((option) => (
 								<div
