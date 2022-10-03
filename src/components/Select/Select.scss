@@ -110,6 +110,8 @@
 		overflow-y: auto;
 		color: inherit;
 
+		animation: fadeIn 0.1s ease-in-out forwards;
+
 		.le-option {
 			line-height: 100%;
 			font-size: inherit;
@@ -167,5 +169,16 @@
 			background: $color-variant-disabled !important;
 			color: $color-darker-text !important;
 		}
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		height: 0;
+	}
+	to {
+		opacity: 1;
+		height: auto;
 	}
 }
