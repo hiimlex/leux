@@ -1,12 +1,6 @@
 import { MouseEvent } from "react";
 
-type ButtonVariants =
-	| "primary"
-	| "secondary"
-	| "success"
-	| "danger"
-	| "warning"
-	| "default";
+type ButtonVariants = "primary" | "secondary" | "success" | "danger" | "warning" | "default";
 
 type ButtonTypes = "filled" | "outlined" | "ghost";
 

@@ -55,28 +55,27 @@ To upload the CSS styles, you can move the **leux.min.css** from the **node_modu
 ## Next steps:
 
 - [ ] components
+  - [ ] Alert
+  - [x] Badge
+  - [ ] Breadcrumb
+  - [x] Box
   - [x] Button
-  - [x] Topography
-  - [x] Grid
-  - [ ] Form
-    - [x] Input
-    - [ ] Select
-    - [ ] Checkbox
-    - [ ] Textarea
-    - [ ] Radio
-    - [ ] Switch
-  - [ ] Table
-  - [ ] Modal
-  - [ ] Tooltip
-  - [ ] Popover
-  - [ ] Toast
   - [ ] Collapse
   - [ ] Dropdown
-  - [ ] Progress/Spinner
-  - [x] Box
-  - [x] Badge
-  - [ ] Alert
-  - [ ] Breadcrumb
+  - [ ] Form
+    - [ ] Checkbox
+    - [x] Input
+    - [ ] Radio
+    - [x] Select
+    - [ ] Switch
+    - [ ] Textarea
+  - [x] Grid
+  - [ ] Modal
+  - [ ] Progress
+  - [ ] Table
+  - [ ] Toast
+  - [ ] Tooltip
+  - [x] Topography
 - [ ] add more tests
 - [ ] improve documentation
 - [ ] build and publish the docs

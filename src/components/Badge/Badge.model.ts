@@ -1,13 +1,7 @@
 import React from "react";
 
 type BadgeTypes = "dashed" | "ghost" | "outlined";
-type BadgeVariants =
-	| "primary"
-	| "secondary"
-	| "success"
-	| "danger"
-	| "warning"
-	| "default";
+type BadgeVariants = "primary" | "secondary" | "success" | "danger" | "warning" | "default";
 type BadgeSizes = "small" | "medium" | "large";
 
 interface BadgeProps {
