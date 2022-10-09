@@ -22,9 +22,7 @@ describe("Button component test", () => {
 
 		const button = getByTestId("leuxButton");
 
-		expect(button).toHaveClass(
-			"le-button--outlined le-button--secondary le-button--large"
-		);
+		expect(button).toHaveClass("le-button--outlined le-button--secondary le-button--large");
 	});
 
 	it("should create a Button and increment when click action is triggered", () => {
@@ -49,9 +47,7 @@ describe("Button component test", () => {
 			testIncrement++;
 		};
 
-		const { getByTestId } = render(
-			<Button children="Increment" onClick={cb} state={{ disabled: true }} />
-		);
+		const { getByTestId } = render(<Button children="Increment" onClick={cb} state={{ disabled: true }} />);
 
 		const button = getByTestId("leuxButton");
 		button.click();

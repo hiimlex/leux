@@ -2,10 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { SelectOption, SelectProps } from "./Select.model";
 import "./Select.scss";
 
-const mappedOptions = (
-	options: SelectOption[],
-	defaultValue?: string[]
-): SelectOption[] => {
+const mappedOptions = (options: SelectOption[], defaultValue?: string[]): SelectOption[] => {
 	return options.map((el) => {
 		if (el.state) {
 			if (!Object.prototype.hasOwnProperty.call(el.state, "selected")) {
@@ -51,12 +48,8 @@ const Select = ({
 	const dropdownRef = useRef<HTMLDivElement>(null);
 	const arrowRef = useRef<HTMLDivElement>(null);
 
-	const [optionsArr, _setOptionArr] = useState<SelectOption[]>(
-		mappedOptions(options, defaultValue)
-	);
-	const [selectedValue, setSelectedValue] = useState<string[]>(
-		defaultValue || []
-	);
+	const [optionsArr] = useState<SelectOption[]>(mappedOptions(options, defaultValue));
+	const [selectedValue, setSelectedValue] = useState<string[]>(defaultValue || []);
 	const [isFocused, setIsFocused] = useState(false);
 
 	const getLabel = useMemo((): string => {
@@ -97,9 +90,7 @@ const Select = ({
 			});
 		}
 
-		const selectedValues = optionsArr
-			.filter((option) => option.state && option.state.selected)
-			.map((el) => el.value);
+		const selectedValues = optionsArr.filter((option) => option.state && option.state.selected).map((el) => el.value);
 
 		const selectedLabels = optionsArr
 			.filter((option) => option.state && option.state.selected)
@@ -119,7 +110,7 @@ const Select = ({
 		}
 	};
 
-	const handleClickOutside = (event: any) => {
+	const handleClickOutside = (event: MouseEvent) => {
 		if (
 			dropdownRef.current &&
 			!dropdownRef.current.contains(event.target as Node) &&
@@ -178,10 +169,7 @@ const Select = ({
 				ref={inputRef}
 				name={fieldKey}
 				style={{ width, ...selectCustomStyles }}
-				className={
-					"le-select--input" +
-					(selectCustomClass ? ` ${selectCustomClass}` : "")
-				}
+				className={"le-select--input" + (selectCustomClass ? ` ${selectCustomClass}` : "")}
 				disabled={state && state.disabled}
 				placeholder={placeholder}
 				data-testid="leuxSelect"
@@ -190,24 +178,13 @@ const Select = ({
 				value={label}
 				onClick={handleInputClick}
 			/>
-			<div
-				ref={arrowRef}
-				className="le-select--actions"
-				onClick={handleInputClick}
-			>
-				<div
-					className={
-						"le-select--actions--arrow" + (isFocused ? " focused" : "")
-					}
-				></div>
+			<div ref={arrowRef} className="le-select--actions" onClick={handleInputClick}>
+				<div className={"le-select--actions--arrow" + (isFocused ? " focused" : "")}></div>
 			</div>
 			{isFocused && !state.disabled && (
 				<div
 					ref={dropdownRef}
-					className={
-						"le-select--dropdown" +
-						(dropdownCustomClass ? ` ${dropdownCustomClass}` : "")
-					}
+					className={"le-select--dropdown" + (dropdownCustomClass ? ` ${dropdownCustomClass}` : "")}
 					style={dropdownCustomStyles}
 				>
 					{optionsArr.length
@@ -221,12 +198,8 @@ const Select = ({
 									}}
 									className={
 										"le-option" +
-										(option.state && option.state.selected
-											? " le-option--selected"
-											: "") +
-										(option.state && option.state.disabled
-											? " le-option--disabled"
-											: "") +
+										(option.state && option.state.selected ? " le-option--selected" : "") +
+										(option.state && option.state.disabled ? " le-option--disabled" : "") +
 										(optionCustomClass ? ` ${optionCustomClass}` : "")
 									}
 									style={optionCustomStyles}

@@ -16,13 +16,10 @@ const Input = ({
 	customStyles,
 	state,
 }: InputProps) => {
-	const [value, setValue] = React.useState<string>("");
-
 	const inputRef = useRef<HTMLInputElement>(null);
 
 	const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { value } = event.target;
-		setValue(value);
 
 		if (onChange) {
 			onChange(value, event);
