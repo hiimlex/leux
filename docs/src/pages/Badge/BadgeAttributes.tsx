@@ -4,12 +4,7 @@ import { LeHighlighter, LeSourceButton } from "@/components";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { Badge } from "../../../../src";
 
-const BadgeImportPreview = () => (
-	<LeHighlighter
-		code={`import { Badge, BadgeProps } from "leux";`}
-		language="tsx"
-	/>
-);
+const BadgeImportPreview = () => <LeHighlighter code={`import { Badge, BadgeProps } from "leux";`} language="tsx" />;
 
 const BadgeTypePreview = () => (
 	<>
@@ -91,11 +86,7 @@ const BadgeSizePreview = () => (
 const BadgeCustomPreview = () => (
 	<>
 		<div className="le-preview">
-			<Badge
-				customClass="le-color-bg--primary"
-				type="dashed"
-				customStyles={{ color: "purple", borderColor: "purple" }}
-			>
+			<Badge customClass="le-color-bg--primary" type="dashed" customStyles={{ color: "purple", borderColor: "purple" }}>
 				Custom Badge
 			</Badge>
 		</div>

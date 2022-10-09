@@ -7,14 +7,7 @@ interface AnchorLinkProps {
 }
 
 const AnchorLink = ({ to, children }: AnchorLinkProps) => {
-	return (
-		<Link
-			to={to}
-			children={"#" + children}
-			offset={-65}
-			className="le-anchor"
-		></Link>
-	);
+	return <Link to={to} children={"#" + children} offset={-65} className="le-anchor"></Link>;
 };
 
 export default AnchorLink;

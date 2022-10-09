@@ -3,12 +3,7 @@ import { useState } from "react";
 import { Button } from "../../../../src";
 import { attributes as buttonAttr } from "./button.md";
 
-const ButtonImportPreview = () => (
-	<LeHighlighter
-		language="tsx"
-		code={`import { Button, ButtonProps } from "leux";`}
-	/>
-);
+const ButtonImportPreview = () => <LeHighlighter language="tsx" code={`import { Button, ButtonProps } from "leux";`} />;
 
 const ButtonVariantPreview = () => (
 	<>
@@ -102,10 +97,7 @@ const ButtonStatePreview = () => {
 	return (
 		<>
 			<div className="le-preview">
-				<Button
-					variant={disabled ? "primary" : "danger"}
-					onClick={handleOnClick}
-				>
+				<Button variant={disabled ? "primary" : "danger"} onClick={handleOnClick}>
 					{disabled ? "on" : "off"}
 				</Button>
 				<Button variant="default" state={{ disabled }}>

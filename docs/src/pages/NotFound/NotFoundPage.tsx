@@ -1,8 +1,5 @@
 import { NavLink } from "react-router-dom";
-import {
-	ReactComponent as NotFoundMD,
-	attributes as notFoundAttr,
-} from "./NotFound.md";
+import { ReactComponent as NotFoundMD, attributes as notFoundAttr } from "./NotFound.md";
 
 notFoundAttr["NavLink"] = NavLink;
 

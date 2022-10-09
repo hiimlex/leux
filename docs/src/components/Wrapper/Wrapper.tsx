@@ -14,9 +14,7 @@ const Wrapper = ({ children }: WrapperProps) => {
 			<div className="le-md--container">
 				<div className={"le-md--content" + ` le-md--content--${breakpoint}`}>
 					<LeSideNav></LeSideNav>
-					<main className={"le-docs" + ` le-docs--${breakpoint}`}>
-						{children}
-					</main>
+					<main className={"le-docs" + ` le-docs--${breakpoint}`}>{children}</main>
 					<LeSideAnchorNav />
 				</div>
 			</div>

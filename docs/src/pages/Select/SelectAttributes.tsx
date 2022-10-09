@@ -3,12 +3,7 @@ import { useState } from "react";
 import { Button, Select, SelectState, Topography } from "../../../../src";
 import { attributes as selectAttr } from "./select.md";
 
-const SelectImportPreview = () => (
-	<LeHighlighter
-		code={`import { Select, SelectProps, } from "leux"`}
-		language="tsx"
-	/>
-);
+const SelectImportPreview = () => <LeHighlighter code={`import { Select, SelectProps, } from "leux"`} language="tsx" />;
 
 const SelectOptionPreview = () => {
 	return (
@@ -49,9 +44,7 @@ const SelectKeyPreview = () => {
 				<Select
 					fieldKey="key"
 					placeholder="with key"
-					options={[
-						{ label: "Key 1", state: { selected: false }, value: "key1" },
-					]}
+					options={[{ label: "Key 1", state: { selected: false }, value: "key1" }]}
 				/>
 			</div>
 			<LeHighlighter
@@ -79,9 +72,7 @@ const SelectVariantPreview = () => {
 		<>
 			<div className="le-preview le-input-group">
 				<Select
-					options={[
-						{ label: "Filled 1", value: "filled1", state: { selected: false } },
-					]}
+					options={[{ label: "Filled 1", value: "filled1", state: { selected: false } }]}
 					placeholder="Filled"
 					variant="filled"
 				/>
@@ -132,21 +123,9 @@ const SelectSizePreview = () => {
 	return (
 		<>
 			<div className="le-preview le-input-group">
-				<Select
-					options={[{ label: "Small", value: "small" }]}
-					size="small"
-					placeholder="small"
-				/>
-				<Select
-					options={[{ label: "Medium", value: "medium" }]}
-					size="medium"
-					placeholder="medium"
-				/>
-				<Select
-					options={[{ label: "Large", value: "large" }]}
-					size="large"
-					placeholder="large"
-				/>
+				<Select options={[{ label: "Small", value: "small" }]} size="small" placeholder="small" />
+				<Select options={[{ label: "Medium", value: "medium" }]} size="medium" placeholder="medium" />
+				<Select options={[{ label: "Large", value: "large" }]} size="large" placeholder="large" />
 			</div>
 			<LeHighlighter
 				code={`const Component = () => {
@@ -260,15 +239,12 @@ const SelectActionPreview = () => {
 
 const SelectMultiplePreview = () => {
 	const [value, setValue] = useState<number[]>([]);
-	const handleValueChange = (value: string[]) =>
-		setValue(value.map((el) => Number(el)));
+	const handleValueChange = (value: string[]) => setValue(value.map((el) => Number(el)));
 
 	return (
 		<>
 			<div className="le-preview le-input-group">
-				<Topography type="body-2">
-					SUM: {value.length > 0 ? value.reduce((acc, curr) => acc + curr) : 0}
-				</Topography>
+				<Topography type="body-2">SUM: {value.length > 0 ? value.reduce((acc, curr) => acc + curr) : 0}</Topography>
 				<Select
 					width="280px"
 					options={[
@@ -393,9 +369,7 @@ const SelectStatePreview = () => {
 	return (
 		<>
 			<div className="le-preview le-input-group">
-				<Button onClick={handleFieldState}>
-					{selectState.disabled ? "off" : "on"}
-				</Button>
+				<Button onClick={handleFieldState}>{selectState.disabled ? "off" : "on"}</Button>
 				<Select
 					options={[{ label: "Option 1", value: "option1" }]}
 					placeholder="Enable the button to select a option"

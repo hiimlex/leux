@@ -4,12 +4,7 @@ import { Topography } from "../../../../src";
 import { attributes as topographyAttr } from "./topography.md";
 
 const ImportPreview = () => {
-	return (
-		<LeHighlighter
-			language="tsx"
-			code={`import { Topography, TopographyProps } from "leux";`}
-		/>
-	);
+	return <LeHighlighter language="tsx" code={`import { Topography, TopographyProps } from "leux";`} />;
 };
 
 const CodePreview = () => (
@@ -40,11 +35,7 @@ const CodePreview = () => (
 const TopographyCustomPreview = () => (
 	<>
 		<div className="le-preview">
-			<Topography
-				type="body-1"
-				customClass="le-color-text--danger"
-				customStyles={{ fontWeight: "bold" }}
-			>
+			<Topography type="body-1" customClass="le-color-text--danger" customStyles={{ fontWeight: "bold" }}>
 				Custom CSS
 			</Topography>
 		</div>
