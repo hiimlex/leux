@@ -3,8 +3,8 @@ import { BadgeProps } from "./Badge.model";
 import "./Badge.scss";
 
 const Badge = ({
-	type = "ghost",
-	variant = "default",
+	variant = "ghost",
+	theme = "default",
 	children,
 	size = "medium",
 	customStyles,
@@ -14,8 +14,8 @@ const Badge = ({
 		<span
 			className={
 				"le-badge" +
-				(type ? ` le-badge--${type}` : "") +
 				(variant ? ` le-badge--${variant}` : "") +
+				(theme ? ` le-badge--${theme}` : "") +
 				(size ? ` le-badge--${size}` : "") +
 				(customClass ? ` ${customClass}` : "")
 			}
