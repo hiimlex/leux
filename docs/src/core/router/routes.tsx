@@ -1,5 +1,6 @@
 import { LeRenderDocPage } from "@/components";
 import {
+	AvatarPage,
 	BadgePage,
 	BoxPage,
 	ButtonPage,
@@ -63,6 +64,10 @@ export const routes: LeRoute[] = [
 	{
 		path: "/components/select",
 		element: <LeRenderDocPage doc={<SelectPage />} title="Select" />,
+	},
+	{
+		path: "/components/avatar",
+		element: <LeRenderDocPage doc={<AvatarPage />} title="Avatar" />,
 	},
 	{
 		path: "*",

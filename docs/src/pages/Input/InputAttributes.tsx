@@ -127,7 +127,7 @@ const InputStatePreview = () => {
 	return (
 		<>
 			<div className="le-preview le-input-group">
-				<Button variant={disabled ? "danger" : "primary"} onClick={handleOnClick}>
+				<Button theme={disabled ? "danger" : "primary"} onClick={handleOnClick}>
 					{disabled ? "off" : "on"}
 				</Button>
 				<Topography type="body-1">Value: {value}</Topography>

@@ -1,0 +1,41 @@
+@import "../../styles/variables.scss";
+
+.le-avatar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	border-radius: 50%;
+
+	&--img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&--text {
+		color: $color-dark-text;
+		background: $color-variant-default;
+	}
+
+	&--small {
+		width: 32px;
+		height: 32px;
+		font-size: 16px;
+		font-weight: 400;
+	}
+
+	&--medium {
+		width: 64px;
+		height: 64px;
+		font-size: 24px;
+		font-weight: 500;
+	}
+
+	&--large {
+		width: 128px;
+		height: 128px;
+		font-size: 32px;
+		font-weight: 600;
+	}
+}
