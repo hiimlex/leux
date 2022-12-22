@@ -1,10 +1,11 @@
-$color-variant-primary: #4384DE;
+$color-variant-primary: #4384de;
 $color-variant-secondary: #8ca9d5;
 $color-variant-success: #70c1b3;
 $color-variant-danger: #f25f5c;
 $color-variant-warning: #ffd166;
 $color-variant-default: #c4cad9;
 $color-variant-border: #eaedf3;
+$color-variant-disabled: #cdcdcd;
 
 $color-variant-primary-hover: #1966d1;
 $color-variant-secondary-hover: #678dc7;
@@ -17,7 +18,7 @@ $color-darker-text: #2a2a2a;
 $color-light-text: #efefef;
 $color-lighter-text: #ffffff;
 
-$color-placeholder-text: #989BA7;
+$color-placeholder-text: #989ba7;
 
 $color-leux-theme: #f0c06a;
 
@@ -55,3 +56,8 @@ $text-colors: (
 );
 
 $justify-classes: (flex-start, center, flex-end, space-between, space-around);
+
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1440px;

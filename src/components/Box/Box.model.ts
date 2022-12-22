@@ -1,10 +1,4 @@
-type BoxVariants =
-	| "primary"
-	| "secondary"
-	| "success"
-	| "danger"
-	| "warning"
-	| "default";
+type BoxVariants = "primary" | "secondary" | "success" | "danger" | "warning" | "default";
 type BoxTextColor = "dark" | "light" | "darker" | "lighter";
 
 interface BoxProps {

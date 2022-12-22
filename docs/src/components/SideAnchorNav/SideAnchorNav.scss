@@ -1,22 +1,27 @@
 @import "../../core/styles/variables.scss";
 
 .le-anchor-nav {
-	width: 180px;
+	width: 132px;
 	overflow: hidden;
 	margin-left: 12px;
 	margin-top: 32px;
 	color: $color-dark-text;
 
-
 	position: relative;
 
 	.fixed-content {
 		position: fixed;
-		width: 180px;
+		width: 132px;
 
 		.le-anchor-links {
 			display: flex;
 			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			max-height: 100vh;
+			height: fit-content;
+			overflow: hidden;
+			overflow-y: auto;
 
 			.le-anchor-link {
 				margin: 6px 0;

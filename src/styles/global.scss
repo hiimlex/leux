@@ -111,7 +111,8 @@ p {
 }
 
 ::-webkit-scrollbar {
-	width: 6px;
+	width: 4px;
+	height: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -119,5 +120,5 @@ p {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: $color-variant-primary;
+	background: $color-variant-default;
 }

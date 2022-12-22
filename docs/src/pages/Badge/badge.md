@@ -15,29 +15,29 @@ Badge Component is used to display relevant informations like tags, versions, fo
 </BadgeImportPreview>
 </div>
 
-- **Badge**: the main component.
-- **BadgeProps**: the prop types.
+- **Badge** - the main component.
+- **BadgeProps** - the prop types.
 
 <br/>
 
-#### Types
+#### Variant
 
-Use the `type` prop to change the badge style type.
-
-<div>
-<BadgeTypePreview>
-</BadgeTypePreview>
-</div>
-
-<br/>
-
-#### Variants
-
-Use the `variant` prop to change the badge color theme.
+Use the `variant` prop to change the badge style type.
 
 <div>
 <BadgeVariantPreview>
 </BadgeVariantPreview>
+</div>
+
+<br/>
+
+#### Theme
+
+Use the `theme` prop to change the badge color theme.
+
+<div>
+<BadgeThemePreview>
+</BadgeThemePreview>
 </div>
 
 <br/>
@@ -70,8 +70,8 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the Badge com
 <table>
 <thead>
 <tr>
-<th width="10%">Key</th>
-<th width="70%">Prop</th>
+<th width="10%">Prop</th>
+<th width="70%">Type</th>
 <th width="20%">Default</th>
 </tr>
 </thead>

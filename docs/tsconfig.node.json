@@ -4,8 +4,7 @@
 		"module": "ESNext",
 		"moduleResolution": "Node",
 		"allowSyntheticDefaultImports": true,
-		"types": ["node"],
+		"types": ["node"]
 	},
 	"include": ["vite.config.*", "vitest.config.*"]
 }
-

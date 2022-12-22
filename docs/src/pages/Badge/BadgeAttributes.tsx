@@ -4,31 +4,26 @@ import { LeHighlighter, LeSourceButton } from "@/components";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { Badge } from "../../../../src";
 
-const BadgeImportPreview = () => (
-	<LeHighlighter
-		code={`import { Badge, BadgeProps } from "leux";`}
-		language="tsx"
-	/>
-);
+const BadgeImportPreview = () => <LeHighlighter code={`import { Badge, BadgeProps } from "leux";`} language="tsx" />;
 
-const BadgeTypePreview = () => (
+const BadgeVariantPreview = () => (
 	<>
 		<div className="le-preview">
-			<Badge type="dashed" variant="primary">
+			<Badge variant="dashed" theme="primary">
 				Dashed
 			</Badge>
-			<Badge type="outlined" variant="primary">
+			<Badge variant="outlined" theme="primary">
 				Outlined
 			</Badge>
-			<Badge type="ghost" variant="danger">
+			<Badge variant="ghost" theme="danger">
 				Ghost
 			</Badge>
 		</div>
 		<LeHighlighter
 			code={`const Component = () => (
 	<>
-		<Badge type="dashed">Dashed</Badge>
-		<Badge type="ghost">Ghost</Badge>)
+		<Badge variant="dashed" theme="primary">Dashed</Badge>
+		<Badge variant="ghost" theme="primary">Ghost</Badge>)
 	</>
 );`}
 			language="tsx"
@@ -36,25 +31,25 @@ const BadgeTypePreview = () => (
 	</>
 );
 
-const BadgeVariantPreview = () => (
+const BadgeThemePreview = () => (
 	<>
 		<div className="le-preview">
-			<Badge variant="primary">Primary</Badge>
-			<Badge variant="secondary">Secondary</Badge>
-			<Badge variant="success">Success</Badge>
-			<Badge variant="danger">Danger</Badge>
-			<Badge variant="warning">Warning</Badge>
-			<Badge variant="default">Default</Badge>
+			<Badge theme="primary">Primary</Badge>
+			<Badge theme="secondary">Secondary</Badge>
+			<Badge theme="success">Success</Badge>
+			<Badge theme="danger">Danger</Badge>
+			<Badge theme="warning">Warning</Badge>
+			<Badge theme="default">Default</Badge>
 		</div>
 		<LeHighlighter
 			code={`const Component = () => (
 	<>
-		<Badge variant="primary">Primary</Badge>
-		<Badge variant="secondary">Secondary</Badge>
-		<Badge variant="success">Success</Badge>
-		<Badge variant="danger">Danger</Badge>
-		<Badge variant="warning">Warning</Badge>
-		<Badge variant="default">Default</Badge>
+		<Badge theme="primary">Primary</Badge>
+		<Badge theme="secondary">Secondary</Badge>
+		<Badge theme="success">Success</Badge>
+		<Badge theme="danger">Danger</Badge>
+		<Badge theme="warning">Warning</Badge>
+		<Badge theme="default">Default</Badge>
 	</>
 );`}
 			language="tsx"
@@ -93,7 +88,7 @@ const BadgeCustomPreview = () => (
 		<div className="le-preview">
 			<Badge
 				customClass="le-color-bg--primary"
-				type="dashed"
+				variant="dashed"
 				customStyles={{ color: "purple", borderColor: "purple" }}
 			>
 				Custom Badge
@@ -116,7 +111,7 @@ const BadgeCustomPreview = () => (
 
 badgeAttr["LeSourceButton"] = LeSourceButton;
 badgeAttr["BadgeImportPreview"] = BadgeImportPreview;
-badgeAttr["BadgeTypePreview"] = BadgeTypePreview;
+badgeAttr["BadgeThemePreview"] = BadgeThemePreview;
 badgeAttr["BadgeVariantPreview"] = BadgeVariantPreview;
 badgeAttr["BadgeSizePreview"] = BadgeSizePreview;
 badgeAttr["BadgeCustomPreview"] = BadgeCustomPreview;

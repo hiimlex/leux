@@ -8,3 +8,4 @@ export { default as GridPage } from "./Grid";
 export { default as BoxPage } from "./Box";
 export { default as BadgePage } from "./Badge";
 export { default as InputPage } from "./Input";
+export { default as SelectPage } from "./Select";

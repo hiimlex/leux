@@ -4,12 +4,7 @@ import { Box, BoxVariants, Grid, Topography } from "../../../../src";
 import { attributes as gridAttr } from "./grid.md";
 
 const GridImportPreview = () => {
-	return (
-		<LeHighlighter
-			language="tsx"
-			code={`import { Grid, GridProps, Box } from "leux";`}
-		/>
-	);
+	return <LeHighlighter language="tsx" code={`import { Grid, GridProps, Box } from "leux";`} />;
 };
 
 const GridColPreview = () => {
@@ -102,14 +97,7 @@ const GridGapPreview = () => {
 			<div className="le-preview">
 				<Grid cols={3} rows={3} gap={{ col: 12, row: 12 }}>
 					{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
-						<Box
-							key={item}
-							padding={4}
-							bgColor="default"
-							textColor="darker"
-							centered
-							borderRadius="12px"
-						>
+						<Box key={item} padding={4} bgColor="default" textColor="darker" centered borderRadius="12px">
 							<Topography type="body-1">{item}</Topography>
 						</Box>
 					))}
@@ -143,32 +131,14 @@ const GridSpanPreview = () => {
 		<>
 			<div className="le-preview">
 				<Grid cols={4} rows={2} gap={{ row: 12, col: 12 }}>
-					<Box
-						padding={4}
-						bgColor="success"
-						textColor="lighter"
-						centered
-						gridSpan={{ row: 2 }}
-					>
+					<Box padding={4} bgColor="success" textColor="lighter" centered gridSpan={{ row: 2 }}>
 						<Topography type="body-1">2 rows and 1 col</Topography>
 					</Box>
-					<Box
-						padding={4}
-						bgColor="danger"
-						textColor="lighter"
-						centered
-						gridSpan={{ col: 2 }}
-					>
+					<Box padding={4} bgColor="danger" textColor="lighter" centered gridSpan={{ col: 2 }}>
 						<Topography type="body-1">1 row and 2 cols</Topography>
 					</Box>
 					{[1, 2, 3, 4].map((item) => (
-						<Box
-							key={item}
-							padding={4}
-							bgColor="default"
-							textColor="darker"
-							centered
-						>
+						<Box key={item} padding={4} bgColor="default" textColor="darker" centered>
 							<Topography type="body-1">1 col and 1 row</Topography>
 						</Box>
 					))}

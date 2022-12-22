@@ -6,7 +6,6 @@
 	justify-content: center;
 
 	.le-md--content {
-		max-width: 1280px;
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
@@ -14,11 +13,27 @@
 
 		padding: 0 16px;
 		margin-top: 65px;
+		max-width: 1080px;
+
+		&--sm {
+			max-width: 798px;
+		}
+
+		&--md {
+			max-width: 1080px;
+		}
+
+		&--lg {
+			max-width: 1280px;
+		}
+
+		&--xl {
+			max-width: 1440px;
+		}
 
 		.le-docs {
-			padding: 12px;
-			width: 100%;
-			max-width: 950px;
+			padding: 12px 24px;
+			width: calc(100% - 288px);
 
 			.le-footer {
 				padding: 12px;

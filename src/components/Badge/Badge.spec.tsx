@@ -14,7 +14,7 @@ describe("Box component test", () => {
 	});
 
 	it("should render a Badge component with primary type", () => {
-		const { getByTestId } = render(<Badge variant="primary" />);
+		const { getByTestId } = render(<Badge theme="primary" />);
 
 		const box = getByTestId("leuxBadge");
 

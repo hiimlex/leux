@@ -46,31 +46,35 @@ yarn add leux
 
 To upload the CSS styles, you can move the **leux.min.css** from the **node_modules/leux/dist** folder to your project folder and import it in your **index.html** file.
 
+### To-do
+
+- Table Component
+- improve tests and test coverage
+
 ## Next steps:
 
 - [ ] components
+  - [ ] Alert
+  - [x] Badge
+  - [ ] Breadcrumb
+  - [x] Box
   - [x] Button
-  - [x] Topography
-  - [x] Grid
-  - [ ] Form
-    - [x] Input
-    - [ ] Select
-    - [ ] Checkbox
-    - [ ] Textarea
-    - [ ] Radio
-    - [ ] Switch
-  - [ ] Table
-  - [ ] Modal
-  - [ ] Tooltip
-  - [ ] Popover
-  - [ ] Toast
   - [ ] Collapse
   - [ ] Dropdown
-  - [ ] Progress/Spinner
-  - [x] Box
-  - [x] Badge
-  - [ ] Alert
-  - [ ] Breadcrumb
+  - [ ] Form
+    - [ ] Checkbox
+    - [x] Input
+    - [ ] Radio
+    - [x] Select
+    - [ ] Switch
+    - [ ] Textarea
+  - [x] Grid
+  - [ ] Modal
+  - [ ] Progress
+  - [ ] Table
+  - [ ] Toast
+  - [ ] Tooltip
+  - [x] Topography
 - [ ] add more tests
 - [ ] improve documentation
 - [ ] build and publish the docs

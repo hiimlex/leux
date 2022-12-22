@@ -1,22 +1,16 @@
 import React from "react";
 
-type BadgeTypes = "dashed" | "ghost" | "outlined";
-type BadgeVariants =
-	| "primary"
-	| "secondary"
-	| "success"
-	| "danger"
-	| "warning"
-	| "default";
+type BadgeVariants = "dashed" | "ghost" | "outlined";
+type BadgeThemes = "primary" | "secondary" | "success" | "danger" | "warning" | "default";
 type BadgeSizes = "small" | "medium" | "large";
 
 interface BadgeProps {
-	type?: BadgeTypes;
 	variant?: BadgeVariants;
-	children?: React.ReactNode;
+	theme?: BadgeThemes;
+	children?: React.ReactNode | string;
 	size?: BadgeSizes;
 	customClass?: string;
 	customStyles?: React.CSSProperties;
 }
 
-export { BadgeProps, BadgeTypes, BadgeSizes, BadgeVariants };
+export { BadgeProps, BadgeThemes, BadgeSizes, BadgeVariants };

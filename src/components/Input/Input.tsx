@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { InputProps } from "./Input.model";
 
 import "./Input.scss";
@@ -16,14 +16,25 @@ const Input = ({
 	customStyles,
 	state,
 }: InputProps) => {
+	const inputRef = useRef<HTMLInputElement>(null);
+
+	const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const { value } = event.target;
+
+		if (onChange) {
+			onChange(value, event);
+		}
+	};
+
 	return (
 		<input
 			id={fieldKey}
+			ref={inputRef}
 			name={fieldKey}
 			type={type}
 			placeholder={placeholder}
-			onChange={onChange}
-			style={{ width: width, ...customStyles }}
+			onChange={handleOnChange}
+			style={{ width, ...customStyles }}
 			className={
 				"le-input" +
 				(variant ? ` le-input--${variant}` : "") +

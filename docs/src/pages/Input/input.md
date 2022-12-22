@@ -13,8 +13,8 @@ Input component is used to that allows users enter text.
 </InputImportPreview>
 </div>
 
-- **Input**: the main component.
-- **InputProps**: the prop types.
+- **Input** - the main component.
+- **InputProps** - the prop types.
 
 <br/>
 
@@ -142,7 +142,7 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the Input com
 </tr>
 <tr>
 <td>onChange</td>
-<td><LeHighlighter code="(e: React.ChangeEvent<HTMLInputElement) => void" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter code="(value: string, event?: React.ChangeEvent< HTMLInputElement > => void" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>

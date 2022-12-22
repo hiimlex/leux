@@ -99,7 +99,7 @@ To increase the size of a item on grid, use the `gridSpan` props from <NavLink t
 </tr>
 <tr>
 <td>customClass</td>
-<td><LeHighlighter code="'string'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>

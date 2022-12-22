@@ -36,7 +36,8 @@
 		}
 
 		pre::-webkit-scrollbar {
-			width: 14px;
+			width: 6px;
+			height: 6px;
 		}
 
 		pre::-webkit-scrollbar-track {
@@ -54,8 +55,7 @@
 			color: #f2f2f2;
 			background: #282936;
 			text-shadow: none;
-			font-family: "Source Mono", PT Mono, Consolas, Monaco, "Andale Mono",
-				"Ubuntu Mono", monospace;
+			font-family: "Source Mono", PT Mono, Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 			text-align: left;
 			white-space: pre;
 			word-spacing: normal;
@@ -527,7 +527,6 @@
 		.language-css .token.string,
 		.style .token.string {
 			color: #9a6e3a;
-			background: hsla(0, 0%, 100%, 0.5);
 		}
 
 		.token.atrule,

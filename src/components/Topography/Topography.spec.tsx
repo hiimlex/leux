@@ -54,9 +54,7 @@ describe("Topography component test", () => {
 	});
 
 	it("should render a Topography subtitle-1 component", () => {
-		const { getByTestId } = render(
-			<Topography type="subtitle-1" children="Test" />
-		);
+		const { getByTestId } = render(<Topography type="subtitle-1" children="Test" />);
 
 		const topography = getByTestId("leuxTopography");
 
@@ -64,9 +62,7 @@ describe("Topography component test", () => {
 	});
 
 	it("should render a Topography subtitle-2 component", () => {
-		const { getByTestId } = render(
-			<Topography type="subtitle-2" children="Test" />
-		);
+		const { getByTestId } = render(<Topography type="subtitle-2" children="Test" />);
 
 		const topography = getByTestId("leuxTopography");
 
@@ -74,9 +70,7 @@ describe("Topography component test", () => {
 	});
 
 	it("should render a Topography body-1 component", () => {
-		const { getByTestId } = render(
-			<Topography type="body-1" children="Test" />
-		);
+		const { getByTestId } = render(<Topography type="body-1" children="Test" />);
 
 		const topography = getByTestId("leuxTopography");
 
@@ -84,9 +78,7 @@ describe("Topography component test", () => {
 	});
 
 	it("should render a Topography body-2 component", () => {
-		const { getByTestId } = render(
-			<Topography type="body-2" children="Test" />
-		);
+		const { getByTestId } = render(<Topography type="body-2" children="Test" />);
 
 		const topography = getByTestId("leuxTopography");
 
@@ -94,9 +86,7 @@ describe("Topography component test", () => {
 	});
 
 	it("should render a Topography caption component", () => {
-		const { getByTestId } = render(
-			<Topography type="caption" children="Test" />
-		);
+		const { getByTestId } = render(<Topography type="caption" children="Test" />);
 
 		const topography = getByTestId("leuxTopography");
 
@@ -104,9 +94,7 @@ describe("Topography component test", () => {
 	});
 
 	it("should render a Topography button component", () => {
-		const { getByTestId } = render(
-			<Topography type="button" children="Test" />
-		);
+		const { getByTestId } = render(<Topography type="button" children="Test" />);
 
 		const topography = getByTestId("leuxTopography");
 
@@ -114,9 +102,7 @@ describe("Topography component test", () => {
 	});
 
 	it("should render a Topography overline component", () => {
-		const { getByTestId } = render(
-			<Topography type="overline" children="Test" />
-		);
+		const { getByTestId } = render(<Topography type="overline" children="Test" />);
 
 		const topography = getByTestId("leuxTopography");
 
@@ -124,9 +110,7 @@ describe("Topography component test", () => {
 	});
 
 	it("should render a Custom Class Topography component", () => {
-		const { getByTestId } = render(
-			<Topography type="h1" children="Test" customClass="le-text--body-1" />
-		);
+		const { getByTestId } = render(<Topography type="h1" children="Test" customClass="le-text--body-1" />);
 
 		const topography = getByTestId("leuxTopography");
 
@@ -134,9 +118,7 @@ describe("Topography component test", () => {
 	});
 
 	it("should render a Custom Styles Topography component", () => {
-		const { getByTestId } = render(
-			<Topography type="h1" children="Test" customStyles={{ fontSize: 12 }} />
-		);
+		const { getByTestId } = render(<Topography type="h1" children="Test" customStyles={{ fontSize: 12 }} />);
 
 		const topography = getByTestId("leuxTopography");
 

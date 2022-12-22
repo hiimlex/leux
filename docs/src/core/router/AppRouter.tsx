@@ -11,6 +11,7 @@ import {
 	InstallationPage,
 	NotFoundPage,
 	OverviewPage,
+	SelectPage,
 	TopographyPage,
 } from "@/pages";
 
@@ -18,50 +19,20 @@ const AppRouter = () => {
 	return (
 		<Routes>
 			<Route path="/" element={<Navigate to="started/overview" replace />} />
-			<Route
-				path="/started/overview"
-				element={<LeRenderDocPage doc={<OverviewPage />} title="Overview" />}
-			/>
+			<Route path="/started/overview" element={<LeRenderDocPage doc={<OverviewPage />} title="Overview" />} />
 			<Route
 				path="/started/installation"
-				element={
-					<LeRenderDocPage doc={<InstallationPage />} title="Installation" />
-				}
+				element={<LeRenderDocPage doc={<InstallationPage />} title="Installation" />}
 			/>
-			<Route
-				path="/started/lecss"
-				element={<LeRenderDocPage doc={<CSSPage />} title="LeCSS" />}
-			/>
-			<Route
-				path="/layout/topography"
-				element={
-					<LeRenderDocPage doc={<TopographyPage />} title="Topography" />
-				}
-			/>
-			<Route
-				path="/layout/grid"
-				element={<LeRenderDocPage doc={<GridPage />} title="Grid" />}
-			/>
-			<Route
-				path="/layout/box"
-				element={<LeRenderDocPage doc={<BoxPage />} title="Box" />}
-			/>
-			<Route
-				path="/components/button"
-				element={<LeRenderDocPage doc={<ButtonPage />} title="Button" />}
-			/>
-			<Route
-				path="/components/badge"
-				element={<LeRenderDocPage doc={<BadgePage />} title="Badge" />}
-			/>
-			<Route
-				path="/components/input"
-				element={<LeRenderDocPage doc={<InputPage />} title="Input" />}
-			/>
-			<Route
-				path="*"
-				element={<LeRenderDocPage doc={<NotFoundPage />} title="Not Found" />}
-			/>
+			<Route path="/started/lecss" element={<LeRenderDocPage doc={<CSSPage />} title="LeCSS" />} />
+			<Route path="/layout/topography" element={<LeRenderDocPage doc={<TopographyPage />} title="Topography" />} />
+			<Route path="/layout/grid" element={<LeRenderDocPage doc={<GridPage />} title="Grid" />} />
+			<Route path="/layout/box" element={<LeRenderDocPage doc={<BoxPage />} title="Box" />} />
+			<Route path="/components/button" element={<LeRenderDocPage doc={<ButtonPage />} title="Button" />} />
+			<Route path="/components/badge" element={<LeRenderDocPage doc={<BadgePage />} title="Badge" />} />
+			<Route path="/components/input" element={<LeRenderDocPage doc={<InputPage />} title="Input" />} />
+			<Route path="/components/select" element={<LeRenderDocPage doc={<SelectPage />} title="Select" />} />
+			<Route path="*" element={<LeRenderDocPage doc={<NotFoundPage />} title="Not Found" />} />
 		</Routes>
 	);
 };

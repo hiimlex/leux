@@ -3,9 +3,10 @@ import { ButtonProps } from "./Button.model";
 import "./Button.scss";
 
 const Button = ({
-	variant = "default",
+	theme = "default",
 	size = "medium",
-	type = "filled",
+	variant = "filled",
+	type = "button",
 	onClick,
 	state,
 	children,
@@ -21,13 +22,14 @@ const Button = ({
 	return (
 		<button
 			className={
-				`le-button le-button--${variant} le-button--${size} le-button--${type}` +
+				`le-button le-button--${variant} le-button--${size} le-button--${theme}` +
 				(state && state.disabled ? " le-button--disabled" : "") +
 				(customClass ? ` ${customClass}` : "")
 			}
+			type={type}
 			data-testid="leuxButton"
 			onClick={(event) => handleOnCLick(event)}
-			disabled={state?.disabled}
+			disabled={state && state.disabled}
 			style={customStyles}
 		>
 			{children}
