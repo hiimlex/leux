@@ -17,19 +17,19 @@ Button component is used to fire events. Commom used on forms, modals, panels an
 
 <br/>
 
-#### Types
+#### Variant
 
-Use the `type` prop to change the button type.
+Use the `variant` prop to change the button style.
 
-<div><ButtonTypePreview></ButtonTypePreview></div>
+<div><ButtonVariantPreview></ButtonVariantPreview></div>
 
 <br/>
 
-#### Variants
+#### Theme
 
-Use the `variant` prop to change the button color theme.
+Use the `theme` prop to change the button color theme.
 
-<div><ButtonVariantPreview></ButtonVariantPreview><div>
+<div><ButtonThemePreview></ButtonThemePreview><div>
 
 <br/>
 
@@ -43,7 +43,7 @@ Use the `size` prop to change the size of the button.
 
 #### State
 
-Use the `state` prop object to control that visual states from button.
+Use the `state` prop object to control the button state, the `disabled` prop allows you to change when the button can be activate.
 
 <div><ButtonStatePreview></ButtonStatePreview></div>
 
@@ -70,12 +70,12 @@ Use the `onClick` prop to trigger an action when the button is clicked.
 </thead>
 <tbody>
 <tr>
-<td>type</td>
+<td>variant</td>
 <td><LeHighlighter language="tsx" code="'filled' | 'outlined' | 'ghost'" style="soft" copy="'off'"></LeHighlighter></td>
 <td><LeHighlighter language="tsx" code="'filled'" style="soft" copy="'off'"></td>
 </tr>
 <tr>
-<td>variant</td>
+<td>theme</td>
 <td><LeHighlighter language="tsx" code="'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'" style="soft" copy="'off'"></LeHighlighter></td>
 <td><LeHighlighter language="tsx" code="'primary'" style="soft" copy="'off'"></td>
 </tr>

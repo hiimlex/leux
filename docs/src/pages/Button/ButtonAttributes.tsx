@@ -5,42 +5,42 @@ import { attributes as buttonAttr } from "./button.md";
 
 const ButtonImportPreview = () => <LeHighlighter language="tsx" code={`import { Button, ButtonProps } from "leux";`} />;
 
-const ButtonVariantPreview = () => (
+const ButtonThemePreview = () => (
 	<>
 		<div className="le-preview">
-			<Button variant="primary">Primary</Button>
-			<Button variant="secondary">Secondary</Button>
-			<Button variant="success">Success</Button>
-			<Button variant="warning">Warning</Button>
-			<Button variant="danger">Danger</Button>
-			<Button variant="default">Default</Button>
+			<Button theme="primary">Primary</Button>
+			<Button theme="secondary">Secondary</Button>
+			<Button theme="success">Success</Button>
+			<Button theme="warning">Warning</Button>
+			<Button theme="danger">Danger</Button>
+			<Button theme="default">Default</Button>
 		</div>
 		<LeHighlighter
 			language="tsx"
 			code={`const Component = () => (
 	<>
-		<Button variant="primary">Primary</Button>
-		<Button variant="secondary">Secondary</Button>
-		<Button variant="success">Success</Button>
-		<Button variant="warning">Warning</Button>
-		<Button variant="danger">Danger</Button>
-		<Button variant="default">Default</Button>
+		<Button theme="primary">Primary</Button>
+		<Button theme="secondary">Secondary</Button>
+		<Button theme="success">Success</Button>
+		<Button theme="warning">Warning</Button>
+		<Button theme="danger">Danger</Button>
+		<Button theme="default">Default</Button>
 	</>
 );`}
 		/>
 	</>
 );
 
-const ButtonTypePreview = () => (
+const ButtonVariantPreview = () => (
 	<>
 		<div className="le-preview">
-			<Button variant="primary" type="filled">
+			<Button theme="primary" variant="filled">
 				Filled
 			</Button>
-			<Button variant="success" type="outlined">
+			<Button theme="success" variant="outlined">
 				Outlined
 			</Button>
-			<Button variant="danger" type="ghost">
+			<Button theme="danger" variant="ghost">
 				Ghost
 			</Button>
 		</div>
@@ -48,13 +48,13 @@ const ButtonTypePreview = () => (
 			language="tsx"
 			code={`const Component = () => (
 	<>
-		<Button variant="primary" type="filled">
+		<Button theme="primary" variant="filled">
 			Filled
 		</Button>
-		<Button variant="success" type="outlined">
+		<Button theme="success" variant="outlined">
 			Outlined
 		</Button>
-		<Button variant="danger" type="ghost">
+		<Button theme="danger" variant="ghost">
 			Ghost
 		</Button>
 	</>
@@ -66,11 +66,11 @@ const ButtonTypePreview = () => (
 const ButtonSizePreview = () => (
 	<>
 		<div className="le-preview">
-			<Button variant="default" size="small">
+			<Button theme="default" size="small">
 				Small
 			</Button>
-			<Button variant="default">Medium</Button>
-			<Button variant="default" size="large">
+			<Button theme="default">Medium</Button>
+			<Button theme="default" size="large">
 				Large
 			</Button>
 		</div>
@@ -78,9 +78,9 @@ const ButtonSizePreview = () => (
 			language="tsx"
 			code={`const Component = () => (
 	<>
-		<Button variant="default" size="small">Small</Button>
-		<Button variant="default">Medium</Button>
-		<Button variant="default" size="large">Large</Button>
+		<Button theme="default" size="small">Small</Button>
+		<Button theme="default" size="medium">Medium</Button>
+		<Button theme="default" size="large">Large</Button>
 	</>
 );`}
 		/>
@@ -97,10 +97,10 @@ const ButtonStatePreview = () => {
 	return (
 		<>
 			<div className="le-preview">
-				<Button variant={disabled ? "primary" : "danger"} onClick={handleOnClick}>
+				<Button theme={disabled ? "primary" : "danger"} onClick={handleOnClick}>
 					{disabled ? "on" : "off"}
 				</Button>
-				<Button variant="default" state={{ disabled }}>
+				<Button theme="default" state={{ disabled }}>
 					{disabled ? "disabled" : "enabled"}
 				</Button>
 			</div>
@@ -138,7 +138,7 @@ const ButtonActionPreview = () => {
 	return (
 		<>
 			<div className="le-preview">
-				<Button onClick={handleOnClick} variant="success">
+				<Button onClick={handleOnClick} theme="success">
 					Alert
 				</Button>
 			</div>
@@ -148,7 +148,7 @@ const ButtonActionPreview = () => {
 	const handleOnClick = () => alert("Hello World!");
 
 	return (
-		<Button onClick={handleOnClick} variant="success">Alert</Button>
+		<Button onClick={handleOnClick} theme="success">Alert</Button>
 	);
 };`}
 			/>
@@ -157,8 +157,8 @@ const ButtonActionPreview = () => {
 };
 
 buttonAttr["ButtonImportPreview"] = ButtonImportPreview;
-buttonAttr["ButtonTypePreview"] = ButtonTypePreview;
 buttonAttr["ButtonVariantPreview"] = ButtonVariantPreview;
+buttonAttr["ButtonThemePreview"] = ButtonThemePreview;
 buttonAttr["ButtonSizePreview"] = ButtonSizePreview;
 buttonAttr["ButtonStatePreview"] = ButtonStatePreview;
 buttonAttr["ButtonActionPreview"] = ButtonActionPreview;

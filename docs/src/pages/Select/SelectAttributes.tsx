@@ -257,6 +257,7 @@ const SelectMultiplePreview = () => {
 					multiple
 					onChange={handleValueChange}
 					valueSeparator=" + "
+					clickOptionHide={false}
 				/>
 			</div>
 			<LeHighlighter
@@ -282,6 +283,7 @@ const SelectMultiplePreview = () => {
 				multiple
 				onChange={handleValueChange}
 				valueSeparator=" + "
+				clickOptionHide={false}
 			/>
 		</>
 	);

@@ -1,9 +1,8 @@
 import { MouseEvent } from "react";
 
-type ButtonVariants = "primary" | "secondary" | "success" | "danger" | "warning" | "default";
-
-type ButtonTypes = "filled" | "outlined" | "ghost";
-
+type ButtonThemes = "primary" | "secondary" | "success" | "danger" | "warning" | "default";
+type ButtonVariants = "filled" | "outlined" | "ghost";
+type ButtonTypes = "submit" | "reset" | "button";
 type ButtonSizes = "small" | "medium" | "large";
 
 interface ButtonState {
@@ -11,6 +10,7 @@ interface ButtonState {
 }
 
 interface ButtonProps {
+	theme?: ButtonThemes;
 	variant?: ButtonVariants;
 	type?: ButtonTypes;
 	size?: ButtonSizes;
@@ -21,4 +21,4 @@ interface ButtonProps {
 	customStyles?: React.CSSProperties;
 }
 
-export { ButtonProps, ButtonVariants, ButtonTypes, ButtonState, ButtonSizes };
+export { ButtonProps, ButtonVariants, ButtonThemes, ButtonState, ButtonSizes, ButtonTypes };

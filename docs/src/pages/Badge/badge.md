@@ -20,24 +20,24 @@ Badge Component is used to display relevant informations like tags, versions, fo
 
 <br/>
 
-#### Types
+#### Variant
 
-Use the `type` prop to change the badge style type.
-
-<div>
-<BadgeTypePreview>
-</BadgeTypePreview>
-</div>
-
-<br/>
-
-#### Variants
-
-Use the `variant` prop to change the badge color theme.
+Use the `variant` prop to change the badge style type.
 
 <div>
 <BadgeVariantPreview>
 </BadgeVariantPreview>
+</div>
+
+<br/>
+
+#### Theme
+
+Use the `theme` prop to change the badge color theme.
+
+<div>
+<BadgeThemePreview>
+</BadgeThemePreview>
 </div>
 
 <br/>
