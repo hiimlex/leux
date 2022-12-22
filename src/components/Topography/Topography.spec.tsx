@@ -110,7 +110,9 @@ describe("Topography component test", () => {
 	});
 
 	it("should render a Custom Class Topography component", () => {
-		const { getByTestId } = render(<Topography type="h1" children="Test" customClass="le-text--body-1" />);
+		const { getByTestId } = render(
+			<Topography type="h1" children="Test" customClass="le-text--body-1" />
+		);
 
 		const topography = getByTestId("leuxTopography");
 
@@ -118,7 +120,9 @@ describe("Topography component test", () => {
 	});
 
 	it("should render a Custom Styles Topography component", () => {
-		const { getByTestId } = render(<Topography type="h1" children="Test" customStyles={{ fontSize: 12 }} />);
+		const { getByTestId } = render(
+			<Topography type="h1" children="Test" customStyles={{ fontSize: 12 }} />
+		);
 
 		const topography = getByTestId("leuxTopography");
 

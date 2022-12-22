@@ -1,7 +1,16 @@
 import React from "react";
 import { GridProps } from "./Grid.model";
 
-const Grid = ({ rows, cols, gap, width = "100%", padding, children, customClass, customStyles }: GridProps) => {
+const Grid = ({
+	rows,
+	cols,
+	gap,
+	width = "100%",
+	padding,
+	children,
+	customClass,
+	customStyles,
+}: GridProps) => {
 	const handleColumns = () => {
 		if (typeof cols === "number") {
 			return `repeat(${cols}, 1fr)`;

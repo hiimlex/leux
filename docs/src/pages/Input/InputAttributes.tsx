@@ -3,7 +3,9 @@ import { useState } from "react";
 import { Button, Input, InputSizes, InputVariant, Topography } from "../../../../src";
 import { attributes as inputAttr } from "./input.md";
 
-const InputImportPreview = () => <LeHighlighter code={`import { Input, InputProps } from 'leux';`} language="tsx" />;
+const InputImportPreview = () => (
+	<LeHighlighter code={`import { Input, InputProps } from 'leux';`} language="tsx" />
+);
 
 const InputKeyPreview = () => (
 	<>

@@ -6,7 +6,12 @@
 		"sourceType": "module"
 	},
 
-	"extends": ["eslint:recommended", "plugin:node/recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+	"extends": [
+		"eslint:recommended",
+		"plugin:node/recommended",
+		"plugin:@typescript-eslint/recommended",
+		"prettier"
+	],
 	"plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
 	"rules": {
 		"no-console": "error",

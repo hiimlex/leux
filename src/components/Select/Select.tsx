@@ -90,7 +90,9 @@ const Select = ({
 			});
 		}
 
-		const selectedValues = optionsArr.filter((option) => option.state && option.state.selected).map((el) => el.value);
+		const selectedValues = optionsArr
+			.filter((option) => option.state && option.state.selected)
+			.map((el) => el.value);
 
 		const selectedLabels = optionsArr
 			.filter((option) => option.state && option.state.selected)

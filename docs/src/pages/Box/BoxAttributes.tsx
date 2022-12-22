@@ -11,7 +11,14 @@ const BoxCssPreview = () => {
 	return (
 		<>
 			<div className="le-preview">
-				<Box padding="30px" height="100px" width="100px" borderRadius="100%" margin="12px" bgColor="default">
+				<Box
+					padding="30px"
+					height="100px"
+					width="100px"
+					borderRadius="100%"
+					margin="12px"
+					bgColor="default"
+				>
 					CSS Properties example
 				</Box>
 			</div>
@@ -114,7 +121,13 @@ const BoxCenteredPreview = () => {
 	return (
 		<>
 			<div className="le-preview">
-				<Box centered padding={12} bgColor="default" textColor="darker" customClass="le-text--body-1">
+				<Box
+					centered
+					padding={12}
+					bgColor="default"
+					textColor="darker"
+					customClass="le-text--body-1"
+				>
 					text will be centered
 				</Box>
 			</div>

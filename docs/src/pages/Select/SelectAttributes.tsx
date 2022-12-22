@@ -3,7 +3,9 @@ import { useState } from "react";
 import { Button, Select, SelectState, Topography } from "../../../../src";
 import { attributes as selectAttr } from "./select.md";
 
-const SelectImportPreview = () => <LeHighlighter code={`import { Select, SelectProps, } from "leux"`} language="tsx" />;
+const SelectImportPreview = () => (
+	<LeHighlighter code={`import { Select, SelectProps, } from "leux"`} language="tsx" />
+);
 
 const SelectOptionPreview = () => {
 	return (
@@ -124,7 +126,11 @@ const SelectSizePreview = () => {
 		<>
 			<div className="le-preview le-input-group">
 				<Select options={[{ label: "Small", value: "small" }]} size="small" placeholder="small" />
-				<Select options={[{ label: "Medium", value: "medium" }]} size="medium" placeholder="medium" />
+				<Select
+					options={[{ label: "Medium", value: "medium" }]}
+					size="medium"
+					placeholder="medium"
+				/>
 				<Select options={[{ label: "Large", value: "large" }]} size="large" placeholder="large" />
 			</div>
 			<LeHighlighter
@@ -244,7 +250,9 @@ const SelectMultiplePreview = () => {
 	return (
 		<>
 			<div className="le-preview le-input-group">
-				<Topography type="body-2">SUM: {value.length > 0 ? value.reduce((acc, curr) => acc + curr) : 0}</Topography>
+				<Topography type="body-2">
+					SUM: {value.length > 0 ? value.reduce((acc, curr) => acc + curr) : 0}
+				</Topography>
 				<Select
 					width="280px"
 					options={[

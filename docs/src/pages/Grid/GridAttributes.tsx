@@ -97,7 +97,14 @@ const GridGapPreview = () => {
 			<div className="le-preview">
 				<Grid cols={3} rows={3} gap={{ col: 12, row: 12 }}>
 					{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
-						<Box key={item} padding={4} bgColor="default" textColor="darker" centered borderRadius="12px">
+						<Box
+							key={item}
+							padding={4}
+							bgColor="default"
+							textColor="darker"
+							centered
+							borderRadius="12px"
+						>
 							<Topography type="body-1">{item}</Topography>
 						</Box>
 					))}

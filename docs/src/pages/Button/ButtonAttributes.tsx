@@ -3,7 +3,9 @@ import { useState } from "react";
 import { Button } from "../../../../src";
 import { attributes as buttonAttr } from "./button.md";
 
-const ButtonImportPreview = () => <LeHighlighter language="tsx" code={`import { Button, ButtonProps } from "leux";`} />;
+const ButtonImportPreview = () => (
+	<LeHighlighter language="tsx" code={`import { Button, ButtonProps } from "leux";`} />
+);
 
 const ButtonThemePreview = () => (
 	<>

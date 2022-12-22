@@ -9,7 +9,9 @@ const LeCSSImportCode = () => (
 	/>
 );
 
-const LinkCode = () => <LeHighlighter language="tsx" code={`<link rel="stylesheet" href="leux.min.css" />`} />;
+const LinkCode = () => (
+	<LeHighlighter language="tsx" code={`<link rel="stylesheet" href="leux.min.css" />`} />
+);
 
 leCssAttr["LeCSSImportCode"] = LeCSSImportCode;
 leCssAttr["LinkCode"] = LinkCode;

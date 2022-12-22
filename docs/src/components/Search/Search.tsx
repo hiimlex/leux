@@ -45,7 +45,7 @@ const Search = () => {
 				onFocus={() => setIsFocused(true)}
 				onBlur={() => setIsFocused(false)}
 				className="le-search--input"
-				placeholder="Search for a component ..."
+				placeholder="Search for a component or page ..."
 				onChange={handleOnSearchChange}
 			/>
 			<div className={"le-search--icon" + (isFocused ? " le-search--icon-focus" : "")}>
