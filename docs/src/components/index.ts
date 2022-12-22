@@ -6,3 +6,4 @@ export { default as LeSourceButton } from "./SourceButton";
 export { default as LeAnchorLink } from "./AnchorLink";
 export { default as LeSideAnchorNav } from "./SideAnchorNav";
 export { default as LeHighlighter } from "./Highlighter";
+export { default as LeSearch } from "./Search";

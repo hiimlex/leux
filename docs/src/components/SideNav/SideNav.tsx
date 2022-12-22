@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./SideNav.scss";
 
-interface ILink {
+export interface ILink {
 	name: string;
 	path: string;
 }
@@ -51,6 +51,8 @@ export const LINKS: Record<string, ILink[]> = {
 		{ name: "Tooltip", path: "/components/tooltip" },
 	],
 };
+
+export const linksArr: ILink[] = Object.values(LINKS).flat();
 
 const SideNav = () => {
 	return (

@@ -77,12 +77,12 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the Badge com
 </thead>
 <tbody>
 <tr>
-<td>type</td>
+<td>variant</td>
 <td><LeHighlighter code="'dashed' | 'ghost' | 'outlined'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
-<td>variant</td>
+<td>theme</td>
 <td><LeHighlighter code="'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
