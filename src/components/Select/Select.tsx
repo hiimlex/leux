@@ -137,8 +137,6 @@ const Select = ({
 			document.addEventListener("mousedown", handleClickOutside);
 		}
 
-		document.addEventListener("mousedown", handleClickOutside);
-
 		if (!clickOutsideHide) {
 			document.removeEventListener("mousedown", handleClickOutside);
 		}
