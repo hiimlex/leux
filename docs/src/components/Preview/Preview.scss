@@ -1,0 +1,37 @@
+@import "src/core/styles/variables.scss";
+
+.le-preview {
+	padding: 8px;
+	margin: 8px 0;
+	border-radius: 8px;
+	border: 1px solid $color-light-text;
+	display: flex;
+
+	&--column {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		.le-input {
+			margin: 6px 0;
+		}
+
+		.le-select {
+			margin: 6px 0;
+		}
+	}
+
+	&--row {
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	button {
+		margin-right: 12px;
+	}
+
+	.le-badge {
+		margin-right: 12px !important;
+	}
+}

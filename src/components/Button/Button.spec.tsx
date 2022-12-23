@@ -47,7 +47,9 @@ describe("Button component test", () => {
 			testIncrement++;
 		};
 
-		const { getByTestId } = render(<Button children="Increment" onClick={cb} state={{ disabled: true }} />);
+		const { getByTestId } = render(
+			<Button children="Increment" onClick={cb} state={{ disabled: true }} />
+		);
 
 		const button = getByTestId("leuxButton");
 		button.click();

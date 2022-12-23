@@ -35,7 +35,11 @@ const Highlighter = ({ code, language, style = "dracula", copy = "on" }: Highlig
 
 			{copy === "on" && (
 				<span className={"le-highlighter--copy"}>
-					<MdOutlineContentCopy size="1.2rem" color={copied ? "#efefef" : "#afafaf"} onClick={handleCopyToClipboard} />
+					<MdOutlineContentCopy
+						size="1.2rem"
+						color={copied ? "#efefef" : "#afafaf"}
+						onClick={handleCopyToClipboard}
+					/>
 					{copied && <span className="le-highlighter--copy--text">COPIED</span>}
 				</span>
 			)}

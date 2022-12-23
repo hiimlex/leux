@@ -1,20 +1,22 @@
-import { LeHighlighter, LeSourceButton } from "@/components";
+import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { useState } from "react";
 import { Button } from "../../../../src";
 import { attributes as buttonAttr } from "./button.md";
 
-const ButtonImportPreview = () => <LeHighlighter language="tsx" code={`import { Button, ButtonProps } from "leux";`} />;
+const ButtonImportPreview = () => (
+	<LeHighlighter language="tsx" code={`import { Button, ButtonProps } from "leux";`} />
+);
 
 const ButtonThemePreview = () => (
 	<>
-		<div className="le-preview">
+		<LePreview>
 			<Button theme="primary">Primary</Button>
 			<Button theme="secondary">Secondary</Button>
 			<Button theme="success">Success</Button>
 			<Button theme="warning">Warning</Button>
 			<Button theme="danger">Danger</Button>
 			<Button theme="default">Default</Button>
-		</div>
+		</LePreview>
 		<LeHighlighter
 			language="tsx"
 			code={`const Component = () => (
@@ -33,7 +35,7 @@ const ButtonThemePreview = () => (
 
 const ButtonVariantPreview = () => (
 	<>
-		<div className="le-preview">
+		<LePreview>
 			<Button theme="primary" variant="filled">
 				Filled
 			</Button>
@@ -43,7 +45,7 @@ const ButtonVariantPreview = () => (
 			<Button theme="danger" variant="ghost">
 				Ghost
 			</Button>
-		</div>
+		</LePreview>
 		<LeHighlighter
 			language="tsx"
 			code={`const Component = () => (
@@ -65,7 +67,7 @@ const ButtonVariantPreview = () => (
 
 const ButtonSizePreview = () => (
 	<>
-		<div className="le-preview">
+		<LePreview>
 			<Button theme="default" size="small">
 				Small
 			</Button>
@@ -73,7 +75,7 @@ const ButtonSizePreview = () => (
 			<Button theme="default" size="large">
 				Large
 			</Button>
-		</div>
+		</LePreview>
 		<LeHighlighter
 			language="tsx"
 			code={`const Component = () => (
@@ -96,14 +98,14 @@ const ButtonStatePreview = () => {
 
 	return (
 		<>
-			<div className="le-preview">
+			<LePreview>
 				<Button theme={disabled ? "primary" : "danger"} onClick={handleOnClick}>
 					{disabled ? "on" : "off"}
 				</Button>
 				<Button theme="default" state={{ disabled }}>
 					{disabled ? "disabled" : "enabled"}
 				</Button>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				language="tsx"
 				code={`const Component = () => {
@@ -137,11 +139,11 @@ const ButtonActionPreview = () => {
 
 	return (
 		<>
-			<div className="le-preview">
+			<LePreview>
 				<Button onClick={handleOnClick} theme="success">
 					Alert
 				</Button>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				language="tsx"
 				code={`const Component = () => {

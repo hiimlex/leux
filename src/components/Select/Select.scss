@@ -109,8 +109,9 @@
 		overflow: hidden;
 		overflow-y: auto;
 		color: inherit;
+		max-height: 298px;
 
-		animation: fadeIn 0.1s ease-in-out forwards;
+		animation: fadeIn 0.1s ease-in forwards;
 
 		.le-option {
 			line-height: 100%;
@@ -175,8 +176,10 @@
 @keyframes fadeIn {
 	from {
 		opacity: 0;
+		max-height: 0;
 	}
 	to {
 		opacity: 1;
+		max-height: 298px;
 	}
 }

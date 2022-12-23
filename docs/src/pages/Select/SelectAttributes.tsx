@@ -1,14 +1,16 @@
-import { LeHighlighter, LeSourceButton } from "@/components";
+import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { useState } from "react";
 import { Button, Select, SelectState, Topography } from "../../../../src";
 import { attributes as selectAttr } from "./select.md";
 
-const SelectImportPreview = () => <LeHighlighter code={`import { Select, SelectProps, } from "leux"`} language="tsx" />;
+const SelectImportPreview = () => (
+	<LeHighlighter code={`import { Select, SelectProps, } from "leux"`} language="tsx" />
+);
 
 const SelectOptionPreview = () => {
 	return (
 		<>
-			<div className="le-preview le-input-group">
+			<LePreview direction="column">
 				<Select
 					placeholder="Options"
 					options={[
@@ -16,7 +18,7 @@ const SelectOptionPreview = () => {
 						{ label: "B", value: "b", state: { selected: false } },
 					]}
 				></Select>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
 	return (
@@ -40,13 +42,13 @@ const SelectOptionPreview = () => {
 const SelectKeyPreview = () => {
 	return (
 		<>
-			<div className="le-preview">
+			<LePreview>
 				<Select
 					fieldKey="key"
 					placeholder="with key"
 					options={[{ label: "Key 1", state: { selected: false }, value: "key1" }]}
 				/>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
 	return (
@@ -70,7 +72,7 @@ const SelectKeyPreview = () => {
 const SelectVariantPreview = () => {
 	return (
 		<>
-			<div className="le-preview le-input-group">
+			<LePreview direction="column">
 				<Select
 					options={[{ label: "Filled 1", value: "filled1", state: { selected: false } }]}
 					placeholder="Filled"
@@ -87,7 +89,7 @@ const SelectVariantPreview = () => {
 					placeholder="Outlined"
 					variant="outlined"
 				/>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
 	return (
@@ -122,11 +124,15 @@ const SelectVariantPreview = () => {
 const SelectSizePreview = () => {
 	return (
 		<>
-			<div className="le-preview le-input-group">
+			<LePreview direction="column">
 				<Select options={[{ label: "Small", value: "small" }]} size="small" placeholder="small" />
-				<Select options={[{ label: "Medium", value: "medium" }]} size="medium" placeholder="medium" />
+				<Select
+					options={[{ label: "Medium", value: "medium" }]}
+					size="medium"
+					placeholder="medium"
+				/>
 				<Select options={[{ label: "Large", value: "large" }]} size="large" placeholder="large" />
-			</div>
+			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
 	return (
@@ -161,7 +167,7 @@ const SelectFocusStylePreview = () => {
 
 	return (
 		<>
-			<div className="le-preview le-input-group">
+			<LePreview direction="column">
 				<Select
 					options={[
 						{ label: "Yes", value: "yes" },
@@ -171,7 +177,7 @@ const SelectFocusStylePreview = () => {
 					onChange={handleValueChange}
 					focusStyle={value[0] === "yes"}
 				/>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
 	const [value, setValue] = useState<string[]>([]);
@@ -201,7 +207,7 @@ const SelectActionPreview = () => {
 
 	return (
 		<>
-			<div className="le-preview le-input-group">
+			<LePreview direction="column">
 				<Topography type="body-1">Select one option: {value}</Topography>
 				<Select
 					options={[
@@ -211,7 +217,7 @@ const SelectActionPreview = () => {
 					placeholder="Options"
 					onChange={handleValueChange}
 				/>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
 	const [value, setValue] = useState<string[]>([]);
@@ -243,8 +249,10 @@ const SelectMultiplePreview = () => {
 
 	return (
 		<>
-			<div className="le-preview le-input-group">
-				<Topography type="body-2">SUM: {value.length > 0 ? value.reduce((acc, curr) => acc + curr) : 0}</Topography>
+			<LePreview direction="column">
+				<Topography type="body-2">
+					SUM: {value.length > 0 ? value.reduce((acc, curr) => acc + curr) : 0}
+				</Topography>
 				<Select
 					width="280px"
 					options={[
@@ -259,7 +267,7 @@ const SelectMultiplePreview = () => {
 					valueSeparator=" + "
 					clickOptionHide={false}
 				/>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
 	const [value, setValue] = useState<number[]>([]);
@@ -311,7 +319,7 @@ const SelectHidePreview = () => {
 
 	return (
 		<>
-			<div className="le-preview le-input-group">
+			<LePreview direction="column">
 				<Select
 					options={[
 						{ label: "both", value: "both" },
@@ -323,7 +331,7 @@ const SelectHidePreview = () => {
 					clickOutsideHide={outside}
 					clickOptionHide={select}
 				/>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
 	const [outside, setOutside] = useState(true);
@@ -370,14 +378,14 @@ const SelectStatePreview = () => {
 
 	return (
 		<>
-			<div className="le-preview le-input-group">
+			<LePreview direction="column">
 				<Button onClick={handleFieldState}>{selectState.disabled ? "off" : "on"}</Button>
 				<Select
 					options={[{ label: "Option 1", value: "option1" }]}
 					placeholder="Enable the button to select a option"
 					state={selectState}
 				/>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
 	const [selectState, setSelectState] = useState<SelectState>({
@@ -409,7 +417,7 @@ const SelectStatePreview = () => {
 const SelectCustomPreview = () => {
 	return (
 		<>
-			<div className="le-preview le-input-group">
+			<LePreview direction="column">
 				<Select
 					options={[{ label: "Option 1", value: "option1" }]}
 					placeholder="Custom Select"
@@ -420,7 +428,7 @@ const SelectCustomPreview = () => {
 					selectCustomClass="custom-select"
 					selectCustomStyles={{ border: "solid 1px yellow" }}
 				/>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
 	return (

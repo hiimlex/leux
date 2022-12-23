@@ -1,5 +1,8 @@
 import { LeHighlighter } from "@/components";
-import { attributes as installationAttr, ReactComponent as InstallationMD } from "./installation.md";
+import {
+	attributes as installationAttr,
+	ReactComponent as InstallationMD,
+} from "./installation.md";
 
 const NpmCode = () => (
 	<LeHighlighter

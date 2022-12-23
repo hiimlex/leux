@@ -3,6 +3,7 @@ import { Topography, useBreakpoint } from "../../../../src";
 import "./Header.scss";
 
 import { version } from "../../../../package.json";
+import { LeSearch } from "..";
 
 const Header = () => {
 	const { breakpoint } = useBreakpoint();
@@ -16,6 +17,7 @@ const Header = () => {
 						<h1 className="le-logo--shadow le-text--h1">LeUX</h1>
 					</div>
 				</div>
+				<LeSearch />
 				<div className="flex-1"></div>
 				<nav className="le-nav">
 					<span className="le-nav--item">

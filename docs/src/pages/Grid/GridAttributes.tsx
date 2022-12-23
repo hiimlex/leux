@@ -1,4 +1,4 @@
-import { LeHighlighter, LeSourceButton } from "@/components";
+import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { NavLink } from "react-router-dom";
 import { Box, BoxVariants, Grid, Topography } from "../../../../src";
 import { attributes as gridAttr } from "./grid.md";
@@ -10,7 +10,7 @@ const GridImportPreview = () => {
 const GridColPreview = () => {
 	return (
 		<>
-			<div className="le-preview">
+			<LePreview>
 				<Grid cols={3}>
 					{(["primary", "success", "danger"] as BoxVariants[]).map((item) => (
 						<Box
@@ -25,7 +25,7 @@ const GridColPreview = () => {
 						</Box>
 					))}
 				</Grid>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				language="tsx"
 				code={`const Component = () => (
@@ -52,7 +52,7 @@ const GridColPreview = () => {
 const GridRowPreview = () => {
 	return (
 		<>
-			<div className="le-preview">
+			<LePreview>
 				<Grid rows={3}>
 					{(["primary", "success", "danger"] as BoxVariants[]).map((item) => (
 						<Box
@@ -67,7 +67,7 @@ const GridRowPreview = () => {
 						</Box>
 					))}
 				</Grid>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				language="tsx"
 				code={`const Component = () => (
@@ -94,15 +94,22 @@ const GridRowPreview = () => {
 const GridGapPreview = () => {
 	return (
 		<>
-			<div className="le-preview">
+			<LePreview>
 				<Grid cols={3} rows={3} gap={{ col: 12, row: 12 }}>
 					{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
-						<Box key={item} padding={4} bgColor="default" textColor="darker" centered borderRadius="12px">
+						<Box
+							key={item}
+							padding={4}
+							bgColor="default"
+							textColor="darker"
+							centered
+							borderRadius="12px"
+						>
 							<Topography type="body-1">{item}</Topography>
 						</Box>
 					))}
 				</Grid>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				language="tsx"
 				code={`const Component = () => (
@@ -129,7 +136,7 @@ const GridGapPreview = () => {
 const GridSpanPreview = () => {
 	return (
 		<>
-			<div className="le-preview">
+			<LePreview>
 				<Grid cols={4} rows={2} gap={{ row: 12, col: 12 }}>
 					<Box padding={4} bgColor="success" textColor="lighter" centered gridSpan={{ row: 2 }}>
 						<Topography type="body-1">2 rows and 1 col</Topography>
@@ -143,7 +150,7 @@ const GridSpanPreview = () => {
 						</Box>
 					))}
 				</Grid>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				language="tsx"
 				code={`const Component = () => (

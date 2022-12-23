@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./SideNav.scss";
 
-interface ILink {
+export interface ILink {
 	name: string;
 	path: string;
 }
@@ -21,6 +21,8 @@ export const LINKS: Record<string, ILink[]> = {
 			name: "Grid",
 			path: "/layout/grid",
 		},
+		{ name: "Skeleton", path: "/components/skeleton" },
+		{ name: "Spinner", path: "/components/spinner" },
 		{
 			name: "Topography",
 			path: "/layout/topography",
@@ -30,8 +32,6 @@ export const LINKS: Record<string, ILink[]> = {
 		{ name: "Alert", path: "/components/alert" },
 		{ name: "Button", path: "/components/button" },
 		{ name: "Dropdown", path: "/components/dropdown" },
-		{ name: "Skeleton", path: "/components/skeleton" },
-		{ name: "Spinner", path: "/components/spinner" },
 		{ name: "Toast", path: "/components/popover" },
 	],
 	Form: [
@@ -39,18 +39,18 @@ export const LINKS: Record<string, ILink[]> = {
 		{ name: "Input", path: "/components/input" },
 		{ name: "Radio", path: "/components/radio" },
 		{ name: "Select", path: "/components/select" },
-		{ name: "Switch", path: "/components/switch" },
 		{ name: "TextArea", path: "/components/textarea" },
 	],
 	"Data Display": [
 		{ name: "Avatar", path: "/components/avatar" },
 		{ name: "Badge", path: "/components/badge" },
-		{ name: "Breadcrumb", path: "/components/breadcrumb" },
 		{ name: "Modal", path: "/components/modal" },
 		{ name: "Table", path: "/components/table" },
 		{ name: "Tooltip", path: "/components/tooltip" },
 	],
 };
+
+export const linksArr: ILink[] = Object.values(LINKS).flat();
 
 const SideNav = () => {
 	return (

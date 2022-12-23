@@ -12,7 +12,7 @@ Button component is used to fire events. Commom used on forms, modals, panels an
 
 <div><ButtonImportPreview></ButtonImportPreview></div>
 
-- **Button** - the button component
+- **Button** - the main component
 - **ButtonProps** - the props type
 
 <br/>
