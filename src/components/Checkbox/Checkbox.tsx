@@ -1,4 +1,4 @@
-import React, { useRef, MouseEvent } from "react";
+import React, { useRef } from "react";
 import { CheckboxProps } from "./Checkbox.model";
 import "./Checkbox.scss";
 
