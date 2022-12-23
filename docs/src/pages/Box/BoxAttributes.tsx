@@ -1,4 +1,4 @@
-import { LeHighlighter, LeSourceButton } from "@/components";
+import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { NavLink } from "react-router-dom";
 import { Box } from "../../../../src";
 import { attributes as boxAttr } from "./box.md";
@@ -10,7 +10,7 @@ const ImportPreview = () => {
 const BoxCssPreview = () => {
 	return (
 		<>
-			<div className="le-preview">
+			<LePreview>
 				<Box
 					padding="30px"
 					height="100px"
@@ -21,7 +21,7 @@ const BoxCssPreview = () => {
 				>
 					CSS Properties example
 				</Box>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				language="tsx"
 				code={`const Component = () => (
@@ -44,7 +44,7 @@ const BoxCssPreview = () => {
 const BoxCompletePreview = () => {
 	return (
 		<>
-			<div className="le-preview">
+			<LePreview>
 				<Box
 					customClass="le-text--body-1"
 					customStyles={{ fontWeight: 600 }}
@@ -58,7 +58,7 @@ const BoxCompletePreview = () => {
 				>
 					Complete box
 				</Box>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				language="tsx"
 				code={`const Component = () => (
@@ -84,7 +84,7 @@ const BoxCompletePreview = () => {
 const BoxCustomPreview = () => {
 	return (
 		<>
-			<div className="le-preview">
+			<LePreview>
 				<Box
 					customClass="le-color-text--primary le-color-bg--default le-text--body-2"
 					customStyles={{
@@ -96,7 +96,7 @@ const BoxCustomPreview = () => {
 				>
 					with custom CSS and Classes
 				</Box>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				language="tsx"
 				code={`const Component = () => (
@@ -120,7 +120,7 @@ const BoxCustomPreview = () => {
 const BoxCenteredPreview = () => {
 	return (
 		<>
-			<div className="le-preview">
+			<LePreview>
 				<Box
 					centered
 					padding={12}
@@ -130,7 +130,7 @@ const BoxCenteredPreview = () => {
 				>
 					text will be centered
 				</Box>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				language="tsx"
 				code={`const Component = () = (

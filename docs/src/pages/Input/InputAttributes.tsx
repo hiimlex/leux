@@ -1,4 +1,4 @@
-import { LeHighlighter, LeSourceButton } from "@/components";
+import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { useState } from "react";
 import { Button, Input, InputSizes, InputVariant, Topography } from "../../../../src";
 import { attributes as inputAttr } from "./input.md";
@@ -9,10 +9,10 @@ const InputImportPreview = () => (
 
 const InputKeyPreview = () => (
 	<>
-		<div className="le-preview le-input-group">
+		<LePreview direction="column">
 			<Topography type="body-1">Inspect element to see the id and name attributes</Topography>
 			<Input fieldKey="key" placeholder="Key" />
-		</div>
+		</LePreview>
 		<LeHighlighter
 			code={`const Component = () => (
 	<>
@@ -29,11 +29,11 @@ const InputKeyPreview = () => (
 
 const InputVariantPreview = () => (
 	<>
-		<div className="le-preview le-input-group">
+		<LePreview direction="column">
 			{(["filled", "outlined"] as InputVariant[]).map((variant, index) => (
 				<Input key={index} variant={variant} placeholder="Placeholder" />
 			))}
-		</div>
+		</LePreview>
 		<LeHighlighter
 			language="tsx"
 			code={`const Component = () => (
@@ -47,11 +47,11 @@ const InputVariantPreview = () => (
 
 const InputSizePreview = () => (
 	<>
-		<div className="le-preview le-input-group">
+		<LePreview direction="column">
 			{(["small", "medium", "large"] as InputSizes[]).map((size, index) => (
 				<Input key={index} variant="outlined" placeholder={size} size={size} />
 			))}
-		</div>
+		</LePreview>
 		<LeHighlighter
 			language="tsx"
 			code={`const Component = () => (
@@ -70,10 +70,10 @@ const InputSizePreview = () => (
 
 const InputFocusPreview = () => (
 	<>
-		<div className="le-preview le-input-group">
+		<LePreview direction="column">
 			<Input placeholder="Focus" focusStyle />
 			<Input placeholder="Focus" focusStyle={false} />
-		</div>
+		</LePreview>
 		<LeHighlighter
 			code={`const Component = () => (
 	<>
@@ -92,10 +92,10 @@ const InputActionPreview = () => {
 
 	return (
 		<>
-			<div className="le-preview le-input-group">
+			<LePreview direction="column">
 				<Topography type="body-2">type to see the value here: {value}</Topography>
 				<Input placeholder="Action" onChange={handleOnChange} />
-			</div>
+			</LePreview>
 			<LeHighlighter
 				language="tsx"
 				code={`const Component = () = {
@@ -126,13 +126,13 @@ const InputStatePreview = () => {
 
 	return (
 		<>
-			<div className="le-preview le-input-group">
+			<LePreview direction="column">
 				<Button theme={disabled ? "danger" : "primary"} onClick={handleOnClick}>
 					{disabled ? "off" : "on"}
 				</Button>
 				<Topography type="body-1">Value: {value}</Topography>
 				<Input state={{ disabled }} placeholder="Disabled" onChange={handleOnChange} />
-			</div>
+			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
 	const [disabled, setDisabled] = useState(true);
@@ -166,7 +166,7 @@ const InputStatePreview = () => {
 const InputCustomPreview = () => {
 	return (
 		<>
-			<div className="le-preview">
+			<LePreview>
 				<Input
 					placeholder="Custom input"
 					customStyles={{
@@ -176,7 +176,7 @@ const InputCustomPreview = () => {
 					}}
 					customClass="le-text--h6"
 				/>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => (
 	<Input

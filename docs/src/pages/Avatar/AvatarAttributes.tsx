@@ -1,4 +1,4 @@
-import { LeHighlighter, LeSourceButton } from "@/components";
+import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { Avatar } from "../../../../src";
 import { attributes as avatarAttr } from "./avatar.md";
 
@@ -9,12 +9,12 @@ const AvatarImportPreview = () => (
 const AvatarSrcPreview = () => {
 	return (
 		<>
-			<div className="le-preview">
+			<LePreview>
 				<Avatar
 					src="https://avatars.githubusercontent.com/u/49082043?v=4"
 					alt="hiimlex github avatar"
 				/>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
 	return (
@@ -31,9 +31,9 @@ const AvatarSrcPreview = () => {
 const AvatarAsTextPreview = () => {
 	return (
 		<>
-			<div className="le-preview">
+			<LePreview>
 				<Avatar src="Alex Alves" asText />
-			</div>
+			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
 	return (
@@ -50,7 +50,7 @@ const AvatarAsTextPreview = () => {
 const AvatarSizePreview = () => {
 	return (
 		<>
-			<div className="le-preview">
+			<LePreview>
 				<Avatar
 					src="https://avatars.githubusercontent.com/u/49082043?v=4"
 					alt="hiimlex github avatar"
@@ -69,7 +69,7 @@ const AvatarSizePreview = () => {
 					size="large"
 					customStyles={{ marginRight: "18px" }}
 				/>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
 	return (
@@ -105,7 +105,7 @@ const AvatarSizePreview = () => {
 const AvatarCustomPreview = () => {
 	return (
 		<>
-			<div className="le-preview">
+			<LePreview>
 				<Avatar
 					src="https://avatars.githubusercontent.com/u/49082043?v=4"
 					alt="hiimlex github avatar"
@@ -113,7 +113,7 @@ const AvatarCustomPreview = () => {
 					customStyles={{ marginRight: "18px", border: "4px solid red" }}
 					customClass="le-avatar-custom"
 				/>
-			</div>
+			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
 	return (

@@ -4,6 +4,7 @@ import {
 	BadgePage,
 	BoxPage,
 	ButtonPage,
+	CheckboxPage,
 	CSSPage,
 	GridPage,
 	InputPage,
@@ -68,6 +69,10 @@ export const routes: LeRoute[] = [
 	{
 		path: "/components/avatar",
 		element: <LeRenderDocPage doc={<AvatarPage />} title="Avatar" />,
+	},
+	{
+		path: "/components/checkbox",
+		element: <LeRenderDocPage doc={<CheckboxPage />} title="Checkbox" />,
 	},
 	{
 		path: "*",

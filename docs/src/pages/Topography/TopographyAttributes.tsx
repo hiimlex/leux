@@ -1,4 +1,4 @@
-import { LeAnchorLink, LeHighlighter, LeSourceButton } from "@/components";
+import { LeAnchorLink, LeHighlighter, LePreview, LeSourceButton } from "@/components";
 
 import { Topography } from "../../../../src";
 import { attributes as topographyAttr } from "./topography.md";
@@ -36,7 +36,7 @@ const CodePreview = () => (
 
 const TopographyCustomPreview = () => (
 	<>
-		<div className="le-preview">
+		<LePreview>
 			<Topography
 				type="body-1"
 				customClass="le-color-text--danger"
@@ -44,7 +44,7 @@ const TopographyCustomPreview = () => (
 			>
 				Custom CSS
 			</Topography>
-		</div>
+		</LePreview>
 		<LeHighlighter
 			language="tsx"
 			code={`const Component = () => (

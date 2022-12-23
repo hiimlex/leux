@@ -1,6 +1,6 @@
 import { attributes as badgeAttr } from "./badge.md";
 
-import { LeHighlighter, LeSourceButton } from "@/components";
+import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { Badge } from "../../../../src";
 
 const BadgeImportPreview = () => (
@@ -9,7 +9,7 @@ const BadgeImportPreview = () => (
 
 const BadgeVariantPreview = () => (
 	<>
-		<div className="le-preview">
+		<LePreview>
 			<Badge variant="dashed" theme="primary">
 				Dashed
 			</Badge>
@@ -19,7 +19,7 @@ const BadgeVariantPreview = () => (
 			<Badge variant="ghost" theme="danger">
 				Ghost
 			</Badge>
-		</div>
+		</LePreview>
 		<LeHighlighter
 			code={`const Component = () => (
 	<>
@@ -34,14 +34,14 @@ const BadgeVariantPreview = () => (
 
 const BadgeThemePreview = () => (
 	<>
-		<div className="le-preview">
+		<LePreview>
 			<Badge theme="primary">Primary</Badge>
 			<Badge theme="secondary">Secondary</Badge>
 			<Badge theme="success">Success</Badge>
 			<Badge theme="danger">Danger</Badge>
 			<Badge theme="warning">Warning</Badge>
 			<Badge theme="default">Default</Badge>
-		</div>
+		</LePreview>
 		<LeHighlighter
 			code={`const Component = () => (
 	<>
@@ -60,11 +60,11 @@ const BadgeThemePreview = () => (
 
 const BadgeSizePreview = () => (
 	<>
-		<div className="le-preview">
+		<LePreview>
 			<Badge size="small">Small</Badge>
 			<Badge size="medium">Medium</Badge>
 			<Badge size="large">Large</Badge>
-		</div>
+		</LePreview>
 		<LeHighlighter
 			code={`const Component = () => (
 	<>
@@ -86,7 +86,7 @@ const BadgeSizePreview = () => (
 
 const BadgeCustomPreview = () => (
 	<>
-		<div className="le-preview">
+		<LePreview>
 			<Badge
 				customClass="le-color-bg--primary"
 				variant="dashed"
@@ -94,7 +94,7 @@ const BadgeCustomPreview = () => (
 			>
 				Custom Badge
 			</Badge>
-		</div>
+		</LePreview>
 		<LeHighlighter
 			code={`const Component = () => (
 	<Badge
