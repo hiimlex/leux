@@ -172,6 +172,7 @@ const Component = () => (
 };
 
 tooltipAttr["LeSourceButton"] = LeSourceButton;
+tooltipAttr["LeHighlighter"] = LeHighlighter;
 tooltipAttr["TooltipImportPreview"] = TooltipImportPreview;
 tooltipAttr["TooltipUsagePreview"] = TooltipUsagePreview;
 tooltipAttr["TooltipDirectionPreview"] = TooltipDirectionPreview;
