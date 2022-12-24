@@ -12,13 +12,9 @@ const Badge = ({
 }: BadgeProps) => {
 	return (
 		<span
-			className={
-				"le-badge" +
-				(variant ? ` le-badge--${variant}` : "") +
-				(theme ? ` le-badge--${theme}` : "") +
-				(size ? ` le-badge--${size}` : "") +
-				(customClass ? ` ${customClass}` : "")
-			}
+			className={`le-badge${variant ? ` le-badge--${variant}` : ""}${
+				theme ? ` le-badge--${theme}` : ""
+			}${size ? ` le-badge--${size}` : ""}${customClass ? ` ${customClass}` : ""}`}
 			style={customStyles}
 			data-testid="leuxBadge"
 		>
