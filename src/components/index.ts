@@ -6,4 +6,5 @@ export * from "./Checkbox";
 export * from "./Grid";
 export * from "./Input";
 export * from "./Select";
+export * from "./Tooltip";
 export * from "./Topography";

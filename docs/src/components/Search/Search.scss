@@ -3,7 +3,7 @@
 .le-search {
 	display: flex;
 	width: fit-content;
-	height: 100%;
+	height: fit-content;
 	position: relative;
 
 	&--input {
@@ -20,6 +20,7 @@
 		text-overflow: ellipsis;
 		color: $color-dark-text;
 		transition: outline 0.05s ease-in-out;
+		padding-right: 32px;
 
 		&:focus {
 			outline: 2px solid $color-variant-primary;

@@ -21,8 +21,8 @@ export const LINKS: Record<string, ILink[]> = {
 			name: "Grid",
 			path: "/layout/grid",
 		},
-		{ name: "Skeleton", path: "/components/skeleton" },
-		{ name: "Spinner", path: "/components/spinner" },
+		{ name: "Skeleton", path: "/layout/skeleton" },
+		{ name: "Spinner", path: "/layout/spinner" },
 		{
 			name: "Topography",
 			path: "/layout/topography",
@@ -32,7 +32,7 @@ export const LINKS: Record<string, ILink[]> = {
 		{ name: "Alert", path: "/components/alert" },
 		{ name: "Button", path: "/components/button" },
 		{ name: "Dropdown", path: "/components/dropdown" },
-		{ name: "Toast", path: "/components/popover" },
+		{ name: "Toast", path: "/components/toast" },
 	],
 	Form: [
 		{ name: "Checkbox", path: "/components/checkbox" },

@@ -1,0 +1,149 @@
+@import "../../styles/variables.scss";
+
+.le-tooltip--provider {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: fit-content;
+	height: fit-content;
+}
+
+.le-tooltip {
+	position: absolute;
+	z-index: 99999;
+	padding: 4px 12px;
+	height: 32px;
+	border-radius: 8px;
+	width: fit-content;
+
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+	font-size: 14px;
+	font-weight: 500;
+	white-space: nowrap;
+	color: $color-dark-text;
+	background: $color-variant-default;
+	box-shadow: 0 4px 12px 2px rgba(0, 0, 0, 0.1);
+
+	@each $color, $value in $variant-colors {
+		&--#{$color} {
+			color: $color-light-text;
+			background: $value;
+
+			&.le-tooltip--top {
+				animation: animationFromBottom 0.2s ease-in-out;
+				bottom: calc(100% + 10px);
+				margin: 0 auto;
+
+				&::after {
+					content: "";
+					position: absolute;
+					width: 0;
+					height: 0;
+					top: calc(100% - 2px);
+					border-style: solid;
+					border-width: 10px 6px 0px 6px;
+					border-color: $value transparent transparent transparent;
+				}
+			}
+
+			&.le-tooltip--bottom {
+				animation: animationFromTop 0.2s ease-in-out;
+				top: calc(100% + 10px);
+
+				&::after {
+					content: "";
+					position: absolute;
+					width: 0;
+					height: 0;
+					bottom: calc(100% - 2px);
+					border-style: solid;
+					border-width: 0px 6px 10px 6px;
+					border-color: transparent transparent $value transparent;
+				}
+			}
+
+			&.le-tooltip--left {
+				animation: animationFromRight 0.2s ease-in-out;
+				right: calc(100% + 14px);
+
+				&::after {
+					content: "";
+					position: absolute;
+					width: 0;
+					height: 0;
+					left: calc(100% - 2px);
+					border-style: solid;
+					border-width: 6px 0 6px 10px;
+					border-color: transparent transparent transparent $value;
+				}
+			}
+
+			&.le-tooltip--right {
+				animation: animationFromLeft 0.2s ease-in-out;
+				left: calc(100% + 14px);
+
+				&::after {
+					content: "";
+					position: absolute;
+					width: 0;
+					height: 0;
+					right: calc(100% - 2px);
+					border-style: solid;
+					border-width: 6px 10px 6px 0;
+					border-color: transparent $value transparent transparent;
+				}
+			}
+
+			@if $color == "default" {
+				color: $color-dark-text;
+			}
+		}
+	}
+}
+
+@keyframes animationFromBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes animationFromTop {
+	0% {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes animationFromLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes animationFromRight {
+	0% {
+		opacity: 0;
+		transform: translateX(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}

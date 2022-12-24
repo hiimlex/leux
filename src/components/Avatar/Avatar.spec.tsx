@@ -13,8 +13,8 @@ describe("Box component test", () => {
 			/>
 		);
 
-		const box = getByTestId("leuxAvatar");
+		const avatar = getByTestId("leuxAvatar");
 
-		expect(box).toBeTruthy();
+		expect(avatar).toBeTruthy();
 	});
 });
