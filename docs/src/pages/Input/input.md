@@ -60,17 +60,6 @@ Use the `onChange` prop to handle the change event from input.
 
 <br/>
 
-#### Focus Style
-
-Use the `focusStyle` prop to apply the focused style on the field.
-
-<div>
-<InputFocusPreview>
-</InputFocusPreview>
-</div>
-
-<br />
-
 #### State
 
 Use the `state` prop to control the field state.

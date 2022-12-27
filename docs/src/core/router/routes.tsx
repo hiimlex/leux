@@ -12,6 +12,7 @@ import {
 	NotFoundPage,
 	OverviewPage,
 	SelectPage,
+	TextAreaPage,
 	TooltipPage,
 	TopographyPage,
 } from "@/pages";
@@ -78,6 +79,10 @@ export const routes: LeRoute[] = [
 	{
 		path: "/components/tooltip",
 		element: <LeRenderDocPage doc={<TooltipPage />} title="Tooltip" />,
+	},
+	{
+		path: "/components/textarea",
+		element: <LeRenderDocPage doc={<TextAreaPage />} title="TextArea" />,
 	},
 	{
 		path: "*",

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEventHandler } from "react";
 
 type InputTypes = "text" | "password" | "email";
 type InputSizes = "small" | "medium" | "large";
@@ -14,8 +14,7 @@ interface InputProps {
 	variant?: InputVariant;
 	width?: React.CSSProperties["width"];
 	placeholder?: string;
-	focusStyle?: boolean;
-	onChange?: (value: string, event?: React.ChangeEvent<HTMLInputElement>) => void;
+	onChange?: ChangeEventHandler<HTMLInputElement>;
 	customStyles?: React.CSSProperties;
 	customClass?: string;
 	state?: InputState;

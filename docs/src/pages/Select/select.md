@@ -64,17 +64,6 @@ Use the `size` prop to change the size of the select field.
 
 <br />
 
-#### Focus Style
-
-Use the `focusStyle` prop to apply focus style.
-
-<div>
-<SelectFocusStylePreview>
-</SelectFocusStylePreview>
-</div>
-
-</br>
-
 #### Action
 
 Use the `onChange` prop to handle the change event from select. The values will be returned as an `string[]`.
@@ -255,3 +244,5 @@ As a custom component, you can customize the select field by passing multiples c
 </tbody>
 </table>
 </div>
+
+<br />
