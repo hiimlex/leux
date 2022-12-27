@@ -8,8 +8,6 @@
 	-webkit-appearance: none;
 	color: $color-dark-text;
 
-	transition: all 0.1s ease-in-out;
-
 	&--filled {
 		input {
 			background-color: $color-variant-border;
