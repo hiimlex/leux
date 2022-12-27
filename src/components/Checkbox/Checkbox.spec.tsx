@@ -8,8 +8,8 @@ describe("Input component test", () => {
 	it("should render Input component", () => {
 		const { getByTestId } = render(<Checkbox fieldKey="test" />);
 
-		const input = getByTestId("leuxCheckbox");
+		const checkbox = getByTestId("leuxCheckbox");
 
-		expect(input).toBeTruthy();
+		expect(checkbox).toBeTruthy();
 	});
 });

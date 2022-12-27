@@ -24,7 +24,6 @@ const mappedOptions = (options: SelectOption[], defaultValue?: string[]): Select
 
 const Select = ({
 	fieldKey,
-	focusStyle = true,
 	onChange,
 	placeholder,
 	size = "medium",
@@ -160,7 +159,7 @@ const Select = ({
 				"le-select" +
 				(variant ? ` le-select--${variant}` : "") +
 				(size ? ` le-select--${size}` : "") +
-				(focusStyle && isFocused ? ` le-select--focus` : "") +
+				(isFocused ? ` le-select--focus` : "") +
 				(state && state.disabled ? " le-select--disabled" : "")
 			}
 		>

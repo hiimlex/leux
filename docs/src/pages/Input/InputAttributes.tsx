@@ -1,5 +1,5 @@
 import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { Button, Input, InputSizes, InputVariant, Topography } from "../../../../src";
 import { attributes as inputAttr } from "./input.md";
 
@@ -10,17 +10,11 @@ const InputImportPreview = () => (
 const InputKeyPreview = () => (
 	<>
 		<LePreview direction="column">
-			<Topography type="body-1">Inspect element to see the id and name attributes</Topography>
 			<Input fieldKey="key" placeholder="Key" />
 		</LePreview>
 		<LeHighlighter
 			code={`const Component = () => (
-	<>
-		<Topography type="body-1">
-			Inspect element to see the id and name attributes
-		</Topography>
-		<Input fieldKey="key" placeholder="Key" />
-	</>
+	<Input fieldKey="key" placeholder="Key" />
 );`}
 			language="tsx"
 		/>
@@ -68,27 +62,9 @@ const InputSizePreview = () => (
 	</>
 );
 
-const InputFocusPreview = () => (
-	<>
-		<LePreview direction="column">
-			<Input placeholder="Focus" focusStyle />
-			<Input placeholder="Focus" focusStyle={false} />
-		</LePreview>
-		<LeHighlighter
-			code={`const Component = () => (
-	<>
-		<Input placeholder="Focus" focusStyle />
-		<Input placeholder="Focus" focusStyle={false} />
-	</>
-);`}
-			language="tsx"
-		/>
-	</>
-);
-
 const InputActionPreview = () => {
 	const [value, setValue] = useState("");
-	const handleOnChange = (value: string) => setValue(value);
+	const handleOnChange = ({ target: { value } }: ChangeEvent<HTMLInputElement>) => setValue(value);
 
 	return (
 		<>
@@ -122,7 +98,7 @@ const InputStatePreview = () => {
 	const [disabled, setDisabled] = useState(true);
 	const [value, setValue] = useState("");
 	const handleOnClick = () => setDisabled(!disabled);
-	const handleOnChange = (value: string) => setValue(value);
+	const handleOnChange = ({ target: { value } }: ChangeEvent<HTMLInputElement>) => setValue(value);
 
 	return (
 		<>
@@ -199,7 +175,6 @@ inputAttr["LeSourceButton"] = LeSourceButton;
 inputAttr["InputVariantPreview"] = InputVariantPreview;
 inputAttr["InputSizePreview"] = InputSizePreview;
 inputAttr["InputActionPreview"] = InputActionPreview;
-inputAttr["InputFocusPreview"] = InputFocusPreview;
 inputAttr["InputStatePreview"] = InputStatePreview;
 inputAttr["InputCustomPreview"] = InputCustomPreview;
 inputAttr["InputKeyPreview"] = InputKeyPreview;

@@ -1,9 +1,9 @@
 {
 	"total": {
-		"lines": { "total": 129, "covered": 59, "skipped": 0, "pct": 45.73 },
-		"statements": { "total": 131, "covered": 59, "skipped": 0, "pct": 45.03 },
-		"functions": { "total": 44, "covered": 19, "skipped": 0, "pct": 43.18 },
-		"branches": { "total": 198, "covered": 80, "skipped": 0, "pct": 40.4 },
+		"lines": { "total": 152, "covered": 85, "skipped": 0, "pct": 55.92 },
+		"statements": { "total": 154, "covered": 85, "skipped": 0, "pct": 55.19 },
+		"functions": { "total": 50, "covered": 26, "skipped": 0, "pct": 52 },
+		"branches": { "total": 222, "covered": 100, "skipped": 0, "pct": 45.04 },
 		"branchesTrue": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
 	},
 	"C:\\Users\\Usuário\\Desktop\\leux\\src\\index.ts": {
@@ -25,10 +25,10 @@
 		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
 	},
 	"C:\\Users\\Usuário\\Desktop\\leux\\src\\components\\Avatar\\Avatar.tsx": {
-		"lines": { "total": 5, "covered": 3, "skipped": 0, "pct": 60 },
-		"functions": { "total": 3, "covered": 1, "skipped": 0, "pct": 33.33 },
-		"statements": { "total": 5, "covered": 3, "skipped": 0, "pct": 60 },
-		"branches": { "total": 9, "covered": 4, "skipped": 0, "pct": 44.44 }
+		"lines": { "total": 7, "covered": 7, "skipped": 0, "pct": 100 },
+		"functions": { "total": 3, "covered": 3, "skipped": 0, "pct": 100 },
+		"statements": { "total": 7, "covered": 7, "skipped": 0, "pct": 100 },
+		"branches": { "total": 11, "covered": 10, "skipped": 0, "pct": 90.9 }
 	},
 	"C:\\Users\\Usuário\\Desktop\\leux\\src\\components\\Avatar\\index.ts": {
 		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
@@ -46,7 +46,7 @@
 		"lines": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
 		"functions": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
 		"statements": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
-		"branches": { "total": 11, "covered": 7, "skipped": 0, "pct": 63.63 }
+		"branches": { "total": 11, "covered": 8, "skipped": 0, "pct": 72.72 }
 	},
 	"C:\\Users\\Usuário\\Desktop\\leux\\src\\components\\Badge\\index.ts": {
 		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
@@ -133,10 +133,10 @@
 		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
 	},
 	"C:\\Users\\Usuário\\Desktop\\leux\\src\\components\\Input\\Input.tsx": {
-		"lines": { "total": 7, "covered": 4, "skipped": 0, "pct": 57.14 },
-		"functions": { "total": 2, "covered": 1, "skipped": 0, "pct": 50 },
-		"statements": { "total": 7, "covered": 4, "skipped": 0, "pct": 57.14 },
-		"branches": { "total": 21, "covered": 11, "skipped": 0, "pct": 52.38 }
+		"lines": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
+		"functions": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
+		"statements": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
+		"branches": { "total": 15, "covered": 8, "skipped": 0, "pct": 53.33 }
 	},
 	"C:\\Users\\Usuário\\Desktop\\leux\\src\\components\\Input\\index.ts": {
 		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
@@ -154,9 +154,45 @@
 		"lines": { "total": 70, "covered": 25, "skipped": 0, "pct": 35.71 },
 		"functions": { "total": 23, "covered": 6, "skipped": 0, "pct": 26.08 },
 		"statements": { "total": 71, "covered": 25, "skipped": 0, "pct": 35.21 },
-		"branches": { "total": 100, "covered": 26, "skipped": 0, "pct": 26 }
+		"branches": { "total": 97, "covered": 23, "skipped": 0, "pct": 23.71 }
 	},
 	"C:\\Users\\Usuário\\Desktop\\leux\\src\\components\\Select\\index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"C:\\Users\\Usuário\\Desktop\\leux\\src\\components\\TextArea\\TextArea.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"C:\\Users\\Usuário\\Desktop\\leux\\src\\components\\TextArea\\TextArea.tsx": {
+		"lines": { "total": 19, "covered": 19, "skipped": 0, "pct": 100 },
+		"functions": { "total": 4, "covered": 4, "skipped": 0, "pct": 100 },
+		"statements": { "total": 19, "covered": 19, "skipped": 0, "pct": 100 },
+		"branches": { "total": 21, "covered": 16, "skipped": 0, "pct": 76.19 }
+	},
+	"C:\\Users\\Usuário\\Desktop\\leux\\src\\components\\TextArea\\index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"C:\\Users\\Usuário\\Desktop\\leux\\src\\components\\Tooltip\\Tooltip.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"C:\\Users\\Usuário\\Desktop\\leux\\src\\components\\Tooltip\\Tooltip.tsx": {
+		"lines": { "total": 7, "covered": 5, "skipped": 0, "pct": 71.42 },
+		"functions": { "total": 3, "covered": 1, "skipped": 0, "pct": 33.33 },
+		"statements": { "total": 7, "covered": 5, "skipped": 0, "pct": 71.42 },
+		"branches": { "total": 10, "covered": 3, "skipped": 0, "pct": 30 }
+	},
+	"C:\\Users\\Usuário\\Desktop\\leux\\src\\components\\Tooltip\\index.ts": {
 		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
 		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
 		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },

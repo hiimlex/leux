@@ -1,12 +1,10 @@
 @import "../../styles/variables.scss";
 
-.le-input {
-	border-radius: 4px;
-	outline: 0;
-	border: 0;
-	font-weight: 500;
-	line-height: 100%;
+.le-textarea {
 	font-family: "Poppins", sans-serif;
+	border-radius: 4px;
+	border: none;
+	line-height: normal;
 	transition: all 0.05s ease-in-out;
 
 	&--filled {
@@ -32,13 +30,13 @@
 		padding: 0.75rem 1.125rem;
 	}
 
-	&:focus {
-		outline: 2px solid $color-variant-primary;
-	}
-
 	&::placeholder {
 		color: $color-placeholder-text;
 		opacity: 1;
+	}
+
+	&:focus {
+		outline: 2px solid $color-variant-primary;
 	}
 
 	&:-ms-input-placeholder {

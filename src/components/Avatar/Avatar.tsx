@@ -18,18 +18,21 @@ const Avatar = ({
 			.join("")
 			.toLocaleUpperCase();
 
+	if (customSize) {
+		customStyles = {
+			...customStyles,
+			width: customSize,
+			height: customSize,
+		};
+	}
+
 	return (
 		<div
-			className={
-				"le-avatar" +
-				(customClass ? ` ${customClass}` : "") +
-				(size ? ` le-avatar--${size}` : "") +
-				(asText ? " le-avatar--text" : "")
-			}
+			className={`le-avatar${customClass ? ` ${customClass}` : ""}${
+				size ? ` le-avatar--${size}` : ""
+			}${asText ? " le-avatar--text" : ""}`}
 			style={{
 				...customStyles,
-				width: customSize,
-				height: customSize,
 			}}
 			data-testid="leuxAvatar"
 		>

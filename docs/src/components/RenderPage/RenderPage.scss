@@ -70,4 +70,8 @@
 		margin-top: 24px;
 		border-color: #efefef33;
 	}
+
+	.tooltip-custom--arrow::after {
+		border-color: purple transparent transparent transparent;
+	}
 }

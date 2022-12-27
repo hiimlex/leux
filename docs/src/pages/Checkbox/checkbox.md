@@ -83,7 +83,7 @@ Use the `custom` props to customize the checkbox. You can customize the containe
 </tr>
 <tr>
 <td>onChange</td>
-<td><LeHighlighter code="(value: boolean) => void" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter code="(event: React.ChangeEvent<HTMLInputElement>) => void" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td><LeHighlighter code="'medium'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>

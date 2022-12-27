@@ -1,5 +1,5 @@
 import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { Checkbox } from "../../../../src";
 import { attributes as checkboxAttr } from "./checkbox.md";
 
@@ -10,8 +10,8 @@ const CheckboxImportPreview = () => (
 const CheckboxActionPreview = () => {
 	const [value, setValue] = useState(false);
 
-	const handleOnChange = (value: boolean) => {
-		setValue(value);
+	const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+		setValue(event.target.checked);
 	};
 
 	return (
@@ -24,8 +24,8 @@ const CheckboxActionPreview = () => {
 				code={`const Component = () => {
 	const [value, setValue] = useState(false);
 
-	const handleOnChange = (value: boolean) => {
-		setValue(value);
+	const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+		setValue(event.target.checked);
 	};
 
 	return (

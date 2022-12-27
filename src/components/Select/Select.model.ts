@@ -21,7 +21,6 @@ interface SelectProps {
 	placeholder?: string;
 	width?: React.CSSProperties["width"];
 	variant?: SelectVariant;
-	focusStyle?: boolean;
 	onChange?: (value: string[]) => void;
 	state?: SelectState;
 	defaultValue?: string[];

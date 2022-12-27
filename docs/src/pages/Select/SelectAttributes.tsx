@@ -161,46 +161,6 @@ const SelectSizePreview = () => {
 	);
 };
 
-const SelectFocusStylePreview = () => {
-	const [value, setValue] = useState<string[]>([]);
-	const handleValueChange = (value: string[]) => setValue(value);
-
-	return (
-		<>
-			<LePreview direction="column">
-				<Select
-					options={[
-						{ label: "Yes", value: "yes" },
-						{ label: "No", value: "no" },
-					]}
-					placeholder="apply focus style ?"
-					onChange={handleValueChange}
-					focusStyle={value[0] === "yes"}
-				/>
-			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
-	const [value, setValue] = useState<string[]>([]);
-	const handleValueChange = (value: string[]) => setValue(value);
-
-	return (
-		<Select
-			options={[
-				{ label: "Yes", value: "yes" },
-				{ label: "No", value: "no" },
-			]}
-			placeholder="apply focus style ?"
-			onChange={handleValueChange}
-			focusStyle={value[0] === "yes"}
-		/>
-	);
-};`}
-				language="tsx"
-			/>
-		</>
-	);
-};
-
 const SelectActionPreview = () => {
 	const [value, setValue] = useState<string[]>([]);
 	const handleValueChange = (value: string[]) => setValue(value);
@@ -456,7 +416,6 @@ selectAttr["SelectOptionPreview"] = SelectOptionPreview;
 selectAttr["SelectKeyPreview"] = SelectKeyPreview;
 selectAttr["SelectVariantPreview"] = SelectVariantPreview;
 selectAttr["SelectSizePreview"] = SelectSizePreview;
-selectAttr["SelectFocusStylePreview"] = SelectFocusStylePreview;
 selectAttr["SelectActionPreview"] = SelectActionPreview;
 selectAttr["SelectMultiplePreview"] = SelectMultiplePreview;
 selectAttr["SelectCustomPreview"] = SelectCustomPreview;

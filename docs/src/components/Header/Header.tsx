@@ -18,7 +18,6 @@ const Header = () => {
 					</div>
 				</div>
 				<LeSearch />
-				<div className="flex-1"></div>
 				<nav className="le-nav">
 					<span className="le-nav--item">
 						<a className="le-nav--link" target="_blank" href="https://linktr.ee/yuninho">
