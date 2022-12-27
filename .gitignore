@@ -4,3 +4,9 @@ dist
 storybook-static
 web
 package-lock.json
+
+# Coverage directory
+coverage/lcov-report
+coverage/coverage-final.json
+coverage/lcov.info
+coverage/clover.xml
