@@ -146,7 +146,7 @@ const TooltipCustomPreview = () => {
 				</Tooltip>
 			</LePreview>
 			<LeHighlighter
-				code={`// component.ts
+				code={`// component.tsx
 const Component = () => (
 	<Tooltip
 		title="custom style"

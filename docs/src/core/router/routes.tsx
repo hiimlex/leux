@@ -11,6 +11,7 @@ import {
 	InstallationPage,
 	NotFoundPage,
 	OverviewPage,
+	RadioPage,
 	SelectPage,
 	TextAreaPage,
 	TooltipPage,
@@ -83,6 +84,10 @@ export const routes: LeRoute[] = [
 	{
 		path: "/components/textarea",
 		element: <LeRenderDocPage doc={<TextAreaPage />} title="TextArea" />,
+	},
+	{
+		path: "/components/radio",
+		element: <LeRenderDocPage doc={<RadioPage />} title="Radio" />,
 	},
 	{
 		path: "*",

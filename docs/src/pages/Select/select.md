@@ -64,7 +64,7 @@ Use the `size` prop to change the size of the select field.
 
 <br />
 
-#### Action
+#### Usage
 
 Use the `onChange` prop to handle the change event from select. The values will be returned as an `string[]`.
 

@@ -64,7 +64,7 @@ Use the `rows` props to set the quantity of line rows for the field height. Use 
 
 <br/>
 
-#### Action
+#### Usage
 
 Use the `onChange` prop to set the action when the field is changed.
 
@@ -176,6 +176,11 @@ Use the `textAreaProps` prop to set the rest of the props from the TextArea. The
 <tr>
 <td>textAreaProps</td>
 <td><LeHighlighter code="React.TextareaHTMLAttributes<HTMLTextAreaElement>" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td>-</td>
+</tr>
+<tr>
+<td>textAreaRef</td>
+<td><LeHighlighter code="React.Ref<HTMLTextAreaElement>" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 </tbody>
