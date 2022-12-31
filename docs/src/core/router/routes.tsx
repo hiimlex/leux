@@ -12,6 +12,7 @@ import {
 	NotFoundPage,
 	OverviewPage,
 	SelectPage,
+	TablePage,
 	TextAreaPage,
 	TooltipPage,
 	TopographyPage,
@@ -79,6 +80,10 @@ export const routes: LeRoute[] = [
 	{
 		path: "/components/tooltip",
 		element: <LeRenderDocPage doc={<TooltipPage />} title="Tooltip" />,
+	},
+	{
+		path: "/components/table",
+		element: <LeRenderDocPage doc={<TablePage />} title="Table" />,
 	},
 	{
 		path: "/components/textarea",

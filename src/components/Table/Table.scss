@@ -1,0 +1,262 @@
+@import "../../styles/variables.scss";
+
+.le-table {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	overflow-x: auto;
+
+	&--with-pagination {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&--header {
+		display: flex;
+		width: 100%;
+
+		&-row,
+		tr {
+			width: 100%;
+			display: grid !important;
+
+			&-item,
+			th {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-weight: 500;
+
+				&--asc {
+					&::after {
+						content: "";
+						display: inline-block;
+						width: 0;
+						height: 0;
+						margin-left: 0.5rem;
+						vertical-align: middle;
+						border-top: 5px solid $color-dark-text;
+						border-right: 5px solid transparent;
+						border-left: 5px solid transparent;
+					}
+
+					&:hover {
+						cursor: pointer;
+						background: $color-variant-border-hover;
+
+						&::after {
+							opacity: 0.9;
+						}
+					}
+
+					&--active {
+						&::after {
+							border-top-color: $color-variant-primary;
+						}
+
+						&:hover {
+							&::after {
+								border-top-color: $color-variant-primary;
+							}
+						}
+					}
+				}
+
+				&--desc {
+					&::after {
+						content: "";
+						display: inline-block;
+						width: 0;
+						height: 0;
+						margin-left: 0.5rem;
+						vertical-align: middle;
+						border-bottom: 5px solid $color-dark-text;
+						border-right: 5px solid transparent;
+						border-left: 5px solid transparent;
+					}
+
+					&:hover {
+						cursor: pointer;
+						background: $color-variant-border-hover;
+
+						&::after {
+							opacity: 0.9;
+						}
+					}
+
+					&--active {
+						&::after {
+							border-bottom-color: $color-variant-primary;
+						}
+
+						&:hover {
+							&::after {
+								border-bottom-color: $color-variant-primary;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&--body {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+
+		&-row,
+		tr {
+			width: 100%;
+			display: grid !important;
+
+			&-item,
+			td {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-weight: 400;
+			}
+		}
+	}
+
+	&--pagination {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		&-button {
+			margin: 0 2px !important;
+		}
+
+		&-label {
+			margin-right: 12px;
+		}
+
+		&-small {
+			margin: 8px 0;
+			font-size: 0.75rem;
+		}
+
+		&-medium {
+			margin: 10px 0;
+			font-size: 0.875rem;
+		}
+
+		&-large {
+			margin: 12px 0;
+			font-size: 1rem;
+		}
+	}
+
+	&--default {
+		border: none;
+
+		.le-table--header {
+			&-row,
+			tr {
+				background: $color-variant-border;
+				border-radius: 8px;
+
+				&-item,
+				th {
+					border: none;
+					color: $color-dark-text;
+					background: inherit;
+				}
+			}
+		}
+
+		.le-table--body {
+			&-row,
+			tr {
+				border-bottom: 1px solid $color-variant-border;
+
+				&-item,
+				td {
+					border: none;
+					font-weight: 400;
+					color: $color-darker-text;
+				}
+			}
+		}
+	}
+
+	&--bordered {
+		border: 1px solid $color-variant-border-hover;
+		border-radius: 8px;
+		overflow: hidden;
+
+		.le-table--header {
+			tr {
+				border: none;
+				background: $color-variant-border;
+				border-radius: 0;
+
+				th {
+					border: none;
+					border-right: 1px solid $color-variant-border-hover;
+					border-bottom: 1px solid $color-variant-border-hover;
+					border-radius: 0 !important;
+					color: $color-dark-text;
+
+					&:last-child {
+						border-right: none;
+					}
+				}
+			}
+		}
+
+		.le-table--body {
+			tr {
+				border-radius: 0 !important;
+				border: none;
+				border-bottom: 1px solid $color-variant-border;
+
+				td {
+					border: none;
+					border-radius: 0 !important;
+					border-right: 1px solid $color-variant-border;
+					color: $color-darker-text;
+
+					&:last-child {
+						border-right: none;
+					}
+				}
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+
+	&--small {
+		font-size: 0.75rem;
+
+		.le-table--header tr th,
+		.le-table--body tr td {
+			padding: 0.75rem 1rem;
+		}
+	}
+
+	&--medium {
+		font-size: 0.875rem;
+
+		.le-table--header tr th,
+		.le-table--body tr td {
+			padding: 1rem 1.5rem;
+		}
+	}
+
+	&--large {
+		font-size: 1rem;
+
+		.le-table--header tr th,
+		.le-table--body tr td {
+			padding: 1.25rem 2rem;
+		}
+	}
+}

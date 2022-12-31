@@ -94,9 +94,7 @@ Use the `custom` props to customize the checkbox. You can customize the containe
 </tr>
 <tr>
 <td>state</td>
-<td><LeHighlighter code="const state?: {
-	disabled?: false;
-} = {}" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter code="CheckboxState | { disabled?: false }" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
