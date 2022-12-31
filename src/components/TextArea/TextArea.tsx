@@ -17,6 +17,7 @@ const TextArea = ({
 	onChange,
 	defaultValue,
 	textAreaProps,
+	textAreaRef,
 }: TextAreaProps) => {
 	const [minHeight, setMinHeight] = useState<React.CSSProperties["minHeight"]>(0);
 	const [maxHeight, setMaxHeight] = useState<React.CSSProperties["maxHeight"]>(0);
@@ -59,6 +60,7 @@ const TextArea = ({
 
 	return (
 		<textarea
+			ref={textAreaRef}
 			id={fieldKey}
 			name={fieldKey}
 			defaultValue={defaultValue}

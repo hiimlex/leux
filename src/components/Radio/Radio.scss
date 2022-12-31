@@ -1,6 +1,8 @@
 @import "../../styles/variables.scss";
 
-.le-checkbox {
+.le-radio {
+	width: fit-content;
+	height: fit-content;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -15,33 +17,33 @@
 	}
 
 	&--small {
-		.le-checkbox--label {
+		.le-radio--label {
 			font-size: 12px;
 		}
 
-		.le-checkbox--input {
+		.le-radio--input {
 			width: 12px;
 			height: 12px;
 		}
 	}
 
 	&--medium {
-		.le-checkbox--label {
+		.le-radio--label {
 			font-size: 14px;
 		}
 
-		.le-checkbox--input {
+		.le-radio--input {
 			width: 14px;
 			height: 14px;
 		}
 	}
 
 	&--large {
-		.le-checkbox--label {
+		.le-radio--label {
 			font-size: 16px;
 		}
 
-		.le-checkbox--input {
+		.le-radio--input {
 			width: 16px;
 			height: 16px;
 		}
@@ -50,12 +52,13 @@
 	&--disabled {
 		cursor: not-allowed !important;
 
-		.le-checkbox--input {
+		.le-radio--input {
 			cursor: inherit;
 		}
 
-		.le-checkbox--label {
+		.le-radio--label {
 			cursor: inherit;
+
 			color: $color-variant-default !important;
 		}
 	}
