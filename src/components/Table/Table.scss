@@ -6,10 +6,29 @@
 	overflow: hidden;
 	overflow-x: auto;
 
-	&--with-pagination {
+	&--wrapper {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
+
+		&-disabled {
+			opacity: 0.4;
+			pointer-events: none;
+		}
+
+		&-empty {
+			&::after {
+				content: "";
+				display: block;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				height: 100%;
+				font-size: 1.5rem;
+				font-weight: 500;
+				color: $color-dark-text;
+			}
+		}
 	}
 
 	&--header {
@@ -257,6 +276,30 @@
 		.le-table--header tr th,
 		.le-table--body tr td {
 			padding: 1.25rem 2rem;
+		}
+	}
+
+	&--empty {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin: 8px 0;
+
+		tr {
+			display: flex;
+			width: 100%;
+			border: none;
+
+			td {
+				padding: 2rem;
+				border: none;
+				width: 100%;
+				background: $color-variant-border;
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
 		}
 	}
 }

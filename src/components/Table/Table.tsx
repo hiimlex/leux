@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { LeClassNames } from "../../types";
 import { Button } from "../Button";
+import { Spinner } from "../Spinner";
 import {
 	TableHeaderProps,
 	TableOrder,
@@ -208,7 +209,12 @@ const Table = ({
 	gridTemplateColumns,
 	emptyValue = "---",
 	pagination,
+	state,
 }: TableProps) => {
+	if (pagination) {
+		pagination.paginationSize = size;
+	}
+
 	const keys = useMemo(() => columns && columns.map(({ key }) => key), [columns]);
 
 	const classNames: LeClassNames = {
@@ -221,10 +227,11 @@ const Table = ({
 			variant: TableVariants;
 			customClass?: string;
 		}) => `le-table le-table--${size} le-table--${variant} ${customClass || ""}`,
-		tableWithPagination: () => `le-table--with-pagination`,
+		tableWrapper: ({ disabled }: { disabled?: boolean }) =>
+			`le-table--wrapper ${disabled ? "le-table--wrapper-disabled" : ""}`,
 	};
 
-	const TableContent = children ? (
+	const TableContentJSX = children ? (
 		children
 	) : (
 		<>
@@ -234,42 +241,66 @@ const Table = ({
 				customHeaderClass={customHeaderClass}
 				customHeaderStyles={customHeaderStyles}
 			/>
-			<TableBody
-				rows={rows}
-				keys={keys}
-				gridTemplateColumns={gridTemplateColumns}
-				customBodyClass={customBodyClass}
-				customBodyStyles={customBodyStyles}
-				emptyValue={emptyValue}
-			/>
+			{state ? (
+				!state.empty ? (
+					<TableBody
+						rows={rows}
+						keys={keys}
+						gridTemplateColumns={gridTemplateColumns}
+						customBodyClass={customBodyClass}
+						customBodyStyles={customBodyStyles}
+						emptyValue={emptyValue}
+					/>
+				) : (
+					<tbody className="le-table--empty">
+						<tr>
+							<td>
+								<div className="le-table--empty-content">
+									{state.emptyContent ? state.emptyContent : "No Data"}
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				)
+			) : (
+				<TableBody
+					rows={rows}
+					keys={keys}
+					gridTemplateColumns={gridTemplateColumns}
+					customBodyClass={customBodyClass}
+					customBodyStyles={customBodyStyles}
+					emptyValue={emptyValue}
+				/>
+			)}
 		</>
 	);
 
-	if (pagination) {
-		pagination.paginationSize = size;
-
-		return (
-			<div className={classNames["tableWithPagination"]()}>
-				<table
-					data-testid="leuxTable"
-					style={{ width, ...customStyles }}
-					className={classNames["table"]({ size, variant, customClass })}
-				>
-					{TableContent}
-				</table>
-				{pagination && <TablePagination {...pagination} />}
-			</div>
-		);
-	}
-
-	return (
+	const TableJSX = (
 		<table
 			data-testid="leuxTable"
 			style={{ width, ...customStyles }}
 			className={classNames["table"]({ size, variant, customClass })}
 		>
-			{TableContent}
+			{TableContentJSX}
 		</table>
+	);
+
+	const TableLoaderJSX = state && state.loading && <Spinner {...state.spinnerProps} />;
+
+	const TablePaginationJSX = pagination && <TablePagination {...pagination} />;
+
+	const StateHandlerJSX = state && (
+		<>
+			{TableLoaderJSX}
+			{!state.loading && TableJSX}
+		</>
+	);
+
+	return (
+		<div className={classNames["tableWrapper"]({ disabled: state && state.disabled })}>
+			{state ? StateHandlerJSX : TableJSX}
+			<>{TablePaginationJSX}</>
+		</div>
 	);
 };
 

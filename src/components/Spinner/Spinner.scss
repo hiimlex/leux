@@ -1,0 +1,99 @@
+@import "../../styles/variables.scss";
+
+.le-spinner {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+
+	&--circle {
+		&::after {
+			content: "";
+			position: absolute;
+			border-radius: 50%;
+			border: 4px solid;
+			border-top-color: transparent !important;
+			animation-name: spin;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			border-radius: 50%;
+			border: 4px solid $color-variant-border;
+		}
+	}
+
+	@each $color, $value in $variant-colors {
+		&--#{$color} {
+			&::after {
+				border-color: $value;
+			}
+		}
+	}
+
+	&--small {
+		padding: 1rem;
+
+		&::after,
+		&::before {
+			width: 32px;
+			height: 32px;
+		}
+	}
+	&--medium {
+		padding: 1.5rem;
+
+		&::after,
+		&::before {
+			width: 64px;
+			height: 64px;
+		}
+	}
+	&--large {
+		padding: 2rem;
+
+		&::after,
+		&::before {
+			width: 128px;
+			height: 128px;
+		}
+	}
+
+	&--custom {
+		&-speed {
+			&::after {
+				animation-duration: var(--custom-speed);
+			}
+		}
+
+		&-size {
+			&::after,
+			&::before {
+				width: var(--custom-size);
+				height: var(--custom-size);
+			}
+		}
+
+		&-color {
+			&::after {
+				border-color: var(--custom-color);
+			}
+		}
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

@@ -1,4 +1,5 @@
 import { ButtonSizes } from "../Button";
+import { SpinnerProps } from "../Spinner";
 
 type TableOrder = "asc" | "desc";
 type TableColumn = {
@@ -55,6 +56,14 @@ interface TablePaginationProps {
 	customPaginationStyles?: React.CSSProperties;
 }
 
+type TableState = {
+	empty?: boolean;
+	disabled?: boolean;
+	loading?: boolean;
+	spinnerProps?: SpinnerProps;
+	emptyContent?: JSX.Element;
+};
+
 interface TableProps extends TableHeaderProps, Omit<TableBodyProps, "keys"> {
 	variant?: TableVariants;
 	size?: TableSizes;
@@ -62,6 +71,7 @@ interface TableProps extends TableHeaderProps, Omit<TableBodyProps, "keys"> {
 	customStyles?: React.CSSProperties;
 	width?: React.CSSProperties["width"];
 	pagination?: TablePaginationProps;
+	state?: TableState;
 }
 
 export {
@@ -75,4 +85,5 @@ export {
 	TableOrder,
 	TablePaginationProps,
 	TablePaginationSizes,
+	TableState,
 };

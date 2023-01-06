@@ -12,6 +12,7 @@ import {
 	NotFoundPage,
 	OverviewPage,
 	SelectPage,
+	SpinnerPage,
 	TablePage,
 	TextAreaPage,
 	TooltipPage,
@@ -52,6 +53,10 @@ export const routes: LeRoute[] = [
 	{
 		path: "/layout/box",
 		element: <LeRenderDocPage doc={<BoxPage />} title="Box" />,
+	},
+	{
+		path: "/layout/spinner",
+		element: <LeRenderDocPage doc={<SpinnerPage />} title="Spinner" />,
 	},
 	{
 		path: "/components/button",

@@ -10,6 +10,7 @@ export { default as InstallationPage } from "./Installation";
 export { default as NotFoundPage } from "./NotFound";
 export { default as OverviewPage } from "./Overview";
 export { default as SelectPage } from "./Select";
+export { default as SpinnerPage } from "./Spinner";
 export { default as TablePage } from "./Table";
 export { default as TextAreaPage } from "./TextArea";
 export { default as TooltipPage } from "./Tooltip";

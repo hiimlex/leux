@@ -96,7 +96,7 @@
 		cursor: not-allowed !important;
 		background: $color-variant-disabled !important;
 		color: $color-darker-text !important;
-		border-color: $color-variant-disabled;
+		border-color: $color-variant-disabled !important;
 
 		&:hover {
 			background: $color-variant-disabled !important;

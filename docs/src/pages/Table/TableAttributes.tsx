@@ -8,6 +8,7 @@ import {
 	TableProps,
 	TableRow,
 	TableSizes,
+	TableState,
 	TableVariants,
 } from "../../../../src/components/Table/Table.model";
 import { attributes as tableAttr } from "./table.md";
@@ -29,7 +30,7 @@ const TableImportPreview = () => (
 );
 
 const TableConfigurationPreview = () => {
-	const TableConfig: TableProps = {
+	const [tableConfig, _] = useState<TableProps>({
 		columns: [
 			{ header: "Name", key: "name" },
 			{ header: "Age", key: "age" },
@@ -44,16 +45,16 @@ const TableConfigurationPreview = () => {
 		gridTemplateColumns: "repeat(4, minmax(120px, 1fr))",
 		variant: "default",
 		size: "medium",
-	};
+	});
 
 	return (
 		<>
 			<LePreview>
-				<Table {...TableConfig} />
+				<Table {...tableConfig} />
 			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
-	const TableConfig: TableProps = {
+	const [tableConfig, _] = useState<TableProps>({
 		columns: [
 			{ header: "Name", key: "name" },
 			{ header: "Age", key: "age" },
@@ -68,10 +69,10 @@ const TableConfigurationPreview = () => {
 		gridTemplateColumns: "repeat(4, minmax(120px, 1fr))",
 		variant: "default",
 		size: "medium",
-	};
+	});
 	
 	return (
-		<Table {...TableConfig} />
+		<Table {...tableConfig} />
 	)
 };`}
 				language="tsx"
@@ -153,7 +154,7 @@ const TableChildrenPreview = () => (
 );
 
 const TableVariantPreview = () => {
-	const TableConfig: TableProps = {
+	const [tableConfig, setTableConfig] = useState<TableProps>({
 		columns: [
 			{ header: "Name", key: "name" },
 			{ header: "Age", key: "age" },
@@ -168,9 +169,7 @@ const TableVariantPreview = () => {
 		gridTemplateColumns: "repeat(4, minmax(120px, 1fr))",
 		variant: "default",
 		size: "medium",
-	};
-
-	const [tableConfig, setTableConfig] = useState<TableProps>({ ...TableConfig });
+	});
 
 	const changeVariant = (variant: TableVariants) => {
 		setTableConfig((curr) => ({ ...curr, variant }));
@@ -198,7 +197,22 @@ const TableVariantPreview = () => {
 			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
-	const [tableConfig, setTableConfig] = useState<TableProps>({...TableConfig});
+	const [tableConfig, setTableConfig] = useState<TableProps>({
+		columns: [
+			{ header: "Name", key: "name" },
+			{ header: "Age", key: "age" },
+			{ header: "Address", key: "address" },
+			{ header: "Birthday", key: "birthday" },
+		],
+		rows: [
+			{ name: "John", age: 20, address: "New York", birthday: "01/01/2002" },
+			{ name: "Peter", age: 25, address: "London", birthday: "01/01/1992" },
+			{ name: "Math", age: 30, address: "Paris", birthday: "01/01/1982" },
+		],
+		gridTemplateColumns: "repeat(4, minmax(120px, 1fr))",
+		variant: "default",
+		size: "medium",
+	});
 
 	const changeVariant = (variant: TableVariants) => {
 		setTableConfig((curr) => ({ ...curr, variant }));
@@ -230,7 +244,7 @@ const TableVariantPreview = () => {
 };
 
 const TableSizePreview = () => {
-	const TableConfig: TableProps = {
+	const [tableConfig, setTableConfig] = useState<TableProps>({
 		columns: [
 			{ header: "Name", key: "name" },
 			{ header: "Age", key: "age" },
@@ -245,9 +259,7 @@ const TableSizePreview = () => {
 		gridTemplateColumns: "repeat(4, minmax(120px, 1fr))",
 		variant: "default",
 		size: "medium",
-	};
-
-	const [tableConfig, setTableConfig] = useState<TableProps>({ ...TableConfig });
+	});
 
 	const changeSize = (size: TableSizes) => {
 		setTableConfig((curr) => ({ ...curr, size }));
@@ -286,7 +298,22 @@ const TableSizePreview = () => {
 			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
-	const [tableConfig, setTableConfig] = useState<TableProps>({...TableConfig});
+	const [tableConfig, setTableConfig] = useState<TableProps>({
+		columns: [
+			{ header: "Name", key: "name" },
+			{ header: "Age", key: "age" },
+			{ header: "Address", key: "address" },
+			{ header: "Birthday", key: "birthday" },
+		],
+		rows: [
+			{ name: "John", age: 20, address: "New York", birthday: "01/01/2002" },
+			{ name: "Peter", age: 25, address: "London", birthday: "01/01/1992" },
+			{ name: "Math", age: 30, address: "Paris", birthday: "01/01/1982" },
+		],
+		gridTemplateColumns: "repeat(4, minmax(120px, 1fr))",
+		variant: "default",
+		size: "medium",
+	});
 	
 	const changeSize = (size: TableSizes) => {
 		setTableConfig((curr) => ({ ...curr, size }));
@@ -334,11 +361,11 @@ const TableOrderPreview = () => {
 			{
 				header: "#ID",
 				key: "id",
-				order: "desc",
+				order: "asc",
 				orderFn,
 			},
-			{ header: "User ID", key: "userId", order: "desc", orderFn },
-			{ header: "Title", key: "title", order: "desc", orderFn },
+			{ header: "User ID", key: "userId", order: "asc", orderFn },
+			{ header: "Title", key: "title", order: "asc", orderFn },
 			{ header: "Completed", key: "completedString" },
 		],
 		rows: [],
@@ -677,6 +704,74 @@ const Component = () => {
 	);
 };
 
+const TableStatePreview = () => {
+	const [tableConfig, _] = useState<TableProps>({
+		columns: [
+			{ header: "Name", key: "name" },
+			{ header: "Age", key: "age" },
+			{ header: "Address", key: "address" },
+			{ header: "Birthday", key: "birthday" },
+		],
+		rows: [
+			{ name: "John", age: 20, address: "New York", birthday: "01/01/2002" },
+			{ name: "Peter", age: 25, address: "London", birthday: "01/01/1992" },
+			{ name: "Math", age: 30, address: "Paris", birthday: "01/01/1982" },
+		],
+		gridTemplateColumns: "repeat(4, minmax(120px, 1fr))",
+		variant: "default",
+		size: "medium",
+	});
+
+	const [tableState, setTableState] = useState<TableState>({
+		disabled: false,
+		empty: false,
+		loading: true,
+	});
+
+	return (
+		<>
+			<LePreview direction="column">
+				{tableState && (
+					<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
+						<Button
+							theme={tableState.loading ? "primary" : "default"}
+							variant="filled"
+							onClick={() => {
+								setTableState((curr) => ({ ...curr, loading: !curr.loading }));
+							}}
+							customStyles={{ marginRight: 12 }}
+						>
+							{tableState.loading ? "Stop Loading" : "Start Loading"}
+						</Button>
+						<Button
+							theme={!tableState.disabled ? "primary" : "danger"}
+							variant="filled"
+							onClick={() => {
+								setTableState((curr) => ({ ...curr, disabled: !curr.disabled }));
+							}}
+							customStyles={{ marginRight: 12 }}
+						>
+							{!tableState.disabled ? "On" : "Off"}
+						</Button>
+						<Button
+							theme={tableState.empty ? "danger" : "primary"}
+							variant="filled"
+							onClick={() => {
+								setTableState((curr) => ({ ...curr, empty: !curr.empty }));
+							}}
+							customStyles={{ marginRight: 12 }}
+						>
+							{tableState.empty ? "Empty" : "With Data"}
+						</Button>
+					</div>
+				)}
+				<Table {...tableConfig} state={tableState} />
+			</LePreview>
+			<LeHighlighter code={``} language="tsx" />
+		</>
+	);
+};
+
 tableAttr["LeSourceButton"] = LeSourceButton;
 tableAttr["TableImportPreview"] = TableImportPreview;
 tableAttr["TableConfigurationPreview"] = TableConfigurationPreview;
@@ -685,5 +780,6 @@ tableAttr["TableVariantPreview"] = TableVariantPreview;
 tableAttr["TableSizePreview"] = TableSizePreview;
 tableAttr["TableOrderPreview"] = TableOrderPreview;
 tableAttr["TablePaginationPreview"] = TablePaginationPreview;
+tableAttr["TableStatePreview"] = TableStatePreview;
 
 export { tableAttr };
