@@ -19,30 +19,31 @@ The Spinner component is used to replace an element that is loading.
 
 #### Sizes
 
-<div>
-
-</div>
-
-#### Variant
+Use the `size` prop to change the spinner size.
 
 <div>
-
+<SpinnerSizePreview>
+<SpinnerSizePreview>
 </div>
-
-<br/>
 
 #### Themes
 
-<div>
+Use the `theme` prop to change the spinner theme color.
 
+<div>
+<SpinnerThemePreview>
+</SpinnerThemePreview>
 </div>
 
-<br/>
+<br />
 
 #### Custom
 
-<div>
+Use the `custom` prefix props to change the spinner custom styles.
 
+<div>
+<SpinnerCustomPreview>
+</SpinnerCustomPreview>
 </div>
 
 <br />
