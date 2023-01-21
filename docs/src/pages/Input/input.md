@@ -14,7 +14,7 @@ Input component is used to that allows users enter text.
 </div>
 
 - **Input** - the main component.
-- **InputProps** - the prop types.
+- **InputProps** - the props type.
 
 <br/>
 
@@ -49,7 +49,7 @@ Use the `size` prop to change the size of the input field.
 </InputSizePreview>
 </div>
 
-#### Action
+#### Usage
 
 Use the `onChange` prop to handle the change event from input.
 
@@ -147,6 +147,16 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the Input com
 <tr>
 <td>customStyles</td>
 <td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td>-</td>
+</tr>
+<tr>
+<td>customStyles</td>
+<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td>-</td>
+</tr>
+<tr>
+<td>inputProps</td>
+<td><LeHighlighter code="React.InputHTMLAttributes<HTMLInputElement>" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 </tbody>

@@ -20,6 +20,7 @@ interface TextAreaProps {
 	customClass?: string;
 	customStyles?: React.CSSProperties;
 	textAreaProps?: React.TextareaHTMLAttributes<HTMLTextAreaElement>;
+	textAreaRef?: React.RefObject<HTMLTextAreaElement>;
 }
 
 export { TextAreaProps, TextAreaSizes, TextAreaState, TextAreaVariants };

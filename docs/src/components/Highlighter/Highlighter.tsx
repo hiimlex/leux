@@ -4,6 +4,7 @@ import Refractor from "react-refractor";
 import bash from "refractor/lang/bash";
 import jsx from "refractor/lang/jsx";
 import tsx from "refractor/lang/tsx";
+import scss from "refractor/lang/scss";
 import "./Highlighter.scss";
 
 interface HighlighterProps {
@@ -16,6 +17,7 @@ interface HighlighterProps {
 Refractor.registerLanguage(jsx);
 Refractor.registerLanguage(tsx);
 Refractor.registerLanguage(bash);
+Refractor.registerLanguage(scss);
 
 const Highlighter = ({ code, language, style = "dracula", copy = "on" }: HighlighterProps) => {
 	const [copied, setCopied] = useState(false);

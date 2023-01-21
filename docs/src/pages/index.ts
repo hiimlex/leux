@@ -9,6 +9,7 @@ export { default as InputPage } from "./Input";
 export { default as InstallationPage } from "./Installation";
 export { default as NotFoundPage } from "./NotFound";
 export { default as OverviewPage } from "./Overview";
+export { default as RadioPage } from "./Radio";
 export { default as SelectPage } from "./Select";
 export { default as TextAreaPage } from "./TextArea";
 export { default as TooltipPage } from "./Tooltip";

@@ -18,6 +18,8 @@ interface InputProps {
 	customStyles?: React.CSSProperties;
 	customClass?: string;
 	state?: InputState;
+	inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+	inputRef?: React.RefObject<HTMLInputElement>;
 }
 
 export { InputProps, InputSizes, InputTypes, InputVariant, InputState };
