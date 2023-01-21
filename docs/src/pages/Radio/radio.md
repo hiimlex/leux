@@ -40,7 +40,7 @@ Use the `size` prop to change the size of the radio button.
 
 <br />
 
-#### Usage
+#### Action
 
 Use the `onChange` prop to get the value of the selected option.
 

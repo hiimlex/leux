@@ -1,21 +1,21 @@
 @import "../../core/styles/variables.scss";
 
 .le-sidenav {
-	width: 132px;
+	width: 144px;
 	padding-left: 0;
 	height: 100vh;
-	margin-top: 32px;
-	margin-right: 12px;
 
 	display: flex;
 	flex-direction: column;
 
-	color: $color-dark-text;
-	position: relative;
-
 	.fixed-content {
 		position: fixed;
 		width: 144px;
+		border-right: 1px solid $color-variant-default;
+		height: 100%;
+
+		padding-top: 32px;
+		padding-right: 12px;
 
 		.overflow-content {
 			max-height: calc(100vh - 114px);
@@ -23,8 +23,15 @@
 			align-items: flex-start;
 			flex-direction: column;
 			overflow: hidden;
-			overflow-y: auto;
-			padding-right: 12px;
+
+			overflow-y: scroll;
+			-ms-overflow-style: none;
+			overflow: -moz-scrollbars-none;
+			scrollbar-width: none;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
 
 			.le-sidenav--section {
 				display: flex;
