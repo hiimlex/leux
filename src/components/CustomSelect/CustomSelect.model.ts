@@ -1,6 +1,6 @@
 import React from "react";
 
-type SelectOption = {
+type CustomSelectOption = {
 	value: string;
 	label: string;
 	state?: {
@@ -9,23 +9,23 @@ type SelectOption = {
 	};
 };
 
-type SelectSizes = "small" | "medium" | "large";
-type SelectVariant = "filled" | "outlined";
-type SelectState = {
+type CustomSelectSizes = "small" | "medium" | "large";
+type CustomSelectVariant = "filled" | "outlined";
+type CustomSelectState = {
 	disabled?: boolean;
 };
 
-interface SelectProps {
+interface CustomSelectProps {
 	fieldKey?: string;
-	size?: SelectSizes;
+	size?: CustomSelectSizes;
 	placeholder?: string;
 	width?: React.CSSProperties["width"];
-	variant?: SelectVariant;
+	variant?: CustomSelectVariant;
 	onChange?: (value: string[]) => void;
-	state?: SelectState;
+	state?: CustomSelectState;
 	defaultValue?: string[];
 	multiple?: boolean;
-	options: SelectOption[];
+	options: CustomSelectOption[];
 	clickOptionHide?: boolean;
 	clickOutsideHide?: boolean;
 	valueSeparator?: string;
@@ -37,4 +37,10 @@ interface SelectProps {
 	dropdownCustomStyles?: React.CSSProperties;
 }
 
-export { SelectProps, SelectSizes, SelectOption, SelectState, SelectVariant };
+export {
+	CustomSelectProps,
+	CustomSelectSizes,
+	CustomSelectOption,
+	CustomSelectVariant,
+	CustomSelectState,
+};

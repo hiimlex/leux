@@ -1,8 +1,11 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { SelectOption, SelectProps } from "./Select.model";
-import "./Select.scss";
+import { CustomSelectOption, CustomSelectProps } from "./CustomSelect.model";
+import "./CustomSelect.scss";
 
-const mappedOptions = (options: SelectOption[], defaultValue?: string[]): SelectOption[] => {
+const mappedOptions = (
+	options: CustomSelectOption[],
+	defaultValue?: string[]
+): CustomSelectOption[] => {
 	return options.map((el) => {
 		if (el.state) {
 			if (!Object.prototype.hasOwnProperty.call(el.state, "selected")) {
@@ -22,7 +25,7 @@ const mappedOptions = (options: SelectOption[], defaultValue?: string[]): Select
 	});
 };
 
-const Select = ({
+const CustomSelect = ({
 	fieldKey,
 	onChange,
 	placeholder,
@@ -42,12 +45,12 @@ const Select = ({
 	selectCustomStyles,
 	dropdownCustomClass,
 	dropdownCustomStyles,
-}: SelectProps) => {
+}: CustomSelectProps) => {
 	const inputRef = useRef<HTMLInputElement>(null);
 	const dropdownRef = useRef<HTMLDivElement>(null);
 	const arrowRef = useRef<HTMLDivElement>(null);
 
-	const [optionsArr] = useState<SelectOption[]>(mappedOptions(options, defaultValue));
+	const [optionsArr] = useState<CustomSelectOption[]>(mappedOptions(options, defaultValue));
 	const [selectedValue, setSelectedValue] = useState<string[]>(defaultValue || []);
 	const [isFocused, setIsFocused] = useState(false);
 
@@ -213,4 +216,4 @@ const Select = ({
 	);
 };
 
-export { Select };
+export { CustomSelect };

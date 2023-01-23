@@ -12,7 +12,6 @@ import {
 	NotFoundPage,
 	OverviewPage,
 	RadioPage,
-	SelectPage,
 	TextAreaPage,
 	TooltipPage,
 	TopographyPage,
@@ -65,10 +64,10 @@ export const routes: LeRoute[] = [
 		path: "/components/input",
 		element: <LeRenderDocPage doc={<InputPage />} title="Input" />,
 	},
-	{
-		path: "/components/select",
-		element: <LeRenderDocPage doc={<SelectPage />} title="Select" />,
-	},
+	// {
+	// 	path: "/components/select",
+	// 	element: <LeRenderDocPage doc={<SelectPage />} title="Select" />,
+	// },
 	{
 		path: "/components/avatar",
 		element: <LeRenderDocPage doc={<AvatarPage />} title="Avatar" />,
