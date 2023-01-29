@@ -1,5 +1,5 @@
 type SpinnerSizes = "small" | "medium" | "large";
-type SpinnerVariants = "circle" | "dots";
+type SpinnerVariants = "circle";
 type SpinnerThemes = "primary" | "secondary" | "success" | "danger" | "warning" | "default";
 
 interface SpinnerProps {

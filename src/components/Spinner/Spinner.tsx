@@ -17,34 +17,60 @@ const Spinner = ({
 
 	const classNames: LeClassNames = {
 		leuxSpinner: ({ size, theme, variant, customSpeed, customSize, customColor, customClass }) =>
-			`le-spinner le-spinner--${size} le-spinner--${theme} le-spinner--${variant} ${
-				customSize ? "le-spinner--custom-size" : ""
-			} ${customSpeed ? "le-spinner--custom-speed" : ""} ${
-				customColor ? "le-spinner--custom-color" : ""
-			} ${customClass || ""}`,
+			`le-spinner le-spinner--${size} le-spinner--${theme} le-spinner--${variant}${
+				customSize ? " le-spinner--custom-size" : ""
+			}${customSpeed ? " le-spinner--custom-speed" : ""}${
+				customColor ? " le-spinner--custom-color" : ""
+			}${customClass || ""}`,
+		leuxSpinnerDotContainer: () => `le-spinner--dots-container`,
+		leuxSpinnerDot: ({ position }: { position: string }) => `dot dot-${position}`,
 	};
 
-	const handleSpinnerStyles = useCallback(() => {
+	const setCustomSize = useCallback(() => {
 		if (spinnerRef.current) {
-			const spinner = spinnerRef.current;
-
-			if (customSpeed) {
-				spinner.style.setProperty("--custom-speed", customSpeed);
-			}
-
 			if (customSize) {
-				spinner.style.setProperty("--custom-size", customSize.toString());
-			}
-
-			if (customColor) {
-				spinner.style.setProperty("--custom-color", customColor);
+				spinnerRef.current.style.setProperty("--spinner-size", customSize + "");
+			} else {
+				spinnerRef.current.style.removeProperty("--spinner-size");
 			}
 		}
-	}, [customSpeed, customSize, customColor]);
+	}, []);
 
 	useEffect(() => {
-		handleSpinnerStyles();
+		setCustomSize();
+	}, [customSize]);
+
+	const setCustomSpeed = useCallback(() => {
+		if (spinnerRef.current) {
+			if (customSpeed) {
+				spinnerRef.current.style.setProperty("--spinner-speed", customSpeed + "");
+			} else {
+				spinnerRef.current.style.removeProperty("--spinner-speed");
+			}
+		}
 	}, []);
+
+	useEffect(() => {
+		if (customSpeed) {
+			setCustomSpeed();
+		}
+	}, [customSpeed]);
+
+	const setCustomColor = useCallback(() => {
+		if (spinnerRef.current) {
+			if (customColor) {
+				spinnerRef.current.style.setProperty("--spinner-color", customColor + "");
+			} else {
+				spinnerRef.current.style.removeProperty("--spinner-color");
+			}
+		}
+	}, [customColor]);
+
+	useEffect(() => {
+		if (customColor) {
+			setCustomColor();
+		}
+	}, [customColor]);
 
 	return (
 		<div
