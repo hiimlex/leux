@@ -115,4 +115,13 @@
 			background-color: $color-variant-success;
 		}
 	}
+
+	.custom-select {
+		&:hover,
+		&:focus,
+		&:active {
+			outline: none !important;
+			background: black !important;
+		}
+	}
 }

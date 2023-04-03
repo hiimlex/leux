@@ -1,83 +1,85 @@
-## Input
+## Select
 
-Input component is used to that allows users enter text.
+The select component is used to select a single value from a list of options.
 
-<div><LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/Input"></LeSourceButton></div>
-
-<br/>
+<div>
+<div><LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/Select"></LeSourceButton></div>
+</div>
 
 #### Import
 
 <div>
-<InputImportPreview>
-</InputImportPreview>
+<SelectImportPreview>
+</SelectImportPreview>
 </div>
 
-- **Input** - the main component.
-- **InputProps** - the props type.
+- **Select** - The main component
+- **SelectProps** - The props type
 
-<br/>
+<br />
 
-#### Field Key
+#### Options
 
-Use the `fieldKey` prop to set the name and id of the input.
+Use the `options` prop to set the options of the select. The options can be used as `children` too, but the `options` prop is the default way to set the options.
 
 <div>
-<InputKeyPreview>
-</InputKeyPreview>
+<SelectOptionsPreview>
+</SelectOptionsPreview>
 </div>
 
 <br />
 
-#### Variant
+#### Sizes
 
-Use the `variant` prop to change the appearance of the input field.
-
-<div>
-<InputVariantPreview>
-</InputVariantPreview>
-</div>
-
-<br/>
-
-#### Size
-
-Use the `size` prop to change the size of the input field.
+Use the `size` prop to set the the select size.
 
 <div>
-<InputSizePreview>
-</InputSizePreview>
+<SelectSizePreview>
+</SelectSizePreview>
 </div>
 
-#### Usage
+<br />
 
-Use the `onChange` prop to handle the change event from input.
+#### Variants
+
+Use the `variant` prop to set the the select variant style.
 
 <div>
-<InputActionPreview>
-</InputActionPreview>
+<SelectVariantPreview>
+</SelectVariantPreview>
 </div>
 
-<br/>
+<br />
+
+#### Action
+
+Use the `onChange` prop to handle the select change event.
+
+<div>
+<SelectActionPreview>
+</SelectActionPreview>
+</div>
+
+<br />
 
 #### State
 
-Use the `state` prop to control the field state.
+Use the `state` prop to set the the select state.
 
 <div>
-<InputStatePreview>
-</InputStatePreview>
+<SelectStatePreview>
+</SelectStatePreview>
 </div>
 
 <br />
 
 #### Custom
 
-Use the custom prefixed props to customize Input style.
+Use the custom prefixed props to customize Select style.
 
 <div>
-<InputCustomPreview>
-</InputCustomPreview>
+<SelectCustomPreview>
+</SelectCustomPreview>
 </div>
 
 <br />
@@ -100,11 +102,6 @@ Use the custom prefixed props to customize Input style.
 <td>-</td>
 </tr>
 <tr>
-<td>type</td>
-<td><LeHighlighter language="tsx" code="'text' | 'password' | 'email'" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="'filled'" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
 <td>size</td>
 <td><LeHighlighter language="tsx" code="'small' | 'medium' | 'large'" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
@@ -123,6 +120,11 @@ Use the custom prefixed props to customize Input style.
 <td>placeholder</td>
 <td><LeHighlighter language="tsx" code="string" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
+</tr>
+<tr>
+<td>showPlaceholderAsOption</td>
+<td><LeHighlighter language="tsx" code="boolean" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="false" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>onChange</td>
@@ -145,13 +147,18 @@ Use the custom prefixed props to customize Input style.
 <td>-</td>
 </tr>
 <tr>
-<td>inputRef</td>
-<td><LeHighlighter code="React.RefObject<HTMLInputElement>" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td>customStyles</td>
+<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
-<td>inputProps</td>
-<td><LeHighlighter code="React.InputHTMLAttributes<HTMLInputElement>" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td>selectRef</td>
+<td><LeHighlighter code="React.Ref<HTMLSelectElement>" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td>-</td>
+</tr>
+<tr>
+<td>selectProps</td>
+<td><LeHighlighter code="React.HTMLProps<HTMLSelectElement>" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 </tbody>

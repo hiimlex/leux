@@ -24,18 +24,18 @@ Topography is a layout component. It is used to create headings, paragraphs, and
 Use the `type` prop to change the text variant. There's no default type.
 
 <div>
-<Topography type="h1">h1. Heading</Topography>
-<Topography type="h2">h2. Heading</Topography>
-<Topography type="h3">h3. Heading</Topography>
-<Topography type="h4">h4. Heading</Topography>
-<Topography type="h5">h5. Heading</Topography>
-<Topography type="h6">h6. Heading</Topography>
-<Topography type="subtitle-1">subtitle-1. Subtitle</Topography>
-<Topography type="subtitle-2">subtitle-2. Subtitle</Topography>
-<Topography type="body-1">body-1. Body</Topography>
-<Topography type="caption">caption. Caption</Topography>
-<Topography type="button">button. Button</Topography>
-<Topography type="overline">overline. Overline</Topography>
+<Topography variant="h1">h1. Heading</Topography>
+<Topography variant="h2">h2. Heading</Topography>
+<Topography variant="h3">h3. Heading</Topography>
+<Topography variant="h4">h4. Heading</Topography>
+<Topography variant="h5">h5. Heading</Topography>
+<Topography variant="h6">h6. Heading</Topography>
+<Topography variant="subtitle-1">subtitle-1. Subtitle</Topography>
+<Topography variant="subtitle-2">subtitle-2. Subtitle</Topography>
+<Topography variant="body-1">body-1. Body</Topography>
+<Topography variant="caption">caption. Caption</Topography>
+<Topography variant="button">button. Button</Topography>
+<Topography variant="overline">overline. Overline</Topography>
 </div>
 
 <div>
