@@ -195,7 +195,7 @@ const TextAreaStatePreview = () => {
 			<LePreview direction="column">
 				<Button
 					onClick={handleDisableTextArea}
-					theme={disabled ? "danger" : "success"}
+					theme={!disabled ? "primary" : "danger"}
 					customStyles={{ marginBottom: 12 }}
 				>
 					{!disabled ? "on" : "off"}
@@ -216,9 +216,9 @@ const TextAreaStatePreview = () => {
 
 	return (
 		<>
-			<Button 
+			<Button
 				onClick={handleDisableTextArea}
-				theme={disabled ? "danger" : "success"}
+				theme={!disabled ? "primary" : "danger"}
 				customStyles={{ marginBottom: 12 }}
 			>
 				{!disabled ? "on" : "off"}

@@ -18,6 +18,8 @@ interface CheckboxProps {
 	customLabelClass?: string;
 	customLabelStyles?: React.CSSProperties;
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	checkBoxProps?: React.InputHTMLAttributes<HTMLInputElement>;
+	checkboxRef?: React.RefObject<HTMLInputElement>;
 }
 
 export { CheckboxProps, CheckboxState, CheckboxSizes };

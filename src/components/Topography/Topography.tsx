@@ -1,7 +1,12 @@
 import React from "react";
 import { TopographyProps } from "./Topography.model";
 
-const Topography = ({ type, children, customClass = "", customStyles }: TopographyProps) => {
+const Topography = ({
+	variant = "body-1",
+	children,
+	customClass = "",
+	customStyles,
+}: TopographyProps) => {
 	const typesArr: Record<string, React.ReactElement> = {
 		h1: (
 			<h1
@@ -122,7 +127,7 @@ const Topography = ({ type, children, customClass = "", customStyles }: Topograp
 		),
 	};
 
-	return typesArr[type] ? typesArr[type] : typesArr["body-1"];
+	return typesArr[variant];
 };
 
 export { Topography };

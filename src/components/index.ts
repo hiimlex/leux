@@ -5,6 +5,7 @@ export * from "./Button";
 export * from "./Checkbox";
 export * from "./Grid";
 export * from "./Input";
+export * from "./Radio";
 export * from "./Select";
 export * from "./Spinner";
 export * from "./Table";

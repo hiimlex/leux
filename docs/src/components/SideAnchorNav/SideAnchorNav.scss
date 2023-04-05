@@ -2,9 +2,8 @@
 
 .le-anchor-nav {
 	width: 132px;
-	overflow: hidden;
-	margin-left: 12px;
-	margin-top: 32px;
+	height: 100vh;
+
 	color: $color-dark-text;
 
 	position: relative;
@@ -12,6 +11,10 @@
 	.fixed-content {
 		position: fixed;
 		width: 132px;
+		border-left: 1px solid $color-variant-default;
+		padding-left: 12px;
+		padding-top: 32px;
+		height: 100%;
 
 		.le-anchor-links {
 			display: flex;
@@ -21,7 +24,14 @@
 			max-height: 100vh;
 			height: fit-content;
 			overflow: hidden;
-			overflow-y: auto;
+			overflow-y: scroll;
+			-ms-overflow-style: none;
+			overflow: -moz-scrollbars-none;
+			scrollbar-width: none;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
 
 			.le-anchor-link {
 				margin: 6px 0;

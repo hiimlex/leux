@@ -15,3 +15,4 @@ export { default as TablePage } from "./Table";
 export { default as TextAreaPage } from "./TextArea";
 export { default as TooltipPage } from "./Tooltip";
 export { default as TopographyPage } from "./Topography";
+export { default as SelectPage } from "./Select";

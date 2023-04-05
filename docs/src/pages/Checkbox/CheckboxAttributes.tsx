@@ -1,6 +1,6 @@
 import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { ChangeEvent, useState } from "react";
-import { Checkbox } from "../../../../src";
+import { Button, Checkbox } from "../../../../src";
 import { attributes as checkboxAttr } from "./checkbox.md";
 
 const CheckboxImportPreview = () => (
@@ -121,11 +121,75 @@ const CheckboxCustomPreview = () => {
 	);
 };
 
+const CheckboxStatePreview = () => {
+	const [disabled, setDisabled] = useState<boolean>(false);
+
+	const handleDisableCheckbox = () => {
+		setDisabled((curr) => !curr);
+	};
+
+	return (
+		<>
+			<LePreview direction="column">
+				<Button onClick={handleDisableCheckbox} theme={!disabled ? "primary" : "danger"}>
+					{!disabled ? "on" : "off"}
+				</Button>
+				<Checkbox
+					fieldKey="disabled"
+					label="Disabled"
+					state={{ disabled }}
+					customStyles={{ marginTop: 12 }}
+				/>
+			</LePreview>
+			<LeHighlighter
+				code={`const Component = () => {
+	const [disabled, setDisabled] = useState<boolean>(false);
+
+	const handleDisableCheckbox = () => {
+		setDisabled((curr) => !curr);
+	};
+
+	return (
+		<>
+			<Button onClick={handleDisableCheckbox} theme={!disabled ? "primary" : "danger"}>
+				{!disabled ? "on" : "off"}
+			</Button>
+			<Checkbox
+				fieldKey="disabled"
+				label="Disabled"
+				state={{ disabled }}
+				customStyles={{ marginTop: 12 }}
+			/>
+		</>
+	)
+};`}
+				language="tsx"
+			/>
+		</>
+	);
+};
+
+const CheckboxFieldKeyPreview = () => (
+	<>
+		<LePreview>
+			<Checkbox fieldKey="fieldKey" label="fieldKey" />
+		</LePreview>
+		<LeHighlighter
+			code={`const Component = () => (
+	<Checkbox fieldKey="fieldKey" label="fieldKey" />
+);`}
+			language="tsx"
+		/>
+	</>
+);
+
 checkboxAttr["LeSourceButton"] = LeSourceButton;
 checkboxAttr["LeHighlighter"] = LeHighlighter;
 checkboxAttr["CheckboxImportPreview"] = CheckboxImportPreview;
 checkboxAttr["CheckboxActionPreview"] = CheckboxActionPreview;
 checkboxAttr["CheckboxSizePreview"] = CheckboxSizePreview;
 checkboxAttr["CheckboxCustomPreview"] = CheckboxCustomPreview;
+checkboxAttr["CheckboxStatePreview"] = CheckboxStatePreview;
+checkboxAttr["CheckboxFieldKeyPreview"] = CheckboxFieldKeyPreview;
 
 export { checkboxAttr };

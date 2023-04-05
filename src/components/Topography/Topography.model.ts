@@ -17,7 +17,7 @@ type TopographyTypes =
 
 interface TopographyProps {
 	children?: React.ReactNode;
-	type: TopographyTypes;
+	variant?: TopographyTypes;
 	customClass?: string;
 	customStyles?: React.CSSProperties;
 }

@@ -1,76 +1,74 @@
-## Checkbox
+## Radio
 
-Checkbox is a component that allows the user to select one or more options from a set.
+The Radio component allow the user to select one option from a set. It is commonly used in forms.
 
-<div>
-<LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/Checkbox"></LeSourceButton>
-</div>
+<div><LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/Radio"></LeSourceButton></div>
 
-<br/>
+<br />
 
 #### Import
 
 <div>
-<CheckboxImportPreview>
-</CheckboxImportPreview>
+<RadioImportPreview>
+</RadioImportPreview>
 </div>
 
-- **Checkbox** - the main component
-- **CheckboxProps** - the props type
+- **Radio** - The main component
+- **RadioProps** - The props type
 
 <br />
 
-#### FieldKey
+#### Field Key
 
-Use the `fieldKey` prop to identify the checkbox to make the label clickable.
+The input type radio `name` prop is used to group the radio buttons together. So the `fieldKey` prop is used to identify the radio button, it sets the `id`, `name` attributes from the input and the `htmlFor` attributes of the label. The final `id` is the `fieldKey` prop plus `#` plus the `value` prop.
 
 <div>
-<CheckboxFieldKeyPreview>
-</CheckboxFieldKeyPreview>
+<RadioFieldKeyPreview>
+</RadioFieldKeyPreview>
 </div>
 
 <br />
 
 #### Sizes
 
-Use the `size` prop to change the size of the checkbox.
+Use the `size` prop to change the size of the radio button.
 
 <div>
-<CheckboxSizePreview>
-</CheckboxSizePreview>
+<RadioSizePreview>
+</RadioSizePreview>
 </div>
 
 <br />
 
-#### Usage
+#### Action
 
-Use the `onChange` prop to trigger an action when the checkbox is clicked.
+Use the `onChange` prop to get the value of the selected option.
 
 <div>
-<CheckboxActionPreview>
-</CheckboxActionPreview>
+<RadioActionPreview>
+</RadioActionPreview>
 </div>
 
 <br />
 
 #### State
 
-Use the `state` prop to change the state of the checkbox.
+Use the `state` prop to change the state of the radio button.
 
 <div>
-<CheckboxStatePreview>
-</CheckboxStatePreview>
+<RadioStatePreview>
+</RadioStatePreview>
 </div>
 
 <br />
 
 #### Custom
 
-Use the `custom` props to customize the checkbox. You can customize the container, the input and the label.
+Use the `custom` prefixed props to customize the radio, label and container elements style.
 
 <div>
-<CheckboxCustomPreview>
-</CheckboxCustomPreview>
+<RadioCustomPreview>
+</RadioCustomPreview>
 </div>
 
 <br />
@@ -90,6 +88,11 @@ Use the `custom` props to customize the checkbox. You can customize the containe
 <tr>
 <tr>
 <td>fieldKey</td>
+<td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td>-</td>
+</tr>
+<tr>
+<td>value</td>
 <td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
@@ -116,7 +119,7 @@ Use the `custom` props to customize the checkbox. You can customize the containe
 </tr>
 <tr>
 <td>state</td>
-<td><LeHighlighter code="CheckboxState | {
+<td><LeHighlighter code="RadioState | {
 	disabled?: false
 }" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
@@ -127,7 +130,7 @@ Use the `custom` props to customize the checkbox. You can customize the containe
 <td>-</td>
 </tr>
 <tr>
-<td>customClasses</td>
+<td>customClass</td>
 <td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
@@ -152,12 +155,12 @@ Use the `custom` props to customize the checkbox. You can customize the containe
 <td>-</td>
 </tr>
 <tr>
-<td>checkboxProps</td>
+<td>radioProps</td>
 <td><LeHighlighter code="React.InputHTMLAttributes<HTMLInputElement>" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>
-<td>checkboxRef</td>
+<td>radioRef</td>
 <td><LeHighlighter code="React.Ref<HTMLInputElement>" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>

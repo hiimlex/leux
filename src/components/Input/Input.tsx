@@ -14,9 +14,12 @@ const Input = ({
 	customClass,
 	customStyles,
 	state,
+	inputProps,
+	inputRef,
 }: InputProps) => {
 	return (
 		<input
+			ref={inputRef}
 			id={fieldKey}
 			name={fieldKey}
 			type={type}
@@ -32,6 +35,7 @@ const Input = ({
 			}
 			disabled={state && state.disabled}
 			data-testid="leuxInput"
+			{...inputProps}
 		/>
 	);
 };

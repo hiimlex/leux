@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { CheckboxProps } from "./Checkbox.model";
 import "./Checkbox.scss";
 
@@ -16,9 +16,9 @@ const Checkbox = ({
 	customInputClass,
 	customLabelClass,
 	customLabelStyles,
+	checkBoxProps,
+	checkboxRef,
 }: CheckboxProps) => {
-	const checkboxRef = useRef(null);
-
 	const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		if (onChange) {
 			onChange(e);
@@ -27,11 +27,9 @@ const Checkbox = ({
 
 	return (
 		<div
-			className={
-				"le-checkbox" +
-				(customClass ? ` ${customClass}` : "") +
-				(size ? ` le-checkbox--${size}` : "")
-			}
+			className={`le-checkbox le-checkbox--${size} ${
+				state && state.disabled ? "le-checkbox--disabled" : ""
+			} ${customClass ? customClass : ""}`}
 			style={{ ...customStyles, width }}
 			data-testid="leuxCheckbox"
 		>
@@ -46,6 +44,7 @@ const Checkbox = ({
 				disabled={state && state.disabled}
 				data-testid="leuxCheckboxInput"
 				style={customInputStyles}
+				{...checkBoxProps}
 			/>
 			<label
 				htmlFor={fieldKey}
