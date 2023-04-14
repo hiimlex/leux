@@ -11,6 +11,7 @@ import {
 	InstallationPage,
 	NotFoundPage,
 	OverviewPage,
+	PaginationPage,
 	RadioPage,
 	SelectPage,
 	SpinnerPage,
@@ -98,6 +99,10 @@ export const routes: LeRoute[] = [
 	{
 		path: "/components/radio",
 		element: <LeRenderDocPage doc={<RadioPage />} title="Radio" />,
+	},
+	{
+		path: "/components/pagination",
+		element: <LeRenderDocPage doc={<PaginationPage />} title="Pagination" />,
 	},
 	{
 		path: "*",

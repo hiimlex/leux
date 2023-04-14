@@ -1,12 +1,10 @@
 import React, { useMemo } from "react";
 import { LeClassNames } from "../../types";
-import { Button } from "../Button";
 import { Spinner } from "../Spinner";
 import {
+	TableBodyProps,
 	TableHeaderProps,
 	TableOrder,
-	TableBodyProps,
-	TablePaginationProps,
 	TableProps,
 	TableSizes,
 	TableVariants,
@@ -101,98 +99,6 @@ const TableBody = ({
 	);
 };
 
-const TablePagination = ({
-	currentPage,
-	itemsPerPage,
-	onPageChange,
-	totalItems,
-	totalPages,
-	justifyContent = "flex-end",
-	showPaginationLabel,
-	showPaginationButtons,
-	customPaginationClass,
-	customPaginationStyles,
-	paginationSize = "medium",
-}: TablePaginationProps) => {
-	const classNames: LeClassNames = {
-		tablePagination: ({ customPaginationClass, paginationSize }) =>
-			`le-table--pagination le-table--pagination-${paginationSize} ${customPaginationClass || ""} `,
-		tablePaginationNext: () => "le-table--pagination-next",
-		tablePaginationPrev: () => "le-table--pagination-prev",
-		tablePaginationLabel: () => "le-table--pagination-label",
-		tablePaginationButton: () => `le-table--pagination-button`,
-		tablePaginationButtonGroup: () => `le-table--pagination-button-group`,
-	};
-
-	const paginationButtons = useMemo(
-		() => showPaginationButtons && Array<number>(showPaginationButtons.quantity || 0).fill(0),
-		[showPaginationButtons]
-	);
-
-	if (!showPaginationButtons && !showPaginationLabel) return null;
-
-	return (
-		<div
-			className={classNames["tablePagination"]({ customPaginationClass, paginationSize })}
-			style={{ justifyContent, ...customPaginationStyles }}
-		>
-			{showPaginationLabel && (
-				<span className={classNames["tablePaginationLabel"]()}>
-					{showPaginationLabel({ currentPage, totalItems, itemsPerPage })}
-				</span>
-			)}
-
-			{showPaginationButtons && (
-				<div className={classNames["tablePaginationButtonGroup"]()}>
-					{showPaginationButtons.previous && (
-						<Button
-							state={{ disabled: currentPage - 1 === 0 }}
-							theme="default"
-							variant="outlined"
-							size={paginationSize}
-							onClick={() => onPageChange(currentPage - 1)}
-							customClass={classNames["tablePaginationButton"]()}
-						>
-							{"<"}
-						</Button>
-					)}
-
-					{paginationButtons &&
-						paginationButtons.map((_, index) => {
-							const pageNumber = index + 1;
-
-							return (
-								<Button
-									key={index}
-									customClass={classNames["tablePaginationButton"]()}
-									variant={currentPage === pageNumber ? "filled" : "outlined"}
-									theme={currentPage === pageNumber ? "primary" : "default"}
-									size={paginationSize}
-									onClick={() => onPageChange(pageNumber)}
-								>
-									{pageNumber}
-								</Button>
-							);
-						})}
-
-					{showPaginationButtons.next && (
-						<Button
-							state={{ disabled: currentPage + 1 > totalPages }}
-							theme="default"
-							variant="outlined"
-							size={paginationSize}
-							onClick={() => onPageChange(currentPage + 1)}
-							customClass={classNames["tablePaginationButton"]()}
-						>
-							{">"}
-						</Button>
-					)}
-				</div>
-			)}
-		</div>
-	);
-};
-
 const Table = ({
 	columns,
 	children,
@@ -208,13 +114,11 @@ const Table = ({
 	size = "medium",
 	gridTemplateColumns,
 	emptyValue = "---",
-	pagination,
 	state,
+	height,
+	customWrapperClass,
+	customWrapperStyles,
 }: TableProps) => {
-	if (pagination) {
-		pagination.paginationSize = size;
-	}
-
 	const keys = useMemo(() => columns && columns.map(({ key }) => key), [columns]);
 
 	const classNames: LeClassNames = {
@@ -227,9 +131,40 @@ const Table = ({
 			variant: TableVariants;
 			customClass?: string;
 		}) => `le-table le-table--${size} le-table--${variant} ${customClass || ""}`,
-		tableWrapper: ({ disabled }: { disabled?: boolean }) =>
-			`le-table--wrapper ${disabled ? "le-table--wrapper-disabled" : ""}`,
+		tableWrapper: ({
+			disabled,
+			customWrapperClass,
+		}: {
+			disabled?: boolean;
+			customWrapperClass?: string;
+		}) =>
+			`le-table--wrapper ${disabled ? "le-table--wrapper-disabled" : ""} ${
+				customWrapperClass || ""
+			}`,
+		spinnerWrapper: ({ size }: { size: TableSizes }) =>
+			`le-table--spinner-wrapper le-table--spinner-wrapper-${size} `,
 	};
+
+	const canShowContent = useMemo(
+		() => !state || (state && !state.loading && !state.empty),
+		[state]
+	);
+	const canShowSpinner = useMemo(() => state && state.loading && !state.empty, [state]);
+	const canShowEmpty = useMemo(() => state && state.empty, [state]);
+
+	const TableLoaderJSX = state && state.loading && (
+		<div className={classNames["spinnerWrapper"]({ size })}>
+			<Spinner {...state.spinnerProps} role="tree" />
+		</div>
+	);
+
+	const TableEmptyJSX = state && (
+		<tbody className="le-table--empty">
+			<tr>
+				<td>{state.emptyContent ? state.emptyContent : "No Data"}</td>
+			</tr>
+		</tbody>
+	);
 
 	const TableContentJSX = children ? (
 		children
@@ -241,28 +176,8 @@ const Table = ({
 				customHeaderClass={customHeaderClass}
 				customHeaderStyles={customHeaderStyles}
 			/>
-			{state ? (
-				!state.empty ? (
-					<TableBody
-						rows={rows}
-						keys={keys}
-						gridTemplateColumns={gridTemplateColumns}
-						customBodyClass={customBodyClass}
-						customBodyStyles={customBodyStyles}
-						emptyValue={emptyValue}
-					/>
-				) : (
-					<tbody className="le-table--empty">
-						<tr>
-							<td>
-								<div className="le-table--empty-content">
-									{state.emptyContent ? state.emptyContent : "No Data"}
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				)
-			) : (
+			{canShowEmpty && TableEmptyJSX}
+			{canShowContent && (
 				<TableBody
 					rows={rows}
 					keys={keys}
@@ -278,28 +193,23 @@ const Table = ({
 	const TableJSX = (
 		<table
 			data-testid="leuxTable"
-			style={{ width, ...customStyles }}
+			style={{ width, height, ...customStyles }}
 			className={classNames["table"]({ size, variant, customClass })}
 		>
 			{TableContentJSX}
 		</table>
 	);
 
-	const TableLoaderJSX = state && state.loading && <Spinner {...state.spinnerProps} />;
-
-	const TablePaginationJSX = pagination && <TablePagination {...pagination} />;
-
-	const StateHandlerJSX = state && (
-		<>
-			{TableLoaderJSX}
-			{!state.loading && TableJSX}
-		</>
-	);
-
 	return (
-		<div className={classNames["tableWrapper"]({ disabled: state && state.disabled })}>
-			{state ? StateHandlerJSX : TableJSX}
-			<>{TablePaginationJSX}</>
+		<div
+			style={{ height, ...customWrapperStyles }}
+			className={classNames["tableWrapper"]({
+				disabled: state && state.disabled,
+				customWrapperClass,
+			})}
+		>
+			{TableJSX}
+			{canShowSpinner && TableLoaderJSX}
 		</div>
 	);
 };

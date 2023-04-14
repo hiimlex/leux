@@ -1,12 +1,19 @@
 import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
-import { Button, Table, TableBody, TableHeader } from "../../../../src";
+import {
+	Box,
+	Button,
+	Pagination,
+	PaginationProps,
+	Table,
+	TableBody,
+	TableHeader,
+} from "../../../../src";
 import {
 	TableColumn,
 	TableOrder,
 	TableProps,
-	TableRow,
 	TableSizes,
 	TableState,
 	TableVariants,
@@ -521,40 +528,40 @@ const TablePaginationPreview = () => {
 		gridTemplateColumns: "repeat(2, 1fr) 2fr 1fr",
 		variant: "default",
 		size: "medium",
-		pagination: {
-			currentPage: 1,
-			itemsPerPage: 10,
-			onPageChange: (page) => {
-				getTodos(page);
-			},
-			totalItems: 0,
-			totalPages: 0,
-			showPaginationButtons: {
-				next: true,
-				previous: true,
-			},
-			justifyContent: "space-between",
-			showPaginationLabel: ({ currentPage, itemsPerPage, totalItems }) =>
-				`Showing ${currentPage * itemsPerPage - itemsPerPage + 1}-${
-					currentPage * itemsPerPage
-				} of ${totalItems} todos`,
-		},
 		customBodyStyles: {
 			maxHeight: "420px",
 			overflowY: "auto",
 		},
 	});
 
+	const [pagination, setPagination] = useState<PaginationProps>({
+		currentPage: 1,
+		itemsPerPage: 10,
+		onPageChange: (page) => {
+			setTableConfig((curr) => ({ ...curr, state: { ...curr.state, loading: true } }));
+			getTodos(page);
+		},
+		totalItems: 0,
+		totalPages: 0,
+		showPaginationButtons: {
+			next: true,
+			previous: true,
+		},
+		justifyContent: "space-between",
+		showPaginationLabel: ({ currentPage, itemsPerPage, totalItems }) =>
+			`Showing ${currentPage * itemsPerPage - itemsPerPage + 1}-${
+				currentPage * itemsPerPage
+			} of ${totalItems} todos`,
+	});
+
 	const getTodos = useCallback(async (page?: number) => {
 		try {
-			let { pagination } = tableConfig;
-
 			if (pagination) {
 				if (page) {
-					pagination.currentPage = page;
+					setPagination((curr) => ({ ...curr, currentPage: page }));
 				}
 
-				const { currentPage, itemsPerPage } = pagination;
+				const { itemsPerPage } = pagination;
 
 				const response = await axios.get<
 					{
@@ -563,7 +570,7 @@ const TablePaginationPreview = () => {
 						title: string;
 						completed: boolean;
 					}[]
-				>(`https://jsonplaceholder.typicode.com/todos?_page=${currentPage}&_limit=${itemsPerPage}`);
+				>(`https://jsonplaceholder.typicode.com/todos?_page=${page}&_limit=${itemsPerPage}`);
 
 				const { data, headers } = response;
 
@@ -571,11 +578,11 @@ const TablePaginationPreview = () => {
 					const totalItems = Number(headers["x-total-count"] || 0);
 
 					if (totalItems) {
-						pagination = {
-							...pagination,
+						setPagination((curr) => ({
+							...curr,
 							totalItems,
 							totalPages: Math.ceil(totalItems / itemsPerPage),
-						};
+						}));
 					}
 				}
 
@@ -585,11 +592,20 @@ const TablePaginationPreview = () => {
 						completedString: item.completed ? "Yes" : "No",
 					}));
 
-					setTableConfig((curr) => ({ ...curr, rows: newData, pagination }));
+					setTableConfig((curr) => ({
+						...curr,
+						rows: newData,
+						state: { ...curr.state, loading: false },
+					}));
 				}
 			}
 		} catch (error) {
 			console.error(error);
+
+			setTableConfig((curr) => ({
+				...curr,
+				state: { ...curr.state, loading: true },
+			}));
 		}
 	}, []);
 
@@ -600,7 +616,10 @@ const TablePaginationPreview = () => {
 	return (
 		<>
 			<LePreview>
-				<Table {...tableConfig} />
+				<Box flex flexDirection="column" width="100%">
+					<Table {...tableConfig} />
+					<Pagination {...pagination} />
+				</Box>
 			</LePreview>
 			<LeHighlighter
 				code={`import axios from "axios";
@@ -767,12 +786,77 @@ const TableStatePreview = () => {
 				)}
 				<Table {...tableConfig} state={tableState} />
 			</LePreview>
-			<LeHighlighter code={``} language="tsx" />
+			<LeHighlighter
+				code={`const Component = () => {
+	const [tableConfig, _] = useState<TableProps>({
+		columns: [
+			{ header: "Name", key: "name" },
+			{ header: "Age", key: "age" },
+			{ header: "Address", key: "address" },
+			{ header: "Birthday", key: "birthday" },
+		],
+		rows: [
+			{ name: "John", age: 20, address: "New York", birthday: "01/01/2002" },
+			{ name: "Peter", age: 25, address: "London", birthday: "01/01/1992" },
+			{ name: "Math", age: 30, address: "Paris", birthday: "01/01/1982" },
+		],
+		gridTemplateColumns: "repeat(4, minmax(120px, 1fr))",
+		variant: "default",
+		size: "medium",
+	});
+
+	const [tableState, setTableState] = useState<TableState>({
+		disabled: false,
+		empty: false,
+		loading: true,
+	});
+
+	return (
+		<>
+			{tableState && (
+				<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
+					<Button
+						theme={tableState.loading ? "primary" : "default"}
+						variant="filled"
+						onClick={() => {
+							setTableState((curr) => ({ ...curr, loading: !curr.loading }));
+						}}
+						customStyles={{ marginRight: 12 }}
+					>
+						{tableState.loading ? "Stop Loading" : "Start Loading"}
+					</Button>
+					<Button
+						theme={!tableState.disabled ? "primary" : "danger"}
+						variant="filled"
+						onClick={() => {
+							setTableState((curr) => ({ ...curr, disabled: !curr.disabled }));
+						}}
+						customStyles={{ marginRight: 12 }}
+					>
+						{!tableState.disabled ? "On" : "Off"}
+					</Button>
+					<Button
+						theme={tableState.empty ? "danger" : "primary"}
+						variant="filled"
+						onClick={() => {
+							setTableState((curr) => ({ ...curr, empty: !curr.empty }));
+						}}
+						customStyles={{ marginRight: 12 }}
+					>
+						{tableState.empty ? "Empty" : "With Data"}
+					</Button>
+				</div>
+			)}
+			<Table {...tableConfig} state={tableState} />
+		</>;`}
+				language="tsx"
+			/>
 		</>
 	);
 };
 
 tableAttr["LeSourceButton"] = LeSourceButton;
+tableAttr["LeHighlighter"] = LeHighlighter;
 tableAttr["TableImportPreview"] = TableImportPreview;
 tableAttr["TableConfigurationPreview"] = TableConfigurationPreview;
 tableAttr["TableChildrenPreview"] = TableChildrenPreview;

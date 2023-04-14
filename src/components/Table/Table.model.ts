@@ -1,4 +1,3 @@
-import { ButtonSizes } from "../Button";
 import { SpinnerProps } from "../Spinner";
 
 type TableOrder = "asc" | "desc";
@@ -14,7 +13,6 @@ type TableRow = {
 };
 type TableVariants = "bordered" | "default";
 type TableSizes = "small" | "medium" | "large";
-type TablePaginationSizes = "small" | "medium" | "large";
 
 interface TableHeaderProps {
 	children?: React.ReactNode;
@@ -34,28 +32,6 @@ interface TableBodyProps {
 	emptyValue?: string;
 }
 
-interface TablePaginationProps {
-	currentPage: number;
-	totalPages: number;
-	totalItems: number;
-	itemsPerPage: number;
-	onPageChange: (page: number) => void;
-	justifyContent?: React.CSSProperties["justifyContent"];
-	showPaginationLabel?: (props: {
-		currentPage: number;
-		totalItems: number;
-		itemsPerPage: number;
-	}) => string;
-	showPaginationButtons?: {
-		previous?: boolean;
-		next?: boolean;
-		quantity?: number;
-	};
-	paginationSize?: TablePaginationSizes;
-	customPaginationClass?: string;
-	customPaginationStyles?: React.CSSProperties;
-}
-
 type TableState = {
 	empty?: boolean;
 	disabled?: boolean;
@@ -70,8 +46,10 @@ interface TableProps extends TableHeaderProps, Omit<TableBodyProps, "keys"> {
 	customClass?: string;
 	customStyles?: React.CSSProperties;
 	width?: React.CSSProperties["width"];
-	pagination?: TablePaginationProps;
+	height?: React.CSSProperties["height"];
 	state?: TableState;
+	customWrapperClass?: string;
+	customWrapperStyles?: React.CSSProperties;
 }
 
 export {
@@ -83,7 +61,5 @@ export {
 	TableSizes,
 	TableVariants,
 	TableOrder,
-	TablePaginationProps,
-	TablePaginationSizes,
 	TableState,
 };

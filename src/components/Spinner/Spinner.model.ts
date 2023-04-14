@@ -11,6 +11,7 @@ interface SpinnerProps {
 	customSize?: React.CSSProperties["width"];
 	customStyles?: React.CSSProperties;
 	customClass?: string;
+	role?: React.HTMLAttributes<HTMLDivElement>["role"];
 }
 
 export { SpinnerProps, SpinnerSizes, SpinnerThemes, SpinnerVariants };

@@ -45,6 +45,7 @@ export const LINKS: Record<string, ILink[]> = {
 		{ name: "Avatar", path: "/components/avatar" },
 		{ name: "Badge", path: "/components/badge" },
 		{ name: "Modal", path: "/components/modal" },
+		{ name: "Pagination", path: "/components/pagination" },
 		{ name: "Table", path: "/components/table" },
 		{ name: "Tooltip", path: "/components/tooltip" },
 	],
