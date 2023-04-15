@@ -9,6 +9,7 @@ import {
 	GridPage,
 	InputPage,
 	InstallationPage,
+	ModalPage,
 	NotFoundPage,
 	OverviewPage,
 	RadioPage,
@@ -88,6 +89,10 @@ export const routes: LeRoute[] = [
 	{
 		path: "/components/radio",
 		element: <LeRenderDocPage doc={<RadioPage />} title="Radio" />,
+	},
+	{
+		path: "/components/modal",
+		element: <LeRenderDocPage doc={<ModalPage />} title="Modal" />,
 	},
 	{
 		path: "*",

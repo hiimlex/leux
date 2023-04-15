@@ -1,0 +1,24 @@
+@import "../../styles/variables.scss";
+
+.le-modal {
+	display: flex;
+	flex-direction: column;
+
+	&--provider {
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+		z-index: 99999999999;
+		background: transparent;
+		background: rgba(0, 0, 0, 0.2);
+	}
+
+	&--wrapper {
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+
+		overflow: hidden;
+		overflow-y: auto;
+	}
+}
