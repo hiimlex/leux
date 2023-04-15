@@ -13,13 +13,14 @@ const Pagination = ({
 	justifyContent = "flex-end",
 	showPaginationLabel = ({ currentPage, totalItems, itemsPerPage }) =>
 		`Showing ${currentPage * itemsPerPage} of ${totalItems}`,
-	showPaginationButtons = {
+	paginationButtons = {
 		next: true,
 		previous: true,
 	},
 	customStyles,
 	customClass,
 	size = "medium",
+	simplePagination = true,
 }: PaginationProps) => {
 	const classNames: LeClassNames = {
 		pagination: ({ customClass, size }) =>
@@ -31,12 +32,12 @@ const Pagination = ({
 		paginationButtonGroup: () => `le-pagination--button-group`,
 	};
 
-	const paginationButtons = useMemo(
-		() => showPaginationButtons && Array<number>(totalPages || 0).fill(0),
-		[showPaginationButtons]
+	const paginationButtonsArr = useMemo(
+		() => paginationButtons && Array<number>(totalPages || 0).fill(0),
+		[paginationButtons]
 	);
 
-	if (!showPaginationButtons && !showPaginationLabel) return null;
+	if (!paginationButtonsArr && !showPaginationLabel) return null;
 
 	return (
 		<div
@@ -49,9 +50,9 @@ const Pagination = ({
 				</span>
 			)}
 
-			{showPaginationButtons && (
+			{paginationButtons && (
 				<div className={classNames["paginationButtonGroup"]()}>
-					{showPaginationButtons.previous && (
+					{paginationButtons.previous && (
 						<Button
 							state={{ disabled: currentPage - 1 === 0 }}
 							theme="default"
@@ -64,13 +65,12 @@ const Pagination = ({
 						</Button>
 					)}
 
-					{showPaginationButtons &&
-						showPaginationButtons.all &&
+					{!simplePagination &&
 						paginationButtons &&
-						paginationButtons.map((_, index) => {
+						paginationButtonsArr.map((_, index) => {
 							const pageNumber = index + 1;
 
-							return (
+							const ButtonTsx = (
 								<Button
 									key={index}
 									customClass={classNames["paginationButton"]()}
@@ -82,9 +82,34 @@ const Pagination = ({
 									{pageNumber}
 								</Button>
 							);
+
+							const { limit } = paginationButtons;
+
+							if (!limit) {
+								return ButtonTsx;
+							}
+
+							let rangeStart = 0 + currentPage;
+							let rangeFinal = limit + currentPage - 1;
+							const half = Math.floor(limit / 2);
+							const end = totalPages;
+
+							if (rangeStart + half <= limit) {
+								rangeStart = 1 + half;
+								rangeFinal = limit + half;
+							}
+
+							if (rangeFinal > end) {
+								rangeFinal = end + half;
+								rangeStart = end - limit + 1 + half;
+							}
+
+							if (pageNumber >= rangeStart - half && pageNumber <= rangeFinal - half) {
+								return ButtonTsx;
+							}
 						})}
 
-					{showPaginationButtons.next && (
+					{paginationButtons.next && (
 						<Button
 							state={{ disabled: currentPage + 1 > totalPages }}
 							theme="default"

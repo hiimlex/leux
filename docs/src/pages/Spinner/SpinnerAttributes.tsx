@@ -84,6 +84,7 @@ const SpinnerCustomPreview = () => (
 );
 
 spinnerAttr["LeSourceButton"] = LeSourceButton;
+spinnerAttr["LeHighlighter"] = LeHighlighter;
 spinnerAttr["SpinnerImportPreview"] = SpinnerImportPreview;
 spinnerAttr["SpinnerSizePreview"] = SpinnerSizePreview;
 spinnerAttr["SpinnerThemePreview"] = SpinnerThemePreview;

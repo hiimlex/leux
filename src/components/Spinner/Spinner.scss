@@ -11,7 +11,7 @@
 			content: "";
 			position: absolute;
 			border-radius: 50%;
-			border: 4px solid;
+			border-style: solid;
 			border-top-color: transparent !important;
 			animation-name: spin;
 			animation-duration: 1s;
@@ -23,7 +23,8 @@
 			content: "";
 			display: block;
 			border-radius: 50%;
-			border: 4px solid $color-variant-border;
+			border-style: solid;
+			border-color: $color-variant-border;
 		}
 	}
 
@@ -42,6 +43,7 @@
 		&::before {
 			width: 32px;
 			height: 32px;
+			border-width: 4px;
 		}
 	}
 
@@ -52,6 +54,7 @@
 		&::before {
 			width: 64px;
 			height: 64px;
+			border-width: 5px;
 		}
 	}
 
@@ -62,6 +65,7 @@
 		&::before {
 			width: 128px;
 			height: 128px;
+			border-width: 6px;
 		}
 	}
 

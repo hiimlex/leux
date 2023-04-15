@@ -12,7 +12,6 @@ const Spinner = ({
 	customSize,
 	customStyles,
 	customColor,
-	role,
 }: SpinnerProps) => {
 	const spinnerRef = useRef<HTMLDivElement>(null);
 
@@ -76,7 +75,6 @@ const Spinner = ({
 	return (
 		<div
 			ref={spinnerRef}
-			role={role}
 			data-testid="leuxSpinner"
 			className={classNames["leuxSpinner"]({
 				size,

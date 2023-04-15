@@ -9,7 +9,7 @@ type PaginationLabel = (props: {
 type PaginationButtons = {
 	previous?: boolean;
 	next?: boolean;
-	all?: boolean;
+	limit?: number;
 };
 
 interface PaginationProps {
@@ -17,13 +17,14 @@ interface PaginationProps {
 	totalPages: number;
 	totalItems: number;
 	itemsPerPage: number;
-	onPageChange?: (page: number) => void;
-	justifyContent?: React.CSSProperties["justifyContent"];
-	showPaginationLabel?: PaginationLabel;
-	showPaginationButtons?: PaginationButtons;
+	simplePagination: boolean;
+	paginationButtons?: PaginationButtons;
 	size?: PaginationSizes;
+	justifyContent?: React.CSSProperties["justifyContent"];
 	customClass?: string;
 	customStyles?: React.CSSProperties;
+	onPageChange?: (page: number) => void;
+	showPaginationLabel?: PaginationLabel;
 }
 
 export { PaginationProps, PaginationSizes, PaginationLabel, PaginationButtons };

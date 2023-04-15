@@ -85,6 +85,12 @@ const PaginationButtonsPreview = () => {
 		itemsPerPage: 10,
 		totalItems: 100,
 		totalPages: 10,
+		simplePagination: false,
+		paginationButtons: {
+			next: true,
+			previous: true,
+			limit: 5,
+		},
 	});
 
 	const handleOnPageChange = (page: number) => {
@@ -94,15 +100,7 @@ const PaginationButtonsPreview = () => {
 	return (
 		<>
 			<LePreview direction="column">
-				<Pagination
-					{...paginationConfig}
-					showPaginationButtons={{
-						next: true,
-						previous: true,
-						all: true,
-					}}
-					onPageChange={handleOnPageChange}
-				/>
+				<Pagination {...paginationConfig} onPageChange={handleOnPageChange} />
 			</LePreview>
 			<LeHighlighter
 				language="tsx"
@@ -112,6 +110,12 @@ const PaginationButtonsPreview = () => {
 		itemsPerPage: 10,
 		totalItems: 100,
 		totalPages: 10,
+		simplePagination: false,
+		paginationButtons: {
+			next: true,
+			previous: true,
+			limit: 5,
+		},
 	});
 
 	const handleOnPageChange = (page: number) => {
@@ -158,6 +162,8 @@ const PaginationLabelPreview = () => {
 		itemsPerPage: 10,
 		totalItems: 100,
 		totalPages: 10,
+		showPaginationLabel: ({ currentPage, itemsPerPage, totalItems }) =>
+			\`CurrentPage=$\{currentPage}, ItemsPerPage=$\{itemsPerPage}, TotalItems=$\{totalItems}\`,
 	});
 
 	const handleOnPageChange = (page: number) => {
@@ -182,6 +188,7 @@ const PaginationLabelPreview = () => {
 };
 
 paginationAttr["LeSourceButton"] = LeSourceButton;
+paginationAttr["LeHighlighter"] = LeHighlighter;
 paginationAttr["PaginationImportPreview"] = PaginationImportPreview;
 paginationAttr["PaginationConfigurationPreview"] = PaginationConfigurationPreview;
 paginationAttr["PaginationActionPreview"] = PaginationActionPreview;

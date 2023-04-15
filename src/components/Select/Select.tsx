@@ -30,7 +30,7 @@ const Select = ({
 		leSelect: () =>
 			`le-select ${customClass || ""} le-select--${size} le-select--${variant} ${
 				placeholder && value === "" ? "le-select--placeholder-color" : ""
-			} ${state && state.disabled ? "le-select--disabled" : ""}}`,
+			} ${state && state.disabled ? "le-select--disabled" : ""}`,
 		leOption: (prop) =>
 			`le-select--option ${prop && prop["disabled"] ? "le-select--option-disabled" : ""}`,
 		lePlaceholder: () =>
