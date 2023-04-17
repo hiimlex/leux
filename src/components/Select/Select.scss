@@ -5,8 +5,10 @@
 	outline: 0;
 	border: 0;
 	font-weight: 500;
-	line-height: 100%;
+	line-height: normal;
 	font-family: "Poppins", sans-serif;
+	-webkit-appearance: none;
+	color: $color-dark-text;
 
 	&--filled {
 		background-color: $color-variant-border;

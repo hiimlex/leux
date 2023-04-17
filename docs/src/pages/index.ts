@@ -10,9 +10,11 @@ export { default as InstallationPage } from "./Installation";
 export { default as ModalPage } from "./Modal";
 export { default as NotFoundPage } from "./NotFound";
 export { default as OverviewPage } from "./Overview";
+export { default as PaginationPage } from "./Pagination";
 export { default as RadioPage } from "./Radio";
 export { default as SelectPage } from "./Select";
+export { default as SpinnerPage } from "./Spinner";
+export { default as TablePage } from "./Table";
 export { default as TextAreaPage } from "./TextArea";
 export { default as TooltipPage } from "./Tooltip";
 export { default as TopographyPage } from "./Topography";
-
