@@ -73,7 +73,7 @@ Use the `state` prop to control the field state.
 
 #### Custom
 
-Use the `customClass` and `customStyles` prop to add custom CSS to the Input component.
+Use the custom prefixed props to customize Input style.
 
 <div>
 <InputCustomPreview>
@@ -125,11 +125,6 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the Input com
 <td>-</td>
 </tr>
 <tr>
-<td>focusStyle</td>
-<td><LeHighlighter code="boolean" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter code="true" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
 <td>onChange</td>
 <td><LeHighlighter code="(value: string, event?: React.ChangeEvent< HTMLInputElement > => void" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
@@ -150,8 +145,8 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the Input com
 <td>-</td>
 </tr>
 <tr>
-<td>customStyles</td>
-<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td>inputRef</td>
+<td><LeHighlighter code="React.RefObject<HTMLInputElement>" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
 <td>-</td>
 </tr>
 <tr>

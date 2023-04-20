@@ -1,16 +1,14 @@
-import React from "react";
-
-type SelectOption = {
-	value: string;
-	label: string;
-	state?: {
-		disabled?: boolean;
-		selected?: boolean;
-	};
-};
+import { ChangeEventHandler } from "react";
 
 type SelectSizes = "small" | "medium" | "large";
-type SelectVariant = "filled" | "outlined";
+type SelectVariants = "filled" | "outlined";
+type SelectOption = {
+	label: string;
+	value: string;
+	selected?: boolean;
+	disabled?: boolean;
+};
+
 type SelectState = {
 	disabled?: boolean;
 };
@@ -18,23 +16,18 @@ type SelectState = {
 interface SelectProps {
 	fieldKey?: string;
 	size?: SelectSizes;
+	variant?: SelectVariants;
+	showPlaceholderAsOption?: boolean;
 	placeholder?: string;
 	width?: React.CSSProperties["width"];
-	variant?: SelectVariant;
-	onChange?: (value: string[]) => void;
+	onChange?: ChangeEventHandler<HTMLSelectElement>;
+	customStyles?: React.CSSProperties;
+	customClass?: string;
+	options?: SelectOption[];
+	defaultValue?: string;
 	state?: SelectState;
-	defaultValue?: string[];
-	multiple?: boolean;
-	options: SelectOption[];
-	clickOptionHide?: boolean;
-	clickOutsideHide?: boolean;
-	valueSeparator?: string;
-	selectCustomClass?: string;
-	selectCustomStyles?: React.CSSProperties;
-	optionCustomClass?: string;
-	optionCustomStyles?: React.CSSProperties;
-	dropdownCustomClass?: string;
-	dropdownCustomStyles?: React.CSSProperties;
+	selectRef?: React.Ref<HTMLSelectElement>;
+	selectProps?: React.HTMLProps<HTMLSelectElement>;
 }
 
-export { SelectProps, SelectSizes, SelectOption, SelectState, SelectVariant };
+export { SelectProps, SelectSizes, SelectVariants, SelectState, SelectOption };

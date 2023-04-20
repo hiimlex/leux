@@ -13,6 +13,7 @@ $color-variant-success-hover: #4db1a0;
 $color-variant-danger-hover: #ee312d;
 $color-variant-warning-hover: #ffc233;
 $color-variant-default-hover: #b3b9c6;
+$color-variant-border-hover: #d8dce8;
 
 $color-dark-text: #3a3a3a;
 $color-darker-text: #2a2a2a;
@@ -57,8 +58,3 @@ $text-colors: (
 );
 
 $justify-classes: (flex-start, center, flex-end, space-between, space-around);
-
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 1280px;
-$breakpoint-xl: 1440px;

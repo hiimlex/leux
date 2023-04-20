@@ -15,6 +15,11 @@ const Box = ({
 	centered,
 	textColor,
 	gridSpan,
+	flexWrap,
+	alignItems,
+	flex,
+	flexDirection,
+	justifyContent,
 }: BoxProps) => {
 	const handleGridSpan = () => {
 		if (gridSpan) {
@@ -33,6 +38,11 @@ const Box = ({
 				height,
 				width,
 				borderRadius,
+				display: flex ? "flex" : undefined,
+				justifyContent,
+				alignItems,
+				flexDirection,
+				flexWrap,
 				...handleGridSpan(),
 				...customStyles,
 			}}

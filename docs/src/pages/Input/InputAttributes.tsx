@@ -69,7 +69,7 @@ const InputActionPreview = () => {
 	return (
 		<>
 			<LePreview direction="column">
-				<Topography type="body-2">type to see the value here: {value}</Topography>
+				<Topography variant="body-2">type to see the value here: {value}</Topography>
 				<Input placeholder="Action" onChange={handleOnChange} />
 			</LePreview>
 			<LeHighlighter
@@ -106,7 +106,7 @@ const InputStatePreview = () => {
 				<Button theme={disabled ? "danger" : "primary"} onClick={handleOnClick}>
 					{disabled ? "off" : "on"}
 				</Button>
-				<Topography type="body-1">Value: {value}</Topography>
+				<Topography variant="body-1">Value: {value}</Topography>
 				<Input state={{ disabled }} placeholder="Disabled" onChange={handleOnChange} />
 			</LePreview>
 			<LeHighlighter

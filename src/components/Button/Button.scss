@@ -14,9 +14,11 @@
 			&.le-button--#{$color} {
 				color: $color-lighter-text;
 				background: $value;
+				border: 1px solid $value;
 
 				&:hover {
 					background: darken($value, 10%);
+					border-color: darken($value, 10%);
 				}
 
 				@if $color == "default" {
@@ -76,7 +78,7 @@
 	}
 
 	&--small {
-		padding: 0.4rem 0.7rem;
+		padding: 0.4rem 0.6rem;
 		font-size: 0.75rem;
 	}
 
@@ -86,7 +88,7 @@
 	}
 
 	&--large {
-		padding: 0.6rem 0.9rem;
+		padding: 0.6rem 1rem;
 		font-size: 1rem;
 	}
 
@@ -94,5 +96,12 @@
 		cursor: not-allowed !important;
 		background: $color-variant-disabled !important;
 		color: $color-darker-text !important;
+		border-color: $color-variant-disabled !important;
+
+		&:hover {
+			background: $color-variant-disabled !important;
+			color: $color-darker-text !important;
+			border-color: $color-variant-disabled !important;
+		}
 	}
 }

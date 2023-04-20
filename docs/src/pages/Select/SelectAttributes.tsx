@@ -1,120 +1,67 @@
 import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
-import { useState } from "react";
-import { Button, Select, SelectState, Topography } from "../../../../src";
+import { ChangeEvent, useState } from "react";
+import { Box, Button, Select, Topography } from "../../../../src";
+import {
+	SelectOption,
+	SelectSizes,
+	SelectState,
+	SelectVariants,
+} from "../../../../src/components/Select/Select.model";
 import { attributes as selectAttr } from "./select.md";
 
 const SelectImportPreview = () => (
-	<LeHighlighter code={`import { Select, SelectProps, } from "leux"`} language="tsx" />
+	<LeHighlighter code={`import { Select, SelectProps } from "leux";`} language="tsx" />
 );
 
-const SelectOptionPreview = () => {
+const SelectOptionsPreview = () => {
+	const options: SelectOption[] = [
+		{
+			label: "Option 1",
+			value: "option1",
+		},
+	];
+
 	return (
 		<>
 			<LePreview direction="column">
-				<Select
-					placeholder="Options"
-					options={[
-						{ label: "A", value: "a", state: { selected: false } },
-						{ label: "B", value: "b", state: { selected: false } },
-					]}
-				></Select>
+				<Box flex alignItems="center" justifyContent="center" customStyles={{ marginBottom: 12 }}>
+					<Topography variant="body-1" customStyles={{ marginRight: 12 }}>
+						With options prop
+					</Topography>
+					<Select fieldKey="fieldKey" placeholder="Select one option" options={options} />
+				</Box>
+				<Box flex alignItems="center" justifyContent="center">
+					<Topography variant="body-1" customStyles={{ marginRight: 12 }}>
+						With children
+					</Topography>
+					<Select fieldKey="fieldKey" defaultValue="">
+						<option value="">Select one option</option>
+						<option value="option1">Option 1</option>
+					</Select>
+				</Box>
 			</LePreview>
 			<LeHighlighter
-				code={`const Component = () => {
-	return (
-		<>
-			<Select
-				placeholder="Normal"
-				options={[
-					{ label: "A", value: "a", state: { selected: false } },
-					{ label: "B", value: "b", state: { selected: false } },
-				]}
-			></Select>
-		</>
-	);
-};`}
-				language="tsx"
-			/>
-		</>
-	);
-};
-
-const SelectKeyPreview = () => {
-	return (
-		<>
-			<LePreview>
-				<Select
-					fieldKey="key"
-					placeholder="with key"
-					options={[{ label: "Key 1", state: { selected: false }, value: "key1" }]}
-				/>
-			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
-	return (
-		<>
-			<Select
-				fieldKey="key"
-				placeholder="with key"
-				options={[
-					{ label: "Key 1", state: { selected: false }, value: "key1" },
-				]}
-			/>
-		</>
-	);
-};`}
-				language="tsx"
-			/>
-		</>
-	);
-};
-
-const SelectVariantPreview = () => {
-	return (
-		<>
-			<LePreview direction="column">
-				<Select
-					options={[{ label: "Filled 1", value: "filled1", state: { selected: false } }]}
-					placeholder="Filled"
-					variant="filled"
-				/>
-				<Select
-					options={[
-						{
-							label: "Outlined 1",
-							value: "outlined1",
-							state: { selected: false },
-						},
-					]}
-					placeholder="Outlined"
-					variant="outlined"
-				/>
-			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
-	return (
-		<>
-			<Select
-				options={[
-					{ label: "Filled 1", value: "filled1", state: { selected: false } },
-				]}
-				placeholder="Filled"
-				variant="filled"
-			/>
-			<Select
-				options={[
-					{
-						label: "Outlined 1",
-						value: "outlined1",
-						state: { selected: false },
-					},
-				]}
-				placeholder="Outlined"
-				variant="outlined"
-			/>
-		</>
-	);
-};`}
+				code={`const Component = () => (
+	<>
+		<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
+			<Topography type="body-1" customStyles={{ marginRight: 12 }}>
+				With options prop
+			</Topography>
+			<Select fieldKey="fieldKey" placeholder="Select one option" options={options} />
+		</div>
+		<div style={{ display: "flex", alignItems: "center" }}>
+			<Topography type="body-1" customStyles={{ marginRight: 12 }}>
+				With children
+			</Topography>
+			<Select fieldKey="fieldKey">
+				<option value="" disabled>
+					Select one option
+				</option>
+				<option value="option1">Option 1</option>
+			</Select>
+		</div>
+	</>
+)`}
 				language="tsx"
 			/>
 		</>
@@ -124,202 +71,49 @@ const SelectVariantPreview = () => {
 const SelectSizePreview = () => {
 	return (
 		<>
-			<LePreview direction="column">
-				<Select options={[{ label: "Small", value: "small" }]} size="small" placeholder="small" />
+			<LePreview>
+				<Select
+					options={[{ label: "Small", value: "small" }]}
+					size="small"
+					defaultValue="small"
+					customStyles={{ marginRight: 12 }}
+				></Select>
 				<Select
 					options={[{ label: "Medium", value: "medium" }]}
 					size="medium"
-					placeholder="medium"
-				/>
-				<Select options={[{ label: "Large", value: "large" }]} size="large" placeholder="large" />
+					defaultValue="medium"
+					customStyles={{ marginRight: 12 }}
+				></Select>
+				<Select
+					options={[{ label: "Large", value: "large" }]}
+					size="large"
+					defaultValue="large"
+				></Select>
 			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
 	return (
-		<>
+		<Box flex alignItems="center" flexDirection="column">
 			<Select
 				options={[{ label: "Small", value: "small" }]}
 				size="small"
-				placeholder="small"
-			/>
+				defaultValue="small"
+				customStyles={{ marginRight: 12 }}
+			></Select>
 			<Select
 				options={[{ label: "Medium", value: "medium" }]}
 				size="medium"
-				placeholder="medium"
-			/>
+				defaultValue="medium"
+				customStyles={{ marginRight: 12 }}
+			></Select>
 			<Select
-				options={[{ label: "Large", value: "large" }]}
+				options={[
+					{ label: "Large", value: "large" },
+				]}
 				size="large"
-				placeholder="large"
-			/>
-		</>
-	);
-};`}
-				language="tsx"
-			/>
-		</>
-	);
-};
-
-const SelectActionPreview = () => {
-	const [value, setValue] = useState<string[]>([]);
-	const handleValueChange = (value: string[]) => setValue(value);
-
-	return (
-		<>
-			<LePreview direction="column">
-				<Topography type="body-1">Select one option: {value}</Topography>
-				<Select
-					options={[
-						{ label: "Option A", value: "a" },
-						{ label: "Option B", value: "b" },
-					]}
-					placeholder="Options"
-					onChange={handleValueChange}
-				/>
-			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
-	const [value, setValue] = useState<string[]>([]);
-	const handleValueChange = (value: string[]) => setValue(value);
-
-	return (
-		<>
-			<Topography type="body-1">Select one option: {value}</Topography>
-			<Select
-				options={[
-					{ label: "Option A", value: "optionA" },
-					{ label: "Option B", value: "optionB" },
-				]}
-				placeholder="Options"
-				onChange={handleValueChange}
-			/>
-		</>
-	);
-};`}
-				language="tsx"
-			/>
-		</>
-	);
-};
-
-const SelectMultiplePreview = () => {
-	const [value, setValue] = useState<number[]>([]);
-	const handleValueChange = (value: string[]) => setValue(value.map((el) => Number(el)));
-
-	return (
-		<>
-			<LePreview direction="column">
-				<Topography type="body-2">
-					SUM: {value.length > 0 ? value.reduce((acc, curr) => acc + curr) : 0}
-				</Topography>
-				<Select
-					width="280px"
-					options={[
-						{ label: "1", value: "1" },
-						{ label: "2", value: "2" },
-						{ label: "3", value: "3" },
-						{ label: "4", value: "4" },
-					]}
-					placeholder="Select multiple values to SUM"
-					multiple
-					onChange={handleValueChange}
-					valueSeparator=" + "
-					clickOptionHide={false}
-				/>
-			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
-	const [value, setValue] = useState<number[]>([]);
-	const handleValueChange = (value: string[]) => setValue(value.map(el => Number(el)));
-
-	return (
-		<>
-			<Topography type="body-2">
-				SUM:{" "}
-				{value.length > 0 ? value.reduce((acc, curr) => acc + curr) : 0}
-			</Topography>
-			<Select
-				width="280px"
-				options={[
-					{ label: "1", value: "1" },
-					{ label: "2", value: "2" },
-					{ label: "3", value: "3" },
-					{ label: "4", value: "4" },
-				]}
-				placeholder="Select multiple values to SUM"
-				multiple
-				onChange={handleValueChange}
-				valueSeparator=" + "
-				clickOptionHide={false}
-			/>
-		</>
-	);
-};`}
-				language="tsx"
-			/>
-		</>
-	);
-};
-
-const SelectHidePreview = () => {
-	const [outside, setOutside] = useState(true);
-	const [select, setSelect] = useState(true);
-
-	const handleValueChange = (value: string[]) => {
-		if (value.length === 0 || value[0] === "both") {
-			setOutside(true);
-			setSelect(true);
-		} else {
-			setOutside(value[0] === "outside");
-
-			setSelect(value[0] === "select");
-		}
-	};
-
-	return (
-		<>
-			<LePreview direction="column">
-				<Select
-					options={[
-						{ label: "both", value: "both" },
-						{ label: "only click outside", value: "outside" },
-						{ label: "only when select", value: "select" },
-					]}
-					placeholder="Options"
-					onChange={handleValueChange}
-					clickOutsideHide={outside}
-					clickOptionHide={select}
-				/>
-			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
-	const [outside, setOutside] = useState(true);
-	const [select, setSelect] = useState(true);
-
-	const handleValueChange = (value: string[]) => {
-		if (value.length === 0 || value[0] === "both") {
-			setOutside(true);
-			setSelect(true);
-		} else {
-			setOutside(value[0] === "outside");
-
-			setSelect(value[0] === "select");
-		}
-	};
-
-	return (
-		<Select
-			options={[
-				{ label: "both", value: "both" },
-				{ label: "only click outside", value: "outside" },
-				{ label: "only when select", value: "select" },
-			]}
-			placeholder="Options"
-			onChange={handleValueChange}
-			clickOutsideHide={outside}
-			clickSelectHide={select}
-		/>
+				defaultValue="large"
+			></Select>
+		</Box>
 	)
 }`}
 				language="tsx"
@@ -328,44 +122,153 @@ const SelectHidePreview = () => {
 	);
 };
 
-const SelectStatePreview = () => {
-	const [selectState, setSelectState] = useState<SelectState>({
-		disabled: false,
-	});
-	const handleFieldState = () => {
-		setSelectState((curr) => ({ ...curr, disabled: !curr.disabled }));
+const SelectVariantPreview = () => {
+	return (
+		<>
+			<LePreview>
+				<Select
+					options={[{ label: "Outlined", value: "outlined" }]}
+					variant="outlined"
+					defaultValue="outlined"
+					customStyles={{ marginRight: 12 }}
+				></Select>
+				<Select
+					options={[{ label: "Filled", value: "filled" }]}
+					variant="filled"
+					defaultValue="filled"
+				></Select>
+			</LePreview>
+			<LeHighlighter
+				code={`const Component = () => {
+	return (
+		<Box flex flexDirection="column" alignItems="center">
+			<Select
+				options={[{ label: "Outlined", value: "outlined" }]}
+				variant="outlined"
+				defaultValue="outlined"
+				customStyles={{ marginRight: 12 }}
+			></Select>
+			<Select
+				options={[{ label: "Filled", value: "filled" }]}
+				variant="filled"
+				defaultValue="filled"
+			></Select>
+		</Box>
+	)
+}`}
+				language="tsx"
+			/>
+		</>
+	);
+};
+
+const SelectActionPreview = () => {
+	const [value, setValue] = useState<string>("");
+
+	const handleOnChange = (event: ChangeEvent<HTMLSelectElement>) => {
+		const { value } = event.target;
+
+		setValue(value);
 	};
 
 	return (
 		<>
 			<LePreview direction="column">
-				<Button onClick={handleFieldState}>{selectState.disabled ? "off" : "on"}</Button>
+				<Topography>Value: {value}</Topography>
 				<Select
-					options={[{ label: "Option 1", value: "option1" }]}
-					placeholder="Enable the button to select a option"
-					state={selectState}
+					options={[
+						{ label: "Option 1", value: "option1" },
+						{ label: "Option 2", value: "option2" },
+					]}
+					placeholder="Select one option"
+					onChange={handleOnChange}
 				/>
 			</LePreview>
 			<LeHighlighter
 				code={`const Component = () => {
-	const [selectState, setSelectState] = useState<SelectState>({
-		disabled: false,
-	});
-	const handleFieldState = () => {
-		setSelectState((curr) => ({ ...curr, disabled: !curr.disabled }));
+	const [value, setValue] = useState<string>("");
+
+	const handleOnChange = (event: ChangeEvent<HTMLSelectElement>) => {
+		const { value } = event.target;
+
+		setValue(value);
+	};
+
+	return (
+		<Box flex flexDirection="column">
+			<Topography>Value: {value}</Topography>
+			<Select
+			options={[
+				{ label: "Option 1", value: "option1" },
+				{ label: "Option 2", value: "option2" },
+			]}
+			placeholder="Select one option"
+			onChange={handleOnChange}
+			/>
+		</Box>
+	)
+};`}
+				language="tsx"
+			/>
+		</>
+	);
+};
+
+const SelectStatePreview = () => {
+	const [state, setState] = useState<SelectState>({});
+
+	const disableSelect = () => {
+		setState((curr) => ({ ...curr, disabled: !curr.disabled }));
 	};
 
 	return (
 		<>
-			<Button onClick={handleFieldState}>
-				{selectState.disabled ? "off" : "on"}
+			<LePreview direction="column">
+				<Button
+					onClick={disableSelect}
+					customStyles={{ marginBottom: 12 }}
+					theme={!state.disabled ? "primary" : "danger"}
+				>
+					{!state.disabled ? "on" : "off"}
+				</Button>
+				<Select
+					options={[
+						{ label: "Option 1", value: "option1" },
+						{
+							label: "Disabled option",
+							value: "disabledOption",
+							disabled: true,
+						},
+					]}
+					state={state}
+					placeholder="Select one option"
+					showPlaceholderAsOption
+				/>
+			</LePreview>
+			<LeHighlighter
+				code={`const Component = () => {
+	const [state, setState] = useState<SelectState>({});
+
+	const disableSelect = () => {
+		setState((curr) => ({ ...curr, disabled: !curr.disabled }));
+	};
+
+	return (
+		<Box flex flexDirection="column">
+			<Button
+				onClick={disableSelect}
+				customStyles={{ marginBottom: 12 }}
+				theme={!state.disabled ? "primary" : "danger"}
+			>
+				{!state.disabled ? "on" : "off"}
 			</Button>
 			<Select
 				options={[{ label: "Option 1", value: "option1" }]}
-				placeholder="Enable the button to select a option"
-				state={selectState}
+				state={state}
+				placeholder="Select one option"
+				showPlaceholderAsOption
 			/>
-		</>
+		</Box>
 	);
 };`}
 				language="tsx"
@@ -377,50 +280,52 @@ const SelectStatePreview = () => {
 const SelectCustomPreview = () => {
 	return (
 		<>
-			<LePreview direction="column">
+			<LePreview>
 				<Select
-					options={[{ label: "Option 1", value: "option1" }]}
-					placeholder="Custom Select"
-					optionCustomClass="custom-option"
-					optionCustomStyles={{ border: "1px solid green" }}
-					dropdownCustomClass="custom-dropdown"
-					dropdownCustomStyles={{ border: "solid 1px red" }}
-					selectCustomClass="custom-select"
-					selectCustomStyles={{ border: "solid 1px yellow" }}
+					options={[{ label: "Custom", value: "custom" }]}
+					customClass="custom-select"
+					customStyles={{ background: "red", color: "white", border: "2px solid blue" }}
 				/>
 			</LePreview>
 			<LeHighlighter
-				code={`const Component = () => {
+				language="tsx"
+				code={`// index.tsx
+const Component = () => {
 	return (
-		<Select
-			options={[{ label: "Option 1", value: "option1" }]}
-			placeholder="Custom Select"
-			optionCustomClass="custom-option"
-			optionCustomStyles={{ border: "1px solid green" }}
-			dropdownCustomClass="custom-dropdown"
-			dropdownCustomStyles={{ border: "solid 1px red" }}
-			selectCustomClass="custom-select"
-			selectCustomStyles={{ border: "solid 1px yellow" }}
-		/>
+		<>
+			<Select
+				options={[{ label: "Custom", value: "custom" }]}
+				customClass="custom-select"
+				customStyles={{ background: "red", color: "white", border: "2px solid blue" }}
+			/>
+		</>
 	);
 };`}
-				language="tsx"
+			/>
+			<LeHighlighter
+				language="scss"
+				code={`// styles.scss
+.custom-select {
+	&:hover,
+	&:focus,
+	&:active {
+		outline: none !important;
+		background: black !important;
+	}
+}`}
 			/>
 		</>
 	);
 };
 
 selectAttr["LeSourceButton"] = LeSourceButton;
-selectAttr["SelectImportPreview"] = SelectImportPreview;
-selectAttr["SelectOptionPreview"] = SelectOptionPreview;
-selectAttr["SelectKeyPreview"] = SelectKeyPreview;
-selectAttr["SelectVariantPreview"] = SelectVariantPreview;
-selectAttr["SelectSizePreview"] = SelectSizePreview;
-selectAttr["SelectActionPreview"] = SelectActionPreview;
-selectAttr["SelectMultiplePreview"] = SelectMultiplePreview;
-selectAttr["SelectCustomPreview"] = SelectCustomPreview;
-selectAttr["SelectHidePreview"] = SelectHidePreview;
-selectAttr["SelectStatePreview"] = SelectStatePreview;
 selectAttr["LeHighlighter"] = LeHighlighter;
+selectAttr["SelectImportPreview"] = SelectImportPreview;
+selectAttr["SelectOptionsPreview"] = SelectOptionsPreview;
+selectAttr["SelectSizePreview"] = SelectSizePreview;
+selectAttr["SelectVariantPreview"] = SelectVariantPreview;
+selectAttr["SelectActionPreview"] = SelectActionPreview;
+selectAttr["SelectStatePreview"] = SelectStatePreview;
+selectAttr["SelectCustomPreview"] = SelectCustomPreview;
 
 export { selectAttr };

@@ -22,7 +22,7 @@ const RadioFieldKeyPreview = () => {
 	return (
 		<>
 			<LePreview direction="column">
-				<Topography type="body-1">
+				<Topography variant="body-1">
 					<strong>fieldKey</strong>: {fieldKey}
 				</Topography>
 				<Radio fieldKey="prefix" value="suffix" label="Field Key" radioRef={radioRef} />
@@ -33,7 +33,7 @@ const RadioFieldKeyPreview = () => {
 
 	return (
 		<>
-			<Topography type="body-1">
+			<Topography variant="body-1">
 				<strong>fieldKey</strong>: {radioRef.current && radioRef.current.id}
 			</Topography>
 			<Radio
@@ -61,7 +61,7 @@ const RadioActionPreview = () => {
 	return (
 		<>
 			<LePreview direction="column">
-				<Topography type="body-2">value: {value}</Topography>
+				<Topography variant="body-2">value: {value}</Topography>
 				<div style={{ display: "flex", flexDirection: "row" }}>
 					<Radio
 						fieldKey="test"

@@ -9,10 +9,14 @@ import {
 	GridPage,
 	InputPage,
 	InstallationPage,
+	ModalPage,
 	NotFoundPage,
 	OverviewPage,
+	PaginationPage,
 	RadioPage,
 	SelectPage,
+	SpinnerPage,
+	TablePage,
 	TextAreaPage,
 	TooltipPage,
 	TopographyPage,
@@ -54,6 +58,10 @@ export const routes: LeRoute[] = [
 		element: <LeRenderDocPage doc={<BoxPage />} title="Box" />,
 	},
 	{
+		path: "/layout/spinner",
+		element: <LeRenderDocPage doc={<SpinnerPage />} title="Spinner" />,
+	},
+	{
 		path: "/components/button",
 		element: <LeRenderDocPage doc={<ButtonPage />} title="Button" />,
 	},
@@ -82,12 +90,24 @@ export const routes: LeRoute[] = [
 		element: <LeRenderDocPage doc={<TooltipPage />} title="Tooltip" />,
 	},
 	{
+		path: "/components/table",
+		element: <LeRenderDocPage doc={<TablePage />} title="Table" />,
+	},
+	{
 		path: "/components/textarea",
 		element: <LeRenderDocPage doc={<TextAreaPage />} title="TextArea" />,
 	},
 	{
 		path: "/components/radio",
 		element: <LeRenderDocPage doc={<RadioPage />} title="Radio" />,
+	},
+	{
+		path: "/components/pagination",
+		element: <LeRenderDocPage doc={<PaginationPage />} title="Pagination" />,
+	},
+	{
+		path: "/components/modal",
+		element: <LeRenderDocPage doc={<ModalPage />} title="Modal" />,
 	},
 	{
 		path: "*",

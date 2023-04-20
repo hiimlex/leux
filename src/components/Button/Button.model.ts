@@ -19,6 +19,7 @@ interface ButtonProps {
 	children?: React.ReactNode;
 	customClass?: string;
 	customStyles?: React.CSSProperties;
+	buttonProps?: React.ButtonHTMLAttributes<HTMLButtonElement>;
 }
 
 export { ButtonProps, ButtonVariants, ButtonThemes, ButtonState, ButtonSizes, ButtonTypes };

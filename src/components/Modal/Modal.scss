@@ -1,0 +1,94 @@
+@import "../../styles/variables.scss";
+
+.le-modal {
+	&--provider {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		overflow: hidden;
+		z-index: 999;
+		background: rgba(0, 0, 0, 0.2);
+	}
+
+	&--wrapper {
+		position: relative;
+		width: 100vw;
+		height: 100vh;
+
+		overflow: hidden;
+		overflow-y: auto;
+
+		&-centered {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	display: flex;
+	flex-direction: column;
+
+	background: $color-lighter-background;
+	border-radius: 12px;
+
+	&--header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+
+		width: 100%;
+
+		padding: 12px;
+
+		position: relative;
+
+		h4 {
+			margin: 0;
+		}
+
+		&-title {
+			color: $color-darker-text;
+		}
+
+		&-close {
+			cursor: pointer;
+			position: absolute;
+			right: 12px;
+			top: 4px;
+			color: $color-dark-text;
+			font-size: 24px;
+
+			&:hover {
+				color: $color-variant-primary;
+			}
+		}
+	}
+
+	&--body {
+		padding: 8px 16px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		width: 100%;
+	}
+
+	&--footer {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-end;
+
+		padding: 12px;
+
+		button {
+			margin-left: 12px;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+}

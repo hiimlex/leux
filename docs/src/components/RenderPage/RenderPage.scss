@@ -33,13 +33,13 @@
 		font-size: 0.875rem;
 	}
 
-	table {
+	table:not(.le-table) {
 		font-size: 0.875rem;
 		background: $color-light-text;
 		width: 100%;
 	}
 
-	table,
+	table:not(.le-table),
 	th,
 	td {
 		border: 1px solid $color-dark-text;
@@ -47,8 +47,8 @@
 		border-radius: 4px !important;
 	}
 
-	table th,
-	table td {
+	table:not(.le-table) th,
+	table:not(.le-table) td {
 		padding: 8px;
 		text-align: center;
 
@@ -113,6 +113,15 @@
 			border-radius: 50%;
 			padding: 2px;
 			background-color: $color-variant-success;
+		}
+	}
+
+	.custom-select {
+		&:hover,
+		&:focus,
+		&:active {
+			outline: none !important;
+			background: black !important;
 		}
 	}
 }
