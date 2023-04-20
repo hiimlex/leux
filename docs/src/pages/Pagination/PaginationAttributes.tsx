@@ -206,6 +206,55 @@ const PaginationLabelPreview = () => {
 	);
 };
 
+const PaginationSizePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
+	const [paginationConfig, setPaginationConfig] = useState<PaginationProps>({
+		currentPage: 1,
+		itemsPerPage: 10,
+		totalItems: 100,
+		totalPages: 10,
+	});
+
+	const handleOnPageChange = (page: number) => {
+		setPaginationConfig({ ...paginationConfig, currentPage: page });
+	};
+
+	return (
+		<>
+			<LePreview direction="column">
+				<Pagination
+					{...paginationConfig}
+					size="small"
+					onPageChange={handleOnPageChange}
+				></Pagination>
+				<Pagination
+					{...paginationConfig}
+					size="medium"
+					onPageChange={handleOnPageChange}
+				></Pagination>
+				<Pagination
+					{...paginationConfig}
+					size="large"
+					onPageChange={handleOnPageChange}
+				></Pagination>
+			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => {
+	const [paginationConfig, setPaginationConfig] = useState<PaginationProps>({
+		currentPage: 1,
+		itemsPerPage: 10,
+		totalItems: 100,
+		
+		</>`}
+				/>
+			)}
+		</>
+	);
+};
+
 paginationAttr["LeSourceButton"] = LeSourceButton;
 paginationAttr["LeHighlighter"] = LeHighlighter;
 paginationAttr["PaginationImportPreview"] = PaginationImportPreview;
@@ -213,5 +262,6 @@ paginationAttr["PaginationConfigurationPreview"] = PaginationConfigurationPrevie
 paginationAttr["PaginationActionPreview"] = PaginationActionPreview;
 paginationAttr["PaginationButtonsPreview"] = PaginationButtonsPreview;
 paginationAttr["PaginationLabelPreview"] = PaginationLabelPreview;
+paginationAttr["PaginationSizePreview"] = PaginationSizePreview;
 
 export { paginationAttr };

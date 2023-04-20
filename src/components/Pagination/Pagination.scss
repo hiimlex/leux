@@ -19,8 +19,18 @@
 	&--button {
 		margin: 2px 4px !important;
 
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
 		&:last-child {
 			margin-right: 0 !important;
+		}
+
+		&-group {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
 		}
 	}
 
@@ -31,15 +41,39 @@
 	&--small {
 		margin: 8px 0;
 		font-size: 0.75rem;
+		line-height: normal;
+
+		.le-pagination--button {
+			max-width: 28px;
+			min-width: 28px;
+			max-height: 28px;
+			min-height: 28px;
+		}
 	}
 
 	&--medium {
 		margin: 10px 0;
 		font-size: 0.875rem;
+		line-height: normal;
+
+		.le-pagination--button {
+			max-width: 36px;
+			min-width: 36px;
+			max-height: 36px;
+			min-height: 36px;
+		}
 	}
 
 	&--large {
 		margin: 12px 0;
 		font-size: 1rem;
+		line-height: normal;
+
+		.le-pagination--button {
+			max-width: 44px;
+			min-width: 44px;
+			max-height: 44px;
+			min-height: 44px;
+		}
 	}
 }

@@ -34,6 +34,17 @@ The following attributes shows how to configure the pagination.
 
 <br />
 
+#### Sizes
+
+Use the `size` prop to configure the pagination size.
+
+<div>
+<PaginationSizePreview>
+</PaginationSizePreview>
+</div>
+
+<br />
+
 #### Action
 
 Use the `onPageChange` prop to handle the page change.
