@@ -8,6 +8,7 @@ const CheckboxImportPreview = () => (
 );
 
 const CheckboxActionPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
 	const [value, setValue] = useState(false);
 
 	const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -16,12 +17,13 @@ const CheckboxActionPreview = () => {
 
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Checkbox fieldKey="normal" label={value ? "On" : "Off"} onChange={handleOnChange} />
 			</LePreview>
-			<LeHighlighter
-				language="tsx"
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => {
 	const [value, setValue] = useState(false);
 
 	const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -37,21 +39,31 @@ const CheckboxActionPreview = () => {
 	)	
 }		
 `}
-			/>
+				/>
+			)}
 		</>
 	);
 };
 
-const CheckboxSizePreview = () => (
-	<>
-		<LePreview>
-			<Checkbox fieldKey="small" label="small" size="small" customStyles={{ marginRight: 12 }} />
-			<Checkbox fieldKey="medium" label="medium" size="medium" customStyles={{ marginRight: 12 }} />
-			<Checkbox fieldKey="large" label="large" size="large" customStyles={{ marginRight: 12 }} />
-		</LePreview>
-		<LeHighlighter
-			language="tsx"
-			code={`const Component = () => (
+const CheckboxSizePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
+	return (
+		<>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
+				<Checkbox fieldKey="small" label="small" size="small" customStyles={{ marginRight: 12 }} />
+				<Checkbox
+					fieldKey="medium"
+					label="medium"
+					size="medium"
+					customStyles={{ marginRight: 12 }}
+				/>
+				<Checkbox fieldKey="large" label="large" size="large" customStyles={{ marginRight: 12 }} />
+			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => (
 	<>
 		<Checkbox
 			fieldKey="small"
@@ -74,14 +86,18 @@ const CheckboxSizePreview = () => (
 	</>
 );
 `}
-		/>
-	</>
-);
+				/>
+			)}
+		</>
+	);
+};
 
 const CheckboxCustomPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Checkbox
 					fieldKey="customCheckbox"
 					label="custom"
@@ -99,8 +115,9 @@ const CheckboxCustomPreview = () => {
 					}}
 				/>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => (
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<Checkbox
 		fieldKey="custom"
 		label="Custom"
@@ -115,13 +132,15 @@ const CheckboxCustomPreview = () => {
 		}}
 	/>
 );`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const CheckboxStatePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
 	const [disabled, setDisabled] = useState<boolean>(false);
 
 	const handleDisableCheckbox = () => {
@@ -130,7 +149,7 @@ const CheckboxStatePreview = () => {
 
 	return (
 		<>
-			<LePreview direction="column">
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<Button onClick={handleDisableCheckbox} theme={!disabled ? "primary" : "danger"}>
 					{!disabled ? "on" : "off"}
 				</Button>
@@ -141,8 +160,9 @@ const CheckboxStatePreview = () => {
 					customStyles={{ marginTop: 12 }}
 				/>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	const [disabled, setDisabled] = useState<boolean>(false);
 
 	const handleDisableCheckbox = () => {
@@ -163,25 +183,32 @@ const CheckboxStatePreview = () => {
 		</>
 	)
 };`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
-const CheckboxFieldKeyPreview = () => (
-	<>
-		<LePreview>
-			<Checkbox fieldKey="fieldKey" label="fieldKey" />
-		</LePreview>
-		<LeHighlighter
-			code={`const Component = () => (
+const CheckboxFieldKeyPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
+	return (
+		<>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
+				<Checkbox fieldKey="fieldKey" label="fieldKey" />
+			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<Checkbox fieldKey="fieldKey" label="fieldKey" />
 );`}
-			language="tsx"
-		/>
-	</>
-);
+					language="tsx"
+				/>
+			)}
+		</>
+	);
+};
 
 checkboxAttr["LeSourceButton"] = LeSourceButton;
 checkboxAttr["LeHighlighter"] = LeHighlighter;

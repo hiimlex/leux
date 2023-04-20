@@ -12,6 +12,8 @@ const RadioImportPreview = () => {
 };
 
 const RadioFieldKeyPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	const [fieldKey, setFieldKey] = useState<string>("");
 	const radioRef = useRef<HTMLInputElement>(null);
 
@@ -21,14 +23,15 @@ const RadioFieldKeyPreview = () => {
 
 	return (
 		<>
-			<LePreview direction="column">
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<Topography variant="body-1">
 					<strong>fieldKey</strong>: {fieldKey}
 				</Topography>
 				<Radio fieldKey="prefix" value="suffix" label="Field Key" radioRef={radioRef} />
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	const radioRef = useRef<HTMLInputElement>(null);
 
 	return (
@@ -45,13 +48,15 @@ const RadioFieldKeyPreview = () => {
 		</>
 	);
 };`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const RadioActionPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
 	const [value, setValue] = useState<string>("1");
 
 	const handleOnChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
@@ -60,7 +65,7 @@ const RadioActionPreview = () => {
 
 	return (
 		<>
-			<LePreview direction="column">
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<Topography variant="body-2">value: {value}</Topography>
 				<div style={{ display: "flex", flexDirection: "row" }}>
 					<Radio
@@ -80,8 +85,9 @@ const RadioActionPreview = () => {
 					></Radio>
 				</div>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	const [value, setValue] = useState<string>("1");
 
 	const handleOnChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
@@ -112,16 +118,19 @@ const RadioActionPreview = () => {
 	)
 
 };`}
-				language="tsx"
-			></LeHighlighter>
+					language="tsx"
+				></LeHighlighter>
+			)}
 		</>
 	);
 };
 
 const RadioSizePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Radio
 					fieldKey="size"
 					size="small"
@@ -138,8 +147,9 @@ const RadioSizePreview = () => {
 				></Radio>
 				<Radio fieldKey="size" size="large" value="large" label="Large"></Radio>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => (
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<>
 		<Radio
 			fieldKey="small"
@@ -158,16 +168,19 @@ const RadioSizePreview = () => {
 		<Radio fieldKey="large" size="large" value="large" label="Large"></Radio>
 	</>
 );`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const RadioCustomPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Radio
 					fieldKey="style"
 					value="custom"
@@ -183,8 +196,10 @@ const RadioCustomPreview = () => {
 				/>
 				<Radio fieldKey="style" value="normal" label="Normal" />
 			</LePreview>
-			<LeHighlighter
-				code={`// component.tsx
+			{showCode && (
+				<>
+					<LeHighlighter
+						code={`// component.tsx
 const Component = () => (
 	<>
 		<Radio
@@ -203,10 +218,10 @@ const Component = () => (
 		<Radio fieldKey="style" value="normal" label="Normal" />
 	</>
 )`}
-				language="tsx"
-			/>
-			<LeHighlighter
-				code={`// styles.scss
+						language="tsx"
+					/>
+					<LeHighlighter
+						code={`// styles.scss
 .custom-dot {
 	appearance: none;
 	position: relative;
@@ -246,13 +261,16 @@ const Component = () => (
 		background-color: $color-variant-success;
 	}
 }`}
-				language="scss"
-			/>
+						language="scss"
+					/>
+				</>
+			)}
 		</>
 	);
 };
 
 const RadioStatePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
 	const [disabled, setDisabled] = useState<boolean>(false);
 
 	const handleDisableRadio = () => {
@@ -261,7 +279,7 @@ const RadioStatePreview = () => {
 
 	return (
 		<>
-			<LePreview direction="column">
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<Button theme={!disabled ? "primary" : "danger"} onClick={handleDisableRadio}>
 					{!disabled ? "on" : "off"}
 				</Button>
@@ -276,8 +294,9 @@ const RadioStatePreview = () => {
 					<Radio fieldKey="stateRadio" value="2" label="Opção 2" state={{ disabled }}></Radio>
 				</div>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => (
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<>
 		<Button theme={!disabled ? "primary" : "danger"} onClick={handleDisableRadio}>
 			{!disabled ? "on" : "off"}
@@ -291,8 +310,9 @@ const RadioStatePreview = () => {
 		></Radio>
 	</>
 );`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };

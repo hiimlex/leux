@@ -15,6 +15,9 @@ The Spinner component is used to replace an element that is loading.
 </SpinnerImportPreview>
 </div>
 
+- **Spinner** - the main component
+- **SpinnerProps** - the props type
+
 <br />
 
 #### Sizes

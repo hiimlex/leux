@@ -86,16 +86,6 @@ Use the `state` prop to set the state of the field. Pass `disabled` to disable t
 
 <br/>
 
-#### TextArea Props
-
-Use the `textAreaProps` prop to set the rest of the props from the TextArea. The values passed into this prop will be merged with the default props and if there is a conflict, it will be the final value.
-
-<div>
-<TextAreaPropsPreview>
-</TextAreaPropsPreview>
-</div>
-<br />
-
 ### API Reference
 
 <div>

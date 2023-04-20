@@ -49,7 +49,7 @@ Use the `state` prop object to control the button state, the `disabled` prop all
 
 <br/>
 
-#### Usage
+#### Action
 
 Use the `onClick` prop to trigger an action when the button is clicked.
 

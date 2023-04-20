@@ -1,36 +1,43 @@
 import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { Button, Tooltip, Topography } from "../../../../src";
 import { attributes as tooltipAttr } from "./tooltip.md";
+import { useState } from "react";
 
 const TooltipImportPreview = () => (
 	<LeHighlighter code={`import { Tooltip, TooltipProps } from "leux";`} language="tsx" />
 );
 
 const TooltipUsagePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Tooltip title="hello world!">
 					<Button variant="outlined">Hover me</Button>
 				</Tooltip>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => (
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<Tooltip title="hello world!">
 		<Button variant="outlined">Hover me</Button>
 	</Tooltip>
 );
 `}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const TooltipDirectionPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview direction="row">
+			<LePreview direction="row" showCode={showCode} setShowCode={setShowCode}>
 				<Tooltip title="display on left" direction="left">
 					<Topography children="left" variant="body-1" customStyles={{ margin: "0 12px 0 0" }} />
 				</Tooltip>
@@ -44,8 +51,9 @@ const TooltipDirectionPreview = () => {
 					<Topography children="right" variant="body-1" />
 				</Tooltip>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => (
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<>
 		<Tooltip title="display on left" direction="left">
 			<Topography children="left" variant="body-1" customStyles={{ margin: "0 12px 0 0" }} />
@@ -62,16 +70,19 @@ const TooltipDirectionPreview = () => {
 	</>
 );
 `}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const TooltipThemePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview direction="row">
+			<LePreview direction="row" showCode={showCode} setShowCode={setShowCode}>
 				<Tooltip title="primary style" theme="primary">
 					<Topography
 						children="primary"
@@ -97,8 +108,9 @@ const TooltipThemePreview = () => {
 					/>
 				</Tooltip>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => (
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<>
 		<Tooltip title="primary style" theme="primary">
 			<Topography
@@ -127,16 +139,19 @@ const TooltipThemePreview = () => {
 	</>
 );
 `}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const TooltipCustomPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Tooltip
 					title="custom style"
 					customStyles={{ fontSize: 16, background: "purple", color: "blue" }}
@@ -145,8 +160,10 @@ const TooltipCustomPreview = () => {
 					<Topography children="custom" variant="body-1" customStyles={{ margin: 0 }} />
 				</Tooltip>
 			</LePreview>
-			<LeHighlighter
-				code={`// component.tsx
+			{showCode && (
+				<>
+					<LeHighlighter
+						code={`// component.tsx
 const Component = () => (
 	<Tooltip
 		title="custom style"
@@ -157,16 +174,18 @@ const Component = () => (
 	</Tooltip>
 );
 `}
-				language="tsx"
-			/>
-			<LeHighlighter
-				code={`// styles.css
+						language="tsx"
+					/>
+					<LeHighlighter
+						code={`// styles.css
 .tooltip-custom--arrow::after {
 	border-color: purple transparent transparent transparent;
 }
 `}
-				language="css"
-			/>
+						language="css"
+					/>
+				</>
+			)}
 		</>
 	);
 };

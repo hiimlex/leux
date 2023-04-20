@@ -13,8 +13,8 @@ The Pagination component is used to split content into multiple pages.
 </PaginationImportPreview>
 </div>
 
-- **Pagination** - The main component
-- **PaginationProps** - The props type
+- **Pagination** - the main component
+- **PaginationProps** - the props type
 
 <br />
 

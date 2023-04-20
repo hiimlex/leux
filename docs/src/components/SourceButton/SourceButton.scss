@@ -20,7 +20,8 @@
 	}
 
 	&:hover {
-		color: $color-dark-text;
+		color: $color-variant-primary;
+		border-color: $color-variant-primary;
 		background: rgba(#afafaf, 0.15);
 	}
 }
