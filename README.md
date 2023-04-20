@@ -61,16 +61,15 @@ To upload the CSS styles, you can move the **leux.min.css** from the **node_modu
   - [x] Button
   - [ ] Collapse
   - [ ] Dropdown
-  - [ ] Form
+  - [x] Form
     - [x] Checkbox
     - [x] Input
     - [x] Radio
     - [x] Select
     - [x] Textarea
   - [x] Grid
-  - [ ] Modal
-  - [ ] Progress
-  - [ ] Table
+  - [x] Modal
+  - [x] Table
   - [ ] Toast
   - [x] Tooltip
   - [x] Topography

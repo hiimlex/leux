@@ -3,7 +3,8 @@ import { act, render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import React, { useContext } from "react";
 import { Button } from "../Button";
-import { ModalContext, ModalProvider } from "./ModalContext";
+import { ModalContext } from "./ModalContext";
+import { ModalProvider } from "./ModalProvider";
 import { ModalProps } from "./Modal.model";
 
 const TestModalComponent = (props: ModalProps) => {
