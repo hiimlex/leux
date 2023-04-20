@@ -154,7 +154,7 @@ const Table = ({
 
 	const TableLoaderJSX = state && state.loading && (
 		<div className={classNames["spinnerWrapper"]({ size })}>
-			<Spinner {...state.spinnerProps} role="tree" />
+			<Spinner {...state.spinnerProps} />
 		</div>
 	);
 
