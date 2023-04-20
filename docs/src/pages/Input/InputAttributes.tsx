@@ -7,48 +7,64 @@ const InputImportPreview = () => (
 	<LeHighlighter code={`import { Input, InputProps } from 'leux';`} language="tsx" />
 );
 
-const InputKeyPreview = () => (
-	<>
-		<LePreview direction="column">
-			<Input fieldKey="key" placeholder="Key" />
-		</LePreview>
-		<LeHighlighter
-			code={`const Component = () => (
+const InputKeyPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
+	return (
+		<>
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
+				<Input fieldKey="key" placeholder="Key" />
+			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<Input fieldKey="key" placeholder="Key" />
 );`}
-			language="tsx"
-		/>
-	</>
-);
+					language="tsx"
+				/>
+			)}
+		</>
+	);
+};
 
-const InputVariantPreview = () => (
-	<>
-		<LePreview direction="column">
-			{(["filled", "outlined"] as InputVariant[]).map((variant, index) => (
-				<Input key={index} variant={variant} placeholder="Placeholder" />
-			))}
-		</LePreview>
-		<LeHighlighter
-			language="tsx"
-			code={`const Component = () => (
+const InputVariantPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
+	return (
+		<>
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
+				{(["filled", "outlined"] as InputVariant[]).map((variant, index) => (
+					<Input key={index} variant={variant} placeholder="Placeholder" />
+				))}
+			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => (
 	{(["filled", "outlined"] as InputVariant[]).map((variant, index) => (
 		<Input key={index} variant={variant} placeholder="Placeholder" />
 	))}
 );`}
-		/>
-	</>
-);
+				/>
+			)}
+		</>
+	);
+};
 
-const InputSizePreview = () => (
-	<>
-		<LePreview direction="column">
-			{(["small", "medium", "large"] as InputSizes[]).map((size, index) => (
-				<Input key={index} variant="outlined" placeholder={size} size={size} />
-			))}
-		</LePreview>
-		<LeHighlighter
-			language="tsx"
-			code={`const Component = () => (
+const InputSizePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
+	return (
+		<>
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
+				{(["small", "medium", "large"] as InputSizes[]).map((size, index) => (
+					<Input key={index} variant="outlined" placeholder={size} size={size} />
+				))}
+			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => (
 	{(["small", "medium", "large"] as InputSizes[]).map((size, index) => (
 		<Input
 			key={index}
@@ -58,23 +74,28 @@ const InputSizePreview = () => (
 		/>
 	))}
 );`}
-		/>
-	</>
-);
+				/>
+			)}
+		</>
+	);
+};
 
 const InputActionPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	const [value, setValue] = useState("");
 	const handleOnChange = ({ target: { value } }: ChangeEvent<HTMLInputElement>) => setValue(value);
 
 	return (
 		<>
-			<LePreview direction="column">
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<Topography variant="body-2">type to see the value here: {value}</Topography>
 				<Input placeholder="Action" onChange={handleOnChange} />
 			</LePreview>
-			<LeHighlighter
-				language="tsx"
-				code={`const Component = () = {
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () = {
 	const [value, setValue] = useState("");
 	const handleOnChange = (value: string) => setValue(value);
 
@@ -89,12 +110,15 @@ const InputActionPreview = () => {
 		</>
 	)
 }`}
-			/>
+				/>
+			)}
 		</>
 	);
 };
 
 const InputStatePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	const [disabled, setDisabled] = useState(true);
 	const [value, setValue] = useState("");
 	const handleOnClick = () => setDisabled(!disabled);
@@ -102,15 +126,16 @@ const InputStatePreview = () => {
 
 	return (
 		<>
-			<LePreview direction="column">
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<Button theme={disabled ? "danger" : "primary"} onClick={handleOnClick}>
 					{disabled ? "off" : "on"}
 				</Button>
 				<Topography variant="body-1">Value: {value}</Topography>
 				<Input state={{ disabled }} placeholder="Disabled" onChange={handleOnChange} />
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	const [disabled, setDisabled] = useState(true);
 	const [value, setValue] = useState("");
 	const handleOnClick = () => setDisabled(!disabled);
@@ -133,16 +158,19 @@ const InputStatePreview = () => {
 		</>
 	)
 };`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const InputCustomPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<Input
 					placeholder="Custom input"
 					customStyles={{
@@ -153,8 +181,9 @@ const InputCustomPreview = () => {
 					customClass="le-text--h6"
 				/>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => (
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<Input
 		placeholder="Custom input"
 		customStyles={{
@@ -164,8 +193,9 @@ const InputCustomPreview = () => {
 		}}
 		customClass="le-text--h6"
 	/>`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };

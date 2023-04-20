@@ -8,9 +8,11 @@ const TextAreaImportPreview = () => (
 );
 
 const TextAreaVariantPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<TextArea
 					fieldKey="filledTextArea"
 					placeholder="Insert some text ..."
@@ -24,8 +26,9 @@ const TextAreaVariantPreview = () => {
 					customStyles={{ marginRight: 12 }}
 				></TextArea>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	return (
 		<>
 			<TextArea
@@ -41,29 +44,35 @@ const TextAreaVariantPreview = () => {
 		</>
 	);
 };`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const TextAreaFieldKeyPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<TextArea fieldKey="fieldKeytextArea" placeholder="Insert some text ..."></TextArea>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => (
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<TextArea fieldKey="fieldKeytextArea" placeholder="Insert some text ..."></TextArea>
 );`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const TextAreaActionPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
 	const [value, setValue] = useState<string>("");
 
 	const handleOnChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -72,16 +81,17 @@ const TextAreaActionPreview = () => {
 
 	return (
 		<>
-			<LePreview direction="column">
-				<Topography type="body-1">see the value here: {value}</Topography>
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
+				<Topography variant="body-1">see the value here: {value}</Topography>
 				<TextArea
 					fieldKey="actionTextArea"
 					placeholder="Insert some text ..."
 					onChange={handleOnChange}
 				></TextArea>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	const [value, setValue] = useState<string>("");
 
 	const handleOnChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -99,16 +109,19 @@ const TextAreaActionPreview = () => {
 		</>
 	);
 };`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const TextAreaSizePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<TextArea
 					fieldKey="smallTextArea"
 					placeholder="Insert some text ..."
@@ -127,8 +140,9 @@ const TextAreaSizePreview = () => {
 					size="large"
 				></TextArea>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => (
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<>
 		<TextArea
 			fieldKey="smallTextArea"
@@ -149,16 +163,19 @@ const TextAreaSizePreview = () => {
 		></TextArea>
 	</>
 );`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const TextAreaRowsPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<TextArea
 					fieldKey="rowsTextArea"
 					placeholder="Insert some text ..."
@@ -167,8 +184,9 @@ const TextAreaRowsPreview = () => {
 					resize
 				/>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => (
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<TextArea
 		fieldKey="rowsTextArea"
 		placeholder="Insert some text ..."
@@ -177,13 +195,15 @@ const TextAreaRowsPreview = () => {
 		resize
 	/>
 );`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const TextAreaStatePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
 	const [disabled, setDisabled] = useState<boolean>(false);
 
 	const handleDisableTextArea = () => {
@@ -192,7 +212,7 @@ const TextAreaStatePreview = () => {
 
 	return (
 		<>
-			<LePreview direction="column">
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<Button
 					onClick={handleDisableTextArea}
 					theme={!disabled ? "primary" : "danger"}
@@ -206,8 +226,9 @@ const TextAreaStatePreview = () => {
 					state={{ disabled }}
 				/>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	const [disabled, setDisabled] = useState<boolean>(false);
 
 	const handleDisableTextArea = () => {
@@ -231,13 +252,15 @@ const TextAreaStatePreview = () => {
 		</>
 	)
 }`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const TextAreaPropsPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(true);
 	const [value, setValue] = useState<string>("");
 
 	const handleOnChange = ({ target: { value } }: ChangeEvent<HTMLTextAreaElement>) => {
@@ -246,8 +269,8 @@ const TextAreaPropsPreview = () => {
 
 	return (
 		<>
-			<LePreview direction="column">
-				<Topography type="body-1">see the value here: {value}</Topography>
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
+				<Topography variant="body-1">see the value here: {value}</Topography>
 				<TextArea
 					textAreaProps={{
 						placeholder: "Insert your text here",
@@ -255,8 +278,9 @@ const TextAreaPropsPreview = () => {
 					}}
 				/>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	const [value, setValue] = useState<string>("");
 
 	const handleOnChange = ({ target: { value } }: ChangeEvent<HTMLTextAreaElement>) => {
@@ -265,7 +289,7 @@ const TextAreaPropsPreview = () => {
 
 	return (
 		<>
-			<Topography type="body-1">see the value here: {value}</Topography>
+			<Topography variant="body-1">see the value here: {value}</Topography>
 			<TextArea
 				textAreaProps={{
 					placeholder: "Insert your text here",
@@ -275,8 +299,9 @@ const TextAreaPropsPreview = () => {
 		</>
 	);		
 }`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };

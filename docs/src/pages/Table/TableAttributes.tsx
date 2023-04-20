@@ -37,6 +37,8 @@ const TableImportPreview = () => (
 );
 
 const TableConfigurationPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	const [tableConfig, _] = useState<TableProps>({
 		columns: [
 			{ header: "Name", key: "name" },
@@ -56,11 +58,12 @@ const TableConfigurationPreview = () => {
 
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Table {...tableConfig} />
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	const [tableConfig, _] = useState<TableProps>({
 		columns: [
 			{ header: "Name", key: "name" },
@@ -82,48 +85,53 @@ const TableConfigurationPreview = () => {
 		<Table {...tableConfig} />
 	)
 };`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
-const TableChildrenPreview = () => (
-	<>
-		<LePreview>
-			<Table>
-				<TableHeader>
-					<tr style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
-						<th>Name</th>
-						<th>Age</th>
-						<th>Address</th>
-						<th>Birthday</th>
-					</tr>
-				</TableHeader>
-				<TableBody>
-					<tr style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
-						<td>John</td>
-						<td>20</td>
-						<td>New York</td>
-						<td>01/01/2002</td>
-					</tr>
-					<tr style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
-						<td>Peter</td>
-						<td>25</td>
-						<td>London</td>
-						<td>01/01/1992</td>
-					</tr>
-					<tr style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
-						<td>Math</td>
-						<td>30</td>
-						<td>Paris</td>
-						<td>01/01/1982</td>
-					</tr>
-				</TableBody>
-			</Table>
-		</LePreview>
-		<LeHighlighter
-			code={`const Component = () => (
+const TableChildrenPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
+	return (
+		<>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
+				<Table>
+					<TableHeader>
+						<tr style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
+							<th>Name</th>
+							<th>Age</th>
+							<th>Address</th>
+							<th>Birthday</th>
+						</tr>
+					</TableHeader>
+					<TableBody>
+						<tr style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
+							<td>John</td>
+							<td>20</td>
+							<td>New York</td>
+							<td>01/01/2002</td>
+						</tr>
+						<tr style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
+							<td>Peter</td>
+							<td>25</td>
+							<td>London</td>
+							<td>01/01/1992</td>
+						</tr>
+						<tr style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
+							<td>Math</td>
+							<td>30</td>
+							<td>Paris</td>
+							<td>01/01/1982</td>
+						</tr>
+					</TableBody>
+				</Table>
+			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<Table>
 		<TableHeader>
 			<tr style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
@@ -155,12 +163,16 @@ const TableChildrenPreview = () => (
 		</TableBody>
 	</Table>
 );`}
-			language="tsx"
-		/>
-	</>
-);
+					language="tsx"
+				/>
+			)}
+		</>
+	);
+};
 
 const TableVariantPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	const [tableConfig, setTableConfig] = useState<TableProps>({
 		columns: [
 			{ header: "Name", key: "name" },
@@ -184,7 +196,7 @@ const TableVariantPreview = () => {
 
 	return (
 		<>
-			<LePreview direction="column">
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
 					<Button
 						theme={tableConfig.variant === "default" ? "primary" : "default"}
@@ -202,8 +214,9 @@ const TableVariantPreview = () => {
 				</div>
 				<Table {...tableConfig} />
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	const [tableConfig, setTableConfig] = useState<TableProps>({
 		columns: [
 			{ header: "Name", key: "name" },
@@ -244,13 +257,16 @@ const TableVariantPreview = () => {
 		</>
 	);
 };`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const TableSizePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	const [tableConfig, setTableConfig] = useState<TableProps>({
 		columns: [
 			{ header: "Name", key: "name" },
@@ -274,7 +290,7 @@ const TableSizePreview = () => {
 
 	return (
 		<>
-			<LePreview direction="column">
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				{tableConfig.columns && tableConfig.columns[0].order}
 				<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
 					<Button
@@ -303,8 +319,9 @@ const TableSizePreview = () => {
 				</div>
 				<Table {...tableConfig} />
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	const [tableConfig, setTableConfig] = useState<TableProps>({
 		columns: [
 			{ header: "Name", key: "name" },
@@ -352,13 +369,16 @@ const TableSizePreview = () => {
 		</>
 	);
 };`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const TableOrderPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	const orderFn = ({ key, order }: TableColumn) => {
 		getTodos({ key, order: order === "asc" ? "desc" : "asc" });
 	};
@@ -431,11 +451,12 @@ const TableOrderPreview = () => {
 
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Table {...tableConfig} />
 			</LePreview>
-			<LeHighlighter
-				code={`import axios from "axios";
+			{showCode && (
+				<LeHighlighter
+					code={`import axios from "axios";
 
 const Component = () => {
 	const orderFn = ({ key, order }: TableColumn) => {
@@ -510,13 +531,16 @@ const Component = () => {
 
 	return <Table {...tableConfig} />
 };`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const TablePaginationPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	const [tableConfig, setTableConfig] = useState<TableProps>({
 		columns: [
 			{ header: "#ID", key: "id" },
@@ -543,7 +567,7 @@ const TablePaginationPreview = () => {
 		},
 		totalItems: 0,
 		totalPages: 0,
-		showPaginationButtons: {
+		paginationButtons: {
 			next: true,
 			previous: true,
 		},
@@ -615,14 +639,15 @@ const TablePaginationPreview = () => {
 
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Box flex flexDirection="column" width="100%">
 					<Table {...tableConfig} />
 					<Pagination {...pagination} />
 				</Box>
 			</LePreview>
-			<LeHighlighter
-				code={`import axios from "axios";
+			{showCode && (
+				<LeHighlighter
+					code={`import axios from "axios";
 				
 const Component = () => {
 	const [tableConfig, setTableConfig] = useState<TableProps>({
@@ -717,13 +742,16 @@ const Component = () => {
 		<Table {...tableConfig} />
 	)
 }`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const TableStatePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	const [tableConfig, _] = useState<TableProps>({
 		columns: [
 			{ header: "Name", key: "name" },
@@ -749,7 +777,7 @@ const TableStatePreview = () => {
 
 	return (
 		<>
-			<LePreview direction="column">
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				{tableState && (
 					<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
 						<Button
@@ -786,71 +814,73 @@ const TableStatePreview = () => {
 				)}
 				<Table {...tableConfig} state={tableState} />
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
-	const [tableConfig, _] = useState<TableProps>({
-		columns: [
-			{ header: "Name", key: "name" },
-			{ header: "Age", key: "age" },
-			{ header: "Address", key: "address" },
-			{ header: "Birthday", key: "birthday" },
-		],
-		rows: [
-			{ name: "John", age: 20, address: "New York", birthday: "01/01/2002" },
-			{ name: "Peter", age: 25, address: "London", birthday: "01/01/1992" },
-			{ name: "Math", age: 30, address: "Paris", birthday: "01/01/1982" },
-		],
-		gridTemplateColumns: "repeat(4, minmax(120px, 1fr))",
-		variant: "default",
-		size: "medium",
-	});
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
+const [tableConfig, _] = useState<TableProps>({
+	columns: [
+		{ header: "Name", key: "name" },
+		{ header: "Age", key: "age" },
+		{ header: "Address", key: "address" },
+		{ header: "Birthday", key: "birthday" },
+	],
+	rows: [
+		{ name: "John", age: 20, address: "New York", birthday: "01/01/2002" },
+		{ name: "Peter", age: 25, address: "London", birthday: "01/01/1992" },
+		{ name: "Math", age: 30, address: "Paris", birthday: "01/01/1982" },
+	],
+	gridTemplateColumns: "repeat(4, minmax(120px, 1fr))",
+	variant: "default",
+	size: "medium",
+});
 
-	const [tableState, setTableState] = useState<TableState>({
-		disabled: false,
-		empty: false,
-		loading: true,
-	});
+const [tableState, setTableState] = useState<TableState>({
+	disabled: false,
+	empty: false,
+	loading: true,
+});
 
-	return (
-		<>
-			{tableState && (
-				<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
-					<Button
-						theme={tableState.loading ? "primary" : "default"}
-						variant="filled"
-						onClick={() => {
-							setTableState((curr) => ({ ...curr, loading: !curr.loading }));
-						}}
-						customStyles={{ marginRight: 12 }}
-					>
-						{tableState.loading ? "Stop Loading" : "Start Loading"}
-					</Button>
-					<Button
-						theme={!tableState.disabled ? "primary" : "danger"}
-						variant="filled"
-						onClick={() => {
-							setTableState((curr) => ({ ...curr, disabled: !curr.disabled }));
-						}}
-						customStyles={{ marginRight: 12 }}
-					>
-						{!tableState.disabled ? "On" : "Off"}
-					</Button>
-					<Button
-						theme={tableState.empty ? "danger" : "primary"}
-						variant="filled"
-						onClick={() => {
-							setTableState((curr) => ({ ...curr, empty: !curr.empty }));
-						}}
-						customStyles={{ marginRight: 12 }}
-					>
-						{tableState.empty ? "Empty" : "With Data"}
-					</Button>
-				</div>
+return (
+	<>
+		{tableState && (
+			<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
+				<Button
+					theme={tableState.loading ? "primary" : "default"}
+					variant="filled"
+					onClick={() => {
+						setTableState((curr) => ({ ...curr, loading: !curr.loading }));
+					}}
+					customStyles={{ marginRight: 12 }}
+				>
+					{tableState.loading ? "Stop Loading" : "Start Loading"}
+				</Button>
+				<Button
+					theme={!tableState.disabled ? "primary" : "danger"}
+					variant="filled"
+					onClick={() => {
+						setTableState((curr) => ({ ...curr, disabled: !curr.disabled }));
+					}}
+					customStyles={{ marginRight: 12 }}
+				>
+					{!tableState.disabled ? "On" : "Off"}
+				</Button>
+				<Button
+					theme={tableState.empty ? "danger" : "primary"}
+					variant="filled"
+					onClick={() => {
+						setTableState((curr) => ({ ...curr, empty: !curr.empty }));
+					}}
+					customStyles={{ marginRight: 12 }}
+				>
+					{tableState.empty ? "Empty" : "With Data"}
+				</Button>
+			</div>
+		)}
+		<Table {...tableConfig} state={tableState} />
+	</>;`}
+					language="tsx"
+				/>
 			)}
-			<Table {...tableConfig} state={tableState} />
-		</>;`}
-				language="tsx"
-			/>
 		</>
 	);
 };

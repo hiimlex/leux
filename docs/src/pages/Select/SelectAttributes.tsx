@@ -1,12 +1,7 @@
 import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { ChangeEvent, useState } from "react";
 import { Box, Button, Select, Topography } from "../../../../src";
-import {
-	SelectOption,
-	SelectSizes,
-	SelectState,
-	SelectVariants,
-} from "../../../../src/components/Select/Select.model";
+import { SelectOption, SelectState } from "../../../../src/components/Select/Select.model";
 import { attributes as selectAttr } from "./select.md";
 
 const SelectImportPreview = () => (
@@ -14,6 +9,8 @@ const SelectImportPreview = () => (
 );
 
 const SelectOptionsPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	const options: SelectOption[] = [
 		{
 			label: "Option 1",
@@ -23,7 +20,7 @@ const SelectOptionsPreview = () => {
 
 	return (
 		<>
-			<LePreview direction="column">
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<Box flex alignItems="center" justifyContent="center" customStyles={{ marginBottom: 12 }}>
 					<Topography variant="body-1" customStyles={{ marginRight: 12 }}>
 						With options prop
@@ -40,8 +37,9 @@ const SelectOptionsPreview = () => {
 					</Select>
 				</Box>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => (
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<>
 		<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
 			<Topography type="body-1" customStyles={{ marginRight: 12 }}>
@@ -62,16 +60,19 @@ const SelectOptionsPreview = () => {
 		</div>
 	</>
 )`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const SelectSizePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Select
 					options={[{ label: "Small", value: "small" }]}
 					size="small"
@@ -90,8 +91,9 @@ const SelectSizePreview = () => {
 					defaultValue="large"
 				></Select>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	return (
 		<Box flex alignItems="center" flexDirection="column">
 			<Select
@@ -116,16 +118,19 @@ const SelectSizePreview = () => {
 		</Box>
 	)
 }`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const SelectVariantPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Select
 					options={[{ label: "Outlined", value: "outlined" }]}
 					variant="outlined"
@@ -138,8 +143,9 @@ const SelectVariantPreview = () => {
 					defaultValue="filled"
 				></Select>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	return (
 		<Box flex flexDirection="column" alignItems="center">
 			<Select
@@ -156,13 +162,15 @@ const SelectVariantPreview = () => {
 		</Box>
 	)
 }`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const SelectActionPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
 	const [value, setValue] = useState<string>("");
 
 	const handleOnChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -173,7 +181,7 @@ const SelectActionPreview = () => {
 
 	return (
 		<>
-			<LePreview direction="column">
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<Topography>Value: {value}</Topography>
 				<Select
 					options={[
@@ -184,8 +192,9 @@ const SelectActionPreview = () => {
 					onChange={handleOnChange}
 				/>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	const [value, setValue] = useState<string>("");
 
 	const handleOnChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -208,13 +217,15 @@ const SelectActionPreview = () => {
 		</Box>
 	)
 };`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const SelectStatePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
 	const [state, setState] = useState<SelectState>({});
 
 	const disableSelect = () => {
@@ -223,7 +234,7 @@ const SelectStatePreview = () => {
 
 	return (
 		<>
-			<LePreview direction="column">
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<Button
 					onClick={disableSelect}
 					customStyles={{ marginBottom: 12 }}
@@ -245,8 +256,9 @@ const SelectStatePreview = () => {
 					showPlaceholderAsOption
 				/>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	const [state, setState] = useState<SelectState>({});
 
 	const disableSelect = () => {
@@ -271,25 +283,31 @@ const SelectStatePreview = () => {
 		</Box>
 	);
 };`}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const SelectCustomPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Select
 					options={[{ label: "Custom", value: "custom" }]}
 					customClass="custom-select"
 					customStyles={{ background: "red", color: "white", border: "2px solid blue" }}
 				/>
 			</LePreview>
-			<LeHighlighter
-				language="tsx"
-				code={`// index.tsx
+			{showCode && (
+				<>
+					{" "}
+					<LeHighlighter
+						language="tsx"
+						code={`// index.tsx
 const Component = () => {
 	return (
 		<>
@@ -301,10 +319,10 @@ const Component = () => {
 		</>
 	);
 };`}
-			/>
-			<LeHighlighter
-				language="scss"
-				code={`// styles.scss
+					/>
+					<LeHighlighter
+						language="scss"
+						code={`// styles.scss
 .custom-select {
 	&:hover,
 	&:focus,
@@ -313,7 +331,9 @@ const Component = () => {
 		background: black !important;
 	}
 }`}
-			/>
+					/>
+				</>
+			)}
 		</>
 	);
 };

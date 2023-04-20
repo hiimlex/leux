@@ -7,29 +7,33 @@ const ButtonImportPreview = () => (
 	<LeHighlighter language="tsx" code={`import { Button, ButtonProps } from "leux";`} />
 );
 
-const ButtonThemePreview = () => (
-	<>
-		<LePreview>
-			<Button theme="primary" customStyles={{ marginRight: 12 }}>
-				Primary
-			</Button>
-			<Button theme="secondary" customStyles={{ marginRight: 12 }}>
-				Secondary
-			</Button>
-			<Button theme="success" customStyles={{ marginRight: 12 }}>
-				Success
-			</Button>
-			<Button theme="warning" customStyles={{ marginRight: 12 }}>
-				Warning
-			</Button>
-			<Button theme="danger" customStyles={{ marginRight: 12 }}>
-				Danger
-			</Button>
-			<Button theme="default">Default</Button>
-		</LePreview>
-		<LeHighlighter
-			language="tsx"
-			code={`const Component = () => (
+const ButtonThemePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
+	return (
+		<>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
+				<Button theme="primary" customStyles={{ marginRight: 12 }}>
+					Primary
+				</Button>
+				<Button theme="secondary" customStyles={{ marginRight: 12 }}>
+					Secondary
+				</Button>
+				<Button theme="success" customStyles={{ marginRight: 12 }}>
+					Success
+				</Button>
+				<Button theme="warning" customStyles={{ marginRight: 12 }}>
+					Warning
+				</Button>
+				<Button theme="danger" customStyles={{ marginRight: 12 }}>
+					Danger
+				</Button>
+				<Button theme="default">Default</Button>
+			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => (
 	<>
 		<Button theme="primary">Primary</Button>
 		<Button theme="secondary">Secondary</Button>
@@ -39,26 +43,32 @@ const ButtonThemePreview = () => (
 		<Button theme="default">Default</Button>
 	</>
 );`}
-		/>
-	</>
-);
+				/>
+			)}
+		</>
+	);
+};
 
-const ButtonVariantPreview = () => (
-	<>
-		<LePreview>
-			<Button theme="primary" variant="filled" customStyles={{ marginRight: 12 }}>
-				Filled
-			</Button>
-			<Button theme="success" variant="outlined" customStyles={{ marginRight: 12 }}>
-				Outlined
-			</Button>
-			<Button theme="danger" variant="ghost">
-				Ghost
-			</Button>
-		</LePreview>
-		<LeHighlighter
-			language="tsx"
-			code={`const Component = () => (
+const ButtonVariantPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
+	return (
+		<>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
+				<Button theme="primary" variant="filled" customStyles={{ marginRight: 12 }}>
+					Filled
+				</Button>
+				<Button theme="success" variant="outlined" customStyles={{ marginRight: 12 }}>
+					Outlined
+				</Button>
+				<Button theme="danger" variant="ghost">
+					Ghost
+				</Button>
+			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => (
 	<>
 		<Button theme="primary" variant="filled">
 			Filled
@@ -71,37 +81,44 @@ const ButtonVariantPreview = () => (
 		</Button>
 	</>
 );`}
-		/>
-	</>
-);
+				/>
+			)}
+		</>
+	);
+};
 
-const ButtonSizePreview = () => (
-	<>
-		<LePreview>
-			<Button theme="default" size="small" customStyles={{ marginRight: 12 }}>
-				Small
-			</Button>
-			<Button theme="default" customStyles={{ marginRight: 12 }}>
-				Medium
-			</Button>
-			<Button theme="default" size="large">
-				Large
-			</Button>
-		</LePreview>
-		<LeHighlighter
-			language="tsx"
-			code={`const Component = () => (
+const ButtonSizePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
+	return (
+		<>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
+				<Button theme="default" size="small" customStyles={{ marginRight: 12 }}>
+					Small
+				</Button>
+				<Button theme="default" customStyles={{ marginRight: 12 }}>
+					Medium
+				</Button>
+				<Button theme="default" size="large">
+					Large
+				</Button>
+			</LePreview>
+			<LeHighlighter
+				language="tsx"
+				code={`const Component = () => (
 	<>
 		<Button theme="default" size="small">Small</Button>
 		<Button theme="default" size="medium">Medium</Button>
 		<Button theme="default" size="large">Large</Button>
 	</>
 );`}
-		/>
-	</>
-);
+			/>
+		</>
+	);
+};
 
 const ButtonStatePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
 	const [disabled, setDisabled] = useState(true);
 
 	const handleOnClick = () => {
@@ -110,7 +127,7 @@ const ButtonStatePreview = () => {
 
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Button
 					theme={disabled ? "primary" : "danger"}
 					onClick={handleOnClick}
@@ -122,9 +139,10 @@ const ButtonStatePreview = () => {
 					{disabled ? "disabled" : "enabled"}
 				</Button>
 			</LePreview>
-			<LeHighlighter
-				language="tsx"
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => {
 	const [disabled, setDisabled] = useState(true);
 
 	const handleOnClick = () => {
@@ -145,31 +163,35 @@ const ButtonStatePreview = () => {
 		</>
 	);
 };`}
-			/>
+				/>
+			)}
 		</>
 	);
 };
 
 const ButtonActionPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
 	const handleOnClick = () => alert("Hello World!");
 
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Button onClick={handleOnClick} theme="success">
 					Alert
 				</Button>
 			</LePreview>
-			<LeHighlighter
-				language="tsx"
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => {
 	const handleOnClick = () => alert("Hello World!");
 
 	return (
 		<Button onClick={handleOnClick} theme="success">Alert</Button>
 	);
 };`}
-			/>
+				/>
+			)}
 		</>
 	);
 };

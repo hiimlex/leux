@@ -36,10 +36,6 @@ You can install this package using the following commands
 
 ```bash
 npm install leux
-
-# or
-
-yarn add leux
 ```
 
 ### ✨ CSS
@@ -59,7 +55,6 @@ To upload the CSS styles, you can move the **leux.min.css** from the **node_modu
   - [x] Badge
   - [x] Box
   - [x] Button
-  - [ ] Collapse
   - [ ] Dropdown
   - [x] Form
     - [x] Checkbox

@@ -8,6 +8,8 @@ const PaginationImportPreview = () => (
 );
 
 const PaginationConfigurationPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	const [paginationConfig, _setPaginationConfig] = useState<PaginationProps>({
 		currentPage: 1,
 		itemsPerPage: 10,
@@ -17,12 +19,13 @@ const PaginationConfigurationPreview = () => {
 
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Pagination {...paginationConfig}></Pagination>
 			</LePreview>
-			<LeHighlighter
-				language="tsx"
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => {
 	const [paginationConfig, _setPaginationConfig] = useState<PaginationProps>({
 		currentPage: 1,
 		itemsPerPage: 10,
@@ -34,12 +37,15 @@ const PaginationConfigurationPreview = () => {
 		<Pagination {...paginationConfig}></Pagination>
 	)
 };`}
-			/>
+				/>
+			)}
 		</>
 	);
 };
 
 const PaginationActionPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	const [paginationConfig, setPaginationConfig] = useState<PaginationProps>({
 		currentPage: 1,
 		itemsPerPage: 10,
@@ -53,12 +59,13 @@ const PaginationActionPreview = () => {
 
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Pagination {...paginationConfig} onPageChange={handleOnPageChange} />
 			</LePreview>
-			<LeHighlighter
-				language="tsx"
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => {
 	const [paginationConfig, setPaginationConfig] = useState<PaginationProps>({
 		currentPage: 1,
 		itemsPerPage: 10,
@@ -74,12 +81,14 @@ const PaginationActionPreview = () => {
 		<Pagination {...paginationConfig} onPageChange={handleOnPageChange} />
 	)
 };`}
-			/>
+				/>
+			)}
 		</>
 	);
 };
 
 const PaginationButtonsPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
 	const [paginationConfig, setPaginationConfig] = useState<PaginationProps>({
 		currentPage: 1,
 		itemsPerPage: 10,
@@ -99,12 +108,13 @@ const PaginationButtonsPreview = () => {
 
 	return (
 		<>
-			<LePreview direction="column">
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<Pagination {...paginationConfig} onPageChange={handleOnPageChange} />
 			</LePreview>
-			<LeHighlighter
-				language="tsx"
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => {
 	const [paginationConfig, setPaginationConfig] = useState<PaginationProps>({
 		currentPage: 1,
 		itemsPerPage: 10,
@@ -134,12 +144,15 @@ const PaginationButtonsPreview = () => {
 		/>
 	);
 };`}
-			/>
+				/>
+			)}
 		</>
 	);
 };
 
 const PaginationLabelPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	const [paginationConfig, setPaginationConfig] = useState<PaginationProps>({
 		currentPage: 1,
 		itemsPerPage: 10,
@@ -155,12 +168,13 @@ const PaginationLabelPreview = () => {
 
 	return (
 		<>
-			<LePreview>
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<Pagination {...paginationConfig} onPageChange={handleOnPageChange} />
 			</LePreview>
-			<LeHighlighter
-				language="tsx"
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => {
 	const [paginationConfig, setPaginationConfig] = useState<PaginationProps>({
 		currentPage: 1,
 		itemsPerPage: 10,
@@ -186,7 +200,8 @@ const PaginationLabelPreview = () => {
 		/>
 	);
 };`}
-			/>
+				/>
+			)}
 		</>
 	);
 };
