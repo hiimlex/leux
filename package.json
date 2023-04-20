@@ -1,6 +1,6 @@
 {
 	"name": "leux",
-	"version": "0.1.9",
+	"version": "0.2.0",
 	"homepage": "https://leux.vercel.app/",
 	"description": "React components library",
 	"publishConfig": {
