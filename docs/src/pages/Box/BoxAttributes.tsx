@@ -2,15 +2,18 @@ import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { NavLink } from "react-router-dom";
 import { Box } from "../../../../src";
 import { attributes as boxAttr } from "./box.md";
+import { useState } from "react";
 
 const ImportPreview = () => {
 	return <LeHighlighter code={`import { Box, BoxProps } from "leux";`} language="tsx" />;
 };
 
 const BoxCssPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Box
 					padding="30px"
 					height="100px"
@@ -22,9 +25,10 @@ const BoxCssPreview = () => {
 					CSS Properties example
 				</Box>
 			</LePreview>
-			<LeHighlighter
-				language="tsx"
-				code={`const Component = () => (
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => (
 	<Box
 		padding="30px"
 		height="100px"
@@ -36,15 +40,18 @@ const BoxCssPreview = () => {
 		CSS Properties example
 	</Box>
 );`}
-			/>
+				/>
+			)}
 		</>
 	);
 };
 
 const BoxCompletePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Box
 					customClass="le-text--body-1"
 					customStyles={{ fontWeight: 600 }}
@@ -59,9 +66,10 @@ const BoxCompletePreview = () => {
 					Complete box
 				</Box>
 			</LePreview>
-			<LeHighlighter
-				language="tsx"
-				code={`const Component = () => (
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => (
 	<Box
 		customClass="le-text--body-1"
 		customStyles={{ fontWeight: 600 }}
@@ -76,15 +84,18 @@ const BoxCompletePreview = () => {
 		Complete box
 	</Box>
 );`}
-			/>
+				/>
+			)}
 		</>
 	);
 };
 
 const BoxCustomPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Box
 					customClass="le-color-text--primary le-color-bg--default le-text--body-2"
 					customStyles={{
@@ -97,9 +108,10 @@ const BoxCustomPreview = () => {
 					with custom CSS and Classes
 				</Box>
 			</LePreview>
-			<LeHighlighter
-				language="tsx"
-				code={`const Component = () => (
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => (
 	<Box
 		customClass="le-color-text--primary le-color-bg--default le-text--body-2"
 		customStyles={{
@@ -112,33 +124,39 @@ const BoxCustomPreview = () => {
 		with custom CSS and Classes
 	</Box>
 );`}
-			/>
+				/>
+			)}
 		</>
 	);
 };
 
 const BoxCenteredPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Box
 					centered
 					padding={12}
 					bgColor="default"
 					textColor="darker"
 					customClass="le-text--body-1"
+					width="100%"
 				>
 					text will be centered
 				</Box>
 			</LePreview>
-			<LeHighlighter
-				language="tsx"
-				code={`const Component = () = (
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () = (
 	<Box centered padding={12} bgColor="default" textColor="darker">
 		text will be centered
 	</Box>
 );`}
-			/>
+				/>
+			)}
 		</>
 	);
 };

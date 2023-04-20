@@ -43,6 +43,7 @@ const Pagination = ({
 		<div
 			className={classNames["pagination"]({ customClass, size })}
 			style={{ justifyContent, ...customStyles }}
+			data-testid="leuxPagination"
 		>
 			{showPaginationLabel && (
 				<span className={classNames["paginationLabel"]()}>

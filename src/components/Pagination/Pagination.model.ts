@@ -17,7 +17,7 @@ interface PaginationProps {
 	totalPages: number;
 	totalItems: number;
 	itemsPerPage: number;
-	simplePagination: boolean;
+	simplePagination?: boolean;
 	paginationButtons?: PaginationButtons;
 	size?: PaginationSizes;
 	justifyContent?: React.CSSProperties["justifyContent"];

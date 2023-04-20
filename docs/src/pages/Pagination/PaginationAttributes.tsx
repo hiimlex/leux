@@ -149,10 +149,14 @@ const PaginationLabelPreview = () => {
 			`CurrentPage=${currentPage}, ItemsPerPage=${itemsPerPage}, TotalItems=${totalItems}`,
 	});
 
+	const handleOnPageChange = (page: number) => {
+		setPaginationConfig({ ...paginationConfig, currentPage: page });
+	};
+
 	return (
 		<>
 			<LePreview>
-				<Pagination {...paginationConfig} />
+				<Pagination {...paginationConfig} onPageChange={handleOnPageChange} />
 			</LePreview>
 			<LeHighlighter
 				language="tsx"
