@@ -53,7 +53,6 @@ Use the `paginationButtons` prop to configure the pagination buttons. The follow
 - `next` - The previous button
 - `limit` - The number of buttons to display
 
-
 <div>
 <PaginationButtonsPreview>
 </PaginationButtonsPreview>
