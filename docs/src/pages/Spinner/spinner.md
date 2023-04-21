@@ -81,27 +81,27 @@ Use the `custom` prefix props to change the spinner custom styles.
 <tr>
 <td>customSpeed</td>
 <td><LeHighlighter language="tsx" code="React.CSSProperties['animationDelay']" style="soft" copy="off"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>customSize</td>
 <td><LeHighlighter language="tsx" code="React.CSSProperties['width']" style="soft" copy="off"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>customColor</td>
 <td><LeHighlighter language="tsx" code="React.CSSProperties['borderColor']" style="soft" copy="off"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>customStyles</td>
 <td><LeHighlighter language="tsx" code="React.CSSProperties" style="soft" copy="off"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>customClass</td>
 <td><LeHighlighter language="tsx" code="string" style="soft" copy="off"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 </tbody>
 </table>

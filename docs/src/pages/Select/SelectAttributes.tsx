@@ -253,7 +253,6 @@ const SelectStatePreview = () => {
 					]}
 					state={state}
 					placeholder="Select one option"
-					showPlaceholderAsOption
 				/>
 			</LePreview>
 			{showCode && (
@@ -278,7 +277,6 @@ const SelectStatePreview = () => {
 				options={[{ label: "Option 1", value: "option1" }]}
 				state={state}
 				placeholder="Select one option"
-				showPlaceholderAsOption
 			/>
 		</Box>
 	);
@@ -304,7 +302,6 @@ const SelectCustomPreview = () => {
 			</LePreview>
 			{showCode && (
 				<>
-					{" "}
 					<LeHighlighter
 						language="tsx"
 						code={`// index.tsx

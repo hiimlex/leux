@@ -20,4 +20,12 @@ describe("Spinner component test", () => {
 
 		expect(spinner).toHaveClass("le-spinner--small");
 	});
+
+	it("should render a Spinner component with default variant", () => {
+		const { getByTestId } = render(<Spinner variant="circle" />);
+
+		const spinner = getByTestId("leuxSpinner");
+
+		expect(spinner).toHaveClass("le-spinner--circle");
+	});
 });

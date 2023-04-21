@@ -101,7 +101,7 @@ Use the `state` prop to set the state of the field. Pass `disabled` to disable t
 <tr>
 <td>fieldKey</td>
 <td><LeHighlighter language="tsx" code="string" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>size</td>
@@ -116,27 +116,27 @@ Use the `state` prop to set the state of the field. Pass `disabled` to disable t
 <tr>
 <td>width</td>
 <td><LeHighlighter language="tsx" code="React.CSSProperties['width']" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>placeholder</td>
 <td><LeHighlighter language="tsx" code="string" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>defaultValue</td>
 <td><LeHighlighter language="tsx" code="string" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>onChange</td>
 <td><LeHighlighter code="(value: ChangeEvent<HTMLTextAreaElement>) => void" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>state</td>
 <td><LeHighlighter code="TextAreaState | { disabled?: boolean }" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>minRows</td>
@@ -156,22 +156,22 @@ Use the `state` prop to set the state of the field. Pass `disabled` to disable t
 <tr>
 <td>customClass</td>
 <td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>customStyles</td>
 <td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>textAreaProps</td>
 <td><LeHighlighter code="React.TextareaHTMLAttributes<HTMLTextAreaElement>" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>textAreaRef</td>
 <td><LeHighlighter code="React.Ref<HTMLTextAreaElement>" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 </tbody>
 </table>

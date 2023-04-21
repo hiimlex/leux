@@ -45,6 +45,7 @@ To upload the CSS styles, you can move the **leux.min.css** from the **node_modu
 ### To-do
 
 - adjust all API reference from components page
+- set required on props API reference
 - improve tests and test coverage
 
 ## Next steps:

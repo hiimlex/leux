@@ -92,17 +92,17 @@ Use the `onClick` prop to trigger an action when the button is clicked.
 <tr>
 <td>onClick</td>
 <td><LeHighlighter language="tsx" code="() => void" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>customClass</td>
 <td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>customStyles</td>
 <td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 </tbody>
 </table>
