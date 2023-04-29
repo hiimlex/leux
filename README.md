@@ -10,7 +10,7 @@
   <img alt="#npm" src="https://img.shields.io/npm/dm/leux">
 </a>
 <a href="https://nodejs.org/en/blog/release/v14.17.3/" target="\_parent">
-  <img alt="#node" src="https://img.shields.io/badge/node-%3D%3E14.17.3-purple">
+  <img alt="#node" src="https://img.shields.io/badge/node-%3D%3E16.14.0-purple">
 </a>
 
 <div>

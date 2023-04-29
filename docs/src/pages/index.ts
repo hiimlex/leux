@@ -4,6 +4,7 @@ export { default as BoxPage } from "./Box";
 export { default as ButtonPage } from "./Button";
 export { default as CSSPage } from "./CSS";
 export { default as CheckboxPage } from "./Checkbox";
+export { default as DropdownPage } from "./Dropdown";
 export { default as GridPage } from "./Grid";
 export { default as InputPage } from "./Input";
 export { default as InstallationPage } from "./Installation";

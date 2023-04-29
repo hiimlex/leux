@@ -1,35 +1,13 @@
 @import "../../styles/variables.scss";
 
 .le-modal {
-	&--provider {
-		position: fixed;
-		width: 100vw;
-		height: 100vh;
-		overflow: hidden;
-		z-index: 999;
-		background: rgba(0, 0, 0, 0.2);
-	}
-
-	&--wrapper {
-		position: relative;
-		width: 100vw;
-		height: 100vh;
-
-		overflow: hidden;
-		overflow-y: auto;
-
-		&-centered {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-	}
-
 	display: flex;
 	flex-direction: column;
 
 	background: $color-lighter-background;
 	border-radius: 12px;
+
+	animation: le-modal--animation 0.1s ease-in-out;
 
 	&--header {
 		display: flex;
@@ -90,5 +68,41 @@
 				margin-left: 0;
 			}
 		}
+	}
+
+	&--provider {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		overflow: hidden;
+		z-index: 999;
+		background: rgba(0, 0, 0, 0.2);
+	}
+
+	&--wrapper {
+		position: relative;
+		width: 100vw;
+		height: 100vh;
+
+		overflow: hidden;
+		overflow-y: auto;
+
+		&-centered {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}
+
+@keyframes le-modal--animation {
+	0% {
+		opacity: 0;
+		transform: scale(0.8);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
 	}
 }

@@ -28,7 +28,7 @@
 		background: #ececec;
 	}
 
-	ul {
+	ul:not(.le-dropdown) {
 		margin: 12px 0;
 		font-size: 0.875rem;
 	}
