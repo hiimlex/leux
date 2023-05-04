@@ -211,7 +211,7 @@ Use the `DropdownSeparator` prop to add a separator between the `DropdownItem` c
 <tr>
 <th width="10%">Prop</th>
 <th width="70%">Type</th>
-<th width="20%">Default</th>
+<th width="20%">Defaul t</th>
 </tr>
 </thead>
 <tbody>
