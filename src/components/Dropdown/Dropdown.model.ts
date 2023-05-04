@@ -26,13 +26,14 @@ interface DropdownItemProps {
 	children?: ReactNode;
 	noBreakWord?: boolean;
 	onClick?: (event?: ReactMouseEvent<HTMLLIElement, MouseEvent>) => void;
-	customStyles?: React.CSSProperties;
-	customClass?: string;
+	disabled?: boolean;
 	itemProps?: React.HTMLAttributes<HTMLLIElement>;
 	closeOnClick?: boolean;
 	centered?: boolean;
 	readonly setShow?: React.Dispatch<React.SetStateAction<boolean>>;
 	readonly trigger?: DropdownTrigger;
+	customClass?: string;
+	customStyles?: React.CSSProperties;
 }
 
 export { DropdownProps, DropdownItemProps, DropdownVariant, DropdownSize };

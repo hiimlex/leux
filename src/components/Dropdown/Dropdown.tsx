@@ -20,7 +20,7 @@ const Dropdown = ({
 	clickOutside = true,
 	closeOnClick = true,
 	trigger = "click",
-	width,
+	width = "100%",
 	customWrapperStyles,
 	customWrapperClass,
 }: DropdownProps) => {
@@ -68,7 +68,6 @@ const Dropdown = ({
 	useEffect(() => {
 		if (trigger === "hover") {
 			setShow(true);
-			clickOutside = false;
 		}
 	}, [trigger]);
 
@@ -79,13 +78,26 @@ const Dropdown = ({
 			id={randomId}
 			className={classNames["leDropdownWrapper"]()}
 			style={{ ...customWrapperStyles }}
+			data-testid="leuxDropdownWrapper"
 		>
-			<div className={classNames["leDropdownAnchor"]()} onClick={handleClickTrigger}>
+			<div
+				className={classNames["leDropdownAnchor"]()}
+				onClick={handleClickTrigger}
+				data-testid="leuxDropdownAnchor"
+			>
 				{anchor ? anchor : <Button>Toggle</Button>}
 			</div>
 			{show && (
-				<div className={classNames["leDropdownMenuWrapper"]()} style={{ width }}>
-					<ul className={classNames["leDropdownMenu"]()} {...menuProps}>
+				<div
+					className={classNames["leDropdownMenuWrapper"]()}
+					style={{ width }}
+					data-testid="leuxDropdownMenuWrapper"
+				>
+					<ul
+						className={classNames["leDropdownMenu"]()}
+						{...menuProps}
+						data-testid="leuxDropdownMenu"
+					>
 						{Children.map(childrenArr, (child) => {
 							return cloneElement(child as React.ReactElement, { setShow, closeOnClick, trigger });
 						})}
@@ -106,15 +118,18 @@ const DropdownItem = ({
 	closeOnClick = true,
 	trigger,
 	centered = true,
+	disabled,
 }: DropdownItemProps) => {
 	const classNames: LeClassNames = {
 		leDropdownItem: () =>
 			`le-dropdown--item ${noBreakWord ? "le-dropdown--item-no-break" : ""}${customClass || ""}${
 				centered ? " le-dropdown--item-centered" : ""
-			}`,
+			}${disabled ? " le-dropdown--item-disabled" : ""}`,
 	};
 
 	const handleOnClick = (event?: ReactMouseEvent<HTMLLIElement, MouseEvent>) => {
+		if (disabled) return;
+
 		onClick && onClick(event);
 
 		if (closeOnClick && trigger === "click" && setShow) {
@@ -123,12 +138,19 @@ const DropdownItem = ({
 	};
 
 	return (
-		<li onClick={handleOnClick} className={classNames["leDropdownItem"]()} style={customStyles}>
+		<li
+			onClick={handleOnClick}
+			className={classNames["leDropdownItem"]()}
+			style={customStyles}
+			data-testid="leuxDropdownItem"
+		>
 			{children}
 		</li>
 	);
 };
 
-const DropdownSeparator = () => <li className="le-dropdown--separator"></li>;
+const DropdownSeparator = () => (
+	<li className="le-dropdown--separator" data-testid="leuxDropdownSeparator"></li>
+);
 
 export { Dropdown, DropdownItem, DropdownSeparator };

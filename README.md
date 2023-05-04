@@ -52,11 +52,10 @@ To upload the CSS styles, you can move the **leux.min.css** from the **node_modu
 
 - [ ] components
   - [x] Avatar
-  - [ ] Alert
   - [x] Badge
   - [x] Box
   - [x] Button
-  - [ ] Dropdown
+  - [x] Dropdown
   - [x] Form
     - [x] Checkbox
     - [x] Input

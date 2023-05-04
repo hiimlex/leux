@@ -207,7 +207,25 @@ const DropdownSeparatorPreview = () => {
 	);
 };
 
+const DropdownItemDisabledPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
+	return (
+		<>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
+				<Dropdown>
+					<DropdownItem onClick={() => alert("1")}>Alert 1</DropdownItem>
+					<DropdownItem disabled onClick={() => alert("2")}>
+						Alert 2
+					</DropdownItem>
+				</Dropdown>
+			</LePreview>
+		</>
+	);
+};
+
 dropdownAttr["LeSourceButton"] = LeSourceButton;
+dropdownAttr["LeHighlighter"] = LeHighlighter;
 dropdownAttr["DropdownImportPreview"] = DropdownImportPreview;
 dropdownAttr["DropdownVariantPreview"] = DropdownVariantPreview;
 dropdownAttr["DropdownAnchorPreview"] = DropdownAnchorPreview;
@@ -216,5 +234,6 @@ dropdownAttr["DropdownPositionPreview"] = DropdownPositionPreview;
 dropdownAttr["DropdownTriggerPreview"] = DropdownTriggerPreview;
 dropdownAttr["DropdownItemPreview"] = DropdownItemPreview;
 dropdownAttr["DropdownSeparatorPreview"] = DropdownSeparatorPreview;
+dropdownAttr["DropdownItemDisabledPreview"] = DropdownItemDisabledPreview;
 
 export { dropdownAttr };

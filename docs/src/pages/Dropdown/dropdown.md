@@ -86,6 +86,17 @@ Use the `onClick` prop to handle the click event of the `DropdownItem` component
 
 <br />
 
+#### Disabled
+
+Use the `disabled` prop to disable the `DropdownItem` component.
+
+<div>
+<DropdownItemDisabledPreview>
+</DropdownItemDisabledPreview>
+</div>
+
+<br/>
+
 #### Separator
 
 Use the `DropdownSeparator` prop to add a separator between the `DropdownItem` components.
@@ -99,4 +110,158 @@ Use the `DropdownSeparator` prop to add a separator between the `DropdownItem` c
 
 ### API Reference
 
+#### Dropdown Props
+
+<div>
+<table>
+<thead>
+<tr>
+<th width="10%">Prop</th>
+<th width="70%">Type</th>
+<th width="20%">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size</td>
+<td><LeHighlighter language="tsx" code="'small' | 'medium' | 'large'" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="'medium'" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>variant</td>
+<td><LeHighlighter language="tsx" code="'outlined' | 'filled'" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="'filled'" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>position</td>
+<td><LeHighlighter language="tsx" code="'bl' | 'br' | 'tl' | 'tr'" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="'bl'" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>trigger</td>
+<td><LeHighlighter language="tsx" code="'click' | 'hover'" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="'click'" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>onClick</td>
+<td><LeHighlighter language="tsx" code="() => void" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="() => void" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>children</td>
+<td><LeHighlighter language="tsx" code="ReactNode" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>clickOutside</td>
+<td><LeHighlighter language="tsx" code="boolean" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="true" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>closeOnClick</td>
+<td><LeHighlighter language="tsx" code="boolean" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="true" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>width</td>
+<td><LeHighlighter language="tsx" code="React.CSSProperties['width']" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="'100%'" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>anchor</td>
+<td><LeHighlighter language="tsx" code="ReactNode" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="<Button />" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>customWrapperClass</td>
+<td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>customWrapperStyles</td>
+<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>customMenuClass</td>
+<td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>customMenuStyles</td>
+<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>menuProps</td>
+<td><LeHighlighter code="React.HTMLAttributes<HTMLUListElement>" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+</tbody>
+</table>
+</div>
+
 <br/>
+
+#### DropdownItem Props
+
+<div>
+<table>
+<thead>
+<tr>
+<th width="10%">Prop</th>
+<th width="70%">Type</th>
+<th width="20%">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>noBreakWord</td>
+<td><LeHighlighter language="tsx" code="boolean" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="true" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>children</td>
+<td><LeHighlighter language="tsx" code="ReactNode" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>closeOnClick</td>
+<td><LeHighlighter language="tsx" code="boolean" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="true" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>disabled</td>
+<td><LeHighlighter language="tsx" code="boolean" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>centered</td>
+<td><LeHighlighter language="tsx" code="boolean" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="true" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>onClick</td>
+<td><LeHighlighter language="tsx" code="(event?: ReactMouseEvent<HTMLLIElement, MouseEvent) => void" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>customClass</td>
+<td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>customStyles</td>
+<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+<tr>
+<td>itemProps</td>
+<td><LeHighlighter code="React.HTMLAttributes<HTMLLIElement>" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<br />

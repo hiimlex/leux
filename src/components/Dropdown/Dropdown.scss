@@ -137,6 +137,12 @@
 	&-no-break {
 		white-space: nowrap;
 	}
+
+	&-disabled {
+		cursor: not-allowed !important;
+		background: $color-variant-disabled !important;
+		color: $color-darker-text !important;
+	}
 }
 
 .le-dropdown--separator {
@@ -146,6 +152,7 @@
 	display: flex;
 	width: 100%;
 	background-color: $color-variant-border-hover;
+	pointer-events: none;
 }
 
 @keyframes le-dropdown--animation {
