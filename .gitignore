@@ -3,6 +3,7 @@ node_modules
 dist
 storybook-static
 web
+.husky
 package-lock.json
 
 # Coverage directory
