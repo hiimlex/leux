@@ -34,6 +34,17 @@ The following attributes shows how to configure the pagination.
 
 <br />
 
+#### Sizes
+
+Use the `size` prop to configure the pagination size.
+
+<div>
+<PaginationSizePreview>
+</PaginationSizePreview>
+</div>
+
+<br />
+
 #### Action
 
 Use the `onPageChange` prop to handle the page change.
@@ -116,12 +127,12 @@ Use the `showPaginationLabel` prop to show the pagination label. The following a
 <tr>
 <td>onPageChange</td>
 <td><LeHighlighter language="tsx" code="(page: number) => void" style="soft" copy="off"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>justifyContent</td>
 <td><LeHighlighter language="tsx" code="React.CSSProperties['justifyContent']" style="soft" copy="off"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>simplePagination</td>
@@ -149,12 +160,12 @@ Use the `showPaginationLabel` prop to show the pagination label. The following a
 <tr>
 <td>customStyles</td>
 <td><LeHighlighter language="tsx" code="React.CSSProperties" style="soft" copy="off"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>customClass</td>
 <td><LeHighlighter language="tsx" code="string" style="soft" copy="off"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 </tbody>
 </table>

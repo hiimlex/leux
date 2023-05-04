@@ -10,7 +10,7 @@
   <img alt="#npm" src="https://img.shields.io/npm/dm/leux">
 </a>
 <a href="https://nodejs.org/en/blog/release/v14.17.3/" target="\_parent">
-  <img alt="#node" src="https://img.shields.io/badge/node-%3D%3E14.17.3-purple">
+  <img alt="#node" src="https://img.shields.io/badge/node-%3D%3E16.14.0-purple">
 </a>
 
 <div>
@@ -44,18 +44,18 @@ To upload the CSS styles, you can move the **leux.min.css** from the **node_modu
 
 ### To-do
 
-- Table Component
+- adjust all API reference from components page
+- set required on props API reference
 - improve tests and test coverage
 
 ## Next steps:
 
 - [ ] components
   - [x] Avatar
-  - [ ] Alert
   - [x] Badge
   - [x] Box
   - [x] Button
-  - [ ] Dropdown
+  - [x] Dropdown
   - [x] Form
     - [x] Checkbox
     - [x] Input

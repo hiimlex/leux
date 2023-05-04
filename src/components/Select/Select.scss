@@ -10,6 +10,29 @@
 	-webkit-appearance: none;
 	color: $color-dark-text;
 
+	&--wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: fit-content;
+		height: fit-content;
+
+		position: relative;
+	}
+
+	&--clear {
+		position: absolute;
+		right: 8px;
+		z-index: 3;
+		font-size: 14px;
+		color: $color-dark-text;
+
+		&:hover {
+			cursor: pointer;
+			color: $color-darker-text;
+		}
+	}
+
 	&--filled {
 		background-color: $color-variant-border;
 		color: $color-dark-text;

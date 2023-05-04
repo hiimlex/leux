@@ -134,37 +134,37 @@ It's possible to change the default empty value by using the `emptyValue` attrib
 <tr>
 <td>width</td>
 <td><LeHighlighter language="tsx" code="React.CSSProperties['width']" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>height</td>
 <td><LeHighlighter language="tsx" code="React.CSSProperties['height']" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>state</td>
 <td><LeHighlighter language="tsx" code="TableState | { loading?: boolean; disabled?: boolean; empty?: boolean }" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>customClass</td>
 <td><LeHighlighter language="tsx" code="string" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>customStyles</td>
 <td><LeHighlighter language="tsx" code="React.CSSProperties" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>customWrapperClass</td>
 <td><LeHighlighter language="tsx" code="string" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>customWrapperStyles</td>
 <td><LeHighlighter language="tsx" code="React.CSSProperties" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 </table>
 </div>
@@ -185,39 +185,39 @@ It's possible to change the default empty value by using the `emptyValue` attrib
 <tr>
 <td>children</td>
 <td><LeHighlighter language="tsx" code="React.ReactNode" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>rows</td>
 <td><LeHighlighter language="tsx" code="TableRow | {
 	[key: string]: string | number | boolean | undefined;
 }" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>keys</td>
 <td><LeHighlighter language="tsx" code="string[]" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>gridTemplateColumns</td>
 <td><LeHighlighter language="tsx" code="React.CSSProperties['gridTemplateColumns']" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>emptyValue</td>
 <td><LeHighlighter language="tsx" code="string" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>customBodyClass</td>
 <td><LeHighlighter language="tsx" code="string" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>customBodyStyles</td>
 <td><LeHighlighter language="tsx" code="React.CSSProperties" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 </tbody>
 </table>
@@ -238,7 +238,7 @@ It's possible to change the default empty value by using the `emptyValue` attrib
 <tr>
 <td>children</td>
 <td><LeHighlighter language="tsx" code="React.ReactNode" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>columns</td>
@@ -249,22 +249,22 @@ It's possible to change the default empty value by using the `emptyValue` attrib
 	order?: TableOrder;
 	orderFn?: (order: TableColumn) => void;
 }" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>gridTemplateColumns</td>
 <td><LeHighlighter language="tsx" code="React.CSSProperties['gridTemplateColumns']" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>customBodyClass</td>
 <td><LeHighlighter language="tsx" code="string" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>customBodyStyles</td>
 <td><LeHighlighter language="tsx" code="React.CSSProperties" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 </tbody>
 </table>

@@ -6,6 +6,7 @@ import {
 	ButtonPage,
 	CheckboxPage,
 	CSSPage,
+	DropdownPage,
 	GridPage,
 	InputPage,
 	InstallationPage,
@@ -108,6 +109,10 @@ export const routes: LeRoute[] = [
 	{
 		path: "/components/modal",
 		element: <LeRenderDocPage doc={<ModalPage />} title="Modal" />,
+	},
+	{
+		path: "/components/dropdown",
+		element: <LeRenderDocPage doc={<DropdownPage />} title="Dropdown" />,
 	},
 	{
 		path: "*",

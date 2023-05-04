@@ -25,8 +25,8 @@ const Pagination = ({
 	const classNames: LeClassNames = {
 		pagination: ({ customClass, size }) =>
 			`le-pagination le-pagination--${size} ${customClass || ""}`,
-		paginationNext: () => "le-pagination--next",
-		paginationPrev: () => "le-pagination--prev",
+		paginationNext: () => "le-pagination--button le-pagination--next",
+		paginationPrev: () => "le-pagination--button le-pagination--prev",
 		paginationLabel: () => "le-pagination--label",
 		paginationButton: () => `le-pagination--button`,
 		paginationButtonGroup: () => `le-pagination--button-group`,
@@ -36,8 +36,6 @@ const Pagination = ({
 		() => paginationButtons && Array<number>(totalPages || 0).fill(0),
 		[paginationButtons]
 	);
-
-	if (!paginationButtonsArr && !showPaginationLabel) return null;
 
 	return (
 		<div

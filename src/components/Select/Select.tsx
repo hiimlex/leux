@@ -1,6 +1,7 @@
 import React, { PropsWithChildren, useState } from "react";
 import { SelectProps } from "./Select.model";
 import "./Select.scss";
+import { LeClassNames } from "../../types";
 
 const Select = ({
 	customClass,
@@ -15,7 +16,7 @@ const Select = ({
 	options = [],
 	defaultValue,
 	selectRef,
-	showPlaceholderAsOption = false,
+	showPlaceholderAsOption = true,
 	state,
 	selectProps,
 }: PropsWithChildren<SelectProps>) => {
@@ -23,18 +24,16 @@ const Select = ({
 		defaultValue || ""
 	);
 
-	const classNames: Record<
-		string,
-		(prop?: Record<string, string | boolean | number | undefined> | undefined) => string
-	> = {
+	const classNames: LeClassNames = {
 		leSelect: () =>
-			`le-select ${customClass || ""} le-select--${size} le-select--${variant} ${
-				placeholder && value === "" ? "le-select--placeholder-color" : ""
-			} ${state && state.disabled ? "le-select--disabled" : ""}`,
-		leOption: (prop) =>
+			`le-select ${customClass || ""} le-select--${size} le-select--${variant}${
+				placeholder && value === "" ? " le-select--placeholder-color" : ""
+			}${state && state.disabled ? " le-select--disabled" : ""}`,
+		leSelectOption: (prop) =>
 			`le-select--option ${prop && prop["disabled"] ? "le-select--option-disabled" : ""}`,
-		lePlaceholder: () =>
+		leSelectPlaceholder: () =>
 			`le-select--option ${!showPlaceholderAsOption ? "le-select--hide-placeholder" : ""}`,
+		leSelectWrapper: () => `le-select--wrapper`,
 	};
 
 	const onChangeHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -56,7 +55,7 @@ const Select = ({
 			{...selectProps}
 		>
 			{placeholder && (
-				<option className={classNames["lePlaceholder"]()} value="">
+				<option className={classNames["leSelectPlaceholder"]()} value="">
 					{placeholder}
 				</option>
 			)}
@@ -65,7 +64,7 @@ const Select = ({
 						<option
 							key={optionIndex}
 							value={option.value}
-							className={classNames["leOption"]({ disabled: option.disabled })}
+							className={classNames["leSelectOption"]({ disabled: option.disabled })}
 							disabled={option.disabled}
 							selected={option.selected}
 						>
