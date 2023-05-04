@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, useState } from "react";
 import { SelectProps } from "./Select.model";
 import "./Select.scss";
-import { LeClassNames, LeSafeAny } from "../../types";
+import { LeClassNames } from "../../types";
 
 const Select = ({
 	customClass,
