@@ -6,11 +6,32 @@
 	border-radius: 8px;
 	border: 1px solid $color-light-text;
 	display: flex;
+	flex-direction: column;
 
-	&--column {
+	&--footer {
 		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
+		flex-direction: row;
+		justify-content: flex-end;
+
+		margin-top: 8px;
+
+		&-code {
+			font-size: 0.75rem;
+			color: $color-dark-text;
+
+			&:hover {
+				cursor: pointer;
+				color: $color-variant-primary;
+			}
+		}
+	}
+
+	&--content {
+		display: flex;
+
+		.le-badge {
+			margin: 0 6px;
+		}
 
 		.le-input {
 			margin: 6px 0;
@@ -19,19 +40,16 @@
 		.le-select {
 			margin: 6px 0;
 		}
-	}
 
-	&--row {
-		flex-direction: row;
-		align-items: center;
-		justify-content: flex-start;
-	}
+		&-column {
+			flex-direction: column;
+			align-items: flex-start;
+		}
 
-	button {
-		margin-right: 12px;
-	}
-
-	.le-badge {
-		margin-right: 12px !important;
+		&-row {
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-start;
+		}
 	}
 }

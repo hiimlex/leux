@@ -94,12 +94,12 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the Badge com
 <tr>
 <td>customStyles</td>
 <td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>customClasses</td>
 <td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td>-</td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 </tbody>
 </table>

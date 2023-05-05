@@ -2,48 +2,59 @@ import { attributes as badgeAttr } from "./badge.md";
 
 import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { Badge } from "../../../../src";
+import { useState } from "react";
 
 const BadgeImportPreview = () => (
 	<LeHighlighter code={`import { Badge, BadgeProps } from "leux";`} language="tsx" />
 );
 
-const BadgeVariantPreview = () => (
-	<>
-		<LePreview>
-			<Badge variant="dashed" theme="primary">
-				Dashed
-			</Badge>
-			<Badge variant="outlined" theme="primary">
-				Outlined
-			</Badge>
-			<Badge variant="ghost" theme="danger">
-				Ghost
-			</Badge>
-		</LePreview>
-		<LeHighlighter
-			code={`const Component = () => (
+const BadgeVariantPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
+	return (
+		<>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
+				<Badge variant="dashed" theme="primary">
+					Dashed
+				</Badge>
+				<Badge variant="outlined" theme="primary">
+					Outlined
+				</Badge>
+				<Badge variant="ghost" theme="danger">
+					Ghost
+				</Badge>
+			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<>
 		<Badge variant="dashed" theme="primary">Dashed</Badge>
 		<Badge variant="ghost" theme="primary">Ghost</Badge>)
 	</>
 );`}
-			language="tsx"
-		/>
-	</>
-);
+					language="tsx"
+				/>
+			)}
+		</>
+	);
+};
 
-const BadgeThemePreview = () => (
-	<>
-		<LePreview>
-			<Badge theme="primary">Primary</Badge>
-			<Badge theme="secondary">Secondary</Badge>
-			<Badge theme="success">Success</Badge>
-			<Badge theme="danger">Danger</Badge>
-			<Badge theme="warning">Warning</Badge>
-			<Badge theme="default">Default</Badge>
-		</LePreview>
-		<LeHighlighter
-			code={`const Component = () => (
+const BadgeThemePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
+	return (
+		<>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
+				<Badge theme="primary">Primary</Badge>
+				<Badge theme="secondary">Secondary</Badge>
+				<Badge theme="success">Success</Badge>
+				<Badge theme="danger">Danger</Badge>
+				<Badge theme="warning">Warning</Badge>
+				<Badge theme="default">Default</Badge>
+			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<>
 		<Badge theme="primary">Primary</Badge>
 		<Badge theme="secondary">Secondary</Badge>
@@ -53,20 +64,26 @@ const BadgeThemePreview = () => (
 		<Badge theme="default">Default</Badge>
 	</>
 );`}
-			language="tsx"
-		/>
-	</>
-);
+					language="tsx"
+				/>
+			)}
+		</>
+	);
+};
 
-const BadgeSizePreview = () => (
-	<>
-		<LePreview>
-			<Badge size="small">Small</Badge>
-			<Badge size="medium">Medium</Badge>
-			<Badge size="large">Large</Badge>
-		</LePreview>
-		<LeHighlighter
-			code={`const Component = () => (
+const BadgeSizePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
+	return (
+		<>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
+				<Badge size="small">Small</Badge>
+				<Badge size="medium">Medium</Badge>
+				<Badge size="large">Large</Badge>
+			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<>
 		<Badge size="small" variant="primary">
 			Small
@@ -79,24 +96,30 @@ const BadgeSizePreview = () => (
 		</Badge>
 	</>
 );`}
-			language="tsx"
-		/>
-	</>
-);
+					language="tsx"
+				/>
+			)}
+		</>
+	);
+};
 
-const BadgeCustomPreview = () => (
-	<>
-		<LePreview>
-			<Badge
-				customClass="le-color-bg--primary"
-				variant="dashed"
-				customStyles={{ color: "purple", borderColor: "purple" }}
-			>
-				Custom Badge
-			</Badge>
-		</LePreview>
-		<LeHighlighter
-			code={`const Component = () => (
+const BadgeCustomPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
+	return (
+		<>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
+				<Badge
+					customClass="le-color-bg--primary"
+					variant="dashed"
+					customStyles={{ color: "purple", borderColor: "purple" }}
+				>
+					Custom Badge
+				</Badge>
+			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => (
 	<Badge
 		customClass="le-color-bg--primary"
 		variant="dashed"
@@ -105,10 +128,12 @@ const BadgeCustomPreview = () => (
 		Custom Badge
 	</Badge>
 );`}
-			language="tsx"
-		/>
-	</>
-);
+					language="tsx"
+				/>
+			)}
+		</>
+	);
+};
 
 badgeAttr["LeSourceButton"] = LeSourceButton;
 badgeAttr["BadgeImportPreview"] = BadgeImportPreview;

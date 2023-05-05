@@ -29,9 +29,9 @@ export const LINKS: Record<string, ILink[]> = {
 		},
 	],
 	Action: [
-		{ name: "Alert", path: "/components/alert" },
 		{ name: "Button", path: "/components/button" },
 		{ name: "Dropdown", path: "/components/dropdown" },
+		{ name: "Pagination", path: "/components/pagination" },
 		{ name: "Toast", path: "/components/toast" },
 	],
 	Form: [

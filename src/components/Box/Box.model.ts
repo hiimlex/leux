@@ -10,6 +10,11 @@ interface BoxProps {
 	padding?: React.CSSProperties["margin"];
 	margin?: React.CSSProperties["margin"];
 	borderRadius?: React.CSSProperties["borderRadius"];
+	flex?: boolean;
+	flexDirection?: React.CSSProperties["flexDirection"];
+	justifyContent?: React.CSSProperties["justifyContent"];
+	alignItems?: React.CSSProperties["alignItems"];
+	flexWrap?: React.CSSProperties["flexWrap"];
 	customClass?: string;
 	customStyles?: React.CSSProperties;
 	children?: React.ReactNode;

@@ -12,6 +12,7 @@ const Button = ({
 	children,
 	customClass,
 	customStyles,
+	buttonProps,
 }: ButtonProps) => {
 	const handleOnCLick = (event: MouseEvent<HTMLButtonElement>) => {
 		if (onClick) {
@@ -31,6 +32,7 @@ const Button = ({
 			onClick={(event) => handleOnCLick(event)}
 			disabled={state && state.disabled}
 			style={customStyles}
+			{...buttonProps}
 		>
 			{children}
 		</button>

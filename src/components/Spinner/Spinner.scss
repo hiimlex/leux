@@ -1,0 +1,102 @@
+@import "../../styles/variables.scss";
+
+.le-spinner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+
+	&--circle {
+		&::after {
+			content: "";
+			position: absolute;
+			border-radius: 50%;
+			border-style: solid;
+			border-top-color: transparent !important;
+			animation-name: spin;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			border-radius: 50%;
+			border-style: solid;
+			border-color: $color-variant-border;
+		}
+	}
+
+	@each $color, $value in $variant-colors {
+		&--#{$color} {
+			&::after {
+				border-color: $value;
+			}
+		}
+	}
+
+	&--small {
+		padding: 0.5rem;
+
+		&::after,
+		&::before {
+			width: 32px;
+			height: 32px;
+			border-width: 4px;
+		}
+	}
+
+	&--medium {
+		padding: 1rem;
+
+		&::after,
+		&::before {
+			width: 64px;
+			height: 64px;
+			border-width: 5px;
+		}
+	}
+
+	&--large {
+		padding: 1.5rem;
+
+		&::after,
+		&::before {
+			width: 128px;
+			height: 128px;
+			border-width: 6px;
+		}
+	}
+
+	&--custom {
+		&-color {
+			&::after {
+				border-color: var(--spinner-color);
+			}
+		}
+
+		&-speed {
+			&::after {
+				animation-duration: var(--spinner-speed);
+			}
+		}
+
+		&-size {
+			&::after,
+			&::before {
+				width: var(--spinner-size);
+				height: var(--spinner-size);
+			}
+		}
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

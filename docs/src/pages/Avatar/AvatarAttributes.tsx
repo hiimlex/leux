@@ -1,56 +1,67 @@
 import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { Avatar } from "../../../../src";
 import { attributes as avatarAttr } from "./avatar.md";
+import { useState } from "react";
 
 const AvatarImportPreview = () => (
 	<LeHighlighter code={`import { Avatar, AvatarProps } from "leux";`} language="tsx" />
 );
 
 const AvatarSrcPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Avatar
 					src="https://avatars.githubusercontent.com/u/49082043?v=4"
 					alt="hiimlex github avatar"
 				/>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	return (
 		<Avatar src="https://avatars.githubusercontent.com/u/49082043?v=4" alt="hiimlex github avatar" />
 	)
 };
 `}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const AvatarAsTextPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Avatar src="Alex Alves" asText />
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	return (
 		<Avatar src="Alex Alves" asText />
 	)
 };
 `}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const AvatarSizePreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Avatar
 					src="https://avatars.githubusercontent.com/u/49082043?v=4"
 					alt="hiimlex github avatar"
@@ -70,8 +81,9 @@ const AvatarSizePreview = () => {
 					customStyles={{ marginRight: "18px" }}
 				/>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	return (
 		<>
 			<Avatar
@@ -96,16 +108,19 @@ const AvatarSizePreview = () => {
 	)
 };
 `}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };
 
 const AvatarCustomPreview = () => {
+	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+
 	return (
 		<>
-			<LePreview>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Avatar
 					src="https://avatars.githubusercontent.com/u/49082043?v=4"
 					alt="hiimlex github avatar"
@@ -114,8 +129,9 @@ const AvatarCustomPreview = () => {
 					customClass="le-avatar-custom"
 				/>
 			</LePreview>
-			<LeHighlighter
-				code={`const Component = () => {
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
 	return (
 		<>
 			<Avatar
@@ -129,8 +145,9 @@ const AvatarCustomPreview = () => {
 	)
 };
 `}
-				language="tsx"
-			/>
+					language="tsx"
+				/>
+			)}
 		</>
 	);
 };

@@ -10,7 +10,7 @@
   <img alt="#npm" src="https://img.shields.io/npm/dm/leux">
 </a>
 <a href="https://nodejs.org/en/blog/release/v14.17.3/" target="\_parent">
-  <img alt="#node" src="https://img.shields.io/badge/node-%3D%3E14.17.3-purple">
+  <img alt="#node" src="https://img.shields.io/badge/node-%3D%3E16.14.0-purple">
 </a>
 
 <div>
@@ -36,10 +36,6 @@ You can install this package using the following commands
 
 ```bash
 npm install leux
-
-# or
-
-yarn add leux
 ```
 
 ### ✨ CSS
@@ -48,32 +44,31 @@ To upload the CSS styles, you can move the **leux.min.css** from the **node_modu
 
 ### To-do
 
-- Table Component
+- adjust all API reference from components page
+- set required on props API reference
 - improve tests and test coverage
 
 ## Next steps:
 
 - [ ] components
   - [x] Avatar
-  - [ ] Alert
   - [x] Badge
   - [x] Box
   - [x] Button
-  - [ ] Collapse
-  - [ ] Dropdown
-  - [ ] Form
+  - [x] Dropdown
+  - [x] Form
     - [x] Checkbox
     - [x] Input
     - [x] Radio
     - [x] Select
     - [x] Textarea
   - [x] Grid
-  - [ ] Modal
-  - [ ] Progress
-  - [ ] Table
+  - [x] Modal
+  - [ ] Skeleton
+  - [x] Table
   - [ ] Toast
   - [x] Tooltip
   - [x] Topography
 - [ ] add more tests
 - [ ] improve documentation
-- [ ] build and publish the docs
+- [x] build and publish the docs
