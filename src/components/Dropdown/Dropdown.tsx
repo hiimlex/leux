@@ -20,7 +20,7 @@ const Dropdown = ({
 	clickOutside = true,
 	closeOnClick = true,
 	trigger = "click",
-	width = "100%",
+	width,
 	customWrapperStyles,
 	customWrapperClass,
 }: DropdownProps) => {
