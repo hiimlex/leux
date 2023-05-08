@@ -113,8 +113,6 @@
 			"prettier --write ."
 		],
 		"**/*.spec.{jsx,tsx}": [
-			"eslint . --fix",
-			"prettier --write .",
 			"jest --bail --findRelatedTests"
 		]
 	}
