@@ -1,21 +1,18 @@
-name: Run tests
-
+name: Run Components Test
 on:
-	pull_request:
-		branches:
-			- main
-			- dev
-
+  pull_request:
+    branches:
+      - dev
+      - main
 jobs:
-	build:
-		runs-on: ubuntu-latest
-		steps:
-			- name: Checkout
-				uses: actions/checkout@v2
-			- name: Setup Node
-				uses: actions/setup-node@v2
-				with:
-					node-version: '14.17.3'
-					registry-url: 'https://registry.npmjs.org'
-			- name: Test all components
-				run: npm run test
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - run: npm install
+      - name: Run tests
+      - run: npm test
