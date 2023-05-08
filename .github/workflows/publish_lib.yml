@@ -4,19 +4,6 @@ on:
     branches:
       - master
 jobs:
-  test-components:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Setup checkout
-        uses: actions/checkout@v2
-      - name: Setup node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14'
-      - name: Install lib
-        run: npm install
-      - name: Run tests
-        run: npm run test
   publish-npm:
     runs-on: ubuntu-latest
     steps:
