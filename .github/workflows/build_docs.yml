@@ -19,4 +19,4 @@ jobs:
       - name: Install docs dependencies
         run: npm install
       - name: Build docs
-        run: npm run build
+        run: cd docs && npm run build
