@@ -14,15 +14,11 @@ const Select = ({
 	width,
 	children,
 	options = [],
-	defaultValue,
 	selectRef,
-	showPlaceholderAsOption = true,
 	state,
 	selectProps,
 }: PropsWithChildren<SelectProps>) => {
-	const [value, setValue] = useState<string | number | readonly string[] | undefined>(
-		defaultValue || ""
-	);
+	const [value, setValue] = useState<string | number | readonly string[] | undefined>("");
 
 	const classNames: LeClassNames = {
 		leSelect: () =>
@@ -31,8 +27,7 @@ const Select = ({
 			}${state && state.disabled ? " le-select--disabled" : ""}`,
 		leSelectOption: (prop) =>
 			`le-select--option ${prop && prop["disabled"] ? "le-select--option-disabled" : ""}`,
-		leSelectPlaceholder: () =>
-			`le-select--option ${!showPlaceholderAsOption ? "le-select--hide-placeholder" : ""}`,
+		leSelectPlaceholder: () => `le-select--option `,
 		leSelectWrapper: () => `le-select--wrapper`,
 	};
 
@@ -55,7 +50,11 @@ const Select = ({
 			{...selectProps}
 		>
 			{placeholder && (
-				<option className={classNames["leSelectPlaceholder"]()} value="">
+				<option
+					className={classNames["leSelectPlaceholder"]()}
+					value=""
+					data-testid="leuxSelectPlaceholder"
+				>
 					{placeholder}
 				</option>
 			)}
@@ -66,7 +65,7 @@ const Select = ({
 							value={option.value}
 							className={classNames["leSelectOption"]({ disabled: option.disabled })}
 							disabled={option.disabled}
-							selected={option.selected}
+							data-testid="leuxSelectOption"
 						>
 							{option.label}
 						</option>

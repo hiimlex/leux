@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { TooltipProps } from "./Tooltip.model";
 import "./Tooltip.scss";
+import { LeClassNames } from "../../types";
 
 const Tooltip = ({
 	children,
@@ -12,6 +13,14 @@ const Tooltip = ({
 }: TooltipProps) => {
 	const [showTooltip, setShowTooltip] = useState(false);
 
+	const classNames: LeClassNames = {
+		leTooltipProvider: () => "le-tooltip--provider",
+		leTooltip: () =>
+			`le-tooltip le-tooltip--${direction} le-tooltip--${theme}${
+				customClass ? ` ${customClass}` : ""
+			}`,
+	};
+
 	const handleMouseEnter = () => {
 		setShowTooltip(true);
 	};
@@ -22,22 +31,13 @@ const Tooltip = ({
 
 	return (
 		<div
-			className="le-tooltip--provider"
+			className={classNames["leTooltipProvider"]()}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
 			data-testid="leuxTooltipProvider"
 		>
 			{showTooltip && (
-				<span
-					className={
-						"le-tooltip" +
-						(customClass ? ` ${customClass}` : "") +
-						(direction ? ` le-tooltip--${direction}` : "") +
-						(theme ? ` le-tooltip--${theme}` : "")
-					}
-					data-testid="leuxTooltip"
-					style={customStyles}
-				>
+				<span className={classNames["leTooltip"]()} data-testid="leuxTooltip" style={customStyles}>
 					{title}
 				</span>
 			)}
