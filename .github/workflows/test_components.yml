@@ -5,7 +5,7 @@ on:
       - dev
       - main
 jobs:
-  test:
+  test-components:
     runs-on: ubuntu-latest
     steps:
       - name: Setup checkout
@@ -14,7 +14,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14'
-      - name: Install lib
+      - name: Install dependencies 🔧
         run: npm install
-      - name: Run tests
+      - name: Run tests 🧪
         run: npm run test
