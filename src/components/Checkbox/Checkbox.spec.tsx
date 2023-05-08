@@ -121,7 +121,7 @@ describe("Checkbox component test", () => {
 			/>
 		);
 
-		const checkbox = getByTestId("leuxCheckbox");
+		const checkbox = getByTestId("leuxCheckbo");
 
 		expect(checkbox).toBeTruthy();
 		expect(checkbox).toHaveClass("le-checkbox--disabled");
