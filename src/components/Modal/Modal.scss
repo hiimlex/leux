@@ -7,7 +7,7 @@
 	background: $color-lighter-background;
 	border-radius: 12px;
 
-	animation: le-modal--animation 0.1s ease-in-out;
+	animation: leModalAnimation 0.1s ease-in-out;
 
 	&--header {
 		display: flex;
@@ -95,7 +95,7 @@
 	}
 }
 
-@keyframes le-modal--animation {
+@keyframes leModalAnimation {
 	0% {
 		opacity: 0;
 		transform: scale(0.8);

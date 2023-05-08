@@ -16,6 +16,7 @@ import {
 	PaginationPage,
 	RadioPage,
 	SelectPage,
+	SkeletonPage,
 	SpinnerPage,
 	TablePage,
 	TextAreaPage,
@@ -61,6 +62,10 @@ export const routes: LeRoute[] = [
 	{
 		path: "/layout/spinner",
 		element: <LeRenderDocPage doc={<SpinnerPage />} title="Spinner" />,
+	},
+	{
+		path: "/layout/skeleton",
+		element: <LeRenderDocPage doc={<SkeletonPage />} title="Dropdown" />,
 	},
 	{
 		path: "/components/button",

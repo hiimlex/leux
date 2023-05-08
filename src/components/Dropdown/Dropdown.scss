@@ -16,7 +16,7 @@
 
 	overflow: hidden;
 
-	animation: le-dropdown--animation 0.1s ease-in-out;
+	animation: leDropdownAnimation 0.1s ease-in-out;
 
 	&--filled {
 		background-color: $color-variant-border;
@@ -155,7 +155,7 @@
 	pointer-events: none;
 }
 
-@keyframes le-dropdown--animation {
+@keyframes leDropdownAnimation {
 	0% {
 		opacity: 0;
 		transform: translateY(-15px);
