@@ -31,7 +31,7 @@ const SelectOptionsPreview = () => {
 					<Topography variant="body-1" customStyles={{ marginRight: 12 }}>
 						With children
 					</Topography>
-					<Select fieldKey="fieldKey" defaultValue="">
+					<Select fieldKey="fieldKey">
 						<option value="">Select one option</option>
 						<option value="option1">Option 1</option>
 					</Select>
@@ -76,20 +76,14 @@ const SelectSizePreview = () => {
 				<Select
 					options={[{ label: "Small", value: "small" }]}
 					size="small"
-					defaultValue="small"
 					customStyles={{ marginRight: 12 }}
 				></Select>
 				<Select
 					options={[{ label: "Medium", value: "medium" }]}
 					size="medium"
-					defaultValue="medium"
 					customStyles={{ marginRight: 12 }}
 				></Select>
-				<Select
-					options={[{ label: "Large", value: "large" }]}
-					size="large"
-					defaultValue="large"
-				></Select>
+				<Select options={[{ label: "Large", value: "large" }]} size="large"></Select>
 			</LePreview>
 			{showCode && (
 				<LeHighlighter
@@ -134,14 +128,9 @@ const SelectVariantPreview = () => {
 				<Select
 					options={[{ label: "Outlined", value: "outlined" }]}
 					variant="outlined"
-					defaultValue="outlined"
 					customStyles={{ marginRight: 12 }}
 				></Select>
-				<Select
-					options={[{ label: "Filled", value: "filled" }]}
-					variant="filled"
-					defaultValue="filled"
-				></Select>
+				<Select options={[{ label: "Filled", value: "filled" }]} variant="filled"></Select>
 			</LePreview>
 			{showCode && (
 				<LeHighlighter
