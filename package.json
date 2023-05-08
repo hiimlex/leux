@@ -6,6 +6,10 @@
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hiimlex/leux.git"
+	},
 	"engines": {
 		"node": ">=14.17.3"
 	},
@@ -16,10 +20,6 @@
 		"test:coverage": "jest --coverage --collectCoverageFrom='./src/**'",
 		"test:badges": "npm run test:coverage && npx jest-coverage-badges",
 		"prepare": "npx husky install && npx husky add ./.husky/pre-commit 'npx lint-staged'"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/hiimlex/leux.git"
 	},
 	"bugs": {
 		"url": "https://github.com/hiimlex/leux/issues"
