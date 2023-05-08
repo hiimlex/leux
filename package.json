@@ -112,7 +112,7 @@
 		"**/*.{css,scss,json,md}": [
 			"prettier --write ."
 		],
-		"**/*.spec.tsx": [
+		"**/*.spec.{jsx,tsx}": [
 			"eslint . --fix",
 			"prettier --write .",
 			"jest --bail --findRelatedTests"
