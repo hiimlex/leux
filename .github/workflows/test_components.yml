@@ -1,0 +1,20 @@
+name: Run Components Test
+on:
+  pull_request:
+    branches:
+      - dev
+      - main
+jobs:
+  test-components:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - name: Install dependencies 🔧
+        run: npm install
+      - name: Run tests 🧪
+        run: npm run test

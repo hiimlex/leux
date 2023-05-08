@@ -165,7 +165,7 @@ Use the `DropdownSeparator` prop to add a separator between the `DropdownItem` c
 <tr>
 <td>width</td>
 <td><LeHighlighter language="tsx" code="React.CSSProperties['width']" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="'100%'" style="soft" copy="'off'"></LeHighlighter></td>
+<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
 </tr>
 <tr>
 <td>anchor</td>

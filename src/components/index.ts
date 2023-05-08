@@ -10,6 +10,7 @@ export * from "./Modal";
 export * from "./Pagination";
 export * from "./Radio";
 export * from "./Select";
+export * from "./Skeleton";
 export * from "./Spinner";
 export * from "./Table";
 export * from "./TextArea";

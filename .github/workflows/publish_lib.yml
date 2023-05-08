@@ -1,0 +1,24 @@
+name: Publish Library on NPM
+on:
+  push:
+    branches:
+      - master
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - name: Install dependencies and build 🔧
+        run: |
+          npm install
+          npm run build
+      - name: Publish package on NPM 📦
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      

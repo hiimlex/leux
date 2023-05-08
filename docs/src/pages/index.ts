@@ -14,6 +14,7 @@ export { default as OverviewPage } from "./Overview";
 export { default as PaginationPage } from "./Pagination";
 export { default as RadioPage } from "./Radio";
 export { default as SelectPage } from "./Select";
+export { default as SkeletonPage } from "./Skeleton";
 export { default as SpinnerPage } from "./Spinner";
 export { default as TablePage } from "./Table";
 export { default as TextAreaPage } from "./TextArea";
