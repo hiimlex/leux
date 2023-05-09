@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { LeClassNames } from "../../types";
 import { Button, ButtonProps } from "../Button";
 import { ModalProps } from "./Modal.model";
+import { ModalContext } from "../ModalContext";
 import "./Modal.scss";
-import { ModalContext } from "./ModalContext";
 
 const defaultFooterButtons: ButtonProps[] = [
 	{

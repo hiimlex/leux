@@ -7,6 +7,8 @@ export * from "./Dropdown";
 export * from "./Grid";
 export * from "./Input";
 export * from "./Modal";
+export * from "./ModalContext";
+export * from "./ModalProvider";
 export * from "./Pagination";
 export * from "./Radio";
 export * from "./Select";

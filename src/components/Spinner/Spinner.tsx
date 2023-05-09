@@ -22,8 +22,6 @@ const Spinner = ({
 			}${customSpeed ? " le-spinner--custom-speed" : ""}${
 				customColor ? " le-spinner--custom-color" : ""
 			}${customClass || ""}`,
-		leuxSpinnerDotContainer: () => `le-spinner--dots-container`,
-		leuxSpinnerDot: ({ position }: { position: string }) => `dot dot-${position}`,
 	};
 
 	const setCustomSize = useCallback(() => {
