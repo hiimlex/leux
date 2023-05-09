@@ -1,8 +1,8 @@
 import { render } from "@testing-library/react";
 
-import { TextArea } from "./TextArea";
 import "@testing-library/jest-dom";
 import React from "react";
+import { TextArea } from "./TextArea";
 
 describe("TextArea component test", () => {
 	it("should render a TextArea component", () => {
@@ -18,15 +18,9 @@ describe("TextArea component test", () => {
 
 		const textArea = getByTestId("leuxTextArea");
 
-		const mediumRowHeight = 1.75;
-		const metricFontSize = "rem";
-
-		const minHeight = 3 * mediumRowHeight;
-		const maxHeight = 5 * mediumRowHeight;
-
 		expect(textArea).toHaveStyle({
-			minHeight: `${minHeight}${metricFontSize}`,
-			maxHeight: `${maxHeight}${metricFontSize}`,
+			minHeight: `5.25rem`,
+			maxHeight: `8.75rem`,
 		});
 	});
 
@@ -97,5 +91,21 @@ describe("TextArea component test", () => {
 		expect(textArea).toHaveStyle("color: blue");
 		expect(textArea).toHaveAttribute("id", "testId");
 		expect(textArea).toHaveAttribute("name", "testName");
+	});
+
+	it("should render an outlined TextArea component", () => {
+		const { getByTestId } = render(<TextArea fieldKey="testTextArea" variant="outlined" />);
+
+		const textArea = getByTestId("leuxTextArea");
+
+		expect(textArea).toHaveClass("le-textarea--outlined");
+	});
+
+	it("should render a disabled TextArea component", () => {
+		const { getByTestId } = render(<TextArea fieldKey="testTextArea" state={{ disabled: true }} />);
+
+		const textArea = getByTestId("leuxTextArea");
+
+		expect(textArea).toBeDisabled();
 	});
 });

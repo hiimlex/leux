@@ -2,6 +2,7 @@ import React from "react";
 import { InputProps } from "./Input.model";
 
 import "./Input.scss";
+import { LeClassNames } from "../../types";
 
 const Input = ({
 	fieldKey,
@@ -17,6 +18,13 @@ const Input = ({
 	inputProps,
 	inputRef,
 }: InputProps) => {
+	const classNames: LeClassNames = {
+		leInput: () =>
+			`le-input le-input--${variant} le-input--${size}${customClass ? ` ${customClass}` : ""}${
+				state && state.disabled ? " le-input--disabled" : ""
+			}`,
+	};
+
 	return (
 		<input
 			ref={inputRef}
@@ -26,13 +34,7 @@ const Input = ({
 			placeholder={placeholder}
 			onChange={onChange}
 			style={{ width, ...customStyles }}
-			className={
-				"le-input" +
-				(variant ? ` le-input--${variant}` : "") +
-				(size ? ` le-input--${size}` : "") +
-				(customClass ? ` ${customClass}` : "") +
-				(state && state.disabled ? " le-input--disabled" : "")
-			}
+			className={classNames["leInput"]()}
 			disabled={state && state.disabled}
 			data-testid="leuxInput"
 			{...inputProps}

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { ModalProps } from "./Modal.model";
-import { Provider } from "./ModalContext";
-import { Modal } from "./Modal";
+import { ModalProps } from "../Modal/Modal.model";
+import { Provider } from "../ModalContext";
+import { Modal } from "../Modal";
+
+import "./ModalProvider.scss";
 
 type ModalProviderProps = {
 	children: React.ReactNode;
@@ -66,7 +68,9 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
 			})
 		);
 
-		if (shouldDestroy) destroyModal(id);
+		if (shouldDestroy) {
+			destroyModal(id);
+		}
 	};
 
 	const destroyAll = () => {

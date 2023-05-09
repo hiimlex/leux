@@ -1,3 +1,3 @@
 export * from "./Modal";
-export * from "./ModalContext";
-export * from "./ModalProvider";
+export * from "../ModalProvider/ModalProvider";
+export * from "./Modal.model";

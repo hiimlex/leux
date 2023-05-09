@@ -2,6 +2,12 @@ import React, { useCallback, useEffect, useState } from "react";
 import { TextAreaProps, TextAreaSizes } from "./TextArea.model";
 import "./TextArea.scss";
 
+const sizeRowArr: Record<TextAreaSizes, { rowHeight: number }> = {
+	small: { rowHeight: 1.5 },
+	medium: { rowHeight: 1.75 },
+	large: { rowHeight: 2 },
+};
+
 const TextArea = ({
 	fieldKey,
 	variant = "filled",
@@ -28,12 +34,6 @@ const TextArea = ({
 		let value: React.CSSProperties["maxWidth"];
 
 		const metricFontSize = "rem";
-
-		const sizeRowArr: Record<TextAreaSizes, { rowHeight: number }> = {
-			small: { rowHeight: 1.5 },
-			medium: { rowHeight: 1.75 },
-			large: { rowHeight: 2 },
-		};
 
 		if (size && sizeRowArr[size]) {
 			const { rowHeight } = sizeRowArr[size];
