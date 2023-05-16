@@ -2,6 +2,7 @@ import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { PropsWithChildren, useContext, useState } from "react";
 import { Avatar, Button, ModalContext, Topography } from "../../../../src";
 import { attributes as modalAttr } from "./modal.md";
+import { NavLink } from "react-router-dom";
 
 const ModalImportPreview = () => (
 	<LeHighlighter
@@ -17,7 +18,7 @@ const ModalContextPreview = () => {
 				language="tsx"
 				code={`// ModalContext.tsx
 type ModalContextProps = {
-	openModals: ModalProps[];
+	modals: ModalProps[];
 	createModal: (modal: ModalProps) => void;
 	openModal: (id: string) => void;
 	closeModal: (id: string, shouldDestroy?: boolean) => void;
@@ -40,26 +41,6 @@ const Component = () => {
 			</>
 		);
 };`}
-			/>
-		</>
-	);
-};
-const ModalProviderPreview = () => {
-	return (
-		<>
-			<LeHighlighter
-				language="tsx"
-				code={`// app.tsx
-const App = () => {
-	return (
-		<>
-			<ModalProvider>
-				{/* ... your application */}
-			</ModalProvider>
-		</>
-	);
-};
-`}
 			/>
 		</>
 	);
@@ -322,6 +303,7 @@ const RequiredProp = ({ children }: PropsWithChildren) => (
 );
 
 modalAttr["LeSourceButton"] = LeSourceButton;
+modalAttr["NavLink"] = NavLink;
 modalAttr["LeHighlighter"] = LeHighlighter;
 modalAttr["RequiredProp"] = RequiredProp;
 modalAttr["ModalUsagePreview"] = ModalUsagePreview;
@@ -330,6 +312,5 @@ modalAttr["ModalActionsPreview"] = ModalActionsPreview;
 modalAttr["ModalPositionPreview"] = ModalPositionPreview;
 modalAttr["ModalSizePreview"] = ModalSizePreview;
 modalAttr["ModalContextPreview"] = ModalContextPreview;
-modalAttr["ModalProviderPreview"] = ModalProviderPreview;
 
 export { modalAttr };

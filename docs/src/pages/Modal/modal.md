@@ -16,18 +16,14 @@ The Modal component is a dialog that appears on top of the main window. It is us
 - **Modal** - the main component
 - **ModalProps** - the props type
 - **ModalContext** - the Modal Service
-- **ModalProvider** - the Modal Provider
 
 <br />
 
-#### ModalProvider
+#### Overlay
 
-The ModalProvider is a component that you can use to wrap your application. It will provide the ModalContext to the wrapped content.
+The Toast component uses the OverlayProvider to render the ModalProvider and pass ModalContext to the children.
 
-<div>
-<ModalProviderPreview>
-</ModalProviderPreview>
-</div>
+The OverlayProvider is used to render components on top of the page. The OverlayProvider is used by the Toast component as well. Check this session <NavLink to="/components/overlay">Overlay Provider</NavLink>
 
 <br />
 
@@ -35,7 +31,7 @@ The ModalProvider is a component that you can use to wrap your application. It w
 
 The ModalContext is a service that you can use to manage a Modal component. It has the following attributes:
 
-- `modals` - the list of opened Modal components
+- `openModals` - the list of opened Modal components
 - `createModal` - create a Modal component
 - `closeModal` - close the Modal component
 - `openModal` - open the Modal component

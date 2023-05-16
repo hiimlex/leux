@@ -13,6 +13,4 @@ type ModalContextProps = {
 
 const ModalContext = createContext<ModalContextProps>({} as ModalContextProps);
 
-const { Provider } = ModalContext;
-
-export { ModalContext, Provider, ModalContextProps };
+export { ModalContext, ModalContextProps };

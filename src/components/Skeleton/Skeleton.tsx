@@ -21,7 +21,9 @@ const Skeleton = ({
 				active ? " le-skeleton--active" : ""
 			}${customClass ? ` ${customClass}` : ""}`,
 		leSkeletonRow: () =>
-			`le-skeleton--row le-skeleton--row-${variant} le-skeleton--row-${variant}-${size}`,
+			`le-skeleton--row le-skeleton--row-${variant} le-skeleton--row-${variant}-${size}${
+				active ? " le-skeleton--row-active" : ""
+			}`,
 	};
 
 	const rowsArr = useMemo(() => [...Array(rows).keys()], [rows]);

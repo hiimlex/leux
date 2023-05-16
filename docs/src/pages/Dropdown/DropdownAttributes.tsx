@@ -158,26 +158,26 @@ const DropdownPositionPreview = () => {
 					customStyles={{ marginBottom: 12 }}
 				>
 					<Dropdown
-						position="bl"
+						position="bottomLeft"
 						anchor={<Button>Bottom left</Button>}
 						customWrapperStyles={{ marginRight: 12 }}
 					>
 						<DropdownItem>the text direction goes</DropdownItem>
 					</Dropdown>
-					<Dropdown position="br" anchor={<Button>Bottom right</Button>}>
+					<Dropdown position="bottomRight" anchor={<Button>Bottom right</Button>}>
 						<DropdownItem>the text direction goes</DropdownItem>
 					</Dropdown>
 				</Box>
 				<Box flex justifyContent="flex-start" alignItems="center">
 					<Dropdown
-						position="tl"
+						position="topLeft"
 						anchor={<Button>Top left</Button>}
 						customWrapperStyles={{ marginRight: 12 }}
 					>
 						<DropdownItem>the text direction goes</DropdownItem>
 					</Dropdown>
 					<Dropdown
-						position="tr"
+						position="topRight"
 						anchor={<Button>Top right</Button>}
 						customWrapperStyles={{ marginRight: 12 }}
 					>
