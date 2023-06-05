@@ -1,7 +1,11 @@
-import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
+import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { ChangeEvent, useState } from "react";
 import { Box, Button, Select, Topography } from "../../../../src";
-import { SelectOption, SelectState } from "../../../../src/components/Select/Select.model";
+import {
+	SelectOption,
+	SelectProps,
+	SelectState,
+} from "../../../../src/components/Select/Select.model";
 import { attributes as selectAttr } from "./select.md";
 
 const SelectImportPreview = () => (
@@ -324,6 +328,52 @@ const Component = () => {
 	);
 };
 
+const SelectApiTable = () => {
+	const props: PropsMapping<SelectProps> = {
+		fieldKey: {
+			type: "string",
+		},
+		size: {
+			type: "'small' | 'medium' | 'large'",
+			defaultValue: "'medium'",
+		},
+		variant: {
+			type: "'filled' | 'outlined'",
+			defaultValue: "'filled'",
+		},
+		placeholder: {
+			type: "string",
+		},
+		width: {
+			type: "React.CSSProperties['width']",
+		},
+		onChange: {
+			type: "ChangeEventHandle<HTMLSelectElement>",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+		customClass: {
+			type: "string",
+		},
+		options: {
+			type: "SelectOption[] | { label: string; value: string | disabled?: boolean }[]",
+			defaultValue: "[]",
+		},
+		state: {
+			type: "SelectState | { disabled?: boolean }",
+		},
+		selectRef: {
+			type: "React.RefObject<HTMLSelectElement>",
+		},
+		selectProps: {
+			type: "React.HTMLProps<HTMLSelectElement>",
+		},
+	};
+
+	return <LeApiTable props={props} />;
+};
+
 selectAttr["LeSourceButton"] = LeSourceButton;
 selectAttr["LeHighlighter"] = LeHighlighter;
 selectAttr["SelectImportPreview"] = SelectImportPreview;
@@ -333,5 +383,6 @@ selectAttr["SelectVariantPreview"] = SelectVariantPreview;
 selectAttr["SelectActionPreview"] = SelectActionPreview;
 selectAttr["SelectStatePreview"] = SelectStatePreview;
 selectAttr["SelectCustomPreview"] = SelectCustomPreview;
+selectAttr["SelectApiTable"] = SelectApiTable;
 
 export { selectAttr };

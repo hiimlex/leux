@@ -12,7 +12,7 @@ const Skeleton = ({
 	customClass = "",
 	customStyles,
 	active = false,
-	show = false,
+	show = true,
 	variant = "paragraph",
 }: SkeletonProps) => {
 	const classNames: LeClassNames = {
@@ -44,7 +44,7 @@ const Skeleton = ({
 		>
 			{variant === "paragraph" && rowsArr.map((_, index) => <SkeletonRowJSX key={index} />)}
 			{variant === "round" && <SkeletonRowJSX />}
-			{variant === "square" && <SkeletonRowJSX />}
+			{variant === "rect" && <SkeletonRowJSX />}
 		</div>
 	);
 };

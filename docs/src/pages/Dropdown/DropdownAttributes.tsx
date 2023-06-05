@@ -1,4 +1,4 @@
-import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
+import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { useState } from "react";
 import {
 	Box,
@@ -9,7 +9,11 @@ import {
 	Topography,
 } from "../../../../src";
 import { attributes as dropdownAttr } from "./dropdown.md";
-import { DropdownVariant } from "../../../../src/components/Dropdown/Dropdown.model";
+import {
+	DropdownItemProps,
+	DropdownProps,
+	DropdownVariant,
+} from "../../../../src/components/Dropdown/Dropdown.model";
 
 const DropdownImportPreview = () => (
 	<LeHighlighter language="tsx" code={`import { Dropdown, DropdownProps } from "leux";`} />
@@ -377,6 +381,101 @@ const DropdownItemDisabledPreview = () => {
 	);
 };
 
+const DropdownApiTable = () => {
+	const props: PropsMapping<DropdownProps> = {
+		anchor: {
+			type: "React.ReactNode",
+		},
+		children: {
+			type: "React.ReactNode",
+		},
+		trigger: {
+			type: "'click' | 'hover'",
+			defaultValue: "click",
+		},
+		position: {
+			type: "'bottomLeft' | 'bottomRight' | 'topLeft' | 'topRight'",
+		},
+		size: {
+			type: "'small' | 'medium' | 'large'",
+			defaultValue: "'medium'",
+		},
+		variant: {
+			type: "'filled' | 'outlined'",
+		},
+		clickOutside: {
+			type: "boolean",
+			defaultValue: "true",
+		},
+		closeOnClick: {
+			type: "boolean",
+			defaultValue: "true",
+		},
+		width: {
+			type: "React.CSSProperties['width']",
+		},
+		menuProps: {
+			type: "React.HTMLAttributes<HTMLUListElement>",
+		},
+		customMenuClass: {
+			type: "string",
+		},
+		customWrapperStyles: {
+			type: "React.CSSProperties",
+		},
+		customWrapperClass: {
+			type: "string",
+		},
+		customMenuStyles: {
+			type: "React.CSSProperties",
+		},
+	};
+
+	return <LeApiTable props={props} />;
+};
+
+const DropdownItemApiTable = () => {
+	const props: PropsMapping<DropdownItemProps> = {
+		children: {
+			type: "React.ReactNode",
+		},
+		centered: {
+			type: "boolean",
+		},
+		disabled: {
+			type: "boolean",
+		},
+		closeOnClick: {
+			type: "boolean",
+		},
+		onClick: {
+			type: "() => void",
+		},
+		itemProps: {
+			type: "React.HTMLAttributes<HTMLLIElement>",
+		},
+		noBreakWord: {
+			type: "boolean",
+		},
+		setShow: {
+			type: "React.Dispatch<React.SetStateAction<boolean>>",
+			defaultValue: "readonly",
+		},
+		trigger: {
+			type: "'click' | 'hover'",
+			defaultValue: "readonly",
+		},
+		customClass: {
+			type: "string",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+	};
+
+	return <LeApiTable props={props} />;
+};
+
 dropdownAttr["LeSourceButton"] = LeSourceButton;
 dropdownAttr["LeHighlighter"] = LeHighlighter;
 dropdownAttr["DropdownImportPreview"] = DropdownImportPreview;
@@ -388,5 +487,7 @@ dropdownAttr["DropdownTriggerPreview"] = DropdownTriggerPreview;
 dropdownAttr["DropdownItemPreview"] = DropdownItemPreview;
 dropdownAttr["DropdownSeparatorPreview"] = DropdownSeparatorPreview;
 dropdownAttr["DropdownItemDisabledPreview"] = DropdownItemDisabledPreview;
+dropdownAttr["DropdownApiTable"] = DropdownApiTable;
+dropdownAttr["DropdownItemApiTable"] = DropdownItemApiTable;
 
 export { dropdownAttr };

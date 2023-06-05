@@ -11,7 +11,7 @@ type ModalProviderProps = {
 
 const ModalProvider = ({ children }: ModalProviderProps) => {
 	const [modals, setModals] = useState<ModalProps[]>([]);
-	const [zIndex, setZIndex] = useState<number>(500);
+	const [zIndex, setZIndex] = useState<number>(1000);
 
 	const hasModal = (id: string): boolean => modals.some((el) => el.id === id);
 
@@ -102,4 +102,4 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
 	);
 };
 
-export { ModalProvider };
+export { ModalProvider, ModalProviderProps };

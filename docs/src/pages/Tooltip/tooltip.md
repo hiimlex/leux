@@ -65,47 +65,8 @@ Use the `custom` prefix props to change the tooltip style.
 ### API Reference
 
 <div>
-<table>
-<thead>
-<tr>
-<th width="10%">Prop</th>
-<th width="70%">Type</th>
-<th width="20%">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>children</td>
-<td><LeHighlighter code="React.ReactNode" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>title</td>
-<td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>theme</td>
-<td><LeHighlighter code="'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter code="'default'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>direction</td>
-<td><LeHighlighter code="'top'|'right'|'bottom'|'left'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter code="'top'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>customStyles</td>
-<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>customClasses</td>
-<td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-</tbody>
-</table>
+<TooltipApiTable>
+</TooltipApiTable>
 </div>
 
 <br/>

@@ -1,6 +1,6 @@
-import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
+import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { useState } from "react";
-import { Button } from "../../../../src";
+import { Button, ButtonProps } from "../../../../src";
 import { attributes as buttonAttr } from "./button.md";
 
 const ButtonImportPreview = () => (
@@ -196,12 +196,53 @@ const ButtonActionPreview = () => {
 	);
 };
 
+const ButtonApiTable = () => {
+	const props: PropsMapping<ButtonProps> = {
+		type: {
+			type: "'button' | 'submit' | 'reset'",
+		},
+		theme: {
+			type: "'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'",
+			defaultValue: "'default'",
+		},
+		variant: {
+			type: "'filled' | 'outlined' | 'ghost'",
+			defaultValue: "'filled'",
+		},
+		size: {
+			type: "'small' | 'medium' | 'large'",
+			defaultValue: "'medium'",
+		},
+		state: {
+			type: "{ disabled?: boolean }",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+		onClick: {
+			type: "React.MouseEventHandler<HTMLButtonElement>",
+		},
+		children: {
+			type: "React.ReactNode",
+		},
+		customClass: {
+			type: "string",
+		},
+		buttonProps: {
+			type: "React.ButtonHTMLAttributes<HTMLButtonElement>",
+		},
+	};
+
+	return <LeApiTable props={props}></LeApiTable>;
+};
+
 buttonAttr["ButtonImportPreview"] = ButtonImportPreview;
 buttonAttr["ButtonVariantPreview"] = ButtonVariantPreview;
 buttonAttr["ButtonThemePreview"] = ButtonThemePreview;
 buttonAttr["ButtonSizePreview"] = ButtonSizePreview;
 buttonAttr["ButtonStatePreview"] = ButtonStatePreview;
 buttonAttr["ButtonActionPreview"] = ButtonActionPreview;
+buttonAttr["ButtonApiTable"] = ButtonApiTable;
 buttonAttr["LeHighlighter"] = LeHighlighter;
 buttonAttr["Button"] = Button;
 buttonAttr["LeSourceButton"] = LeSourceButton;

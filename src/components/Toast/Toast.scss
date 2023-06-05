@@ -1,8 +1,6 @@
 @import "../../styles/variables.scss";
 
 .le-toast {
-	position: absolute;
-
 	pointer-events: all;
 
 	width: fit-content;
@@ -58,44 +56,6 @@
 					color: $color-dark-text;
 				}
 			}
-		}
-	}
-
-	&--position {
-		&-topRight {
-			top: 4rem;
-			right: 4rem;
-		}
-
-		&-topLeft {
-			top: 4rem;
-			left: 4rem;
-		}
-
-		&-bottomRight {
-			bottom: 4rem;
-			right: 4rem;
-		}
-
-		&-bottomLeft {
-			bottom: 4rem;
-			left: 4rem;
-		}
-
-		&-bottomCenter {
-			bottom: 4rem;
-			left: 0;
-			right: 0;
-
-			margin: 0 auto;
-		}
-
-		&-topCenter {
-			top: 4rem;
-			left: 0;
-			right: 0;
-
-			margin: 0 auto;
 		}
 	}
 

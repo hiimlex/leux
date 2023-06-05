@@ -28,6 +28,8 @@ The Toast component uses the `OverlayProvider` to render the `ToastProvider` and
 
 The `OverlayProvider` is used to render components on top of the page. The `OverlayProvider` is used by the Modal component as well. Check this session <NavLink to="/components/overlay">Overlay Provider</NavLink>
 
+Also it's possible to use the `ToastProvider` directly.
+
 <br />
 
 #### ToastContext
@@ -44,14 +46,28 @@ The ToastContext is a service that you can use to manage a Modal component. It h
 
 <br />
 
-#### Usage
+#### Global
 
-A simple usage of Toast component
+The Toast component can be configured globally using the `ToastProvider` or `OverlayProvider` component. It has the following attributes:
+
+- `position` - the default position of the Toast component
+- `stackable` - set if the Toast component can be stacked
+- `duration` - the default duration of the Toast component
+
+<br />
+
+#### Usage
 
 <div>
 <ToastUsagePreview>
 </ToastUsagePreview>
 </div>
+
+<br />
+
+#### ID
+
+Use the `id` prop to add an custom id to the Toast component. The ID is used to identify the Toast component and can be used to close it from outside with `ToastContext` service.
 
 <br />
 
@@ -66,24 +82,13 @@ Use the `size` prop to change the size of the Toast component.
 
 <br />
 
-#### Theme 
+#### Theme
 
 Use the `theme` prop to change the color scheme of the Toast component.
 
 <div>
 <ToastThemePreview>
 </ToastThemePreview>
-</div>
-
-<br />
-
-#### Position
-
-Use the `position` prop to change the position of the Toast component.
-
-<div>
-<ToastPositionPreview>
-</ToastPositionPreview>
 </div>
 
 <br />
@@ -128,6 +133,26 @@ Use the `custom` prefixed props to customize the Toast component.
 <div>
 <ToastCustomPreview>
 </ToastCustomPreview>
+</div>
+
+<br />
+
+### Api Reference
+
+#### ToastProps
+
+<div>
+<ToastApiTable>
+</ToastApiTAble>
+</div>
+
+<br />
+
+#### ToastProviderProps
+
+<div>
+<ToastProdiverApiTable>
+</ToastProdiverApiTable>
 </div>
 
 <br />

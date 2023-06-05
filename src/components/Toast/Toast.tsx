@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { LeClassNames } from "../../types";
-import { ToastProps } from "./Toast.model";
 import { ToastContext } from "../ToastContext";
+import { ToastProps } from "./Toast.model";
 
 import "./Toast.scss";
 
@@ -13,7 +13,6 @@ const Toast = ({
 	theme = "default",
 	variant = "filled",
 	size = "medium",
-	position = "topRight",
 	closable = true,
 	onClose,
 	zIndex,
@@ -28,14 +27,14 @@ const Toast = ({
 				customClass ? ` ${customClass}` : ""
 			} le-toast--${theme} le-toast--${variant} le-toast--${size}${
 				loading ? " le-toast--loading" : ""
-			}${closable ? " le-toast--closable" : ""}${
-				position ? ` le-toast--position-${position}` : ""
-			}`,
+			}${closable ? " le-toast--closable" : ""}`,
 		leToastLabel: () => `le-toast--label`,
 	};
 
+	const toastRef = useRef<HTMLDivElement>(null);
+
 	const handleCloseToast = () => {
-		if (closable) {
+		if (closable && id) {
 			removeToast(id);
 
 			onClose && onClose();
@@ -44,7 +43,9 @@ const Toast = ({
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			removeToast(id);
+			if (id) {
+				removeToast(id);
+			}
 
 			if (closable) {
 				onClose && onClose();
@@ -58,6 +59,7 @@ const Toast = ({
 
 	return (
 		<div
+			ref={toastRef}
 			data-testid="leuxToast"
 			className={classNames["leToast"]()}
 			id={id}

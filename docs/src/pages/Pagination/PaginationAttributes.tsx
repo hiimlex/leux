@@ -1,4 +1,4 @@
-import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
+import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { attributes as paginationAttr } from "./pagination.md";
 import { Pagination, PaginationProps } from "../../../../src";
 import { useState } from "react";
@@ -255,6 +255,57 @@ const PaginationSizePreview = () => {
 	);
 };
 
+const PaginationApiTable = () => {
+	const props: PropsMapping<PaginationProps> = {
+		size: {
+			type: "'small' | 'medium' | 'large'",
+			defaultValue: "'medium'",
+		},
+		currentPage: {
+			type: "number",
+		},
+		itemsPerPage: {
+			type: "number",
+		},
+		totalItems: {
+			type: "number",
+		},
+		totalPages: {
+			type: "number",
+		},
+		simplePagination: {
+			type: "boolean",
+		},
+		showPaginationLabel: {
+			type: "(props: {currentPage: number, itemsPerPage: number, totalItems: number}) => string",
+			defaultValue: `({ currentPage, totalItems, itemsPerPage }) =>
+			\`Showing \${currentPage * itemsPerPage} of \${totalItems}\`,`,
+		},
+		paginationButtons: {
+			type: "{next: boolean, previous: boolean, limit: number}",
+			defaultValue: `{
+				next: true,
+				previous: true,
+			}`,
+		},
+		justifyContent: {
+			type: "React.CSSProperties['justifyContent']",
+			defaultValue: "flex-end",
+		},
+		onPageChange: {
+			type: "(page: number) => void",
+		},
+		customClass: {
+			type: "string",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+	};
+
+	return <LeApiTable props={props} />;
+};
+
 paginationAttr["LeSourceButton"] = LeSourceButton;
 paginationAttr["LeHighlighter"] = LeHighlighter;
 paginationAttr["PaginationImportPreview"] = PaginationImportPreview;
@@ -263,5 +314,6 @@ paginationAttr["PaginationActionPreview"] = PaginationActionPreview;
 paginationAttr["PaginationButtonsPreview"] = PaginationButtonsPreview;
 paginationAttr["PaginationLabelPreview"] = PaginationLabelPreview;
 paginationAttr["PaginationSizePreview"] = PaginationSizePreview;
+paginationAttr["PaginationApiTable"] = PaginationApiTable;
 
 export { paginationAttr };

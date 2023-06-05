@@ -8,7 +8,7 @@ import { Topography } from "../Topography";
 describe("Skeleton component test", () => {
 	it("should render a visible Skeleton component", () => {
 		const { getByTestId } = render(
-			<Skeleton show>
+			<Skeleton>
 				<Topography variant="body-1">
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam repudiandae enim harum,
 					consequuntur animi quia totam, magni maxime nisi pariatur aut sapiente cupiditate dolorem.
@@ -24,7 +24,7 @@ describe("Skeleton component test", () => {
 
 	it("should render a non visible Skeleton component inactive", () => {
 		const { getByTestId } = render(
-			<Skeleton>
+			<Skeleton show={false}>
 				<Topography variant="body-1">
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam repudiandae enim harum,
 					consequuntur animi quia totam, magni maxime nisi pariatur aut sapiente cupiditate dolorem.
@@ -40,7 +40,7 @@ describe("Skeleton component test", () => {
 
 	it("should render a rounded Skeleton component", () => {
 		const { getByTestId } = render(
-			<Skeleton variant="round" show>
+			<Skeleton variant="round">
 				<Topography variant="body-1">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius esse labore dolor beatae,
 					ipsum autem praesentium expedita eos! Omnis minima ullam delectus nesciunt provident odit
@@ -55,9 +55,9 @@ describe("Skeleton component test", () => {
 		expect(skeleton).toHaveClass("le-skeleton--round");
 	});
 
-	it("should render a squared Skeleton component", () => {
+	it("should render a rect Skeleton component", () => {
 		const { getByTestId } = render(
-			<Skeleton variant="square" show>
+			<Skeleton variant="rect">
 				<Topography variant="body-1">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius esse labore dolor beatae,
 					ipsum autem praesentium expedita eos! Omnis minima ullam delectus nesciunt provident odit
@@ -69,12 +69,12 @@ describe("Skeleton component test", () => {
 		const skeleton = getByTestId("leuxSkeleton");
 
 		expect(skeleton).toBeTruthy();
-		expect(skeleton).toHaveClass("le-skeleton--square");
+		expect(skeleton).toHaveClass("le-skeleton--rect");
 	});
 
 	it("should render a small Skeleton component", () => {
 		const { getByTestId } = render(
-			<Skeleton size="small" show>
+			<Skeleton size="small">
 				<Topography variant="body-1">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius esse labore dolor beatae,
 					ipsum autem praesentium expedita eos! Omnis minima ullam delectus nesciunt provident odit
@@ -91,7 +91,7 @@ describe("Skeleton component test", () => {
 
 	it("should render a Skeleton paragraph variant with 3 rows", () => {
 		const { getByTestId, getAllByTestId } = render(
-			<Skeleton variant="paragraph" show rows={3}>
+			<Skeleton variant="paragraph" rows={3}>
 				<Topography variant="body-1">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius esse labore dolor beatae,
 					ipsum autem praesentium expedita eos! Omnis minima ullam delectus nesciunt provident odit
@@ -111,7 +111,7 @@ describe("Skeleton component test", () => {
 
 	it("should render an active Skeleton component ", () => {
 		const { getByTestId } = render(
-			<Skeleton show active>
+			<Skeleton active>
 				<Topography variant="body-1">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius esse labore dolor beatae,
 					ipsum autem praesentium expedita eos! Omnis minima ullam delectus nesciunt provident odit
@@ -128,12 +128,7 @@ describe("Skeleton component test", () => {
 
 	it("should render a custom Skeleton component", () => {
 		const { getByTestId } = render(
-			<Skeleton
-				show
-				customClass="custom-class"
-				customStyles={{ backgroundColor: "red" }}
-				width={300}
-			>
+			<Skeleton customClass="custom-class" customStyles={{ backgroundColor: "red" }} width={300}>
 				<Topography variant="body-1">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius esse labore dolor beatae,
 					ipsum autem praesentium expedita eos! Omnis minima ullam delectus nesciunt provident odit

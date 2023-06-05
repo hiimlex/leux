@@ -1,6 +1,6 @@
-import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
+import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { PropsWithChildren, useContext, useState } from "react";
-import { Avatar, Button, ModalContext, Topography } from "../../../../src";
+import { Avatar, Button, ModalContext, ModalProps, Topography } from "../../../../src";
 import { attributes as modalAttr } from "./modal.md";
 import { NavLink } from "react-router-dom";
 
@@ -302,6 +302,97 @@ const RequiredProp = ({ children }: PropsWithChildren) => (
 	</span>
 );
 
+const ModalApiTable = () => {
+	const props: PropsMapping<ModalProps> = {
+		id: {
+			type: "string",
+			required: true,
+		},
+		zIndex: {
+			type: "React.CSSProperties['zIndex']",
+			defaultValue: "'zIndex is calculated automatically'",
+		},
+		title: {
+			type: "string",
+			required: true,
+		},
+		children: {
+			type: "React.ReactNode",
+		},
+		visible: {
+			type: "boolean",
+			defaultValue: "true",
+		},
+		width: {
+			type: "React.CSSProperties['width']",
+			defaultValue: "'40%'",
+		},
+
+		centered: {
+			type: "boolean",
+			defaultValue: "true",
+		},
+		top: {
+			type: "React.CSSProperties['top']",
+		},
+		left: {
+			type: "React.CSSProperties['left']",
+		},
+		right: {
+			type: "React.CSSProperties['right']",
+		},
+		closable: {
+			type: "boolean",
+			defaultValue: "true",
+		},
+		maskClosable: {
+			type: "boolean",
+			defaultValue: "true",
+		},
+		destroyOnClose: {
+			type: "boolean",
+			defaultValue: "true",
+		},
+		onClose: {
+			type: "() => void",
+		},
+		onOk: {
+			type: "ModalFooterFunction | (id: string, onClose: () => void) => void",
+		},
+		onCancel: {
+			type: "ModalFooterFunction | (id: string, onClose: () => void) => void",
+		},
+		footer: {
+			type: "ModalFooterProps | ButtonProps[] | null",
+		},
+		customFooter: {
+			type: "React.ReactNode",
+		},
+		cancelText: {
+			type: "string",
+			defaultValue: "'Cancel'",
+		},
+		okText: {
+			type: "string",
+			defaultValue: "'Ok'",
+		},
+		customWrapperClass: {
+			type: "string",
+		},
+		customWrapperStyles: {
+			type: "React.CSSProperties",
+		},
+		customClass: {
+			type: "string",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+	};
+
+	return <LeApiTable props={props} />;
+};
+
 modalAttr["LeSourceButton"] = LeSourceButton;
 modalAttr["NavLink"] = NavLink;
 modalAttr["LeHighlighter"] = LeHighlighter;
@@ -312,5 +403,6 @@ modalAttr["ModalActionsPreview"] = ModalActionsPreview;
 modalAttr["ModalPositionPreview"] = ModalPositionPreview;
 modalAttr["ModalSizePreview"] = ModalSizePreview;
 modalAttr["ModalContextPreview"] = ModalContextPreview;
+modalAttr["ModalApiTable"] = ModalApiTable;
 
 export { modalAttr };

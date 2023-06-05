@@ -1,6 +1,12 @@
-import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
+import {
+	PropsMapping,
+	LeApiTable,
+	LeHighlighter,
+	LePreview,
+	LeSourceButton,
+} from "@/components";
 import { NavLink } from "react-router-dom";
-import { Box } from "../../../../src";
+import { Box, BoxProps } from "../../../../src";
 import { attributes as boxAttr } from "./box.md";
 import { useState } from "react";
 
@@ -38,50 +44,6 @@ const BoxCssPreview = () => {
 		bgColor="default"
 	>
 		CSS Properties example
-	</Box>
-);`}
-				/>
-			)}
-		</>
-	);
-};
-
-const BoxCompletePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
-
-	return (
-		<>
-			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Box
-					customClass="le-text--body-1"
-					customStyles={{ fontWeight: 600 }}
-					bgColor="primary"
-					textColor="lighter"
-					centered
-					padding={12}
-					borderRadius={12}
-					margin={12}
-					width="fill-container"
-				>
-					Complete box
-				</Box>
-			</LePreview>
-			{showCode && (
-				<LeHighlighter
-					language="tsx"
-					code={`const Component = () => (
-	<Box
-		customClass="le-text--body-1"
-		customStyles={{ fontWeight: 600 }}
-		bgColor="primary"
-		textColor="lighter"
-		centered
-		padding={12}
-		borderRadius={12}
-		margin={12}
-		width="fill-container"
-	>
-		Complete box
 	</Box>
 );`}
 				/>
@@ -161,12 +123,70 @@ const BoxCenteredPreview = () => {
 	);
 };
 
+const BoxTableApi = () => {
+	const props: PropsMapping<BoxProps> = {
+		flex: {
+			type: "boolean",
+		},
+		alignItems: {
+			type: "React.CSSProperties['alignItems']",
+		},
+		justifyContent: {
+			type: "React.CSSProperties['justifyContent']",
+		},
+		flexDirection: {
+			type: "React.CSSProperties['flexDirection']",
+		},
+		flexWrap: {
+			type: "React.CSSProperties['flexWrap']",
+		},
+		margin: {
+			type: "React.CSSProperties['margin']",
+		},
+		padding: {
+			type: "React.CSSProperties['padding']",
+		},
+		width: {
+			type: "React.CSSProperties['width']",
+		},
+		height: {
+			type: "React.CSSProperties['height']",
+		},
+		borderRadius: {
+			type: "React.CSSProperties['borderRadius']",
+		},
+		bgColor: {
+			type: "'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'",
+		},
+		textColor: {
+			type: "'dark' | 'light' | 'darker' | 'lighter';",
+		},
+		centered: {
+			type: "boolean",
+		},
+		gridSpan: {
+			type: "{row?: number; col?: number}",
+		},
+		customClass: {
+			type: "string",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+		children: {
+			type: "React.ReactNode",
+		},
+	};
+
+	return <LeApiTable props={props}></LeApiTable>;
+};
+
 boxAttr["LeSourceButton"] = LeSourceButton;
 boxAttr["ImportPreview"] = ImportPreview;
-boxAttr["BoxCompletePreview"] = BoxCompletePreview;
 boxAttr["BoxCssPreview"] = BoxCssPreview;
 boxAttr["BoxCustomPreview"] = BoxCustomPreview;
 boxAttr["BoxCenteredPreview"] = BoxCenteredPreview;
+boxAttr["BoxTableApi"] = BoxTableApi;
 boxAttr["NavLink"] = NavLink;
 boxAttr["LeHighlighter"] = LeHighlighter;
 

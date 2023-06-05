@@ -89,86 +89,8 @@ Use the `showPaginationLabel` prop to show the pagination label. The following a
 ### API Reference
 
 <div>
-<table>
-<thead>
-<tr>
-<th width="20%">Prop</td>
-<th width="60%">Type</td>
-<th width="20%">Default</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>currentPage</td>
-<td><LeHighlighter language="tsx" code="number" style="soft" copy="off"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="0" style="soft" copy="off"></LeHighlighter></td>
-</tr>
-<tr>
-<td>totalPages</td>
-<td><LeHighlighter language="tsx" code="number" style="soft" copy="off"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="0" style="soft" copy="off"></LeHighlighter></td>
-</tr>
-<tr>
-<td>totalItems</td>
-<td><LeHighlighter language="tsx" code="number" style="soft" copy="off"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="0" style="soft" copy="off"></LeHighlighter></td>
-</tr>
-<tr>
-<tr>
-<td>itemsPerPage</td>
-<td><LeHighlighter language="tsx" code="number" style="soft" copy="off"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="0" style="soft" copy="off"></LeHighlighter></td>
-</tr>
-<tr>
-<td>size</td>
-<td><LeHighlighter language="tsx" code="'small' | 'medium' | 'large'" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="'medium'" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>onPageChange</td>
-<td><LeHighlighter language="tsx" code="(page: number) => void" style="soft" copy="off"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>justifyContent</td>
-<td><LeHighlighter language="tsx" code="React.CSSProperties['justifyContent']" style="soft" copy="off"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>simplePagination</td>
-<td><LeHighlighter language="tsx" code="boolean" style="soft" copy="off"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="true" style="soft" copy="off"></LeHighlighter></td>
-</tr>
-<tr>
-<td>paginationButtons</td>
-<td><LeHighlighter language="tsx" code="PaginationButtons | {
-	previous?: boolean;
-	next?: boolean;
-	limit?: number;
-};" style="soft" copy="off"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="{ previous: true, { next: true }" style="soft" copy="off"></LeHighlighter></td>
-</tr>
-<tr>
-<td>showPaginationLabel</td>
-<td><LeHighlighter language="tsx" code="PaginationLabel | (props: {
-	currentPage: number;
-	totalItems: number;
-	itemsPerPage: number;
-}) => string;" style="soft" copy="off"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="{ previous: true, { next: true }" style="soft" copy="off"></LeHighlighter></td>
-</tr>
-<tr>
-<td>customStyles</td>
-<td><LeHighlighter language="tsx" code="React.CSSProperties" style="soft" copy="off"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>customClass</td>
-<td><LeHighlighter language="tsx" code="string" style="soft" copy="off"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-</tbody>
-</table>
+<PaginationApiTable>
+</PaginationApiTable>
 </div>
 
 <br />

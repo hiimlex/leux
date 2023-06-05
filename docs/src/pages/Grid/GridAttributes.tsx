@@ -1,6 +1,12 @@
-import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
+import {
+	PropsMapping,
+	LeApiTable,
+	LeHighlighter,
+	LePreview,
+	LeSourceButton,
+} from "@/components";
 import { NavLink } from "react-router-dom";
-import { Box, BoxVariants, Grid, Topography } from "../../../../src";
+import { Box, BoxVariants, Grid, GridProps, Topography } from "../../../../src";
 import { attributes as gridAttr } from "./grid.md";
 import { useState } from "react";
 
@@ -208,6 +214,37 @@ const GridSpanPreview = () => {
 	);
 };
 
+const GridApiTable = () => {
+	const props: PropsMapping<GridProps> = {
+		rows: {
+			type: "React.CSSProperties['gridTemplateRows'] | number",
+		},
+		cols: {
+			type: "React.CSSProperties['gridTemplateColumns'] | number",
+		},
+		gap: {
+			type: "{ row: React.CSSProperties['rowGap']; col: React.CSSProperties['columnGap'] }",
+		},
+		width: {
+			type: "React.CSSProperties['width']",
+		},
+		padding: {
+			type: "React.CSSProperties['padding']",
+		},
+		children: {
+			type: "React.ReactNode",
+		},
+		customClass: {
+			type: "string",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+	};
+
+	return <LeApiTable props={props}></LeApiTable>;
+};
+
 gridAttr["LeSourceButton"] = LeSourceButton;
 gridAttr["GridImportPreview"] = GridImportPreview;
 gridAttr["GridColPreview"] = GridColPreview;
@@ -216,5 +253,6 @@ gridAttr["GridGapPreview"] = GridGapPreview;
 gridAttr["GridSpanPreview"] = GridSpanPreview;
 gridAttr["NavLink"] = NavLink;
 gridAttr["LeHighlighter"] = LeHighlighter;
+gridAttr["GridApiTable"] = GridApiTable;
 
 export { gridAttr };

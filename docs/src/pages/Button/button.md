@@ -60,52 +60,8 @@ Use the `onClick` prop to trigger an action when the button is clicked.
 ### API Reference
 
 <div>
-<table>
-<thead>
-<tr>
-<th width="10%">Prop</th>
-<th width="70%">Type</th>
-<th width="20%">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>variant</td>
-<td><LeHighlighter language="tsx" code="'filled' | 'outlined' | 'ghost'" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="'filled'" style="soft" copy="'off'"></td>
-</tr>
-<tr>
-<td>theme</td>
-<td><LeHighlighter language="tsx" code="'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="'primary'" style="soft" copy="'off'"></td>
-</tr>
-<tr>
-<td>size</td>
-<td><LeHighlighter language="tsx" code="'small' | 'medium' | 'large'" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="'medium'" style="soft" copy="'off'"></td>
-</tr>
-<tr>
-<td>state</td>
-<td><LeHighlighter language="tsx" code="{ disabled: boolean }" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="{}" style="soft" copy="'off'"></td>
-</tr>
-<tr>
-<td>onClick</td>
-<td><LeHighlighter language="tsx" code="() => void" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>customClass</td>
-<td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>customStyles</td>
-<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-</tbody>
-</table>
+<ButtonApiTable>
+</ButtonApiTable>
 </div>
 
 <br/>

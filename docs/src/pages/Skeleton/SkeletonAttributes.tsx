@@ -1,6 +1,14 @@
-import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
+import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { attributes as skeletonAttr } from "./skeleton.md";
-import { Avatar, Box, Button, Skeleton, SkeletonSize, Topography } from "../../../../src";
+import {
+	Avatar,
+	Box,
+	Button,
+	Skeleton,
+	SkeletonProps,
+	SkeletonSizes,
+	Topography,
+} from "../../../../src";
 import { useState } from "react";
 
 const SkeletonImportPreview = () => (
@@ -49,7 +57,7 @@ const SkeletonVariantPreview = () => {
 					<Skeleton show={show} variant="round" customStyles={{ marginRight: 12 }}>
 						<Avatar src="AL" asText></Avatar>
 					</Skeleton>
-					<Skeleton show={show} variant="square">
+					<Skeleton show={show} variant="rect">
 						<Box flex bgColor="success" customStyles={{ width: 64, height: 64 }}></Box>
 					</Skeleton>
 				</Box>
@@ -112,9 +120,9 @@ const SkeletonVariantPreview = () => {
 
 const SkeletonSizePreview = () => {
 	const [showCode, setShowCode] = useState<boolean | undefined>(false);
-	const [size, setSize] = useState<SkeletonSize>("medium");
+	const [size, setSize] = useState<SkeletonSizes>("medium");
 
-	const handleSize = (size: SkeletonSize) => {
+	const handleSize = (size: SkeletonSizes) => {
 		setSize(size);
 	};
 
@@ -385,6 +393,45 @@ const SkeletonActivePreview = () => {
 	);
 };
 
+const SkeletonApiTable = () => {
+	const props: PropsMapping<SkeletonProps> = {
+		children: {
+			type: "React.ReactNode",
+		},
+		size: {
+			type: "SkeletonSizes | 'small' | 'medium' | 'large'",
+			defaultValue: "medium",
+		},
+		variant: {
+			type: "SkeletonVariants |  'paragraph' | 'round' | 'rect'",
+		},
+		width: {
+			type: "React.CSSProperties['width']",
+			defaultValue: "100%",
+		},
+		rows: {
+			type: "number",
+			defaultValue: "2",
+		},
+		active: {
+			type: "boolean",
+			defaultValue: "false",
+		},
+		show: {
+			type: "boolean",
+			defaultValue: "true",
+		},
+		customClass: {
+			type: "string",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+	};
+
+	return <LeApiTable props={props} />;
+};
+
 skeletonAttr["LeSourceButton"] = LeSourceButton;
 skeletonAttr["LeHighlighter"] = LeHighlighter;
 skeletonAttr["SkeletonImportPreview"] = SkeletonImportPreview;
@@ -392,5 +439,6 @@ skeletonAttr["SkeletonVariantPreview"] = SkeletonVariantPreview;
 skeletonAttr["SkeletonSizePreview"] = SkeletonSizePreview;
 skeletonAttr["SkeletonRowsPreview"] = SkeletonRowsPreview;
 skeletonAttr["SkeletonActivePreview"] = SkeletonActivePreview;
+skeletonAttr["SkeletonApiTable"] = SkeletonApiTable;
 
 export { skeletonAttr };

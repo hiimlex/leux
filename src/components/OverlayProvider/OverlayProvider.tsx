@@ -1,17 +1,26 @@
-import React, { ComponentProps, FC, PropsWithChildren } from "react";
-import { ModalProvider } from "../Modal";
+import React, { ComponentProps, FC, PropsWithChildren, useMemo } from "react";
+import { ModalProvider, ModalProviderProps } from "../Modal";
 import { LeSafeAny } from "../../types";
-import { ToastProvider } from "../ToastProvider";
+import { ToastProvider, ToastProviderProps } from "../ToastProvider";
+
+interface OverlayProviderProps {
+	children: React.ReactNode;
+	ModalProviderProps?: Omit<ModalProviderProps, "children">;
+	ToastProviderProps?: Omit<ToastProviderProps, "children">;
+}
 
 const combineProviders = (
-	...components: FC<PropsWithChildren<LeSafeAny>>[]
+	components: FC<PropsWithChildren<LeSafeAny>>[],
+	props: Record<string, LeSafeAny>
 ): FC<PropsWithChildren> => {
 	return components.reduce(
 		(AccumulatedComponents, CurrentComponent) => {
-			return ({ children }: ComponentProps<FC<PropsWithChildren>>): JSX.Element => {
+			return ({ children }: ComponentProps<FC<PropsWithChildren<LeSafeAny>>>): JSX.Element => {
 				return (
 					<AccumulatedComponents>
-						<CurrentComponent>{children}</CurrentComponent>
+						<CurrentComponent {...props[CurrentComponent.name + "Props"]}>
+							{children}
+						</CurrentComponent>
 					</AccumulatedComponents>
 				);
 			};
@@ -20,8 +29,21 @@ const combineProviders = (
 	);
 };
 
-const Providers = [ModalProvider, ToastProvider];
+const OverlayProvider = ({
+	children,
+	ModalProviderProps,
+	ToastProviderProps,
+}: OverlayProviderProps) => {
+	const CombinedProviders = useMemo(
+		() =>
+			combineProviders([ModalProvider, ToastProvider], {
+				ModalProviderProps,
+				ToastProviderProps,
+			}),
+		[ModalProviderProps, ToastProviderProps]
+	);
 
-const OverlayProvider = combineProviders(...Providers);
+	return <CombinedProviders>{children}</CombinedProviders>;
+};
 
 export { OverlayProvider };

@@ -1,4 +1,4 @@
-import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
+import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import {
@@ -885,6 +885,69 @@ return (
 	);
 };
 
+const TableApiTable = () => {
+	const props: PropsMapping<TableProps> = {
+		variant: {
+			type: "TableVariants | 'bordered' | 'default'",
+		},
+		size: {
+			type: "TableSizes | 'small' | 'medium' | 'large'",
+		},
+
+		width: {
+			type: "React.CSSProperties['width']",
+		},
+		height: {
+			type: "React.CSSProperties['height']",
+		},
+		state: {
+			type: "TableState | { empty?: boolean; loading?: boolean; disabled?: boolean; spinnerProps?: SpinnerProps; emptyContent?: JSX.Element }",
+		},
+		children: {
+			type: "React.ReactNode",
+		},
+		columns: {
+			type: "TableColumn[] | { header: string; key: string; orderActive?: boolean; order?: TableOrder; orderFn?: (column: TableColumn) => void }[]",
+		},
+		rows: {
+			type: "TableRows[] | { [key: string]: string | number | boolean | undefined }[]",
+		},
+		gridTemplateColumns: {
+			type: "React.CSSProperties['gridTemplateColumns']",
+		},
+		emptyValue: {
+			type: "string",
+		},
+
+		customClass: {
+			type: "string",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+		customBodyClass: {
+			type: "string",
+		},
+		customBodyStyles: {
+			type: "React.CSSProperties",
+		},
+		customHeaderClass: {
+			type: "string",
+		},
+		customHeaderStyles: {
+			type: "React.CSSProperties",
+		},
+		customWrapperClass: {
+			type: "string",
+		},
+		customWrapperStyles: {
+			type: "React.CSSProperties",
+		},
+	};
+
+	return <LeApiTable props={props} />;
+};
+
 tableAttr["LeSourceButton"] = LeSourceButton;
 tableAttr["LeHighlighter"] = LeHighlighter;
 tableAttr["TableImportPreview"] = TableImportPreview;
@@ -895,5 +958,6 @@ tableAttr["TableSizePreview"] = TableSizePreview;
 tableAttr["TableOrderPreview"] = TableOrderPreview;
 tableAttr["TablePaginationPreview"] = TablePaginationPreview;
 tableAttr["TableStatePreview"] = TableStatePreview;
+tableAttr["TableApiTable"] = TableApiTable;
 
 export { tableAttr };

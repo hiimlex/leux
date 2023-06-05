@@ -17,7 +17,7 @@
 	}
 
 	&--round,
-	&--square {
+	&--rect {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -74,7 +74,7 @@
 	}
 
 	&-round,
-	&-square {
+	&-rect {
 		width: 100%;
 		margin: 0;
 
