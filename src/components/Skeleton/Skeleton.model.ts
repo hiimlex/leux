@@ -1,10 +1,10 @@
-type SkeletonSize = "small" | "medium" | "large";
-type SkeletonVariant = "round" | "paragraph" | "square";
+type SkeletonSizes = "small" | "medium" | "large";
+type SkeletonVariants = "round" | "paragraph" | "rect";
 
 interface SkeletonProps {
 	children: React.ReactNode;
-	size?: SkeletonSize;
-	variant?: SkeletonVariant;
+	size?: SkeletonSizes;
+	variant?: SkeletonVariants;
 	rows?: number;
 	width?: React.CSSProperties["width"];
 	show?: boolean;
@@ -13,4 +13,4 @@ interface SkeletonProps {
 	customStyles?: React.CSSProperties;
 }
 
-export { SkeletonProps, SkeletonSize, SkeletonVariant };
+export { SkeletonProps, SkeletonSizes, SkeletonVariants };

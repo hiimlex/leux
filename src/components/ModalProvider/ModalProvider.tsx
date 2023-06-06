@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { ModalProps } from "./Modal.model";
-import { Provider } from "./ModalContext";
-import { Modal } from "./Modal";
+import { ModalProps } from "../Modal/Modal.model";
+import { ModalContext } from "../ModalContext";
+import { Modal } from "../Modal";
+
+import "./ModalProvider.scss";
 
 type ModalProviderProps = {
 	children: React.ReactNode;
@@ -66,7 +68,9 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
 			})
 		);
 
-		if (shouldDestroy) destroyModal(id);
+		if (shouldDestroy) {
+			destroyModal(id);
+		}
 	};
 
 	const destroyAll = () => {
@@ -74,7 +78,7 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
 	};
 
 	return (
-		<Provider
+		<ModalContext.Provider
 			value={{
 				modals,
 				hasModal,
@@ -87,14 +91,15 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
 		>
 			{modals.length > 0 && modals.some((el) => el.visible) && (
 				<div className="le-modal--provider">
+					{}
 					{modals.map((modal) => (
 						<Modal key={modal.id} {...modal} />
 					))}
 				</div>
 			)}
 			{children}
-		</Provider>
+		</ModalContext.Provider>
 	);
 };
 
-export { ModalProvider };
+export { ModalProvider, ModalProviderProps };

@@ -1,7 +1,7 @@
 import { attributes as badgeAttr } from "./badge.md";
 
-import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
-import { Badge } from "../../../../src";
+import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
+import { Badge, BadgeProps } from "../../../../src";
 import { useState } from "react";
 
 const BadgeImportPreview = () => (
@@ -135,12 +135,41 @@ const BadgeCustomPreview = () => {
 	);
 };
 
+const BadgeApiTable = () => {
+	const props: PropsMapping<BadgeProps> = {
+		children: {
+			type: "React.ReactNode",
+		},
+		size: {
+			type: "BadgeSizes | 'small' | 'medium' | 'large'",
+			defaultValue: "medium",
+		},
+		variant: {
+			type: "BadgeVariants | 'dash' | 'outlined' | 'ghost'",
+			defaultValue: "ghost",
+		},
+		theme: {
+			type: "BadgeThemes | 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'",
+			defaultValue: "default",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+		customClass: {
+			type: "string",
+		},
+	};
+
+	return <LeApiTable props={props} />;
+};
+
 badgeAttr["LeSourceButton"] = LeSourceButton;
+badgeAttr["LeHighlighter"] = LeHighlighter;
 badgeAttr["BadgeImportPreview"] = BadgeImportPreview;
 badgeAttr["BadgeThemePreview"] = BadgeThemePreview;
 badgeAttr["BadgeVariantPreview"] = BadgeVariantPreview;
 badgeAttr["BadgeSizePreview"] = BadgeSizePreview;
 badgeAttr["BadgeCustomPreview"] = BadgeCustomPreview;
-badgeAttr["LeHighlighter"] = LeHighlighter;
+badgeAttr["BadgeApiTable"] = BadgeApiTable;
 
 export { badgeAttr };

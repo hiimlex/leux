@@ -1,6 +1,6 @@
-import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
+import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { ChangeEvent, useState } from "react";
-import { Button, Checkbox } from "../../../../src";
+import { Button, Checkbox, CheckboxProps } from "../../../../src";
 import { attributes as checkboxAttr } from "./checkbox.md";
 
 const CheckboxImportPreview = () => (
@@ -210,6 +210,61 @@ const CheckboxFieldKeyPreview = () => {
 	);
 };
 
+const CheckboxApiTable = () => {
+	const props: PropsMapping<CheckboxProps> = {
+		fieldKey: {
+			type: "string",
+		},
+		label: {
+			type: "string",
+		},
+		size: {
+			type: "'small' | 'medium' | 'large'",
+			defaultValue: "'medium'",
+		},
+		defaultChecked: {
+			type: "boolean",
+			defaultValue: "false",
+		},
+		state: {
+			type: "{ disabled?: boolean }",
+		},
+		width: {
+			type: "React.CSSProperties['width']",
+			defaultValue: "'auto'",
+		},
+		customClass: {
+			type: "string",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+		customInputClass: {
+			type: "string",
+		},
+		customInputStyles: {
+			type: "React.CSSProperties",
+		},
+		customLabelClass: {
+			type: "string",
+		},
+		customLabelStyles: {
+			type: "React.CSSProperties",
+		},
+		onChange: {
+			type: "(event: React.ChangeEvent<HTMLInputElement>) => void",
+		},
+		checkBoxProps: {
+			type: "React.InputHTMLAttributes<HTMLInputElement>",
+		},
+		checkboxRef: {
+			type: "React.RefObject<HTMLInputElement>",
+		},
+	};
+
+	return <LeApiTable props={props} />;
+};
+
 checkboxAttr["LeSourceButton"] = LeSourceButton;
 checkboxAttr["LeHighlighter"] = LeHighlighter;
 checkboxAttr["CheckboxImportPreview"] = CheckboxImportPreview;
@@ -218,5 +273,6 @@ checkboxAttr["CheckboxSizePreview"] = CheckboxSizePreview;
 checkboxAttr["CheckboxCustomPreview"] = CheckboxCustomPreview;
 checkboxAttr["CheckboxStatePreview"] = CheckboxStatePreview;
 checkboxAttr["CheckboxFieldKeyPreview"] = CheckboxFieldKeyPreview;
+checkboxAttr["CheckboxApiTable"] = CheckboxApiTable;
 
 export { checkboxAttr };

@@ -1,8 +1,8 @@
-import { act, fireEvent, render } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 
-import { Select } from "./Select";
 import "@testing-library/jest-dom";
 import React from "react";
+import { Select } from "./Select";
 
 describe("Select component test", () => {
 	it("should render a Select component", () => {

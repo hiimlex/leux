@@ -3,6 +3,8 @@
 	height: auto;
 	z-index: 0;
 
+	animation: leuxHighlighterAnimation 0.2s ease-in-out forwards;
+
 	&--dracula {
 		.le-highlighter--copy {
 			position: absolute;
@@ -557,5 +559,17 @@
 		.token.entity {
 			cursor: help;
 		}
+	}
+}
+
+@keyframes leuxHighlighterAnimation {
+	from {
+		opacity: 0;
+		transform: translateY(-2%);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }

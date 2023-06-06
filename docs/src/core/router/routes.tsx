@@ -20,6 +20,7 @@ import {
 	SpinnerPage,
 	TablePage,
 	TextAreaPage,
+	ToastPage,
 	TooltipPage,
 	TopographyPage,
 } from "@/pages";
@@ -58,14 +59,6 @@ export const routes: LeRoute[] = [
 	{
 		path: "/layout/box",
 		element: <LeRenderDocPage doc={<BoxPage />} title="Box" />,
-	},
-	{
-		path: "/layout/spinner",
-		element: <LeRenderDocPage doc={<SpinnerPage />} title="Spinner" />,
-	},
-	{
-		path: "/layout/skeleton",
-		element: <LeRenderDocPage doc={<SkeletonPage />} title="Dropdown" />,
 	},
 	{
 		path: "/components/button",
@@ -118,6 +111,18 @@ export const routes: LeRoute[] = [
 	{
 		path: "/components/dropdown",
 		element: <LeRenderDocPage doc={<DropdownPage />} title="Dropdown" />,
+	},
+	{
+		path: "/components/spinner",
+		element: <LeRenderDocPage doc={<SpinnerPage />} title="Spinner" />,
+	},
+	{
+		path: "/components/skeleton",
+		element: <LeRenderDocPage doc={<SkeletonPage />} title="Dropdown" />,
+	},
+	{
+		path: "/components/toast",
+		element: <LeRenderDocPage doc={<ToastPage />} title="Toast" />,
 	},
 	{
 		path: "*",

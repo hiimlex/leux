@@ -1,8 +1,15 @@
-import { LeAnchorLink, LeHighlighter, LePreview, LeSourceButton } from "@/components";
+import {
+	LeAnchorLink,
+	LeApiTable,
+	LeHighlighter,
+	LePreview,
+	LeSourceButton,
+	PropsMapping,
+} from "@/components";
 
-import { Topography } from "../../../../src";
-import { attributes as topographyAttr } from "./topography.md";
 import { useState } from "react";
+import { Topography, TopographyProps } from "../../../../src";
+import { attributes as topographyAttr } from "./topography.md";
 
 const ImportPreview = () => {
 	return (
@@ -88,12 +95,32 @@ const TopographyCustomPreview = () => {
 	);
 };
 
+const TopographyApiTable = () => {
+	const props: PropsMapping<TopographyProps> = {
+		variant: {
+			type: "'h1' | 'h2'| 'h3'| 'h4'| 'h5'| 'h6'| 'subtitle-1'| 'subtitle-2'| 'body-1'| 'body-2'| 'caption'| 'button'| 'overline'",
+		},
+		customClass: {
+			type: "string",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+		children: {
+			type: "React.ReactNode",
+		},
+	};
+
+	return <LeApiTable props={props}></LeApiTable>;
+};
+
 topographyAttr["Topography"] = Topography;
 topographyAttr["ImportPreview"] = ImportPreview;
 topographyAttr["TopographyCustomPreview"] = TopographyCustomPreview;
 topographyAttr["CodePreview"] = CodePreview;
 topographyAttr["LeSourceButton"] = LeSourceButton;
 topographyAttr["LeAnchorLink"] = LeAnchorLink;
+topographyAttr["TopographyApiTable"] = TopographyApiTable;
 topographyAttr["LeHighlighter"] = LeHighlighter;
 
 export { topographyAttr };

@@ -1,66 +1,459 @@
-{"total": {"lines":{"total":312,"covered":277,"skipped":0,"pct":88.78},"statements":{"total":342,"covered":296,"skipped":0,"pct":86.54},"functions":{"total":138,"covered":119,"skipped":0,"pct":86.23},"branches":{"total":426,"covered":310,"skipped":0,"pct":72.76},"branchesTrue":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Avatar/Avatar.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Avatar/Avatar.tsx": {"lines":{"total":7,"covered":7,"skipped":0,"pct":100},"functions":{"total":3,"covered":3,"skipped":0,"pct":100},"statements":{"total":7,"covered":7,"skipped":0,"pct":100},"branches":{"total":11,"covered":10,"skipped":0,"pct":90.9}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Avatar/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Badge/Badge.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Badge/Badge.tsx": {"lines":{"total":2,"covered":2,"skipped":0,"pct":100},"functions":{"total":1,"covered":1,"skipped":0,"pct":100},"statements":{"total":2,"covered":2,"skipped":0,"pct":100},"branches":{"total":11,"covered":8,"skipped":0,"pct":72.72}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Badge/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Box/Box.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Box/Box.tsx": {"lines":{"total":5,"covered":4,"skipped":0,"pct":80},"functions":{"total":2,"covered":2,"skipped":0,"pct":100},"statements":{"total":5,"covered":4,"skipped":0,"pct":80},"branches":{"total":12,"covered":6,"skipped":0,"pct":50}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Box/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Button/Button.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Button/Button.tsx": {"lines":{"total":6,"covered":6,"skipped":0,"pct":100},"functions":{"total":3,"covered":3,"skipped":0,"pct":100},"statements":{"total":6,"covered":6,"skipped":0,"pct":100},"branches":{"total":14,"covered":13,"skipped":0,"pct":92.85}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Button/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Checkbox/Checkbox.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Checkbox/Checkbox.tsx": {"lines":{"total":5,"covered":5,"skipped":0,"pct":100},"functions":{"total":2,"covered":2,"skipped":0,"pct":100},"statements":{"total":5,"covered":5,"skipped":0,"pct":100},"branches":{"total":17,"covered":16,"skipped":0,"pct":94.11}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Checkbox/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Dropdown/Dropdown.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Dropdown/Dropdown.tsx": {"lines":{"total":38,"covered":37,"skipped":0,"pct":97.36},"functions":{"total":16,"covered":16,"skipped":0,"pct":100},"statements":{"total":42,"covered":40,"skipped":0,"pct":95.23},"branches":{"total":45,"covered":35,"skipped":0,"pct":77.77}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Dropdown/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Grid/Grid.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Grid/Grid.tsx": {"lines":{"total":10,"covered":8,"skipped":0,"pct":80},"functions":{"total":3,"covered":3,"skipped":0,"pct":100},"statements":{"total":10,"covered":8,"skipped":0,"pct":80},"branches":{"total":9,"covered":5,"skipped":0,"pct":55.55}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Grid/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Input/Input.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Input/Input.tsx": {"lines":{"total":2,"covered":2,"skipped":0,"pct":100},"functions":{"total":1,"covered":1,"skipped":0,"pct":100},"statements":{"total":2,"covered":2,"skipped":0,"pct":100},"branches":{"total":15,"covered":8,"skipped":0,"pct":53.33}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Input/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Modal/Modal.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Modal/Modal.tsx": {"lines":{"total":33,"covered":25,"skipped":0,"pct":75.75},"functions":{"total":15,"covered":12,"skipped":0,"pct":80},"statements":{"total":43,"covered":28,"skipped":0,"pct":65.11},"branches":{"total":56,"covered":35,"skipped":0,"pct":62.5}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Modal/ModalContext.tsx": {"lines":{"total":2,"covered":2,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":2,"covered":2,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Modal/ModalProvider.tsx": {"lines":{"total":37,"covered":36,"skipped":0,"pct":97.29},"functions":{"total":20,"covered":18,"skipped":0,"pct":90},"statements":{"total":47,"covered":44,"skipped":0,"pct":93.61},"branches":{"total":12,"covered":7,"skipped":0,"pct":58.33}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Modal/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Pagination/Pagination.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Pagination/Pagination.tsx": {"lines":{"total":32,"covered":32,"skipped":0,"pct":100},"functions":{"total":13,"covered":13,"skipped":0,"pct":100},"statements":{"total":32,"covered":32,"skipped":0,"pct":100},"branches":{"total":42,"covered":39,"skipped":0,"pct":92.85}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Pagination/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Radio/Radio.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Radio/Radio.tsx": {"lines":{"total":2,"covered":2,"skipped":0,"pct":100},"functions":{"total":1,"covered":1,"skipped":0,"pct":100},"statements":{"total":2,"covered":2,"skipped":0,"pct":100},"branches":{"total":13,"covered":10,"skipped":0,"pct":76.92}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Radio/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Select/Select.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Select/Select.tsx": {"lines":{"total":12,"covered":11,"skipped":0,"pct":91.66},"functions":{"total":7,"covered":6,"skipped":0,"pct":85.71},"statements":{"total":12,"covered":11,"skipped":0,"pct":91.66},"branches":{"total":27,"covered":27,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Select/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Skeleton/Skeleton.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Skeleton/Skeleton.tsx": {"lines":{"total":11,"covered":11,"skipped":0,"pct":100},"functions":{"total":6,"covered":6,"skipped":0,"pct":100},"statements":{"total":12,"covered":12,"skipped":0,"pct":100},"branches":{"total":19,"covered":19,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Skeleton/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Spinner/Spinner.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Spinner/Spinner.tsx": {"lines":{"total":30,"covered":17,"skipped":0,"pct":56.66},"functions":{"total":10,"covered":6,"skipped":0,"pct":60},"statements":{"total":30,"covered":17,"skipped":0,"pct":56.66},"branches":{"total":27,"covered":12,"skipped":0,"pct":44.44}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Spinner/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Table/Table.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Table/Table.tsx": {"lines":{"total":31,"covered":23,"skipped":0,"pct":74.19},"functions":{"total":21,"covered":12,"skipped":0,"pct":57.14},"statements":{"total":35,"covered":26,"skipped":0,"pct":74.28},"branches":{"total":61,"covered":31,"skipped":0,"pct":50.81}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Table/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/TextArea/TextArea.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/TextArea/TextArea.tsx": {"lines":{"total":19,"covered":19,"skipped":0,"pct":100},"functions":{"total":4,"covered":4,"skipped":0,"pct":100},"statements":{"total":19,"covered":19,"skipped":0,"pct":100},"branches":{"total":21,"covered":16,"skipped":0,"pct":76.19}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/TextArea/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Tooltip/Tooltip.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Tooltip/Tooltip.tsx": {"lines":{"total":10,"covered":10,"skipped":0,"pct":100},"functions":{"total":5,"covered":5,"skipped":0,"pct":100},"statements":{"total":10,"covered":10,"skipped":0,"pct":100},"branches":{"total":6,"covered":6,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Tooltip/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Topography/Topography.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Topography/Topography.tsx": {"lines":{"total":3,"covered":3,"skipped":0,"pct":100},"functions":{"total":1,"covered":1,"skipped":0,"pct":100},"statements":{"total":3,"covered":3,"skipped":0,"pct":100},"branches":{"total":2,"covered":1,"skipped":0,"pct":50}}
-,"/Users/vntadro/Desktop/Personal/leux/src/components/Topography/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/styles/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/types/generics.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/types/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/utils/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/utils/useBreakpoint/index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/Users/vntadro/Desktop/Personal/leux/src/utils/useBreakpoint/useBreakpoint.tsx": {"lines":{"total":15,"covered":15,"skipped":0,"pct":100},"functions":{"total":4,"covered":4,"skipped":0,"pct":100},"statements":{"total":16,"covered":16,"skipped":0,"pct":100},"branches":{"total":6,"covered":6,"skipped":0,"pct":100}}
+{
+	"total": {
+		"lines": { "total": 361, "covered": 331, "skipped": 0, "pct": 91.68 },
+		"statements": { "total": 394, "covered": 350, "skipped": 0, "pct": 88.83 },
+		"functions": { "total": 161, "covered": 141, "skipped": 0, "pct": 87.57 },
+		"branches": { "total": 451, "covered": 340, "skipped": 0, "pct": 75.38 },
+		"branchesTrue": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Avatar/Avatar.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Avatar/Avatar.tsx": {
+		"lines": { "total": 7, "covered": 7, "skipped": 0, "pct": 100 },
+		"functions": { "total": 3, "covered": 3, "skipped": 0, "pct": 100 },
+		"statements": { "total": 7, "covered": 7, "skipped": 0, "pct": 100 },
+		"branches": { "total": 11, "covered": 10, "skipped": 0, "pct": 90.9 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Avatar/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Badge/Badge.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Badge/Badge.tsx": {
+		"lines": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
+		"functions": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
+		"statements": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
+		"branches": { "total": 11, "covered": 8, "skipped": 0, "pct": 72.72 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Badge/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Box/Box.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Box/Box.tsx": {
+		"lines": { "total": 5, "covered": 4, "skipped": 0, "pct": 80 },
+		"functions": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
+		"statements": { "total": 5, "covered": 4, "skipped": 0, "pct": 80 },
+		"branches": { "total": 12, "covered": 6, "skipped": 0, "pct": 50 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Box/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Button/Button.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Button/Button.tsx": {
+		"lines": { "total": 6, "covered": 6, "skipped": 0, "pct": 100 },
+		"functions": { "total": 3, "covered": 3, "skipped": 0, "pct": 100 },
+		"statements": { "total": 6, "covered": 6, "skipped": 0, "pct": 100 },
+		"branches": { "total": 14, "covered": 13, "skipped": 0, "pct": 92.85 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Button/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Checkbox/Checkbox.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Checkbox/Checkbox.tsx": {
+		"lines": { "total": 5, "covered": 5, "skipped": 0, "pct": 100 },
+		"functions": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
+		"statements": { "total": 5, "covered": 5, "skipped": 0, "pct": 100 },
+		"branches": { "total": 17, "covered": 16, "skipped": 0, "pct": 94.11 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Checkbox/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Dropdown/Dropdown.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Dropdown/Dropdown.tsx": {
+		"lines": { "total": 38, "covered": 37, "skipped": 0, "pct": 97.36 },
+		"functions": { "total": 16, "covered": 16, "skipped": 0, "pct": 100 },
+		"statements": { "total": 42, "covered": 40, "skipped": 0, "pct": 95.23 },
+		"branches": { "total": 45, "covered": 35, "skipped": 0, "pct": 77.77 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Dropdown/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Grid/Grid.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Grid/Grid.tsx": {
+		"lines": { "total": 10, "covered": 10, "skipped": 0, "pct": 100 },
+		"functions": { "total": 3, "covered": 3, "skipped": 0, "pct": 100 },
+		"statements": { "total": 10, "covered": 10, "skipped": 0, "pct": 100 },
+		"branches": { "total": 9, "covered": 9, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Grid/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Input/Input.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Input/Input.tsx": {
+		"lines": { "total": 4, "covered": 4, "skipped": 0, "pct": 100 },
+		"functions": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
+		"statements": { "total": 4, "covered": 4, "skipped": 0, "pct": 100 },
+		"branches": { "total": 11, "covered": 11, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Input/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Modal/Modal.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Modal/Modal.tsx": {
+		"lines": { "total": 33, "covered": 25, "skipped": 0, "pct": 75.75 },
+		"functions": { "total": 15, "covered": 12, "skipped": 0, "pct": 80 },
+		"statements": { "total": 43, "covered": 28, "skipped": 0, "pct": 65.11 },
+		"branches": { "total": 56, "covered": 35, "skipped": 0, "pct": 62.5 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Modal/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/ModalContext/ModalContext.tsx": {
+		"lines": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/ModalContext/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/ModalProvider/ModalProvider.tsx": {
+		"lines": { "total": 38, "covered": 38, "skipped": 0, "pct": 100 },
+		"functions": { "total": 20, "covered": 19, "skipped": 0, "pct": 95 },
+		"statements": { "total": 47, "covered": 45, "skipped": 0, "pct": 95.74 },
+		"branches": { "total": 12, "covered": 7, "skipped": 0, "pct": 58.33 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/ModalProvider/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/OverlayProvider/OverlayProvider.tsx": {
+		"lines": { "total": 9, "covered": 9, "skipped": 0, "pct": 100 },
+		"functions": { "total": 6, "covered": 6, "skipped": 0, "pct": 100 },
+		"statements": { "total": 9, "covered": 9, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/OverlayProvider/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Pagination/Pagination.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Pagination/Pagination.tsx": {
+		"lines": { "total": 32, "covered": 32, "skipped": 0, "pct": 100 },
+		"functions": { "total": 13, "covered": 13, "skipped": 0, "pct": 100 },
+		"statements": { "total": 32, "covered": 32, "skipped": 0, "pct": 100 },
+		"branches": { "total": 42, "covered": 39, "skipped": 0, "pct": 92.85 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Pagination/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Radio/Radio.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Radio/Radio.tsx": {
+		"lines": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
+		"functions": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
+		"statements": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
+		"branches": { "total": 13, "covered": 10, "skipped": 0, "pct": 76.92 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Radio/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Select/Select.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Select/Select.tsx": {
+		"lines": { "total": 13, "covered": 12, "skipped": 0, "pct": 92.3 },
+		"functions": { "total": 7, "covered": 6, "skipped": 0, "pct": 85.71 },
+		"statements": { "total": 13, "covered": 12, "skipped": 0, "pct": 92.3 },
+		"branches": { "total": 21, "covered": 20, "skipped": 0, "pct": 95.23 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Select/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Skeleton/Skeleton.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Skeleton/Skeleton.tsx": {
+		"lines": { "total": 11, "covered": 11, "skipped": 0, "pct": 100 },
+		"functions": { "total": 6, "covered": 6, "skipped": 0, "pct": 100 },
+		"statements": { "total": 12, "covered": 12, "skipped": 0, "pct": 100 },
+		"branches": { "total": 21, "covered": 21, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Skeleton/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Spinner/Spinner.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Spinner/Spinner.tsx": {
+		"lines": { "total": 28, "covered": 26, "skipped": 0, "pct": 92.85 },
+		"functions": { "total": 8, "covered": 8, "skipped": 0, "pct": 100 },
+		"statements": { "total": 28, "covered": 26, "skipped": 0, "pct": 92.85 },
+		"branches": { "total": 27, "covered": 22, "skipped": 0, "pct": 81.48 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Spinner/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Table/Table.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Table/Table.tsx": {
+		"lines": { "total": 31, "covered": 23, "skipped": 0, "pct": 74.19 },
+		"functions": { "total": 21, "covered": 12, "skipped": 0, "pct": 57.14 },
+		"statements": { "total": 35, "covered": 26, "skipped": 0, "pct": 74.28 },
+		"branches": { "total": 61, "covered": 31, "skipped": 0, "pct": 50.81 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Table/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/TextArea/TextArea.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/TextArea/TextArea.tsx": {
+		"lines": { "total": 19, "covered": 19, "skipped": 0, "pct": 100 },
+		"functions": { "total": 4, "covered": 4, "skipped": 0, "pct": 100 },
+		"statements": { "total": 19, "covered": 19, "skipped": 0, "pct": 100 },
+		"branches": { "total": 21, "covered": 19, "skipped": 0, "pct": 90.47 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/TextArea/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Toast/Toast.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Toast/Toast.tsx": {
+		"lines": { "total": 19, "covered": 12, "skipped": 0, "pct": 63.15 },
+		"functions": { "total": 7, "covered": 5, "skipped": 0, "pct": 71.42 },
+		"statements": { "total": 19, "covered": 12, "skipped": 0, "pct": 63.15 },
+		"branches": { "total": 24, "covered": 8, "skipped": 0, "pct": 33.33 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Toast/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/ToastContext/ToastContext.tsx": {
+		"lines": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/ToastContext/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/ToastProvider/ToastProvider.tsx": {
+		"lines": { "total": 19, "covered": 17, "skipped": 0, "pct": 89.47 },
+		"functions": { "total": 11, "covered": 7, "skipped": 0, "pct": 63.63 },
+		"statements": { "total": 23, "covered": 18, "skipped": 0, "pct": 78.26 },
+		"branches": { "total": 9, "covered": 7, "skipped": 0, "pct": 77.77 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/ToastProvider/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Tooltip/Tooltip.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Tooltip/Tooltip.tsx": {
+		"lines": { "total": 10, "covered": 10, "skipped": 0, "pct": 100 },
+		"functions": { "total": 5, "covered": 5, "skipped": 0, "pct": 100 },
+		"statements": { "total": 10, "covered": 10, "skipped": 0, "pct": 100 },
+		"branches": { "total": 6, "covered": 6, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Tooltip/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Topography/Topography.model.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Topography/Topography.tsx": {
+		"lines": { "total": 3, "covered": 3, "skipped": 0, "pct": 100 },
+		"functions": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
+		"statements": { "total": 3, "covered": 3, "skipped": 0, "pct": 100 },
+		"branches": { "total": 2, "covered": 1, "skipped": 0, "pct": 50 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/components/Topography/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/styles/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/types/generics.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/types/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/utils/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/utils/useBreakpoint/index.ts": {
+		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
+		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
+	},
+	"/Users/vntadro/Desktop/personal/leux/src/utils/useBreakpoint/useBreakpoint.tsx": {
+		"lines": { "total": 15, "covered": 15, "skipped": 0, "pct": 100 },
+		"functions": { "total": 4, "covered": 4, "skipped": 0, "pct": 100 },
+		"statements": { "total": 16, "covered": 16, "skipped": 0, "pct": 100 },
+		"branches": { "total": 6, "covered": 6, "skipped": 0, "pct": 100 }
+	}
 }

@@ -6,7 +6,7 @@ type TableColumn = {
 	key: string;
 	orderActive?: boolean;
 	order?: TableOrder;
-	orderFn?: (order: TableColumn) => void;
+	orderFn?: (column: TableColumn) => void;
 };
 type TableRow = {
 	[key: string]: string | number | boolean | undefined;

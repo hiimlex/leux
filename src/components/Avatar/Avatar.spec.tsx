@@ -56,5 +56,6 @@ describe("Avatar component test", () => {
 		const avatar = getByTestId("leuxAvatar");
 
 		expect(avatar).toHaveStyle("width: 52px; height: 52px;");
+		expect(avatar).toHaveClass("le-color-bg--primary");
 	});
 });

@@ -1,7 +1,5 @@
 import { createContext } from "react";
-import { ModalProps } from "./Modal.model";
-
-import "./Modal.scss";
+import { ModalProps } from "../Modal";
 
 type ModalContextProps = {
 	modals: ModalProps[];
@@ -15,6 +13,4 @@ type ModalContextProps = {
 
 const ModalContext = createContext<ModalContextProps>({} as ModalContextProps);
 
-const { Provider } = ModalContext;
-
-export { ModalContext, Provider, ModalContextProps };
+export { ModalContext, ModalContextProps };

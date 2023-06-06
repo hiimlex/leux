@@ -16,7 +16,7 @@ const Dropdown = ({
 	variant = "filled",
 	size = "medium",
 	children,
-	position = "bl",
+	position = "bottomLeft",
 	clickOutside = true,
 	closeOnClick = true,
 	trigger = "click",

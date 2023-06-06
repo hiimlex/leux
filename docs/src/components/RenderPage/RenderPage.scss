@@ -33,39 +33,6 @@
 		font-size: 0.875rem;
 	}
 
-	table:not(.le-table) {
-		font-size: 0.875rem;
-		background: $color-light-text;
-		width: 100%;
-	}
-
-	table:not(.le-table),
-	th,
-	td {
-		border: 1px solid $color-dark-text;
-		border-collapse: collapse;
-		border-radius: 4px !important;
-	}
-
-	table:not(.le-table) th,
-	table:not(.le-table) td {
-		padding: 8px;
-		text-align: center;
-
-		pre {
-			padding: 0;
-			margin: 0;
-			border-radius: 4px;
-			background-color: $color-light-text !important;
-			padding: 0 !important;
-
-			code {
-				display: flex;
-				flex-wrap: wrap;
-			}
-		}
-	}
-
 	hr {
 		margin: 12px 0;
 		margin-top: 24px;

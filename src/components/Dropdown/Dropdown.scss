@@ -12,7 +12,7 @@
 	align-items: center;
 	justify-content: flex-start;
 	border-radius: 4px;
-	box-shadow: rgba(149, 157, 165, 0.1) 0px 2px 24px;
+	box-shadow: rgba(149, 157, 165, 0.25) 0px 2px 24px;
 
 	overflow: hidden;
 
@@ -87,25 +87,25 @@
 
 		z-index: 9999;
 
-		&-br {
+		&-bottomRight {
 			padding-top: 0.4rem;
 			top: 100%;
 			right: 0;
 		}
 
-		&-bl {
+		&-bottomLeft {
 			padding-top: 0.4rem;
 			top: 100%;
 			left: 0;
 		}
 
-		&-tr {
+		&-topRight {
 			padding-bottom: 0.4rem;
 			bottom: 100%;
 			right: 0;
 		}
 
-		&-tl {
+		&-topLeft {
 			padding-bottom: 0.4rem;
 			bottom: 100%;
 			left: 0;

@@ -67,42 +67,7 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the Badge com
 ### API Reference
 
 <div>
-<table>
-<thead>
-<tr>
-<th width="10%">Prop</th>
-<th width="70%">Type</th>
-<th width="20%">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>variant</td>
-<td><LeHighlighter code="'dashed' | 'ghost' | 'outlined'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter code="'ghost'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>theme</td>
-<td><LeHighlighter code="'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter code="'default'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>size</td>
-<td><LeHighlighter code="'small' | 'medium' | 'large'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter code="'medium'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>customStyles</td>
-<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>customClasses</td>
-<td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-</tbody>
-</table>
+<BadgeApiTable>
+</BadgeApiTable>
 </div>
-
 <br/>
