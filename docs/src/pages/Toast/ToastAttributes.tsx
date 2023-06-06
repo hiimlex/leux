@@ -1,10 +1,4 @@
-import {
-	PropsMapping,
-	LeApiTable,
-	LeHighlighter,
-	LePreview,
-	LeSourceButton,
-} from "@/components";
+import { PropsMapping, LeApiTable, LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
