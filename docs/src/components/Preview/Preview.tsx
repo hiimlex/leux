@@ -1,14 +1,14 @@
-import { useState } from "react";
-import "./Preview.scss";
+import { Dispatch, ReactNode, SetStateAction } from "react";
 import { LeClassNames } from "../../../../src";
+import "./Preview.scss";
 
 type PreviewDirection = "row" | "column";
 
 interface PreviewProps {
-	children?: React.ReactNode;
+	children?: ReactNode;
 	direction?: PreviewDirection;
 	showCode?: boolean;
-	setShowCode?: React.Dispatch<React.SetStateAction<boolean | undefined>>;
+	setShowCode?: Dispatch<SetStateAction<boolean | undefined>>;
 }
 
 const Preview = ({ children, direction = "row", showCode, setShowCode }: PreviewProps) => {

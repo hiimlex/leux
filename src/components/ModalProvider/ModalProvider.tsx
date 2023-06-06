@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ModalProps } from "../Modal/Modal.model";
-import { Provider } from "../ModalContext";
+import { ModalContext } from "../ModalContext";
 import { Modal } from "../Modal";
 
 import "./ModalProvider.scss";
@@ -78,7 +78,7 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
 	};
 
 	return (
-		<Provider
+		<ModalContext.Provider
 			value={{
 				modals,
 				hasModal,
@@ -91,14 +91,15 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
 		>
 			{modals.length > 0 && modals.some((el) => el.visible) && (
 				<div className="le-modal--provider">
+					{}
 					{modals.map((modal) => (
 						<Modal key={modal.id} {...modal} />
 					))}
 				</div>
 			)}
 			{children}
-		</Provider>
+		</ModalContext.Provider>
 	);
 };
 
-export { ModalProvider };
+export { ModalProvider, ModalProviderProps };

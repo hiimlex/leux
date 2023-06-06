@@ -85,77 +85,8 @@ Use the custom prefixed props to customize Input style.
 ### API Reference
 
 <div>
-<table>
-<thead>
-<tr>
-<th width="10%">Prop</th>
-<th width="70%">Type</th>
-<th width="20%">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>fieldKey</td>
-<td><LeHighlighter language="tsx" code="string" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>type</td>
-<td><LeHighlighter language="tsx" code="'text' | 'password' | 'email'" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="'filled'" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>size</td>
-<td><LeHighlighter language="tsx" code="'small' | 'medium' | 'large'" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>variant</td>
-<td><LeHighlighter language="tsx" code="'outlined' | 'filled'" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="'filled'" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>width</td>
-<td><LeHighlighter language="tsx" code="React.CSSProperties['width']" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="'auto'" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>placeholder</td>
-<td><LeHighlighter language="tsx" code="string" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>onChange</td>
-<td><LeHighlighter code="(value: string, event?: React.ChangeEvent< HTMLInputElement > => void" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>state</td>
-<td><LeHighlighter code="{ disabled?: boolean; }" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>customClass</td>
-<td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>customStyles</td>
-<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>inputRef</td>
-<td><LeHighlighter code="React.RefObject<HTMLInputElement>" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>inputProps</td>
-<td><LeHighlighter code="React.InputHTMLAttributes<HTMLInputElement>" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-</tbody>
-</table>
+<InputApiTable>
+</InputApiTable>
 </div>
 
 <br/>

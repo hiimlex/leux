@@ -1,5 +1,5 @@
-import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
-import { Avatar } from "../../../../src";
+import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
+import { Avatar, AvatarProps } from "../../../../src";
 import { attributes as avatarAttr } from "./avatar.md";
 import { useState } from "react";
 
@@ -152,12 +152,46 @@ const AvatarCustomPreview = () => {
 	);
 };
 
+const AvatarApiTable = () => {
+	const props: PropsMapping<AvatarProps> = {
+		src: {
+			type: "string",
+			required: true,
+		},
+		size: {
+			type: "AvatarSizes | 'small' | 'medium' | 'large'",
+			defaultValue: "medium",
+		},
+		customSize: {
+			type: "React.CSSProperties['width']",
+		},
+		alt: {
+			type: "HTMLImageElement['alt']",
+		},
+		asText: {
+			type: "boolean",
+		},
+		rounded: {
+			type: "boolean",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+		customClass: {
+			type: "string",
+		},
+	};
+
+	return <LeApiTable props={props} />;
+};
+
 avatarAttr["LeSourceButton"] = LeSourceButton;
 avatarAttr["AvatarImportPreview"] = AvatarImportPreview;
 avatarAttr["AvatarSrcPreview"] = AvatarSrcPreview;
 avatarAttr["AvatarAsTextPreview"] = AvatarAsTextPreview;
 avatarAttr["AvatarSizePreview"] = AvatarSizePreview;
 avatarAttr["AvatarCustomPreview"] = AvatarCustomPreview;
+avatarAttr["AvatarApiTable"] = AvatarApiTable;
 avatarAttr["LeHighlighter"] = LeHighlighter;
 
 export { avatarAttr };

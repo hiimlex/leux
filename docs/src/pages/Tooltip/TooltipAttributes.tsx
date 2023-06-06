@@ -1,5 +1,5 @@
-import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
-import { Button, Tooltip, Topography } from "../../../../src";
+import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
+import { Button, Tooltip, TooltipProps, Topography } from "../../../../src";
 import { attributes as tooltipAttr } from "./tooltip.md";
 import { useState } from "react";
 
@@ -190,6 +190,34 @@ const Component = () => (
 	);
 };
 
+const TooltipApiTable = () => {
+	const props: PropsMapping<TooltipProps> = {
+		title: {
+			type: "string",
+			required: true,
+		},
+		direction: {
+			type: "TooltipDirections | 'top' | 'bottom' | 'left' | 'right'",
+			defaultValue: "top",
+		},
+		theme: {
+			type: "TooltipThemes | 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'",
+			defaultValue: "default",
+		},
+		children: {
+			type: "ReactNode",
+		},
+		customClass: {
+			type: "string",
+		},
+		customStyles: {
+			type: "CSSProperties",
+		},
+	};
+
+	return <LeApiTable props={props} />;
+};
+
 tooltipAttr["LeSourceButton"] = LeSourceButton;
 tooltipAttr["LeHighlighter"] = LeHighlighter;
 tooltipAttr["TooltipImportPreview"] = TooltipImportPreview;
@@ -197,5 +225,6 @@ tooltipAttr["TooltipUsagePreview"] = TooltipUsagePreview;
 tooltipAttr["TooltipDirectionPreview"] = TooltipDirectionPreview;
 tooltipAttr["TooltipThemePreview"] = TooltipThemePreview;
 tooltipAttr["TooltipCustomPreview"] = TooltipCustomPreview;
+tooltipAttr["TooltipApiTable"] = TooltipApiTable;
 
 export { tooltipAttr };

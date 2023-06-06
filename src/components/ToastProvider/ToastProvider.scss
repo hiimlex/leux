@@ -1,0 +1,83 @@
+@import "../../styles/variables.scss";
+
+.le-toast--provider {
+	position: fixed;
+	top: 0;
+
+	width: 100vw;
+	height: 100vh;
+
+	overflow: hidden;
+
+	pointer-events: none;
+
+	z-index: 9999999;
+
+	&-stack {
+		display: flex;
+		flex-direction: column;
+
+		.le-toast {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+.le-toast--wrapper {
+	position: absolute;
+
+	width: 100%;
+	height: fit-content;
+
+	display: flex;
+
+	align-items: center;
+
+	gap: 1rem;
+
+	&-topRight {
+		top: 3rem;
+
+		padding: 0 3rem;
+		justify-content: flex-end;
+		flex-direction: column;
+	}
+
+	&-topLeft {
+		top: 3rem;
+
+		padding: 0 3rem;
+		justify-content: flex-start;
+		flex-direction: column;
+	}
+
+	&-topCenter {
+		top: 3rem;
+
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	&-bottomRight {
+		bottom: 3rem;
+
+		padding: 0 3rem;
+		justify-content: flex-end;
+		flex-direction: column-reverse;
+	}
+
+	&-bottomLeft {
+		bottom: 3rem;
+
+		padding: 0 3rem;
+		justify-content: flex-start;
+		flex-direction: column-reverse;
+	}
+
+	&-bottomCenter {
+		bottom: 3rem;
+
+		justify-content: center;
+		flex-direction: column-reverse;
+	}
+}

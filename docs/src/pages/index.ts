@@ -18,5 +18,6 @@ export { default as SkeletonPage } from "./Skeleton";
 export { default as SpinnerPage } from "./Spinner";
 export { default as TablePage } from "./Table";
 export { default as TextAreaPage } from "./TextArea";
+export { default as ToastPage } from "./Toast";
 export { default as TooltipPage } from "./Tooltip";
 export { default as TopographyPage } from "./Topography";

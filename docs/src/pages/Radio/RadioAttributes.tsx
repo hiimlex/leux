@@ -1,6 +1,6 @@
-import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
+import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { useEffect, useRef, useState } from "react";
-import { Button, Radio, Topography } from "../../../../src";
+import { Button, Radio, RadioProps, Topography } from "../../../../src";
 import { attributes as radioAttr } from "./radio.md";
 
 const RadioImportPreview = () => {
@@ -19,7 +19,7 @@ const RadioFieldKeyPreview = () => {
 
 	useEffect(() => {
 		setFieldKey(radioRef.current ? radioRef.current.id : "");
-	}, [radioRef.current && radioRef.current.id]);
+	}, [radioRef.current?.id]);
 
 	return (
 		<>
@@ -317,6 +317,59 @@ const RadioStatePreview = () => {
 	);
 };
 
+const RadioApiTable = () => {
+	const props: PropsMapping<RadioProps> = {
+		fieldKey: {
+			type: "string",
+		},
+		label: {
+			type: "string",
+		},
+		value: {
+			type: "string",
+		},
+		size: {
+			type: "'small' | 'medium' | 'large'",
+			defaultValue: "'medium'",
+		},
+		state: {
+			type: "{disabled?: boolean}",
+		},
+		defaultChecked: {
+			type: "boolean",
+		},
+		onChange: {
+			type: "(event: ChangeEvent<HTMLInputElement>) => void",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+		customClass: {
+			type: "string",
+		},
+		customLabelStyles: {
+			type: "React.CSSProperties",
+		},
+		customLabelClass: {
+			type: "string",
+		},
+		customInputStyles: {
+			type: "React.CSSProperties",
+		},
+		customInputClass: {
+			type: "string",
+		},
+		radioProps: {
+			type: "React.InputHTMLAttributes<HTMLInputElement>",
+		},
+		radioRef: {
+			type: "React.RefObject<HTMLInputElement>",
+		},
+	};
+
+	return <LeApiTable props={props} />;
+};
+
 radioAttr["LeSourceButton"] = LeSourceButton;
 radioAttr["LeHighlighter"] = LeHighlighter;
 radioAttr["RadioImportPreview"] = RadioImportPreview;
@@ -325,5 +378,6 @@ radioAttr["RadioSizePreview"] = RadioSizePreview;
 radioAttr["RadioCustomPreview"] = RadioCustomPreview;
 radioAttr["RadioStatePreview"] = RadioStatePreview;
 radioAttr["RadioFieldKeyPreview"] = RadioFieldKeyPreview;
+radioAttr["RadioApiTable"] = RadioApiTable;
 
 export { radioAttr };

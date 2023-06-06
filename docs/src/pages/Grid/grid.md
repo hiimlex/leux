@@ -63,52 +63,8 @@ To increase the size of a item on grid, use the `gridSpan` props from <NavLink t
 ### API Reference
 
 <div>
-<table width="100%" border="0">
-<thead>
-<tr>
-<th width="10%">Prop</th>
-<th>Type</th>
-<th width="20%">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cols</td>
-<td><LeHighlighter language="tsx" code="React.CSSProperties['gridTemplateColumns']" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>rows</td>
-<td><LeHighlighter language="tsx" code="React.CSSProperties['gridTemplateRows']" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>gap</td>
-<td><LeHighlighter language="tsx" code="{ 'col': React.CSSProperties['columnGap'], 'row': React.CSSProperties['rowGap'] }" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>width</td>
-<td><LeHighlighter language="tsx" code="React.CSSProperties['width']" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="'100%'" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>padding</td>
-<td><LeHighlighter language="tsx" code="React.CSSProperties['padding']" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>customClass</td>
-<td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>customStyles</td>
-<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-</tbody>
-</table>
+<GridApiTable>
+</GridApiTable>
 </div>
 
 <br/>

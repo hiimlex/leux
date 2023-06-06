@@ -1,6 +1,6 @@
-import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
+import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { ChangeEvent, useState } from "react";
-import { Button, Input, InputSizes, InputVariant, Topography } from "../../../../src";
+import { Button, Input, InputProps, InputSizes, InputVariant, Topography } from "../../../../src";
 import { attributes as inputAttr } from "./input.md";
 
 const InputImportPreview = () => (
@@ -200,6 +200,53 @@ const InputCustomPreview = () => {
 	);
 };
 
+const InputApiTable = () => {
+	const props: PropsMapping<InputProps> = {
+		fieldKey: {
+			type: "string",
+		},
+		size: {
+			type: "'small' | 'medium' | 'large'",
+			defaultValue: "'medium'",
+		},
+		variant: {
+			type: "'filled' | 'outlined'",
+			defaultValue: "'filled'",
+		},
+		placeholder: {
+			type: "string",
+		},
+		type: {
+			type: "React.HTMLInputTypeAttribute",
+			defaultValue: "'text'",
+		},
+		state: {
+			type: "{ disabled?: boolean }",
+		},
+		width: {
+			type: "React.CSSProperties['width']",
+			defaultValue: "'auto'",
+		},
+		customClass: {
+			type: "string",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+		onChange: {
+			type: "(event: React.ChangeEventHandler<HTMLInputElement>) => void",
+		},
+		inputProps: {
+			type: "React.InputHTMLAttributes<HTMLInputElement>",
+		},
+		inputRef: {
+			type: "React.RefObject<HTMLInputElement>",
+		},
+	};
+
+	return <LeApiTable props={props} />;
+};
+
 inputAttr["InputImportPreview"] = InputImportPreview;
 inputAttr["LeSourceButton"] = LeSourceButton;
 inputAttr["InputVariantPreview"] = InputVariantPreview;
@@ -208,6 +255,7 @@ inputAttr["InputActionPreview"] = InputActionPreview;
 inputAttr["InputStatePreview"] = InputStatePreview;
 inputAttr["InputCustomPreview"] = InputCustomPreview;
 inputAttr["InputKeyPreview"] = InputKeyPreview;
+inputAttr["InputApiTable"] = InputApiTable;
 inputAttr["LeHighlighter"] = LeHighlighter;
 
 export { inputAttr };

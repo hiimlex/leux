@@ -1,0 +1,34 @@
+@import "../../core/styles/variables.scss";
+
+.api-table {
+	font-size: 0.875rem;
+	background: $color-light-text;
+	width: 100%;
+}
+
+.api-table,
+.api-table th,
+.api-table td {
+	border: 1px solid $color-dark-text;
+	border-collapse: collapse;
+	border-radius: 4px !important;
+}
+
+.api-table th,
+.api-table td {
+	padding: 8px;
+	text-align: center;
+
+	pre {
+		padding: 0;
+		margin: 0;
+		border-radius: 4px;
+		background-color: $color-light-text !important;
+		padding: 0 !important;
+
+		code {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+}

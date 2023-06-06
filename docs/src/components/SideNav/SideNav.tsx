@@ -21,8 +21,7 @@ export const LINKS: Record<string, ILink[]> = {
 			name: "Grid",
 			path: "/layout/grid",
 		},
-		{ name: "Skeleton", path: "/layout/skeleton" },
-		{ name: "Spinner", path: "/layout/spinner" },
+
 		{
 			name: "Topography",
 			path: "/layout/topography",
@@ -32,7 +31,6 @@ export const LINKS: Record<string, ILink[]> = {
 		{ name: "Button", path: "/components/button" },
 		{ name: "Dropdown", path: "/components/dropdown" },
 		{ name: "Pagination", path: "/components/pagination" },
-		{ name: "Toast", path: "/components/toast" },
 	],
 	Form: [
 		{ name: "Checkbox", path: "/components/checkbox" },
@@ -41,12 +39,17 @@ export const LINKS: Record<string, ILink[]> = {
 		{ name: "Select", path: "/components/select" },
 		{ name: "TextArea", path: "/components/textarea" },
 	],
-	"Data Display": [
+	Display: [
 		{ name: "Avatar", path: "/components/avatar" },
 		{ name: "Badge", path: "/components/badge" },
 		{ name: "Modal", path: "/components/modal" },
 		{ name: "Table", path: "/components/table" },
+		{ name: "Toast", path: "/components/toast" },
 		{ name: "Tooltip", path: "/components/tooltip" },
+	],
+	Loaders: [
+		{ name: "Skeleton", path: "/components/skeleton" },
+		{ name: "Spinner", path: "/components/spinner" },
 	],
 };
 

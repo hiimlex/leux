@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, useState } from "react";
+import { LeClassNames } from "../../types";
 import { SelectProps } from "./Select.model";
 import "./Select.scss";
-import { LeClassNames } from "../../types";
 
 const Select = ({
 	customClass,
@@ -22,18 +22,21 @@ const Select = ({
 
 	const classNames: LeClassNames = {
 		leSelect: () =>
-			`le-select ${customClass || ""} le-select--${size} le-select--${variant}${
+			`le-select le-select--${size} le-select--${variant}${
 				placeholder && value === "" ? " le-select--placeholder-color" : ""
-			}${state && state.disabled ? " le-select--disabled" : ""}`,
+			}${state?.disabled ? " le-select--disabled" : ""} ${customClass ?? ""}`,
 		leSelectOption: (prop) =>
-			`le-select--option ${prop && prop["disabled"] ? "le-select--option-disabled" : ""}`,
+			`le-select--option ${prop["disabled"] ? "le-select--option-disabled" : ""}`,
 		leSelectPlaceholder: () => `le-select--option `,
 		leSelectWrapper: () => `le-select--wrapper`,
 	};
 
 	const onChangeHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
 		setValue(event.target.value);
-		onChange && onChange(event);
+
+		if (onChange) {
+			onChange(event);
+		}
 	};
 
 	return (
@@ -46,7 +49,7 @@ const Select = ({
 			onChange={onChangeHandler}
 			data-testid="leuxSelect"
 			value={value}
-			disabled={state && state.disabled}
+			disabled={state?.disabled}
 			{...selectProps}
 		>
 			{placeholder && (
@@ -59,9 +62,9 @@ const Select = ({
 				</option>
 			)}
 			{options && options.length > 0
-				? options.map((option, optionIndex) => (
+				? options.map((option) => (
 						<option
-							key={optionIndex}
+							key={option.value}
 							value={option.value}
 							className={classNames["leSelectOption"]({ disabled: option.disabled })}
 							disabled={option.disabled}

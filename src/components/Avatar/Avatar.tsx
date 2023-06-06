@@ -28,9 +28,9 @@ const Avatar = ({
 
 	return (
 		<div
-			className={`le-avatar${customClass ? ` ${customClass}` : ""}${
-				size ? ` le-avatar--${size}` : ""
-			}${asText ? " le-avatar--text" : ""}`}
+			className={`le-avatar ${size ? " le-avatar--" + size : ""}${
+				asText ? " le-avatar--text" : ""
+			} ${customClass ? customClass : ""}`}
 			style={{
 				...customStyles,
 			}}

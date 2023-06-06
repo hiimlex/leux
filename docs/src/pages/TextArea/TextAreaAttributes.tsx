@@ -1,6 +1,6 @@
-import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
+import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { ChangeEvent, useState } from "react";
-import { Button, TextArea, Topography } from "../../../../src";
+import { Button, TextArea, TextAreaProps, Topography } from "../../../../src";
 import { attributes as textAreaAttr } from "./textarea.md";
 
 const TextAreaImportPreview = () => (
@@ -306,6 +306,63 @@ const TextAreaPropsPreview = () => {
 	);
 };
 
+const TextAreaApiTable = () => {
+	const props: PropsMapping<TextAreaProps> = {
+		fieldKey: {
+			type: "string",
+		},
+		size: {
+			type: "'small' | 'medium' | 'large'",
+			defaultValue: "'medium'",
+		},
+		variant: {
+			type: "'filled' | 'outlined'",
+			defaultValue: "'filled'",
+		},
+		minRows: {
+			type: "number",
+			defaultValue: "2",
+		},
+		rows: {
+			type: "number",
+			defaultValue: "3",
+		},
+		defaultValue: {
+			type: "string",
+		},
+		onChange: {
+			type: "(e: React.ChangeEvent<HTMLTextAreaElement>) => void",
+		},
+		state: {
+			type: "TextAreaState | { disabled?: boolean }",
+		},
+		placeholder: {
+			type: "string",
+		},
+		resize: {
+			type: "boolean",
+			defaultValue: "false",
+		},
+		width: {
+			type: "React.CSSProperties['width']",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+		customClass: {
+			type: "string",
+		},
+		textAreaProps: {
+			type: "React.TextareaHTMLAttributes<HTMLTextAreaElement>",
+		},
+		textAreaRef: {
+			type: "React.RefObject<HTMLTextAreaElement>",
+		},
+	};
+
+	return <LeApiTable props={props} />;
+};
+
 textAreaAttr["LeHighlighter"] = LeHighlighter;
 textAreaAttr["LeSourceButton"] = LeSourceButton;
 textAreaAttr["TextAreaImportPreview"] = TextAreaImportPreview;
@@ -316,5 +373,6 @@ textAreaAttr["TextAreaRowsPreview"] = TextAreaRowsPreview;
 textAreaAttr["TextAreaVariantPreview"] = TextAreaVariantPreview;
 textAreaAttr["TextAreaStatePreview"] = TextAreaStatePreview;
 textAreaAttr["TextAreaPropsPreview"] = TextAreaPropsPreview;
+textAreaAttr["TextAreaApiTable"] = TextAreaApiTable;
 
 export { textAreaAttr };

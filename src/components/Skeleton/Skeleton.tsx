@@ -12,7 +12,7 @@ const Skeleton = ({
 	customClass = "",
 	customStyles,
 	active = false,
-	show = false,
+	show = true,
 	variant = "paragraph",
 }: SkeletonProps) => {
 	const classNames: LeClassNames = {
@@ -21,7 +21,9 @@ const Skeleton = ({
 				active ? " le-skeleton--active" : ""
 			}${customClass ? ` ${customClass}` : ""}`,
 		leSkeletonRow: () =>
-			`le-skeleton--row le-skeleton--row-${variant} le-skeleton--row-${variant}-${size}`,
+			`le-skeleton--row le-skeleton--row-${variant} le-skeleton--row-${variant}-${size}${
+				active ? " le-skeleton--row-active" : ""
+			}`,
 	};
 
 	const rowsArr = useMemo(() => [...Array(rows).keys()], [rows]);
@@ -42,7 +44,7 @@ const Skeleton = ({
 		>
 			{variant === "paragraph" && rowsArr.map((_, index) => <SkeletonRowJSX key={index} />)}
 			{variant === "round" && <SkeletonRowJSX />}
-			{variant === "square" && <SkeletonRowJSX />}
+			{variant === "rect" && <SkeletonRowJSX />}
 		</div>
 	);
 };

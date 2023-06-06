@@ -42,33 +42,8 @@ Use the `customClass` and `customStyles` prop to add custom CSS to the component
 ### API Reference
 
 <div>
-<table>
-<thead>
-<tr>
-<th width="10%">Prop</th>
-<th width="70%">Type</th>
-<th width="20%">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>type</td>
-<td><LeHighlighter code="'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'subtitle-1' |
-'subtitle-2' | 'body-1' | 'body-2' | 'caption' | 'overline' | 'button'" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>customClass</td>
-<td><LeHighlighter code="string" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-<tr>
-<td>customStyles</td>
-<td><LeHighlighter code="React.CSSProperties" language="tsx" style="soft" copy="'off'"></LeHighlighter></td>
-<td><LeHighlighter language="tsx" code="null" style="soft" copy="'off'"></LeHighlighter></td>
-</tr>
-</tbody>
-</table>
+<TopographyApiTable>
+</TopographyApiTable>
 </div>
 
 <br />

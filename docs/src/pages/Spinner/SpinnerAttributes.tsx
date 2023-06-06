@@ -1,5 +1,5 @@
-import { LeHighlighter, LePreview, LeSourceButton } from "@/components";
-import { Spinner } from "../../../../src";
+import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
+import { Spinner, SpinnerProps } from "../../../../src";
 import { attributes as spinnerAttr } from "./spinner.md";
 import { useState } from "react";
 
@@ -102,11 +102,46 @@ const SpinnerCustomPreview = () => {
 	);
 };
 
+const SpinnerApiTable = () => {
+	const props: PropsMapping<SpinnerProps> = {
+		size: {
+			type: "SpinnerSizes | 'small' | 'medium' | 'large'",
+			defaultValue: "medium",
+		},
+		variant: {
+			type: "SpinnerVariants | 'circle'",
+			defaultValue: "circle",
+		},
+		theme: {
+			type: "SpinnerThemes | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'default'",
+			defaultValue: "primary",
+		},
+		customSpeed: {
+			type: "React.CSSProperties['animationDelay']",
+		},
+		customColor: {
+			type: "React.CSSProperties['borderColor']",
+		},
+		customSize: {
+			type: "React.CSSProperties['width']",
+		},
+		customClass: {
+			type: "string",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+	};
+
+	return <LeApiTable props={props} />;
+};
+
 spinnerAttr["LeSourceButton"] = LeSourceButton;
 spinnerAttr["LeHighlighter"] = LeHighlighter;
 spinnerAttr["SpinnerImportPreview"] = SpinnerImportPreview;
 spinnerAttr["SpinnerSizePreview"] = SpinnerSizePreview;
 spinnerAttr["SpinnerThemePreview"] = SpinnerThemePreview;
 spinnerAttr["SpinnerCustomPreview"] = SpinnerCustomPreview;
+spinnerAttr["SpinnerApiTable"] = SpinnerApiTable;
 
 export { spinnerAttr };
