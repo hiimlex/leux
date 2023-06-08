@@ -6,7 +6,7 @@ import {
 	Dropdown,
 	DropdownItem,
 	DropdownSeparator,
-	Topography,
+	Typography,
 } from "../../../../src";
 import { attributes as dropdownAttr } from "./dropdown.md";
 import {
@@ -250,7 +250,7 @@ const DropdownTriggerPreview = () => {
 				>
 					<DropdownItem>Item 1</DropdownItem>
 				</Dropdown>
-				<Dropdown trigger="hover" anchor={<Topography variant="body-2">Hover</Topography>}>
+				<Dropdown trigger="hover" anchor={<Typography variant="body-2">Hover</Typography>}>
 					<DropdownItem>Item 1</DropdownItem>
 				</Dropdown>
 			</LePreview>
@@ -267,7 +267,7 @@ const DropdownTriggerPreview = () => {
 			>
 				<DropdownItem>Item 1</DropdownItem>
 			</Dropdown>
-			<Dropdown trigger="hover" anchor={<Topography variant="body-2">Hover</Topography>}>
+			<Dropdown trigger="hover" anchor={<Typography variant="body-2">Hover</Typography>}>
 				<DropdownItem>Item 1</DropdownItem>
 			</Dropdown>
 		</>

@@ -1,18 +1,18 @@
 import React from "react";
-import { TopographyProps } from "./Topography.model";
+import { TypographyProps } from "./Typography.model";
 
-const Topography = ({
+const Typography = ({
 	variant = "body-1",
 	children,
 	customClass = "",
 	customStyles,
-}: TopographyProps) => {
+}: TypographyProps) => {
 	const typesArr: Record<string, React.ReactElement> = {
 		h1: (
 			<h1
 				className={"le-text--h1 " + customClass}
 				style={customStyles}
-				data-testid="leuxTopography"
+				data-testid="leuxTypography"
 			>
 				{children}
 			</h1>
@@ -21,7 +21,7 @@ const Topography = ({
 			<h2
 				className={"le-text--h2 " + customClass}
 				style={customStyles}
-				data-testid="leuxTopography"
+				data-testid="leuxTypography"
 			>
 				{children}
 			</h2>
@@ -30,7 +30,7 @@ const Topography = ({
 			<h3
 				className={"le-text--h3 " + customClass}
 				style={customStyles}
-				data-testid="leuxTopography"
+				data-testid="leuxTypography"
 			>
 				{children}
 			</h3>
@@ -39,7 +39,7 @@ const Topography = ({
 			<h4
 				className={"le-text--h4 " + customClass}
 				style={customStyles}
-				data-testid="leuxTopography"
+				data-testid="leuxTypography"
 			>
 				{children}
 			</h4>
@@ -48,7 +48,7 @@ const Topography = ({
 			<h5
 				className={"le-text--h5 " + customClass}
 				style={customStyles}
-				data-testid="leuxTopography"
+				data-testid="leuxTypography"
 			>
 				{children}
 			</h5>
@@ -57,7 +57,7 @@ const Topography = ({
 			<h6
 				className={"le-text--h6 " + customClass}
 				style={customStyles}
-				data-testid="leuxTopography"
+				data-testid="leuxTypography"
 			>
 				{children}
 			</h6>
@@ -66,7 +66,7 @@ const Topography = ({
 			<h6
 				className={"le-text--subtitle-1 " + customClass}
 				style={customStyles}
-				data-testid="leuxTopography"
+				data-testid="leuxTypography"
 			>
 				{children}
 			</h6>
@@ -75,7 +75,7 @@ const Topography = ({
 			<h6
 				className={"le-text--subtitle-2 " + customClass}
 				style={customStyles}
-				data-testid="leuxTopography"
+				data-testid="leuxTypography"
 			>
 				{children}
 			</h6>
@@ -84,7 +84,7 @@ const Topography = ({
 			<p
 				className={"le-text--body-1 " + customClass}
 				style={customStyles}
-				data-testid="leuxTopography"
+				data-testid="leuxTypography"
 			>
 				{children}
 			</p>
@@ -93,7 +93,7 @@ const Topography = ({
 			<p
 				className={"le-text--body-2 " + customClass}
 				style={customStyles}
-				data-testid="leuxTopography"
+				data-testid="leuxTypography"
 			>
 				{children}
 			</p>
@@ -102,7 +102,7 @@ const Topography = ({
 			<p
 				className={"le-text--button " + customClass}
 				style={customStyles}
-				data-testid="leuxTopography"
+				data-testid="leuxTypography"
 			>
 				{children}
 			</p>
@@ -111,7 +111,7 @@ const Topography = ({
 			<span
 				className={"le-text--overline " + customClass}
 				style={customStyles}
-				data-testid="leuxTopography"
+				data-testid="leuxTypography"
 			>
 				{children}
 			</span>
@@ -120,7 +120,7 @@ const Topography = ({
 			<span
 				className={"le-text--caption " + customClass}
 				style={customStyles}
-				data-testid="leuxTopography"
+				data-testid="leuxTypography"
 			>
 				{children}
 			</span>
@@ -130,4 +130,4 @@ const Topography = ({
 	return typesArr[variant];
 };
 
-export { Topography };
+export { Typography };

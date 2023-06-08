@@ -22,4 +22,4 @@ export * from "./Toast";
 export * from "./ToastContext";
 export * from "./ToastProvider";
 export * from "./Tooltip";
-export * from "./Topography";
+export * from "./Typography";

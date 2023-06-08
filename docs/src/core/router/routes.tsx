@@ -21,7 +21,7 @@ import {
 	TextAreaPage,
 	ToastPage,
 	TooltipPage,
-	TopographyPage,
+	TypographyPage,
 } from "@/pages";
 import { Navigate } from "react-router-dom";
 
@@ -44,8 +44,8 @@ export const routes: LeRoute[] = [
 		element: <LeRenderDocPage doc={<InstallationPage />} title="Installation" />,
 	},
 	{
-		path: "/layout/topography",
-		element: <LeRenderDocPage doc={<TopographyPage />} title="Topography" />,
+		path: "/layout/typography",
+		element: <LeRenderDocPage doc={<TypographyPage />} title="Typography" />,
 	},
 	{
 		path: "/layout/grid",

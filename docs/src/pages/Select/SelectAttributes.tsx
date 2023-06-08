@@ -1,6 +1,6 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { ChangeEvent, useState } from "react";
-import { Box, Button, Select, Topography } from "../../../../src";
+import { Box, Button, Select, Typography } from "../../../../src";
 import {
 	SelectOption,
 	SelectProps,
@@ -26,15 +26,15 @@ const SelectOptionsPreview = () => {
 		<>
 			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<Box flex alignItems="center" justifyContent="center" customStyles={{ marginBottom: 12 }}>
-					<Topography variant="body-1" customStyles={{ marginRight: 12 }}>
+					<Typography variant="body-1" customStyles={{ marginRight: 12 }}>
 						With options prop
-					</Topography>
+					</Typography>
 					<Select fieldKey="fieldKey" placeholder="Select one option" options={options} />
 				</Box>
 				<Box flex alignItems="center" justifyContent="center">
-					<Topography variant="body-1" customStyles={{ marginRight: 12 }}>
+					<Typography variant="body-1" customStyles={{ marginRight: 12 }}>
 						With children
-					</Topography>
+					</Typography>
 					<Select fieldKey="fieldKey">
 						<option value="">Select one option</option>
 						<option value="option1">Option 1</option>
@@ -46,15 +46,15 @@ const SelectOptionsPreview = () => {
 					code={`const Component = () => (
 	<>
 		<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
-			<Topography type="body-1" customStyles={{ marginRight: 12 }}>
+			<Typography type="body-1" customStyles={{ marginRight: 12 }}>
 				With options prop
-			</Topography>
+			</Typography>
 			<Select fieldKey="fieldKey" placeholder="Select one option" options={options} />
 		</div>
 		<div style={{ display: "flex", alignItems: "center" }}>
-			<Topography type="body-1" customStyles={{ marginRight: 12 }}>
+			<Typography type="body-1" customStyles={{ marginRight: 12 }}>
 				With children
-			</Topography>
+			</Typography>
 			<Select fieldKey="fieldKey">
 				<option value="" disabled>
 					Select one option
@@ -175,7 +175,7 @@ const SelectActionPreview = () => {
 	return (
 		<>
 			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
-				<Topography>Value: {value}</Topography>
+				<Typography>Value: {value}</Typography>
 				<Select
 					options={[
 						{ label: "Option 1", value: "option1" },
@@ -198,7 +198,7 @@ const SelectActionPreview = () => {
 
 	return (
 		<Box flex flexDirection="column">
-			<Topography>Value: {value}</Topography>
+			<Typography>Value: {value}</Typography>
 			<Select
 			options={[
 				{ label: "Option 1", value: "option1" },

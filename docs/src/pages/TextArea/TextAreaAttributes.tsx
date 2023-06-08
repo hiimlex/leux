@@ -1,6 +1,6 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { ChangeEvent, useState } from "react";
-import { Button, TextArea, TextAreaProps, Topography } from "../../../../src";
+import { Button, TextArea, TextAreaProps, Typography } from "../../../../src";
 import { attributes as textAreaAttr } from "./textarea.md";
 
 const TextAreaImportPreview = () => (
@@ -82,7 +82,7 @@ const TextAreaActionPreview = () => {
 	return (
 		<>
 			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
-				<Topography variant="body-1">see the value here: {value}</Topography>
+				<Typography variant="body-1">see the value here: {value}</Typography>
 				<TextArea
 					fieldKey="actionTextArea"
 					placeholder="Insert some text ..."
@@ -100,7 +100,7 @@ const TextAreaActionPreview = () => {
 
 	return (
 		<>
-			<Topography type="body-1">see the value here: {value}</Topography>
+			<Typography type="body-1">see the value here: {value}</Typography>
 			<TextArea
 				fieldKey="actionTextArea"
 				placeholder="Insert some text ..."
@@ -270,7 +270,7 @@ const TextAreaPropsPreview = () => {
 	return (
 		<>
 			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
-				<Topography variant="body-1">see the value here: {value}</Topography>
+				<Typography variant="body-1">see the value here: {value}</Typography>
 				<TextArea
 					textAreaProps={{
 						placeholder: "Insert your text here",
@@ -289,7 +289,7 @@ const TextAreaPropsPreview = () => {
 
 	return (
 		<>
-			<Topography variant="body-1">see the value here: {value}</Topography>
+			<Typography variant="body-1">see the value here: {value}</Typography>
 			<TextArea
 				textAreaProps={{
 					placeholder: "Insert your text here",
