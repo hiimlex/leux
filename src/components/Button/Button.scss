@@ -7,7 +7,7 @@
 	transition: all 0.1s ease-in-out;
 	cursor: pointer;
 	border: none;
-	font-family: "Poppins", sans-serif;
+	font-family: inherit, sans-serif;
 
 	&--filled {
 		@each $color, $value in $variant-colors {

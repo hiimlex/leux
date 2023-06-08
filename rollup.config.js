@@ -31,7 +31,7 @@ export default [
 		plugins: [
 			styles({
 				minimize: true,
-				include: ["**/*.scss", "**/*.css"],
+				include: ["**/*.scss"],
 				mode: [
 					"inject",
 					{ container: "head", singleTag: true, prepend: true, attributes: { id: "leuxCSS" } },
