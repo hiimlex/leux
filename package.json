@@ -109,7 +109,7 @@
 			"eslint . --fix",
 			"prettier --write ."
 		],
-		"**/*.{css,scss,json,md}": [
+		"**/*.{css,scss,md}": [
 			"prettier --write ."
 		],
 		"**/*.spec.{jsx,tsx}": [
