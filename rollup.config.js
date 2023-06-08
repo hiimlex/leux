@@ -19,6 +19,30 @@ import eslintConfig from "./.eslintrc.json";
 
 import packageJson from "./package.json";
 
+// eslint-disable-next-line node/no-extraneous-require
+const glob = require("glob");
+const path = require("path");
+
+const FileReader = require("fs");
+
+const injectCss = () => {
+	const css = [];
+	const files = glob.sync(path.resolve(__dirname, "**/*.css"));
+	files.forEach((file) => {
+		const filename = file.substr(file.lastIndexOf("/") + 1, file.length).toLowerCase();
+
+		const fr = new FileReader();
+
+		fr.onload = function () {
+			css.push(fr.result);
+		};
+
+		fr.readAsText(filename);
+	});
+
+	return css.join(" ");
+};
+
 export default [
 	{
 		input: "src/index.ts",
@@ -36,15 +60,12 @@ export default [
 		],
 		plugins: [
 			postcss({
-				extract: "leux.min.css",
-				inject: true,
+				inject: injectCss(),
 				modules: true,
 				minimize: true,
 				plugins: [cssimport(), simplevars(), cssnested()],
 				use: {
 					sass: true,
-					stylus: null,
-					less: null,
 				},
 			}),
 			peerDepsExternal(),
