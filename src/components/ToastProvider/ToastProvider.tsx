@@ -2,14 +2,14 @@ import React, { useRef, useState } from "react";
 
 import { LeClassNames } from "../../types";
 import { Toast } from "../Toast";
-import { ToastPosition, ToastProps } from "../Toast/Toast.model";
+import { ToastPositions, ToastProps } from "../Toast/Toast.model";
 import { ToastContext } from "../ToastContext";
 import "./ToastProvider.scss";
 
 type ToastProviderProps = {
 	children: React.ReactNode;
 	stackable?: boolean;
-	position?: ToastPosition;
+	position?: ToastPositions;
 	duration?: number;
 };
 

@@ -1,11 +1,11 @@
 import { createContext } from "react";
-import { ToastPosition, ToastProps } from "../Toast";
+import { ToastPositions, ToastProps } from "../Toast";
 
 type ToastContextProps = {
 	toasts: ToastProps[];
 	createToast: (toast: ToastProps) => void;
 	removeToast: (id: string) => void;
-	position?: ToastPosition;
+	position?: ToastPositions;
 };
 
 const ToastContext = createContext<ToastContextProps>({} as ToastContextProps);
