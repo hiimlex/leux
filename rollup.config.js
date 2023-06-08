@@ -37,7 +37,6 @@ export default [
 		plugins: [
 			postcss({
 				extract: "leux.min.css",
-				inject: true,
 				minimize: true,
 				plugins: [cssimport(), simplevars(), cssnested()],
 			}),
