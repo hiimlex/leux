@@ -6,8 +6,8 @@ import {
 	ToastContext,
 	ToastProps,
 	ToastProviderProps,
-	ToastSize,
-	ToastTheme,
+	ToastSizes,
+	ToastThemes,
 } from "../../../../src";
 import { attributes as toastAttr } from "./toast.md";
 
@@ -48,53 +48,12 @@ const Component = () => {
 	</>
 );
 
-const ToastUsagePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
-
-	const { createToast } = useContext(ToastContext);
-
-	const handleCreateToast = () => {
-		createToast({
-			label: "usage toast preview",
-		});
-	};
-
-	return (
-		<>
-			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Button onClick={handleCreateToast}>toast</Button>
-			</LePreview>
-			{showCode && (
-				<LeHighlighter
-					language="tsx"
-					code={`// Component.tsx
-import { Box, Button, ToastContext, ToastSize } from "leux";
-					
-const Component = () =>{
-	const { createToast } = useContext(ToastContext);
-
-	const handleCreateToast = () => {
-		createToast({
-			label: "usage toast preview",
-		});
-	};
-
-	return (
-		<Button onClick={handleCreateToast}>toast</Button>
-	);
-};`}
-				/>
-			)}
-		</>
-	);
-};
-
 const ToastSizePreview = () => {
 	const [showCode, setShowCode] = useState<boolean | undefined>(false);
 
 	const { createToast } = useContext(ToastContext);
 
-	const handleCreateToast = (size: ToastSize) => {
+	const handleCreateToast = (size: ToastSizes) => {
 		createToast({
 			label: `toast ${size} preview`,
 			size,
@@ -126,12 +85,12 @@ const ToastSizePreview = () => {
 				<LeHighlighter
 					language="tsx"
 					code={`// Component.tsx
-import { Box, Button, ToastContext, ToastSize } from "leux";
+import { Box, Button, ToastContext, ToastSizes } from "leux";
 
 const Component = () => {
 	const { createToast } = useContext(ToastContext);
 
-	const handleCreateToast = (size: ToastSize) => {
+	const handleCreateToast = (size: ToastSizes) => {
 		createToast({
 			label: \`toast \${size} preview\`,
 			size,
@@ -172,7 +131,7 @@ const ToastThemePreview = () => {
 
 	const { createToast } = useContext(ToastContext);
 
-	const handleCreateToast = (theme: ToastTheme) => {
+	const handleCreateToast = (theme: ToastThemes) => {
 		createToast({
 			label: `toast ${theme} preview`,
 			theme,
@@ -230,6 +189,76 @@ const ToastThemePreview = () => {
 					default
 				</Button>
 			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`// Component.tsx
+import { Box, Button, ToastContext, ToastThemes } from "leux";
+
+const Component = () => {
+	const { createToast } = useContext(ToastContext);
+
+	const handleCreateToast = (theme: ToastThemes) => {
+		createToast({
+			label: \`toast \${size} preview\`,
+			theme,
+		});
+	};
+					
+
+	return (
+		<Box flex flexDirection="row" alignItems="center">
+			<Button
+				onClick={() => handleCreateToast("primary")}
+				theme="primary"
+				customStyles={{ marginRight: 12 }}
+			>
+				primary
+			</Button>
+
+			<Button
+				onClick={() => handleCreateToast("secondary")}
+				theme="secondary"
+				customStyles={{ marginRight: 12 }}
+			>
+				secondary
+			</Button>
+
+			<Button
+				onClick={() => handleCreateToast("success")}
+				theme="success"
+				customStyles={{ marginRight: 12 }}
+			>
+				success
+			</Button>
+
+			<Button
+				onClick={() => handleCreateToast("danger")}
+				theme="danger"
+				customStyles={{ marginRight: 12 }}
+			>
+				danger
+			</Button>
+
+			<Button
+				onClick={() => handleCreateToast("warning")}
+				theme="warning"
+				customStyles={{ marginRight: 12 }}
+			>
+				warning
+			</Button>
+
+			<Button
+				onClick={() => handleCreateToast("default")}
+				theme="default"
+			>
+				default
+			</Button>
+		</Box>
+	);
+};`}
+				/>
+			)}
 		</>
 	);
 };
@@ -259,6 +288,39 @@ const ToastDurationPreview = () => {
 
 				<Button onClick={() => handleCreateToast(10000)}>10s</Button>
 			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`// Component.tsx
+import { Box, Button, ToastContext } from "leux";
+
+const Component = () => {
+	const { createToast } = useContext(ToastContext);
+
+	const handleCreateToast = (duration: number) => {
+		createToast({
+			label: \`toast \${duration / 1000}s preview\`,
+			duration,
+		});
+	};
+					
+
+	return (
+		<Box flex flexDirection="row" alignItems="center">
+			<Button onClick={() => handleCreateToast(2500)} customStyles={{ marginRight: 12 }}>
+				2.5s
+			</Button>
+
+			<Button onClick={() => handleCreateToast(5000)} customStyles={{ marginRight: 12 }}>
+				5s
+			</Button>
+
+			<Button onClick={() => handleCreateToast(10000)}>10s</Button>
+		</Box>
+	);
+};`}
+				/>
+			)}
 		</>
 	);
 };
@@ -413,7 +475,6 @@ toastAttr["ToastApiTable"] = ToastApiTable;
 toastAttr["ToastProdiverApiTable"] = ToastProdiverApiTable;
 toastAttr["ToastImportPreview"] = ToastImportPreview;
 toastAttr["ToastContextPreview"] = ToastContextPreview;
-toastAttr["ToastUsagePreview"] = ToastUsagePreview;
 toastAttr["ToastSizePreview"] = ToastSizePreview;
 toastAttr["ToastThemePreview"] = ToastThemePreview;
 toastAttr["ToastDurationPreview"] = ToastDurationPreview;

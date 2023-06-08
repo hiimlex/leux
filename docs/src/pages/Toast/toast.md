@@ -56,15 +56,6 @@ The Toast component can be configured globally using the `ToastProvider` or `Ove
 
 <br />
 
-#### Usage
-
-<div>
-<ToastUsagePreview>
-</ToastUsagePreview>
-</div>
-
-<br />
-
 #### ID
 
 Use the `id` prop to add an custom id to the Toast component. The ID is used to identify the Toast component and can be used to close it from outside with `ToastContext` service.

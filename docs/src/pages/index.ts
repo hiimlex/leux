@@ -2,7 +2,6 @@ export { default as AvatarPage } from "./Avatar";
 export { default as BadgePage } from "./Badge";
 export { default as BoxPage } from "./Box";
 export { default as ButtonPage } from "./Button";
-export { default as CSSPage } from "./CSS";
 export { default as CheckboxPage } from "./Checkbox";
 export { default as DropdownPage } from "./Dropdown";
 export { default as GridPage } from "./Grid";

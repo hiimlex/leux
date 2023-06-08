@@ -1,9 +1,9 @@
 import React from "react";
 
-type ToastTheme = "primary" | "secondary" | "success" | "danger" | "warning" | "default";
-type ToastSize = "small" | "medium" | "large";
-type ToastVariant = "filled";
-type ToastPosition =
+type ToastThemes = "primary" | "secondary" | "success" | "danger" | "warning" | "default";
+type ToastSizes = "small" | "medium" | "large";
+type ToastVariants = "filled";
+type ToastPositions =
 	| "topLeft"
 	| "topCenter"
 	| "topRight"
@@ -14,9 +14,9 @@ type ToastPosition =
 interface ToastProps {
 	id?: string;
 	label: string;
-	theme?: ToastTheme;
-	variant?: ToastVariant;
-	size?: ToastSize;
+	theme?: ToastThemes;
+	variant?: ToastVariants;
+	size?: ToastSizes;
 	duration?: number;
 	loading?: boolean;
 	closable?: boolean;
@@ -26,4 +26,4 @@ interface ToastProps {
 	customClass?: string;
 }
 
-export { ToastProps, ToastTheme, ToastVariant, ToastSize, ToastPosition };
+export { ToastProps, ToastThemes, ToastVariants, ToastSizes, ToastPositions };

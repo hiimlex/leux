@@ -5,7 +5,6 @@ import {
 	BoxPage,
 	ButtonPage,
 	CheckboxPage,
-	CSSPage,
 	DropdownPage,
 	GridPage,
 	InputPage,
@@ -43,10 +42,6 @@ export const routes: LeRoute[] = [
 	{
 		path: "/started/installation",
 		element: <LeRenderDocPage doc={<InstallationPage />} title="Installation" />,
-	},
-	{
-		path: "/started/lecss",
-		element: <LeRenderDocPage doc={<CSSPage />} title="LeCSS" />,
 	},
 	{
 		path: "/layout/topography",

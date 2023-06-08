@@ -35,6 +35,10 @@ export default [
 			},
 		],
 		plugins: [
+			postcss({
+				minimize: true,
+				plugins: [cssimport(), simplevars(), cssnested()],
+			}),
 			peerDepsExternal(),
 			commonjs(),
 			eslint({
@@ -45,11 +49,6 @@ export default [
 				tsconfig: "./tsconfig.json",
 				include: ["src/**/*"],
 				exclude: ["docs", "dist", "node_modules", ".vscode", ".storybook"],
-			}),
-			postcss({
-				extract: "leux.min.css",
-				minimize: true,
-				plugins: [cssimport(), simplevars(), cssnested()],
 			}),
 			resolve(),
 			terser(),

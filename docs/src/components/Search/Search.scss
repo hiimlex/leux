@@ -56,7 +56,8 @@
 		overflow: hidden;
 		overflow-y: auto;
 		max-height: 298px;
-		box-shadow: 0 4px 12px 2px rgba(0, 0, 0, 0.05);
+		box-shadow: rgba(149, 157, 165, 0.1) 0px 2px 24px;
+
 		animation: leuxFadeInFromTop 0.2s ease-in forwards;
 
 		&-link {
