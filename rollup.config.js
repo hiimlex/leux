@@ -13,6 +13,8 @@ import cssnested from "postcss-nested";
 // eslint-disable-next-line node/no-missing-import
 import cssimport from "postcss-import";
 
+import cssmerge from "rollup-plugin-merge-and-inject-css";
+
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import eslint from "@rollup/plugin-eslint";
 import eslintConfig from "./.eslintrc.json";
@@ -36,9 +38,13 @@ export default [
 		],
 		plugins: [
 			postcss({
-				extract: "leux.min.css",
+				inject: true,
 				minimize: true,
 				plugins: [cssimport(), simplevars(), cssnested()],
+				include: ["src/**/*.scss"],
+			}),
+			cssmerge({
+				id: "leux.min.css",
 			}),
 			peerDepsExternal(),
 			commonjs(),
