@@ -10,7 +10,6 @@ export const LINKS: Record<string, ILink[]> = {
 	"Getting Started": [
 		{ name: "Overview", path: "/started/overview" },
 		{ name: "Installation", path: "/started/installation" },
-		{ name: "LeCSS", path: "/started/lecss" },
 	],
 	Layout: [
 		{
