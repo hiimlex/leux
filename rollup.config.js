@@ -38,9 +38,12 @@ export default [
 		],
 		plugins: [
 			styles({
+				include: ["**/*.css", "**/*.scss"],
+				exclude: ["src/components/CSS/**/variables.scss"],
+				minimize: true,
 				mode: [
 					"inject",
-					{ container: "body", singleTag: true, prepend: true, attributes: { id: "global" } },
+					{ container: "body", singleTag: true, prepend: true, attributes: { id: "leux.min.css" } },
 				],
 			}),
 			peerDepsExternal(),
