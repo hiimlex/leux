@@ -6,12 +6,12 @@ import dts from "rollup-plugin-dts";
 import { terser } from "rollup-plugin-terser";
 
 // import postcss from "rollup-plugin-postcss";
-// // eslint-disable-next-line node/no-missing-import
-// import simplevars from "postcss-simple-vars";
-// // eslint-disable-next-line node/no-missing-import
-// import cssnested from "postcss-nested";
-// // eslint-disable-next-line node/no-missing-import
-// import cssimport from "postcss-import";
+// eslint-disable-next-line node/no-missing-import
+import simplevars from "postcss-simple-vars";
+// eslint-disable-next-line node/no-missing-import
+import cssnested from "postcss-nested";
+// eslint-disable-next-line node/no-missing-import
+import cssimport from "postcss-import";
 
 import styles from "rollup-plugin-styles";
 
@@ -38,8 +38,6 @@ export default [
 		],
 		plugins: [
 			styles({
-				include: ["**/*.css", "**/*.scss"],
-				exclude: ["src/components/CSS/**/variables.scss"],
 				minimize: true,
 				mode: [
 					"inject",
