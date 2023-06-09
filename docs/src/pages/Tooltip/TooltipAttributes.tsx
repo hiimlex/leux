@@ -1,5 +1,5 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
-import { Button, Tooltip, TooltipProps, Topography } from "../../../../src";
+import { Button, Tooltip, TooltipProps, Typography } from "../../../../src";
 import { attributes as tooltipAttr } from "./tooltip.md";
 import { useState } from "react";
 
@@ -39,16 +39,16 @@ const TooltipDirectionPreview = () => {
 		<>
 			<LePreview direction="row" showCode={showCode} setShowCode={setShowCode}>
 				<Tooltip title="display on left" direction="left">
-					<Topography children="left" variant="body-1" customStyles={{ margin: "0 12px 0 0" }} />
+					<Typography children="left" variant="body-1" customStyles={{ margin: "0 12px 0 0" }} />
 				</Tooltip>
 				<Tooltip title="display on top" direction="top">
-					<Topography children="top" variant="body-1" customStyles={{ margin: "0 12px 0 0" }} />
+					<Typography children="top" variant="body-1" customStyles={{ margin: "0 12px 0 0" }} />
 				</Tooltip>
 				<Tooltip title="display on bottom" direction="bottom">
-					<Topography children="bottom" variant="body-1" customStyles={{ margin: "0 12px 0 0" }} />
+					<Typography children="bottom" variant="body-1" customStyles={{ margin: "0 12px 0 0" }} />
 				</Tooltip>
 				<Tooltip title="display on right" direction="right">
-					<Topography children="right" variant="body-1" />
+					<Typography children="right" variant="body-1" />
 				</Tooltip>
 			</LePreview>
 			{showCode && (
@@ -56,16 +56,16 @@ const TooltipDirectionPreview = () => {
 					code={`const Component = () => (
 	<>
 		<Tooltip title="display on left" direction="left">
-			<Topography children="left" variant="body-1" customStyles={{ margin: "0 12px 0 0" }} />
+			<Typography children="left" variant="body-1" customStyles={{ margin: "0 12px 0 0" }} />
 		</Tooltip>
 		<Tooltip title="display on top" direction="top">
-			<Topography children="top" variant="body-1" customStyles={{ margin: "0 12px 0 0" }} />
+			<Typography children="top" variant="body-1" customStyles={{ margin: "0 12px 0 0" }} />
 		</Tooltip>
 		<Tooltip title="display on bottom" direction="bottom">
-			<Topography children="bottom" variant="body-1" customStyles={{ margin: "0 12px 0 0" }} />
+			<Typography children="bottom" variant="body-1" customStyles={{ margin: "0 12px 0 0" }} />
 		</Tooltip>
 		<Tooltip title="display on right" direction="right">
-			<Topography children="right" variant="body-1" />
+			<Typography children="right" variant="body-1" />
 		</Tooltip>
 	</>
 );
@@ -84,7 +84,7 @@ const TooltipThemePreview = () => {
 		<>
 			<LePreview direction="row" showCode={showCode} setShowCode={setShowCode}>
 				<Tooltip title="primary style" theme="primary">
-					<Topography
+					<Typography
 						children="primary"
 						variant="body-1"
 						customClass="le-color-text--primary"
@@ -92,7 +92,7 @@ const TooltipThemePreview = () => {
 					/>
 				</Tooltip>
 				<Tooltip title="danger style" theme="danger">
-					<Topography
+					<Typography
 						children="danger"
 						variant="body-1"
 						customClass="le-color-text--danger"
@@ -100,7 +100,7 @@ const TooltipThemePreview = () => {
 					/>
 				</Tooltip>
 				<Tooltip title="default style" theme="default">
-					<Topography
+					<Typography
 						children="default"
 						variant="body-1"
 						customClass="le-color-text--default"
@@ -113,7 +113,7 @@ const TooltipThemePreview = () => {
 					code={`const Component = () => (
 	<>
 		<Tooltip title="primary style" theme="primary">
-			<Topography
+			<Typography
 				children="primary"
 				variant="body-1"
 				customClass="le-color-text--primary"
@@ -121,7 +121,7 @@ const TooltipThemePreview = () => {
 			/>
 		</Tooltip>
 		<Tooltip title="danger style" theme="danger">
-			<Topography
+			<Typography
 				children="danger"
 				variant="body-1"
 				customClass="le-color-text--danger"
@@ -129,7 +129,7 @@ const TooltipThemePreview = () => {
 			/>
 		</Tooltip>
 		<Tooltip title="default style" theme="default">
-			<Topography
+			<Typography
 				children="default"
 				variant="body-1"
 				customClass="le-color-text--default"
@@ -157,7 +157,7 @@ const TooltipCustomPreview = () => {
 					customStyles={{ fontSize: 16, background: "purple", color: "blue" }}
 					customClass="tooltip-custom--arrow"
 				>
-					<Topography children="custom" variant="body-1" customStyles={{ margin: 0 }} />
+					<Typography children="custom" variant="body-1" customStyles={{ margin: 0 }} />
 				</Tooltip>
 			</LePreview>
 			{showCode && (
@@ -170,7 +170,7 @@ const Component = () => (
 		customStyles={{ fontSize: 16, background: "purple", color: "blue" }}
 		customClass="tooltip-custom--arrow"
 	>
-		<Topography children="custom" variant="body-1" customStyles={{ margin: 0 }} />
+		<Typography children="custom" variant="body-1" customStyles={{ margin: 0 }} />
 	</Tooltip>
 );
 `}

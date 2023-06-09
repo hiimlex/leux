@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useMemo } from "react";
+import { LeClassNamesArray } from "../../types";
 import { BoxProps } from "./Box.model";
 import "./Box.scss";
 
@@ -21,13 +22,27 @@ const Box = ({
 	flexDirection,
 	justifyContent,
 }: BoxProps) => {
-	const handleGridSpan = () => {
+	const handleGridSpan:
+		| {
+				gridRowEnd: React.CSSProperties["gridRowEnd"];
+				gridColumnEnd: React.CSSProperties["gridColumnEnd"];
+		  }
+		| undefined = useMemo(() => {
 		if (gridSpan) {
 			return {
-				gridRowEnd: `span ${gridSpan.row}`,
-				gridColumnEnd: `span ${gridSpan.col}`,
+				gridRowEnd: `span ${gridSpan.row || 1}`,
+				gridColumnEnd: `span ${gridSpan.col || 1}`,
 			};
 		}
+	}, [gridSpan]);
+
+	const classNames: LeClassNamesArray = {
+		leBox: () => [
+			bgColor ? `le-color-bg--${bgColor}` : "",
+			customClass || "",
+			centered ? `le-box--centered` : "",
+			textColor ? `le-color-text--${textColor}` : "",
+		],
 	};
 
 	return (
@@ -43,15 +58,10 @@ const Box = ({
 				alignItems,
 				flexDirection,
 				flexWrap,
-				...handleGridSpan(),
+				...handleGridSpan,
 				...customStyles,
 			}}
-			className={
-				(bgColor ? `le-color-bg--${bgColor}` : "") +
-				(customClass ? ` ${customClass}` : "") +
-				(centered ? " le-box--centered" : "") +
-				(textColor ? ` le-color-text--${textColor}` : "")
-			}
+			className={classNames["leBox"]().join(" ")}
 			data-testid="leuxBox"
 		>
 			{children}

@@ -1,19 +1,19 @@
 import { render } from "@testing-library/react";
 
-import { Skeleton } from "./Skeleton";
 import "@testing-library/jest-dom";
 import React from "react";
-import { Topography } from "../Topography";
+import { Typography } from "../Typography";
+import { Skeleton } from "./Skeleton";
 
 describe("Skeleton component test", () => {
 	it("should render a visible Skeleton component", () => {
 		const { getByTestId } = render(
 			<Skeleton>
-				<Topography variant="body-1">
+				<Typography variant="body-1">
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam repudiandae enim harum,
 					consequuntur animi quia totam, magni maxime nisi pariatur aut sapiente cupiditate dolorem.
 					Ratione praesentium quas accusamus maiores id.
-				</Topography>
+				</Typography>
 			</Skeleton>
 		);
 
@@ -25,27 +25,27 @@ describe("Skeleton component test", () => {
 	it("should render a non visible Skeleton component inactive", () => {
 		const { getByTestId } = render(
 			<Skeleton show={false}>
-				<Topography variant="body-1">
+				<Typography variant="body-1">
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam repudiandae enim harum,
 					consequuntur animi quia totam, magni maxime nisi pariatur aut sapiente cupiditate dolorem.
 					Ratione praesentium quas accusamus maiores id.
-				</Topography>
+				</Typography>
 			</Skeleton>
 		);
 
-		const topography = getByTestId("leuxTopography");
+		const typography = getByTestId("leuxTypography");
 
-		expect(topography).toBeTruthy();
+		expect(typography).toBeTruthy();
 	});
 
 	it("should render a rounded Skeleton component", () => {
 		const { getByTestId } = render(
 			<Skeleton variant="round">
-				<Topography variant="body-1">
+				<Typography variant="body-1">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius esse labore dolor beatae,
 					ipsum autem praesentium expedita eos! Omnis minima ullam delectus nesciunt provident odit
 					corrupti deserunt possimus necessitatibus quas?
-				</Topography>
+				</Typography>
 			</Skeleton>
 		);
 
@@ -58,11 +58,11 @@ describe("Skeleton component test", () => {
 	it("should render a rect Skeleton component", () => {
 		const { getByTestId } = render(
 			<Skeleton variant="rect">
-				<Topography variant="body-1">
+				<Typography variant="body-1">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius esse labore dolor beatae,
 					ipsum autem praesentium expedita eos! Omnis minima ullam delectus nesciunt provident odit
 					corrupti deserunt possimus necessitatibus quas?
-				</Topography>
+				</Typography>
 			</Skeleton>
 		);
 
@@ -75,11 +75,11 @@ describe("Skeleton component test", () => {
 	it("should render a small Skeleton component", () => {
 		const { getByTestId } = render(
 			<Skeleton size="small">
-				<Topography variant="body-1">
+				<Typography variant="body-1">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius esse labore dolor beatae,
 					ipsum autem praesentium expedita eos! Omnis minima ullam delectus nesciunt provident odit
 					corrupti deserunt possimus necessitatibus quas?
-				</Topography>
+				</Typography>
 			</Skeleton>
 		);
 
@@ -92,11 +92,11 @@ describe("Skeleton component test", () => {
 	it("should render a Skeleton paragraph variant with 3 rows", () => {
 		const { getByTestId, getAllByTestId } = render(
 			<Skeleton variant="paragraph" rows={3}>
-				<Topography variant="body-1">
+				<Typography variant="body-1">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius esse labore dolor beatae,
 					ipsum autem praesentium expedita eos! Omnis minima ullam delectus nesciunt provident odit
 					corrupti deserunt possimus necessitatibus quas?
-				</Topography>
+				</Typography>
 			</Skeleton>
 		);
 
@@ -112,11 +112,11 @@ describe("Skeleton component test", () => {
 	it("should render an active Skeleton component ", () => {
 		const { getByTestId } = render(
 			<Skeleton active>
-				<Topography variant="body-1">
+				<Typography variant="body-1">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius esse labore dolor beatae,
 					ipsum autem praesentium expedita eos! Omnis minima ullam delectus nesciunt provident odit
 					corrupti deserunt possimus necessitatibus quas?
-				</Topography>
+				</Typography>
 			</Skeleton>
 		);
 
@@ -129,11 +129,11 @@ describe("Skeleton component test", () => {
 	it("should render a custom Skeleton component", () => {
 		const { getByTestId } = render(
 			<Skeleton customClass="custom-class" customStyles={{ backgroundColor: "red" }} width={300}>
-				<Topography variant="body-1">
+				<Typography variant="body-1">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius esse labore dolor beatae,
 					ipsum autem praesentium expedita eos! Omnis minima ullam delectus nesciunt provident odit
 					corrupti deserunt possimus necessitatibus quas?
-				</Topography>
+				</Typography>
 			</Skeleton>
 		);
 

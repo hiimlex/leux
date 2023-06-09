@@ -1,5 +1,5 @@
 import { FaGithub } from "react-icons/fa";
-import { Topography, useBreakpoint } from "../../../../src";
+import { Typography, useBreakpoint } from "../../../../src";
 import "./Header.scss";
 
 import { version } from "../../../../package.json";
@@ -21,12 +21,12 @@ const Header = () => {
 				<nav className="le-nav">
 					<span className="le-nav--item">
 						<a className="le-nav--link" target="_blank" href="https://linktr.ee/yuninho">
-							<Topography type="body-1">Find author</Topography>
+							<Typography variant="body-1">Find author</Typography>
 						</a>
 					</span>
 					<span className="le-nav--item">
 						<a className="le-nav--link" target="_blank" href="https://www.npmjs.com/package/leux">
-							<Topography type="body-1">v{version}</Topography>
+							<Typography variant="body-1">v{version}</Typography>
 						</a>
 					</span>
 					<span className="le-nav--item le-text--body-1">

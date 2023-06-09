@@ -1,6 +1,6 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { PropsWithChildren, useContext, useState } from "react";
-import { Avatar, Button, ModalContext, ModalProps, Topography } from "../../../../src";
+import { Avatar, Button, ModalContext, ModalProps, Typography } from "../../../../src";
 import { attributes as modalAttr } from "./modal.md";
 import { NavLink } from "react-router-dom";
 
@@ -55,11 +55,11 @@ const ModalUsagePreview = () => {
 			id: "modal-usage",
 			title: "Title",
 			children: (
-				<Topography variant="body-1" customStyles={{ margin: 0 }}>
+				<Typography variant="body-1" customStyles={{ margin: 0 }}>
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis dolorem consequuntur
 					facilis quo saepe alias autem expedita molestiae laboriosam, iusto quaerat minima laborum
 					eius omnis ipsa voluptate aliquam impedit quisquam!
-				</Topography>
+				</Typography>
 			),
 		});
 	};
@@ -82,11 +82,11 @@ const Component = () => {
 				id: "modal-usage",
 				title: "Title",
 				children: (
-					<Topography variant="body-1" customStyles={{ margin: 0 }}>
+					<Typography variant="body-1" customStyles={{ margin: 0 }}>
 						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis dolorem consequuntur
 						facilis quo saepe alias autem expedita molestiae laboriosam, iusto quaerat minima
 						laborum eius omnis ipsa voluptate aliquam impedit quisquam!
-					</Topography>
+					</Typography>
 				),
 				visible: false,
 				onOk: (_, onClose) => {
@@ -119,9 +119,9 @@ const ModalActionsPreview = () => {
 			id: "modal-actions",
 			title: "Title",
 			children: (
-				<Topography variant="body-1" customStyles={{ margin: 0 }}>
+				<Typography variant="body-1" customStyles={{ margin: 0 }}>
 					click on OK, Cancel or Close button
-				</Topography>
+				</Typography>
 			),
 			visible: false,
 			onOk: () => {
@@ -155,9 +155,9 @@ const ModalActionsPreview = () => {
 			id: "modal-actions",
 			title: "Title",
 			children: (
-				<Topography variant="body-1" customStyles={{ margin: 0 }}>
+				<Typography variant="body-1" customStyles={{ margin: 0 }}>
 					click on OK, Cancel or Close button
-				</Topography>
+				</Typography>
 			),
 			visible: false,
 			onOk: (_, onClose) => {
@@ -198,9 +198,9 @@ const ModalPositionPreview = () => {
 			id: "modal-position",
 			title: "Position",
 			children: (
-				<Topography variant="body-1" customStyles={{ margin: 0 }}>
+				<Typography variant="body-1" customStyles={{ margin: 0 }}>
 					120px from top
-				</Topography>
+				</Typography>
 			),
 			top: 120,
 			footer: null,
@@ -223,9 +223,9 @@ const ModalPositionPreview = () => {
 			id: "modal-position",
 			title: "Position",
 			children: (
-				<Topography variant="body-1" customStyles={{ margin: 0 }}>
+				<Typography variant="body-1" customStyles={{ margin: 0 }}>
 					120px from top
-				</Topography>
+				</Typography>
 			),
 			top: 120,
 			footer: null,
@@ -252,9 +252,9 @@ const ModalSizePreview = () => {
 			id: "modal-size",
 			title: "Size",
 			children: (
-				<Topography variant="body-1" customStyles={{ margin: 0 }}>
+				<Typography variant="body-1" customStyles={{ margin: 0 }}>
 					80% width
-				</Topography>
+				</Typography>
 			),
 			footer: null,
 			width: "80%",
@@ -277,9 +277,9 @@ const ModalSizePreview = () => {
 			id: "modal-size",
 			title: "Size",
 			children: (
-				<Topography variant="body-1" customStyles={{ margin: 0 }}>
+				<Typography variant="body-1" customStyles={{ margin: 0 }}>
 					80% width
-				</Topography>
+				</Typography>
 			),
 			footer: null,
 			width: "80%",

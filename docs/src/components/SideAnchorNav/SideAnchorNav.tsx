@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-scroll";
-import { Topography } from "../../../../src";
 import "./SideAnchorNav.scss";
 
 interface AnchorLink {

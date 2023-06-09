@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import "../CSS/variables.scss";
 
 .le-tooltip--provider {
 	position: relative;
@@ -102,48 +102,48 @@
 			}
 		}
 	}
-}
 
-@keyframes animationFromBottom {
-	0% {
-		opacity: 0;
-		transform: translateY(10px);
+	@keyframes animationFromBottom {
+		0% {
+			opacity: 0;
+			transform: translateY(10px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
 
-@keyframes animationFromTop {
-	0% {
-		opacity: 0;
-		transform: translateY(-10px);
+	@keyframes animationFromTop {
+		0% {
+			opacity: 0;
+			transform: translateY(-10px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
 
-@keyframes animationFromLeft {
-	0% {
-		opacity: 0;
-		transform: translateX(-10px);
+	@keyframes animationFromLeft {
+		0% {
+			opacity: 0;
+			transform: translateX(-10px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0);
+		}
 	}
-	100% {
-		opacity: 1;
-		transform: translateX(0);
-	}
-}
 
-@keyframes animationFromRight {
-	0% {
-		opacity: 0;
-		transform: translateX(10px);
-	}
-	100% {
-		opacity: 1;
-		transform: translateX(0);
+	@keyframes animationFromRight {
+		0% {
+			opacity: 0;
+			transform: translateX(10px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0);
+		}
 	}
 }

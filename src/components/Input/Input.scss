@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import "../CSS/variables.scss";
 
 .le-input {
 	border-radius: 4px;
@@ -6,7 +6,7 @@
 	border: 0;
 	font-weight: 500;
 	line-height: normal;
-	font-family: "Poppins", sans-serif;
+	font-family: inherit, sans-serif;
 
 	&--filled {
 		background-color: $color-variant-border;
@@ -16,6 +16,7 @@
 	&--outlined {
 		border: 1px solid $color-variant-border;
 		color: $color-dark-text;
+		background-color: transparent;
 	}
 
 	&--small {

@@ -1,6 +1,6 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { ChangeEvent, useState } from "react";
-import { Button, Input, InputProps, InputSizes, InputVariant, Topography } from "../../../../src";
+import { Button, Input, InputProps, InputSizes, InputVariant, Typography } from "../../../../src";
 import { attributes as inputAttr } from "./input.md";
 
 const InputImportPreview = () => (
@@ -89,7 +89,7 @@ const InputActionPreview = () => {
 	return (
 		<>
 			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
-				<Topography variant="body-2">type to see the value here: {value}</Topography>
+				<Typography variant="body-2">type to see the value here: {value}</Typography>
 				<Input placeholder="Action" onChange={handleOnChange} />
 			</LePreview>
 			{showCode && (
@@ -101,7 +101,7 @@ const InputActionPreview = () => {
 
 	return (
 		<>
-			<Topography type="body-2">type to see the value here: {value}</Topography>
+			<Typography type="body-2">type to see the value here: {value}</Typography>
 			<Input
 				key="preview"
 				placeholder="Action"
@@ -130,7 +130,7 @@ const InputStatePreview = () => {
 				<Button theme={disabled ? "danger" : "primary"} onClick={handleOnClick}>
 					{disabled ? "off" : "on"}
 				</Button>
-				<Topography variant="body-1">Value: {value}</Topography>
+				<Typography variant="body-1">Value: {value}</Typography>
 				<Input state={{ disabled }} placeholder="Disabled" onChange={handleOnChange} />
 			</LePreview>
 			{showCode && (
@@ -149,7 +149,7 @@ const InputStatePreview = () => {
 			>
 				{disabled ? "off" : "on"}
 			</Button>
-			<Topography type="body-1">Value: {}</Topography>
+			<Typography type="body-1">Value: {}</Typography>
 			<Input
 				state={{ disabled }}
 				placeholder="Disabled"

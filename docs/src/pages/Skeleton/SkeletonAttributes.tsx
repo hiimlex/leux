@@ -7,7 +7,7 @@ import {
 	Skeleton,
 	SkeletonProps,
 	SkeletonSizes,
-	Topography,
+	Typography,
 } from "../../../../src";
 import { useState } from "react";
 
@@ -44,7 +44,7 @@ const SkeletonVariantPreview = () => {
 					width="100%"
 				>
 					<Skeleton show={show} variant="paragraph" customStyles={{ marginRight: 12 }}>
-						<Topography
+						<Typography
 							variant="body-1"
 							customStyles={{
 								marginRight: 12,
@@ -52,7 +52,7 @@ const SkeletonVariantPreview = () => {
 							}}
 						>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						</Topography>
+						</Typography>
 					</Skeleton>
 					<Skeleton show={show} variant="round" customStyles={{ marginRight: 12 }}>
 						<Avatar src="AL" asText></Avatar>
@@ -91,7 +91,7 @@ const SkeletonVariantPreview = () => {
 				width="100%"
 			>
 				<Skeleton show={show} variant="paragraph" customStyles={{ marginRight: 12 }}>
-					<Topography
+					<Typography
 						variant="body-1"
 						customStyles={{
 							marginRight: 12,
@@ -99,7 +99,7 @@ const SkeletonVariantPreview = () => {
 						}}
 					>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					</Topography>
+					</Typography>
 				</Skeleton>
 				<Skeleton show={show} variant="round" customStyles={{ marginRight: 12 }}>
 					<Avatar src="AL" asText></Avatar>
@@ -163,14 +163,14 @@ const SkeletonSizePreview = () => {
 					width="100%"
 				>
 					<Skeleton active show size={size} width="100%">
-						<Topography
+						<Typography
 							variant="body-1"
 							customStyles={{
 								marginRight: 12,
 							}}
 						>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						</Topography>
+						</Typography>
 					</Skeleton>
 				</Box>
 			</LePreview>
@@ -219,14 +219,14 @@ const SkeletonSizePreview = () => {
 				width="100%"
 			>
 				<Skeleton active show size={size} width="100%">
-					<Topography
+					<Typography
 						variant="body-1"
 						customStyles={{
 							marginRight: 12,
 						}}
 					>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					</Topography>
+					</Typography>
 				</Skeleton>
 			</Box>
 		</Box>
@@ -271,9 +271,9 @@ const SkeletonRowsPreview = () => {
 					width="100%"
 				>
 					<Skeleton show rows={rows} variant="paragraph">
-						<Topography variant="body-1">
+						<Typography variant="body-1">
 							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						</Topography>
+						</Typography>
 					</Skeleton>
 				</Box>
 			</LePreview>
@@ -310,9 +310,9 @@ const SkeletonRowsPreview = () => {
 				width="100%"
 			>
 				<Skeleton active show rows={rows} variant="paragraph">
-					<Topography variant="body-1">
+					<Typography variant="body-1">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					</Topography>
+					</Typography>
 				</Skeleton>
 			</Box>
 		</Box>
@@ -348,9 +348,9 @@ const SkeletonActivePreview = () => {
 					width="100%"
 				>
 					<Skeleton active={active} show variant="paragraph">
-						<Topography variant="body-1">
+						<Typography variant="body-1">
 							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						</Topography>
+						</Typography>
 					</Skeleton>
 				</Box>
 			</LePreview>
@@ -379,9 +379,9 @@ const SkeletonActivePreview = () => {
 				width="100%"
 			>
 				<Skeleton active={active} show variant="paragraph">
-					<Topography variant="body-1">
+					<Typography variant="body-1">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					</Topography>
+					</Typography>
 				</Skeleton>
 			</Box>
 		</Box>

@@ -5,13 +5,7 @@ import dts from "rollup-plugin-dts";
 
 import { terser } from "rollup-plugin-terser";
 
-import postcss from "rollup-plugin-postcss";
-// eslint-disable-next-line node/no-missing-import
-import simplevars from "postcss-simple-vars";
-// eslint-disable-next-line node/no-missing-import
-import cssnested from "postcss-nested";
-// eslint-disable-next-line node/no-missing-import
-import cssimport from "postcss-import";
+import styles from "rollup-plugin-styles";
 
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import eslint from "@rollup/plugin-eslint";
@@ -35,9 +29,13 @@ export default [
 			},
 		],
 		plugins: [
-			postcss({
+			styles({
 				minimize: true,
-				plugins: [cssimport(), simplevars(), cssnested()],
+				include: ["**/*.scss"],
+				mode: [
+					"inject",
+					{ container: "head", singleTag: true, prepend: true, attributes: { id: "leuxCSS" } },
+				],
 			}),
 			peerDepsExternal(),
 			commonjs(),

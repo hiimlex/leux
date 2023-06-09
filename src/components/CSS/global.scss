@@ -1,17 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import "./variables.scss";
 
 body {
-	font-family: "Poppins", sans-serif;
 	font-size: 62.5%;
 	padding: 0;
 	margin: 0;
-}
-
-button,
-input,
-select {
-	font-family: "Poppins", sans-serif;
 }
 
 * {
@@ -61,51 +53,58 @@ select {
 
 h1 {
 	font-size: 2.5rem;
+	line-height: 3rem;
 	font-weight: bold;
 	letter-spacing: -1.5px;
-	margin: 20px 0;
+	margin: 1.25rem 0;
 }
 
 h2 {
 	font-size: 2rem;
+	line-height: 2.5rem;
 	font-weight: 600;
 	letter-spacing: -0.5px;
-	margin: 18px 0;
+	margin: 1rem 0;
 }
 
 h3 {
 	font-size: 1.75rem;
+	line-height: 2.25rem;
 	font-weight: 500;
 	letter-spacing: 0;
-	margin: 16px 0;
+	margin: 0.875rem 0;
 }
 
 h4 {
 	font-size: 1.5rem;
+	line-height: 2rem;
 	font-weight: 500;
 	letter-spacing: 0.25px;
-	margin: 15px 0;
+	margin: 0.75rem 0;
 }
 
 h5 {
 	font-size: 1.25rem;
+	line-height: 1.75rem;
 	font-weight: 500;
 	letter-spacing: 0;
-	margin: 14px 0;
+	margin: 0.625rem 0;
 }
 
 h6 {
 	font-size: 1rem;
+	line-height: 1.5rem;
 	font-weight: 400;
 	letter-spacing: 0.15px;
-	margin: 14px 0;
+	margin: 0.5rem 0;
 }
 
 p {
 	font-size: 0.875rem;
+	line-height: 1.25rem;
 	font-weight: 400;
 	letter-spacing: 0.5px;
-	margin: 12px 0;
+	margin: 0.4rem 0;
 }
 
 .le-text--link {

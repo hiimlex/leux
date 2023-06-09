@@ -1,6 +1,6 @@
 import React from "react";
 
-type TopographyTypes =
+type TypographyVariants =
 	| "h1"
 	| "h2"
 	| "h3"
@@ -15,11 +15,11 @@ type TopographyTypes =
 	| "button"
 	| "overline";
 
-interface TopographyProps {
+interface TypographyProps {
 	children?: React.ReactNode;
-	variant?: TopographyTypes;
+	variant?: TypographyVariants;
 	customClass?: string;
 	customStyles?: React.CSSProperties;
 }
 
-export { TopographyProps, TopographyTypes };
+export { TypographyProps, TypographyVariants };

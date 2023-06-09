@@ -1,6 +1,6 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { useEffect, useRef, useState } from "react";
-import { Button, Radio, RadioProps, Topography } from "../../../../src";
+import { Button, Radio, RadioProps, Typography } from "../../../../src";
 import { attributes as radioAttr } from "./radio.md";
 
 const RadioImportPreview = () => {
@@ -24,9 +24,9 @@ const RadioFieldKeyPreview = () => {
 	return (
 		<>
 			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
-				<Topography variant="body-1">
+				<Typography variant="body-1">
 					<strong>fieldKey</strong>: {fieldKey}
-				</Topography>
+				</Typography>
 				<Radio fieldKey="prefix" value="suffix" label="Field Key" radioRef={radioRef} />
 			</LePreview>
 			{showCode && (
@@ -36,9 +36,9 @@ const RadioFieldKeyPreview = () => {
 
 	return (
 		<>
-			<Topography variant="body-1">
+			<Typography variant="body-1">
 				<strong>fieldKey</strong>: {radioRef.current && radioRef.current.id}
-			</Topography>
+			</Typography>
 			<Radio
 				fieldKey="fieldKey"
 				value="1"
@@ -66,7 +66,7 @@ const RadioActionPreview = () => {
 	return (
 		<>
 			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
-				<Topography variant="body-2">value: {value}</Topography>
+				<Typography variant="body-2">value: {value}</Typography>
 				<div style={{ display: "flex", flexDirection: "row" }}>
 					<Radio
 						fieldKey="test"
@@ -96,7 +96,7 @@ const RadioActionPreview = () => {
 
 	return (
 		<>
-			<Topography type="body-2">value: {value}</Topography>
+			<Typography type="body-2">value: {value}</Typography>
 			<div style={{ display: "flex", flexDirection: "row" }}>
 				<Radio
 					fieldKey="test"

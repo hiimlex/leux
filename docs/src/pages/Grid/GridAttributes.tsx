@@ -1,6 +1,6 @@
 import { PropsMapping, LeApiTable, LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { NavLink } from "react-router-dom";
-import { Box, BoxVariants, Grid, GridProps, Topography } from "../../../../src";
+import { Box, BoxVariants, Grid, GridProps, Typography } from "../../../../src";
 import { attributes as gridAttr } from "./grid.md";
 import { useState } from "react";
 
@@ -24,7 +24,7 @@ const GridColPreview = () => {
 							textColor="lighter"
 							centered
 						>
-							<Topography variant="body-1">{item} BG</Topography>
+							<Typography variant="body-1">{item} BG</Typography>
 						</Box>
 					))}
 				</Grid>
@@ -43,7 +43,7 @@ const GridColPreview = () => {
 				textColor="lighter"
 				centered
 			>
-				<Topography variant="body-1">{item} BG</Topography>
+				<Typography variant="body-1">{item} BG</Typography>
 			</Box>
 		))}
 	</Grid>
@@ -70,7 +70,7 @@ const GridRowPreview = () => {
 							textColor="lighter"
 							centered
 						>
-							<Topography variant="body-1">{item} BG</Topography>
+							<Typography variant="body-1">{item} BG</Typography>
 						</Box>
 					))}
 				</Grid>
@@ -89,7 +89,7 @@ const GridRowPreview = () => {
 				textColor="lighter"
 				centered
 			>
-				<Topography variant="body-1">{item} BG</Topography>
+				<Typography variant="body-1">{item} BG</Typography>
 			</Box>
 		))}
 	</Grid>
@@ -116,7 +116,7 @@ const GridGapPreview = () => {
 							centered
 							borderRadius="12px"
 						>
-							<Topography variant="body-1">{item}</Topography>
+							<Typography variant="body-1">{item}</Typography>
 						</Box>
 					))}
 				</Grid>
@@ -135,7 +135,7 @@ const GridGapPreview = () => {
 				centered
 				borderRadius="12px"
 			>
-				<Topography variant="body-1">{item}</Topography>
+				<Typography variant="body-1">{item}</Typography>
 			</Box>
 		))}
 	</Grid>
@@ -154,14 +154,14 @@ const GridSpanPreview = () => {
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Grid cols={4} rows={2} gap={{ row: 12, col: 12 }}>
 					<Box padding={4} bgColor="success" textColor="lighter" centered gridSpan={{ row: 2 }}>
-						<Topography variant="body-1">2 rows and 1 col</Topography>
+						<Typography variant="body-1">2 rows and 1 col</Typography>
 					</Box>
 					<Box padding={4} bgColor="danger" textColor="lighter" centered gridSpan={{ col: 2 }}>
-						<Topography variant="body-1">1 row and 2 cols</Topography>
+						<Typography variant="body-1">1 row and 2 cols</Typography>
 					</Box>
 					{[1, 2, 3, 4].map((item) => (
 						<Box key={item} padding={4} bgColor="default" textColor="darker" centered>
-							<Topography variant="body-1">1 col and 1 row</Topography>
+							<Typography variant="body-1">1 col and 1 row</Typography>
 						</Box>
 					))}
 				</Grid>
@@ -178,7 +178,7 @@ const GridSpanPreview = () => {
 			centered
 			gridSpan={{ row: 2 }}
 		>
-			<Topography variant="body-1">2 rows and 1 col</Topography>
+			<Typography variant="body-1">2 rows and 1 col</Typography>
 		</Box>
 		<Box
 			padding={4}
@@ -187,7 +187,7 @@ const GridSpanPreview = () => {
 			centered
 			gridSpan={{ col: 2 }}
 		>
-			<Topography variant="body-1">1 row and 2 cols</Topography>
+			<Typography variant="body-1">1 row and 2 cols</Typography>
 		</Box>
 		{[1, 2, 3, 4].map((item) => (
 			<Box
@@ -197,7 +197,7 @@ const GridSpanPreview = () => {
 				textColor="darker"
 				centered
 			>
-				<Topography variant="body-1">1 col</Topography>
+				<Typography variant="body-1">1 col</Typography>
 			</Box>
 		))}
 	</Grid>

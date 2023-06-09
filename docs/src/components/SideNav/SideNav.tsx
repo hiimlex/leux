@@ -22,8 +22,8 @@ export const LINKS: Record<string, ILink[]> = {
 		},
 
 		{
-			name: "Topography",
-			path: "/layout/topography",
+			name: "Typography",
+			path: "/layout/typography",
 		},
 	],
 	Action: [

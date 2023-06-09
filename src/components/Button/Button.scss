@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import "../CSS/variables.scss";
 
 .le-button {
 	font-weight: 600;
@@ -7,7 +7,6 @@
 	transition: all 0.1s ease-in-out;
 	cursor: pointer;
 	border: none;
-	font-family: "Poppins", sans-serif;
 
 	&--filled {
 		@each $color, $value in $variant-colors {

@@ -4,3 +4,4 @@ export type LeVariants = "primary" | "secondary" | "success" | "danger" | "warni
 export type LeSafeAny = any;
 
 export type LeClassNames = Record<string, (props?: LeSafeAny) => string>;
+export type LeClassNamesArray = Record<string, (props?: LeSafeAny) => string[]>;
