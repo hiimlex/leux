@@ -5,14 +5,12 @@ import { OverlayProvider } from "../../src";
 
 function App() {
 	return (
-		<>
-			<OverlayProvider>
-				<LeHeader />
-				<LeWrapper>
-					<AppRouter />
-				</LeWrapper>
-			</OverlayProvider>
-		</>
+		<OverlayProvider>
+			<LeHeader />
+			<LeWrapper>
+				<AppRouter />
+			</LeWrapper>
+		</OverlayProvider>
 	);
 }
 
