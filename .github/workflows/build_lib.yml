@@ -16,10 +16,15 @@ jobs:
         node-version: [16.x]
 
     steps:
+		- name: Setup checkout
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm run build
-    - run: npm test
+		- name: Install dependencies and build 🔧
+      - name: Install dependencies and build 🔧
+        run: |
+          npm install
+          npm run build
+					npm test
