@@ -7,7 +7,7 @@ on:
     branches:
       - main
 jobs:
-  build-doc:
+  build-lib:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
