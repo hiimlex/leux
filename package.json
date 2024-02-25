@@ -18,8 +18,7 @@
 		"test": "jest",
 		"test:watch": "jest --watch",
 		"test:coverage": "jest --coverage --collectCoverageFrom='./src/**'",
-		"test:badges": "npm run test:coverage && npx jest-coverage-badges",
-		"prepare": "npx husky install && npx husky add ./.husky/pre-commit 'npx lint-staged'"
+		"test:badges": "npm run test:coverage && npx jest-coverage-badges"
 	},
 	"bugs": {
 		"url": "https://github.com/hiimlex/leux/issues"
@@ -79,7 +78,6 @@
 		"rollup-plugin-includepaths": "^0.2.4",
 		"rollup-plugin-peer-deps-external": "^2.2.4",
 		"rollup-plugin-styles": "^4.0.0",
-		"rollup-plugin-terser": "^7.0.2",
 		"sass": "^1.54.8",
 		"ts-node": "^10.9.1",
 		"typescript": "^4.8.4",
@@ -110,5 +108,8 @@
 		"**/*.spec.{jsx,tsx}": [
 			"jest --bail --findRelatedTests"
 		]
+	},
+	"dependencies": {
+		"@rollup/plugin-terser": "^0.4.4"
 	}
 }
