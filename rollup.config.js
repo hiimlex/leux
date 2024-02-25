@@ -9,7 +9,7 @@ import styles from "rollup-plugin-styles";
 
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import eslint from "@rollup/plugin-eslint";
-import eslintConfig from "./.eslintrc.js";
+import eslintConfig from "./.eslintrc.json";
 
 import packageJson from "./package.json";
 
