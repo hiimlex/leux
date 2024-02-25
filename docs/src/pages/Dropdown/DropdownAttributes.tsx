@@ -20,13 +20,13 @@ const DropdownImportPreview = () => (
 );
 
 const DropdownAnchorPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Dropdown anchor={<Button>anchor</Button>}>
-					<DropdownItem>Test large content to see where's the text direction goes</DropdownItem>
+					<DropdownItem>item 1</DropdownItem>
 				</Dropdown>
 			</LePreview>
 			{showCode && (
@@ -46,7 +46,7 @@ const DropdownAnchorPreview = () => {
 };
 
 const DropdownVariantPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -94,7 +94,7 @@ const DropdownVariantPreview = () => {
 };
 
 const DropdownSizePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -150,7 +150,7 @@ return (
 };
 
 const DropdownPositionPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -238,7 +238,7 @@ return (
 };
 
 const DropdownTriggerPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -280,7 +280,7 @@ const DropdownTriggerPreview = () => {
 };
 
 const DropdownItemPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -308,7 +308,7 @@ const DropdownItemPreview = () => {
 };
 
 const DropdownSeparatorPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const [variant, setVariant] = useState<DropdownVariant>("filled");
 
@@ -350,7 +350,7 @@ const DropdownSeparatorPreview = () => {
 };
 
 const DropdownItemDisabledPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>

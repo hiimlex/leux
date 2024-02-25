@@ -1,9 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 
 import { LeClassNames } from "../../types";
 import { Toast } from "../Toast";
 import { ToastPositions, ToastProps } from "../Toast/Toast.model";
-import { ToastContext } from "../ToastContext";
+import { ToastContext, ToastContextProps } from "../ToastContext";
 import "./ToastProvider.scss";
 
 type ToastProviderProps = {
@@ -49,8 +49,13 @@ const ToastProvider = ({
 		setToasts((curr) => curr.filter((toast) => toast.id !== id));
 	};
 
+	const providerValue = useMemo<ToastContextProps>(
+		() => ({ toasts, createToast, removeToast, position }),
+		[toasts]
+	);
+
 	return (
-		<ToastContext.Provider value={{ toasts, createToast, removeToast, position }}>
+		<ToastContext.Provider value={providerValue}>
 			{children}
 
 			{toasts.length > 0 && (
@@ -62,7 +67,7 @@ const ToastProvider = ({
 					>
 						{toasts.map((toast, index) => (
 							<Toast
-								key={index}
+								key={toast.id ?? index}
 								duration={duration}
 								customStyles={{ ...toast.customStyles, position: stackable ? "relative" : "fixed" }}
 								{...toast}

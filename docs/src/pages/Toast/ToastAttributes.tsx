@@ -49,7 +49,7 @@ const Component = () => {
 );
 
 const ToastSizePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const { createToast } = useContext(ToastContext);
 
@@ -127,7 +127,7 @@ const Component = () => {
 };
 
 const ToastThemePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const { createToast } = useContext(ToastContext);
 
@@ -264,7 +264,7 @@ const Component = () => {
 };
 
 const ToastDurationPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const { createToast } = useContext(ToastContext);
 
@@ -326,7 +326,7 @@ const Component = () => {
 };
 
 const ToastClosablePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const { createToast } = useContext(ToastContext);
 
@@ -351,7 +351,7 @@ const ToastClosablePreview = () => {
 };
 
 const ToastCustomPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const { createToast } = useContext(ToastContext);
 
@@ -377,7 +377,7 @@ const ToastCustomPreview = () => {
 };
 
 const ToastActionPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const { createToast } = useContext(ToastContext);
 

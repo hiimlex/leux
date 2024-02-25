@@ -7,44 +7,8 @@ const PaginationImportPreview = () => (
 	<LeHighlighter language="tsx" code={`import { Pagination, PaginationProps } from "leux";`} />
 );
 
-const PaginationConfigurationPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
-
-	const [paginationConfig, _setPaginationConfig] = useState<PaginationProps>({
-		currentPage: 1,
-		itemsPerPage: 10,
-		totalItems: 100,
-		totalPages: 10,
-	});
-
-	return (
-		<>
-			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Pagination {...paginationConfig}></Pagination>
-			</LePreview>
-			{showCode && (
-				<LeHighlighter
-					language="tsx"
-					code={`const Component = () => {
-	const [paginationConfig, _setPaginationConfig] = useState<PaginationProps>({
-		currentPage: 1,
-		itemsPerPage: 10,
-		totalItems: 100,
-		totalPages: 10,
-	});
-
-	return (
-		<Pagination {...paginationConfig}></Pagination>
-	)
-};`}
-				/>
-			)}
-		</>
-	);
-};
-
 const PaginationActionPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const [paginationConfig, setPaginationConfig] = useState<PaginationProps>({
 		currentPage: 1,
@@ -88,7 +52,7 @@ const PaginationActionPreview = () => {
 };
 
 const PaginationButtonsPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 	const [paginationConfig, setPaginationConfig] = useState<PaginationProps>({
 		currentPage: 1,
 		itemsPerPage: 10,
@@ -151,7 +115,7 @@ const PaginationButtonsPreview = () => {
 };
 
 const PaginationLabelPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const [paginationConfig, setPaginationConfig] = useState<PaginationProps>({
 		currentPage: 1,
@@ -207,7 +171,7 @@ const PaginationLabelPreview = () => {
 };
 
 const PaginationSizePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const [paginationConfig, setPaginationConfig] = useState<PaginationProps>({
 		currentPage: 1,
@@ -309,7 +273,6 @@ const PaginationApiTable = () => {
 paginationAttr["LeSourceButton"] = LeSourceButton;
 paginationAttr["LeHighlighter"] = LeHighlighter;
 paginationAttr["PaginationImportPreview"] = PaginationImportPreview;
-paginationAttr["PaginationConfigurationPreview"] = PaginationConfigurationPreview;
 paginationAttr["PaginationActionPreview"] = PaginationActionPreview;
 paginationAttr["PaginationButtonsPreview"] = PaginationButtonsPreview;
 paginationAttr["PaginationLabelPreview"] = PaginationLabelPreview;

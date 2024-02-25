@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { ModalProps } from "../Modal/Modal.model";
-import { ModalContext } from "../ModalContext";
-import { Modal } from "../Modal";
+import { Modal, ModalProps } from "../../components/";
+import { ModalContext } from "../../contexts";
 
 import "./ModalProvider.scss";
 
@@ -89,15 +88,15 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
 				destroyAll,
 			}}
 		>
+			{children}
+
 			{modals.length > 0 && modals.some((el) => el.visible) && (
-				<div className="le-modal--provider">
-					{}
+				<div className="le-modal--provider" data-testid="leuxModalProvider">
 					{modals.map((modal) => (
 						<Modal key={modal.id} {...modal} />
 					))}
 				</div>
 			)}
-			{children}
 		</ModalContext.Provider>
 	);
 };

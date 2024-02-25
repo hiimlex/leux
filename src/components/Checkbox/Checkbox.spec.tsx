@@ -4,7 +4,6 @@ import { Checkbox } from "./Checkbox";
 import "@testing-library/jest-dom";
 import React from "react";
 import { LeSafeAny } from "../../types";
-import { unescape } from "querystring";
 
 describe("Checkbox component test", () => {
 	it("should render a Checkbox component", () => {

@@ -1,14 +1,14 @@
 import { act, render } from "@testing-library/react";
 
 import "@testing-library/jest-dom";
-import React, { useContext } from "react";
+import React from "react";
+import { useModal } from "../../hooks";
 import { Button } from "../Button";
-import { ModalContext } from "../ModalContext";
-import { ModalProvider } from "../ModalProvider";
+import { ModalProvider } from "../../providers";
 import { ModalProps } from "./Modal.model";
 
 const TestModalComponent = (props: ModalProps) => {
-	const { createModal, closeModal } = useContext(ModalContext);
+	const { createModal, closeModal } = useModal();
 
 	const handleCreateModal = () => {
 		createModal({ ...props, destroyOnClose: true });
@@ -94,7 +94,11 @@ describe("Modal component test", () => {
 	it("should render a Modal Component with custom position style", () => {
 		const { getByText, getByTestId } = render(
 			<ModalProvider>
-				<TestModalComponent id="testModal" title="Test Modal" top={100} left={100} right={100} />
+				<TestModalComponent
+					id="testModal"
+					title="Test Modal"
+					position={{ top: 100, left: 100, right: 100 }}
+				/>
 			</ModalProvider>
 		);
 

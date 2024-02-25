@@ -9,7 +9,7 @@ const GridImportPreview = () => {
 };
 
 const GridColPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -55,7 +55,7 @@ const GridColPreview = () => {
 };
 
 const GridRowPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -101,7 +101,7 @@ const GridRowPreview = () => {
 };
 
 const GridGapPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -147,7 +147,7 @@ const GridGapPreview = () => {
 };
 
 const GridSpanPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>

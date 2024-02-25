@@ -14,8 +14,9 @@
 		"moduleResolution": "Node",
 		"allowSyntheticDefaultImports": true,
 		"emitDeclarationOnly": true,
+		"baseUrl": "./src",
 		"paths": {
-			"src/*": ["./src/*"]
+			"src/*": ["*"]
 		}
 	}
 }

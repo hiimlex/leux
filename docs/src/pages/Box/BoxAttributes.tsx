@@ -9,7 +9,7 @@ const ImportPreview = () => {
 };
 
 const BoxCssPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -47,7 +47,7 @@ const BoxCssPreview = () => {
 };
 
 const BoxCustomPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -87,7 +87,7 @@ const BoxCustomPreview = () => {
 };
 
 const BoxCenteredPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>

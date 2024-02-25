@@ -8,7 +8,7 @@ interface PreviewProps {
 	children?: ReactNode;
 	direction?: PreviewDirection;
 	showCode?: boolean;
-	setShowCode?: Dispatch<SetStateAction<boolean | undefined>>;
+	setShowCode?: Dispatch<SetStateAction<boolean>>;
 }
 
 const Preview = ({ children, direction = "row", showCode, setShowCode }: PreviewProps) => {

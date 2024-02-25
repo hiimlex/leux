@@ -13,9 +13,6 @@ Input component is used to that allows users enter text.
 </InputImportPreview>
 </div>
 
-- **Input** - the main component.
-- **InputProps** - the props type.
-
 <br/>
 
 #### Field Key

@@ -16,7 +16,7 @@ const SkeletonImportPreview = () => (
 );
 
 const SkeletonVariantPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 	const [show, setShow] = useState(false);
 
 	const handleShow = () => {
@@ -119,7 +119,7 @@ const SkeletonVariantPreview = () => {
 };
 
 const SkeletonSizePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 	const [size, setSize] = useState<SkeletonSizes>("medium");
 
 	const handleSize = (size: SkeletonSizes) => {
@@ -240,7 +240,7 @@ const SkeletonSizePreview = () => {
 };
 
 const SkeletonRowsPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 	const [rows, setRows] = useState(2);
 
 	const handleRows = (rows: number) => {
@@ -325,7 +325,7 @@ const SkeletonRowsPreview = () => {
 };
 
 const SkeletonActivePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 	const [active, setActive] = useState(false);
 
 	const handleActive = () => {

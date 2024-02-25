@@ -1,7 +1,7 @@
 import React, { ComponentProps, FC, PropsWithChildren, useMemo } from "react";
 import { ModalProvider, ModalProviderProps } from "../ModalProvider";
 import { LeSafeAny } from "../../types";
-import { ToastProvider, ToastProviderProps } from "../ToastProvider";
+import { ToastProvider, ToastProviderProps } from "../../components/";
 
 interface OverlayProviderProps {
 	children: React.ReactNode;
@@ -43,7 +43,11 @@ const OverlayProvider = ({
 		[ModalProviderProps, ToastProviderProps]
 	);
 
-	return <CombinedProviders>{children}</CombinedProviders>;
+	return (
+		<div className="le-overlay--provider" data-testid="leuxOverlayProvider">
+			<CombinedProviders>{children}</CombinedProviders>
+		</div>
+	);
 };
 
 export { OverlayProvider };

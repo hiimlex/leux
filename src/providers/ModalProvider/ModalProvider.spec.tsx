@@ -1,13 +1,12 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render } from "@testing-library/react";
-import React, { useContext } from "react";
-import { Button } from "../Button";
-import { ModalProps } from "../Modal";
-import { ModalContext } from "../ModalContext";
+import React from "react";
+import { useModal } from "../../hooks";
+import { Button, ModalProps } from "../../components";
 import { ModalProvider } from "./ModalProvider";
 
 const TestModalComponent = (props: ModalProps) => {
-	const { createModal, closeModal, destroyAll, destroyModal, openModal } = useContext(ModalContext);
+	const { createModal, closeModal, destroyAll, destroyModal, openModal } = useModal();
 
 	const handleCreateModal = () => {
 		createModal({ ...props, closable: false, maskClosable: false, destroyOnClose: false });
@@ -37,7 +36,7 @@ const TestModalComponent = (props: ModalProps) => {
 };
 
 describe("ModalProvider component test", () => {
-	it("should render a Modal Component", () => {
+	it("should create a Modal Component", () => {
 		const { getByText, getByTestId } = render(
 			<ModalProvider>
 				<TestModalComponent id="testModal" title="Test Modal" />
@@ -53,7 +52,7 @@ describe("ModalProvider component test", () => {
 		expect(modal).toBeInTheDocument();
 	});
 
-	it("should destrot a Modal Component", () => {
+	it("should destroy a Modal Component", () => {
 		const { getByText, getByTestId } = render(
 			<ModalProvider>
 				<TestModalComponent id="testModal" title="Test Modal" />

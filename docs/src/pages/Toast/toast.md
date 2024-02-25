@@ -15,11 +15,6 @@ The Toast component is used to show messages to the user for a short period of t
 </ToastImportPreview>
 </div>
 
-- **Toast** - The main component.
-- **ToastProps** - The props type.
-- **ToastProvider** - The toast provider.
-- **ToastContext** - The toast context.
-
 <br />
 
 #### Overlay

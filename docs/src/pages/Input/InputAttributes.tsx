@@ -8,7 +8,7 @@ const InputImportPreview = () => (
 );
 
 const InputKeyPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -28,7 +28,7 @@ const InputKeyPreview = () => {
 };
 
 const InputVariantPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -52,7 +52,7 @@ const InputVariantPreview = () => {
 };
 
 const InputSizePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -81,7 +81,7 @@ const InputSizePreview = () => {
 };
 
 const InputActionPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const [value, setValue] = useState("");
 	const handleOnChange = ({ target: { value } }: ChangeEvent<HTMLInputElement>) => setValue(value);
@@ -117,7 +117,7 @@ const InputActionPreview = () => {
 };
 
 const InputStatePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const [disabled, setDisabled] = useState(true);
 	const [value, setValue] = useState("");
@@ -166,7 +166,7 @@ const InputStatePreview = () => {
 };
 
 const InputCustomPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>

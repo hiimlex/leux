@@ -1,8 +1,17 @@
 import { ButtonProps } from "../Button";
 
-type ModalFooterFunction = (id: string, onClose: () => void) => void;
+type ModalFooterFunction = (id: string) => void;
 
-type ModalFooterProps = ButtonProps[] | null;
+type ModalFooterButton = ButtonProps & { cancel?: boolean; ok?: boolean };
+
+type ModalFooterProps = ModalFooterButton[] | null;
+
+type ModalFloatPosition = {
+	top?: React.CSSProperties["top"];
+	left?: React.CSSProperties["left"];
+	right?: React.CSSProperties["right"];
+	bottom?: React.CSSProperties["bottom"];
+};
 
 interface ModalProps {
 	id: string;
@@ -13,9 +22,8 @@ interface ModalProps {
 	width?: React.CSSProperties["width"];
 	zIndex?: React.CSSProperties["zIndex"];
 	centered?: boolean;
-	top?: React.CSSProperties["top"];
-	left?: React.CSSProperties["left"];
-	right?: React.CSSProperties["right"];
+	position?: ModalFloatPosition;
+
 	customClass?: string;
 	customStyles?: React.CSSProperties;
 	customWrapperClass?: string;
@@ -33,4 +41,4 @@ interface ModalProps {
 	customFooter?: React.ReactNode;
 }
 
-export { ModalProps, ModalFooterFunction, ModalFooterProps };
+export { ModalProps, ModalFooterFunction, ModalFooterProps, ModalFooterButton };

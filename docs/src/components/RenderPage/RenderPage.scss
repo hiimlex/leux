@@ -4,6 +4,10 @@
 	color: $color-dark-text;
 	text-align: justify;
 
+	p {
+		margin: 12px 0;
+	}
+
 	pre {
 		width: 100%;
 		border-radius: 4px;

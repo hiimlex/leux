@@ -15,9 +15,6 @@ Checkbox is a component that allows the user to select one or more options from 
 </CheckboxImportPreview>
 </div>
 
-- **Checkbox** - the main component
-- **CheckboxProps** - the props type
-
 <br />
 
 #### FieldKey

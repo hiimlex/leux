@@ -8,7 +8,7 @@ const AvatarImportPreview = () => (
 );
 
 const AvatarSrcPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -34,7 +34,7 @@ const AvatarSrcPreview = () => {
 };
 
 const AvatarAsTextPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -57,7 +57,7 @@ const AvatarAsTextPreview = () => {
 };
 
 const AvatarSizePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -116,7 +116,7 @@ const AvatarSizePreview = () => {
 };
 
 const AvatarCustomPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>

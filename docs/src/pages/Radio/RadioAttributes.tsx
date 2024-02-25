@@ -12,7 +12,7 @@ const RadioImportPreview = () => {
 };
 
 const RadioFieldKeyPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const [fieldKey, setFieldKey] = useState<string>("");
 	const radioRef = useRef<HTMLInputElement>(null);
@@ -56,7 +56,7 @@ const RadioFieldKeyPreview = () => {
 };
 
 const RadioActionPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 	const [value, setValue] = useState<string>("1");
 
 	const handleOnChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
@@ -126,7 +126,7 @@ const RadioActionPreview = () => {
 };
 
 const RadioSizePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -176,7 +176,7 @@ const RadioSizePreview = () => {
 };
 
 const RadioCustomPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -270,7 +270,7 @@ const Component = () => (
 };
 
 const RadioStatePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 	const [disabled, setDisabled] = useState<boolean>(false);
 
 	const handleDisableRadio = () => {

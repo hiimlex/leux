@@ -18,7 +18,7 @@ const ImportPreview = () => {
 };
 
 const CodePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -64,7 +64,7 @@ const CodePreview = () => {
 };
 
 const TypographyCustomPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
