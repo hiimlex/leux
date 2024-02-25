@@ -8,7 +8,6 @@ export * from "./Dropdown";
 export * from "./Grid";
 export * from "./Input";
 export * from "./Modal";
-export * from "./OverlayProvider";
 export * from "./Pagination";
 export * from "./Radio";
 export * from "./Select";

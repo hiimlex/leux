@@ -36,7 +36,7 @@ const TestModalComponent = (props: ModalProps) => {
 };
 
 describe("ModalProvider component test", () => {
-	it("should render a Modal Component", () => {
+	it("should create a Modal Component", () => {
 		const { getByText, getByTestId } = render(
 			<ModalProvider>
 				<TestModalComponent id="testModal" title="Test Modal" />
@@ -52,7 +52,7 @@ describe("ModalProvider component test", () => {
 		expect(modal).toBeInTheDocument();
 	});
 
-	it("should destrot a Modal Component", () => {
+	it("should destroy a Modal Component", () => {
 		const { getByText, getByTestId } = render(
 			<ModalProvider>
 				<TestModalComponent id="testModal" title="Test Modal" />

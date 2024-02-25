@@ -1,8 +1,11 @@
-import { act, render } from "@testing-library/react";
+import { act, fireEvent, render } from "@testing-library/react";
 import React from "react";
 
 import "@testing-library/jest-dom";
+import { ModalProps } from "../components";
+import { useModal } from "../hooks";
 import { useBreakpoint } from "./useBreakpoint";
+import { OverlayProvider } from "..";
 
 const TestUseBreakpoint = () => {
 	const { breakpoint } = useBreakpoint();
@@ -65,5 +68,53 @@ describe("useBreakpoint test", () => {
 		const testUseBreakpoint = getByTestId("testUseBreakpoint");
 
 		expect(testUseBreakpoint).toHaveTextContent("xl");
+	});
+});
+
+const ModalTest = (props: ModalProps) => {
+	const { createModal, closeModal, destroyAll, destroyModal, openModal } = useModal();
+
+	const handleCreateModal = () => {
+		createModal({ ...props, closable: false, maskClosable: false, destroyOnClose: false });
+	};
+
+	const handleCloseModal = () => {
+		closeModal(props.id, false);
+	};
+
+	const handleDestroyModal = () => {
+		destroyModal(props.id);
+	};
+
+	const handleOpenModal = () => {
+		openModal(props.id);
+	};
+
+	return (
+		<div>
+			<button onClick={handleCreateModal}>createModal</button>
+			<button onClick={handleCloseModal}>closeModal</button>
+			<button onClick={destroyAll}>destroyAll</button>
+			<button onClick={handleDestroyModal}>destroyModal</button>
+			<button onClick={handleOpenModal}>openModal</button>
+		</div>
+	);
+};
+
+describe("useModal test", () => {
+	it("should create a modal with hook", () => {
+		const { getByText, getByTestId } = render(
+			<OverlayProvider>
+				<ModalTest id="test" title="test" />
+			</OverlayProvider>
+		);
+
+		const createModalButton = getByText("createModal");
+
+		fireEvent.click(createModalButton);
+
+		const modal = getByTestId("leuxModal");
+
+		expect(modal).toBeInTheDocument();
 	});
 });

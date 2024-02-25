@@ -91,7 +91,7 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
 			{children}
 
 			{modals.length > 0 && modals.some((el) => el.visible) && (
-				<div className="le-modal--provider">
+				<div className="le-modal--provider" data-testid="leuxModalProvider">
 					{modals.map((modal) => (
 						<Modal key={modal.id} {...modal} />
 					))}
