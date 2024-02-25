@@ -1,11 +1,10 @@
 name: Build library
 on:
   push:
-    branches: [ dev ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - dev
 jobs:
-  build:
+  build-doc:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -14,7 +13,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.14.x
-		- name: Install dependencies and build 🔧
-		- run: npm install
-    - run: npm run build
-    - run: npm test
+      - name: Install dependencies anb build library
+        run: npm install
+        run: npm run build
