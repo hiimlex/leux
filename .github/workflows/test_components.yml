@@ -13,7 +13,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '16.14.0'
       - name: Install dependencies 🔧
         run: npm install
       - name: Run tests 🧪

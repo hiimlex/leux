@@ -1,6 +1,6 @@
 {
 	"name": "leux",
-	"version": "0.2.15",
+	"version": "0.2.16",
 	"homepage": "https://leux.vercel.app/",
 	"description": "React components library",
 	"publishConfig": {
@@ -11,7 +11,7 @@
 		"url": "https://github.com/hiimlex/leux.git"
 	},
 	"engines": {
-		"node": ">=14.17.3"
+		"node": ">=16.14.0"
 	},
 	"scripts": {
 		"build": "rollup -c",

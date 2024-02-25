@@ -41,14 +41,3 @@ npm install leux
 ### ✨ CSS
 
 To upload the CSS styles, you can move the **leux.min.css** from the **node_modules/leux/dist** folder to your project folder and import it in your **index.html** file.
-
-## Next steps:
-
-- [x] build and publish the docs
-- [x] finish all components
-- [ ] add more tests
-- [ ] improve documentation
-- [ ] add i18n support
-- [ ] set required on props API reference
-- [ ] theme customization ???
-- [ ] i18n
