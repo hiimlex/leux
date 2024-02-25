@@ -12,7 +12,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 16.14.x
       - name: Install docs dependencies
         working-directory: ./docs
         run: npm install
