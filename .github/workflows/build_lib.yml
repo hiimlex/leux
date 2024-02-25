@@ -1,20 +1,22 @@
-name: Run Components Test
+name: Build library
 on:
-  pull_request:
+  push:
     branches:
       - dev
+  pull_request:
+    branches:
       - main
 jobs:
-  test-components:
+  build-lib:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup checkout
+      - name: Checkout
         uses: actions/checkout@v3
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: '16.14.0'
-      - name: Install dependencies 🔧
+          node-version: 16.14.x
+      - name: Install dependencies
         run: npm install
-      - name: Run tests 🧪
-        run: npm run test
+      - name: Build library
+        run: npm run build
