@@ -14,5 +14,5 @@ jobs:
         with:
           node-version: 16.14.x
       - name: Install dependencies anb build library
-        run: npm install
-        run: npm run build
+      - run: npm install
+    	- run: npm run build
