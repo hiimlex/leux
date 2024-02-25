@@ -13,7 +13,7 @@ const SelectImportPreview = () => (
 );
 
 const SelectOptionsPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const options: SelectOption[] = [
 		{
@@ -72,7 +72,7 @@ const SelectOptionsPreview = () => {
 };
 
 const SelectSizePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -124,7 +124,7 @@ const SelectSizePreview = () => {
 };
 
 const SelectVariantPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -163,7 +163,7 @@ const SelectVariantPreview = () => {
 };
 
 const SelectActionPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 	const [value, setValue] = useState<string>("");
 
 	const handleOnChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -218,7 +218,7 @@ const SelectActionPreview = () => {
 };
 
 const SelectStatePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 	const [state, setState] = useState<SelectState>({});
 
 	const disableSelect = () => {
@@ -282,7 +282,7 @@ const SelectStatePreview = () => {
 };
 
 const SelectCustomPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>

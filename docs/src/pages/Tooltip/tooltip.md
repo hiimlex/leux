@@ -13,9 +13,6 @@ The Tooltip component displays informative text when users hover over an element
 </TooltipImportPreview>
 </div>
 
-- **Select** - The main component.
-- **SelectProps** - The props types.
-
 <br/>
 
 #### Usage

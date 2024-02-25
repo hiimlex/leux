@@ -13,14 +13,9 @@ The Dropdown component is used to display a list of items that can be selected.
 </DropdownImportPreview>
 </div>
 
-- **Dropdown** - the main component.
-- **DropdownProps** - the prop types.
-
 <br />
 
 #### Anchor
-
-The Dropdown component work with the `DropdownItem` component. The `DropdownItem` component is used to display a list of items that can be selected. The `DropdownItem` component can be used as a child of the `Dropdown` component.
 
 To show the `Dropdown` component needs an `Anchor` component. The `Dropdown` component will be shown when the user clicks on the `Anchor` component that will be wrapped to handle the actions.
 

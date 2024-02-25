@@ -14,9 +14,6 @@ Avatar is a component that represents a user, either as an image or as a placeho
 </AvatarImportPreview>
 </div>
 
-- **Avatar** - the main component.
-- **AvatarProps** - the prop types.
-
 <br/>
 
 #### Src

@@ -8,7 +8,7 @@ const SpinnerImportPreview = () => (
 );
 
 const SpinnerSizePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -34,7 +34,7 @@ const SpinnerSizePreview = () => {
 };
 
 const SpinnerThemePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -65,7 +65,7 @@ const SpinnerThemePreview = () => {
 };
 
 const SpinnerCustomPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>

@@ -1,8 +1,8 @@
-import { render, act, getByAltText } from "@testing-library/react";
+import { act, render } from "@testing-library/react";
 
-import { Pagination } from "./Pagination";
 import "@testing-library/jest-dom";
-import React, { useState } from "react";
+import React from "react";
+import { Pagination } from "./Pagination";
 
 describe("Pagination component test", () => {
 	it("should render Pagination component", () => {

@@ -13,9 +13,6 @@ The Radio component allow the user to select one option from a set. It is common
 </RadioImportPreview>
 </div>
 
-- **Radio** - The main component
-- **RadioProps** - The props type
-
 <br />
 
 #### Field Key

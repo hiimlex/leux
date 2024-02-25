@@ -37,7 +37,7 @@ const TableImportPreview = () => (
 );
 
 const TableConfigurationPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const [tableConfig, _] = useState<TableProps>({
 		columns: [
@@ -93,7 +93,7 @@ const TableConfigurationPreview = () => {
 };
 
 const TableChildrenPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -171,7 +171,7 @@ const TableChildrenPreview = () => {
 };
 
 const TableVariantPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const [tableConfig, setTableConfig] = useState<TableProps>({
 		columns: [
@@ -265,7 +265,7 @@ const TableVariantPreview = () => {
 };
 
 const TableSizePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const [tableConfig, setTableConfig] = useState<TableProps>({
 		columns: [
@@ -377,7 +377,7 @@ const TableSizePreview = () => {
 };
 
 const TableOrderPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const orderFn = ({ key, order }: TableColumn) => {
 		getTodos({ key, order: order === "asc" ? "desc" : "asc" });
@@ -539,7 +539,7 @@ const Component = () => {
 };
 
 const TablePaginationPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const [tableConfig, setTableConfig] = useState<TableProps>({
 		columns: [
@@ -750,7 +750,7 @@ const Component = () => {
 };
 
 const TableStatePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const [tableConfig, _] = useState<TableProps>({
 		columns: [

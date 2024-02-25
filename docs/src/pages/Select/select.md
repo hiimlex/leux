@@ -13,9 +13,6 @@ The select component is used to select a single value from a list of options.
 </SelectImportPreview>
 </div>
 
-- **Select** - The main component
-- **SelectProps** - The props type
-
 <br />
 
 #### Options

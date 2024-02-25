@@ -14,9 +14,6 @@ Typography is a layout component. It is used to create headings, paragraphs, and
 <ImportPreview></ImportPreview>
 </div>
 
-- **Typography** - the main component.
-- **TypographyProps** - the prop types.
-
 <br/>
 
 #### Variant

@@ -8,7 +8,7 @@ const ButtonImportPreview = () => (
 );
 
 const ButtonThemePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -50,7 +50,7 @@ const ButtonThemePreview = () => {
 };
 
 const ButtonVariantPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -88,7 +88,7 @@ const ButtonVariantPreview = () => {
 };
 
 const ButtonSizePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -118,7 +118,7 @@ const ButtonSizePreview = () => {
 };
 
 const ButtonStatePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 	const [disabled, setDisabled] = useState(true);
 
 	const handleOnClick = () => {
@@ -170,7 +170,7 @@ const ButtonStatePreview = () => {
 };
 
 const ButtonActionPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 	const handleOnClick = () => alert("Hello World!");
 
 	return (

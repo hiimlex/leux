@@ -9,7 +9,7 @@ const BadgeImportPreview = () => (
 );
 
 const BadgeVariantPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -40,7 +40,7 @@ const BadgeVariantPreview = () => {
 };
 
 const BadgeThemePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -72,7 +72,7 @@ const BadgeThemePreview = () => {
 };
 
 const BadgeSizePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -104,7 +104,7 @@ const BadgeSizePreview = () => {
 };
 
 const BadgeCustomPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>

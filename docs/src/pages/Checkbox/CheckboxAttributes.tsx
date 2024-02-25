@@ -8,7 +8,7 @@ const CheckboxImportPreview = () => (
 );
 
 const CheckboxActionPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 	const [value, setValue] = useState(false);
 
 	const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -46,7 +46,7 @@ const CheckboxActionPreview = () => {
 };
 
 const CheckboxSizePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -93,7 +93,7 @@ const CheckboxSizePreview = () => {
 };
 
 const CheckboxCustomPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -140,7 +140,7 @@ const CheckboxCustomPreview = () => {
 };
 
 const CheckboxStatePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 	const [disabled, setDisabled] = useState<boolean>(false);
 
 	const handleDisableCheckbox = () => {
@@ -191,7 +191,7 @@ const CheckboxStatePreview = () => {
 };
 
 const CheckboxFieldKeyPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>

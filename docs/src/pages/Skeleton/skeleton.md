@@ -13,9 +13,6 @@ The Skeleton component is used as a placeholder for loading content. It is used 
 </SkeletonImportPreview>
 </div>
 
-- **Skeleton** - The main component
-- **SkeletonProps** - The prop types
-
 <br />
 
 #### Variant

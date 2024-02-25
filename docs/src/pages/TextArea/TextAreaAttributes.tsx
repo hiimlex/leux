@@ -8,7 +8,7 @@ const TextAreaImportPreview = () => (
 );
 
 const TextAreaVariantPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -52,7 +52,7 @@ const TextAreaVariantPreview = () => {
 };
 
 const TextAreaFieldKeyPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -72,7 +72,7 @@ const TextAreaFieldKeyPreview = () => {
 };
 
 const TextAreaActionPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 	const [value, setValue] = useState<string>("");
 
 	const handleOnChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -117,7 +117,7 @@ const TextAreaActionPreview = () => {
 };
 
 const TextAreaSizePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -171,7 +171,7 @@ const TextAreaSizePreview = () => {
 };
 
 const TextAreaRowsPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -203,7 +203,7 @@ const TextAreaRowsPreview = () => {
 };
 
 const TextAreaStatePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 	const [disabled, setDisabled] = useState<boolean>(false);
 
 	const handleDisableTextArea = () => {

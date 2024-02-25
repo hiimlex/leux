@@ -1,5 +1,5 @@
 import React, { ComponentProps, FC, PropsWithChildren, useMemo } from "react";
-import { ModalProvider, ModalProviderProps } from "../ModalProvider";
+import { ModalProvider, ModalProviderProps } from "../../providers";
 import { LeSafeAny } from "../../types";
 import { ToastProvider, ToastProviderProps } from "../ToastProvider";
 

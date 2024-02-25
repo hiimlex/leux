@@ -8,7 +8,7 @@ const TooltipImportPreview = () => (
 );
 
 const TooltipUsagePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -33,7 +33,7 @@ const TooltipUsagePreview = () => {
 };
 
 const TooltipDirectionPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -78,7 +78,7 @@ const TooltipDirectionPreview = () => {
 };
 
 const TooltipThemePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
@@ -147,7 +147,7 @@ const TooltipThemePreview = () => {
 };
 
 const TooltipCustomPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>

@@ -1,54 +1,19 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
-import { PropsWithChildren, useContext, useState } from "react";
-import { Avatar, Button, ModalContext, ModalProps, Typography } from "../../../../src";
-import { attributes as modalAttr } from "./modal.md";
+import { PropsWithChildren, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { Button, ModalProps, Typography, useModal } from "../../../../src";
+import { attributes as modalAttr } from "./modal.md";
 
 const ModalImportPreview = () => (
 	<LeHighlighter
 		language="tsx"
-		code={`import { Modal, ModalContext, ModalProvider, ModalProps } from "leux";`}
+		code={`import { Modal, ModalProps, useModal } from "leux";`}
 	></LeHighlighter>
 );
 
-const ModalContextPreview = () => {
-	return (
-		<>
-			<LeHighlighter
-				language="tsx"
-				code={`// ModalContext.tsx
-type ModalContextProps = {
-	modals: ModalProps[];
-	createModal: (modal: ModalProps) => void;
-	openModal: (id: string) => void;
-	closeModal: (id: string, shouldDestroy?: boolean) => void;
-	hasModal: (id: string) => boolean;
-	destroyModal: (id: string) => void;
-	destroyAll: () => void;
-};`}
-			/>
-			<LeHighlighter
-				language="tsx"
-				code={`// Component.tsx
-const Component = () => {
-	const { openModals, createModal, openModal, closeModal, hasModal, destroyModal, destroyAll } =
-		useContext(ModalContext);
-		// ...
-
-		return (
-			<>
-				{/* ... your component */}
-			</>
-		);
-};`}
-			/>
-		</>
-	);
-};
-
 const ModalUsagePreview = () => {
-	const { createModal } = useContext(ModalContext);
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
+	const { createModal } = useModal();
+	const [showCode, setShowCode] = useState<boolean>(false);
 
 	const handleOpenModal = () => {
 		createModal({
@@ -74,7 +39,7 @@ const ModalUsagePreview = () => {
 					language="tsx"
 					code={`// example.tsx
 const Component = () => {
-	const { hasModal, createModal, openModal } = useContext(ModalContext);
+	const { hasModal, createModal, openModal } = useModal();
 
 	const handleOpenModal = () => {
 		if (!hasModal("modal-usage")) {
@@ -111,18 +76,14 @@ const Component = () => {
 };
 
 const ModalActionsPreview = () => {
-	const [showCode, setshowCode] = useState<boolean | undefined>(false);
-	const { createModal } = useContext(ModalContext);
+	const [showCode, setshowCode] = useState<boolean>(false);
+	const { createModal } = useModal();
 
 	const handleOpenModal = () => {
 		createModal({
 			id: "modal-actions",
 			title: "Title",
-			children: (
-				<Typography variant="body-1" customStyles={{ margin: 0 }}>
-					click on OK, Cancel or Close button
-				</Typography>
-			),
+			children: <Typography variant="body-1">Click on OK, Cancel or Close button</Typography>,
 			visible: false,
 			onOk: () => {
 				alert("Hello");
@@ -190,8 +151,8 @@ const ModalActionsPreview = () => {
 };
 
 const ModalPositionPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
-	const { createModal } = useContext(ModalContext);
+	const [showCode, setShowCode] = useState<boolean>(false);
+	const { createModal } = useModal();
 
 	const handleOpenModal = () => {
 		createModal({
@@ -202,7 +163,7 @@ const ModalPositionPreview = () => {
 					120px from top
 				</Typography>
 			),
-			top: 120,
+			position: { top: 120 },
 			footer: null,
 		});
 	};
@@ -229,60 +190,6 @@ const ModalPositionPreview = () => {
 			),
 			top: 120,
 			footer: null,
-		});
-	};
-
-	return (
-		<Button onClick={handleOpenModal}>Open modal</Button>
-	);
-};`}
-				/>
-			)}
-		</>
-	);
-};
-
-const ModalSizePreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(false);
-
-	const { createModal } = useContext(ModalContext);
-
-	const handleOpenModal = () => {
-		createModal({
-			id: "modal-size",
-			title: "Size",
-			children: (
-				<Typography variant="body-1" customStyles={{ margin: 0 }}>
-					80% width
-				</Typography>
-			),
-			footer: null,
-			width: "80%",
-		});
-	};
-
-	return (
-		<>
-			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Button onClick={handleOpenModal}>Open modal</Button>
-			</LePreview>
-			{showCode && (
-				<LeHighlighter
-					language="tsx"
-					code={`const Component = () => {
-	const { createModal } = useContext(ModalContext);
-
-	const handleOpenModal = () => {
-		createModal({
-			id: "modal-size",
-			title: "Size",
-			children: (
-				<Typography variant="body-1" customStyles={{ margin: 0 }}>
-					80% width
-				</Typography>
-			),
-			footer: null,
-			width: "80%",
 		});
 	};
 
@@ -332,14 +239,8 @@ const ModalApiTable = () => {
 			type: "boolean",
 			defaultValue: "true",
 		},
-		top: {
-			type: "React.CSSProperties['top']",
-		},
-		left: {
-			type: "React.CSSProperties['left']",
-		},
-		right: {
-			type: "React.CSSProperties['right']",
+		position: {
+			type: "ModalFloatPosition | { top?: React.CSSProperties['top']; left?: React.CSSProperties['left']; right?: React.CSSProperties['right']; bottom?: React.CSSProperties['bottom']; }",
 		},
 		closable: {
 			type: "boolean",
@@ -401,8 +302,6 @@ modalAttr["ModalUsagePreview"] = ModalUsagePreview;
 modalAttr["ModalImportPreview"] = ModalImportPreview;
 modalAttr["ModalActionsPreview"] = ModalActionsPreview;
 modalAttr["ModalPositionPreview"] = ModalPositionPreview;
-modalAttr["ModalSizePreview"] = ModalSizePreview;
-modalAttr["ModalContextPreview"] = ModalContextPreview;
 modalAttr["ModalApiTable"] = ModalApiTable;
 
 export { modalAttr };

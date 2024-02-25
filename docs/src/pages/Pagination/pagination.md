@@ -13,25 +13,6 @@ The Pagination component is used to split content into multiple pages.
 </PaginationImportPreview>
 </div>
 
-- **Pagination** - the main component
-- **PaginationProps** - the props type
-
-<br />
-
-#### Simple
-
-The following attributes shows how to configure the pagination.
-
-- `currentPage` - The current page number
-- `totalPages` - The total number of pages
-- `totalItems` - The total number of items
-- `itemsPerPage` - The number of items per page
-
-<div>
-<PaginationConfigurationPreview>
-</PaginationConfigurationPreview>
-</div>
-
 <br />
 
 #### Sizes
