@@ -1,5 +1,4 @@
 name: Build library
-
 on:
   push:
     branches: [ dev ]
