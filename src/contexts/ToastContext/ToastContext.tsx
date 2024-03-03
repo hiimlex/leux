@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { ToastPositions, ToastProps } from "../Toast";
+import { ToastPositions, ToastProps } from "../../components";
 
 type ToastContextProps = {
 	toasts: ToastProps[];

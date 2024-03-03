@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { LeClassNames } from "../../types";
-import { ToastContext } from "../ToastContext";
 import { ToastProps } from "./Toast.model";
 
+import { useToast } from "../../hooks";
 import "./Toast.scss";
 
 const Toast = ({
@@ -19,7 +19,7 @@ const Toast = ({
 	customClass,
 	customStyles,
 }: ToastProps) => {
-	const { removeToast } = useContext(ToastContext);
+	const { removeToast } = useToast();
 
 	const classNames: LeClassNames = {
 		leToast: () =>

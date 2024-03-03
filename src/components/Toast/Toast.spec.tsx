@@ -1,13 +1,13 @@
 import { fireEvent, render } from "@testing-library/react";
 
 import "@testing-library/jest-dom";
-import React, { useContext } from "react";
+import React from "react";
+import { useToast } from "../../hooks";
 import { Button } from "../Button";
-import { ToastContext } from "../ToastContext";
-import { ToastProvider } from "../ToastProvider";
+import { ToastProvider } from "../../providers";
 
 const TestToastComponent = () => {
-	const { createToast } = useContext(ToastContext);
+	const { createToast } = useToast();
 
 	const handleCreateToast = () => {
 		createToast({ label: "Test Toast", id: "testToast" });

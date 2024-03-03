@@ -64,12 +64,4 @@ describe("OverlayProvider test", () => {
 
 		expect(modalProvider).toBeInTheDocument();
 	});
-
-	// it("should render a Toast Component", () => {
-	// 	const { getByText, getByTestId } = render(
-	// 		<OverlayProvider>
-	// 			<OverlayToastTest></OverlayToastTest>
-	// 		</OverlayProvider>
-	// 	);
-	// });
 });

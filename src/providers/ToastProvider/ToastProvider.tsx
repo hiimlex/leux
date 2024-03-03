@@ -1,9 +1,8 @@
 import React, { useMemo, useRef, useState } from "react";
 
 import { LeClassNames } from "../../types";
-import { Toast } from "../Toast";
-import { ToastPositions, ToastProps } from "../Toast/Toast.model";
-import { ToastContext, ToastContextProps } from "../ToastContext";
+import { Toast, ToastPositions, ToastProps } from "../../components";
+import { ToastContext, ToastContextProps } from "../../contexts";
 import "./ToastProvider.scss";
 
 type ToastProviderProps = {

@@ -17,43 +17,12 @@ The Toast component is used to show messages to the user for a short period of t
 
 <br />
 
-#### Overlay
+#### Usage
 
-The Toast component uses the `OverlayProvider` to render the `ToastProvider` and pass `ToastContext` to the children.
-
-The `OverlayProvider` is used to render components on top of the page. The `OverlayProvider` is used by the Modal component as well. Check this session <NavLink to="/components/overlay">Overlay Provider</NavLink>
-
-Also it's possible to use the `ToastProvider` directly.
-
-<br />
-
-#### ToastContext
-
-The ToastContext is a service that you can use to manage a Modal component. It has the following attributes:
-
-- `toasts` - the list of opened toasts
-- `createToast` - create a Toast component
+Use the `useToast` hook to create a Toast component.
 
 <div>
-<ToastContextPreview>
-</ToastContextPreview>
-</div>
-
-<br />
-
-#### Global
-
-The Toast component can be configured globally using the `ToastProvider` or `OverlayProvider` component. It has the following attributes:
-
-- `position` - the default position of the Toast component
-- `stackable` - set if the Toast component can be stacked
-- `duration` - the default duration of the Toast component
-
-<br />
-
-#### ID
-
-Use the `id` prop to add an custom id to the Toast component. The ID is used to identify the Toast component and can be used to close it from outside with `ToastContext` service.
+<div>
 
 <br />
 
@@ -130,15 +99,6 @@ Use the `custom` prefixed props to customize the Toast component.
 <div>
 <ToastApiTable>
 </ToastApiTAble>
-</div>
-
-<br />
-
-#### ToastProviderProps
-
-<div>
-<ToastProdiverApiTable>
-</ToastProdiverApiTable>
 </div>
 
 <br />
