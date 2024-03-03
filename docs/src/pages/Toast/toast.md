@@ -3,7 +3,7 @@
 The Toast component is used to show messages to the user for a short period of time and then disappear.
 
 <div>
-<LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/TextArea"></LeSourceButton>
+<LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/Toast"></LeSourceButton>
 </div>
 
 <br />
