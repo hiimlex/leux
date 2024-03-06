@@ -1,8 +1,5 @@
-# 🎨 LeUX
+# 🎨 Leux
 
-<a href="https://twitter.com/alcquis" target="\_parent">
-	<img alt="#alcquis" src="https://img.shields.io/twitter/follow/alcquis?style=social"/>
-</a>
 <a href="https://www.npmjs.com/package/leux" target="\_parent">
   <img alt="#npm" src="https://img.shields.io/npm/v/leux">
 </a>
