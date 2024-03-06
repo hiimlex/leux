@@ -19,9 +19,17 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
 
 		const canCreate = !hasModal(id);
 
-		if (!canCreate) throw new Error(`Modal with id ${id} already exists`);
+		if (!canCreate) {
+			return modal;
+		}
 
-		modal.zIndex = zIndex;
+		if (modal.zIndex && +modal.zIndex > zIndex) {
+			setZIndex(+modal.zIndex);
+		}
+
+		if (!modal.zIndex) {
+			modal.zIndex = zIndex;
+		}
 
 		setZIndex((curr) => curr + 1);
 

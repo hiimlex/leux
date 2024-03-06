@@ -2,7 +2,6 @@ export * from "./Avatar";
 export * from "./Badge";
 export * from "./Box";
 export * from "./Button";
-export * from "./CSS";
 export * from "./Checkbox";
 export * from "./Dropdown";
 export * from "./Grid";

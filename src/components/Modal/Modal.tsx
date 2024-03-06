@@ -20,32 +20,30 @@ const defaultFooterButtons: ModalFooterProps = [
 	},
 ];
 
-const Modal: React.FC<ModalProps> = (props: ModalProps) => {
-	const {
-		id,
-		title,
-		width = "40%",
-		visible = true,
-		zIndex,
-		children,
-		centered = true,
-		maskClosable = true,
-		onCancel,
-		onClose,
-		onOk,
-		cancelText = "Cancel",
-		okText = "Ok",
-		footer = defaultFooterButtons,
-		customFooter,
-		closable = true,
-		customClass,
-		customStyles,
-		customWrapperClass,
-		customWrapperStyles,
-		destroyOnClose = true,
-		position,
-	} = props;
-
+const Modal: React.FC<ModalProps> = ({
+	id,
+	title,
+	width = "40%",
+	visible = true,
+	zIndex,
+	children,
+	centered = true,
+	maskClosable = true,
+	onCancel,
+	onClose,
+	onOk,
+	cancelText = "Cancel",
+	okText = "Ok",
+	footer = defaultFooterButtons,
+	customFooter,
+	closable = true,
+	customClass,
+	customStyles,
+	customWrapperClass,
+	customWrapperStyles,
+	destroyOnClose = true,
+	position,
+}: ModalProps) => {
 	const { closeModal } = useModal();
 
 	const positionCss: React.CSSProperties["position"] = useMemo(
@@ -103,6 +101,7 @@ const Modal: React.FC<ModalProps> = (props: ModalProps) => {
 			className={classNames["modalWrapper"]({ centered, customClass: customWrapperClass })}
 			style={customWrapperStyles}
 			onClick={handleClickMask}
+			data-testid="leuxModalWrapper"
 		>
 			<div
 				className={classNames["modal"]({ customClass })}
