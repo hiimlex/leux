@@ -3,8 +3,8 @@ import React from "react";
 
 import "@testing-library/jest-dom";
 import { OverlayProvider } from "..";
-import { ModalProps } from "../components";
-import { useModal } from "../hooks";
+import { ModalProps, ToastProps } from "../components";
+import { useModal, useToast } from "../hooks";
 import { useBreakpoint } from "./useBreakpoint";
 
 const TestUseBreakpoint = () => {
@@ -238,5 +238,64 @@ describe("useModal test", () => {
 
 		expect(modalReOpened).toBeInTheDocument();
 		expect(modalTest).toHaveTextContent("test-1001");
+	});
+});
+
+const TOAST_LABELS = {
+	CREATE: "CREATE TOAST",
+	REMOVE: "REMOVE TOAST",
+};
+
+const ToastTest = (toast: ToastProps) => {
+	const { createToast, removeToast, toasts } = useToast();
+
+	const handleCreateToast = () => createToast({ ...toast });
+
+	const handleRemoveToast = () => toasts[0].id && removeToast(toasts[0].id);
+
+	return (
+		<div>
+			<button onClick={handleCreateToast}>{TOAST_LABELS.CREATE}</button>
+			<button onClick={handleRemoveToast}>{TOAST_LABELS.REMOVE}</button>
+		</div>
+	);
+};
+
+describe("useToast test", () => {
+	it("should create a Toast component with hook", () => {
+		const { getByText, getByTestId } = render(
+			<OverlayProvider>
+				<ToastTest label="Test" />
+			</OverlayProvider>
+		);
+
+		const createToast = getByText(TOAST_LABELS.CREATE);
+
+		fireEvent.click(createToast);
+
+		const toast = getByTestId("leuxToast");
+
+		expect(toast).toBeInTheDocument();
+	});
+
+	it("should create and a remove a Toast component with hook", () => {
+		const { getByText, getByTestId } = render(
+			<OverlayProvider>
+				<ToastTest label="Test" />
+			</OverlayProvider>
+		);
+
+		const createToast = getByText(TOAST_LABELS.CREATE);
+		const removeToast = getByText(TOAST_LABELS.REMOVE);
+
+		fireEvent.click(createToast);
+
+		const toast = getByTestId("leuxToast");
+
+		expect(toast).toBeInTheDocument();
+
+		fireEvent.click(removeToast);
+
+		expect(toast).not.toBeInTheDocument();
 	});
 });
