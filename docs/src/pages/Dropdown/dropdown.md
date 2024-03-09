@@ -2,7 +2,7 @@
 
 The Dropdown component is used to display a list of items that can be selected.
 
-<div><LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/Badge"></LeSourceButton></div>
+<div><LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/Dropdown"></LeSourceButton></div>
 
 <br />
 

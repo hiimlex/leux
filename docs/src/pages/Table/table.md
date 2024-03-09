@@ -15,13 +15,6 @@ The Table component is used to display data in a tabular format. This table is b
 </TableImportPreview>
 <div>
 
-- **Table** - The Table component
-- **TableProps** - The Table props type
-- **TableBody** - The Table Body component
-- **TableBodyProps** - The Table Body props type
-- **TableHeader** - The Table Header component
-- **TableHeadProps** - The Table Header props type
-
 <br />
 
 #### Configuration

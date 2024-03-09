@@ -1,7 +1,7 @@
 import React, { ComponentProps, FC, PropsWithChildren, useMemo } from "react";
-import { ModalProvider, ModalProviderProps } from "../ModalProvider";
 import { LeSafeAny } from "../../types";
-import { ToastProvider, ToastProviderProps } from "../../components/";
+import { ModalProvider, ModalProviderProps } from "../ModalProvider";
+import { ToastProvider, ToastProviderProps } from "../ToastProvider";
 
 interface OverlayProviderProps {
 	children: React.ReactNode;

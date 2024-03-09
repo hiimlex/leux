@@ -1,6 +1,7 @@
 import type { Config } from "jest";
 
 const config: Config = {
+	silent: true,
 	projects: [
 		{
 			displayName: "lib",
@@ -11,7 +12,7 @@ const config: Config = {
 			},
 		},
 	],
-	coverageReporters: ["json-summary"],
+	coverageReporters: ["json-summary", "text"],
 };
 
 export default config;
