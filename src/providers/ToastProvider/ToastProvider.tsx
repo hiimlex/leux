@@ -16,7 +16,7 @@ const ToastProvider = ({
 	children,
 	position = "topCenter",
 	stackable = true,
-	duration = 2500,
+	duration = 2000,
 }: ToastProviderProps) => {
 	const [toasts, setToasts] = useState<ToastProps[]>([]);
 	const [zIndex, setZIndex] = useState<number>(1000);

@@ -9,7 +9,7 @@ const Toast = ({
 	id,
 	label,
 	loading = false,
-	duration = 2000,
+	duration,
 	theme = "default",
 	variant = "filled",
 	size = "medium",
