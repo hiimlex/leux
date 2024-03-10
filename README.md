@@ -34,7 +34,3 @@ You can install this package using the following commands
 ```bash
 npm install leux
 ```
-
-### ✨ CSS
-
-To upload the CSS styles, you can move the **leux.min.css** from the **node_modules/leux/dist** folder to your project folder and import it in your **index.html** file.

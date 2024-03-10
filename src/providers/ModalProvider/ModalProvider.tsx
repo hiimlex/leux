@@ -20,6 +20,8 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
 		const canCreate = !hasModal(id);
 
 		if (!canCreate) {
+			openModal(id);
+
 			return modal;
 		}
 
@@ -32,9 +34,7 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
 		}
 
 		setZIndex((curr) => curr + 1);
-
 		setModals((curr) => [...curr, modal]);
-
 		openModal(id);
 
 		return modal;
@@ -49,9 +49,7 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
 			curr.map((modal) => {
 				if (modal.id === id) {
 					modal.zIndex = zIndex;
-
 					setZIndex((curr) => curr + 1);
-
 					modal.visible = true;
 				}
 
