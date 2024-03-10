@@ -1,39 +1,155 @@
 import { fireEvent, render } from "@testing-library/react";
 
 import "@testing-library/jest-dom";
-import React, { useContext } from "react";
-import { Button } from "../Button";
-import { ToastContext } from "../ToastContext";
-import { ToastProvider } from "../ToastProvider";
+import React from "react";
+import { useToast } from "../../hooks";
+import { ToastProvider } from "../../providers";
+import { ToastProps } from "./Toast.model";
 
-const TestToastComponent = () => {
-	const { createToast } = useContext(ToastContext);
+const LABELS = {
+	CREATE: "create toast",
+};
+
+const TestToastComponent = (props: ToastProps) => {
+	const { createToast } = useToast();
 
 	const handleCreateToast = () => {
-		createToast({ label: "Test Toast", id: "testToast" });
+		createToast({ ...props });
 	};
 
 	return (
 		<div>
-			<Button onClick={handleCreateToast}>create toast</Button>
+			<button onClick={handleCreateToast}>{LABELS.CREATE}</button>
 		</div>
 	);
 };
 
 describe("Toast component test", () => {
 	it("should render a Toast component", () => {
-		const { getByTestId } = render(
+		const { getByTestId, getByText } = render(
 			<ToastProvider>
-				<TestToastComponent />
+				<TestToastComponent id="test" label="test" />
 			</ToastProvider>
 		);
 
-		const button = getByTestId("leuxButton");
+		const createBtn = getByText(LABELS.CREATE);
 
-		fireEvent.click(button);
+		fireEvent.click(createBtn);
 
 		const toast = getByTestId("leuxToast");
 
 		expect(toast).toBeTruthy();
+	});
+
+	it("should render a Toast component and close by clicking on it", () => {
+		const { getByTestId, getByText } = render(
+			<ToastProvider>
+				<TestToastComponent label="test" />
+			</ToastProvider>
+		);
+
+		const createBtn = getByText(LABELS.CREATE);
+
+		fireEvent.click(createBtn);
+
+		const toast = getByTestId("leuxToast");
+
+		expect(toast).toBeTruthy();
+
+		fireEvent.click(toast);
+
+		expect(toast).not.toBeInTheDocument();
+	});
+
+	it("should render a Toast component and try to close a non-closable toast", () => {
+		const { getByTestId, getByText } = render(
+			<ToastProvider>
+				<TestToastComponent label="test" closable={false} />
+			</ToastProvider>
+		);
+
+		const createBtn = getByText(LABELS.CREATE);
+
+		fireEvent.click(createBtn);
+
+		const toast = getByTestId("leuxToast");
+
+		expect(toast).toBeTruthy();
+
+		fireEvent.click(toast);
+
+		expect(toast).toBeInTheDocument();
+	});
+
+	it("should render a Toast component with loading state", () => {
+		const { getByTestId, getByText } = render(
+			<ToastProvider>
+				<TestToastComponent label="test" loading />
+			</ToastProvider>
+		);
+
+		const createBtn = getByText(LABELS.CREATE);
+
+		fireEvent.click(createBtn);
+
+		const toast = getByTestId("leuxToast");
+
+		expect(toast).toHaveClass("le-toast--loading");
+	});
+
+	it("should render a Toast component with custom class", () => {
+		const { getByTestId, getByText } = render(
+			<ToastProvider>
+				<TestToastComponent label="test" customClass="custom-class" />
+			</ToastProvider>
+		);
+
+		const createBtn = getByText(LABELS.CREATE);
+
+		fireEvent.click(createBtn);
+
+		const toast = getByTestId("leuxToast");
+
+		expect(toast).toHaveClass("custom-class");
+	});
+
+	it("should render a Toast component with onClose callback", () => {
+		const onClose = jest.fn();
+
+		const { getByTestId, getByText } = render(
+			<ToastProvider>
+				<TestToastComponent label="test" onClose={onClose} />
+			</ToastProvider>
+		);
+
+		const createBtn = getByText(LABELS.CREATE);
+
+		fireEvent.click(createBtn);
+
+		const toast = getByTestId("leuxToast");
+
+		fireEvent.click(toast);
+
+		expect(onClose).toHaveBeenCalled();
+	});
+
+	it("should render a Toast component and close by waiting for the default duration", async () => {
+		const { getByTestId, getByText } = render(
+			<ToastProvider>
+				<TestToastComponent id="test" label="test" />
+			</ToastProvider>
+		);
+
+		const createBtn = getByText(LABELS.CREATE);
+
+		fireEvent.click(createBtn);
+
+		const toast = getByTestId("leuxToast");
+
+		expect(toast).toBeTruthy();
+
+		await new Promise((r) => setTimeout(r, 2050));
+
+		expect(toast).not.toBeInTheDocument();
 	});
 });

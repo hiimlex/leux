@@ -1,57 +1,24 @@
-import { PropsMapping, LeApiTable, LeHighlighter, LePreview, LeSourceButton } from "@/components";
-import { useContext, useState } from "react";
+import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
 	Button,
-	ToastContext,
 	ToastProps,
 	ToastProviderProps,
 	ToastSizes,
 	ToastThemes,
+	useToast,
 } from "../../../../src";
 import { attributes as toastAttr } from "./toast.md";
 
 const ToastImportPreview = () => (
-	<LeHighlighter
-		language="tsx"
-		code={`import { Toast, ToastProps, ToastProvider, ToastContext } from "leux";`}
-	/>
-);
-
-const ToastContextPreview = () => (
-	<>
-		<LeHighlighter
-			language="tsx"
-			code={`// ToastContext.tsx
-type ToastContextProps = {
-	toasts: ToastProps[];
-	createToast: (toast: ToastProps) => void;
-	removeToast: (id: string) => void;
-	position?: ToastPosition;
-};`}
-		/>
-		<LeHighlighter
-			language="tsx"
-			code={`// Component.tsx
-const Component = () => {
-	const { toasts, createToast, removeToast, position } = useContext(ToastContext);
-	
-	// ...
-
-	return (
-		<>
-			{/* ... your component */}
-		</>
-	);
-};`}
-		/>
-	</>
+	<LeHighlighter language="tsx" code={`import { Toast, ToastProps, useToast } from "leux";`} />
 );
 
 const ToastSizePreview = () => {
 	const [showCode, setShowCode] = useState<boolean>(false);
 
-	const { createToast } = useContext(ToastContext);
+	const { createToast } = useToast();
 
 	const handleCreateToast = (size: ToastSizes) => {
 		createToast({
@@ -63,32 +30,22 @@ const ToastSizePreview = () => {
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Button
-					onClick={() => handleCreateToast("small")}
-					size="small"
-					customStyles={{ marginRight: 12 }}
-				>
-					small
+				<Button onClick={() => handleCreateToast("small")} customStyles={{ marginRight: 12 }}>
+					small toast
 				</Button>
-				<Button
-					onClick={() => handleCreateToast("medium")}
-					size="medium"
-					customStyles={{ marginRight: 12 }}
-				>
-					medium
+				<Button onClick={() => handleCreateToast("medium")} customStyles={{ marginRight: 12 }}>
+					medium toast
 				</Button>
-				<Button onClick={() => handleCreateToast("large")} size="large">
-					large
-				</Button>
+				<Button onClick={() => handleCreateToast("large")}>large toast</Button>
 			</LePreview>
 			{showCode && (
 				<LeHighlighter
 					language="tsx"
 					code={`// Component.tsx
-import { Box, Button, ToastContext, ToastSizes } from "leux";
+import { Box, Button, useToast, ToastSizes } from "leux";
 
 const Component = () => {
-	const { createToast } = useContext(ToastContext);
+	const { createToast } = useToast();
 
 	const handleCreateToast = (size: ToastSizes) => {
 		createToast({
@@ -102,20 +59,18 @@ const Component = () => {
 		<Box flex flexDirection="row" alignItems="center">
 			<Button
 				onClick={() => handleCreateToast("small")}
-				size="small"
 				customStyles={{ marginRight: 12 }}
 			>
-				small
+				small toast
 			</Button>
 			<Button
 				onClick={() => handleCreateToast("medium")}
-				size="medium"
 				customStyles={{ marginRight: 12 }}
 			>
-				medium
+				medium toast
 			</Button>
-			<Button onClick={() => handleCreateToast("large")} size="large">
-				large
+			<Button onClick={() => handleCreateToast("large")}>
+				large toast
 			</Button>
 		</Box>
 	);
@@ -129,7 +84,7 @@ const Component = () => {
 const ToastThemePreview = () => {
 	const [showCode, setShowCode] = useState<boolean>(false);
 
-	const { createToast } = useContext(ToastContext);
+	const { createToast } = useToast();
 
 	const handleCreateToast = (theme: ToastThemes) => {
 		createToast({
@@ -146,7 +101,7 @@ const ToastThemePreview = () => {
 					theme="primary"
 					customStyles={{ marginRight: 12 }}
 				>
-					primary
+					primary toast
 				</Button>
 
 				<Button
@@ -154,7 +109,7 @@ const ToastThemePreview = () => {
 					theme="secondary"
 					customStyles={{ marginRight: 12 }}
 				>
-					secondary
+					secondary toast
 				</Button>
 
 				<Button
@@ -162,7 +117,7 @@ const ToastThemePreview = () => {
 					theme="success"
 					customStyles={{ marginRight: 12 }}
 				>
-					success
+					success toast
 				</Button>
 
 				<Button
@@ -170,7 +125,7 @@ const ToastThemePreview = () => {
 					theme="danger"
 					customStyles={{ marginRight: 12 }}
 				>
-					danger
+					danger toast
 				</Button>
 
 				<Button
@@ -178,7 +133,7 @@ const ToastThemePreview = () => {
 					theme="warning"
 					customStyles={{ marginRight: 12 }}
 				>
-					warning
+					warning toast
 				</Button>
 
 				<Button
@@ -186,17 +141,17 @@ const ToastThemePreview = () => {
 					theme="default"
 					customStyles={{ marginRight: 12 }}
 				>
-					default
+					default toast
 				</Button>
 			</LePreview>
 			{showCode && (
 				<LeHighlighter
 					language="tsx"
 					code={`// Component.tsx
-import { Box, Button, ToastContext, ToastThemes } from "leux";
+import { Box, Button, useToast, ToastThemes } from "leux";
 
 const Component = () => {
-	const { createToast } = useContext(ToastContext);
+	const { createToast } = useToast();
 
 	const handleCreateToast = (theme: ToastThemes) => {
 		createToast({
@@ -213,7 +168,7 @@ const Component = () => {
 				theme="primary"
 				customStyles={{ marginRight: 12 }}
 			>
-				primary
+				primary toast
 			</Button>
 
 			<Button
@@ -221,7 +176,7 @@ const Component = () => {
 				theme="secondary"
 				customStyles={{ marginRight: 12 }}
 			>
-				secondary
+				secondary toast
 			</Button>
 
 			<Button
@@ -229,7 +184,7 @@ const Component = () => {
 				theme="success"
 				customStyles={{ marginRight: 12 }}
 			>
-				success
+				success toast
 			</Button>
 
 			<Button
@@ -237,7 +192,7 @@ const Component = () => {
 				theme="danger"
 				customStyles={{ marginRight: 12 }}
 			>
-				danger
+				danger toast
 			</Button>
 
 			<Button
@@ -245,14 +200,14 @@ const Component = () => {
 				theme="warning"
 				customStyles={{ marginRight: 12 }}
 			>
-				warning
+				warning toast
 			</Button>
 
 			<Button
 				onClick={() => handleCreateToast("default")}
 				theme="default"
 			>
-				default
+				default toast
 			</Button>
 		</Box>
 	);
@@ -266,7 +221,7 @@ const Component = () => {
 const ToastDurationPreview = () => {
 	const [showCode, setShowCode] = useState<boolean>(false);
 
-	const { createToast } = useContext(ToastContext);
+	const { createToast } = useToast();
 
 	const handleCreateToast = (duration: number) => {
 		createToast({
@@ -292,10 +247,10 @@ const ToastDurationPreview = () => {
 				<LeHighlighter
 					language="tsx"
 					code={`// Component.tsx
-import { Box, Button, ToastContext } from "leux";
+import { Box, Button, useToast } from "leux";
 
 const Component = () => {
-	const { createToast } = useContext(ToastContext);
+	const { createToast } = useToast();
 
 	const handleCreateToast = (duration: number) => {
 		createToast({
@@ -328,11 +283,11 @@ const Component = () => {
 const ToastClosablePreview = () => {
 	const [showCode, setShowCode] = useState<boolean>(false);
 
-	const { createToast } = useContext(ToastContext);
+	const { createToast } = useToast();
 
 	const handleCreateToast = (closable: boolean) => {
 		createToast({
-			label: `toast closable preview`,
+			label: "toast closable preview",
 			closable,
 		});
 	};
@@ -346,6 +301,34 @@ const ToastClosablePreview = () => {
 
 				<Button onClick={() => handleCreateToast(false)}>don't close</Button>
 			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`// Component.tsx
+import { Box, Button, useToast } from "leux";
+
+const Component = () => {
+	const { createToast } = useToast();
+
+	const handleCreateToast = (closable: boolean) => {
+		createToast({
+			label: "toast closable preview",
+			closable,
+		});
+	};
+					
+	return (
+		<Box flex flexDirection="row" alignItems="center">
+			<Button onClick={() => handleCreateToast(true)} customStyles={{ marginRight: 12 }}>
+				close on click
+			</Button>
+
+			<Button onClick={() => handleCreateToast(false)}>don't close</Button>
+		</Box>
+	);
+};`}
+				/>
+			)}
 		</>
 	);
 };
@@ -353,7 +336,7 @@ const ToastClosablePreview = () => {
 const ToastCustomPreview = () => {
 	const [showCode, setShowCode] = useState<boolean>(false);
 
-	const { createToast } = useContext(ToastContext);
+	const { createToast } = useToast();
 
 	const handleCreateCustomToast = () => {
 		createToast({
@@ -372,6 +355,35 @@ const ToastCustomPreview = () => {
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Button onClick={handleCreateCustomToast}>customized</Button>
 			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`// Component.tsx
+import { Box, Button, useToast } from "leux";
+
+const Component = () => {
+	const { createToast } = useToast();
+
+	const handleCreateToast = (closable: boolean) => {
+		createToast({
+			label: "custom toast",
+			customClass: "le-text--h1",
+			customStyles: {
+				color: "green",
+				background: "yellow",
+				border: "1px solid red",
+			},
+		});
+	};
+					
+	return (
+		<Box flex flexDirection="row" alignItems="center">
+			<Button onClick={handleCreateCustomToast}>customized</Button>
+		</Box>
+	);
+};`}
+				/>
+			)}
 		</>
 	);
 };
@@ -379,11 +391,11 @@ const ToastCustomPreview = () => {
 const ToastActionPreview = () => {
 	const [showCode, setShowCode] = useState<boolean>(false);
 
-	const { createToast } = useContext(ToastContext);
+	const { createToast } = useToast();
 
 	const handleCreateToast = () => {
 		createToast({
-			label: `custom toast`,
+			label: "alert on close",
 			onClose: () => {
 				alert("toast closed");
 			},
@@ -395,6 +407,32 @@ const ToastActionPreview = () => {
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Button onClick={handleCreateToast}>alert on close</Button>
 			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`// Component.tsx
+import { Box, Button, useToast } from "leux";
+
+const Component = () => {
+	const { createToast } = useToast();
+
+	const handleCreateToast = (closable: boolean) => {
+		createToast({
+			label: "alert on close",
+			onClose: () => {
+				alert("toast closed");
+			},
+		});
+	};
+					
+	return (
+		<Box flex flexDirection="row" alignItems="center">
+			<Button onClick={handleCreateToast}>alert on close</Button>
+		</Box>
+	);
+};`}
+				/>
+			)}
 		</>
 	);
 };
@@ -450,31 +488,10 @@ const ToastApiTable = () => {
 	return <LeApiTable props={props} />;
 };
 
-const ToastProdiverApiTable = () => {
-	const props: PropsMapping<Omit<ToastProviderProps, "children">> = {
-		position: {
-			type: "'topRight' | 'topLeft' | 'topCenter' | 'bottomLeft' | 'bottomRight' | 'bottomCenter'",
-			defaultValue: "'topCenter'",
-		},
-		stackable: {
-			type: "boolean",
-			defaultValue: "true",
-		},
-		duration: {
-			type: "number",
-			defaultValue: "2500",
-		},
-	};
-
-	return <LeApiTable props={props} />;
-};
-
 toastAttr["LeSourceButton"] = LeSourceButton;
 toastAttr["NavLink"] = NavLink;
 toastAttr["ToastApiTable"] = ToastApiTable;
-toastAttr["ToastProdiverApiTable"] = ToastProdiverApiTable;
 toastAttr["ToastImportPreview"] = ToastImportPreview;
-toastAttr["ToastContextPreview"] = ToastContextPreview;
 toastAttr["ToastSizePreview"] = ToastSizePreview;
 toastAttr["ToastThemePreview"] = ToastThemePreview;
 toastAttr["ToastDurationPreview"] = ToastDurationPreview;
