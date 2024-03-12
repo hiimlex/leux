@@ -23,7 +23,7 @@ const RenderDocPage = ({ doc, title }: RenderPageProps) => {
 	};
 
 	const handlePageTitle = () => {
-		document.title = `LeUX - ${title}`;
+		document.title = `leux - ${title}`;
 	};
 
 	useEffect(() => {
