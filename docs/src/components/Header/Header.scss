@@ -75,6 +75,13 @@
 					margin: 0;
 				}
 			}
+
+			&--minimal {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				gap: 12px;
+			}
 		}
 
 		.le-nav {

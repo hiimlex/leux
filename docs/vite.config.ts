@@ -26,4 +26,5 @@ export default defineConfig(async () => ({
 			allow: [".."],
 		},
 	},
+	assetsInclude: ["**/*.svg"],
 }));
