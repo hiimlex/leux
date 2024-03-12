@@ -1,4 +1,8 @@
-# 🎨 leux
+<img alt="Github panel" src="./Github.png">
+
+<br/>
+
+[Docs](https://leux.vercel.app/)
 
 <a href="https://www.npmjs.com/package/leux" target="\_parent">
   <img alt="#npm" src="https://img.shields.io/npm/v/leux">
@@ -17,10 +21,6 @@
 	<img src="./coverage/badge-branches.svg">
 </div>
 
-> An awesome React component library. (**_Work in progress_**)
-
-[Docs](https://leux.vercel.app/)
-
 ## 🎈 Overview
 
 leux is a simple, lightweight, and fast React framework. It's built with the latest web technologies and is fully responsive.
@@ -33,4 +33,23 @@ You can install this package using the following commands
 
 ```bash
 npm install leux
+
+yarn add leux
+```
+
+## 🚀 Usage
+
+Import the components you want to use from the library and use them in your application.
+
+```tsx
+import React from "react";
+import { Button } from "leux";
+
+const App = () => {
+	return (
+		<div>
+			<Button onClick={() => alert("Hello leux")}>Click me</Button>
+		</div>
+	);
+};
 ```
