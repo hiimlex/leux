@@ -122,9 +122,9 @@ const DropdownItem = ({
 }: DropdownItemProps) => {
 	const classNames: LeClassNames = {
 		leDropdownItem: () =>
-			`le-dropdown--item ${noBreakWord ? "le-dropdown--item-no-break" : ""}${customClass || ""}${
+			`le-dropdown--item ${noBreakWord ? "le-dropdown--item-no-break" : ""}${
 				centered ? " le-dropdown--item-centered" : ""
-			}${disabled ? " le-dropdown--item-disabled" : ""}`,
+			}${disabled ? " le-dropdown--item-disabled" : ""} ${customClass || ""} `,
 	};
 
 	const handleOnClick = (event?: ReactMouseEvent<HTMLLIElement, MouseEvent>) => {

@@ -19,7 +19,12 @@ Refractor.registerLanguage(tsx);
 Refractor.registerLanguage(bash);
 Refractor.registerLanguage(scss);
 
-const Highlighter = ({ code, language, style = "dracula", copy = "on" }: HighlighterProps) => {
+const Highlighter: React.FC<HighlighterProps> = ({
+	code,
+	language,
+	style = "dracula",
+	copy = "on",
+}) => {
 	const [copied, setCopied] = useState(false);
 
 	const handleCopyToClipboard = () => {
@@ -31,9 +36,11 @@ const Highlighter = ({ code, language, style = "dracula", copy = "on" }: Highlig
 		}, 2000);
 	};
 
+	const refractor = Refractor({ language, value: code });
+
 	return (
 		<div className={"le-highlighter" + (style ? ` le-highlighter--${style}` : "")}>
-			<Refractor value={code} language={language} />
+			{refractor}
 
 			{copy === "on" && (
 				<span className={"le-highlighter--copy"}>
