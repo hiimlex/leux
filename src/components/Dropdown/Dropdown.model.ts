@@ -2,7 +2,13 @@ import { ReactNode, MouseEvent as ReactMouseEvent } from "react";
 
 type DropdownVariant = "filled" | "outlined";
 type DropdownSize = "small" | "medium" | "large";
-type DropdownPosition = "bottomLeft" | "bottomRight" | "topLeft" | "topRight";
+type DropdownPosition =
+	| "bottomLeft"
+	| "bottomRight"
+	| "topLeft"
+	| "topRight"
+	| "bottomCenter"
+	| "topCenter";
 type DropdownTrigger = "click" | "hover";
 
 interface DropdownProps {

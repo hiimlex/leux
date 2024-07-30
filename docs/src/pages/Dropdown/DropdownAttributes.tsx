@@ -8,12 +8,12 @@ import {
 	DropdownSeparator,
 	Typography,
 } from "../../../../src";
-import { attributes as dropdownAttr } from "./dropdown.md";
 import {
 	DropdownItemProps,
 	DropdownProps,
 	DropdownVariant,
 } from "../../../../src/components/Dropdown/Dropdown.model";
+import { attributes as dropdownAttr } from "./dropdown.md";
 
 const DropdownImportPreview = () => (
 	<LeHighlighter language="tsx" code={`import { Dropdown, DropdownProps } from "leux";`} />
@@ -168,6 +168,13 @@ const DropdownPositionPreview = () => {
 					>
 						<DropdownItem>the text direction goes</DropdownItem>
 					</Dropdown>
+					<Dropdown
+						position="bottomCenter"
+						anchor={<Button>Bottom center</Button>}
+						customWrapperStyles={{ marginRight: 12 }}
+					>
+						<DropdownItem>the text direction goes</DropdownItem>
+					</Dropdown>
 					<Dropdown position="bottomRight" anchor={<Button>Bottom right</Button>}>
 						<DropdownItem>the text direction goes</DropdownItem>
 					</Dropdown>
@@ -176,6 +183,13 @@ const DropdownPositionPreview = () => {
 					<Dropdown
 						position="topLeft"
 						anchor={<Button>Top left</Button>}
+						customWrapperStyles={{ marginRight: 12 }}
+					>
+						<DropdownItem>the text direction goes</DropdownItem>
+					</Dropdown>
+					<Dropdown
+						position="topCenter"
+						anchor={<Button>Top center</Button>}
 						customWrapperStyles={{ marginRight: 12 }}
 					>
 						<DropdownItem>the text direction goes</DropdownItem>
@@ -394,7 +408,7 @@ const DropdownApiTable = () => {
 			defaultValue: "click",
 		},
 		position: {
-			type: "'bottomLeft' | 'bottomRight' | 'topLeft' | 'topRight'",
+			type: "'bottomLeft' | 'bottomRight' | 'topLeft' | 'topRight' | 'topCentered' | 'bottomCenter'",
 		},
 		size: {
 			type: "'small' | 'medium' | 'large'",
