@@ -11,14 +11,12 @@ import {
 	TableHeader,
 } from "../../../../src";
 import {
-	TableColumn,
-	TableSort,
+	TableFilter,
 	TableProps,
 	TableSizes,
+	TableSortFn,
 	TableState,
 	TableVariants,
-	TableSortFn,
-	TableFilters,
 } from "../../../../src/components/Table/Table.model";
 import { attributes as tableAttr } from "./table.md";
 
@@ -385,6 +383,16 @@ const TableFiltersPreview = () => {
 	};
 
 	const [tableConfig, setTableConfig] = useState<TableProps>({
+		columns: [
+			{
+				header: "#ID",
+				key: "id",
+				sortable: true,
+			},
+			{ header: "User ID", key: "userId", sortable: true },
+			{ header: "Title", key: "title", sortable: true },
+			{ header: "Completed", key: "completedString" },
+		],
 		rows: [],
 		gridTemplateColumns: "repeat(2, 1fr) 2fr 1fr",
 		variant: "default",
@@ -392,21 +400,10 @@ const TableFiltersPreview = () => {
 		sortFn,
 	});
 
-	const [columns, setColumns] = useState<TableColumn[]>([
-		{
-			header: "#ID",
-			key: "id",
-			sortable: true,
-		},
-		{ header: "User ID", key: "userId", sortable: true },
-		{ header: "Title", key: "title", sortable: true },
-		{ header: "Completed", key: "completedString" },
-	]);
-
-	const getTodos = useCallback(async (filter?: TableFilters) => {
+	const getTodos = useCallback(async (filter?: TableFilter) => {
 		try {
 			let url = `https://jsonplaceholder.typicode.com/todos?_limit=10`;
-			if (filter) {
+			if (filter && filter.sort) {
 				url = `${url}&_sort=${filter.header}&_order=${filter.sort}`;
 			}
 			const response = await axios.get<
@@ -423,7 +420,7 @@ const TableFiltersPreview = () => {
 					...item,
 					completedString: item.completed ? "Yes" : "No",
 				}));
-				setTableConfig((curr) => ({ ...curr, rows: newData, columns }));
+				setTableConfig((curr) => ({ ...curr, rows: newData }));
 			}
 		} catch (error) {
 			console.error(error);
@@ -437,15 +434,15 @@ const TableFiltersPreview = () => {
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Table {...tableConfig} columns={columns} />
+				<Table {...tableConfig} />
 			</LePreview>
 			{showCode && (
 				<LeHighlighter
 					code={`import axios from "axios";
 
 const Component = () => {
-	const orderFn = ({ key, order }: TableColumn) => {
-		getTodos({ key, order: order === "asc" ? "desc" : "asc" });
+	const sortFn: TableSortFn = (tableFilter) => {
+		getTodos(tableFilter);
 	};
 
 	const [tableConfig, setTableConfig] = useState<TableProps>({
@@ -464,26 +461,16 @@ const Component = () => {
 		gridTemplateColumns: "repeat(2, 1fr) 2fr 1fr",
 		variant: "default",
 		size: "medium",
+		sortFn,
 	});
 
-	const getTodos = useCallback(async (sort?: { key: string; order: TableOrder }) => {
+	const getTodos = useCallback(async (filter?: TableFilter) => {
 		try {
 			let url = \`https://jsonplaceholder.typicode.com/todos?_limit=10\`;
 			let { columns } = tableConfig;
 
-			if (sort && columns) {
-				url = \`$\{url}&_sort=$\{sort.key}&_order=$\{sort.order}\`;
-
-				columns = columns.map((item) => {
-					if (sort.key === item.key) {
-						item.orderActive = true;
-						item.order = sort.order;
-					} else if (item.key && item.orderActive) {
-						item.orderActive = false;
-					}
-
-					return item;
-				});
+			if (filter && filter.sort) {
+				url = \`$\{url}&_sort=$\{filter.header}&_order=$\{filter.order}\`;
 			}
 
 			const response = await axios.get<
@@ -929,7 +916,7 @@ const TableApiTable = () => {
 			type: "React.CSSProperties",
 		},
 		sortFn: {
-			type: "(column: TableColumn) => void",
+			type: "(column: TableSortFn) => void",
 		},
 	};
 
