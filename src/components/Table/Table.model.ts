@@ -1,18 +1,23 @@
 import { SpinnerProps } from "../Spinner";
 
-type TableOrder = "asc" | "desc";
-type TableColumn = {
+type TableSort = "asc" | "desc" | "none";
+interface TableColumn {
 	header: string;
 	key: string;
-	orderActive?: boolean;
-	order?: TableOrder;
-	orderFn?: (column: TableColumn) => void;
-};
-type TableRow = {
+	sortable?: boolean;
+}
+
+interface TableFilter {
+	header: string;
+	sort?: TableSort;
+}
+
+interface TableRow {
 	[key: string]: string | number | boolean | undefined;
-};
+}
 type TableVariants = "bordered" | "default";
 type TableSizes = "small" | "medium" | "large";
+type TableSortFn = (tableFilter: TableFilter) => void;
 
 interface TableHeaderProps {
 	children?: React.ReactNode;
@@ -20,6 +25,9 @@ interface TableHeaderProps {
 	gridTemplateColumns?: React.CSSProperties["gridTemplateColumns"];
 	customHeaderClass?: string;
 	customHeaderStyles?: React.CSSProperties;
+	variant?: TableVariants;
+	size?: TableSizes;
+	sortFn?: TableSortFn;
 }
 
 interface TableBodyProps {
@@ -60,6 +68,8 @@ export {
 	TableRow,
 	TableSizes,
 	TableVariants,
-	TableOrder,
+	TableSort,
 	TableState,
+	TableFilter,
+	TableSortFn,
 };
