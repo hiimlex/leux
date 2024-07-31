@@ -1,60 +1,10 @@
 import React, { useMemo } from "react";
 import { LeClassNames } from "../../types";
 import { Spinner } from "../Spinner";
-import {
-	TableBodyProps,
-	TableHeaderProps,
-	TableOrder,
-	TableProps,
-	TableSizes,
-	TableVariants,
-} from "./Table.model";
+import { TableBodyProps, TableProps, TableSizes, TableVariants } from "./Table.model";
+
 import "./Table.scss";
-
-const TableHeader = ({
-	children,
-	columns,
-	gridTemplateColumns,
-	customHeaderClass,
-	customHeaderStyles,
-}: TableHeaderProps) => {
-	const classNames: LeClassNames = {
-		tableHeader: ({ customHeaderClass }: { customHeaderClass?: string }) =>
-			`le-table--header ${customHeaderClass || ""}`,
-		tableHeaderRow: () => "le-table--header-row",
-		tableHeaderRowItem: ({ order, orderActive }: { order?: TableOrder; orderActive?: boolean }) =>
-			`le-table--header-row-item ${order ? "le-table--header-row-item--" + order : ""} ${
-				orderActive ? "le-table--header-row-item--" + order + "--active" : ""
-			}`,
-	};
-
-	return (
-		<thead
-			data-testid="leuxTableHeader"
-			className={classNames["tableHeader"]({ customHeaderClass })}
-			style={{ ...customHeaderStyles }}
-		>
-			{children ? (
-				children
-			) : (
-				<tr className={classNames["tableHeaderRow"]()} style={{ gridTemplateColumns }}>
-					{columns &&
-						columns.map(({ header, key, order, orderFn, orderActive }) => (
-							<th
-								key={key}
-								className={classNames["tableHeaderRowItem"]({ order, orderActive })}
-								onClick={() =>
-									order && orderFn && orderFn({ order, key, header, orderFn, orderActive })
-								}
-							>
-								{header}
-							</th>
-						))}
-				</tr>
-			)}
-		</thead>
-	);
-};
+import { TableHeader } from "./TableHeader";
 
 const TableBody = ({
 	children,
@@ -118,32 +68,21 @@ const Table = ({
 	height,
 	customWrapperClass,
 	customWrapperStyles,
+	sortFn,
 }: TableProps) => {
 	const keys = useMemo(() => columns && columns.map(({ key }) => key), [columns]);
 
-	const classNames: LeClassNames = {
-		table: ({
-			size,
-			variant,
-			customClass,
-		}: {
-			size: TableSizes;
-			variant: TableVariants;
-			customClass?: string;
-		}) => `le-table le-table--${size} le-table--${variant} ${customClass || ""}`,
-		tableWrapper: ({
-			disabled,
-			customWrapperClass,
-		}: {
-			disabled?: boolean;
-			customWrapperClass?: string;
-		}) =>
-			`le-table--wrapper ${disabled ? "le-table--wrapper-disabled" : ""} ${
-				customWrapperClass || ""
-			}`,
-		spinnerWrapper: ({ size }: { size: TableSizes }) =>
-			`le-table--spinner-wrapper le-table--spinner-wrapper-${size} `,
-	};
+	const classNames: LeClassNames = useMemo(
+		() => ({
+			table: () => `le-table le-table--${size} le-table--${variant} ${customClass || ""}`,
+			tableWrapper: ({ disabled }) =>
+				`le-table--wrapper ${disabled ? "le-table--wrapper-disabled" : ""} ${
+					customWrapperClass || ""
+				}`,
+			spinnerWrapper: () => `le-table--spinner-wrapper le-table--spinner-wrapper-${size} `,
+		}),
+		[size, variant, customClass, customWrapperClass]
+	);
 
 	const canShowContent = useMemo(
 		() => !state || (state && !state.loading && !state.empty),
@@ -153,7 +92,7 @@ const Table = ({
 	const canShowEmpty = useMemo(() => state && state.empty, [state]);
 
 	const TableLoaderJSX = state && state.loading && (
-		<div className={classNames["spinnerWrapper"]({ size })}>
+		<div className={classNames["spinnerWrapper"]()}>
 			<Spinner {...state.spinnerProps} />
 		</div>
 	);
@@ -175,6 +114,9 @@ const Table = ({
 				gridTemplateColumns={gridTemplateColumns}
 				customHeaderClass={customHeaderClass}
 				customHeaderStyles={customHeaderStyles}
+				variant={variant}
+				size={size}
+				sortFn={sortFn}
 			/>
 			{canShowEmpty && TableEmptyJSX}
 			{canShowContent && (
@@ -194,7 +136,7 @@ const Table = ({
 		<table
 			data-testid="leuxTable"
 			style={{ width, height, ...customStyles }}
-			className={classNames["table"]({ size, variant, customClass })}
+			className={classNames["table"]()}
 		>
 			{TableContentJSX}
 		</table>
@@ -205,7 +147,6 @@ const Table = ({
 			style={{ height, ...customWrapperStyles }}
 			className={classNames["tableWrapper"]({
 				disabled: state && state.disabled,
-				customWrapperClass,
 			})}
 		>
 			{TableJSX}
@@ -214,4 +155,4 @@ const Table = ({
 	);
 };
 
-export { Table, TableHeader, TableBody };
+export { Table, TableBody, TableHeader };
