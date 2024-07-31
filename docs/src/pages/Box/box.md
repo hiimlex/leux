@@ -28,7 +28,7 @@ Some of the CSS properties that can be used to style the Box component as props.
 
 #### Centered
 
-The content of Box component can be centered using the `center` prop.
+The content of Box component can be centered using the `centered` prop.
 
 <div>
 	<BoxCenteredPreview></BoxCenteredPreview>
