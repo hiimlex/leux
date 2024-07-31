@@ -15,14 +15,15 @@ const BoxCssPreview = () => {
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Box
+					flex
+					height="120px"
+					width="120px"
 					padding="30px"
-					height="100px"
-					width="100px"
 					borderRadius="100%"
-					margin="12px"
 					bgColor="default"
+					centered
 				>
-					CSS Properties example
+					Box
 				</Box>
 			</LePreview>
 			{showCode && (
@@ -30,12 +31,13 @@ const BoxCssPreview = () => {
 					language="tsx"
 					code={`const Component = () => (
 	<Box
+		flex
+		height="120px"
+		width="120px"
 		padding="30px"
-		height="100px"
-		width="100px"
 		borderRadius="100%"
-		margin="12px"
 		bgColor="default"
+		centered
 	>
 		CSS Properties example
 	</Box>
