@@ -27,7 +27,7 @@ type LeThemeType = {
 	primaryHover?: string;
 	primaryGhost?: string;
 	secondary?: string;
-	secondaryHover?: string
+	secondaryHover?: string;
 	secondaryGhost?: string;
 	success?: string;
 	successHover?: string;
@@ -40,7 +40,7 @@ type LeThemeType = {
 	warningGhost?: string;
 } & Record<string, string>;
 
-type LeThemes = "light" | "dark" | (string & {});
+type LeThemes = "light" | "dark" | string;
 type LeThemeMapper = Record<string, LeThemeType>;
 
 type ThemeContextProps = {

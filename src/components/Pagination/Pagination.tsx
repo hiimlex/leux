@@ -4,7 +4,7 @@ import { PaginationProps } from "./Pagination.model";
 import { Button } from "../Button";
 import "./Pagination.scss";
 
-const Pagination: React.FC<PaginationProps>  = ({
+const Pagination: React.FC<PaginationProps> = ({
 	currentPage,
 	itemsPerPage,
 	onPageChange,

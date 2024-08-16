@@ -2,7 +2,7 @@ import React, { MouseEvent } from "react";
 import { ButtonProps } from "./Button.model";
 import "./Button.scss";
 import { useTheme } from "../../hooks";
-import { LeClassNames } from "src/types";
+import { LeClassNames } from "../../types";
 
 const Button: React.FC<ButtonProps> = ({
 	colorScheme = "default",
@@ -33,7 +33,7 @@ const Button: React.FC<ButtonProps> = ({
 
 	return (
 		<button
-			className={classNames['button']()}
+			className={classNames["button"]()}
 			type={type}
 			data-testid="leuxButton"
 			onClick={(event) => handleOnCLick(event)}

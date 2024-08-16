@@ -4,7 +4,7 @@ import { InputProps } from "./Input.model";
 import "./Input.scss";
 import { LeClassNames } from "../../types";
 
-const Input: React.FC<InputProps>  = ({
+const Input: React.FC<InputProps> = ({
 	fieldKey,
 	type = "text",
 	variant = "filled",

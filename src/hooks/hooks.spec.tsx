@@ -2,7 +2,7 @@ import { act, fireEvent, render } from "@testing-library/react";
 import React from "react";
 
 import "@testing-library/jest-dom";
-import { LeThemeMapper, LeThemeType, OverlayProvider, ThemeProvider } from "..";
+import { LeThemeMapper, OverlayProvider, ThemeProvider } from "..";
 import { Button, ModalProps, ToastProps } from "../components";
 import { useModal, useTheme, useToast } from "../hooks";
 import { useBreakpoint } from "./useBreakpoint";

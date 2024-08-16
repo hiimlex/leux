@@ -19,7 +19,8 @@
 		"test:watch": "jest --watch",
 		"test:coverage": "jest --coverage --collectCoverageFrom='./src/**'",
 		"test:badges": "npm run test:coverage && npx jest-coverage-badges",
-		"prepare": "npx husky install && npx husky add ./.husky/pre-commit 'npx lint-staged'"
+		"prepare": "npx husky install && npx husky add ./.husky/pre-commit 'npx lint-staged'",
+		"prepare:win": "npx husky install && npx husky add .\\.husky\\pre-commit 'npx lint-staged'"
 	},
 	"bugs": {
 		"url": "https://github.com/hiimlex/leux/issues"
