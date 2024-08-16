@@ -6,12 +6,13 @@
 	line-height: normal;
 
 	&--filled {
-		background-color: $color-variant-border;
-		color: $color-dark-text;
+		background-color: var(--le-color-inputBackground);
+		color: var(--le-color-textTwo);
 	}
 	&--outlined {
-		border: 1px solid $color-variant-border;
-		color: $color-dark-text;
+		background: transparent;
+		border: 1px solid var(--le-color-inputBackground);
+		color: var(--le-color-textTwo);
 	}
 
 	&--small {
@@ -29,7 +30,7 @@
 	}
 
 	&::placeholder {
-		color: $color-placeholder-text;
+		color: var(--le-color-placeholder);
 		opacity: 1;
 	}
 
@@ -38,16 +39,16 @@
 	}
 
 	&:-ms-input-placeholder {
-		color: $color-placeholder-text;
+		color: var(--le-color-placeholder);
 	}
 
 	&::-ms-input-placeholder {
-		color: $color-placeholder-text;
+		color: var(--le-color-placeholder);
 	}
 
 	&--disabled {
 		cursor: not-allowed !important;
 		background: $color-variant-disabled !important;
-		color: $color-darker-text !important;
+		color: var(--le-color-textOne) !important;
 	}
 }

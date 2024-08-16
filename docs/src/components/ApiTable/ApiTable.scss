@@ -2,28 +2,40 @@
 
 .api-table {
 	font-size: 0.875rem;
-	background: $color-light-text;
+	background: var(--le-color-backgroundTwo);
 	width: 100%;
+	max-width: 100%;
+	overflow-x: auto;
+
+	pre,
+	code,
+	p,
+	span {
+		background: var(--le-color-backgroundTwo) !important;
+		text-shadow: none !important;
+		overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+	}
 }
 
 .api-table,
 .api-table th,
 .api-table td {
-	border: 1px solid $color-dark-text;
+	border: 1px solid var(--le-color-border);
 	border-collapse: collapse;
-	border-radius: 4px !important;
 }
 
 .api-table th,
 .api-table td {
-	padding: 8px;
+	padding: unit(1);
 	text-align: center;
 
 	pre {
 		padding: 0;
 		margin: 0;
-		border-radius: 4px;
-		background-color: $color-light-text !important;
+		border-radius: unit(1);
+		background-color: var(--le-color-backgroundOne) !important;
 		padding: 0 !important;
 
 		code {

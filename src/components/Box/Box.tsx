@@ -43,10 +43,10 @@ const Box: React.FC<BoxProps> = ({
 
 	const classNames: LeClassNamesArray = {
 		leBox: () => [
-			bgColor ? `le-color-bg--${bgColor}` : "",
+			bgColor ? `le-bg-${bgColor}` : "",
 			customClass || "",
 			centered ? `le-box--centered` : "",
-			textColor ? `le-color-text--${textColor}` : "",
+			textColor ? `le-color-${textColor}` : "",
 		],
 	};
 

@@ -22,9 +22,9 @@ Use the `variant` prop to change the button style.
 
 <br/>
 
-#### Theme
+#### Colors
 
-Use the `theme` prop to change the button color theme.
+Use the `colorScheme` prop to change the button color theme.
 
 <div><ButtonThemePreview></ButtonThemePreview><div>
 

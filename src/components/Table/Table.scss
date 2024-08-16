@@ -26,7 +26,7 @@
 				height: 100%;
 				font-size: 1.5rem;
 				font-weight: 500;
-				color: $color-dark-text;
+				color: var(--le-color-textTwo);
 			}
 		}
 	}
@@ -76,20 +76,20 @@
 		.le-table--body {
 			&-row,
 			tr {
-				border-bottom: 1px solid $color-variant-border;
+				border-bottom: 1px solid var(--le-color-border);
 
 				&-item,
 				td {
 					border: none;
 					font-weight: 400;
-					color: $color-darker-text;
+					color: var(--le-color-textOne);
 				}
 			}
 		}
 	}
 
 	&--bordered {
-		border: 1px solid $color-variant-border-hover;
+		border: 1px solid var(--le-color-border);
 		border-radius: 8px;
 		overflow: hidden;
 
@@ -97,13 +97,13 @@
 			tr {
 				border-radius: 0 !important;
 				border: none;
-				border-bottom: 1px solid $color-variant-border;
+				border-bottom: 1px solid var(--le-color-border);
 
 				td {
 					border: none;
 					border-radius: 0 !important;
-					border-right: 1px solid $color-variant-border;
-					color: $color-darker-text;
+					border-right: 1px solid var(--le-color-border);
+					color: var(--le-color-textOne);
 
 					&:last-child {
 						border-right: none;
@@ -156,7 +156,7 @@
 				padding: 2rem;
 				border: none;
 				width: 100%;
-				background: $color-variant-border;
+				background: var(--le-color-border);
 
 				display: flex;
 				align-items: center;

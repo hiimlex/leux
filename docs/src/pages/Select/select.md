@@ -70,17 +70,6 @@ Use the `state` prop to set the the select state.
 
 <br />
 
-#### Custom
-
-Use the custom prefixed props to customize Select style.
-
-<div>
-<SelectCustomPreview>
-</SelectCustomPreview>
-</div>
-
-<br />
-
 ### API Reference
 
 <div>

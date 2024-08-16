@@ -2,7 +2,7 @@
 
 .le-anchor {
 	cursor: pointer;
-	color: $color-dark-text;
+	color: var(--le-color-textTwo);
 	text-decoration: underline;
 
 	&:hover {

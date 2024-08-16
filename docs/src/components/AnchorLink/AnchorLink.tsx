@@ -1,5 +1,6 @@
 import { Link } from "react-scroll";
 import "./AnchorLink.scss";
+import React from "react";
 
 interface AnchorLinkProps {
 	to: any;

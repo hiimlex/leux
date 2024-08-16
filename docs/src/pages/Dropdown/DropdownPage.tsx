@@ -1,3 +1,4 @@
+import React from "react";
 import { dropdownAttr } from "./DropdownAttributes";
 import { ReactComponent as DropdownMD } from "./dropdown.md";
 

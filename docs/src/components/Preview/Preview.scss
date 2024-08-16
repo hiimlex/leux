@@ -4,7 +4,7 @@
 	padding: 8px;
 	margin: 8px 0;
 	border-radius: 8px;
-	border: 1px solid $color-light-text;
+	border: 1px solid var(--le-color-border);
 	display: flex;
 	flex-direction: column;
 
@@ -17,7 +17,7 @@
 
 		&-code {
 			font-size: 0.75rem;
-			color: $color-dark-text;
+			color: var(--le-color-textTwo);
 
 			&:hover {
 				cursor: pointer;

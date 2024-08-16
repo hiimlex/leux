@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Box, BoxProps } from "../../../../src";
 import { attributes as boxAttr } from "./box.md";
 import { useState } from "react";
+import React from "react";
 
 const ImportPreview = () => {
 	return <LeHighlighter code={`import { Box, BoxProps } from "leux";`} language="tsx" />;
@@ -55,7 +56,7 @@ const BoxCustomPreview = () => {
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Box
-					customClass="le-color-text--primary le-color-bg--default le-text--body-2"
+					customClass="le-color-primary le-bg--default le-text-body-2"
 					customStyles={{
 						display: "flex",
 						alignItems: "center",
@@ -71,7 +72,7 @@ const BoxCustomPreview = () => {
 					language="tsx"
 					code={`const Component = () => (
 	<Box
-		customClass="le-color-text--primary le-color-bg--default le-text--body-2"
+		customClass="le-color-primary le-bg-default le-text-body-2"
 		customStyles={{
 			display: "flex",
 			alignItems: "center",

@@ -4,14 +4,14 @@
 	width: 132px;
 	height: 100vh;
 
-	color: $color-dark-text;
+	color: var(--le-color-textTwo);
 
 	position: relative;
 
 	.fixed-content {
 		position: fixed;
 		width: 132px;
-		border-left: 1px solid $color-variant-default;
+		border-left: 1px solid var(--le-color-border);
 		padding-left: 12px;
 		padding-top: 32px;
 		height: 100%;
@@ -43,12 +43,11 @@
 				word-break: break-all;
 
 				&.active {
-					font-weight: bold !important;
-					color: $color-darker-text;
+					color: var(--le-color-primary);
 				}
 
 				&:hover {
-					font-weight: 500;
+					color: var(--le-color-primary);
 				}
 			}
 		}

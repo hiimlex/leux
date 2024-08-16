@@ -26,16 +26,6 @@ Use the `variant` prop to change the text variant. There's no default variant.
 
 <br/>
 
-#### Custom
-
-Use the `customClass` and `customStyles` prop to add custom CSS to the component.
-
-<div>
-<TypographyCustomPreview></TypographyCustomPreview>
-</div>
-
-<br/>
-
 ### API Reference
 
 <div>

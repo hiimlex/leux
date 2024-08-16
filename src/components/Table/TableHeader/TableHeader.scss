@@ -24,14 +24,14 @@
 					height: 0;
 					margin-left: 0.5rem;
 					vertical-align: middle;
-					border-top: 5px solid $color-dark-text;
+					border-top: 5px solid var(--le-color-textTwo);
 					border-right: 5px solid transparent;
 					border-left: 5px solid transparent;
 				}
 
 				&:hover {
 					cursor: pointer;
-					background: $color-variant-border-hover;
+					background: var(--le-color-placeholder);
 
 					&::after {
 						opacity: 0.9;
@@ -59,14 +59,14 @@
 					height: 0;
 					margin-left: 0.5rem;
 					vertical-align: middle;
-					border-bottom: 5px solid $color-dark-text;
+					border-bottom: 5px solid var(--le-color-textTwo);
 					border-right: 5px solid transparent;
 					border-left: 5px solid transparent;
 				}
 
 				&:hover {
 					cursor: pointer;
-					background: $color-variant-border-hover;
+					background: var(--le-color-placeholder);
 
 					&::after {
 						opacity: 0.9;
@@ -90,7 +90,7 @@
 				transition: all 0.1s ease-in-out;
 
 				&:hover {
-					background: $color-variant-border-hover;
+					background: var(--le-color-backgroundThree);
 					cursor: pointer;
 				}
 			}
@@ -100,15 +100,15 @@
 	&-bordered {
 		tr {
 			border: none;
-			background: $color-variant-border;
+			background: var(--le-color-backgroundTwo);
 			border-radius: 0;
 
 			th {
 				border: none;
-				border-right: 1px solid $color-variant-border-hover;
-				border-bottom: 1px solid $color-variant-border-hover;
+				border-right: 1px solid var(--le-color-border);
+				border-bottom: 1px solid var(--le-color-border);
 				border-radius: 0 !important;
-				color: $color-dark-text;
+				color: var(--le-color-textTwo);
 
 				&:last-child {
 					border-right: none;
@@ -120,13 +120,13 @@
 	&-default {
 		&-row,
 		tr {
-			background: $color-variant-border;
+			background: var(--le-color-backgroundTwo);
 			border-radius: 8px;
 
 			&-item,
 			th {
 				border: none;
-				color: $color-dark-text;
+				color: var(--le-color-textThree);
 				background: inherit;
 			}
 		}

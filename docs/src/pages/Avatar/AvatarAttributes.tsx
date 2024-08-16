@@ -2,6 +2,7 @@ import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } fr
 import { Avatar, AvatarProps } from "../../../../src";
 import { attributes as avatarAttr } from "./avatar.md";
 import { useState } from "react";
+import React from "react";
 
 const AvatarImportPreview = () => (
 	<LeHighlighter code={`import { Avatar, AvatarProps } from "leux";`} language="tsx" />

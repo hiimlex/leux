@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-scroll";
 import "./SideAnchorNav.scss";
+import React from "react";
 
 interface AnchorLink {
 	label: string;
@@ -79,7 +80,7 @@ const SideAnchorNav = () => {
 							to={href}
 							offset={-95}
 							className={
-								"le-anchor-link le-text--body-1" + (activeAnchor === href ? " active" : "")
+								"le-anchor-link le-text-body-1" + (activeAnchor === href ? " active" : "")
 							}
 						>
 							{label}

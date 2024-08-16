@@ -5,6 +5,8 @@
 
 	animation: leuxHighlighterAnimation 0.2s ease-in-out forwards;
 
+
+
 	&--dracula {
 		.le-highlighter--copy {
 			position: absolute;
@@ -558,6 +560,12 @@
 
 		.token.entity {
 			cursor: help;
+		}
+	}
+
+	&--dark {
+		.language-tsx, #text {
+			color: var(--le-color-textOne) !important;
 		}
 	}
 }

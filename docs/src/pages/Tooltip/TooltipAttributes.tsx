@@ -2,6 +2,7 @@ import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } fr
 import { Button, Tooltip, TooltipProps, Typography } from "../../../../src";
 import { attributes as tooltipAttr } from "./tooltip.md";
 import { useState } from "react";
+import React from "react";
 
 const TooltipImportPreview = () => (
 	<LeHighlighter code={`import { Tooltip, TooltipProps } from "leux";`} language="tsx" />
@@ -87,7 +88,7 @@ const TooltipThemePreview = () => {
 					<Typography
 						children="primary"
 						variant="body-1"
-						customClass="le-color-text--primary"
+						customClass="le-color-primary"
 						customStyles={{ margin: "0 12px 0 0" }}
 					/>
 				</Tooltip>
@@ -95,7 +96,7 @@ const TooltipThemePreview = () => {
 					<Typography
 						children="danger"
 						variant="body-1"
-						customClass="le-color-text--danger"
+						customClass="le-color-danger"
 						customStyles={{ margin: "0 12px 0 0" }}
 					/>
 				</Tooltip>
@@ -103,7 +104,7 @@ const TooltipThemePreview = () => {
 					<Typography
 						children="default"
 						variant="body-1"
-						customClass="le-color-text--default"
+						customClass="le-color-default"
 						customStyles={{ margin: "0 12px 0 0" }}
 					/>
 				</Tooltip>
@@ -116,7 +117,7 @@ const TooltipThemePreview = () => {
 			<Typography
 				children="primary"
 				variant="body-1"
-				customClass="le-color-text--primary"
+				customClass="le-color-primary"
 				customStyles={{ margin: "0 12px 0 0" }}
 			/>
 		</Tooltip>
@@ -124,7 +125,7 @@ const TooltipThemePreview = () => {
 			<Typography
 				children="danger"
 				variant="body-1"
-				customClass="le-color-text--danger"
+				customClass="le-color-danger"
 				customStyles={{ margin: "0 12px 0 0" }}
 			/>
 		</Tooltip>
@@ -132,7 +133,7 @@ const TooltipThemePreview = () => {
 			<Typography
 				children="default"
 				variant="body-1"
-				customClass="le-color-text--default"
+				customClass="le-color-default"
 				customStyles={{ margin: "0 12px 0 0" }}
 			/>
 		</Tooltip>

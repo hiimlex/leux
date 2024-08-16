@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { LeHighlighter } from "..";
 import { LeSafeAny } from "../../../../src";
 import "./ApiTable.scss";
+import React from "react";
 
 interface IApiTableProps {
 	props: PropsMapping<LeSafeAny>;
@@ -41,7 +42,7 @@ const ApiTable = ({ props }: IApiTableProps) => {
 				{propsAsArray.map(({ prop, key }) => (
 					<tr key={key}>
 						<td>
-							{key} {prop.required && <strong className="le-color-text--danger">*</strong>}
+							{key} {prop.required && <strong className="le-color-danger">*</strong>}
 						</td>
 						<td>
 							<LeHighlighter code={prop.type} language="tsx" copy="off" style="soft" />

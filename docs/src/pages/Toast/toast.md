@@ -81,16 +81,6 @@ Use the `onClose` prop to set a callback when the Toast component is closed.
 
 <br />
 
-#### Custom
-
-Use the `custom` prefixed props to customize the Toast component.
-
-<div>
-<ToastCustomPreview>
-</ToastCustomPreview>
-</div>
-
-<br />
 
 ### Api Reference
 

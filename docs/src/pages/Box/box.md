@@ -42,15 +42,6 @@ The Box component can be used to create a grid layout. Check <NavLink to="/layou
 
 <br/>
 
-#### Custom
-
-Use the `customClass` and `customStyles` prop to add custom CSS to the Box component.
-
-<div>
-	<BoxCustomPreview></BoxCustomPreview>
-</div>
-
-<br/>
 
 ### API Reference
 

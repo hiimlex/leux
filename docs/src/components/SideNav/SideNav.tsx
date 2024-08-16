@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./SideNav.scss";
+import React from "react";
+import { RoutesPath } from "../../models";
 
 export interface ILink {
 	name: string;
@@ -8,47 +10,49 @@ export interface ILink {
 
 export const LINKS: Record<string, ILink[]> = {
 	"Getting Started": [
-		{ name: "Overview", path: "/started/overview" },
-		{ name: "Installation", path: "/started/installation" },
+		{ name: "Overview", path: RoutesPath.Overview},
+		{ name: "Installation", path: RoutesPath.Installation },
+		{ name: "Theming", path: RoutesPath.Theming},
 	],
 	Layout: [
 		{
 			name: "Box",
-			path: "/layout/box",
+			path: RoutesPath.Box,
 		},
 		{
 			name: "Grid",
-			path: "/layout/grid",
+			path: RoutesPath.Grid,
 		},
 
 		{
 			name: "Typography",
-			path: "/layout/typography",
+			path: RoutesPath.Typography,
 		},
 	],
 	Action: [
-		{ name: "Button", path: "/components/button" },
-		{ name: "Dropdown", path: "/components/dropdown" },
-		{ name: "Pagination", path: "/components/pagination" },
+		{ name: "Button", path: RoutesPath.Button },
+		{ name: "Dropdown", path: RoutesPath.Dropdown },
+		{ name: "Pagination", path: RoutesPath.Pagination },
 	],
 	Form: [
-		{ name: "Checkbox", path: "/components/checkbox" },
-		{ name: "Input", path: "/components/input" },
-		{ name: "Radio", path: "/components/radio" },
-		{ name: "Select", path: "/components/select" },
-		{ name: "TextArea", path: "/components/textarea" },
+		{ name: "Checkbox", path: RoutesPath.Checkbox },
+		{ name: "Input", path: RoutesPath.Input },
+		{ name: "Radio", path: RoutesPath.Radio },
+		{ name: "Select", path: RoutesPath.Select },
+		{ name: "TextArea", path: RoutesPath.TextArea },
 	],
 	Display: [
-		{ name: "Avatar", path: "/components/avatar" },
-		{ name: "Badge", path: "/components/badge" },
-		{ name: "Modal", path: "/components/modal" },
-		{ name: "Table", path: "/components/table" },
-		{ name: "Toast", path: "/components/toast" },
-		{ name: "Tooltip", path: "/components/tooltip" },
+		{ name: "Avatar", path: RoutesPath.Avatar },
+		{ name: "Badge", path: RoutesPath.Badge },
+		{ name: "Modal", path: RoutesPath.Modal },
+		{ name: "Table", path: RoutesPath.Table },
+		{ name: "Toast", path: RoutesPath.Toast },
+		{ name: "Tooltip", path: RoutesPath.Tooltip },
+		
 	],
 	Loaders: [
-		{ name: "Skeleton", path: "/components/skeleton" },
-		{ name: "Spinner", path: "/components/spinner" },
+		{ name: "Skeleton", path: RoutesPath.Skeleton },
+		{ name: "Spinner", path: RoutesPath.Spinner },
 	],
 };
 
@@ -62,11 +66,11 @@ const SideNav = () => {
 					{Object.keys(LINKS).map((category) => (
 						<section key={category} className="le-sidenav--section">
 							<div className="le-sidenav--header">
-								<span className="le-text--subtitle-2">{category}</span>
+								<span className="le-text-subtitle-2">{category}</span>
 							</div>
 							<div className="le-sidenav--links">
 								{LINKS[category].map(({ name, path }) => (
-									<NavLink key={path} to={path} className="le-text--body-1">
+									<NavLink key={path} to={path} className="le-text-body-1">
 										{name}
 									</NavLink>
 								))}

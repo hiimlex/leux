@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { LeClassNames } from "../../types";
 import { ToastProps } from "./Toast.model";
 
-import { useToast } from "../../hooks";
+import { useTheme, useToast } from "../../hooks";
 import "./Toast.scss";
 
 const Toast: React.FC<ToastProps> = ({
@@ -10,7 +10,7 @@ const Toast: React.FC<ToastProps> = ({
 	label,
 	loading = false,
 	duration,
-	theme = "default",
+	colorScheme = "default",
 	variant = "filled",
 	size = "medium",
 	closable = true,
@@ -19,15 +19,16 @@ const Toast: React.FC<ToastProps> = ({
 	customClass,
 	customStyles,
 }) => {
+	const { currentTheme } = useTheme();
 	const { removeToast } = useToast();
 
 	const classNames: LeClassNames = {
 		leToast: () =>
-			`le-toast${
-				customClass ? ` ${customClass}` : ""
-			} le-toast--${theme} le-toast--${variant} le-toast--${size}${
+			`le-toast le-toast--${colorScheme} le-toast--${variant} le-toast--${size} ${
 				loading ? " le-toast--loading" : ""
-			}${closable ? " le-toast--closable" : ""}`,
+			} ${closable ? " le-toast--closable" : ""} le-toast--${currentTheme} ${
+				customClass ? ` ${customClass}` : ""
+			}`,
 		leToastLabel: () => `le-toast--label`,
 	};
 

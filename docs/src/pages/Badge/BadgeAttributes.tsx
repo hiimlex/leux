@@ -3,6 +3,7 @@ import { attributes as badgeAttr } from "./badge.md";
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { Badge, BadgeProps } from "../../../../src";
 import { useState } from "react";
+import React from "react";
 
 const BadgeImportPreview = () => (
 	<LeHighlighter code={`import { Badge, BadgeProps } from "leux";`} language="tsx" />
@@ -110,7 +111,7 @@ const BadgeCustomPreview = () => {
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Badge
-					customClass="le-color-bg--primary"
+					customClass="le-bg-primary"
 					variant="dashed"
 					customStyles={{ color: "purple", borderColor: "purple" }}
 				>
@@ -121,7 +122,7 @@ const BadgeCustomPreview = () => {
 				<LeHighlighter
 					code={`const Component = () => (
 	<Badge
-		customClass="le-color-bg--primary"
+		customClass="le-bg-primary"
 		variant="dashed"
 		customStyles={{ color: "purple", borderColor: "purple" }}
 	>

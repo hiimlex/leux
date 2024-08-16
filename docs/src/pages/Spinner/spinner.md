@@ -37,16 +37,6 @@ Use the `theme` prop to change the spinner theme color.
 
 <br />
 
-#### Custom
-
-Use the `custom` prefix props to change the spinner custom styles.
-
-<div>
-<SpinnerCustomPreview>
-</SpinnerCustomPreview>
-</div>
-
-<br />
 
 ### API Reference
 

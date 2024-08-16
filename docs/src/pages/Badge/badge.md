@@ -50,16 +50,6 @@ Use the `size` prop to change the badge size.
 
 <br/>
 
-#### Custom
-
-Use the `customClass` and `customStyles` prop to add custom CSS to the Badge component.
-
-<div>
-<BadgeCustomPreview>
-</BadgeCustomPreview>
-</div>
-
-<br/>
 
 ### API Reference
 

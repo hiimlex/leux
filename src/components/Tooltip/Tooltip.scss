@@ -23,13 +23,13 @@
 	font-size: 14px;
 	font-weight: 500;
 	white-space: nowrap;
-	color: $color-dark-text;
-	background: $color-variant-default;
+	color: var(--le-color-textTwo);
+	background: var(--le-color-border);
 	box-shadow: rgba(149, 157, 165, 0.1) 0px 2px 24px;
 
 	@each $color, $value in $variant-colors {
 		&--#{$color} {
-			color: $color-light-text;
+			color: var(--le-color-textInverse);
 			background: $value;
 
 			&.le-tooltip--top {
@@ -98,7 +98,7 @@
 			}
 
 			@if $color == "default" {
-				color: $color-dark-text;
+				color: var(--le-color-textTwo);
 			}
 		}
 	}

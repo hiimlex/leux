@@ -50,14 +50,6 @@ Use the `size` prop to change the avatar size.
 
 <br/>
 
-#### Custom
-
-Use the `customSize` prop to change the CSS width and height property, and the `customClass` and `customStyles` to apply your styles directly on the avatar component.
-
-<div>
-<AvatarCustomPreview>
-</AvatarCustomPreview>
-</div>
 
 ### API Reference
 

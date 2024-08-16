@@ -19,6 +19,7 @@ import {
 	TableVariants,
 } from "../../../../src/components/Table/Table.model";
 import { attributes as tableAttr } from "./table.md";
+import React from "react";
 
 const TableImportPreview = () => (
 	<LeHighlighter
@@ -199,14 +200,14 @@ const TableVariantPreview = () => {
 			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
 					<Button
-						theme={tableConfig.variant === "default" ? "primary" : "default"}
+						colorScheme={tableConfig.variant === "default" ? "primary" : "default"}
 						onClick={() => changeVariant("default")}
 						customStyles={{ marginRight: 12 }}
 					>
 						Default
 					</Button>
 					<Button
-						theme={tableConfig.variant === "bordered" ? "primary" : "default"}
+						colorScheme={tableConfig.variant === "bordered" ? "primary" : "default"}
 						onClick={() => changeVariant("bordered")}
 					>
 						Bordered
@@ -241,14 +242,14 @@ const TableVariantPreview = () => {
 	return (
 		<>
 			<Button
-				theme={tableConfig.variant === "default" ? "primary" : "default"}
+				colorScheme={tableConfig.variant === "default" ? "primary" : "default"}
 				onClick={() => changeVariant("default")}
 				customStyles={{ marginRight: 12 }}
 			>
 				Default
 			</Button>
 			<Button
-				theme={tableConfig.variant === "bordered" ? "primary" : "default"}
+				colorScheme={tableConfig.variant === "bordered" ? "primary" : "default"}
 				onClick={() => changeVariant("bordered")}
 			>
 				Bordered
@@ -293,7 +294,7 @@ const TableSizePreview = () => {
 			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
 					<Button
-						theme={tableConfig.size === "small" ? "primary" : "default"}
+						colorScheme={tableConfig.size === "small" ? "primary" : "default"}
 						onClick={() => changeSize("small")}
 						customStyles={{ marginRight: 12 }}
 						size="small"
@@ -301,7 +302,7 @@ const TableSizePreview = () => {
 						Small
 					</Button>
 					<Button
-						theme={tableConfig.size === "medium" ? "primary" : "default"}
+						colorScheme={tableConfig.size === "medium" ? "primary" : "default"}
 						onClick={() => changeSize("medium")}
 						customStyles={{ marginRight: 12 }}
 						size="medium"
@@ -309,7 +310,7 @@ const TableSizePreview = () => {
 						Medium
 					</Button>
 					<Button
-						theme={tableConfig.size === "large" ? "primary" : "default"}
+						colorScheme={tableConfig.size === "large" ? "primary" : "default"}
 						onClick={() => changeSize("large")}
 						size="large"
 					>
@@ -345,21 +346,21 @@ const TableSizePreview = () => {
 	return (
 		<>
 			<Button
-				theme={tableConfig.size === "small" ? "primary" : "default"}
+				colorScheme={tableConfig.size === "small" ? "primary" : "default"}
 				onClick={() => changeSize("small")}
 				customStyles={{ marginRight: 12 }}
 			>
 				Small
 			</Button>
 			<Button
-				theme={tableConfig.size === "medium" ? "primary" : "default"}
+				colorScheme={tableConfig.size === "medium" ? "primary" : "default"}
 				onClick={() => changeSize("medium")}
 				customStyles={{ marginRight: 12 }}
 			>
 				Medium
 			</Button>
 			<Button
-				theme={tableConfig.size === "large" ? "primary" : "default"}
+				colorScheme={tableConfig.size === "large" ? "primary" : "default"}
 				onClick={() => changeSize("large")}
 			>
 				Large
@@ -753,7 +754,7 @@ const TableStatePreview = () => {
 				{tableState && (
 					<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
 						<Button
-							theme={tableState.loading ? "primary" : "default"}
+							colorScheme={tableState.loading ? "primary" : "default"}
 							variant="filled"
 							onClick={() => {
 								setTableState((curr) => ({ ...curr, loading: !curr.loading }));
@@ -763,7 +764,7 @@ const TableStatePreview = () => {
 							{tableState.loading ? "Stop Loading" : "Start Loading"}
 						</Button>
 						<Button
-							theme={!tableState.disabled ? "primary" : "danger"}
+							colorScheme={!tableState.disabled ? "primary" : "danger"}
 							variant="filled"
 							onClick={() => {
 								setTableState((curr) => ({ ...curr, disabled: !curr.disabled }));
@@ -773,7 +774,7 @@ const TableStatePreview = () => {
 							{!tableState.disabled ? "On" : "Off"}
 						</Button>
 						<Button
-							theme={tableState.empty ? "danger" : "primary"}
+							colorScheme={tableState.empty ? "danger" : "primary"}
 							variant="filled"
 							onClick={() => {
 								setTableState((curr) => ({ ...curr, empty: !curr.empty }));
@@ -817,7 +818,7 @@ return (
 		{tableState && (
 			<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
 				<Button
-					theme={tableState.loading ? "primary" : "default"}
+					colorScheme={tableState.loading ? "primary" : "default"}
 					variant="filled"
 					onClick={() => {
 						setTableState((curr) => ({ ...curr, loading: !curr.loading }));
@@ -827,7 +828,7 @@ return (
 					{tableState.loading ? "Stop Loading" : "Start Loading"}
 				</Button>
 				<Button
-					theme={!tableState.disabled ? "primary" : "danger"}
+					colorScheme={!tableState.disabled ? "primary" : "danger"}
 					variant="filled"
 					onClick={() => {
 						setTableState((curr) => ({ ...curr, disabled: !curr.disabled }));
@@ -837,7 +838,7 @@ return (
 					{!tableState.disabled ? "On" : "Off"}
 				</Button>
 				<Button
-					theme={tableState.empty ? "danger" : "primary"}
+					colorScheme={tableState.empty ? "danger" : "primary"}
 					variant="filled"
 					onClick={() => {
 						setTableState((curr) => ({ ...curr, empty: !curr.empty }));
