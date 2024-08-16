@@ -10,7 +10,7 @@ import { DropdownItemProps, DropdownProps } from "./Dropdown.model";
 import "./Dropdown.scss";
 import { Button } from "../Button";
 
-const Dropdown = ({
+const Dropdown: React.FC<DropdownProps> = ({
 	anchor,
 	menuProps,
 	variant = "filled",
@@ -23,7 +23,7 @@ const Dropdown = ({
 	width,
 	customWrapperStyles,
 	customWrapperClass,
-}: DropdownProps) => {
+}) => {
 	const [show, setShow] = useState(false);
 
 	const randomId = Math.random().toString(36).substr(2, 9);

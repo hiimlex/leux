@@ -3,7 +3,7 @@ import { LeClassNamesArray } from "../../types";
 import { BoxProps } from "./Box.model";
 import "./Box.scss";
 
-const Box = ({
+const Box: React.FC<BoxProps> = ({
 	width,
 	children,
 	padding,
@@ -21,7 +21,7 @@ const Box = ({
 	flex,
 	flexDirection,
 	justifyContent,
-}: BoxProps) => {
+}) => {
 	const handleGridSpan:
 		| {
 				gridRowEnd: React.CSSProperties["gridRowEnd"];

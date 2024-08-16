@@ -1,12 +1,12 @@
 import React from "react";
 import { TypographyProps } from "./Typography.model";
 
-const Typography = ({
+const Typography: React.FC<TypographyProps> = ({
 	variant = "body-1",
 	children,
 	customClass = "",
 	customStyles,
-}: TypographyProps) => {
+}) => {
 	const typesArr: Record<string, React.ReactElement> = {
 		h1: (
 			<h1

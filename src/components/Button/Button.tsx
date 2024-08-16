@@ -2,7 +2,7 @@ import React, { MouseEvent } from "react";
 import { ButtonProps } from "./Button.model";
 import "./Button.scss";
 
-const Button = ({
+const Button: React.FC<ButtonProps> = ({
 	theme = "default",
 	size = "medium",
 	variant = "filled",
@@ -13,7 +13,7 @@ const Button = ({
 	customClass,
 	customStyles,
 	buttonProps,
-}: ButtonProps) => {
+}) => {
 	const handleOnCLick = (event: MouseEvent<HTMLButtonElement>) => {
 		if (onClick) {
 			onClick(event);

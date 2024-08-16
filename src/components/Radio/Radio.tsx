@@ -2,7 +2,7 @@ import React from "react";
 import { RadioProps } from "./Radio.model";
 import "./Radio.scss";
 
-const Radio = ({
+const Radio: React.FC<RadioProps> = ({
 	fieldKey,
 	size = "medium",
 	onChange,
@@ -18,7 +18,7 @@ const Radio = ({
 	customStyles,
 	customClass,
 	radioRef,
-}: RadioProps) => {
+}) => {
 	return (
 		<div
 			className={`le-radio le-radio--${size} ${customClass || ""} ${

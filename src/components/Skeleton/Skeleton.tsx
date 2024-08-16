@@ -4,7 +4,7 @@ import { SkeletonProps } from "./Skeleton.model";
 
 import "./Skeleton.scss";
 
-const Skeleton = ({
+const Skeleton: React.FC<SkeletonProps> = ({
 	children,
 	size = "medium",
 	width = "100%",
@@ -14,7 +14,7 @@ const Skeleton = ({
 	active = false,
 	show = true,
 	variant = "paragraph",
-}: SkeletonProps) => {
+}) => {
 	const classNames: LeClassNames = {
 		leSkeleton: () =>
 			`le-skeleton le-skeleton--${size} le-skeleton--${variant}${

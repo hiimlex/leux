@@ -8,7 +8,7 @@ const sizeRowArr: Record<TextAreaSizes, { rowHeight: number }> = {
 	large: { rowHeight: 2 },
 };
 
-const TextArea = ({
+const TextArea: React.FC<TextAreaProps> = ({
 	fieldKey,
 	variant = "filled",
 	width,
@@ -24,7 +24,7 @@ const TextArea = ({
 	defaultValue,
 	textAreaProps,
 	textAreaRef,
-}: TextAreaProps) => {
+}) => {
 	const [minHeight, setMinHeight] = useState<React.CSSProperties["minHeight"]>(0);
 	const [maxHeight, setMaxHeight] = useState<React.CSSProperties["maxHeight"]>(0);
 

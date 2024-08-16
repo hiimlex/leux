@@ -4,7 +4,7 @@ import { PaginationProps } from "./Pagination.model";
 import { Button } from "../Button";
 import "./Pagination.scss";
 
-const Pagination = ({
+const Pagination: React.FC<PaginationProps>  = ({
 	currentPage,
 	itemsPerPage,
 	onPageChange,
@@ -21,7 +21,7 @@ const Pagination = ({
 	customClass,
 	size = "medium",
 	simplePagination = true,
-}: PaginationProps) => {
+}) => {
 	const classNames: LeClassNames = {
 		pagination: ({ customClass, size }) =>
 			`le-pagination le-pagination--${size} ${customClass || ""}`,

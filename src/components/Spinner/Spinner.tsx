@@ -3,7 +3,7 @@ import { LeClassNames } from "../../types";
 import { SpinnerProps } from "./Spinner.model";
 import "./Spinner.scss";
 
-const Spinner = ({
+const Spinner: React.FC<SpinnerProps> = ({
 	size = "medium",
 	theme = "primary",
 	variant = "circle",
@@ -12,7 +12,7 @@ const Spinner = ({
 	customSize,
 	customStyles,
 	customColor,
-}: SpinnerProps) => {
+}) => {
 	const spinnerRef = useRef<HTMLDivElement>(null);
 
 	const classNames: LeClassNames = {

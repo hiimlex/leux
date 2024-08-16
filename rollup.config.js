@@ -30,8 +30,11 @@ export default [
 		],
 		plugins: [
 			styles({
+				// minify css
 				minimize: true,
+				// get all scss files
 				include: ["**/*.scss"],
+				// inject css in html head
 				mode: [
 					"inject",
 					{ container: "head", singleTag: true, prepend: true, attributes: { id: "leuxCSS" } },

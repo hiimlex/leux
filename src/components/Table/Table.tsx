@@ -11,13 +11,13 @@ import {
 } from "./Table.model";
 import "./Table.scss";
 
-const TableHeader = ({
+const TableHeader: React.FC<TableHeaderProps> = ({
 	children,
 	columns,
 	gridTemplateColumns,
 	customHeaderClass,
 	customHeaderStyles,
-}: TableHeaderProps) => {
+}) => {
 	const classNames: LeClassNames = {
 		tableHeader: ({ customHeaderClass }: { customHeaderClass?: string }) =>
 			`le-table--header ${customHeaderClass || ""}`,
@@ -56,7 +56,7 @@ const TableHeader = ({
 	);
 };
 
-const TableBody = ({
+const TableBody: React.FC<TableBodyProps> = ({
 	children,
 	rows,
 	keys,
@@ -64,7 +64,7 @@ const TableBody = ({
 	emptyValue,
 	customBodyClass,
 	customBodyStyles,
-}: TableBodyProps) => {
+}) => {
 	const classNames: LeClassNames = {
 		tableBody: ({ customBodyClass }: { customBodyClass?: string }) =>
 			`le-table--body ${customBodyClass || ""}`,
@@ -99,7 +99,7 @@ const TableBody = ({
 	);
 };
 
-const Table = ({
+const Table: React.FC<TableProps> = ({
 	columns,
 	children,
 	rows,
@@ -118,7 +118,7 @@ const Table = ({
 	height,
 	customWrapperClass,
 	customWrapperStyles,
-}: TableProps) => {
+}) => {
 	const keys = useMemo(() => columns && columns.map(({ key }) => key), [columns]);
 
 	const classNames: LeClassNames = {
@@ -214,4 +214,4 @@ const Table = ({
 	);
 };
 
-export { Table, TableHeader, TableBody };
+export { Table, TableBody, TableHeader };

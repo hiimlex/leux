@@ -61,3 +61,15 @@ $text-colors: (
 );
 
 $justify-classes: (flex-start, center, flex-end, space-between, space-around);
+$unit: 6px;
+
+$units: (
+	1: 1 * $unit,
+	2: 2 * $unit,
+	3: 3 * $unit,
+	4: 4 * $unit,
+	5: 5 * $unit,
+	6: 6 * $unit,
+	7: 7 * $unit,
+	8: 8 * $unit,
+);

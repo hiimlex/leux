@@ -5,7 +5,7 @@ import { ToastProps } from "./Toast.model";
 import { useToast } from "../../hooks";
 import "./Toast.scss";
 
-const Toast = ({
+const Toast: React.FC<ToastProps> = ({
 	id,
 	label,
 	loading = false,
@@ -18,7 +18,7 @@ const Toast = ({
 	zIndex,
 	customClass,
 	customStyles,
-}: ToastProps) => {
+}) => {
 	const { removeToast } = useToast();
 
 	const classNames: LeClassNames = {

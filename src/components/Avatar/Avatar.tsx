@@ -2,7 +2,7 @@ import React from "react";
 import { AvatarProps } from "./Avatar.model";
 import "./Avatar.scss";
 
-const Avatar = ({
+const Avatar: React.FC<AvatarProps> = ({
 	alt,
 	size = "medium",
 	src,
@@ -10,7 +10,7 @@ const Avatar = ({
 	customClass,
 	customStyles,
 	customSize,
-}: AvatarProps) => {
+}) => {
 	const getCapitals = (str: string) =>
 		str
 			.split(" ")

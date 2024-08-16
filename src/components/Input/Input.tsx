@@ -4,7 +4,7 @@ import { InputProps } from "./Input.model";
 import "./Input.scss";
 import { LeClassNames } from "../../types";
 
-const Input = ({
+const Input: React.FC<InputProps>  = ({
 	fieldKey,
 	type = "text",
 	variant = "filled",
@@ -17,7 +17,7 @@ const Input = ({
 	state,
 	inputProps,
 	inputRef,
-}: InputProps) => {
+}) => {
 	const classNames: LeClassNames = {
 		leInput: () =>
 			`le-input le-input--${variant} le-input--${size}${customClass ? ` ${customClass}` : ""}${
