@@ -12,12 +12,12 @@ type ToastProviderProps = {
 	duration?: number;
 };
 
-const ToastProvider = ({
+const ToastProvider: React.FC<ToastProviderProps> = ({
 	children,
 	position = "topCenter",
 	stackable = true,
 	duration = 2000,
-}: ToastProviderProps) => {
+}) => {
 	const [toasts, setToasts] = useState<ToastProps[]>([]);
 	const [zIndex, setZIndex] = useState<number>(1000);
 

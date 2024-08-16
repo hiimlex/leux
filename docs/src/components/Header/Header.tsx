@@ -1,21 +1,25 @@
-import { FaGithub } from "react-icons/fa";
-import { Typography, useBreakpoint } from "../../../../src";
+import React from "react";
+import { FaGithub, FaMoon, FaSun } from "react-icons/fa";
+import { Typography, useBreakpoint, useTheme } from "../../../../src";
 import "./Header.scss";
 
 import { version } from "../../../../package.json";
 import LeSearch from "../Search";
 
-const Header = () => {
+const Header: React.FC = () => {
 	const { breakpoint } = useBreakpoint();
+	const { swap, currentTheme } = useTheme();
+
+	const changeTheme = () => {
+		const newTheme = currentTheme === "light" ? "dark" : "light";
+
+		swap(newTheme);
+	};
 
 	return (
 		<header className="le-app-header">
 			<div className={"le-app-header--content" + ` le-app-header--content--${breakpoint}`}>
 				<div className="le-logo">
-					{/* <div className="le-logo--content">
-						<h1 className="le-logo--title le-text--h1">LeUX</h1>
-						<h1 className="le-logo--shadow le-text--h1">LeUX</h1>
-					</div> */}
 					<div className="le-logo--minimal">
 						<svg
 							width="32"
@@ -29,11 +33,17 @@ const Header = () => {
 								fill="#5D69D9"
 							/>
 						</svg>
-						<h3 className="le-color-text--primary">leux</h3>
+						<h3 className="le-color-primary">leux</h3>
 					</div>
 				</div>
 				<LeSearch />
 				<nav className="le-nav">
+					<span role="button" className="le-nav--item" onClick={changeTheme}>
+						<Typography variant="h6" customClass="le-color-primary">
+							{currentTheme === "light" && <FaMoon className="le-nav--link " />}
+							{currentTheme === "dark" && <FaSun className="le-nav--link" />}
+						</Typography>
+					</span>
 					<span className="le-nav--item">
 						<a className="le-nav--link" target="_blank" href="https://linktr.ee/yuninho">
 							<Typography variant="body-1">Find author</Typography>
@@ -44,7 +54,7 @@ const Header = () => {
 							<Typography variant="body-1">v{version}</Typography>
 						</a>
 					</span>
-					<span className="le-nav--item le-text--body-1">
+					<span className="le-nav--item le-text-body-1">
 						<a className="le-nav--link" href="https://github.com/hiimlex/leux" target="_blank">
 							<FaGithub size="1.25rem"></FaGithub>
 						</a>

@@ -9,13 +9,13 @@ const defaultFooterButtons: ModalFooterProps = [
 	{
 		children: "Cancel",
 		variant: "outlined",
-		theme: "default",
+		colorScheme: "default",
 		cancel: true,
 	},
 	{
 		children: "OK",
 		variant: "filled",
-		theme: "primary",
+		colorScheme: "primary",
 		ok: true,
 	},
 ];
@@ -119,7 +119,7 @@ const Modal: React.FC<ModalProps> = ({
 				data-testid="leuxModal"
 			>
 				<header className={classNames["modalHeader"]()}>
-					<h4 className={classNames["modalHeaderTitle"]()}>{title}</h4>
+					<h5 className={classNames["modalHeaderTitle"]()}>{title}</h5>
 					{closable && (
 						<div
 							className={classNames["modalHeaderClose"]()}

@@ -3,7 +3,7 @@ import { LeClassNames } from "../../types";
 import { SelectProps } from "./Select.model";
 import "./Select.scss";
 
-const Select = ({
+const Select: React.FC<PropsWithChildren<SelectProps>> = ({
 	customClass,
 	customStyles,
 	fieldKey,
@@ -17,7 +17,7 @@ const Select = ({
 	selectRef,
 	state,
 	selectProps,
-}: PropsWithChildren<SelectProps>) => {
+}) => {
 	const [value, setValue] = useState<string | number | readonly string[] | undefined>("");
 
 	const classNames: LeClassNames = {

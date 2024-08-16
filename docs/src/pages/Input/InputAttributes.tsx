@@ -2,6 +2,7 @@ import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } fr
 import { ChangeEvent, useState } from "react";
 import { Button, Input, InputProps, InputSizes, InputVariant, Typography } from "../../../../src";
 import { attributes as inputAttr } from "./input.md";
+import React from "react";
 
 const InputImportPreview = () => (
 	<LeHighlighter code={`import { Input, InputProps } from 'leux';`} language="tsx" />
@@ -127,7 +128,7 @@ const InputStatePreview = () => {
 	return (
 		<>
 			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
-				<Button theme={disabled ? "danger" : "primary"} onClick={handleOnClick}>
+				<Button colorScheme={disabled ? "danger" : "primary"} onClick={handleOnClick}>
 					{disabled ? "off" : "on"}
 				</Button>
 				<Typography variant="body-1">Value: {value}</Typography>

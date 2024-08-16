@@ -1,3 +1,4 @@
+import { RoutesPath } from "../../models";
 import { LeRenderDocPage } from "@/components";
 import {
 	AvatarPage,
@@ -19,10 +20,12 @@ import {
 	SpinnerPage,
 	TablePage,
 	TextAreaPage,
+	ThemingPage,
 	ToastPage,
 	TooltipPage,
 	TypographyPage,
 } from "@/pages";
+import React from "react";
 import { Navigate } from "react-router-dom";
 
 type LeRoute = {
@@ -32,95 +35,99 @@ type LeRoute = {
 
 export const routes: LeRoute[] = [
 	{
-		path: "/",
+		path: RoutesPath.Home,
 		element: <Navigate to="started/overview" replace />,
 	},
 	{
-		path: "/started/overview",
+		path: RoutesPath.Overview,
 		element: <LeRenderDocPage doc={<OverviewPage />} title="Overview" />,
 	},
 	{
-		path: "/started/installation",
+		path: RoutesPath.Installation,
 		element: <LeRenderDocPage doc={<InstallationPage />} title="Installation" />,
 	},
 	{
-		path: "/layout/typography",
+		path: RoutesPath.Theming,
+		element: <LeRenderDocPage doc={<ThemingPage />} title="Theming" />,
+	},
+	{
+		path: RoutesPath.Typography,
 		element: <LeRenderDocPage doc={<TypographyPage />} title="Typography" />,
 	},
 	{
-		path: "/layout/grid",
+		path: RoutesPath.Grid,
 		element: <LeRenderDocPage doc={<GridPage />} title="Grid" />,
 	},
 	{
-		path: "/layout/box",
+		path: RoutesPath.Box,
 		element: <LeRenderDocPage doc={<BoxPage />} title="Box" />,
 	},
 	{
-		path: "/components/button",
+		path: RoutesPath.Button,
 		element: <LeRenderDocPage doc={<ButtonPage />} title="Button" />,
 	},
 	{
-		path: "/components/badge",
+		path: RoutesPath.Badge,
 		element: <LeRenderDocPage doc={<BadgePage />} title="Badge" />,
 	},
 	{
-		path: "/components/input",
+		path: RoutesPath.Input,
 		element: <LeRenderDocPage doc={<InputPage />} title="Input" />,
 	},
 	{
-		path: "/components/select",
+		path: RoutesPath.Select,
 		element: <LeRenderDocPage doc={<SelectPage />} title="Select" />,
 	},
 	{
-		path: "/components/avatar",
+		path: RoutesPath.Avatar,
 		element: <LeRenderDocPage doc={<AvatarPage />} title="Avatar" />,
 	},
 	{
-		path: "/components/checkbox",
+		path: RoutesPath.Checkbox,
 		element: <LeRenderDocPage doc={<CheckboxPage />} title="Checkbox" />,
 	},
 	{
-		path: "/components/tooltip",
+		path: RoutesPath.Tooltip,
 		element: <LeRenderDocPage doc={<TooltipPage />} title="Tooltip" />,
 	},
 	{
-		path: "/components/table",
+		path: RoutesPath.Table,
 		element: <LeRenderDocPage doc={<TablePage />} title="Table" />,
 	},
 	{
-		path: "/components/textarea",
+		path: RoutesPath.TextArea,
 		element: <LeRenderDocPage doc={<TextAreaPage />} title="TextArea" />,
 	},
 	{
-		path: "/components/radio",
+		path: RoutesPath.Radio,
 		element: <LeRenderDocPage doc={<RadioPage />} title="Radio" />,
 	},
 	{
-		path: "/components/pagination",
+		path: RoutesPath.Pagination,
 		element: <LeRenderDocPage doc={<PaginationPage />} title="Pagination" />,
 	},
 	{
-		path: "/components/modal",
+		path: RoutesPath.Modal,
 		element: <LeRenderDocPage doc={<ModalPage />} title="Modal" />,
 	},
 	{
-		path: "/components/dropdown",
+		path: RoutesPath.Dropdown,
 		element: <LeRenderDocPage doc={<DropdownPage />} title="Dropdown" />,
 	},
 	{
-		path: "/components/spinner",
+		path: RoutesPath.Spinner,
 		element: <LeRenderDocPage doc={<SpinnerPage />} title="Spinner" />,
 	},
 	{
-		path: "/components/skeleton",
+		path: RoutesPath.Skeleton,
 		element: <LeRenderDocPage doc={<SkeletonPage />} title="Dropdown" />,
 	},
 	{
-		path: "/components/toast",
+		path: RoutesPath.Toast,
 		element: <LeRenderDocPage doc={<ToastPage />} title="Toast" />,
 	},
 	{
-		path: "*",
+		path: RoutesPath.NotFound,
 		element: <LeRenderDocPage doc={<NotFoundPage />} title="Not Found" />,
 	},
 ];

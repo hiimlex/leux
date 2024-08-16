@@ -7,6 +7,7 @@ import {
 	SelectState,
 } from "../../../../src/components/Select/Select.model";
 import { attributes as selectAttr } from "./select.md";
+import React from "react";
 
 const SelectImportPreview = () => (
 	<LeHighlighter code={`import { Select, SelectProps } from "leux";`} language="tsx" />
@@ -231,7 +232,7 @@ const SelectStatePreview = () => {
 				<Button
 					onClick={disableSelect}
 					customStyles={{ marginBottom: 12 }}
-					theme={!state.disabled ? "primary" : "danger"}
+					colorScheme={!state.disabled ? "primary" : "danger"}
 				>
 					{!state.disabled ? "on" : "off"}
 				</Button>
@@ -262,7 +263,7 @@ const SelectStatePreview = () => {
 			<Button
 				onClick={disableSelect}
 				customStyles={{ marginBottom: 12 }}
-				theme={!state.disabled ? "primary" : "danger"}
+				colorScheme={!state.disabled ? "primary" : "danger"}
 			>
 				{!state.disabled ? "on" : "off"}
 			</Button>

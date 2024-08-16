@@ -1,12 +1,12 @@
 import React, { useMemo } from "react";
 import { LeClassNames } from "../../types";
 import { Spinner } from "../Spinner";
-import { TableBodyProps, TableProps, TableSizes, TableVariants } from "./Table.model";
+import { TableBodyProps, TableProps } from "./Table.model";
 
 import "./Table.scss";
 import { TableHeader } from "./TableHeader";
 
-const TableBody = ({
+const TableBody: React.FC<TableBodyProps> = ({
 	children,
 	rows,
 	keys,
@@ -14,7 +14,7 @@ const TableBody = ({
 	emptyValue,
 	customBodyClass,
 	customBodyStyles,
-}: TableBodyProps) => {
+}) => {
 	const classNames: LeClassNames = {
 		tableBody: ({ customBodyClass }: { customBodyClass?: string }) =>
 			`le-table--body ${customBodyClass || ""}`,
@@ -49,7 +49,7 @@ const TableBody = ({
 	);
 };
 
-const Table = ({
+const Table: React.FC<TableProps> = ({
 	columns,
 	children,
 	rows,

@@ -61,17 +61,6 @@ Use the `state` prop to change the state of the checkbox.
 
 <br />
 
-#### Custom
-
-Use the `custom` props to customize the checkbox. You can customize the container, the input and the label.
-
-<div>
-<CheckboxCustomPreview>
-</CheckboxCustomPreview>
-</div>
-
-<br />
-
 ### API Reference
 
 <div>

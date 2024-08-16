@@ -7,21 +7,19 @@
 	justify-content: center;
 	line-height: 100%;
 
-	font-size: 0.875rem;
-	color: $color-dark-text;
-	border: 1px solid $color-variant-default;
-	border-radius: 8px;
-	background: white;
+	font-size: typography(button, 1);
+	color: var(--le-color-textTwo);
+	border: 1px solid var(--le-color-border);
+	border-radius: unit(1);
+	background: var(--le-color-backgroundTwo);
 	cursor: pointer;
 	transition: all 0.1s ease-in-out;
 
-	.le-source--icon {
-		margin-right: 6px;
-	}
+	gap: unit(1);
 
 	&:hover {
-		color: $color-variant-primary;
-		border-color: $color-variant-primary;
+		color: var(--le-color-primary);
+		border-color: var(--le-color-primary);
 		background: rgba(#afafaf, 0.15);
 	}
 }

@@ -10,8 +10,8 @@ const TableHeader = ({
 	gridTemplateColumns,
 	customHeaderClass,
 	customHeaderStyles,
-	variant,
-	size,
+	variant = "default",
+	size = "medium",
 	sortFn,
 }: TableHeaderProps) => {
 	const [filters, setFilters] = useState<TableFilter[]>([]);

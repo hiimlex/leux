@@ -1,3 +1,4 @@
+import React from "react";
 import { ReactComponent as AvatarMD } from "./avatar.md";
 import { avatarAttr } from "./AvatarAttributes";
 

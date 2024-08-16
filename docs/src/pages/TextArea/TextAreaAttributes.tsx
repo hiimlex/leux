@@ -2,6 +2,7 @@ import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } fr
 import { ChangeEvent, useState } from "react";
 import { Button, TextArea, TextAreaProps, Typography } from "../../../../src";
 import { attributes as textAreaAttr } from "./textarea.md";
+import React from "react";
 
 const TextAreaImportPreview = () => (
 	<LeHighlighter code={`import { TextArea, TextAreaProps } from "leux";`} language="tsx" />

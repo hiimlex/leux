@@ -2,6 +2,7 @@ import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } fr
 import { useEffect, useRef, useState } from "react";
 import { Button, Radio, RadioProps, Typography } from "../../../../src";
 import { attributes as radioAttr } from "./radio.md";
+import React from "react";
 
 const RadioImportPreview = () => {
 	return (
@@ -233,7 +234,7 @@ const Component = () => (
 		height: 12px;
 		border-radius: 50%;
 		z-index: 1;
-		border: 1px solid $color-variant-default;
+		border: 1px solid var(--le-color-border);
 	}
 
 	&:hover::before {
@@ -280,7 +281,7 @@ const RadioStatePreview = () => {
 	return (
 		<>
 			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
-				<Button theme={!disabled ? "primary" : "danger"} onClick={handleDisableRadio}>
+				<Button colorScheme={!disabled ? "primary" : "danger"} onClick={handleDisableRadio}>
 					{!disabled ? "on" : "off"}
 				</Button>
 				<div style={{ display: "flex", alignItems: "center", marginTop: 12 }}>
@@ -298,7 +299,7 @@ const RadioStatePreview = () => {
 				<LeHighlighter
 					code={`const Component = () => (
 	<>
-		<Button theme={!disabled ? "primary" : "danger"} onClick={handleDisableRadio}>
+		<Button colorScheme={!disabled ? "primary" : "danger"} onClick={handleDisableRadio}>
 			{!disabled ? "on" : "off"}
 		</Button>
 		<Radio

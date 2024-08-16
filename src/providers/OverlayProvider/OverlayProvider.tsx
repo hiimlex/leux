@@ -29,11 +29,11 @@ const combineProviders = (
 	);
 };
 
-const OverlayProvider = ({
+const OverlayProvider: React.FC<OverlayProviderProps> = ({
 	children,
 	ModalProviderProps,
 	ToastProviderProps,
-}: OverlayProviderProps) => {
+}) => {
 	const CombinedProviders = useMemo(
 		() =>
 			combineProviders([ModalProvider, ToastProvider], {

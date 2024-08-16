@@ -6,7 +6,7 @@ The Modal component is a dialog that appears on top of the main window. It is us
 
 <br />
 
-#### Import
+##### Import
 
 <div>
 <ModalImportPreview>
@@ -15,7 +15,7 @@ The Modal component is a dialog that appears on top of the main window. It is us
 
 <br />
 
-#### Usage
+##### Usage
 
 Use the `useModal` hook to open a Modal component.
 
@@ -26,20 +26,15 @@ Use the `useModal` hook to open a Modal component.
 
 <br />
 
-#### onClose, onOK and onCancel
+##### onClose, onOK and onCancel
 
 The Modal component has three props that you can use to handle actions of the Modal component the `onClose`, `onOK` and `onCancel`.
 
 The `onOk` and `onCancel` will only be called if the Modal component has footer buttons with `ok` and `cancel` props. The `onClose` will be called after the modal close.
 
-<div>
-<ModalActionsPreview>
-</ModalActionsPreview>
-</div>
-
 <br />
 
-#### Styling
+##### Styling
 
 Use the `top`, `left` and `right` props to position and size the Modal component. By using this props the Modal position will be set as `fixed`.
 

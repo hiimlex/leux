@@ -3,7 +3,7 @@ import { LeClassNamesArray } from "../../types";
 import { BoxProps } from "./Box.model";
 import "./Box.scss";
 
-const Box = ({
+const Box: React.FC<BoxProps> = ({
 	width,
 	children,
 	padding,
@@ -43,10 +43,10 @@ const Box = ({
 
 	const classNames: LeClassNamesArray = {
 		leBox: () => [
-			bgColor ? `le-color-bg--${bgColor}` : "",
+			bgColor ? `le-bg-${bgColor}` : "",
 			customClass || "",
 			centered ? `le-box--centered` : "",
-			textColor ? `le-color-text--${textColor}` : "",
+			textColor ? `le-color-${textColor}` : "",
 		],
 	};
 

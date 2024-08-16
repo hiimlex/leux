@@ -10,6 +10,7 @@ import {
 	Typography,
 } from "../../../../src";
 import { useState } from "react";
+import React from "react";
 
 const SkeletonImportPreview = () => (
 	<LeHighlighter code={`import { Skeleton, SkeletonProps } from "leux";`} language="tsx" />
@@ -30,10 +31,10 @@ const SkeletonVariantPreview = () => {
 					<Button
 						onClick={handleShow}
 						customStyles={{ marginRight: 12 }}
-						theme="primary"
-						variant={show ? "filled" : "outlined"}
+						colorScheme="primary"
+						variant={show ? "outlined" : "filled"}
 					>
-						{show ? "show" : "hide"}
+						{show ? "show content" : "hide content"}
 					</Button>
 				</Box>
 				<Box
@@ -77,7 +78,7 @@ const SkeletonVariantPreview = () => {
 				<Button
 					onClick={handleShow}
 					customStyles={{ marginRight: 12 }}
-					theme="primary"
+					colorScheme="primary"
 					variant={show ? "filled" : "outlined"}
 				>
 					{show ? "show" : "hide"}
@@ -133,7 +134,7 @@ const SkeletonSizePreview = () => {
 					<Button
 						onClick={() => handleSize("small")}
 						customStyles={{ marginRight: 12 }}
-						theme="primary"
+						colorScheme="primary"
 						variant={size === "small" ? "filled" : "outlined"}
 					>
 						small
@@ -141,7 +142,7 @@ const SkeletonSizePreview = () => {
 					<Button
 						onClick={() => handleSize("medium")}
 						customStyles={{ marginRight: 12 }}
-						theme="primary"
+						colorScheme="primary"
 						variant={size === "medium" ? "filled" : "outlined"}
 					>
 						medium
@@ -149,7 +150,7 @@ const SkeletonSizePreview = () => {
 					<Button
 						onClick={() => handleSize("large")}
 						customStyles={{ marginRight: 12 }}
-						theme="primary"
+						colorScheme="primary"
 						variant={size === "large" ? "filled" : "outlined"}
 					>
 						large
@@ -162,7 +163,7 @@ const SkeletonSizePreview = () => {
 					justifyContent="space-between"
 					width="100%"
 				>
-					<Skeleton active show size={size} width="100%">
+					<Skeleton size={size} width="100%">
 						<Typography
 							variant="body-1"
 							customStyles={{
@@ -189,7 +190,7 @@ const SkeletonSizePreview = () => {
 				<Button
 					onClick={() => handleSize("small")}
 					customStyles={{ marginRight: 12 }}
-					theme="primary"
+					colorScheme="primary"
 					variant={size === "small" ? "filled" : "outlined"}
 				>
 					small
@@ -197,7 +198,7 @@ const SkeletonSizePreview = () => {
 				<Button
 					onClick={() => handleSize("medium")}
 					customStyles={{ marginRight: 12 }}
-					theme="primary"
+					colorScheme="primary"
 					variant={size === "medium" ? "filled" : "outlined"}
 				>
 					medium
@@ -205,7 +206,7 @@ const SkeletonSizePreview = () => {
 				<Button
 					onClick={() => handleSize("large")}
 					customStyles={{ marginRight: 12 }}
-					theme="primary"
+					colorScheme="primary"
 					variant={size === "large" ? "filled" : "outlined"}
 				>
 					large
@@ -255,11 +256,15 @@ const SkeletonRowsPreview = () => {
 						state={{ disabled: rows === 5 }}
 						onClick={() => handleRows(+1)}
 						customStyles={{ marginRight: 12 }}
-						theme="primary"
+						colorScheme="primary"
 					>
 						+
 					</Button>
-					<Button state={{ disabled: rows === 1 }} onClick={() => handleRows(-1)} theme="danger">
+					<Button
+						state={{ disabled: rows === 1 }}
+						onClick={() => handleRows(-1)}
+						colorScheme="danger"
+					>
 						-
 					</Button>
 				</Box>
@@ -294,11 +299,11 @@ const SkeletonRowsPreview = () => {
 					state={{ disabled: rows === 5 }}
 					onClick={() => handleRows(+1)}
 					customStyles={{ marginRight: 12 }}
-					theme="primary"
+					colorScheme="primary"
 				>
 					+
 				</Button>
-				<Button state={{ disabled: rows === 1 }} onClick={() => handleRows(-1)} theme="danger">
+				<Button state={{ disabled: rows === 1 }} onClick={() => handleRows(-1)} colorScheme="danger">
 					-
 				</Button>
 			</Box>
@@ -326,65 +331,29 @@ const SkeletonRowsPreview = () => {
 
 const SkeletonActivePreview = () => {
 	const [showCode, setShowCode] = useState<boolean>(false);
-	const [active, setActive] = useState(false);
-
-	const handleActive = () => {
-		setActive((curr) => !curr);
-	};
+	const [active, setActive] = useState(true);
 
 	return (
 		<>
 			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
-				<Box flex flexDirection="row">
-					<Button onClick={handleActive} theme="primary" variant={active ? "filled" : "outlined"}>
-						{active ? "active" : "inactive"}
-					</Button>
-				</Box>
-				<Box
-					flex
-					flexDirection="row"
-					alignItems="center"
-					justifyContent="space-between"
-					width="100%"
-				>
-					<Skeleton active={active} show variant="paragraph">
-						<Typography variant="body-1">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						</Typography>
-					</Skeleton>
-				</Box>
+				<Skeleton active={active} show variant="paragraph">
+					<Typography variant="body-1">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					</Typography>
+				</Skeleton>
 			</LePreview>
 			{showCode && (
 				<LeHighlighter
 					language="tsx"
 					code={`const Component = () => {
 	const [active, setActive] = useState(false);
-
-	const handleActive = () => {
-		setActive((curr) => !curr);
-	};
 					
 	return (
-		<Box flex flexDirection="column">
-			<Box flex flexDirection="row">
-				<Button onClick={handleActive} theme="primary" variant={active ? "filled" : "outlined"}>
-					{active ? "active" : "inactive"}
-				</Button>
-			</Box>
-			<Box
-				flex
-				flexDirection="row"
-				alignItems="center"
-				justifyContent="space-between"
-				width="100%"
-			>
-				<Skeleton active={active} show variant="paragraph">
-					<Typography variant="body-1">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					</Typography>
-				</Skeleton>
-			</Box>
-		</Box>
+		<Skeleton active={active} show variant="paragraph">
+			<Typography variant="body-1">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit.
+			</Typography>
+		</Skeleton>
 	)
 };`}
 				/>

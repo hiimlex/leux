@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 import { Button } from "./Button";
 
@@ -15,7 +15,7 @@ describe("Button component test", () => {
 
 	it("should render a Outlined Secondary Button component", () => {
 		const { getByTestId } = render(
-			<Button theme="secondary" variant="outlined" size="large">
+			<Button colorScheme="secondary" variant="outlined" size="large">
 				Secondary Button
 			</Button>
 		);
@@ -35,7 +35,7 @@ describe("Button component test", () => {
 		const { getByTestId } = render(<Button children="Increment" onClick={cb} />);
 
 		const button = getByTestId("leuxButton");
-		button.click();
+		fireEvent.click(button);
 
 		expect(testIncrement).toBe(1);
 	});
@@ -55,5 +55,16 @@ describe("Button component test", () => {
 		button.click();
 
 		expect(testIncrement).toBe(0);
+	});
+
+	it("should create a Button with custom class and styles", () => {
+		const { getByTestId } = render(
+			<Button children="Custom Button" customClass="custom-class" customStyles={{ color: "red" }} />
+		);
+
+		const button = getByTestId("leuxButton");
+
+		expect(button).toHaveClass("custom-class");
+		expect(button).toHaveStyle("color: red");
 	});
 });

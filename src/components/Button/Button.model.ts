@@ -1,6 +1,6 @@
 import { MouseEvent } from "react";
 
-type ButtonThemes = "primary" | "secondary" | "success" | "danger" | "warning" | "default";
+type ButtonColorScheme = "primary" | "secondary" | "success" | "danger" | "warning" | "default";
 type ButtonVariants = "filled" | "outlined" | "ghost";
 type ButtonTypes = "submit" | "reset" | "button";
 type ButtonSizes = "small" | "medium" | "large";
@@ -10,7 +10,7 @@ interface ButtonState {
 }
 
 interface ButtonProps {
-	theme?: ButtonThemes;
+	colorScheme?: ButtonColorScheme;
 	variant?: ButtonVariants;
 	type?: ButtonTypes;
 	size?: ButtonSizes;
@@ -22,4 +22,4 @@ interface ButtonProps {
 	buttonProps?: React.ButtonHTMLAttributes<HTMLButtonElement>;
 }
 
-export { ButtonProps, ButtonVariants, ButtonThemes, ButtonState, ButtonSizes, ButtonTypes };
+export { ButtonProps, ButtonVariants, ButtonColorScheme, ButtonState, ButtonSizes, ButtonTypes };

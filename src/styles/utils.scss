@@ -1,0 +1,220 @@
+@import "./variables.scss";
+
+h1 {
+	font-size: 2.5rem;
+	line-height: 3rem;
+	font-weight: bold;
+	letter-spacing: -1.5px;
+	margin: 1rem 0;
+}
+
+h2 {
+	font-size: 2rem;
+	line-height: 2.5rem;
+	font-weight: 600;
+	letter-spacing: -0.5px;
+	margin: 0.875rem 0;
+}
+
+h3 {
+	font-size: 1.75rem;
+	line-height: 2.25rem;
+	font-weight: 500;
+	letter-spacing: 0;
+	margin: 0.75rem 0;
+}
+
+h4 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+	font-weight: 500;
+	letter-spacing: 0.25px;
+	margin: 0.625rem 0;
+}
+
+h5 {
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+	font-weight: 500;
+	letter-spacing: 0;
+	margin: 0.5rem 0;
+}
+
+h6 {
+	font-size: 1rem;
+	line-height: 1.5rem;
+	font-weight: 400;
+	letter-spacing: 0.15px;
+	margin: 0.375rem 0;
+}
+
+p {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	font-weight: 400;
+	letter-spacing: 0.5px;
+	margin: 0.225rem 0;
+}
+
+.le-text-link {
+	cursor: pointer;
+}
+
+@each $typography, $values in $text-typography {
+	.le-text-#{$typography} {
+		font-size: nth($values, 1);
+		font-weight: nth($values, 2);
+		letter-spacing: nth($values, 3);
+
+		@if $typography == "button" {
+			text-transform: uppercase;
+		}
+
+		@if $typography == "overline" {
+			text-transform: uppercase;
+		}
+	}
+}
+
+@each $justify in $justify-classes {
+	.le-justify-#{$justify} {
+		justify-content: $justify;
+	}
+}
+
+@each $index in $units-arr {
+	.le-p-#{$index} {
+		padding: unit($index);
+	}
+
+	.le-gap-#{$index} {
+		gap: unit($index);
+	}
+
+	.le-pt-#{$index} {
+		padding-top: unit($index);
+	}
+
+	.le-pr-#{$index} {
+		padding-right: unit($index);
+	}
+
+	.le-pb-#{$index} {
+		padding-bottom: unit($index);
+	}
+
+	.le-pl-#{$index} {
+		padding-left: unit($index);
+	}
+
+	.le-m-#{$index} {
+		margin: unit($index);
+	}
+
+	.le-mt-#{$index} {
+		margin-top: unit($index);
+	}
+
+	.le-mr-#{$index} {
+		margin-right: unit($index);
+	}
+
+	.le-mb-#{$index} {
+		margin-bottom: unit($index);
+	}
+
+	.le-ml-#{$index} {
+		margin-left: unit($index);
+	}
+
+	.le-inset-#{$index} {
+		top: unit($index);
+		right: unit($index);
+		bottom: unit($index);
+		left: unit($index);
+	}
+
+	.le-it-#{$index} {
+		top: unit($index);
+	}
+
+	.le-ir-#{$index} {
+		right: unit($index);
+	}
+
+	.le-ib-#{$index} {
+		bottom: unit($index);
+	}
+
+	.le-il-#{$index} {
+		left: unit($index);
+	}
+
+	.le-border-#{$index} {
+		border-radius: unit($index);
+	}
+}
+
+:root {
+	@each $index in $units-arr {
+		--le-unit-#{$index}: #{unit($index)};
+	}
+}
+
+.le-flex {
+	display: flex;
+}
+
+$directions: (
+	row: row,
+	row-reverse: row-reverse,
+	column: column,
+	column-reverse: column-reverse,
+);
+
+@each $direction, $value in $directions {
+	.le-flex-#{$direction} {
+		flex-direction: $value;
+	}
+}
+
+$wraps: (
+	nowrap: nowrap,
+	wrap: wrap,
+	wrap-reverse: wrap-reverse,
+);
+
+@each $wrap, $value in $wraps {
+	.le-flex-#{$wrap} {
+		flex-wrap: $value;
+	}
+}
+
+$justifies: (
+	start: flex-start,
+	end: flex-end,
+	center: center,
+	space-between: space-between,
+	space-around: space-around,
+	space-evenly: space-evenly,
+);
+
+@each $justify, $value in $justifies {
+	.le-justify-#{$justify} {
+		justify-content: $value;
+	}
+}
+
+$aligns: (
+	start: flex-start,
+	end: flex-end,
+	center: center,
+	baseline: baseline,
+	stretch: stretch,
+);
+
+@each $align, $value in $aligns {
+	.le-align-#{$align} {
+		align-items: $value;
+	}
+}

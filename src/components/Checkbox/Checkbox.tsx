@@ -2,7 +2,7 @@ import React from "react";
 import { CheckboxProps } from "./Checkbox.model";
 import "./Checkbox.scss";
 
-const Checkbox = ({
+const Checkbox: React.FC<CheckboxProps> = ({
 	fieldKey,
 	label,
 	size = "medium",
@@ -18,7 +18,7 @@ const Checkbox = ({
 	customLabelStyles,
 	checkBoxProps,
 	checkboxRef,
-}: CheckboxProps) => {
+}) => {
 	const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		if (onChange) {
 			onChange(e);

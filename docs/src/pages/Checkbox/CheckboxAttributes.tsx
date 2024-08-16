@@ -1,5 +1,5 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
-import { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { Button, Checkbox, CheckboxProps } from "../../../../src";
 import { attributes as checkboxAttr } from "./checkbox.md";
 
@@ -92,53 +92,6 @@ const CheckboxSizePreview = () => {
 	);
 };
 
-const CheckboxCustomPreview = () => {
-	const [showCode, setShowCode] = useState<boolean>(false);
-
-	return (
-		<>
-			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Checkbox
-					fieldKey="customCheckbox"
-					label="custom"
-					customStyles={{
-						textDecoration: "underline",
-						color: "red",
-					}}
-					customLabelClass="le-text--overline"
-					customLabelStyles={{
-						color: "blue",
-						cursor: "pointer",
-					}}
-					customInputStyles={{
-						cursor: "pointer",
-					}}
-				/>
-			</LePreview>
-			{showCode && (
-				<LeHighlighter
-					code={`const Component = () => (
-	<Checkbox
-		fieldKey="custom"
-		label="Custom"
-		customStyles={{
-			textDecoration: "underline",
-			color: "red",
-		}}
-		customLabelClass="le-text--overline"
-		customLabelStyles={{
-			color: "blue",
-			cursor: "pointer",
-		}}
-	/>
-);`}
-					language="tsx"
-				/>
-			)}
-		</>
-	);
-};
-
 const CheckboxStatePreview = () => {
 	const [showCode, setShowCode] = useState<boolean>(false);
 	const [disabled, setDisabled] = useState<boolean>(false);
@@ -150,7 +103,7 @@ const CheckboxStatePreview = () => {
 	return (
 		<>
 			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
-				<Button onClick={handleDisableCheckbox} theme={!disabled ? "primary" : "danger"}>
+				<Button onClick={handleDisableCheckbox} colorScheme={!disabled ? "primary" : "danger"}>
 					{!disabled ? "on" : "off"}
 				</Button>
 				<Checkbox
@@ -171,7 +124,7 @@ const CheckboxStatePreview = () => {
 
 	return (
 		<>
-			<Button onClick={handleDisableCheckbox} theme={!disabled ? "primary" : "danger"}>
+			<Button onClick={handleDisableCheckbox} colorScheme={!disabled ? "primary" : "danger"}>
 				{!disabled ? "on" : "off"}
 			</Button>
 			<Checkbox
@@ -270,7 +223,6 @@ checkboxAttr["LeHighlighter"] = LeHighlighter;
 checkboxAttr["CheckboxImportPreview"] = CheckboxImportPreview;
 checkboxAttr["CheckboxActionPreview"] = CheckboxActionPreview;
 checkboxAttr["CheckboxSizePreview"] = CheckboxSizePreview;
-checkboxAttr["CheckboxCustomPreview"] = CheckboxCustomPreview;
 checkboxAttr["CheckboxStatePreview"] = CheckboxStatePreview;
 checkboxAttr["CheckboxFieldKeyPreview"] = CheckboxFieldKeyPreview;
 checkboxAttr["CheckboxApiTable"] = CheckboxApiTable;

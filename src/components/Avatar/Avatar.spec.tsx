@@ -47,7 +47,7 @@ describe("Avatar component test", () => {
 		const { getByTestId } = render(
 			<Avatar
 				src="test text"
-				customClass="le-color-bg--primary"
+				customClass="le-bg-primary"
 				customStyles={{ width: "52px", height: "52px" }}
 				asText
 			/>
@@ -56,6 +56,6 @@ describe("Avatar component test", () => {
 		const avatar = getByTestId("leuxAvatar");
 
 		expect(avatar).toHaveStyle("width: 52px; height: 52px;");
-		expect(avatar).toHaveClass("le-color-bg--primary");
+		expect(avatar).toHaveClass("le-bg-primary");
 	});
 });

@@ -10,6 +10,7 @@ import {
 import { useState } from "react";
 import { Typography, TypographyProps } from "../../../../src";
 import { attributes as typographyAttr } from "./typography.md";
+import React from "react";
 
 const ImportPreview = () => {
 	return (
@@ -71,7 +72,7 @@ const TypographyCustomPreview = () => {
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Typography
 					variant="body-1"
-					customClass="le-color-text--danger"
+					customClass="le-color-danger"
 					customStyles={{ fontWeight: "bold" }}
 				>
 					Custom CSS

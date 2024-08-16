@@ -39,7 +39,7 @@ describe("Badge component test", () => {
 
 	it("should render a Badge component with custom styles", () => {
 		const { getByTestId } = render(
-			<Badge children="test" customClass="le-color-bg--primary" customStyles={{ padding: 0 }} />
+			<Badge children="test" customClass="le-bg-primary" customStyles={{ padding: 0 }} />
 		);
 
 		const badge = getByTestId("leuxBadge");

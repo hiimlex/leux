@@ -4,7 +4,7 @@ import { PaginationProps } from "./Pagination.model";
 import { Button } from "../Button";
 import "./Pagination.scss";
 
-const Pagination = ({
+const Pagination: React.FC<PaginationProps> = ({
 	currentPage,
 	itemsPerPage,
 	onPageChange,
@@ -21,7 +21,7 @@ const Pagination = ({
 	customClass,
 	size = "medium",
 	simplePagination = true,
-}: PaginationProps) => {
+}) => {
 	const classNames: LeClassNames = {
 		pagination: ({ customClass, size }) =>
 			`le-pagination le-pagination--${size} ${customClass || ""}`,
@@ -54,7 +54,7 @@ const Pagination = ({
 					{paginationButtons.previous && (
 						<Button
 							state={{ disabled: currentPage - 1 === 0 }}
-							theme="default"
+							colorScheme="default"
 							variant="outlined"
 							size={size}
 							onClick={() => onPageChange && onPageChange(currentPage - 1)}
@@ -74,7 +74,7 @@ const Pagination = ({
 									key={index}
 									customClass={classNames["paginationButton"]()}
 									variant={currentPage === pageNumber ? "filled" : "outlined"}
-									theme={currentPage === pageNumber ? "primary" : "default"}
+									colorScheme={currentPage === pageNumber ? "primary" : "default"}
 									size={size}
 									onClick={() => onPageChange && onPageChange(pageNumber)}
 								>
@@ -111,7 +111,7 @@ const Pagination = ({
 					{paginationButtons.next && (
 						<Button
 							state={{ disabled: currentPage + 1 > totalPages }}
-							theme="default"
+							colorScheme="default"
 							variant="outlined"
 							size={size}
 							onClick={() => onPageChange && onPageChange(currentPage + 1)}

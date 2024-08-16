@@ -3,14 +3,14 @@ import { TooltipProps } from "./Tooltip.model";
 import "./Tooltip.scss";
 import { LeClassNames } from "../../types";
 
-const Tooltip = ({
+const Tooltip: React.FC<TooltipProps> = ({
 	children,
 	title,
 	direction = "top",
 	customClass,
 	customStyles,
 	theme = "default",
-}: TooltipProps) => {
+}) => {
 	const [showTooltip, setShowTooltip] = useState(false);
 
 	const classNames: LeClassNames = {

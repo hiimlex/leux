@@ -560,6 +560,13 @@
 			cursor: help;
 		}
 	}
+
+	&--dark {
+		.language-tsx,
+		#text {
+			color: var(--le-color-textOne) !important;
+		}
+	}
 }
 
 @keyframes leuxHighlighterAnimation {

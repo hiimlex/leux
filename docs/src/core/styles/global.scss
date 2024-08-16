@@ -1,16 +1,20 @@
+@import "./variables.scss";
+
 body {
-	overflow: hidden;
-	overflow-y: scroll;
 	font-family: "Poppins", sans-serif;
-}
-
-input,
-select,
-textarea,
-button {
-	font-family: "Poppins", sans-serif;
-}
-
-html {
+	background: var(--le-color-backgroundOne);
+	color: var(--le-color-textOne);
 	scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--le-color-border);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--le-color-border);
 }

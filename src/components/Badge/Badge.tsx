@@ -2,14 +2,14 @@ import React from "react";
 import { BadgeProps } from "./Badge.model";
 import "./Badge.scss";
 
-const Badge = ({
+const Badge: React.FC<BadgeProps> = ({
 	variant = "ghost",
 	theme = "default",
 	children,
 	size = "medium",
 	customStyles,
 	customClass,
-}: BadgeProps) => {
+}) => {
 	return (
 		<span
 			className={`le-badge${variant ? ` le-badge--${variant}` : ""}${
