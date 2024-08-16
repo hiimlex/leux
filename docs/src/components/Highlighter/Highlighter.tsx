@@ -1,13 +1,12 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdOutlineContentCopy } from "react-icons/md";
 import Refractor from "react-refractor";
 import bash from "refractor/lang/bash";
 import jsx from "refractor/lang/jsx";
-import tsx from "refractor/lang/tsx";
 import scss from "refractor/lang/scss";
+import tsx from "refractor/lang/tsx";
+import { useTheme } from "../../../../src";
 import "./Highlighter.scss";
-import React from "react";
-import { useTheme, ThemeContext } from "../../../../src";
 
 interface HighlighterProps {
 	code: string;
