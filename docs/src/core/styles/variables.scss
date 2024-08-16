@@ -15,10 +15,13 @@ $color-variant-warning-hover: #ffc233;
 $color-variant-default-hover: #b3b9c6;
 $color-variant-border-hover: #d8dce8;
 
-$color-dark-text: #3a3a3a;
+$color-dark-text: #4a4a4a;
 $color-darker-text: #2a2a2a;
-$color-light-text: #efefef;
+$color-light-text: #dfdfdf;
 $color-lighter-text: #ffffff;
+
+$color-lighter-background: #ffffff;
+$color-light-background: #f9f9f9;
 
 $color-placeholder-text: #989ba7;
 
@@ -58,3 +61,10 @@ $text-colors: (
 );
 
 $justify-classes: (flex-start, center, flex-end, space-between, space-around);
+$unit: 6px;
+
+$units: (1, 2, 3, 4, 5, 6, 7, 8);
+
+@function unit($value) {
+	@return $value * $unit;
+}

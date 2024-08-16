@@ -5,7 +5,7 @@ import "./Header.scss";
 import { version } from "../../../../package.json";
 import LeSearch from "../Search";
 
-const Header = () => {
+const Header: React.FC = () => {
 	const { breakpoint } = useBreakpoint();
 
 	return (

@@ -28,18 +28,8 @@
 
 	&--content {
 		display: flex;
-
-		.le-badge {
-			margin: 0 6px;
-		}
-
-		.le-input {
-			margin: 6px 0;
-		}
-
-		.le-select {
-			margin: 6px 0;
-		}
+		flex-wrap: wrap;
+		gap: unit(2);
 
 		&-column {
 			flex-direction: column;

@@ -1,0 +1,114 @@
+@import "./variables.scss";
+
+@each $color, $value in $variant-colors {
+	.le-color-text--#{$color} {
+		color: $value;
+	}
+}
+
+@each $color, $value in $variant-colors {
+	.le-color-bg--#{$color} {
+		background: $value;
+	}
+}
+
+@each $color, $value in $text-colors {
+	.le-color-text--#{$color} {
+		color: $value;
+	}
+}
+
+@each $typography, $values in $text-typography {
+	.le-text--#{$typography} {
+		font-size: nth($values, 1);
+		font-weight: nth($values, 2);
+		letter-spacing: nth($values, 3);
+
+		@if $typography == "button" {
+			text-transform: uppercase;
+		}
+
+		@if $typography == "overline" {
+			text-transform: uppercase;
+		}
+	}
+}
+
+@each $justify in $justify-classes {
+	.le-justify-content--#{$justify} {
+		justify-content: $justify;
+	}
+}
+
+@each $index in $units {
+	.le-padding-#{$index} {
+		padding: $index * $unit;
+	}
+
+	.le-gap-#{$index} {
+		gap: $index * $unit;
+	}
+
+	.le-padding-top-#{$index} {
+		padding-top: $index * $unit;
+	}
+
+	.le-padding-right-#{$index} {
+		padding-right: $index * $unit;
+	}
+
+	.le-padding-bottom-#{$index} {
+		padding-bottom: $index * $unit;
+	}
+
+	.le-padding-left-#{$index} {
+		padding-left: $index * $unit;
+	}
+
+	.le-margin-#{$index} {
+		margin: $index * $unit;
+	}
+
+	.le-margin-top-#{$index} {
+		margin-top: $index * $unit;
+	}
+
+	.le-margin-right-#{$index} {
+		margin-right: $index * $unit;
+	}
+
+	.le-margin-bottom-#{$index} {
+		margin-bottom: $index * $unit;
+	}
+
+	.le-margin-left-#{$index} {
+		margin-left: $index * $unit;
+	}
+
+	.le-inset-#{$index} {
+		top: $index * $unit;
+		right: $index * $unit;
+		bottom: $index * $unit;
+		left: $index * $unit;
+	}
+
+	.le-inset-top-#{$index} {
+		top: $index * $unit;
+	}
+
+	.le-inset-right-#{$index} {
+		right: $index * $unit;
+	}
+
+	.le-inset-bottom-#{$index} {
+		bottom: $index * $unit;
+	}
+
+	.le-inset-left-#{$index} {
+		left: $index * $unit;
+	}
+
+	.le-border-radius-#{$index} {
+		border-radius: $index * $unit;
+	}
+}
