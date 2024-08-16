@@ -57,14 +57,14 @@ describe("Button component test", () => {
 		expect(testIncrement).toBe(0);
 	});
 
-	it('should create a Button with custom class and styles', () => {
+	it("should create a Button with custom class and styles", () => {
 		const { getByTestId } = render(
-			<Button children="Custom Button" customClass="custom-class" customStyles={{ color: 'red' }} />
+			<Button children="Custom Button" customClass="custom-class" customStyles={{ color: "red" }} />
 		);
 
-		const button = getByTestId('leuxButton');
+		const button = getByTestId("leuxButton");
 
-		expect(button).toHaveClass('custom-class');
-		expect(button).toHaveStyle('color: red');
-	})
+		expect(button).toHaveClass("custom-class");
+		expect(button).toHaveStyle("color: red");
+	});
 });

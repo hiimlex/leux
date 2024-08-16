@@ -1,7 +1,7 @@
 import React from "react";
 import { GridProps } from "./Grid.model";
 
-const Grid: React.FC<GridProps>  = ({
+const Grid: React.FC<GridProps> = ({
 	rows,
 	cols,
 	gap,

@@ -50,7 +50,6 @@ Use the `size` prop to change the badge size.
 
 <br/>
 
-
 ### API Reference
 
 <div>

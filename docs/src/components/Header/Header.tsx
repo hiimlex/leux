@@ -20,7 +20,6 @@ const Header: React.FC = () => {
 		<header className="le-app-header">
 			<div className={"le-app-header--content" + ` le-app-header--content--${breakpoint}`}>
 				<div className="le-logo">
-				
 					<div className="le-logo--minimal">
 						<svg
 							width="32"

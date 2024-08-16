@@ -50,7 +50,6 @@ Use the `size` prop to change the avatar size.
 
 <br/>
 
-
 ### API Reference
 
 <div>

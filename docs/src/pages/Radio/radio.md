@@ -59,7 +59,6 @@ Use the `state` prop to change the state of the radio button.
 
 <br />
 
-
 ### API Reference
 
 <div>

@@ -42,7 +42,6 @@ The Box component can be used to create a grid layout. Check <NavLink to="/layou
 
 <br/>
 
-
 ### API Reference
 
 <div>

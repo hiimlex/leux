@@ -55,11 +55,7 @@ The `ThemeProvider` is a React component that provides theme management for your
 The `ThemeProvider` component maintains the available themes and the currently selected theme in its state.
 When the theme changes, the component updates the CSS variables on the document to apply the appropriate colors globally.
 
-
 The context value provided by `ThemeProvider` includes the current theme and methods to change the theme.
-
-
-
 
 <br/>
 

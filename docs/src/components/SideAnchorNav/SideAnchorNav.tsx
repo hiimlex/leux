@@ -79,9 +79,7 @@ const SideAnchorNav = () => {
 							key={index}
 							to={href}
 							offset={-95}
-							className={
-								"le-anchor-link le-text-body-1" + (activeAnchor === href ? " active" : "")
-							}
+							className={"le-anchor-link le-text-body-1" + (activeAnchor === href ? " active" : "")}
 						>
 							{label}
 						</Link>

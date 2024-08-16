@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { LeClassNames } from "../../types";
 import { Spinner } from "../Spinner";
-import { TableBodyProps, TableProps, TableSizes, TableVariants } from "./Table.model";
+import { TableBodyProps, TableProps } from "./Table.model";
 
 import "./Table.scss";
 import { TableHeader } from "./TableHeader";

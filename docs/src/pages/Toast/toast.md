@@ -81,7 +81,6 @@ Use the `onClose` prop to set a callback when the Toast component is closed.
 
 <br />
 
-
 ### Api Reference
 
 #### ToastProps

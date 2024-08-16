@@ -48,7 +48,7 @@ export default [
 			}),
 			typescript({
 				tsconfig: "./tsconfig.json",
-				include: ["src/**/*"],
+				include: ["src/**/*", "*.scss"],
 				exclude: ["docs", "dist", "node_modules", ".vscode", ".storybook"],
 			}),
 			resolve(),

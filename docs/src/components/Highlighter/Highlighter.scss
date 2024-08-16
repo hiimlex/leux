@@ -5,8 +5,6 @@
 
 	animation: leuxHighlighterAnimation 0.2s ease-in-out forwards;
 
-
-
 	&--dracula {
 		.le-highlighter--copy {
 			position: absolute;
@@ -564,7 +562,8 @@
 	}
 
 	&--dark {
-		.language-tsx, #text {
+		.language-tsx,
+		#text {
 			color: var(--le-color-textOne) !important;
 		}
 	}

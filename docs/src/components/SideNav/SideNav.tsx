@@ -10,9 +10,9 @@ export interface ILink {
 
 export const LINKS: Record<string, ILink[]> = {
 	"Getting Started": [
-		{ name: "Overview", path: RoutesPath.Overview},
+		{ name: "Overview", path: RoutesPath.Overview },
 		{ name: "Installation", path: RoutesPath.Installation },
-		{ name: "Theming", path: RoutesPath.Theming},
+		{ name: "Theming", path: RoutesPath.Theming },
 	],
 	Layout: [
 		{
@@ -48,7 +48,6 @@ export const LINKS: Record<string, ILink[]> = {
 		{ name: "Table", path: RoutesPath.Table },
 		{ name: "Toast", path: RoutesPath.Toast },
 		{ name: "Tooltip", path: RoutesPath.Tooltip },
-		
 	],
 	Loaders: [
 		{ name: "Skeleton", path: RoutesPath.Skeleton },

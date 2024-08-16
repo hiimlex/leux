@@ -37,7 +37,6 @@ Use the `theme` prop to change the spinner theme color.
 
 <br />
 
-
 ### API Reference
 
 <div>

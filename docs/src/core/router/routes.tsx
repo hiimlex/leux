@@ -33,7 +33,6 @@ type LeRoute = {
 	element: JSX.Element;
 };
 
-
 export const routes: LeRoute[] = [
 	{
 		path: RoutesPath.Home,
