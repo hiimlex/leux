@@ -21,8 +21,13 @@ const Box: React.FC<BoxProps> = ({
 	flex,
 	flexDirection,
 	justifyContent,
-}) => {
-	const handleGridSpan:
+	flexGap,
+	inset,
+	insets,
+	margins,
+	paddings,
+}: BoxProps) => {
+	const gridSpanStyles:
 		| {
 				gridRowEnd: React.CSSProperties["gridRowEnd"];
 				gridColumnEnd: React.CSSProperties["gridColumnEnd"];
@@ -45,20 +50,41 @@ const Box: React.FC<BoxProps> = ({
 		],
 	};
 
+	const boxBoundingStyles: React.CSSProperties = useMemo(
+		() => ({
+			top: insets?.all || insets?.horizontal || insets?.top,
+			bottom: insets?.all || insets?.horizontal || insets?.bottom,
+			left: insets?.all || insets?.vertical || insets?.left,
+			right: insets?.all || insets?.vertical || insets?.right,
+			inset,
+			padding,
+			paddingTop: paddings?.all || paddings?.vertical || paddings?.top,
+			paddingBottom: paddings?.all || paddings?.vertical || paddings?.bottom,
+			paddingLeft: paddings?.all || paddings?.horizontal || paddings?.left,
+			paddingRight: paddings?.all || paddings?.horizontal || paddings?.right,
+			margin,
+			marginTop: margins?.all || margins?.vertical || margins?.top,
+			marginBottom: margins?.all || margins?.vertical || margins?.bottom,
+			marginLeft: margins?.all || margins?.horizontal || margins?.left,
+			marginRight: margins?.all || margins?.horizontal || margins?.right,
+			width,
+			height,
+		}),
+		[padding, margin, height, width, paddings, insets, margins]
+	);
+
 	return (
 		<div
 			style={{
-				padding,
-				margin,
-				height,
-				width,
 				borderRadius,
 				display: flex ? "flex" : undefined,
 				justifyContent,
 				alignItems,
 				flexDirection,
 				flexWrap,
-				...handleGridSpan,
+				gap: flexGap,
+				...boxBoundingStyles,
+				...gridSpanStyles,
 				...customStyles,
 			}}
 			className={classNames["leBox"]().join(" ")}

@@ -63,11 +63,11 @@ Use the `size` prop to change the table size.
 
 #### Filters
 
-Use the `order` and `orderFn` props on header to add a order to the Table Header.
+Use the `sort` and `sortFn` props on header to add a order to the Table Header.
 
 <div>
-<TableOrderPreview>
-</TableOrderPreview>
+<TableFiltersPreview>
+</TableFiltersPreview>
 </div>
 
 <br />

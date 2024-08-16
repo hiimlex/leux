@@ -11,10 +11,10 @@ import {
 	TableHeader,
 } from "../../../../src";
 import {
-	TableColumn,
-	TableOrder,
+	TableFilter,
 	TableProps,
 	TableSizes,
+	TableSortFn,
 	TableState,
 	TableVariants,
 } from "../../../../src/components/Table/Table.model";
@@ -291,7 +291,6 @@ const TableSizePreview = () => {
 	return (
 		<>
 			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
-				{tableConfig.columns && tableConfig.columns[0].order}
 				<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
 					<Button
 						theme={tableConfig.size === "small" ? "primary" : "default"}
@@ -376,11 +375,11 @@ const TableSizePreview = () => {
 	);
 };
 
-const TableOrderPreview = () => {
+const TableFiltersPreview = () => {
 	const [showCode, setShowCode] = useState<boolean>(false);
 
-	const orderFn = ({ key, order }: TableColumn) => {
-		getTodos({ key, order: order === "asc" ? "desc" : "asc" });
+	const sortFn: TableSortFn = (tableFilter) => {
+		getTodos(tableFilter);
 	};
 
 	const [tableConfig, setTableConfig] = useState<TableProps>({
@@ -388,39 +387,25 @@ const TableOrderPreview = () => {
 			{
 				header: "#ID",
 				key: "id",
-				order: "asc",
-				orderFn,
+				sortable: true,
 			},
-			{ header: "User ID", key: "userId", order: "asc", orderFn },
-			{ header: "Title", key: "title", order: "asc", orderFn },
+			{ header: "User ID", key: "userId", sortable: true },
+			{ header: "Title", key: "title", sortable: true },
 			{ header: "Completed", key: "completedString" },
 		],
 		rows: [],
 		gridTemplateColumns: "repeat(2, 1fr) 2fr 1fr",
 		variant: "default",
 		size: "medium",
+		sortFn,
 	});
 
-	const getTodos = useCallback(async (sort?: { key: string; order: TableOrder }) => {
+	const getTodos = useCallback(async (filter?: TableFilter) => {
 		try {
 			let url = `https://jsonplaceholder.typicode.com/todos?_limit=10`;
-			let { columns } = tableConfig;
-
-			if (sort && columns) {
-				url = `${url}&_sort=${sort.key}&_order=${sort.order}`;
-
-				columns = columns.map((item) => {
-					if (sort.key === item.key) {
-						item.orderActive = true;
-						item.order = sort.order;
-					} else if (item.key && item.orderActive) {
-						item.orderActive = false;
-					}
-
-					return item;
-				});
+			if (filter && filter.sort) {
+				url = `${url}&_sort=${filter.header}&_order=${filter.sort}`;
 			}
-
 			const response = await axios.get<
 				{
 					userId: number;
@@ -429,16 +414,13 @@ const TableOrderPreview = () => {
 					completed: boolean;
 				}[]
 			>(url);
-
 			const { data } = response;
-
 			if (data && data.length) {
 				const newData = data.map((item) => ({
 					...item,
 					completedString: item.completed ? "Yes" : "No",
 				}));
-
-				setTableConfig((curr) => ({ ...curr, rows: newData, columns }));
+				setTableConfig((curr) => ({ ...curr, rows: newData }));
 			}
 		} catch (error) {
 			console.error(error);
@@ -459,8 +441,8 @@ const TableOrderPreview = () => {
 					code={`import axios from "axios";
 
 const Component = () => {
-	const orderFn = ({ key, order }: TableColumn) => {
-		getTodos({ key, order: order === "asc" ? "desc" : "asc" });
+	const sortFn: TableSortFn = (tableFilter) => {
+		getTodos(tableFilter);
 	};
 
 	const [tableConfig, setTableConfig] = useState<TableProps>({
@@ -479,26 +461,16 @@ const Component = () => {
 		gridTemplateColumns: "repeat(2, 1fr) 2fr 1fr",
 		variant: "default",
 		size: "medium",
+		sortFn,
 	});
 
-	const getTodos = useCallback(async (sort?: { key: string; order: TableOrder }) => {
+	const getTodos = useCallback(async (filter?: TableFilter) => {
 		try {
 			let url = \`https://jsonplaceholder.typicode.com/todos?_limit=10\`;
 			let { columns } = tableConfig;
 
-			if (sort && columns) {
-				url = \`$\{url}&_sort=$\{sort.key}&_order=$\{sort.order}\`;
-
-				columns = columns.map((item) => {
-					if (sort.key === item.key) {
-						item.orderActive = true;
-						item.order = sort.order;
-					} else if (item.key && item.orderActive) {
-						item.orderActive = false;
-					}
-
-					return item;
-				});
+			if (filter && filter.sort) {
+				url = \`$\{url}&_sort=$\{filter.header}&_order=$\{filter.order}\`;
 			}
 
 			const response = await axios.get<
@@ -943,6 +915,9 @@ const TableApiTable = () => {
 		customWrapperStyles: {
 			type: "React.CSSProperties",
 		},
+		sortFn: {
+			type: "(column: TableSortFn) => void",
+		},
 	};
 
 	return <LeApiTable props={props} />;
@@ -955,7 +930,7 @@ tableAttr["TableConfigurationPreview"] = TableConfigurationPreview;
 tableAttr["TableChildrenPreview"] = TableChildrenPreview;
 tableAttr["TableVariantPreview"] = TableVariantPreview;
 tableAttr["TableSizePreview"] = TableSizePreview;
-tableAttr["TableOrderPreview"] = TableOrderPreview;
+tableAttr["TableFiltersPreview"] = TableFiltersPreview;
 tableAttr["TablePaginationPreview"] = TablePaginationPreview;
 tableAttr["TableStatePreview"] = TableStatePreview;
 tableAttr["TableApiTable"] = TableApiTable;

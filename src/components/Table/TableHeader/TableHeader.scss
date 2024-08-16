@@ -1,0 +1,158 @@
+@import "../../../styles/variables.scss";
+
+.le-table--header {
+	display: flex;
+	width: 100%;
+
+	&-row,
+	tr {
+		width: 100%;
+		display: grid !important;
+
+		&-item,
+		th {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: 500;
+
+			&--desc {
+				&::after {
+					content: "";
+					display: inline-block;
+					width: 0;
+					height: 0;
+					margin-left: 0.5rem;
+					vertical-align: middle;
+					border-top: 5px solid $color-dark-text;
+					border-right: 5px solid transparent;
+					border-left: 5px solid transparent;
+				}
+
+				&:hover {
+					cursor: pointer;
+					background: $color-variant-border-hover;
+
+					&::after {
+						opacity: 0.9;
+					}
+				}
+
+				&--active {
+					&::after {
+						border-top-color: $color-variant-primary;
+					}
+
+					&:hover {
+						&::after {
+							border-top-color: $color-variant-primary;
+						}
+					}
+				}
+			}
+
+			&--asc {
+				&::after {
+					content: "";
+					display: inline-block;
+					width: 0;
+					height: 0;
+					margin-left: 0.5rem;
+					vertical-align: middle;
+					border-bottom: 5px solid $color-dark-text;
+					border-right: 5px solid transparent;
+					border-left: 5px solid transparent;
+				}
+
+				&:hover {
+					cursor: pointer;
+					background: $color-variant-border-hover;
+
+					&::after {
+						opacity: 0.9;
+					}
+				}
+
+				&--active {
+					&::after {
+						border-bottom-color: $color-variant-primary;
+					}
+
+					&:hover {
+						&::after {
+							border-bottom-color: $color-variant-primary;
+						}
+					}
+				}
+			}
+
+			&--sortable {
+				transition: all 0.1s ease-in-out;
+
+				&:hover {
+					background: $color-variant-border-hover;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	&-bordered {
+		tr {
+			border: none;
+			background: $color-variant-border;
+			border-radius: 0;
+
+			th {
+				border: none;
+				border-right: 1px solid $color-variant-border-hover;
+				border-bottom: 1px solid $color-variant-border-hover;
+				border-radius: 0 !important;
+				color: $color-dark-text;
+
+				&:last-child {
+					border-right: none;
+				}
+			}
+		}
+	}
+
+	&-default {
+		&-row,
+		tr {
+			background: $color-variant-border;
+			border-radius: 8px;
+
+			&-item,
+			th {
+				border: none;
+				color: $color-dark-text;
+				background: inherit;
+			}
+		}
+	}
+
+	&-small {
+		font-size: 0.75rem;
+
+		tr th {
+			padding: 0.75rem 1rem;
+		}
+	}
+
+	&-medium {
+		font-size: 0.875rem;
+
+		tr th {
+			padding: 1rem 1.5rem;
+		}
+	}
+
+	&-large {
+		font-size: 1rem;
+
+		tr th {
+			padding: 1.25rem 2rem;
+		}
+	}
+}
