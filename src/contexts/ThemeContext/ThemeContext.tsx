@@ -41,7 +41,7 @@ type LeThemeType = {
 } & Record<string, string>;
 
 type LeThemes = "light" | "dark" | (string & {});
-type LeThemeMapper = Record<LeThemes, LeThemeType>;
+type LeThemeMapper = Record<string, LeThemeType>;
 
 type ThemeContextProps = {
 	themes?: LeThemeMapper;
