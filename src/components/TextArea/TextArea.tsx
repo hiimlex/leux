@@ -1,12 +1,8 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { TextAreaProps, TextAreaSizes } from "./TextArea.model";
+import React, { useEffect, useMemo, useState } from "react";
+import { LeClassNamesSimple } from "../../types";
+import { getTextAreaRowHeight } from "../../utils";
+import { TextAreaProps } from "./TextArea.model";
 import "./TextArea.scss";
-
-const sizeRowArr: Record<TextAreaSizes, { rowHeight: number }> = {
-	small: { rowHeight: 1.5 },
-	medium: { rowHeight: 1.75 },
-	large: { rowHeight: 2 },
-};
 
 const TextArea: React.FC<TextAreaProps> = ({
 	fieldKey,
@@ -25,38 +21,31 @@ const TextArea: React.FC<TextAreaProps> = ({
 	textAreaProps,
 	textAreaRef,
 }) => {
+	const classNames: LeClassNamesSimple = useMemo(
+		() => ({
+			textArea: `le-textarea ${
+				customClass ? ` ${customClass}` : ""
+			} le-textarea--${variant} le-textarea--${size} ${
+				state && state.disabled ? "le-textarea--disabled" : ""
+			}`,
+		}),
+		[customClass, state, size, variant]
+	);
+
 	const [minHeight, setMinHeight] = useState<React.CSSProperties["minHeight"]>(0);
 	const [maxHeight, setMaxHeight] = useState<React.CSSProperties["maxHeight"]>(0);
 
-	const getRowHeight = (
-		rows: number
-	): React.CSSProperties["minHeight"] | React.CSSProperties["maxHeight"] => {
-		let value: React.CSSProperties["maxWidth"];
+	const handleRowsHeight = () => {
+		const newMinHeight = getTextAreaRowHeight(minRows, size);
+		const newMaxHeight = getTextAreaRowHeight(rows, size);
 
-		const metricFontSize = "rem";
-
-		if (size && sizeRowArr[size]) {
-			const { rowHeight } = sizeRowArr[size];
-
-			if (rows) {
-				value = rows * rowHeight + metricFontSize;
-			}
-		}
-
-		return value;
+		setMinHeight(newMinHeight);
+		setMaxHeight(newMaxHeight);
 	};
-
-	const handleRowsHeight = useCallback(() => {
-		const minHeight = getRowHeight(minRows);
-		const maxHeight = getRowHeight(rows);
-
-		setMinHeight(minHeight);
-		setMaxHeight(maxHeight);
-	}, []);
 
 	useEffect(() => {
 		handleRowsHeight();
-	}, [size, rows]);
+	}, [size, minRows, rows]);
 
 	return (
 		<textarea
@@ -66,11 +55,7 @@ const TextArea: React.FC<TextAreaProps> = ({
 			defaultValue={defaultValue}
 			onChange={onChange}
 			placeholder={placeholder}
-			className={`le-textarea ${
-				customClass ? ` ${customClass}` : ""
-			} le-textarea--${variant} le-textarea--${size} ${
-				state && state.disabled ? "le-textarea--disabled" : ""
-			}`}
+			className={classNames["textArea"]}
 			data-testid="leuxTextArea"
 			style={{
 				width,

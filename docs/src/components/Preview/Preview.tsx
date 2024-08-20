@@ -1,6 +1,7 @@
 import { Dispatch, ReactNode, SetStateAction } from "react";
 import { LeClassNames } from "../../../../src";
 import "./Preview.scss";
+import React from "react";
 
 type PreviewDirection = "row" | "column";
 

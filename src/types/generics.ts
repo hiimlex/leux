@@ -5,3 +5,5 @@ export type LeSafeAny = any;
 
 export type LeClassNames = Record<string, (props?: LeSafeAny) => string>;
 export type LeClassNamesArray = Record<string, (props?: LeSafeAny) => string[]>;
+
+export type LeClassNamesSimple = Record<string, string>;

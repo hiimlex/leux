@@ -17,3 +17,16 @@ input,
 textarea {
 	font-family: "Poppins", sans-serif;
 }
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--le-color-border);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--le-color-textOne);
+}

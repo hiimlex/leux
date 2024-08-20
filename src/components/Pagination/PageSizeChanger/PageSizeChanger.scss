@@ -1,0 +1,33 @@
+@import "../../../styles/variables.scss";
+
+.le-psc {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: unit(1) unit(3);
+
+	width: fit-content;
+	height: 42px;
+
+	border: 1px solid var(--le-color-border);
+	border-radius: unit(1);
+
+	outline: none;
+	background: transparent;
+	color: var(--le-color-textPlaceholder);
+	gap: unit(1);
+	white-space: nowrap;
+	font-weight: 600;
+
+	strong {
+		font-weight: 500;
+		color: var(--le-color-textOne);
+	}
+
+	transition: all 0.1s ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+		background: var(--le-color-defaultGhost);
+	}
+}

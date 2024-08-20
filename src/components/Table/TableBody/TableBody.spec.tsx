@@ -1,18 +1,18 @@
 import { render } from "@testing-library/react";
 
-import { TableHeader } from "./TableHeader";
+import { TableBody } from "./TableBody";
 import "@testing-library/jest-dom";
 import React from "react";
 
-describe("TableHeader component test", () => {
-	it("should render a TableHeader component", () => {
+describe("TableBody component test", () => {
+	it("should render", () => {
 		const { getByTestId } = render(
 			<table>
-				<TableHeader columns={[]} />
+				<TableBody />
 			</table>
 		);
 
-		const tableHeader = getByTestId("leuxTableHeader");
+		const tableHeader = getByTestId("leuxTableBody");
 
 		expect(tableHeader).toBeTruthy();
 	});

@@ -6,7 +6,7 @@ The Pagination component is used to split content into multiple pages.
 
 <br />
 
-#### Import
+##### Import
 
 <div>
 <PaginationImportPreview>
@@ -15,20 +15,9 @@ The Pagination component is used to split content into multiple pages.
 
 <br />
 
-#### Sizes
+##### Action
 
-Use the `size` prop to configure the pagination size.
-
-<div>
-<PaginationSizePreview>
-</PaginationSizePreview>
-</div>
-
-<br />
-
-#### Action
-
-Use the `onPageChange` prop to handle the page change.
+Use the `onPageChange` and `onPageSizeChange` prop to handle the current page and items per page quantity.
 
 <div>
 <PaginationActionPreview>
@@ -37,9 +26,9 @@ Use the `onPageChange` prop to handle the page change.
 
 <br />
 
-#### Buttons
+##### Buttons
 
-Use the `paginationButtons` prop to configure the pagination buttons. The following attributes are available:
+Use the `paginationButtons` prop to configure the pagination buttons.
 
 - `previous` - The previous button
 - `next` - The previous button
@@ -52,22 +41,20 @@ Use the `paginationButtons` prop to configure the pagination buttons. The follow
 
 <br />
 
-#### Label
+##### PageSizeChanger
 
-Use the `showPaginationLabel` prop to show the pagination label. The following attributes are available:
-
-- `currentPage` - The current page number
-- `itemsPerPage` - The number of items per page
-- `totalItems` - The total number of items
+The PageSizeChanger Component is hidden by default, use the `showPageSizeChanger` and `pageSizeChanger` prop to show and configure the page size changer.
 
 <div>
-<PaginationLabelPreview>
-</PaginationLabelPreview>
+<PaginationSizeChangerPreview>
+</PaginationSizeChangerPreview>
 </div>
 
 <br />
 
 ### API Reference
+
+##### Pagination Props
 
 <div>
 <PaginationApiTable>
@@ -75,3 +62,12 @@ Use the `showPaginationLabel` prop to show the pagination label. The following a
 </div>
 
 <br />
+
+##### PageSizeChanger Props
+
+<div>
+<PageSizeChangerApiTable>
+</PageSizeChangerApiTable>
+</div>
+
+<br/>

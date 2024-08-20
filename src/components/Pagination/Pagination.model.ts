@@ -1,3 +1,5 @@
+import { DropdownProps } from "../Dropdown/Dropdown.model";
+
 type PaginationSizes = "small" | "medium" | "large";
 
 type PaginationLabel = (props: {
@@ -19,12 +21,49 @@ interface PaginationProps {
 	itemsPerPage: number;
 	simplePagination?: boolean;
 	paginationButtons?: PaginationButtons;
+
 	size?: PaginationSizes;
 	justifyContent?: React.CSSProperties["justifyContent"];
 	customClass?: string;
 	customStyles?: React.CSSProperties;
+
 	onPageChange?: (page: number) => void;
+	onPageSizeChange?: (itemsPerPage: number) => void;
 	showPaginationLabel?: PaginationLabel;
+
+	showPageSizeChanger?: boolean;
+	pageSizeChangerProps?: Omit<PageSizeChangerProps, "onPageSizeChange" | "itemsPerPage" | "size">;
+
+	customWrapperClass?: string;
+	customWrapperStyles?: React.CSSProperties;
 }
 
-export { PaginationProps, PaginationSizes, PaginationLabel, PaginationButtons };
+interface PageSizeChangerOptions {
+	value: number;
+	label: string | number;
+}
+
+type PageSizeChangerLabel = (itemsPerPage: number) => string;
+
+interface PageSizeChangerProps {
+	itemsPerPage: number;
+	onPageSizeChange?: (itemsPerPage: number) => void;
+	options?: PageSizeChangerOptions[];
+	pageSizeChangerLabel?: PageSizeChangerLabel;
+
+	size?: PaginationSizes;
+	customClass?: string;
+	customStyles?: React.CSSProperties;
+
+	menuProps?: DropdownProps;
+}
+
+export {
+	PaginationProps,
+	PaginationSizes,
+	PaginationLabel,
+	PaginationButtons,
+	PageSizeChangerProps,
+	PageSizeChangerOptions,
+	PageSizeChangerLabel,
+};

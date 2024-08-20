@@ -4,13 +4,15 @@ import React, {
 	useEffect,
 	useState,
 	Children,
+	useMemo,
 } from "react";
-import { LeClassNames } from "../../types";
+import { LeClassNamesSimple } from "../../types";
 import { DropdownItemProps, DropdownProps } from "./Dropdown.model";
 import "./Dropdown.scss";
 import { Button } from "../Button";
 
 const Dropdown: React.FC<DropdownProps> = ({
+	menuId,
 	anchor,
 	menuProps,
 	variant = "filled",
@@ -23,21 +25,27 @@ const Dropdown: React.FC<DropdownProps> = ({
 	width,
 	customWrapperStyles,
 	customWrapperClass,
+	customMenuClass,
+	customMenuStyles,
 }) => {
 	const [show, setShow] = useState(false);
 
 	const randomId = Math.random().toString(36).substr(2, 9);
+	const id = useMemo(() => (menuId ? menuId : randomId), [menuId]);
 
-	const classNames: LeClassNames = {
-		leDropdownMenu: () =>
-			`le-dropdown le-dropdown--${variant} le-dropdown--${size} ${
+	const classNames: LeClassNamesSimple = useMemo(
+		() => ({
+			leDropdownMenu: `le-dropdown le-dropdown--${variant} le-dropdown--${size} le-dropdown--${position} le-dropdown--${trigger} ${
+				customMenuClass ? customMenuClass : ""
+			}`,
+			leDropdownMenuWrapper: `le-dropdown--menu-wrapper le-dropdown--menu-wrapper-${position} le-dropdown--menu-wrapper-${trigger} ${
 				customWrapperClass ? customWrapperClass : ""
-			} le-dropdown--${position} le-dropdown--${trigger}`,
-		leDropdownMenuWrapper: () =>
-			`le-dropdown--menu-wrapper le-dropdown--menu-wrapper-${position} le-dropdown--menu-wrapper-${trigger}`,
-		leDropdownWrapper: () => `le-dropdown--wrapper le-dropdown--wrapper-${trigger}`,
-		leDropdownAnchor: () => "le-dropdown--anchor",
-	};
+			}`,
+			leDropdownWrapper: `le-dropdown--wrapper le-dropdown--wrapper-${trigger}`,
+			leDropdownAnchor: "le-dropdown--anchor",
+		}),
+		[customWrapperClass, position, size, trigger, variant, position, trigger]
+	);
 
 	const handleToogle = () => setShow(!show);
 
@@ -48,7 +56,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 
 				const hasAncestor = target.closest(".le-dropdown--wrapper");
 
-				if (hasAncestor && hasAncestor.id === randomId) return;
+				if (hasAncestor && hasAncestor.id === id) return;
 
 				setShow(false);
 			}
@@ -75,13 +83,13 @@ const Dropdown: React.FC<DropdownProps> = ({
 
 	return (
 		<div
-			id={randomId}
-			className={classNames["leDropdownWrapper"]()}
+			id={id}
+			className={classNames["leDropdownWrapper"]}
 			style={{ ...customWrapperStyles }}
 			data-testid="leuxDropdownWrapper"
 		>
 			<div
-				className={classNames["leDropdownAnchor"]()}
+				className={classNames["leDropdownAnchor"]}
 				onClick={handleClickTrigger}
 				data-testid="leuxDropdownAnchor"
 			>
@@ -89,14 +97,15 @@ const Dropdown: React.FC<DropdownProps> = ({
 			</div>
 			{show && (
 				<div
-					className={classNames["leDropdownMenuWrapper"]()}
+					className={classNames["leDropdownMenuWrapper"]}
 					style={{ width }}
 					data-testid="leuxDropdownMenuWrapper"
 				>
 					<ul
-						className={classNames["leDropdownMenu"]()}
+						className={classNames["leDropdownMenu"]}
 						{...menuProps}
 						data-testid="leuxDropdownMenu"
+						style={customMenuStyles}
 					>
 						{Children.map(childrenArr, (child) => {
 							return cloneElement(child as React.ReactElement, { setShow, closeOnClick, trigger });
@@ -120,12 +129,14 @@ const DropdownItem = ({
 	centered = true,
 	disabled,
 }: DropdownItemProps) => {
-	const classNames: LeClassNames = {
-		leDropdownItem: () =>
-			`le-dropdown--item ${noBreakWord ? "le-dropdown--item-no-break" : ""}${
+	const classNames: LeClassNamesSimple = useMemo(
+		() => ({
+			leDropdownItem: `le-dropdown--item ${noBreakWord ? "le-dropdown--item-no-break" : ""}${
 				centered ? " le-dropdown--item-centered" : ""
 			}${disabled ? " le-dropdown--item-disabled" : ""} ${customClass || ""} `,
-	};
+		}),
+		[noBreakWord, centered, disabled, customClass]
+	);
 
 	const handleOnClick = (event?: ReactMouseEvent<HTMLLIElement, MouseEvent>) => {
 		if (disabled) return;
@@ -140,7 +151,7 @@ const DropdownItem = ({
 	return (
 		<li
 			onClick={handleOnClick}
-			className={classNames["leDropdownItem"]()}
+			className={classNames["leDropdownItem"]}
 			style={customStyles}
 			data-testid="leuxDropdownItem"
 		>

@@ -1,8 +1,7 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
-import { ChangeEvent, useState } from "react";
-import { Button, TextArea, TextAreaProps, Typography } from "../../../../src";
+import React, { ChangeEvent, useState } from "react";
+import { Button, LeSizes, TextArea, Box, TextAreaProps, Typography } from "../../../../src";
 import { attributes as textAreaAttr } from "./textarea.md";
-import React from "react";
 
 const TextAreaImportPreview = () => (
 	<LeHighlighter code={`import { TextArea, TextAreaProps } from "leux";`} language="tsx" />
@@ -118,28 +117,25 @@ const TextAreaActionPreview = () => {
 };
 
 const TextAreaSizePreview = () => {
+	const [textAreaSize, setTextAreaSize] = useState<LeSizes>("medium");
 	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<TextArea
-					fieldKey="smallTextArea"
-					placeholder="Insert some text ..."
-					size="small"
-					customStyles={{ marginRight: 12 }}
-				></TextArea>
-				<TextArea
-					fieldKey="mediumTextArea"
-					placeholder="Insert some text ..."
-					size="medium"
-					customStyles={{ marginRight: 12 }}
-				></TextArea>
-				<TextArea
-					fieldKey="largeTextArea"
-					placeholder="Insert some text ..."
-					size="large"
-				></TextArea>
+				<Box flex flexDirection="column" flexGap={12}>
+					{textAreaSize}
+					<Box flex flexGap={12}>
+						<Button onClick={() => setTextAreaSize("small")}>{"small"}</Button>
+						<Button onClick={() => setTextAreaSize("medium")}>{"medium"}</Button>
+						<Button onClick={() => setTextAreaSize("large")}>{"large"}</Button>
+					</Box>
+					<TextArea
+						fieldKey="largeTextArea"
+						placeholder="Insert some text ..."
+						size={textAreaSize}
+					></TextArea>
+				</Box>
 			</LePreview>
 			{showCode && (
 				<LeHighlighter
@@ -216,7 +212,7 @@ const TextAreaStatePreview = () => {
 			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<Button
 					onClick={handleDisableTextArea}
-					theme={!disabled ? "primary" : "danger"}
+					colorScheme={!disabled ? "primary" : "danger"}
 					customStyles={{ marginBottom: 12 }}
 				>
 					{!disabled ? "on" : "off"}
@@ -261,7 +257,7 @@ const TextAreaStatePreview = () => {
 };
 
 const TextAreaPropsPreview = () => {
-	const [showCode, setShowCode] = useState<boolean | undefined>(true);
+	const [showCode, setShowCode] = useState<boolean>(true);
 	const [value, setValue] = useState<string>("");
 
 	const handleOnChange = ({ target: { value } }: ChangeEvent<HTMLTextAreaElement>) => {

@@ -4,6 +4,7 @@
 	border-radius: 6px;
 	border: none;
 	line-height: normal;
+	transition: all 0.1s ease-in-out;
 
 	&--filled {
 		background-color: var(--le-color-inputBackground);
@@ -48,7 +49,7 @@
 
 	&--disabled {
 		cursor: not-allowed !important;
-		background: $color-variant-disabled !important;
-		color: var(--le-color-textOne) !important;
+		background: var(--le-color-disabled) !important;
+		color: var(--le-color-placeholder) !important;
 	}
 }

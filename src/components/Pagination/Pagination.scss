@@ -1,12 +1,40 @@
 @import "../../styles/variables.scss";
 
 .le-pagination {
-	width: 100%;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 
 	line-height: normal;
+	gap: unit(2);
+	border: 1px solid var(--le-color-border);
+	border-radius: 6px;
+
+	&--wrapper {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-end;
+		gap: unit(2);
+		width: 100%;
+	}
+
+	&--hr {
+		height: 100%;
+		width: 1px;
+		background-color: var(--le-color-border);
+	}
+
+	&--label {
+		font-weight: 500;
+		color: var(--le-color-placeholder);
+		white-space: nowrap;
+
+		strong {
+			font-weight: 500;
+			color: var(--le-color-textOne);
+		}
+	}
 
 	&--prev {
 		margin-right: 4px;
@@ -16,64 +44,91 @@
 		margin-left: 4px;
 	}
 
-	&--button {
-		margin: 2px 4px !important;
+	&--small {
+		font-size: 0.75rem;
+		line-height: normal;
+		padding: unit(1) unit(1);
+		max-height: 38px;
+		min-height: 38px;
+		height: 38px;
+	}
 
+	&--medium {
+		font-size: 0.875rem;
+		line-height: normal;
+		padding: unit(1) unit(2);
+		max-height: 42px;
+		min-height: 42px;
+		height: 42px;
+	}
+
+	&--large {
+		font-size: 1rem;
+		line-height: normal;
+		padding: unit(1) unit(3);
+		max-height: 46px;
+		min-height: 46px;
+		height: 46px;
+	}
+
+	&--button {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 
-		&:last-child {
-			margin-right: 0 !important;
-		}
+		width: fit-content;
+		height: fit-content;
+		border: none;
+		background-color: transparent;
+		color: var(--le-color-placeholder);
+
+		font-weight: 600;
+
+		transition: all 0.1s ease-in-out;
 
 		&-group {
 			display: flex;
 			flex-direction: row;
 			align-items: center;
+			justify-content: center;
+
+			gap: unit(1);
 		}
-	}
 
-	&--label {
-		margin-right: 12px;
-	}
+		svg {
+			* {
+				transition: all 0.1s ease-in-out;
 
-	&--small {
-		margin: 8px 0;
-		font-size: 0.75rem;
-		line-height: normal;
-
-		.le-pagination--button {
-			max-width: 28px;
-			min-width: 28px;
-			max-height: 28px;
-			min-height: 28px;
+				fill: var(--le-color-placeholder);
+			}
 		}
-	}
 
-	&--medium {
-		margin: 10px 0;
-		font-size: 0.875rem;
-		line-height: normal;
-
-		.le-pagination--button {
-			max-width: 36px;
-			min-width: 36px;
-			max-height: 36px;
-			min-height: 36px;
+		&-active {
+			scale: 1.1;
+			color: var(--le-color-primary);
 		}
-	}
 
-	&--large {
-		margin: 12px 0;
-		font-size: 1rem;
-		line-height: normal;
+		&:hover {
+			cursor: pointer;
 
-		.le-pagination--button {
-			max-width: 44px;
-			min-width: 44px;
-			max-height: 44px;
-			min-height: 44px;
+			svg {
+				* {
+					transition: all 0.1s ease-in-out;
+
+					fill: var(--le-color-primary);
+				}
+			}
+		}
+
+		&-disabled {
+			cursor: not-allowed !important;
+			color: var(--le-color-disabled) !important;
+
+			svg {
+				* {
+					fill: var(--le-color-disabled) !important;
+				}
+			}
 		}
 	}
 }

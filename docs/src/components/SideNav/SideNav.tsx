@@ -47,7 +47,7 @@ export const LINKS: Record<string, ILink[]> = {
 		{ name: "Modal", path: RoutesPath.Modal },
 		{ name: "Table", path: RoutesPath.Table },
 		{ name: "Toast", path: RoutesPath.Toast },
-		{ name: "Tooltip", path: RoutesPath.Tooltip },
+		// { name: "Tooltip", path: RoutesPath.Tooltip },
 	],
 	Loaders: [
 		{ name: "Skeleton", path: RoutesPath.Skeleton },
