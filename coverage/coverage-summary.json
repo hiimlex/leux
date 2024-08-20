@@ -1,579 +1,96 @@
-{
-	"total": {
-		"lines": { "total": 471, "covered": 433, "skipped": 0, "pct": 91.93 },
-		"statements": { "total": 510, "covered": 461, "skipped": 0, "pct": 90.39 },
-		"functions": { "total": 197, "covered": 178, "skipped": 0, "pct": 90.35 },
-		"branches": { "total": 555, "covered": 444, "skipped": 0, "pct": 80 },
-		"branchesTrue": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Avatar\\Avatar.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Avatar\\Avatar.tsx": {
-		"lines": { "total": 7, "covered": 7, "skipped": 0, "pct": 100 },
-		"functions": { "total": 3, "covered": 3, "skipped": 0, "pct": 100 },
-		"statements": { "total": 7, "covered": 7, "skipped": 0, "pct": 100 },
-		"branches": { "total": 11, "covered": 10, "skipped": 0, "pct": 90.9 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Avatar\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Badge\\Badge.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Badge\\Badge.tsx": {
-		"lines": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
-		"functions": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
-		"statements": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
-		"branches": { "total": 11, "covered": 8, "skipped": 0, "pct": 72.72 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Badge\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Box\\Box.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Box\\Box.tsx": {
-		"lines": { "total": 9, "covered": 9, "skipped": 0, "pct": 100 },
-		"functions": { "total": 4, "covered": 4, "skipped": 0, "pct": 100 },
-		"statements": { "total": 9, "covered": 9, "skipped": 0, "pct": 100 },
-		"branches": { "total": 52, "covered": 47, "skipped": 0, "pct": 90.38 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Box\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Button\\Button.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Button\\Button.tsx": {
-		"lines": { "total": 9, "covered": 9, "skipped": 0, "pct": 100 },
-		"functions": { "total": 4, "covered": 4, "skipped": 0, "pct": 100 },
-		"statements": { "total": 9, "covered": 9, "skipped": 0, "pct": 100 },
-		"branches": { "total": 14, "covered": 13, "skipped": 0, "pct": 92.85 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Button\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Checkbox\\Checkbox.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Checkbox\\Checkbox.tsx": {
-		"lines": { "total": 5, "covered": 5, "skipped": 0, "pct": 100 },
-		"functions": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
-		"statements": { "total": 5, "covered": 5, "skipped": 0, "pct": 100 },
-		"branches": { "total": 17, "covered": 16, "skipped": 0, "pct": 94.11 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Checkbox\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Dropdown\\Dropdown.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Dropdown\\Dropdown.tsx": {
-		"lines": { "total": 37, "covered": 36, "skipped": 0, "pct": 97.29 },
-		"functions": { "total": 15, "covered": 15, "skipped": 0, "pct": 100 },
-		"statements": { "total": 43, "covered": 41, "skipped": 0, "pct": 95.34 },
-		"branches": { "total": 49, "covered": 38, "skipped": 0, "pct": 77.55 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Dropdown\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Grid\\Grid.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Grid\\Grid.tsx": {
-		"lines": { "total": 10, "covered": 10, "skipped": 0, "pct": 100 },
-		"functions": { "total": 3, "covered": 3, "skipped": 0, "pct": 100 },
-		"statements": { "total": 10, "covered": 10, "skipped": 0, "pct": 100 },
-		"branches": { "total": 9, "covered": 9, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Grid\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Input\\Input.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Input\\Input.tsx": {
-		"lines": { "total": 4, "covered": 4, "skipped": 0, "pct": 100 },
-		"functions": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
-		"statements": { "total": 4, "covered": 4, "skipped": 0, "pct": 100 },
-		"branches": { "total": 11, "covered": 11, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Input\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Modal\\Modal.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Modal\\Modal.tsx": {
-		"lines": { "total": 35, "covered": 32, "skipped": 0, "pct": 91.42 },
-		"functions": { "total": 16, "covered": 15, "skipped": 0, "pct": 93.75 },
-		"statements": { "total": 45, "covered": 36, "skipped": 0, "pct": 80 },
-		"branches": { "total": 45, "covered": 32, "skipped": 0, "pct": 71.11 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Modal\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Pagination\\Pagination.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Pagination\\Pagination.tsx": {
-		"lines": { "total": 32, "covered": 32, "skipped": 0, "pct": 100 },
-		"functions": { "total": 11, "covered": 11, "skipped": 0, "pct": 100 },
-		"statements": { "total": 32, "covered": 32, "skipped": 0, "pct": 100 },
-		"branches": { "total": 50, "covered": 47, "skipped": 0, "pct": 94 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Pagination\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Pagination\\replaceStringArr.ts": {
-		"lines": { "total": 4, "covered": 0, "skipped": 0, "pct": 0 },
-		"functions": { "total": 1, "covered": 0, "skipped": 0, "pct": 0 },
-		"statements": { "total": 4, "covered": 0, "skipped": 0, "pct": 0 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Pagination\\PageSizeChanger\\PageSizeChanger.tsx": {
-		"lines": { "total": 10, "covered": 10, "skipped": 0, "pct": 100 },
-		"functions": { "total": 5, "covered": 5, "skipped": 0, "pct": 100 },
-		"statements": { "total": 10, "covered": 10, "skipped": 0, "pct": 100 },
-		"branches": { "total": 6, "covered": 6, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Pagination\\PageSizeChanger\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Radio\\Radio.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Radio\\Radio.tsx": {
-		"lines": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
-		"functions": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
-		"statements": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
-		"branches": { "total": 13, "covered": 10, "skipped": 0, "pct": 76.92 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Radio\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Select\\Select.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Select\\Select.tsx": {
-		"lines": { "total": 13, "covered": 12, "skipped": 0, "pct": 92.3 },
-		"functions": { "total": 7, "covered": 6, "skipped": 0, "pct": 85.71 },
-		"statements": { "total": 13, "covered": 12, "skipped": 0, "pct": 92.3 },
-		"branches": { "total": 21, "covered": 20, "skipped": 0, "pct": 95.23 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Select\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Skeleton\\Skeleton.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Skeleton\\Skeleton.tsx": {
-		"lines": { "total": 11, "covered": 11, "skipped": 0, "pct": 100 },
-		"functions": { "total": 6, "covered": 6, "skipped": 0, "pct": 100 },
-		"statements": { "total": 12, "covered": 12, "skipped": 0, "pct": 100 },
-		"branches": { "total": 21, "covered": 21, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Skeleton\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Spinner\\Spinner.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Spinner\\Spinner.tsx": {
-		"lines": { "total": 28, "covered": 26, "skipped": 0, "pct": 92.85 },
-		"functions": { "total": 8, "covered": 8, "skipped": 0, "pct": 100 },
-		"statements": { "total": 28, "covered": 26, "skipped": 0, "pct": 92.85 },
-		"branches": { "total": 27, "covered": 22, "skipped": 0, "pct": 81.48 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Spinner\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Table\\Table.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Table\\Table.tsx": {
-		"lines": { "total": 16, "covered": 15, "skipped": 0, "pct": 93.75 },
-		"functions": { "total": 10, "covered": 8, "skipped": 0, "pct": 80 },
-		"statements": { "total": 20, "covered": 18, "skipped": 0, "pct": 90 },
-		"branches": { "total": 38, "covered": 22, "skipped": 0, "pct": 57.89 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Table\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Table\\TableBody\\TableBody.tsx": {
-		"lines": { "total": 10, "covered": 8, "skipped": 0, "pct": 80 },
-		"functions": { "total": 7, "covered": 5, "skipped": 0, "pct": 71.42 },
-		"statements": { "total": 12, "covered": 10, "skipped": 0, "pct": 83.33 },
-		"branches": { "total": 22, "covered": 12, "skipped": 0, "pct": 54.54 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Table\\TableBody\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Table\\TableHeader\\TableHeader.tsx": {
-		"lines": { "total": 35, "covered": 12, "skipped": 0, "pct": 34.28 },
-		"functions": { "total": 16, "covered": 4, "skipped": 0, "pct": 25 },
-		"statements": { "total": 38, "covered": 12, "skipped": 0, "pct": 31.57 },
-		"branches": { "total": 32, "covered": 9, "skipped": 0, "pct": 28.12 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Table\\TableHeader\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\TextArea\\TextArea.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\TextArea\\TextArea.tsx": {
-		"lines": { "total": 13, "covered": 13, "skipped": 0, "pct": 100 },
-		"functions": { "total": 4, "covered": 4, "skipped": 0, "pct": 100 },
-		"statements": { "total": 13, "covered": 13, "skipped": 0, "pct": 100 },
-		"branches": { "total": 15, "covered": 15, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\TextArea\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Toast\\Toast.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Toast\\Toast.tsx": {
-		"lines": { "total": 20, "covered": 20, "skipped": 0, "pct": 100 },
-		"functions": { "total": 7, "covered": 7, "skipped": 0, "pct": 100 },
-		"statements": { "total": 20, "covered": 20, "skipped": 0, "pct": 100 },
-		"branches": { "total": 23, "covered": 20, "skipped": 0, "pct": 86.95 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Toast\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Tooltip\\Tooltip.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Tooltip\\Tooltip.tsx": {
-		"lines": { "total": 10, "covered": 10, "skipped": 0, "pct": 100 },
-		"functions": { "total": 5, "covered": 5, "skipped": 0, "pct": 100 },
-		"statements": { "total": 10, "covered": 10, "skipped": 0, "pct": 100 },
-		"branches": { "total": 6, "covered": 6, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Tooltip\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Typography\\Typography.model.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Typography\\Typography.tsx": {
-		"lines": { "total": 3, "covered": 3, "skipped": 0, "pct": 100 },
-		"functions": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
-		"statements": { "total": 3, "covered": 3, "skipped": 0, "pct": 100 },
-		"branches": { "total": 2, "covered": 1, "skipped": 0, "pct": 50 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Typography\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\contexts\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\contexts\\ModalContext\\ModalContext.tsx": {
-		"lines": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\contexts\\ModalContext\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\contexts\\ThemeContext\\ThemeContext.tsx": {
-		"lines": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\contexts\\ThemeContext\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\contexts\\ToastContext\\ToastContext.tsx": {
-		"lines": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\contexts\\ToastContext\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\useBreakpoint\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\useBreakpoint\\useBreakpoint.tsx": {
-		"lines": { "total": 15, "covered": 15, "skipped": 0, "pct": 100 },
-		"functions": { "total": 4, "covered": 4, "skipped": 0, "pct": 100 },
-		"statements": { "total": 16, "covered": 16, "skipped": 0, "pct": 100 },
-		"branches": { "total": 6, "covered": 6, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\useModal\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\useModal\\useModal.tsx": {
-		"lines": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
-		"functions": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
-		"statements": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\useTheme\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\useTheme\\useTheme.tsx": {
-		"lines": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
-		"functions": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
-		"statements": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\useToast\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\useToast\\useToast.tsx": {
-		"lines": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
-		"functions": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
-		"statements": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\ModalProvider\\ModalProvider.tsx": {
-		"lines": { "total": 43, "covered": 42, "skipped": 0, "pct": 97.67 },
-		"functions": { "total": 20, "covered": 20, "skipped": 0, "pct": 100 },
-		"statements": { "total": 51, "covered": 50, "skipped": 0, "pct": 98.03 },
-		"branches": { "total": 18, "covered": 14, "skipped": 0, "pct": 77.77 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\ModalProvider\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\OverlayProvider\\OverlayProvider.tsx": {
-		"lines": { "total": 9, "covered": 9, "skipped": 0, "pct": 100 },
-		"functions": { "total": 6, "covered": 6, "skipped": 0, "pct": 100 },
-		"statements": { "total": 9, "covered": 9, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\OverlayProvider\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\ThemeProvider\\ThemeProvider.tsx": {
-		"lines": { "total": 41, "covered": 41, "skipped": 0, "pct": 100 },
-		"functions": { "total": 12, "covered": 12, "skipped": 0, "pct": 100 },
-		"statements": { "total": 41, "covered": 41, "skipped": 0, "pct": 100 },
-		"branches": { "total": 19, "covered": 14, "skipped": 0, "pct": 73.68 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\ThemeProvider\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\ToastProvider\\ToastProvider.tsx": {
-		"lines": { "total": 21, "covered": 21, "skipped": 0, "pct": 100 },
-		"functions": { "total": 12, "covered": 12, "skipped": 0, "pct": 100 },
-		"statements": { "total": 25, "covered": 25, "skipped": 0, "pct": 100 },
-		"branches": { "total": 11, "covered": 9, "skipped": 0, "pct": 81.81 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\ToastProvider\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\types\\generics.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\types\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\utils\\getTextAreaRowHeight.ts": {
-		"lines": { "total": 8, "covered": 8, "skipped": 0, "pct": 100 },
-		"functions": { "total": 1, "covered": 1, "skipped": 0, "pct": 100 },
-		"statements": { "total": 8, "covered": 8, "skipped": 0, "pct": 100 },
-		"branches": { "total": 6, "covered": 6, "skipped": 0, "pct": 100 }
-	},
-	"C:\\Users\\adale\\Documents\\coding\\leux\\src\\utils\\index.ts": {
-		"lines": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"functions": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"statements": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 },
-		"branches": { "total": 0, "covered": 0, "skipped": 0, "pct": 100 }
-	}
+{"total": {"lines":{"total":466,"covered":432,"skipped":0,"pct":92.7},"statements":{"total":504,"covered":459,"skipped":0,"pct":91.07},"functions":{"total":195,"covered":177,"skipped":0,"pct":90.76},"branches":{"total":555,"covered":445,"skipped":0,"pct":80.18},"branchesTrue":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Avatar\\Avatar.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Avatar\\Avatar.tsx": {"lines":{"total":7,"covered":7,"skipped":0,"pct":100},"functions":{"total":3,"covered":3,"skipped":0,"pct":100},"statements":{"total":7,"covered":7,"skipped":0,"pct":100},"branches":{"total":11,"covered":10,"skipped":0,"pct":90.9}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Avatar\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Badge\\Badge.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Badge\\Badge.tsx": {"lines":{"total":2,"covered":2,"skipped":0,"pct":100},"functions":{"total":1,"covered":1,"skipped":0,"pct":100},"statements":{"total":2,"covered":2,"skipped":0,"pct":100},"branches":{"total":11,"covered":8,"skipped":0,"pct":72.72}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Badge\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Box\\Box.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Box\\Box.tsx": {"lines":{"total":9,"covered":9,"skipped":0,"pct":100},"functions":{"total":4,"covered":4,"skipped":0,"pct":100},"statements":{"total":9,"covered":9,"skipped":0,"pct":100},"branches":{"total":52,"covered":47,"skipped":0,"pct":90.38}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Box\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Button\\Button.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Button\\Button.tsx": {"lines":{"total":9,"covered":9,"skipped":0,"pct":100},"functions":{"total":4,"covered":4,"skipped":0,"pct":100},"statements":{"total":9,"covered":9,"skipped":0,"pct":100},"branches":{"total":14,"covered":13,"skipped":0,"pct":92.85}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Button\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Checkbox\\Checkbox.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Checkbox\\Checkbox.tsx": {"lines":{"total":5,"covered":5,"skipped":0,"pct":100},"functions":{"total":2,"covered":2,"skipped":0,"pct":100},"statements":{"total":5,"covered":5,"skipped":0,"pct":100},"branches":{"total":17,"covered":16,"skipped":0,"pct":94.11}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Checkbox\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Dropdown\\Dropdown.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Dropdown\\Dropdown.tsx": {"lines":{"total":36,"covered":35,"skipped":0,"pct":97.22},"functions":{"total":14,"covered":14,"skipped":0,"pct":100},"statements":{"total":41,"covered":39,"skipped":0,"pct":95.12},"branches":{"total":49,"covered":38,"skipped":0,"pct":77.55}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Dropdown\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Grid\\Grid.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Grid\\Grid.tsx": {"lines":{"total":10,"covered":10,"skipped":0,"pct":100},"functions":{"total":3,"covered":3,"skipped":0,"pct":100},"statements":{"total":10,"covered":10,"skipped":0,"pct":100},"branches":{"total":9,"covered":9,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Grid\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Input\\Input.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Input\\Input.tsx": {"lines":{"total":4,"covered":4,"skipped":0,"pct":100},"functions":{"total":2,"covered":2,"skipped":0,"pct":100},"statements":{"total":4,"covered":4,"skipped":0,"pct":100},"branches":{"total":11,"covered":11,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Input\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Modal\\Modal.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Modal\\Modal.tsx": {"lines":{"total":35,"covered":32,"skipped":0,"pct":91.42},"functions":{"total":16,"covered":15,"skipped":0,"pct":93.75},"statements":{"total":45,"covered":36,"skipped":0,"pct":80},"branches":{"total":45,"covered":32,"skipped":0,"pct":71.11}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Modal\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Pagination\\Pagination.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Pagination\\Pagination.tsx": {"lines":{"total":32,"covered":32,"skipped":0,"pct":100},"functions":{"total":11,"covered":11,"skipped":0,"pct":100},"statements":{"total":32,"covered":32,"skipped":0,"pct":100},"branches":{"total":50,"covered":47,"skipped":0,"pct":94}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Pagination\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Pagination\\PageSizeChanger\\PageSizeChanger.tsx": {"lines":{"total":10,"covered":10,"skipped":0,"pct":100},"functions":{"total":5,"covered":5,"skipped":0,"pct":100},"statements":{"total":10,"covered":10,"skipped":0,"pct":100},"branches":{"total":6,"covered":6,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Pagination\\PageSizeChanger\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Radio\\Radio.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Radio\\Radio.tsx": {"lines":{"total":2,"covered":2,"skipped":0,"pct":100},"functions":{"total":1,"covered":1,"skipped":0,"pct":100},"statements":{"total":2,"covered":2,"skipped":0,"pct":100},"branches":{"total":13,"covered":10,"skipped":0,"pct":76.92}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Radio\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Select\\Select.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Select\\Select.tsx": {"lines":{"total":13,"covered":12,"skipped":0,"pct":92.3},"functions":{"total":7,"covered":6,"skipped":0,"pct":85.71},"statements":{"total":13,"covered":12,"skipped":0,"pct":92.3},"branches":{"total":21,"covered":20,"skipped":0,"pct":95.23}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Select\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Skeleton\\Skeleton.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Skeleton\\Skeleton.tsx": {"lines":{"total":11,"covered":11,"skipped":0,"pct":100},"functions":{"total":6,"covered":6,"skipped":0,"pct":100},"statements":{"total":12,"covered":12,"skipped":0,"pct":100},"branches":{"total":21,"covered":21,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Skeleton\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Spinner\\Spinner.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Spinner\\Spinner.tsx": {"lines":{"total":28,"covered":26,"skipped":0,"pct":92.85},"functions":{"total":8,"covered":8,"skipped":0,"pct":100},"statements":{"total":28,"covered":26,"skipped":0,"pct":92.85},"branches":{"total":27,"covered":22,"skipped":0,"pct":81.48}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Spinner\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Table\\Table.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Table\\Table.tsx": {"lines":{"total":16,"covered":15,"skipped":0,"pct":93.75},"functions":{"total":10,"covered":8,"skipped":0,"pct":80},"statements":{"total":20,"covered":18,"skipped":0,"pct":90},"branches":{"total":38,"covered":22,"skipped":0,"pct":57.89}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Table\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Table\\TableBody\\TableBody.tsx": {"lines":{"total":10,"covered":8,"skipped":0,"pct":80},"functions":{"total":7,"covered":5,"skipped":0,"pct":71.42},"statements":{"total":12,"covered":10,"skipped":0,"pct":83.33},"branches":{"total":22,"covered":12,"skipped":0,"pct":54.54}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Table\\TableBody\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Table\\TableHeader\\TableHeader.tsx": {"lines":{"total":35,"covered":12,"skipped":0,"pct":34.28},"functions":{"total":16,"covered":4,"skipped":0,"pct":25},"statements":{"total":38,"covered":12,"skipped":0,"pct":31.57},"branches":{"total":32,"covered":9,"skipped":0,"pct":28.12}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Table\\TableHeader\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\TextArea\\TextArea.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\TextArea\\TextArea.tsx": {"lines":{"total":13,"covered":13,"skipped":0,"pct":100},"functions":{"total":4,"covered":4,"skipped":0,"pct":100},"statements":{"total":13,"covered":13,"skipped":0,"pct":100},"branches":{"total":15,"covered":15,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\TextArea\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Toast\\Toast.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Toast\\Toast.tsx": {"lines":{"total":20,"covered":20,"skipped":0,"pct":100},"functions":{"total":7,"covered":7,"skipped":0,"pct":100},"statements":{"total":20,"covered":20,"skipped":0,"pct":100},"branches":{"total":23,"covered":20,"skipped":0,"pct":86.95}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Toast\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Tooltip\\Tooltip.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Tooltip\\Tooltip.tsx": {"lines":{"total":10,"covered":10,"skipped":0,"pct":100},"functions":{"total":5,"covered":5,"skipped":0,"pct":100},"statements":{"total":10,"covered":10,"skipped":0,"pct":100},"branches":{"total":6,"covered":6,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Tooltip\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Typography\\Typography.model.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Typography\\Typography.tsx": {"lines":{"total":3,"covered":3,"skipped":0,"pct":100},"functions":{"total":1,"covered":1,"skipped":0,"pct":100},"statements":{"total":3,"covered":3,"skipped":0,"pct":100},"branches":{"total":2,"covered":1,"skipped":0,"pct":50}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\components\\Typography\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\contexts\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\contexts\\ModalContext\\ModalContext.tsx": {"lines":{"total":1,"covered":1,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":1,"covered":1,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\contexts\\ModalContext\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\contexts\\ThemeContext\\ThemeContext.tsx": {"lines":{"total":1,"covered":1,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":1,"covered":1,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\contexts\\ThemeContext\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\contexts\\ToastContext\\ToastContext.tsx": {"lines":{"total":1,"covered":1,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":1,"covered":1,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\contexts\\ToastContext\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\useBreakpoint\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\useBreakpoint\\useBreakpoint.tsx": {"lines":{"total":15,"covered":15,"skipped":0,"pct":100},"functions":{"total":4,"covered":4,"skipped":0,"pct":100},"statements":{"total":16,"covered":16,"skipped":0,"pct":100},"branches":{"total":6,"covered":6,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\useModal\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\useModal\\useModal.tsx": {"lines":{"total":2,"covered":2,"skipped":0,"pct":100},"functions":{"total":1,"covered":1,"skipped":0,"pct":100},"statements":{"total":2,"covered":2,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\useTheme\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\useTheme\\useTheme.tsx": {"lines":{"total":2,"covered":2,"skipped":0,"pct":100},"functions":{"total":1,"covered":1,"skipped":0,"pct":100},"statements":{"total":2,"covered":2,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\useToast\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\hooks\\useToast\\useToast.tsx": {"lines":{"total":2,"covered":2,"skipped":0,"pct":100},"functions":{"total":1,"covered":1,"skipped":0,"pct":100},"statements":{"total":2,"covered":2,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\ModalProvider\\ModalProvider.tsx": {"lines":{"total":43,"covered":42,"skipped":0,"pct":97.67},"functions":{"total":20,"covered":20,"skipped":0,"pct":100},"statements":{"total":51,"covered":50,"skipped":0,"pct":98.03},"branches":{"total":18,"covered":14,"skipped":0,"pct":77.77}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\ModalProvider\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\OverlayProvider\\OverlayProvider.tsx": {"lines":{"total":9,"covered":9,"skipped":0,"pct":100},"functions":{"total":6,"covered":6,"skipped":0,"pct":100},"statements":{"total":9,"covered":9,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\OverlayProvider\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\ThemeProvider\\ThemeProvider.tsx": {"lines":{"total":41,"covered":41,"skipped":0,"pct":100},"functions":{"total":12,"covered":12,"skipped":0,"pct":100},"statements":{"total":41,"covered":41,"skipped":0,"pct":100},"branches":{"total":19,"covered":15,"skipped":0,"pct":78.94}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\ThemeProvider\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\ToastProvider\\ToastProvider.tsx": {"lines":{"total":21,"covered":21,"skipped":0,"pct":100},"functions":{"total":12,"covered":12,"skipped":0,"pct":100},"statements":{"total":25,"covered":25,"skipped":0,"pct":100},"branches":{"total":11,"covered":9,"skipped":0,"pct":81.81}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\providers\\ToastProvider\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\types\\generics.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\types\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\utils\\getTextAreaRowHeight.ts": {"lines":{"total":8,"covered":8,"skipped":0,"pct":100},"functions":{"total":1,"covered":1,"skipped":0,"pct":100},"statements":{"total":8,"covered":8,"skipped":0,"pct":100},"branches":{"total":6,"covered":6,"skipped":0,"pct":100}}
+,"C:\\Users\\adale\\Documents\\coding\\leux\\src\\utils\\index.ts": {"lines":{"total":0,"covered":0,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":0,"covered":0,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
 }
