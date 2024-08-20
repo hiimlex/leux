@@ -5,7 +5,9 @@ body {
 	background: var(--le-color-backgroundOne);
 	color: var(--le-color-textOne);
 	scroll-behavior: smooth;
+	font-size: 62.25%;
 }
+
 ::-webkit-scrollbar {
 	width: 8px;
 	height: 8px;
@@ -16,5 +18,5 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: var(--le-color-border);
+	background: var(--le-color-textOne);
 }

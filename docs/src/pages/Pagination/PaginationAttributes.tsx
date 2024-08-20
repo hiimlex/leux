@@ -1,7 +1,8 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { attributes as paginationAttr } from "./pagination.md";
-import { Pagination, PaginationProps } from "../../../../src";
+import { PageSizeChangerProps, Pagination, PaginationProps } from "../../../../src";
 import { useState } from "react";
+import React from "react";
 
 const PaginationImportPreview = () => (
 	<LeHighlighter language="tsx" code={`import { Pagination, PaginationProps } from "leux";`} />
@@ -18,7 +19,7 @@ const PaginationActionPreview = () => {
 	});
 
 	const handleOnPageChange = (page: number) => {
-		setPaginationConfig({ ...paginationConfig, currentPage: page });
+		setPaginationConfig((curr) => ({ ...curr, currentPage: page }));
 	};
 
 	return (
@@ -38,7 +39,7 @@ const PaginationActionPreview = () => {
 	});
 
 	const handleOnPageChange = (page: number) => {
-		setPaginationConfig({ ...paginationConfig, currentPage: page });
+		setPaginationConfig(curr =>({ ...curr, currentPage: page }));
 	};
 
 	return (
@@ -105,6 +106,86 @@ const PaginationButtonsPreview = () => {
 				all: true,
 			}}
 			onPageChange={handleOnPageChange}
+		/>
+	);
+};`}
+				/>
+			)}
+		</>
+	);
+};
+
+const PaginationSizeChangerPreview = () => {
+	const [showCode, setShowCode] = useState<boolean>(false);
+	const [paginationConfig, setPaginationConfig] = useState<PaginationProps>({
+		currentPage: 1,
+		itemsPerPage: 10,
+		totalItems: 100,
+		totalPages: 10,
+		simplePagination: false,
+		showPageSizeChanger: true,
+		paginationButtons: {
+			next: true,
+			previous: true,
+			limit: 5,
+		},
+	});
+
+	const handleOnPageChange = (page: number) => {
+		setPaginationConfig({ ...paginationConfig, currentPage: page });
+	};
+
+	const handleOnPageSizeChange = (itemsPerPage: number) => {
+		const totalPages = Math.ceil(paginationConfig.totalItems / itemsPerPage);
+		setPaginationConfig((curr) => ({ ...curr, itemsPerPage, totalPages, currentPage: 1 }));
+	};
+
+	return (
+		<>
+			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
+				<Pagination
+					{...paginationConfig}
+					onPageChange={handleOnPageChange}
+					onPageSizeChange={handleOnPageSizeChange}
+				/>
+			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => {
+	const [paginationConfig, setPaginationConfig] = useState<PaginationProps>({
+		currentPage: 1,
+		itemsPerPage: 10,
+		totalItems: 100,
+		totalPages: 10,
+		simplePagination: false,
+		paginationButtons: {
+			next: true,
+			previous: true,
+			limit: 5,
+		},
+		showPageSizeChange: true,
+	});
+
+	const handleOnPageChange = (page: number) => {
+		setPaginationConfig((curr) => ({ ...curr, currentPage: page }));
+	};
+
+	const handleOnPageSizeChange = (itemsPerPage: number) => {
+		const totalPages = Math.ceil(paginationConfig.totalItems / itemsPerPage);
+		setPaginationConfig((curr) => ({ ...curr, itemsPerPage, totalPages, currentPage: 1 }));
+	};
+
+	return (
+		<Pagination
+			{...paginationConfig}
+			showPaginationButtons={{
+				next: true,
+				previous: true,
+				all: true,
+			}}
+			onPageChange={handleOnPageChange}
+			onPageSizeChange={handleOnPageSizeChange}
 		/>
 	);
 };`}
@@ -242,15 +323,10 @@ const PaginationApiTable = () => {
 		},
 		showPaginationLabel: {
 			type: "(props: {currentPage: number, itemsPerPage: number, totalItems: number}) => string",
-			defaultValue: `({ currentPage, totalItems, itemsPerPage }) =>
-			\`Showing \${currentPage * itemsPerPage} of \${totalItems}\`,`,
+			defaultValue: `"0-10 of 100"`,
 		},
 		paginationButtons: {
 			type: "{next: boolean, previous: boolean, limit: number}",
-			defaultValue: `{
-				next: true,
-				previous: true,
-			}`,
 		},
 		justifyContent: {
 			type: "React.CSSProperties['justifyContent']",
@@ -259,11 +335,59 @@ const PaginationApiTable = () => {
 		onPageChange: {
 			type: "(page: number) => void",
 		},
+		showPageSizeChanger: {
+			type: "boolean",
+		},
+		pageSizeChangerProps: {
+			type: "PageSizeChangerProps",
+		},
+		onPageSizeChange: {
+			type: "(itemsPerPage: number) => void",
+		},
 		customClass: {
 			type: "string",
 		},
 		customStyles: {
 			type: "React.CSSProperties",
+		},
+		customWrapperClass: {
+			type: "string",
+		},
+		customWrapperStyles: {
+			type: "React.CSSProperties",
+		},
+	};
+
+	return <LeApiTable props={props} />;
+};
+
+const PageSizeChangerApiTable = () => {
+	const props: PropsMapping<PageSizeChangerProps> = {
+		size: {
+			type: "'small' | 'medium' | 'large'",
+			defaultValue: "'medium'",
+		},
+		itemsPerPage: {
+			type: "number",
+		},
+		onPageSizeChange: {
+			type: "(itemsPerPage: number) => void",
+		},
+		customClass: {
+			type: "string",
+		},
+		customStyles: {
+			type: "React.CSSProperties",
+		},
+		menuProps: {
+			type: "DropdownProps",
+		},
+		options: {
+			type: "interface PageSizeChangerOptions {value: number;label: string | number;}",
+		},
+		pageSizeChangerLabel: {
+			type: "(itemsPerPage: number) => string",
+			defaultValue: `"10 per page"`,
 		},
 	};
 
@@ -277,6 +401,8 @@ paginationAttr["PaginationActionPreview"] = PaginationActionPreview;
 paginationAttr["PaginationButtonsPreview"] = PaginationButtonsPreview;
 paginationAttr["PaginationLabelPreview"] = PaginationLabelPreview;
 paginationAttr["PaginationSizePreview"] = PaginationSizePreview;
+paginationAttr["PaginationSizeChangerPreview"] = PaginationSizeChangerPreview;
 paginationAttr["PaginationApiTable"] = PaginationApiTable;
+paginationAttr["PageSizeChangerApiTable"] = PageSizeChangerApiTable;
 
 export { paginationAttr };

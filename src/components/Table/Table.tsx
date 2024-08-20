@@ -1,53 +1,11 @@
 import React, { useMemo } from "react";
 import { LeClassNames } from "../../types";
 import { Spinner } from "../Spinner";
-import { TableBodyProps, TableProps } from "./Table.model";
+import { TableProps } from "./Table.model";
 
 import "./Table.scss";
 import { TableHeader } from "./TableHeader";
-
-const TableBody: React.FC<TableBodyProps> = ({
-	children,
-	rows,
-	keys,
-	gridTemplateColumns,
-	emptyValue,
-	customBodyClass,
-	customBodyStyles,
-}) => {
-	const classNames: LeClassNames = {
-		tableBody: ({ customBodyClass }: { customBodyClass?: string }) =>
-			`le-table--body ${customBodyClass || ""}`,
-		tableBodyRow: () => "le-table--body-row",
-		tableBodyRowItem: () => "le-table--body-row-item",
-	};
-
-	return (
-		<tbody
-			data-testid="leuxTableBody"
-			className={classNames["tableBody"]({ customBodyClass })}
-			style={{ ...customBodyStyles }}
-		>
-			{children
-				? children
-				: rows &&
-				  rows.map((row, rowIndex) => (
-						<tr
-							className={classNames["tableBodyRow"]()}
-							key={rowIndex}
-							style={{ gridTemplateColumns }}
-						>
-							{keys &&
-								keys.map((key, keyIndex) => (
-									<td className={classNames["tableBodyRowItem"]()} key={keyIndex}>
-										{row[key] || emptyValue}
-									</td>
-								))}
-						</tr>
-				  ))}
-		</tbody>
-	);
-};
+import { TableBody } from "./TableBody";
 
 const Table: React.FC<TableProps> = ({
 	columns,
@@ -69,6 +27,10 @@ const Table: React.FC<TableProps> = ({
 	customWrapperClass,
 	customWrapperStyles,
 	sortFn,
+	scrollHeight,
+	scrollWhen,
+	scrollWidth,
+	scrollable,
 }: TableProps) => {
 	const keys = useMemo(() => columns && columns.map(({ key }) => key), [columns]);
 
@@ -127,6 +89,12 @@ const Table: React.FC<TableProps> = ({
 					customBodyClass={customBodyClass}
 					customBodyStyles={customBodyStyles}
 					emptyValue={emptyValue}
+					scrollHeight={scrollHeight}
+					scrollWhen={scrollWhen}
+					scrollWidth={scrollWidth}
+					scrollable={scrollable}
+					variant={variant}
+					size={size}
 				/>
 			)}
 		</>

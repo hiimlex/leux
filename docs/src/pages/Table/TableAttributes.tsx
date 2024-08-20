@@ -523,19 +523,18 @@ const TablePaginationPreview = () => {
 		],
 		rows: [],
 		gridTemplateColumns: "repeat(2, 1fr) 2fr 1fr",
-		variant: "default",
+		variant: "bordered",
 		size: "medium",
-		customBodyStyles: {
-			maxHeight: "420px",
-			overflowY: "auto",
-		},
+		scrollable: true,
+		scrollHeight: "420px",
+		scrollWidth: "200px",
 	});
 
 	const [pagination, setPagination] = useState<PaginationProps>({
 		currentPage: 1,
 		itemsPerPage: 10,
 		onPageChange: (page) => {
-			setTableConfig((curr) => ({ ...curr, state: { ...curr.state, loading: true } }));
+			setTableConfig((curr) => ({ ...curr, state: { ...curr.state } }));
 			getTodos(page);
 		},
 		totalItems: 0,
@@ -545,10 +544,8 @@ const TablePaginationPreview = () => {
 			previous: true,
 		},
 		justifyContent: "space-between",
-		showPaginationLabel: ({ currentPage, itemsPerPage, totalItems }) =>
-			`Showing ${currentPage * itemsPerPage - itemsPerPage + 1}-${
-				currentPage * itemsPerPage
-			} of ${totalItems} todos`,
+		showPageSizeChanger: true,
+		customWrapperClass: "le-mt-3",
 	});
 
 	const getTodos = useCallback(async (page?: number) => {
@@ -918,6 +915,18 @@ const TableApiTable = () => {
 		},
 		sortFn: {
 			type: "(column: TableSortFn) => void",
+		},
+		scrollable: {
+			type: "boolean",
+		},
+		scrollHeight: {
+			type: "React.CSSProperties['maxHeight']",
+		},
+		scrollWidth: {
+			type: "React.CSSProperties['maxWidth']",
+		},
+		scrollWhen: {
+			type: "() => boolean",
 		},
 	};
 

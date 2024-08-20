@@ -83,23 +83,6 @@ Use the `pagination` prop to add a pagination to the Table.
 
 <br />
 
-#### State
-
-Use the `state` prop to change the table state. The state prop is an object with the following properties:
-
-- `loading` - Boolean to show the loading state
-- `empty` - Boolean to show the empty state
-- `disabled` - Boolean to show the empty state
-
-It's possible to change the default empty value by using the `emptyValue` attribute on `TableBodyProps`.
-
-<div>
-<TableStatePreview>
-</TableStatePreview>
-</div>
-
-<br />
-
 ### API Reference
 
 <div>

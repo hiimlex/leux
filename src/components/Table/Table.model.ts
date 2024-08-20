@@ -37,7 +37,13 @@ interface TableBodyProps {
 	gridTemplateColumns?: React.CSSProperties["gridTemplateColumns"];
 	customBodyClass?: string;
 	customBodyStyles?: React.CSSProperties;
+	scrollable?: boolean;
+	scrollWhen?: () => boolean;
+	scrollHeight?: React.CSSProperties["maxHeight"];
+	scrollWidth?: React.CSSProperties["maxWidth"];
 	emptyValue?: string;
+	variant?: TableVariants;
+	size?: TableSizes;
 }
 
 type TableState = {

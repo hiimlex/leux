@@ -32,6 +32,12 @@
 		background: var(--le-color-border);
 	}
 
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+	}
+
 	ul:not(.le-dropdown) {
 		margin: 12px 0;
 		font-size: 0.875rem;

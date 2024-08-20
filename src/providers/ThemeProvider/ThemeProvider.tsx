@@ -1,5 +1,11 @@
 import React, { PropsWithChildren, useEffect, useMemo, useState } from "react";
-import { LeThemeMapper, LeThemes, ThemeContext, ThemeContextProps } from "../../contexts";
+import {
+	LeThemeMapper,
+	LeThemeType,
+	LeThemes,
+	ThemeContext,
+	ThemeContextProps,
+} from "../../contexts";
 import "../../styles/theme.scss";
 
 interface ThemeProviderProps extends PropsWithChildren {
@@ -9,8 +15,18 @@ interface ThemeProviderProps extends PropsWithChildren {
 	shouldPersist?: boolean;
 }
 
+const appTheme: LeThemeType = {
+	primary: "#5d69d9",
+	secondary: "#8ca9d5",
+	success: "#70c1b3",
+	danger: "#f25f5c",
+	warning: "#ffd166",
+	disabled: "#cdcdcd",
+};
+
 const defaultThemes: LeThemeMapper = {
 	light: {
+		...appTheme,
 		default: "#d2d9e5",
 		defaultHover: "#b3b9c6",
 		defaultGhost: "#b3b9c644",
@@ -25,6 +41,7 @@ const defaultThemes: LeThemeMapper = {
 		textInverse: "#ffffff",
 	},
 	dark: {
+		...appTheme,
 		default: "#626266",
 		defaultHover: "#4d4d50",
 		defaultGhost: "#4d4d5044",
@@ -65,7 +82,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
 
 		return currentTheme;
 	};
-	// Get Persisted Theme
+
 	useEffect(() => {
 		if (shouldPersist) {
 			const theme = getPersistedTheme();
@@ -77,7 +94,6 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
 		const bodyTag = document.querySelector("body");
 
 		if (bodyTag) {
-			// Remove any existing theme classes
 			const findBodyClassTheme = Array.from(bodyTag.classList).find((c) =>
 				c.startsWith("le-theme-")
 			);

@@ -1,5 +1,5 @@
-import { act, fireEvent, render } from "@testing-library/react";
-import React from "react";
+import { fireEvent, render } from "@testing-library/react";
+import React, { act } from "react";
 
 import "@testing-library/jest-dom";
 import { LeThemeMapper, OverlayProvider, ThemeProvider } from "..";
@@ -414,5 +414,42 @@ describe("useTheme test", () => {
 
 		expect(themeVar).toBeTruthy();
 		expect(themeVar).toHaveTextContent(customColor);
+	});
+
+	it("should get the persisted theme in the local storage", () => {
+		const customName = "custom";
+		const customColor = "#000";
+
+		const themes: LeThemeMapper = {
+			[customName]: {
+				primary: customColor,
+			},
+		};
+
+		act(() => {
+			localStorage.setItem("le-theme", customName);
+		});
+
+		const { getByTestId } = render(
+			<ThemeProvider defaultTheme={customName} themes={themes}>
+				<TestUseTheme />
+			</ThemeProvider>
+		);
+
+		const currentTheme = getByTestId(TestIds.currentTheme);
+
+		expect(currentTheme).toHaveTextContent(customName);
+	});
+
+	it("should get the default theme from lib", () => {
+		const { getByTestId } = render(
+			<ThemeProvider>
+				<TestUseTheme />
+			</ThemeProvider>
+		);
+
+		const currentTheme = getByTestId(TestIds.currentTheme);
+
+		expect(currentTheme).toHaveTextContent("light");
 	});
 });
