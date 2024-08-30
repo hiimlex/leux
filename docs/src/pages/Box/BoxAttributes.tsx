@@ -4,6 +4,9 @@ import { Box, BoxProps } from "../../../../src";
 import { attributes as boxAttr } from "./box.md";
 import { useState } from "react";
 import React from "react";
+import { useTranslation } from "react-i18next";
+
+const pageAttributes: Record<string, any> = {};
 
 const ImportPreview = () => {
 	return <LeHighlighter code={`import { Box, BoxProps } from "leux";`} language="tsx" />;
@@ -91,6 +94,7 @@ const BoxCustomPreview = () => {
 
 const BoxCenteredPreview = () => {
 	const [showCode, setShowCode] = useState<boolean>(false);
+	const { t } = useTranslation();
 
 	return (
 		<>
@@ -103,7 +107,7 @@ const BoxCenteredPreview = () => {
 					customClass="le-text--body-1"
 					width="100%"
 				>
-					text will be centered
+					{t("Box.CenteredText")}
 				</Box>
 			</LePreview>
 			{showCode && (
@@ -111,7 +115,7 @@ const BoxCenteredPreview = () => {
 					language="tsx"
 					code={`const Component = () = (
 	<Box centered padding={12} bgColor="default" textColor="darker">
-		text will be centered
+		${t("Box.CenteredText")}
 	</Box>
 );`}
 				/>
@@ -194,13 +198,13 @@ const BoxTableApi = () => {
 	return <LeApiTable props={props}></LeApiTable>;
 };
 
-boxAttr["LeSourceButton"] = LeSourceButton;
-boxAttr["ImportPreview"] = ImportPreview;
-boxAttr["BoxCssPreview"] = BoxCssPreview;
-boxAttr["BoxCustomPreview"] = BoxCustomPreview;
-boxAttr["BoxCenteredPreview"] = BoxCenteredPreview;
-boxAttr["BoxTableApi"] = BoxTableApi;
-boxAttr["NavLink"] = NavLink;
-boxAttr["LeHighlighter"] = LeHighlighter;
+pageAttributes["LeSourceButton"] = LeSourceButton;
+pageAttributes["ImportPreview"] = ImportPreview;
+pageAttributes["BoxCssPreview"] = BoxCssPreview;
+pageAttributes["BoxCustomPreview"] = BoxCustomPreview;
+pageAttributes["BoxCenteredPreview"] = BoxCenteredPreview;
+pageAttributes["BoxTableApi"] = BoxTableApi;
+pageAttributes["NavLink"] = NavLink;
+pageAttributes["LeHighlighter"] = LeHighlighter;
 
-export { boxAttr };
+export default pageAttributes;

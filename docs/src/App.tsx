@@ -6,6 +6,8 @@ import "../../src/styles/global.scss";
 import "../../src/styles/utils.scss";
 import "./core/styles/global.scss";
 
+import "./i18n/i18n";
+
 function App() {
 	return (
 		<ThemeProvider>

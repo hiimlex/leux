@@ -1,7 +1,8 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import React, { useState } from "react";
 import { Button, ButtonProps } from "../../../../src";
-import { attributes as buttonAttr } from "./button.md";
+
+const buttonAttr: Record<string, any> = {};
 
 const ButtonImportPreview = () => (
 	<LeHighlighter language="tsx" code={`import { Button, ButtonProps } from "leux";`} />
@@ -233,4 +234,4 @@ buttonAttr["LeHighlighter"] = LeHighlighter;
 buttonAttr["Button"] = Button;
 buttonAttr["LeSourceButton"] = LeSourceButton;
 
-export { buttonAttr };
+export default buttonAttr;

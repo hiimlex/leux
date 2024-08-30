@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-scroll";
 import "./SideAnchorNav.scss";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 interface AnchorLink {
 	label: string;
@@ -15,6 +16,7 @@ const SideAnchorNav = () => {
 	const [activeAnchor, setActiveAnchor] = useState("");
 
 	const { pathname } = useLocation();
+	const { i18n } = useTranslation();
 
 	const getAllAnchors = () => {
 		const anchors: AnchorLink[] = [];
@@ -32,7 +34,7 @@ const SideAnchorNav = () => {
 
 	useEffect(() => {
 		getAllAnchors();
-	}, [pathname]);
+	}, [pathname, i18n.language]);
 
 	const [scrollTop, setScrollTop] = useState(document.body.scrollTop);
 

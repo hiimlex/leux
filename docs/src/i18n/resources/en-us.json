@@ -1,0 +1,33 @@
+{
+	"Header": {
+		"FindAuthor": "@me",
+		"Search": "Search component or page...",
+		"NoResults": "No results found"
+	},
+	"Box": {
+		"CenteredText": "Centered Text"
+	},
+	"Source": {
+		"Label": "Code"
+	},
+	"Preview": {
+		"Show": "SHOW",
+		"Hide": "HIDE",
+		"Code": "CODE"
+	},
+	"Schemas": {
+		"Colors": {
+			"danger": "Danger",
+			"warning": "Warning",
+			"success": "Success",
+			"primary": "Primary"
+		},
+		"Layouts": {
+			"BG": "Background",
+			"Row": "Row {{number}}",
+			"Rows": "Rows {{number}}",
+			"Col": "Column {{number}}",
+			"Cols": "Columns {{number}}"
+		}
+	}
+}

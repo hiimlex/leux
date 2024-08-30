@@ -8,7 +8,7 @@ The Toast component is used to show messages to the user for a short period of t
 
 <br />
 
-#### Import
+##### Import
 
 <div>
 <ToastImportPreview>
@@ -17,7 +17,7 @@ The Toast component is used to show messages to the user for a short period of t
 
 <br />
 
-#### Usage
+##### Usage
 
 Use the `useToast` hook to create a Toast component.
 
@@ -26,7 +26,7 @@ Use the `useToast` hook to create a Toast component.
 
 <br />
 
-#### Size
+##### Size
 
 Use the `size` prop to change the size of the Toast component.
 
@@ -37,7 +37,7 @@ Use the `size` prop to change the size of the Toast component.
 
 <br />
 
-#### Theme
+##### Theme
 
 Use the `theme` prop to change the color scheme of the Toast component.
 
@@ -48,7 +48,7 @@ Use the `theme` prop to change the color scheme of the Toast component.
 
 <br />
 
-#### Duration
+##### Duration
 
 Use the `duration` prop to change the duration of the Toast component.
 
@@ -59,7 +59,7 @@ Use the `duration` prop to change the duration of the Toast component.
 
 <br />
 
-#### Closable
+##### Closable
 
 Use the `closable` prop to set if Toast component can be closed before the duration ends.
 
@@ -70,7 +70,7 @@ Use the `closable` prop to set if Toast component can be closed before the durat
 
 <br />
 
-#### onClose
+##### onClose
 
 Use the `onClose` prop to set a callback when the Toast component is closed.
 
@@ -81,9 +81,9 @@ Use the `onClose` prop to set a callback when the Toast component is closed.
 
 <br />
 
-### Api Reference
+### Api
 
-#### ToastProps
+##### ToastProps
 
 <div>
 <ToastApiTable>

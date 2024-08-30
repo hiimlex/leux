@@ -8,7 +8,7 @@ The Spinner component is used to replace an element that is loading.
 
 <br />
 
-#### Import
+##### Import
 
 <div>
 <SpinnerImportPreview>
@@ -17,7 +17,7 @@ The Spinner component is used to replace an element that is loading.
 
 <br />
 
-#### Sizes
+##### Sizes
 
 Use the `size` prop to change the spinner size.
 
@@ -26,7 +26,7 @@ Use the `size` prop to change the spinner size.
 <SpinnerSizePreview>
 </div>
 
-#### Themes
+##### Themes
 
 Use the `theme` prop to change the spinner theme color.
 
@@ -37,7 +37,7 @@ Use the `theme` prop to change the spinner theme color.
 
 <br />
 
-### API Reference
+### API
 
 <div>
 <SpinnerApiTable>

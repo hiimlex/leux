@@ -6,7 +6,7 @@ The Radio component allow the user to select one option from a set. It is common
 
 <br />
 
-#### Import
+##### Import
 
 <div>
 <RadioImportPreview>
@@ -15,7 +15,7 @@ The Radio component allow the user to select one option from a set. It is common
 
 <br />
 
-#### Field Key
+##### Field Key
 
 The input type radio `name` prop is used to group the radio buttons together. So the `fieldKey` prop is used to identify the radio button, it sets the `id`, `name` attributes from the input and the `htmlFor` attributes of the label. The final `id` is the `fieldKey` prop plus `#` plus the `value` prop.
 
@@ -26,7 +26,7 @@ The input type radio `name` prop is used to group the radio buttons together. So
 
 <br />
 
-#### Sizes
+##### Sizes
 
 Use the `size` prop to change the size of the radio button.
 
@@ -37,7 +37,7 @@ Use the `size` prop to change the size of the radio button.
 
 <br />
 
-#### Action
+##### Action
 
 Use the `onChange` prop to get the value of the selected option.
 
@@ -48,7 +48,7 @@ Use the `onChange` prop to get the value of the selected option.
 
 <br />
 
-#### State
+##### State
 
 Use the `state` prop to change the state of the radio button.
 
@@ -59,7 +59,7 @@ Use the `state` prop to change the state of the radio button.
 
 <br />
 
-### API Reference
+### API
 
 <div>
 <RadioApiTable>

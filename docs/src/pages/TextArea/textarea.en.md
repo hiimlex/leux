@@ -8,7 +8,7 @@ TextArea is a component that allows the user to enter multiple lines of text.
 
 <br/>
 
-##### Import
+###### Import
 
 <div>
 <TextAreaImportPreview>
@@ -17,7 +17,7 @@ TextArea is a component that allows the user to enter multiple lines of text.
 
 <br/>
 
-##### Field Key
+###### Field Key
 
 Use the `fieldKey` prop to set the name and id property on the field.
 
@@ -28,7 +28,7 @@ Use the `fieldKey` prop to set the name and id property on the field.
 
 <br />
 
-##### Variant
+###### Variant
 
 Use the `variant` prop to set the variant of the field.
 
@@ -39,7 +39,7 @@ Use the `variant` prop to set the variant of the field.
 
 <br />
 
-##### Sizes
+###### Sizes
 
 Use the `size` prop to set the height and padding of the field.
 
@@ -50,7 +50,7 @@ Use the `size` prop to set the height and padding of the field.
 
 <br />
 
-##### Rows, MinRows and Resize
+###### Rows, MinRows and Resize
 
 Use the `rows` props to set the quantity of line rows for the field height. Use the `minRows` props to set the minimum quantity of line rows for the field height. Use the `resize` props to set the resize behavior of the field.
 
@@ -61,7 +61,7 @@ Use the `rows` props to set the quantity of line rows for the field height. Use 
 
 <br/>
 
-##### Usage
+###### Usage
 
 Use the `onChange` prop to set the action when the field is changed.
 
@@ -72,7 +72,7 @@ Use the `onChange` prop to set the action when the field is changed.
 
 <br />
 
-##### State
+###### State
 
 Use the `state` prop to set the state of the field. Pass `disabled` to disable the field.
 
@@ -83,7 +83,7 @@ Use the `state` prop to set the state of the field. Pass `disabled` to disable t
 
 <br/>
 
-### API Reference
+### API
 
 <div>
 <TextAreaApiTable>

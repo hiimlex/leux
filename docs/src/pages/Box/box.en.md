@@ -8,7 +8,7 @@ The Box component is a simple wrapper component that can be used to display data
 
 <br/>
 
-#### Import
+##### Import
 
 <div>
 	<ImportPreview></ImportPreview>
@@ -16,7 +16,7 @@ The Box component is a simple wrapper component that can be used to display data
 
 <br/>
 
-#### CSS
+##### CSS
 
 Some of the CSS properties that can be used to style the Box component as props. Like the `width`, `height`, `margin`, `padding` and `borderRadius`.
 
@@ -26,7 +26,7 @@ Some of the CSS properties that can be used to style the Box component as props.
 
 <br/>
 
-#### Centered
+##### Centered
 
 The content of Box component can be centered using the `centered` prop.
 
@@ -36,13 +36,13 @@ The content of Box component can be centered using the `centered` prop.
 
 <br/>
 
-#### Grid Span
+##### Grid Span
 
 The Box component can be used to create a grid layout. Check <NavLink to="/layout/grid#span">this</NavLink> session to see how to create a grid layout.
 
 <br/>
 
-### API Reference
+### API
 
 <div>
 <BoxTableApi>

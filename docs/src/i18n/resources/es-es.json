@@ -1,0 +1,33 @@
+{
+	"Header": {
+		"FindAuthor": "@me",
+		"Search": "Buscar componente o página...",
+		"NoResults": "No se encontraron resultados"
+	},
+	"Box": {
+		"CenteredText": "Texto centrado"
+	},
+	"Source": {
+		"Label": "Código"
+	},
+	"Preview": {
+		"Show": "MOSTRAR",
+		"Hide": "OCULTAR",
+		"Code": "CÓDIGO"
+	},
+	"Schemas": {
+		"Colors": {
+			"danger": "Peligro",
+			"warning": "Advertencia",
+			"success": "Éxito",
+			"primary": "Primario"
+		},
+		"Layouts": {
+			"BG": "Fondo",
+			"Row": "Fila {{number}}",
+			"Rows": "Filas {{number}}",
+			"Col": "Columna {{number}}",
+			"Cols": "Columnas {{number}}"
+		}
+	}
+}

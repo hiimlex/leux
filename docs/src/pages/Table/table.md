@@ -8,7 +8,7 @@ The Table component is used to display data in a tabular format. This table is b
 
 <br />
 
-#### Import
+##### Import
 
 <div>
 <TableImportPreview>
@@ -17,7 +17,7 @@ The Table component is used to display data in a tabular format. This table is b
 
 <br />
 
-#### Configuration
+##### Configuration
 
 A simple Table with a header and a body using the `TableProps` as a configuration object.
 
@@ -28,7 +28,7 @@ A simple Table with a header and a body using the `TableProps` as a configuratio
 
 <br />
 
-#### Children
+##### Children
 
 A simple table with a header and a body using the `children` prop.
 
@@ -39,7 +39,7 @@ A simple table with a header and a body using the `children` prop.
 
 <br />
 
-#### Variants
+##### Variants
 
 Use the `variant` prop to change the table style.
 
@@ -50,7 +50,7 @@ Use the `variant` prop to change the table style.
 
 <br />
 
-#### Sizes
+##### Sizes
 
 Use the `size` prop to change the table size.
 
@@ -61,7 +61,7 @@ Use the `size` prop to change the table size.
 
 <br />
 
-#### Filters
+##### Filters
 
 Use the `sort` and `sortFn` props on header to add a order to the Table Header.
 
@@ -72,7 +72,7 @@ Use the `sort` and `sortFn` props on header to add a order to the Table Header.
 
 <br />
 
-#### Pagination
+##### Pagination
 
 Use the `pagination` prop to add a pagination to the Table.
 
@@ -83,7 +83,7 @@ Use the `pagination` prop to add a pagination to the Table.
 
 <br />
 
-### API Reference
+### API
 
 <div>
 <TableApiTable>

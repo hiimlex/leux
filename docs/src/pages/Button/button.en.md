@@ -8,13 +8,13 @@ Button component is used to fire events. Commom used on forms, modals, panels an
 
 <br/>
 
-#### Import
+##### Import
 
 <div><ButtonImportPreview></ButtonImportPreview></div>
 
 <br/>
 
-#### Variant
+##### Variant
 
 Use the `variant` prop to change the button style.
 
@@ -22,7 +22,7 @@ Use the `variant` prop to change the button style.
 
 <br/>
 
-#### Colors
+##### Colors
 
 Use the `colorScheme` prop to change the button color theme.
 
@@ -30,7 +30,7 @@ Use the `colorScheme` prop to change the button color theme.
 
 <br/>
 
-#### Sizes
+##### Sizes
 
 Use the `size` prop to change the size of the button.
 
@@ -38,7 +38,7 @@ Use the `size` prop to change the size of the button.
 
 <br/>
 
-#### State
+##### State
 
 Use the `state` prop object to control the button state, the `disabled` prop allows you to change when the button can be activate.
 
@@ -46,7 +46,7 @@ Use the `state` prop object to control the button state, the `disabled` prop all
 
 <br/>
 
-#### Action
+##### Action
 
 Use the `onClick` prop to trigger an action when the button is clicked.
 
@@ -54,7 +54,7 @@ Use the `onClick` prop to trigger an action when the button is clicked.
 
 <br/>
 
-### API Reference
+### API
 
 <div>
 <ButtonApiTable>

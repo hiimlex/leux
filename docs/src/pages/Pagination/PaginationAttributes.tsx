@@ -1,8 +1,9 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
-import { attributes as paginationAttr } from "./pagination.md";
 import { PageSizeChangerProps, Pagination, PaginationProps } from "../../../../src";
 import { useState } from "react";
 import React from "react";
+
+const paginationAttr: Record<string, any> = {};
 
 const PaginationImportPreview = () => (
 	<LeHighlighter language="tsx" code={`import { Pagination, PaginationProps } from "leux";`} />
@@ -405,4 +406,4 @@ paginationAttr["PaginationSizeChangerPreview"] = PaginationSizeChangerPreview;
 paginationAttr["PaginationApiTable"] = PaginationApiTable;
 paginationAttr["PageSizeChangerApiTable"] = PageSizeChangerApiTable;
 
-export { paginationAttr };
+export default paginationAttr;

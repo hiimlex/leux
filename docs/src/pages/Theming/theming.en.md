@@ -2,10 +2,10 @@
 
 Learn how to customize your app's look with our `ThemeProvider` and `useTheme` hook. Quickly switch between light, dark, or custom themes with ease. Let's get started!
 
-<div class="le-flex le-gap-2">
+<Box>
 <div><LeSourceButton label="ThemeProvider" url="https://github.com/hiimlex/leux/tree/main/src/providers/ThemeProvider"></LeSourceButton></div>
 <div><LeSourceButton label="useTheme" url="https://github.com/hiimlex/leux/tree/main/src/hooks/useTheme"></LeSourceButton></div>
-</div>
+</Box>
 
 <br/>
 
@@ -13,7 +13,7 @@ The `ThemeProvider` is a React component that provides theme management for your
 
 <br/>
 
-#### Props
+##### Props
 
 - **`themes?: LeThemeMapper`**  
   Custom themes defined by the user. If not provided, the default themes (`light` and `dark`) will be used.
@@ -26,7 +26,7 @@ The `ThemeProvider` is a React component that provides theme management for your
 
 <br/>
 
-#### Example Usage
+##### Example Usage
 
 <div>
 <ThemingUsage></ThemingUsage>
@@ -34,7 +34,7 @@ The `ThemeProvider` is a React component that provides theme management for your
 
 <br/>
 
-#### Key Methods and Properties
+##### Key Methods and Properties
 
 - **`swap(newTheme: LeThemes)`**  
   Switches the current theme to newTheme.
@@ -50,7 +50,7 @@ The `ThemeProvider` is a React component that provides theme management for your
 
 <br/>
 
-#### How it Works
+##### How it Works
 
 The `ThemeProvider` component maintains the available themes and the currently selected theme in its state.
 When the theme changes, the component updates the CSS variables on the document to apply the appropriate colors globally.
@@ -65,7 +65,7 @@ The `useTheme` hook is a simple and convenient way to access the current theme a
 
 <br/>
 
-#### Example Usage
+##### Example Usage
 
 <div>
 <UseThemeUsage></UseThemeUsage>

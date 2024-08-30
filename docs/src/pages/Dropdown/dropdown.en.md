@@ -6,7 +6,7 @@ The Dropdown component is used to display a list of items that can be selected.
 
 <br />
 
-#### Import
+##### Import
 
 <div>
 <DropdownImportPreview>
@@ -15,7 +15,7 @@ The Dropdown component is used to display a list of items that can be selected.
 
 <br />
 
-#### Anchor
+##### Anchor
 
 To show the `Dropdown` component needs an `Anchor` component. The `Dropdown` component will be shown when the user clicks on the `Anchor` component that will be wrapped to handle the actions.
 
@@ -26,7 +26,7 @@ To show the `Dropdown` component needs an `Anchor` component. The `Dropdown` com
 
 <br />
 
-#### Variant
+##### Variant
 
 Use the `variant` prop to change the style of the `Dropdown` component.
 
@@ -37,7 +37,7 @@ Use the `variant` prop to change the style of the `Dropdown` component.
 
 <br />
 
-#### Size
+##### Size
 
 Use the `size` prop to change the size of the `Dropdown` component.
 
@@ -48,7 +48,7 @@ Use the `size` prop to change the size of the `Dropdown` component.
 
 <br />
 
-#### Position
+##### Position
 
 Use the `position` prop to change the position of the `Dropdown` component. To use the centered position you might need to set a `width` to the Menu.
 
@@ -59,7 +59,7 @@ Use the `position` prop to change the position of the `Dropdown` component. To u
 
 <br />
 
-#### Triggers
+##### Triggers
 
 Use the `trigger` prop to change how to trigger the `Dropdown` component.
 
@@ -70,7 +70,7 @@ Use the `trigger` prop to change how to trigger the `Dropdown` component.
 
 <br />
 
-#### Item
+##### Item
 
 Use the `onClick` prop to handle the click event of the `DropdownItem` component.
 
@@ -81,7 +81,7 @@ Use the `onClick` prop to handle the click event of the `DropdownItem` component
 
 <br />
 
-#### Disabled
+##### Disabled
 
 Use the `disabled` prop to disable the `DropdownItem` component.
 
@@ -92,7 +92,7 @@ Use the `disabled` prop to disable the `DropdownItem` component.
 
 <br/>
 
-#### Separator
+##### Separator
 
 Use the `DropdownSeparator` prop to add a separator between the `DropdownItem` components.
 
@@ -103,9 +103,9 @@ Use the `DropdownSeparator` prop to add a separator between the `DropdownItem` c
 
 <br />
 
-### API Reference
+### API
 
-#### Dropdown Props
+##### Dropdown Props
 
 <div>
 <DropdownApiTable>
@@ -114,7 +114,7 @@ Use the `DropdownSeparator` prop to add a separator between the `DropdownItem` c
 
 <br/>
 
-#### DropdownItem Props
+##### DropdownItem Props
 
 <div>
 <DropdownItemApiTable>

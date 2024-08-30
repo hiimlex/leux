@@ -4,6 +4,8 @@ import { ILink, linksArr } from "../SideNav/SideNav";
 import "./Search.scss";
 
 import { FiSearch } from "react-icons/fi";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Search = () => {
 	const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -11,6 +13,7 @@ const Search = () => {
 	const [results, setResults] = useState<ILink[]>([]);
 	const navigate = useNavigate();
 	const searchRef = useRef<HTMLInputElement | null>(null);
+	const { t } = useTranslation();
 
 	const handleOnSearchChange = (event: BaseSyntheticEvent) => {
 		const { value } = event.target;
@@ -45,7 +48,7 @@ const Search = () => {
 				onFocus={() => setIsFocused(true)}
 				onBlur={() => setIsFocused(false)}
 				className="le-search--input"
-				placeholder="Search for a component or page ..."
+				placeholder={t("Header.Search")}
 				onChange={handleOnSearchChange}
 			/>
 			<div className={"le-search--icon" + (isFocused ? " le-search--icon-focus" : "")}>
@@ -64,7 +67,7 @@ const Search = () => {
 							</a>
 						))
 					) : (
-						<span className="le-search--dropdown-empty">no results :(</span>
+						<span className="le-search--dropdown-empty">{t("Header.NoResults")}</span>
 					)}
 				</div>
 			)}

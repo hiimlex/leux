@@ -8,7 +8,7 @@ Badge Component is used to display relevant informations like tags, versions, fo
 
 <br/>
 
-#### Import
+##### Import
 
 <div>
 <BadgeImportPreview>
@@ -17,7 +17,7 @@ Badge Component is used to display relevant informations like tags, versions, fo
 
 <br/>
 
-#### Variant
+##### Variant
 
 Use the `variant` prop to change the badge style type.
 
@@ -28,7 +28,7 @@ Use the `variant` prop to change the badge style type.
 
 <br/>
 
-#### Theme
+##### Theme
 
 Use the `theme` prop to change the badge color theme.
 
@@ -39,7 +39,7 @@ Use the `theme` prop to change the badge color theme.
 
 <br/>
 
-#### Sizes
+##### Sizes
 
 Use the `size` prop to change the badge size.
 
@@ -50,7 +50,7 @@ Use the `size` prop to change the badge size.
 
 <br/>
 
-### API Reference
+### API
 
 <div>
 <BadgeApiTable>

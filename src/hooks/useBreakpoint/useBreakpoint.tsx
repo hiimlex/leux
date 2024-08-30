@@ -1,9 +1,16 @@
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 type LeBreakpoints = "sm" | "md" | "lg" | "xl";
 
 type LeBreakpointType = {
 	breakpoint: LeBreakpoints;
+};
+
+const breakpoints: Record<LeBreakpoints, number> = {
+	sm: 1080,
+	md: 1280,
+	lg: 1440,
+	xl: 1920,
 };
 
 /**
@@ -34,9 +41,17 @@ function useBreakpoint(): LeBreakpointType {
 		}
 	};
 
+	useEffect(() => {
+		Object.keys(breakpoints).forEach((key) => {
+			const breakpointValue = breakpoints[key as LeBreakpoints];
+			document.documentElement.style.setProperty(`--le-breakpoint-${key}`, `${breakpointValue}px`);
+		});
+	}, []);
+
 	useLayoutEffect(() => {
 		window.addEventListener("resize", updateBreakpoint);
 		updateBreakpoint();
+
 		return () => window.removeEventListener("resize", updateBreakpoint);
 	}, []);
 

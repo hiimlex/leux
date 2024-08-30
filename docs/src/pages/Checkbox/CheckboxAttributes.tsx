@@ -1,7 +1,8 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import React, { ChangeEvent, useState } from "react";
 import { Button, Checkbox, CheckboxProps } from "../../../../src";
-import { attributes as checkboxAttr } from "./checkbox.md";
+
+const checkboxAttr: Record<string, any> = {};
 
 const CheckboxImportPreview = () => (
 	<LeHighlighter language="tsx" code={`import { Checkbox, CheckboxProps } from "leux";`} />
@@ -227,4 +228,4 @@ checkboxAttr["CheckboxStatePreview"] = CheckboxStatePreview;
 checkboxAttr["CheckboxFieldKeyPreview"] = CheckboxFieldKeyPreview;
 checkboxAttr["CheckboxApiTable"] = CheckboxApiTable;
 
-export { checkboxAttr };
+export default checkboxAttr;

@@ -6,7 +6,7 @@ The Tooltip component displays informative text when users hover over an element
 
 <br/>
 
-#### Import
+##### Import
 
 <div>
 <TooltipImportPreview>
@@ -15,7 +15,7 @@ The Tooltip component displays informative text when users hover over an element
 
 <br/>
 
-#### Usage
+##### Usage
 
 The Tooltip works by wrapping the Element that you want to display the Tooltip on. It considers the **margin, padding and position** from the main **Element** to display the **Tooltip** outside them.
 
@@ -26,7 +26,7 @@ The Tooltip works by wrapping the Element that you want to display the Tooltip o
 
 <br/>
 
-#### Direction
+##### Direction
 
 Use the `direction` prop to change the diplay direction of the tooltip.
 
@@ -37,7 +37,7 @@ Use the `direction` prop to change the diplay direction of the tooltip.
 
 <br/>
 
-#### Theme
+##### Theme
 
 Use the `theme` prop to change the theme of the tooltip.
 
@@ -48,7 +48,7 @@ Use the `theme` prop to change the theme of the tooltip.
 
 <br/>
 
-### API Reference
+### API
 
 <div>
 <TooltipApiTable>

@@ -1,6 +1,8 @@
 import { LeHighlighter, LeSourceButton } from "@/components";
-import { attributes as themingAttr } from "./theming.md";
 import React from "react";
+import { Box, BoxProps } from "../../../../src";
+
+const pageAttributes: Record<string, any> = {};
 
 const ThemingUsage: React.FC = () => {
 	return (
@@ -58,8 +60,13 @@ const MyComponent = () => {
 	);
 };
 
-themingAttr["LeSourceButton"] = LeSourceButton;
-themingAttr["ThemingUsage"] = ThemingUsage;
-themingAttr["UseThemeUsage"] = UseThemeUsage;
+pageAttributes["LeSourceButton"] = LeSourceButton;
+pageAttributes["ThemingUsage"] = ThemingUsage;
+pageAttributes["UseThemeUsage"] = UseThemeUsage;
+pageAttributes["Box"] = ({ children }: BoxProps) => (
+	<Box flex flexGap={12}>
+		{children}
+	</Box>
+);
 
-export default themingAttr;
+export default pageAttributes;

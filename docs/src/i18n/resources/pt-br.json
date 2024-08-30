@@ -1,0 +1,33 @@
+{
+	"Header": {
+		"FindAuthor": "@me",
+		"Search": "Buscar componente ou página...",
+		"NoResults": "Nenhum resultado encontrado"
+	},
+	"Box": {
+		"CenteredText": "Texto centralizado"
+	},
+	"Source": {
+		"Label": "Código"
+	},
+	"Preview": {
+		"Show": "MOSTRAR",
+		"Hide": "ESCONDER",
+		"Code": "CÓDIGO"
+	},
+	"Schemas": {
+		"Colors": {
+			"danger": "Perigo",
+			"warning": "Aviso",
+			"success": "Sucesso",
+			"primary": "Primário"
+		},
+		"Layouts": {
+			"BG": "Fundo",
+			"Row": "Linha {{number}}",
+			"Rows": "Linhas {{number}}",
+			"Col": "Coluna {{number}}",
+			"Cols": "Colunas {{number}}"
+		}
+	}
+}

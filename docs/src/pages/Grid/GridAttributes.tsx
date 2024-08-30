@@ -1,8 +1,11 @@
 import { PropsMapping, LeApiTable, LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { NavLink } from "react-router-dom";
 import { Box, BoxVariants, Grid, GridProps, Typography } from "../../../../src";
-import { attributes as gridAttr } from "./grid.md";
 import { useState } from "react";
+import React from "react";
+import { useTranslation } from "react-i18next";
+
+const gridAttr: Record<string, any> = {};
 
 const GridImportPreview = () => {
 	return <LeHighlighter language="tsx" code={`import { Grid, GridProps, Box } from "leux";`} />;
@@ -10,21 +13,17 @@ const GridImportPreview = () => {
 
 const GridColPreview = () => {
 	const [showCode, setShowCode] = useState<boolean>(false);
+	const { t } = useTranslation();
 
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Grid cols={3}>
-					{(["primary", "success", "danger"] as BoxVariants[]).map((item) => (
-						<Box
-							key={item}
-							bgColor={item}
-							padding={12}
-							customStyles={{ textTransform: "capitalize" }}
-							textColor="lighter"
-							centered
-						>
-							<Typography variant="body-1">{item} BG</Typography>
+					{(["primary", "success", "danger"] as BoxVariants[]).map((item, index) => (
+						<Box key={item} bgColor={item} padding={12} textColor="lighter" centered>
+							<Typography variant="body-1">
+								{t("Schemas.Layouts.Col", { number: index + 1 })}
+							</Typography>
 						</Box>
 					))}
 				</Grid>
@@ -43,7 +42,7 @@ const GridColPreview = () => {
 				textColor="lighter"
 				centered
 			>
-				<Typography variant="body-1">{item} BG</Typography>
+				<Typography variant="body-1">{t('Schemas.Layouts.Col', { number: index + 1 })}</Typography>
 			</Box>
 		))}
 	</Grid>
@@ -56,21 +55,17 @@ const GridColPreview = () => {
 
 const GridRowPreview = () => {
 	const [showCode, setShowCode] = useState<boolean>(false);
+	const { t } = useTranslation();
 
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Grid rows={3}>
-					{(["primary", "success", "danger"] as BoxVariants[]).map((item) => (
-						<Box
-							key={item}
-							bgColor={item}
-							padding={12}
-							customStyles={{ textTransform: "capitalize" }}
-							textColor="lighter"
-							centered
-						>
-							<Typography variant="body-1">{item} BG</Typography>
+					{(["primary", "success", "danger"] as BoxVariants[]).map((item, index) => (
+						<Box key={item} bgColor={item} padding={12} textColor="lighter" centered>
+							<Typography variant="body-1">
+								{t(`Schemas.Layouts.Row`, { number: index + 1 })}
+							</Typography>
 						</Box>
 					))}
 				</Grid>
@@ -85,11 +80,10 @@ const GridRowPreview = () => {
 				key={item}
 				bgColor={item}
 				padding={12}
-				customStyles={{ textTransform: "capitalize" }}
 				textColor="lighter"
 				centered
 			>
-				<Typography variant="body-1">{item} BG</Typography>
+				<Typography variant="body-1">	{t('Schemas.Layouts.Row', { number: index + 1 })}</Typography>
 			</Box>
 		))}
 	</Grid>
@@ -154,14 +148,14 @@ const GridSpanPreview = () => {
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Grid cols={4} rows={2} gap={{ row: 12, col: 12 }}>
 					<Box padding={4} bgColor="success" textColor="lighter" centered gridSpan={{ row: 2 }}>
-						<Typography variant="body-1">2 rows and 1 col</Typography>
+						<Typography variant="body-1">{"row: 2"}</Typography>
 					</Box>
 					<Box padding={4} bgColor="danger" textColor="lighter" centered gridSpan={{ col: 2 }}>
-						<Typography variant="body-1">1 row and 2 cols</Typography>
+						<Typography variant="body-1">{"col: 2"}</Typography>
 					</Box>
 					{[1, 2, 3, 4].map((item) => (
 						<Box key={item} padding={4} bgColor="default" textColor="darker" centered>
-							<Typography variant="body-1">1 col and 1 row</Typography>
+							<Typography variant="body-1">{"col:1, row: 1"}</Typography>
 						</Box>
 					))}
 				</Grid>
@@ -178,7 +172,7 @@ const GridSpanPreview = () => {
 			centered
 			gridSpan={{ row: 2 }}
 		>
-			<Typography variant="body-1">2 rows and 1 col</Typography>
+			<Typography variant="body-1">{'row: 2'}</Typography>
 		</Box>
 		<Box
 			padding={4}
@@ -187,7 +181,7 @@ const GridSpanPreview = () => {
 			centered
 			gridSpan={{ col: 2 }}
 		>
-			<Typography variant="body-1">1 row and 2 cols</Typography>
+			<Typography variant="body-1">{'col: 2'}</Typography>
 		</Box>
 		{[1, 2, 3, 4].map((item) => (
 			<Box
@@ -197,7 +191,7 @@ const GridSpanPreview = () => {
 				textColor="darker"
 				centered
 			>
-				<Typography variant="body-1">1 col</Typography>
+				<Typography variant="body-1">{'col: 1, row: 1'}</Typography>
 			</Box>
 		))}
 	</Grid>
@@ -249,4 +243,4 @@ gridAttr["NavLink"] = NavLink;
 gridAttr["LeHighlighter"] = LeHighlighter;
 gridAttr["GridApiTable"] = GridApiTable;
 
-export { gridAttr };
+export default gridAttr;

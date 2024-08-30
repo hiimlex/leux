@@ -6,7 +6,7 @@ The Skeleton component is used as a placeholder for loading content. It is used 
 
 <br />
 
-#### Import
+##### Import
 
 <div>
 <SkeletonImportPreview>
@@ -15,7 +15,7 @@ The Skeleton component is used as a placeholder for loading content. It is used 
 
 <br />
 
-#### Variant
+##### Variant
 
 Use the `variant` prop to change the Skeleton component style.
 
@@ -26,7 +26,7 @@ Use the `variant` prop to change the Skeleton component style.
 
 <br />
 
-#### Size
+##### Size
 
 Use the `size` prop to change the Skeleton row height.
 
@@ -37,7 +37,7 @@ Use the `size` prop to change the Skeleton row height.
 
 <br />
 
-#### Active
+##### Active
 
 Use the `active` prop to set the Skeleton active style.
 
@@ -48,7 +48,7 @@ Use the `active` prop to set the Skeleton active style.
 
 <br />
 
-#### Rows
+##### Rows
 
 Use the `rows` prop to change the quantity of the Skeleton paragraph variant rows.
 
@@ -59,7 +59,7 @@ Use the `rows` prop to change the quantity of the Skeleton paragraph variant row
 
 <br />
 
-### API Reference
+### API
 
 <div>
 <SkeletonApiTable>

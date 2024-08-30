@@ -6,7 +6,7 @@ The select component is used to select a single value from a list of options.
 <div><LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/Select"></LeSourceButton></div>
 </div>
 
-#### Import
+##### Import
 
 <div>
 <SelectImportPreview>
@@ -15,7 +15,7 @@ The select component is used to select a single value from a list of options.
 
 <br />
 
-#### Options
+##### Options
 
 Use the `options` prop to set the options of the select. The options can be used as `children` too, but the `options` prop is the default way to set the options.
 
@@ -26,7 +26,7 @@ Use the `options` prop to set the options of the select. The options can be used
 
 <br />
 
-#### Sizes
+##### Sizes
 
 Use the `size` prop to set the the select size.
 
@@ -37,7 +37,7 @@ Use the `size` prop to set the the select size.
 
 <br />
 
-#### Variants
+##### Variants
 
 Use the `variant` prop to set the the select variant style.
 
@@ -48,7 +48,7 @@ Use the `variant` prop to set the the select variant style.
 
 <br />
 
-#### Action
+##### Action
 
 Use the `onChange` prop to handle the select change event.
 
@@ -59,7 +59,7 @@ Use the `onChange` prop to handle the select change event.
 
 <br />
 
-#### State
+##### State
 
 Use the `state` prop to set the the select state.
 
@@ -70,7 +70,7 @@ Use the `state` prop to set the the select state.
 
 <br />
 
-### API Reference
+### API
 
 <div>
 <SelectApiTable>

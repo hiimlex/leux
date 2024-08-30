@@ -41,7 +41,7 @@ Use the `paginationButtons` prop to configure the pagination buttons.
 
 <br />
 
-##### PageSizeChanger
+##### Items per page
 
 The PageSizeChanger Component is hidden by default, use the `showPageSizeChanger` and `pageSizeChanger` prop to show and configure the page size changer.
 
@@ -52,7 +52,7 @@ The PageSizeChanger Component is hidden by default, use the `showPageSizeChanger
 
 <br />
 
-### API Reference
+### API
 
 ##### Pagination Props
 

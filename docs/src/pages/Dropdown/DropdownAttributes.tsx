@@ -13,8 +13,9 @@ import {
 	DropdownProps,
 	DropdownVariant,
 } from "../../../../src/components/Dropdown/Dropdown.model";
-import { attributes as dropdownAttr } from "./dropdown.md";
 import React from "react";
+
+const dropdownAttr: Record<string, any> = {};
 
 const DropdownImportPreview = () => (
 	<LeHighlighter language="tsx" code={`import { Dropdown, DropdownProps } from "leux";`} />
@@ -167,17 +168,17 @@ const DropdownPositionPreview = () => {
 						anchor={<Button>Bottom left</Button>}
 						customWrapperStyles={{ marginRight: 12 }}
 					>
-						<DropdownItem>the text direction goes</DropdownItem>
+						<DropdownItem>item 1</DropdownItem>
 					</Dropdown>
 					<Dropdown
 						position="bottomCenter"
 						anchor={<Button>Bottom center</Button>}
 						customWrapperStyles={{ marginRight: 12 }}
 					>
-						<DropdownItem>the text direction goes</DropdownItem>
+						<DropdownItem>item 1</DropdownItem>
 					</Dropdown>
 					<Dropdown position="bottomRight" anchor={<Button>Bottom right</Button>}>
-						<DropdownItem>the text direction goes</DropdownItem>
+						<DropdownItem>item 1</DropdownItem>
 					</Dropdown>
 				</Box>
 				<Box flex justifyContent="flex-start" alignItems="center">
@@ -186,21 +187,21 @@ const DropdownPositionPreview = () => {
 						anchor={<Button>Top left</Button>}
 						customWrapperStyles={{ marginRight: 12 }}
 					>
-						<DropdownItem>the text direction goes</DropdownItem>
+						<DropdownItem>item 1</DropdownItem>
 					</Dropdown>
 					<Dropdown
 						position="topCenter"
 						anchor={<Button>Top center</Button>}
 						customWrapperStyles={{ marginRight: 12 }}
 					>
-						<DropdownItem>the text direction goes</DropdownItem>
+						<DropdownItem>item 1</DropdownItem>
 					</Dropdown>
 					<Dropdown
 						position="topRight"
 						anchor={<Button>Top right</Button>}
 						customWrapperStyles={{ marginRight: 12 }}
 					>
-						<DropdownItem>the text direction goes</DropdownItem>
+						<DropdownItem>item 1</DropdownItem>
 					</Dropdown>
 				</Box>
 			</LePreview>
@@ -444,6 +445,9 @@ const DropdownApiTable = () => {
 		customMenuStyles: {
 			type: "React.CSSProperties",
 		},
+		menuId: {
+			type: "string",
+		},
 	};
 
 	return <LeApiTable props={props} />;
@@ -505,4 +509,4 @@ dropdownAttr["DropdownItemDisabledPreview"] = DropdownItemDisabledPreview;
 dropdownAttr["DropdownApiTable"] = DropdownApiTable;
 dropdownAttr["DropdownItemApiTable"] = DropdownItemApiTable;
 
-export { dropdownAttr };
+export default dropdownAttr;

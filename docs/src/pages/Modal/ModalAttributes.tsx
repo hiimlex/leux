@@ -2,8 +2,9 @@ import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } fr
 import { PropsWithChildren, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Button, ModalProps, Typography, useModal } from "../../../../src";
-import { attributes as modalAttr } from "./modal.md";
 import React from "react";
+
+const modalAttr: Record<string, any> = {};
 
 const ModalImportPreview = () => (
 	<LeHighlighter

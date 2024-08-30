@@ -8,7 +8,7 @@ Typography is a layout component. It is used to create headings, paragraphs, and
 
 <br/>
 
-#### Import
+##### Import
 
 <div>
 <ImportPreview></ImportPreview>
@@ -16,7 +16,7 @@ Typography is a layout component. It is used to create headings, paragraphs, and
 
 <br/>
 
-#### Variant
+##### Variant
 
 Use the `variant` prop to change the text variant. There's no default variant.
 
@@ -26,7 +26,7 @@ Use the `variant` prop to change the text variant. There's no default variant.
 
 <br/>
 
-### API Reference
+### API
 
 <div>
 <TypographyApiTable>

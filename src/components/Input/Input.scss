@@ -50,9 +50,23 @@
 		color: var(--le-color-placeholder);
 	}
 
-	&--disabled {
+	&--disabled,
+	&:disabled {
 		cursor: not-allowed !important;
-		background: $color-variant-disabled !important;
-		color: var(--le-color-textOne) !important;
+		background: var(--le-color-disabled) !important;
+		color: var(--le-color-textTwo) !important;
+
+		&::placeholder {
+			color: var(--le-color-textTwo);
+			opacity: 1;
+		}
+
+		&:-ms-input-placeholder {
+			color: var(--le-color-textTwo);
+		}
+
+		&::-ms-input-placeholder {
+			color: var(--le-color-textTwo);
+		}
 	}
 }

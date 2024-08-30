@@ -1,8 +1,9 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { ChangeEvent, useState } from "react";
 import { Button, Input, InputProps, InputSizes, InputVariant, Typography } from "../../../../src";
-import { attributes as inputAttr } from "./input.md";
 import React from "react";
+
+const inputAttr: Record<string, any> = {};
 
 const InputImportPreview = () => (
 	<LeHighlighter code={`import { Input, InputProps } from 'leux';`} language="tsx" />
@@ -259,4 +260,4 @@ inputAttr["InputKeyPreview"] = InputKeyPreview;
 inputAttr["InputApiTable"] = InputApiTable;
 inputAttr["LeHighlighter"] = LeHighlighter;
 
-export { inputAttr };
+export default inputAttr;

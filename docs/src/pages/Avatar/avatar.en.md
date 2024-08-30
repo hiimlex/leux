@@ -7,7 +7,7 @@ Avatar is a component that represents a user, either as an image or as a placeho
 </div>
 <br/>
 
-#### Import
+##### Import
 
 <div>
 <AvatarImportPreview>
@@ -16,7 +16,7 @@ Avatar is a component that represents a user, either as an image or as a placeho
 
 <br/>
 
-#### Src
+##### Src
 
 Use the `src` prop to set the image source.
 
@@ -27,7 +27,7 @@ Use the `src` prop to set the image source.
 
 <br/>
 
-#### asText
+##### asText
 
 Use the `asText` prop to render the `src` as a text. The text displayed is the capital letters from `src` prop.
 
@@ -39,7 +39,7 @@ Use the `asText` prop to render the `src` as a text. The text displayed is the c
 
 <br/>
 
-#### Sizes
+##### Sizes
 
 Use the `size` prop to change the avatar size.
 
@@ -50,7 +50,7 @@ Use the `size` prop to change the avatar size.
 
 <br/>
 
-### API Reference
+### API
 
 <div>
 <AvatarApiTable>

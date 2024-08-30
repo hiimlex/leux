@@ -1,12 +1,12 @@
 ## Input
 
-Input component is used to that allows users enter text.
+El componente Input se usa para permitir que los usuarios ingresen texto.
 
 <div><LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/Input"></LeSourceButton></div>
 
 <br/>
 
-#### Import
+##### Importación
 
 <div>
 <InputImportPreview>
@@ -15,9 +15,9 @@ Input component is used to that allows users enter text.
 
 <br/>
 
-#### Field Key
+##### Clave de Campo
 
-Use the `fieldKey` prop to set the name and id of the input.
+Usa la prop `fieldKey` para establecer el nombre y el id del input.
 
 <div>
 <InputKeyPreview>
@@ -26,9 +26,9 @@ Use the `fieldKey` prop to set the name and id of the input.
 
 <br />
 
-#### Variant
+##### Variante
 
-Use the `variant` prop to change the appearance of the input field.
+Usa la prop `variant` para cambiar la apariencia del campo de input.
 
 <div>
 <InputVariantPreview>
@@ -37,18 +37,20 @@ Use the `variant` prop to change the appearance of the input field.
 
 <br/>
 
-#### Size
+##### Tamaño
 
-Use the `size` prop to change the size of the input field.
+Usa la prop `size` para cambiar el tamaño del campo de input.
 
 <div>
 <InputSizePreview>
 </InputSizePreview>
 </div>
 
-#### Usage
+<br/>
 
-Use the `onChange` prop to handle the change event from input.
+##### Uso
+
+Usa la prop `onChange` para manejar el evento de cambio en el input.
 
 <div>
 <InputActionPreview>
@@ -57,9 +59,9 @@ Use the `onChange` prop to handle the change event from input.
 
 <br/>
 
-#### State
+##### Estado
 
-Use the `state` prop to control the field state.
+Usa la prop `state` para controlar el estado del campo.
 
 <div>
 <InputStatePreview>
@@ -68,7 +70,7 @@ Use the `state` prop to control the field state.
 
 <br />
 
-### API Reference
+### API
 
 <div>
 <InputApiTable>

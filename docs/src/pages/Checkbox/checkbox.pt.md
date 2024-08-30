@@ -1,6 +1,6 @@
 ## Checkbox
 
-Checkbox is a component that allows the user to select one or more options from a set.
+Checkbox é um componente que permite ao usuário selecionar uma ou mais opções de um conjunto.
 
 <div>
 <LeSourceButton url="https://github.com/hiimlex/leux/tree/main/src/components/Checkbox"></LeSourceButton>
@@ -8,7 +8,7 @@ Checkbox is a component that allows the user to select one or more options from 
 
 <br/>
 
-#### Import
+##### Importação
 
 <div>
 <CheckboxImportPreview>
@@ -17,9 +17,9 @@ Checkbox is a component that allows the user to select one or more options from 
 
 <br />
 
-#### FieldKey
+##### FieldKey
 
-Use the `fieldKey` prop to identify the checkbox to make the label clickable.
+Use a prop `fieldKey` para identificar o checkbox e tornar o rótulo clicável.
 
 <div>
 <CheckboxFieldKeyPreview>
@@ -28,9 +28,9 @@ Use the `fieldKey` prop to identify the checkbox to make the label clickable.
 
 <br />
 
-#### Sizes
+##### Tamanhos
 
-Use the `size` prop to change the size of the checkbox.
+Use a prop `size` para alterar o tamanho do checkbox.
 
 <div>
 <CheckboxSizePreview>
@@ -39,9 +39,9 @@ Use the `size` prop to change the size of the checkbox.
 
 <br />
 
-#### Usage
+##### Uso
 
-Use the `onChange` prop to trigger an action when the checkbox is clicked.
+Use a prop `onChange` para acionar uma ação quando o checkbox for clicado.
 
 <div>
 <CheckboxActionPreview>
@@ -50,9 +50,9 @@ Use the `onChange` prop to trigger an action when the checkbox is clicked.
 
 <br />
 
-#### State
+##### Estado
 
-Use the `state` prop to change the state of the checkbox.
+Use a prop `state` para alterar o estado do checkbox.
 
 <div>
 <CheckboxStatePreview>
@@ -61,7 +61,7 @@ Use the `state` prop to change the state of the checkbox.
 
 <br />
 
-### API Reference
+### API
 
 <div>
 <CheckboxApiTable>

@@ -1,8 +1,9 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { useEffect, useRef, useState } from "react";
 import { Button, Radio, RadioProps, Typography } from "../../../../src";
-import { attributes as radioAttr } from "./radio.md";
 import React from "react";
+
+const radioAttr: Record<string, any> = {};
 
 const RadioImportPreview = () => {
 	return (

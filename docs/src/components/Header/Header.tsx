@@ -1,19 +1,28 @@
 import React from "react";
 import { FaGithub, FaMoon, FaSun } from "react-icons/fa";
-import { Typography, useBreakpoint, useTheme } from "../../../../src";
+import { Dropdown, DropdownItem, Typography, useBreakpoint, useTheme } from "../../../../src";
 import "./Header.scss";
 
+import { getI18n, useTranslation } from "react-i18next";
 import { version } from "../../../../package.json";
 import LeSearch from "../Search";
+import Flag from "react-world-flags";
+import { LanguageFlagCode, LanguageNames, Languages } from "@/i18n/i18n";
 
 const Header: React.FC = () => {
 	const { breakpoint } = useBreakpoint();
 	const { swap, currentTheme } = useTheme();
+	const { t } = useTranslation();
+	const { language, changeLanguage } = getI18n();
 
 	const changeTheme = () => {
 		const newTheme = currentTheme === "light" ? "dark" : "light";
 
 		swap(newTheme);
+	};
+
+	const changeLang = (lang: Languages) => {
+		changeLanguage(lang);
 	};
 
 	return (
@@ -38,6 +47,21 @@ const Header: React.FC = () => {
 				</div>
 				<LeSearch />
 				<nav className="le-nav">
+					<Dropdown
+						position="bottomCenter"
+						anchor={
+							<span role="button" className="le-nav--item">
+								<span className="le-nav--link le-gap-1">
+									<Flag code={LanguageFlagCode[language as Languages]} width={24} />
+									<Typography variant="body-1">{LanguageNames[language as Languages]}</Typography>
+								</span>
+							</span>
+						}
+					>
+						<DropdownItem onClick={() => changeLang("pt-BR")}>Português</DropdownItem>
+						<DropdownItem onClick={() => changeLang("en")}>English</DropdownItem>
+						<DropdownItem onClick={() => changeLang("es-ES")}>Español</DropdownItem>
+					</Dropdown>
 					<span role="button" className="le-nav--item" onClick={changeTheme}>
 						<Typography variant="h6" customClass="le-color-primary">
 							{currentTheme === "light" && <FaMoon className="le-nav--link " />}
@@ -46,7 +70,7 @@ const Header: React.FC = () => {
 					</span>
 					<span className="le-nav--item">
 						<a className="le-nav--link" target="_blank" href="https://linktr.ee/yuninho">
-							<Typography variant="body-1">Find author</Typography>
+							<Typography variant="body-1">{t("Header.FindAuthor")}</Typography>
 						</a>
 					</span>
 					<span className="le-nav--item">

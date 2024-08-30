@@ -11,8 +11,8 @@
 		border: 1px solid var(--le-color-border);
 		background: var(--le-color-border);
 		border-radius: 32px;
-		min-width: 198px;
-		max-width: 342px;
+		min-width: 140px;
+		max-width: 280px;
 		width: 30vw;
 		padding: 4px 18px;
 		font-size: 14px;
@@ -90,5 +90,13 @@
 	100% {
 		opacity: 1;
 		max-height: 298px;
+	}
+}
+
+@media (max-width: 1080px) {
+	.le-search {
+		&--input {
+			width: 100%;
+		}
 	}
 }

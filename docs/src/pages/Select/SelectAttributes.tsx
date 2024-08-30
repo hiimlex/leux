@@ -6,8 +6,9 @@ import {
 	SelectProps,
 	SelectState,
 } from "../../../../src/components/Select/Select.model";
-import { attributes as selectAttr } from "./select.md";
 import React from "react";
+
+const selectAttr: Record<string, any> = {};
 
 const SelectImportPreview = () => (
 	<LeHighlighter code={`import { Select, SelectProps } from "leux";`} language="tsx" />

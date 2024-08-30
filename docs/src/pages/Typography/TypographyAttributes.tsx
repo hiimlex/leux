@@ -7,10 +7,10 @@ import {
 	PropsMapping,
 } from "@/components";
 
-import { useState } from "react";
-import { Typography, TypographyProps } from "../../../../src";
-import { attributes as typographyAttr } from "./typography.md";
-import React from "react";
+import React, { useState } from "react";
+import { LeSafeAny, Typography, TypographyProps } from "../../../../src";
+
+const typographyAttr: Record<string, LeSafeAny> = {};
 
 const ImportPreview = () => {
 	return (
@@ -124,4 +124,4 @@ typographyAttr["LeAnchorLink"] = LeAnchorLink;
 typographyAttr["TypographyApiTable"] = TypographyApiTable;
 typographyAttr["LeHighlighter"] = LeHighlighter;
 
-export { typographyAttr };
+export default typographyAttr;

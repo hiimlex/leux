@@ -2,6 +2,7 @@ import { Dispatch, ReactNode, SetStateAction } from "react";
 import { LeClassNames } from "../../../../src";
 import "./Preview.scss";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 type PreviewDirection = "row" | "column";
 
@@ -13,6 +14,8 @@ interface PreviewProps {
 }
 
 const Preview = ({ children, direction = "row", showCode, setShowCode }: PreviewProps) => {
+	const { t } = useTranslation();
+
 	const classNames: LeClassNames = {
 		preview: () => "le-preview",
 		previewContent: ({ direction }: { direction?: PreviewDirection }) =>
@@ -29,7 +32,7 @@ const Preview = ({ children, direction = "row", showCode, setShowCode }: Preview
 			<div className={classNames["previewFooter"]()}>
 				{showCode !== undefined && (
 					<div className={classNames["previewFooterCode"]()} onClick={handleShowCode}>
-						{showCode ? "HIDE" : "SHOW"} CODE
+						{t(showCode ? "Preview.Hide" : "Preview.Show") + " " + t("Preview.Code")}
 					</div>
 				)}
 			</div>

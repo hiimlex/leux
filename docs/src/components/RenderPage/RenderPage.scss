@@ -4,6 +4,10 @@
 	color: var(--le-color-textTwo);
 	text-align: justify;
 
+	a {
+		color: var(--le-color-primary);
+	}
+
 	p {
 		margin: 12px 0;
 		line-height: 160%;
@@ -35,7 +39,10 @@
 	ul {
 		display: flex;
 		flex-direction: column;
-		gap: 6px;
+
+		&:not(.le-dropdown) {
+			gap: 6px;
+		}
 	}
 
 	ul:not(.le-dropdown) {
