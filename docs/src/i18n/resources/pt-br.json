@@ -28,6 +28,9 @@
 			"Rows": "Linhas {{number}}",
 			"Col": "Coluna {{number}}",
 			"Cols": "Colunas {{number}}"
+		},
+		"Dropdown": {
+			"Anchor": "Ãncora"
 		}
 	}
 }

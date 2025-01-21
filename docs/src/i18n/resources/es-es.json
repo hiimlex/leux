@@ -28,6 +28,9 @@
 			"Rows": "Filas {{number}}",
 			"Col": "Columna {{number}}",
 			"Cols": "Columnas {{number}}"
+		},
+		"Dropdown": {
+			"Anchor": "Ancla"
 		}
 	}
 }
