@@ -1,0 +1,39 @@
+{
+	"name": "@leux/button",
+	"version": "0.4.3",
+	"description": "A simple button component for Leux UI",
+	"main": "dist/index.js",
+	"module": "dist/index.esm.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist",
+		"build:bundle": "rollup -c",
+		"build": "npm run build:types && npm run build:bundle"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0"
+	},
+	"devDependencies": {
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^13.4.0"
+	},
+	"files": [
+		"dist"
+	],
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hiimlex/leux/tree/main/src/packages/Button"
+	},
+	"bugs": {
+		"url": "https://github.com/hiimlex/leux/issues"
+	},
+	"keywords": [
+		"react",
+		"components",
+		"ui",
+		"library"
+	]
+}

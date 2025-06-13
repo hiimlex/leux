@@ -5,10 +5,10 @@
 [Docs](https://leux.vercel.app/)
 
 <a href="https://www.npmjs.com/package/leux" target="\_parent">
-  <img alt="#npm" src="https://img.shields.io/npm/v/leux">
+  <img alt="#npm" src="https://img.shields.io/npm/v/@leux/ui">
 </a>
 <a href="https://www.npmjs.com/package/leux" target="\_parent">
-  <img alt="#npm" src="https://img.shields.io/npm/dm/leux">
+  <img alt="#npm" src="https://img.shields.io/npm/dm/@leux/ui">
 </a>
 <a href="https://nodejs.org/en/blog/release/v14.17.3/" target="\_parent">
   <img alt="#node" src="https://img.shields.io/badge/node-%3D%3E16.14.0-purple">
@@ -21,23 +21,27 @@
 	<img src="./coverage/badge-branches.svg">
 </div>
 
-## 🎈 Overview
+## Overview
 
 leux is a simple, lightweight, and fast React framework. It's built with the latest web technologies and is fully responsive.
 The framework is designed to be easy to use and easy to learn.
 The idea came when i have to redesign my own projects with the same UI/UX identity, so i decided to make it public for everyone as a library.
 
-## 📦 Install
+## Install
 
 You can install this package using the following commands
 
 ```bash
-npm install leux
+npm install @leux/ui
 
-yarn add leux
+yarn add @leux/ui
 ```
 
-## 🚀 Usage
+## Modules
+
+- [x] Button [NPM]()
+
+## Usage
 
 Import the components you want to use from the library and use them in your application.
 

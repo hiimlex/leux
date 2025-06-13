@@ -1,0 +1,106 @@
+@import "../../styles/variables.scss";
+
+.le-button {
+	font-weight: 600;
+	outline: none;
+	border-radius: 4px;
+	transition: all 0.1s ease-in-out;
+	cursor: pointer;
+	border: none;
+
+	&--filled {
+		@each $color, $value in $variant-colors {
+			&.le-button--#{$color} {
+				color: $color-lighter-text;
+				background: $value;
+				border: 1px solid $value;
+
+				&:hover {
+					background: darken($value, 10%);
+					border-color: darken($value, 10%);
+				}
+
+				@if $color == "default" {
+					color: $color-dark-text;
+				}
+			}
+		}
+	}
+
+	&--outlined {
+		border: 1px solid;
+
+		@each $color, $value in $variant-colors {
+			&.le-button--#{$color} {
+				color: $value;
+				background: transparent;
+				border-color: $value;
+
+				&:hover {
+					background: rgba($value, 0.25);
+					color: $value;
+				}
+
+				@if $color == "default" {
+					color: $color-dark-text;
+					border-color: $value;
+
+					&:hover {
+						color: $color-dark-text;
+						border-color: darken($value, 20%);
+					}
+				}
+			}
+		}
+	}
+
+	&--ghost {
+		@each $color, $value in $variant-colors {
+			&.le-button--#{$color} {
+				color: $value;
+				background: transparent;
+
+				&:hover {
+					background: rgba($value, 30%);
+					color: $value;
+				}
+
+				@if $color == "default" {
+					color: $color-dark-text;
+
+					&:hover {
+						color: $color-dark-text;
+					}
+				}
+			}
+		}
+	}
+
+	&--small {
+		padding: 0.4rem 0.8rem;
+		font-size: 0.75rem;
+	}
+
+	&--medium {
+		padding: 0.5rem 0.9rem;
+		font-size: 0.875rem;
+	}
+
+	&--large {
+		padding: 0.6rem 1rem;
+		font-size: 1rem;
+	}
+
+	&--disabled {
+		cursor: not-allowed !important;
+		background: $color-variant-disabled !important;
+		color: $color-darker-text !important;
+		border-color: $color-variant-disabled !important;
+
+		&:hover {
+			background: $color-variant-disabled !important;
+			color: $color-darker-text !important;
+			border-color: $color-variant-disabled !important;
+		}
+	}
+}

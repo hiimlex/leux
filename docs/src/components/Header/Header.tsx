@@ -40,7 +40,11 @@ const Header = () => {
 						</a>
 					</span>
 					<span className="le-nav--item">
-						<a className="le-nav--link" target="_blank" href="https://www.npmjs.com/package/leux">
+						<a
+							className="le-nav--link"
+							target="_blank"
+							href="https://www.npmjs.com/package/@leux/ui"
+						>
 							<Typography variant="body-1">v{version}</Typography>
 						</a>
 					</span>
