@@ -7,9 +7,9 @@ import {
 const NpmCode = () => (
 	<LeHighlighter
 		language="bash"
-		code={`npm install leux
+		code={`npm install @leux/ui
 
-yarn install leux`}
+yarn install @leux/ui`}
 	/>
 );
 
