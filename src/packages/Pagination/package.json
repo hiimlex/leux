@@ -1,7 +1,7 @@
 {
-	"name": "@leux/button",
+	"name": "@leux/pagination",
 	"version": "0.4.3",
-	"description": "A simple button component for @leux/ui",
+	"description": "A simple pagination component for @leux/ui",
 	"main": "dist/index.js",
 	"module": "dist/index.esm.js",
 	"types": "dist/index.d.ts",
