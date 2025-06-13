@@ -45,13 +45,15 @@ export default [
 			eslint({
 				throwOnError: true,
 				baseConfig: eslintConfig,
+				include: ["src/**/*.{js,ts,jsx,tsx}"],
+				exclude: ["src/**/*.scss"],
 			}),
 			typescript({
 				tsconfig: "./tsconfig.json",
 				include: ["src/**/*", "*.scss"],
 				exclude: ["docs", "dist", "node_modules", ".vscode", ".storybook"],
 			}),
-			resolve(),
+			resolve({ extensions: [".ts", ".tsx"] }),
 			terser(),
 		],
 	},
