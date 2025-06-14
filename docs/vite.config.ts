@@ -17,9 +17,6 @@ export default defineConfig(async () => ({
 			}),
 		}),
 	],
-	resolve: {
-		alias: [{ find: "@", replacement: resolve(__dirname, "src") }],
-	},
 	server: {
 		port: 3000,
 		fs: {
@@ -27,4 +24,7 @@ export default defineConfig(async () => ({
 		},
 	},
 	assetsInclude: ["**/*.svg"],
+	optimizeDeps: {
+		include: ["classnames"],
+	},
 }));
