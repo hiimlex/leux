@@ -11,9 +11,7 @@
 		"build": "npm run build:types && npm run build:bundle"
 	},
 	"peerDependencies": {
-		"react": "^18.2.0"
-	},
-	"dependencies": {
+		"react": "^18.2.0",
 		"classnames": "^2.5.1"
 	},
 	"devDependencies": {
