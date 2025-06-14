@@ -1,6 +1,6 @@
 {
 	"name": "@leux/ui",
-	"version": "0.5.0",
+	"version": "0.5.3",
 	"homepage": "https://leux.vercel.app/",
 	"description": "React components library",
 	"publishConfig": {
@@ -16,6 +16,7 @@
 	},
 	"scripts": {
 		"build": "rollup -c",
+		"build:all": "npm run build --workspaces",
 		"test": "jest",
 		"update-version": "node scripts/update-version.js",
 		"test:watch": "jest --watch --silent=false",
