@@ -1,5 +1,4 @@
 import {
-	ButtonProps,
 	BadgeProps,
 	InputProps,
 	CheckboxProps,
@@ -14,6 +13,8 @@ import {
 	SpinnerProps,
 	TypographyProps,
 } from "../../components";
+// Package imports
+import { ButtonProps } from "../../packages";
 
 type LeGlobalConfigComponents = {
 	button?: Partial<ButtonProps>;

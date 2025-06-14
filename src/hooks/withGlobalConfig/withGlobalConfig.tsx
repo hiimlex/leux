@@ -7,7 +7,7 @@ export function withGlobalConfig<K extends ConfigKey, P extends object>(
 	key: K
 ): ComponentType<P> {
 	const WrappedComponent: React.FC<P> = (props: P) => {
-		const { globalConfig } = useTheme();
+		const { globalConfig, currentTheme } = useTheme();
 
 		// Only inject partial props from config
 		const defaultProps = useMemo<Partial<P>>(() => {
@@ -17,6 +17,7 @@ export function withGlobalConfig<K extends ConfigKey, P extends object>(
 		const mergedProps = {
 			...defaultProps,
 			...props,
+			currentTheme,
 		} as P;
 
 		return <Comp {...mergedProps} />;
