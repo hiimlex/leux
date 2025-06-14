@@ -17,6 +17,9 @@ export default defineConfig(async () => ({
 			}),
 		}),
 	],
+	resolve: {
+		alias: [{ find: "@", replacement: resolve(__dirname, "./src") }],
+	},
 	server: {
 		port: 3000,
 		fs: {
