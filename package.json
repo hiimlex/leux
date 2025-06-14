@@ -19,7 +19,7 @@
 		"test:watch": "jest --watch --silent=false",
 		"test:coverage": "jest --coverage --collectCoverageFrom='./src/**'",
 		"test:badges": "npm run test:coverage && npx jest-coverage-badges",
-		"dev": "npm run dev -w docs",
+		"docs": "cd docs && npm run dev",
 		"prepare": "npx husky install && npx husky add ./.husky/pre-commit 'npx lint-staged'",
 		"prepare:win": "npx husky install && npx husky add .\\.husky\\pre-commit 'npx lint-staged'"
 	},
