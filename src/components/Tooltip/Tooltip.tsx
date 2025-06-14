@@ -1,9 +1,9 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { withGlobalConfig } from "../../contexts";
-import { LeClassNames, leClassNames, LeSafeAny, TestId } from "../../types";
+import { useTheme } from "../../hooks";
+import { LeClassNames, LeSafeAny, TestId } from "../../types";
 import { TooltipProps } from "./Tooltip.model";
 import "./Tooltip.scss";
-import { useTheme } from "../../hooks";
 
 const TooltipComponent: React.FC<TooltipProps> = ({
 	children,

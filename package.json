@@ -20,7 +20,7 @@
 		"test:coverage": "jest --coverage --collectCoverageFrom='./src/**'",
 		"test:badges": "npm run test:coverage && npx jest-coverage-badges",
 		"dev": "npm run dev -w docs",
-		"prepare": "npx husky install && npx husky add ./.husky/pre-commit 'npx lint-staged'",
+		"prepare": "rm -rf .husky && npx husky install && npx husky add ./.husky/pre-commit 'npx lint-staged'",
 		"prepare:win": "npx husky install && npx husky add .\\.husky\\pre-commit 'npx lint-staged'"
 	},
 	"bugs": {
