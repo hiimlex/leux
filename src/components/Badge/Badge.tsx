@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { BadgeProps } from "./Badge.model";
 import "./Badge.scss";
+import { useTheme } from "../../hooks";
+import { leClassNames, TestId } from "../../types";
 
 const Badge: React.FC<BadgeProps> = ({
 	variant = "ghost",
@@ -10,14 +12,31 @@ const Badge: React.FC<BadgeProps> = ({
 	customStyles,
 	customClass,
 }) => {
+	const { globalConfig } = useTheme();
+	const defaultProps = useMemo(() => globalConfig?.badge, [globalConfig?.badge]);
+
+	const classNames = useMemo(
+		() =>
+			leClassNames([
+				"le-badge",
+				`le-badge--${variant}`,
+				`le-badge--${theme}`,
+				`le-badge--${size}`,
+				customClass,
+				defaultProps?.customClass || "",
+			]),
+		[variant, theme, size, customClass, defaultProps?.customClass]
+	);
+
+	const styles = useMemo(() => {
+		return {
+			...defaultProps?.customStyles,
+			...customStyles,
+		};
+	}, [defaultProps?.customStyles, customStyles]);
+
 	return (
-		<span
-			className={`le-badge${variant ? ` le-badge--${variant}` : ""}${
-				theme ? ` le-badge--${theme}` : ""
-			}${size ? ` le-badge--${size}` : ""}${customClass ? ` ${customClass}` : ""}`}
-			style={customStyles}
-			data-testid="leuxBadge"
-		>
+		<span className={classNames} style={styles} data-testid={TestId.Badge}>
 			{children}
 		</span>
 	);

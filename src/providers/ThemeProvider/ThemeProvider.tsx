@@ -1,5 +1,6 @@
 import React, { PropsWithChildren, useEffect, useMemo, useState } from "react";
 import {
+	LeGlobalConfig,
 	LeThemeMapper,
 	LeThemeType,
 	LeThemes,
@@ -10,6 +11,7 @@ import "../../styles/theme.scss";
 
 interface ThemeProviderProps extends PropsWithChildren {
 	themes?: ThemeContextProps["themes"];
+	globalConfig?: LeGlobalConfig;
 	defaultTheme?: ThemeContextProps["defaultTheme"];
 	persistThemeKey?: string;
 	shouldPersist?: boolean;
@@ -63,7 +65,13 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
 	defaultTheme,
 	persistThemeKey,
 	shouldPersist = true,
+	globalConfig,
 }) => {
+	const [config, setConfig] = useState<LeGlobalConfig>(
+		globalConfig || {
+			fontFamily: "Poppins, sans-serif",
+		}
+	);
 	const appThemes = useMemo(() => {
 		return { ...defaultThemes, ...themes };
 	}, [themes, defaultThemes]);
@@ -109,8 +117,12 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
 	const setThemeCSSVariables = (theme: LeThemes) => {
 		Object.keys(appThemes[theme]).forEach((colorKey) => {
 			const colorValue = appThemes[theme][colorKey];
-			document.documentElement.style.setProperty(`--le-color-${colorKey}`, colorValue);
+			document.body.style.setProperty(`--le-color-${colorKey}`, colorValue);
 		});
+	};
+
+	const setTypographyFontFamily = (fontFamily: string) => {
+		document.body.style.setProperty("--le-font-family", fontFamily);
 	};
 	// Listen to theme changes to update the body class and theme css variables
 	useEffect(() => {
@@ -127,6 +139,12 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
 		}
 	}, [appThemes, currentTheme]);
 
+	useEffect(() => {
+		if (config?.fontFamily) {
+			setTypographyFontFamily(config.fontFamily);
+		}
+	}, [config?.fontFamily]);
+
 	const theme = useMemo(() => {
 		return appThemes[currentTheme];
 	}, [defaultTheme, appThemes]);
@@ -137,10 +155,12 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
 	};
 
 	return (
-		<ThemeContext.Provider value={{ theme, themes: appThemes, currentTheme, swap, defaultTheme }}>
+		<ThemeContext.Provider
+			value={{ theme, themes: appThemes, currentTheme, swap, defaultTheme, globalConfig }}
+		>
 			{children}
 		</ThemeContext.Provider>
 	);
 };
 
-export { ThemeProvider, defaultThemes, ThemeProviderProps };
+export { ThemeProvider, ThemeProviderProps, defaultThemes };

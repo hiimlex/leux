@@ -13,10 +13,6 @@
 		"outDir": "dist",
 		"moduleResolution": "Node",
 		"allowSyntheticDefaultImports": true,
-		"emitDeclarationOnly": true,
-		"baseUrl": "./src",
-		"paths": {
-			"src/*": ["*"]
-		}
+		"emitDeclarationOnly": true
 	}
 }
