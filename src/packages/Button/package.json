@@ -1,6 +1,6 @@
 {
 	"name": "@leux/button",
-	"version": "0.4.3",
+	"version": "0.5.2",
 	"description": "A simple button component for @leux/ui",
 	"main": "dist/index.js",
 	"module": "dist/index.esm.js",
@@ -12,6 +12,9 @@
 	},
 	"peerDependencies": {
 		"react": "^18.2.0"
+	},
+	"dependencies": {
+		"classnames": "^2.5.1"
 	},
 	"devDependencies": {
 		"@testing-library/jest-dom": "^5.16.5",

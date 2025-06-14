@@ -1,6 +1,6 @@
 {
 	"name": "@leux/pagination",
-	"version": "0.4.3",
+	"version": "0.5.0",
 	"description": "A simple pagination component for @leux/ui",
 	"main": "dist/index.js",
 	"module": "dist/index.esm.js",

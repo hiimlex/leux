@@ -10,7 +10,7 @@ interface ButtonState {
 }
 
 interface ButtonProps {
-	theme?: ButtonThemes;
+	colorScheme?: ButtonThemes;
 	variant?: ButtonVariants;
 	type?: ButtonTypes;
 	size?: ButtonSizes;
@@ -20,6 +20,7 @@ interface ButtonProps {
 	customClass?: string;
 	customStyles?: React.CSSProperties;
 	buttonProps?: React.ButtonHTMLAttributes<HTMLButtonElement>;
+	currentTheme?: "light" | "dark";
 }
 
 export { ButtonProps, ButtonVariants, ButtonThemes, ButtonState, ButtonSizes, ButtonTypes };

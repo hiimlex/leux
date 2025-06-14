@@ -15,7 +15,7 @@ describe("Button component test", () => {
 
 	it("should render a Outlined Secondary Button component", () => {
 		const { getByTestId } = render(
-			<Button theme="secondary" variant="outlined" size="large">
+			<Button colorScheme="secondary" variant="outlined" size="large">
 				Secondary Button
 			</Button>
 		);

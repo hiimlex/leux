@@ -1,9 +1,10 @@
-import React, { MouseEvent } from "react";
+import classNames from "classnames";
+import React, { MouseEvent, useMemo } from "react";
 import { ButtonProps } from "./Button.model";
 import "./Button.scss";
 
-const Button = ({
-	theme = "default",
+const Button: React.FC<ButtonProps> = ({
+	colorScheme = "default",
 	size = "medium",
 	variant = "filled",
 	type = "button",
@@ -13,20 +14,31 @@ const Button = ({
 	customClass,
 	customStyles,
 	buttonProps,
-}: ButtonProps) => {
+	currentTheme,
+}) => {
 	const handleOnCLick = (event: MouseEvent<HTMLButtonElement>) => {
 		if (onClick) {
 			onClick(event);
 		}
 	};
 
+	const classes = useMemo(
+		() =>
+			classNames([
+				"le-button",
+				`le-button--${variant}`,
+				`le-button--${size}`,
+				`le-button--${colorScheme}`,
+				customClass,
+				`le-button--${currentTheme}`,
+				state?.disabled && "le-button--disabled",
+			]),
+		[variant, size, colorScheme, customClass, currentTheme, state?.disabled]
+	);
+
 	return (
 		<button
-			className={
-				`le-button le-button--${variant} le-button--${size} le-button--${theme}` +
-				(state && state.disabled ? " le-button--disabled" : "") +
-				(customClass ? ` ${customClass}` : "")
-			}
+			className={classes}
 			type={type}
 			data-testid="leuxButton"
 			onClick={(event) => handleOnCLick(event)}
