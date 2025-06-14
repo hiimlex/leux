@@ -63,7 +63,7 @@ describe("Tooltip component test", () => {
 
 	it("should render a primary Tooltip component", () => {
 		const { getByTestId } = render(
-			<Tooltip title="hello" theme="primary">
+			<Tooltip title="hello" colorScheme="primary">
 				<span>hover me</span>
 			</Tooltip>
 		);
