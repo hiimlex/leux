@@ -27,7 +27,4 @@ export default defineConfig(async () => ({
 		},
 	},
 	assetsInclude: ["**/*.svg"],
-	optimizeDeps: {
-		include: ["classnames"],
-	},
 }));

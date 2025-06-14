@@ -10,7 +10,7 @@
 		"build:bundle": "rollup -c",
 		"build": "npm run build:types && npm run build:bundle"
 	},
-	"peerDependencies": {
+	"dependencies": {
 		"react": "^18.2.0",
 		"classnames": "^2.5.1"
 	},
