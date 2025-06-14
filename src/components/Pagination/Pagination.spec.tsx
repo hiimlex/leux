@@ -1,6 +1,5 @@
+import { fireEvent, render, act } from "@testing-library/react";
 import React from "react";
-import { act, render } from "@testing-library/react";
-
 import "@testing-library/jest-dom";
 import { Pagination } from "./Pagination";
 
@@ -157,5 +156,62 @@ describe("Pagination component test", () => {
 				throw new Error("Page button not found");
 			}
 		});
+	});
+
+	it("should render a Pagination component with page size changer", () => {
+		const { getByTestId } = render(
+			<Pagination
+				currentPage={1}
+				totalPages={5}
+				totalItems={20}
+				itemsPerPage={4}
+				showPageSizeChanger
+			/>
+		);
+
+		const pagination = getByTestId("leuxPagination");
+
+		expect(pagination).toBeTruthy();
+
+		const pageSizeChanger = getByTestId("leuxPageSizeChanger");
+
+		expect(pageSizeChanger).toBeTruthy();
+	});
+
+	it("should render with page size changer and change the page size", () => {
+		const newSize = 5;
+
+		let currentSize = 10;
+
+		const { getByTestId, getAllByTestId, getByText } = render(
+			<Pagination
+				currentPage={1}
+				totalPages={5}
+				totalItems={20}
+				itemsPerPage={currentSize}
+				showPageSizeChanger
+				onPageSizeChange={(itemsPerPage: number) => (currentSize = itemsPerPage)}
+			/>
+		);
+
+		const pagination = getByTestId("leuxPagination");
+
+		expect(pagination).toBeTruthy();
+
+		const pageSizeChanger = getByTestId("leuxPageSizeChanger");
+
+		fireEvent.click(pageSizeChanger);
+
+		const dropdownItems = getAllByTestId("leuxDropdownItem");
+
+		expect(dropdownItems).toBeTruthy();
+
+		const newSizeOption = getByText(`${newSize}`);
+
+		if (newSizeOption) {
+			fireEvent.click(newSizeOption);
+
+			expect(currentSize).toBe(newSize);
+		}
 	});
 });

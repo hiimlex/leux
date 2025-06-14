@@ -28,7 +28,7 @@ Use the `variant` prop to change the Skeleton component style.
 
 #### Size
 
-Use the `size` prop to change the Skeleton component style.
+Use the `size` prop to change the Skeleton row height.
 
 <div>
 <SkeletonSizePreview>

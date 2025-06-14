@@ -1,4 +1,4 @@
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, act } from "@testing-library/react";
 
 import "@testing-library/jest-dom";
 import React from "react";
@@ -34,7 +34,9 @@ describe("Toast component test", () => {
 
 		const createBtn = getByText(LABELS.CREATE);
 
-		fireEvent.click(createBtn);
+		act(() => {
+			fireEvent.click(createBtn);
+		});
 
 		const toast = getByTestId("leuxToast");
 
@@ -50,13 +52,17 @@ describe("Toast component test", () => {
 
 		const createBtn = getByText(LABELS.CREATE);
 
-		fireEvent.click(createBtn);
+		act(() => {
+			fireEvent.click(createBtn);
+		});
 
 		const toast = getByTestId("leuxToast");
 
 		expect(toast).toBeTruthy();
 
-		fireEvent.click(toast);
+		act(() => {
+			fireEvent.click(toast);
+		});
 
 		expect(toast).not.toBeInTheDocument();
 	});
@@ -70,13 +76,17 @@ describe("Toast component test", () => {
 
 		const createBtn = getByText(LABELS.CREATE);
 
-		fireEvent.click(createBtn);
+		act(() => {
+			fireEvent.click(createBtn);
+		});
 
 		const toast = getByTestId("leuxToast");
 
 		expect(toast).toBeTruthy();
 
-		fireEvent.click(toast);
+		act(() => {
+			fireEvent.click(toast);
+		});
 
 		expect(toast).toBeInTheDocument();
 	});
@@ -90,7 +100,9 @@ describe("Toast component test", () => {
 
 		const createBtn = getByText(LABELS.CREATE);
 
-		fireEvent.click(createBtn);
+		act(() => {
+			fireEvent.click(createBtn);
+		});
 
 		const toast = getByTestId("leuxToast");
 
@@ -106,7 +118,9 @@ describe("Toast component test", () => {
 
 		const createBtn = getByText(LABELS.CREATE);
 
-		fireEvent.click(createBtn);
+		act(() => {
+			fireEvent.click(createBtn);
+		});
 
 		const toast = getByTestId("leuxToast");
 
@@ -124,11 +138,15 @@ describe("Toast component test", () => {
 
 		const createBtn = getByText(LABELS.CREATE);
 
-		fireEvent.click(createBtn);
+		act(() => {
+			fireEvent.click(createBtn);
+		});
 
 		const toast = getByTestId("leuxToast");
 
-		fireEvent.click(toast);
+		act(() => {
+			fireEvent.click(toast);
+		});
 
 		expect(onClose).toHaveBeenCalled();
 	});
@@ -142,13 +160,17 @@ describe("Toast component test", () => {
 
 		const createBtn = getByText(LABELS.CREATE);
 
-		fireEvent.click(createBtn);
+		act(() => {
+			fireEvent.click(createBtn);
+		});
 
 		const toast = getByTestId("leuxToast");
 
 		expect(toast).toBeTruthy();
 
-		await new Promise((r) => setTimeout(r, 2050));
+		await act(async () => {
+			await new Promise((r) => setTimeout(r, 2050));
+		});
 
 		expect(toast).not.toBeInTheDocument();
 	});

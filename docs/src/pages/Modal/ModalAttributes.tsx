@@ -3,6 +3,7 @@ import { PropsWithChildren, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Button, ModalProps, Typography, useModal } from "../../../../src";
 import { attributes as modalAttr } from "./modal.md";
+import React from "react";
 
 const ModalImportPreview = () => (
 	<LeHighlighter
@@ -85,15 +86,6 @@ const ModalActionsPreview = () => {
 			title: "Title",
 			children: <Typography variant="body-1">Click on OK, Cancel or Close button</Typography>,
 			visible: false,
-			onOk: () => {
-				alert("Hello");
-			},
-			onCancel: () => {
-				alert("Why you click me?");
-			},
-			onClose: () => {
-				alert("Closed");
-			},
 			destroyOnClose: true,
 			okText: "Click me",
 			cancelText: "Don't click me",
@@ -164,7 +156,6 @@ const ModalPositionPreview = () => {
 				</Typography>
 			),
 			position: { top: 120 },
-			footer: null,
 		});
 	};
 
@@ -189,7 +180,6 @@ const ModalPositionPreview = () => {
 				</Typography>
 			),
 			top: 120,
-			footer: null,
 		});
 	};
 
@@ -205,7 +195,7 @@ const ModalPositionPreview = () => {
 
 const RequiredProp = ({ children }: PropsWithChildren) => (
 	<span>
-		{children} <strong className="le-color-text--danger">*</strong>
+		{children} <strong className="le-color-danger">*</strong>
 	</span>
 );
 
@@ -217,7 +207,7 @@ const ModalApiTable = () => {
 		},
 		zIndex: {
 			type: "React.CSSProperties['zIndex']",
-			defaultValue: "'zIndex is calculated automatically'",
+			defaultValue: "1000",
 		},
 		title: {
 			type: "string",

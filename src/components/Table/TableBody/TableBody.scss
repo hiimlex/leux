@@ -1,0 +1,105 @@
+@use "../../../styles/variables.scss" as *;
+
+.le-table-body {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	word-wrap: break-word;
+	word-break: break-all;
+
+	&--row,
+	tr {
+		width: 100%;
+		display: grid !important;
+
+		&-item,
+		td {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: 400;
+		}
+	}
+
+	&--default {
+		.le-table-body--row,
+		tr {
+			border-bottom: 1px solid var(--le-color-border);
+
+			&-item,
+			td {
+				border: none;
+				font-weight: 400;
+				color: var(--le-color-textOne);
+			}
+		}
+	}
+
+	&--bordered {
+		.le-table-body--row,
+		tr {
+			border-radius: 0 !important;
+			border: none;
+			border-bottom: 1px solid var(--le-color-border);
+
+			&-item,
+			td {
+				border: none;
+				border-radius: 0 !important;
+				border-right: 1px solid var(--le-color-border);
+				color: var(--le-color-textOne);
+
+				&:last-child {
+					border-right: none;
+				}
+			}
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+
+	&--small {
+		&.le-table-body tr td {
+			padding: 0.75rem 1rem;
+		}
+	}
+
+	&--medium {
+		&.le-table-body tr td {
+			padding: 0.875rem 1rem;
+		}
+	}
+
+	&--large {
+		&.le-table-body tr td {
+			padding: 1rem 1.5rem;
+		}
+	}
+
+	&--scrollable {
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		&-tb {
+			overflow-y: auto;
+			max-height: var(--le-table-body-scrollHeight);
+			height: var(--le-table-body-scrollHeight);
+
+			&::after {
+				content: ".";
+				color: transparent;
+				width: 100%;
+				height: 52px;
+				position: sticky;
+				bottom: 0;
+				z-index: 4;
+
+				background: linear-gradient(180deg, rgba(#333, 0.01), var(--le-color-backgroundOne));
+			}
+		}
+	}
+}

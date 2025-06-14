@@ -1,0 +1,135 @@
+@use "./variables.scss" as *;
+
+// Theme Colors
+:root {
+	--le-color-primary: #{$color-variant-primary};
+	--le-color-primaryHover: #{$color-variant-primary-hover};
+	--le-color-primaryGhost: #{$color-variant-primary}33;
+	--le-color-secondary: #{$color-variant-secondary};
+	--le-color-secondaryHover: #{$color-variant-secondary-hover};
+	--le-color-secondaryGhost: #{$color-variant-secondary}33;
+	--le-color-success: #{$color-variant-success};
+	--le-color-successHover: #{$color-variant-success-hover};
+	--le-color-successGhost: #{$color-variant-secondary}33;
+	--le-color-danger: #{$color-variant-danger};
+	--le-color-dangerHover: #{$color-variant-danger-hover};
+	--le-color-dangerGhost: #{$color-variant-danger}33;
+	--le-color-warning: #{$color-variant-warning};
+	--le-color-warningHover: #{$color-variant-warning-hover};
+	--le-color-warningGhost: #{$color-variant-warning}33;
+	--le-color-disabled: #{$color-variant-disabled};
+	--le-color-placeholder: #989ba7;
+
+	// Default theme
+	--le-color-default: #d2d9e5;
+	--le-color-defaultHover: #b3b9c6;
+	--le-color-defaultGhost: #b3b9c644;
+	--le-color-inputBackground: #f1f3f7;
+	--le-color-border: #e1e2e4;
+	--le-color-backgroundOne: #ffffff;
+	--le-color-backgroundTwo: #f9f9f9;
+	--le-color-backgroundThree: #d9d9d9;
+	--le-color-textOne: #1b2140;
+	--le-color-textTwo: #514f62;
+	--le-color-textThree: #616377;
+	--le-color-inputBackground: #fff;
+	--le-color-textInverse: #ffffff;
+
+	--le-font-family: $font-family;
+}
+
+.le-theme-light {
+	--le-color-default: #d2d9e5;
+	--le-color-defaultHover: #b3b9c6;
+	--le-color-defaultGhost: #b3b9c644;
+	--le-color-inputBackground: #f1f3f7;
+	--le-color-border: #e1e2e4;
+	--le-color-backgroundOne: #ffffff;
+	--le-color-backgroundTwo: #f9f9f9;
+	--le-color-backgroundThree: #e1e2e8;
+	--le-color-textOne: #1b2140;
+	--le-color-textTwo: #514f62;
+	--le-color-textThree: #616377;
+	--le-color-textInverse: #ffffff;
+	--le-color-disabled: #cecece;
+}
+
+.le-theme-dark {
+	--le-color-default: #626266;
+	--le-color-defaultHover: #4d4d50;
+	--le-color-defaultGhost: #4d4d5044;
+	--le-color-inputBackground: #414245;
+	--le-color-border: #43444a;
+	--le-color-backgroundOne: #262629;
+	--le-color-backgroundTwo: #2d2d30;
+	--le-color-backgroundThree: #050518;
+	--le-color-textOne: #ffffff;
+	--le-color-textTwo: #d1d1d7;
+	--le-color-textThree: #969699;
+	--le-color-textInverse: #1b2140;
+	--le-color-disabled: #636363;
+}
+
+$colors: (
+	primary: var(--le-color-primary),
+	primaryGhost: var(--le-color-primaryGhost),
+	secondary: var(--le-color-secondary),
+	secondaryGhost: var(--le-color-secondaryGhost),
+	success: var(--le-color-success),
+	successGhost: var(--le-color-successGhost),
+	danger: var(--le-color-danger),
+	dangerGhost: var(--le-color-dangerGhost),
+	warning: var(--le-color-warning),
+	warningGhost: var(--le-color-warningGhost),
+	disabled: var(--le-color-disabled),
+	placeholder: var(--le-color-placeholder),
+	default: var(--le-color-default),
+	defaultGhost: var(--le-color-defaultGhost),
+	inputBackground: var(--le-color-inputBackground),
+	border: var(--le-color-border),
+	textOne: var(--le-color-textOne),
+	textTwo: var(--le-color-textTwo),
+	textThree: var(--le-color-textThree),
+	textInverse: var(--le-color-textInverse),
+);
+
+@each $key, $value in $colors {
+	.le-color-#{$key} {
+		color: $value;
+	}
+}
+
+$bgs: (
+	primary: var(--le-color-primary),
+	secondary: var(--le-color-secondary),
+	success: var(--le-color-success),
+	danger: var(--le-color-danger),
+	warning: var(--le-color-warning),
+	disabled: var(--le-color-disabled),
+	placeholder: var(--le-color-placeholder),
+	default: var(--le-color-default),
+	border: var(--le-color-border),
+	backgroundOne: var(--le-color-backgroundOne),
+	backgroundTwo: var(--le-color-backgroundTwo),
+	backgroundThree: var(--le-color-backgroundThree),
+	inputBackground: var(--le-color-inputBackground),
+);
+
+@each $key, $value in $bgs {
+	.le-bg-#{$key} {
+		background-color: $value;
+	}
+}
+
+$texts: (
+	textOne: var(--le-color-textOne),
+	textTwo: var(--le-color-textTwo),
+	textThree: var(--le-color-textThree),
+	textInverse: var(--le-color-textInverse),
+);
+
+@each $key, $value in $texts {
+	.le-text-#{$key} {
+		color: $value;
+	}
+}

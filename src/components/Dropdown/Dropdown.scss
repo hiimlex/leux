@@ -1,4 +1,26 @@
-@import "../../styles/variables.scss";
+@use "../../styles/variables.scss" as *;
+
+@keyframes dropdownMenuAnimationTop {
+	0% {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes dropdownMenuAnimationBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(-12px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
 
 .le-dropdown {
 	width: fit-content;
@@ -11,20 +33,30 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	border-radius: 4px;
-	box-shadow: rgba(149, 157, 165, 0.1) 0px 2px 24px;
+	border-radius: 6px;
+	box-shadow: #959da51a 0px 2px 24px;
 
 	overflow: hidden;
 
-	animation: leDropdownAnimation 0.1s ease-in-out;
+	&--topRight,
+	&--topLeft,
+	&--topCenter {
+		animation: dropdownMenuAnimationTop 0.3s ease-in-out;
+	}
+
+	&--bottomRight,
+	&--bottomLeft,
+	&--bottomCenter {
+		animation: dropdownMenuAnimationBottom 0.3s ease-in-out;
+	}
 
 	&--filled {
-		background-color: $color-variant-border;
+		background-color: var(--le-color-border);
 	}
 
 	&--outlined {
-		background: $color-light-background;
-		border: 1px solid $color-variant-border;
+		background: var(--le-color-backgroundOne);
+		border: 1px solid var(--le-color-border);
 	}
 
 	&--small {
@@ -155,7 +187,7 @@
 	&-disabled {
 		cursor: not-allowed !important;
 		background: $color-variant-disabled !important;
-		color: $color-darker-text !important;
+		color: var(--le-color-placeholder) !important;
 	}
 }
 
@@ -165,17 +197,6 @@
 	height: 1px;
 	display: flex;
 	width: 100%;
-	background-color: $color-variant-border-hover;
+	background-color: var(--le-color-inputBackground);
 	pointer-events: none;
-}
-
-@keyframes leDropdownAnimation {
-	0% {
-		opacity: 0;
-		transform: translateY(-15px);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
 }

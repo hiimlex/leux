@@ -11,7 +11,7 @@
 	.fixed-content {
 		position: fixed;
 		width: 144px;
-		border-right: 1px solid $color-variant-default;
+		border-right: 1px solid var(--le-color-border);
 		height: 100%;
 
 		padding-top: 32px;
@@ -53,17 +53,18 @@
 					a {
 						margin: 6px 0;
 						margin-left: 18px;
-						color: $color-dark-text;
+						color: var(--le-color-textTwo);
 						text-decoration: none;
 						font-weight: 400;
 						transition: all 0.1s ease-in-out;
 
 						&.active {
-							font-weight: bold !important;
+							color: var(--le-color-primary);
+							font-weight: bold;
 						}
 
 						&:hover {
-							font-weight: 500;
+							color: var(--le-color-secondary);
 						}
 					}
 				}

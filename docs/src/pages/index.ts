@@ -20,3 +20,4 @@ export { default as TextAreaPage } from "./TextArea";
 export { default as ToastPage } from "./Toast";
 export { default as TooltipPage } from "./Tooltip";
 export { default as TypographyPage } from "./Typography";
+export { default as ThemingPage } from "./Theming";

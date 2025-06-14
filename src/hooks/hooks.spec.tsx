@@ -1,10 +1,11 @@
-import { act, fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, act } from "@testing-library/react";
 import React from "react";
 
 import "@testing-library/jest-dom";
-import { OverlayProvider } from "..";
-import { ModalProps, ToastProps } from "../components";
-import { useModal, useToast } from "../hooks";
+import { OverlayProvider, ThemeProvider } from "../providers";
+import { LeThemeMapper } from "../contexts";
+import { Button, ModalProps, ToastProps } from "../components";
+import { useModal, useTheme, useToast } from "../hooks";
 import { useBreakpoint } from "./useBreakpoint";
 
 const TestUseBreakpoint = () => {
@@ -297,5 +298,159 @@ describe("useToast test", () => {
 		fireEvent.click(removeToast);
 
 		expect(toast).not.toBeInTheDocument();
+	});
+});
+
+const THEME_LABELS = {
+	BUTTON: "CHANGE_THEME",
+};
+
+const TestIds = {
+	themeVar: "themeVar",
+	currentTheme: "currentTheme",
+};
+
+const TestUseTheme = () => {
+	const { theme, currentTheme, swap } = useTheme();
+
+	const handleThemeChange = () => {
+		const newTheme = currentTheme === "light" ? "dark" : "light";
+
+		swap(newTheme);
+	};
+
+	return (
+		<div>
+			<Button onClick={handleThemeChange}>{THEME_LABELS.BUTTON}</Button>
+
+			<span data-testid={TestIds.currentTheme}>{currentTheme}</span>
+			{theme?.primary && <span data-testid={TestIds.themeVar}>{theme?.primary}</span>}
+		</div>
+	);
+};
+
+describe("useTheme test", () => {
+	beforeEach(() => {
+		localStorage.clear();
+	});
+	it("should change theme", () => {
+		const defaultTheme = "light";
+
+		const { getByTestId, getByText } = render(
+			<ThemeProvider defaultTheme={defaultTheme}>
+				<TestUseTheme />
+			</ThemeProvider>
+		);
+
+		const changeThemeButton = getByText(THEME_LABELS.BUTTON);
+
+		expect(changeThemeButton).toBeInTheDocument();
+
+		fireEvent.click(changeThemeButton);
+
+		const currentTheme = getByTestId("currentTheme");
+
+		expect(currentTheme).not.toBe(defaultTheme);
+	});
+
+	it('should define a default theme as "light"', () => {
+		const defaultTheme = "light";
+
+		const { getByTestId } = render(
+			<ThemeProvider defaultTheme={defaultTheme}>
+				<TestUseTheme />
+			</ThemeProvider>
+		);
+
+		const currentTheme = getByTestId("currentTheme");
+
+		expect(currentTheme).toHaveTextContent(defaultTheme);
+	});
+
+	it("should add a custom theme", () => {
+		const customName = "custom";
+
+		const themes: LeThemeMapper = {
+			[customName]: {
+				primary: "#000",
+			},
+		};
+
+		const { getByTestId } = render(
+			<ThemeProvider defaultTheme={customName} themes={themes}>
+				<TestUseTheme />
+			</ThemeProvider>
+		);
+
+		const currentTheme = getByTestId(TestIds.currentTheme);
+
+		const body = document.querySelector("body");
+
+		expect(body).toHaveClass(`le-theme-${customName}`);
+
+		expect(currentTheme).toHaveTextContent(customName);
+	});
+
+	it('should access theme colors with "useTheme"', () => {
+		const customName = "custom";
+		const customColor = "#000";
+
+		const themes: LeThemeMapper = {
+			[customName]: {
+				primary: customColor,
+			},
+		};
+
+		const { getByTestId } = render(
+			<ThemeProvider defaultTheme={customName} themes={themes}>
+				<TestUseTheme />
+			</ThemeProvider>
+		);
+
+		const currentTheme = getByTestId(TestIds.currentTheme);
+
+		expect(currentTheme).toHaveTextContent(customName);
+
+		const themeVar = getByTestId(TestIds.themeVar);
+
+		expect(themeVar).toBeTruthy();
+		expect(themeVar).toHaveTextContent(customColor);
+	});
+
+	it("should get the persisted theme in the local storage", () => {
+		const customName = "custom";
+		const customColor = "#000";
+
+		const themes: LeThemeMapper = {
+			[customName]: {
+				primary: customColor,
+			},
+		};
+
+		act(() => {
+			localStorage.setItem("le-theme", customName);
+		});
+
+		const { getByTestId } = render(
+			<ThemeProvider defaultTheme={customName} themes={themes}>
+				<TestUseTheme />
+			</ThemeProvider>
+		);
+
+		const currentTheme = getByTestId(TestIds.currentTheme);
+
+		expect(currentTheme).toHaveTextContent(customName);
+	});
+
+	it("should get the default theme from lib", () => {
+		const { getByTestId } = render(
+			<ThemeProvider>
+				<TestUseTheme />
+			</ThemeProvider>
+		);
+
+		const currentTheme = getByTestId(TestIds.currentTheme);
+
+		expect(currentTheme).toHaveTextContent("light");
 	});
 });

@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@use "../../styles/variables.scss" as *;
 
 .le-toast {
 	pointer-events: all;
@@ -10,7 +10,7 @@
 	align-items: center;
 	justify-content: flex-start;
 
-	border-radius: 4px;
+	border-radius: unit(1);
 
 	box-shadow: rgba(149, 157, 165, 0.1) 0px 2px 24px;
 
@@ -40,22 +40,35 @@
 	&--filled {
 		@each $color, $value in $variant-colors {
 			&.le-toast--#{$color} {
-				color: $color-lighter-text;
+				color: var(--le-color-textInverse);
 				background: $value;
 				border: 1px solid $value;
 
 				&.le-toast--closable {
 					&:hover {
 						cursor: pointer;
-						background: darken($value, 10%);
-						border-color: darken($value, 10%);
+						background: var(--le-color-#{$color}Hover);
+						border-color: var(--le-color-#{$color}Hover);
 					}
 				}
+			}
+		}
 
-				@if $color == "default" {
-					color: $color-dark-text;
+		&.le-toast--default {
+			background: var(--le-color-default);
+			color: var(--le-color-textTwo);
+
+			&.le-toast--closable {
+				&:hover {
+					cursor: pointer;
+					background: var(--le-color-defaultHover);
+					border-color: var(--le-color-defaultHover);
 				}
 			}
+		}
+
+		&.le-toast--dark {
+			color: var(--le-color-textOne);
 		}
 	}
 

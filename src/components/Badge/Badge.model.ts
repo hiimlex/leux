@@ -1,5 +1,3 @@
-import React from "react";
-
 type BadgeVariants = "dashed" | "ghost" | "outlined";
 type BadgeThemes = "primary" | "secondary" | "success" | "danger" | "warning" | "default";
 type BadgeSizes = "small" | "medium" | "large";

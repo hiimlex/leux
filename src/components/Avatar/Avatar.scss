@@ -1,5 +1,3 @@
-@import "../../styles/variables.scss";
-
 .le-avatar {
 	display: flex;
 	align-items: center;
@@ -14,8 +12,8 @@
 	}
 
 	&--text {
-		color: $color-dark-text;
-		background: $color-variant-default;
+		color: var(--le-color-textTwo);
+		background: var(--le-color-border);
 	}
 
 	&--small {

@@ -1,9 +1,10 @@
 import React, { PropsWithChildren, useState } from "react";
+import { withGlobalConfig } from "../../hooks";
 import { LeClassNames } from "../../types";
 import { SelectProps } from "./Select.model";
 import "./Select.scss";
 
-const Select = ({
+const SelectComponent: React.FC<PropsWithChildren<SelectProps>> = ({
 	customClass,
 	customStyles,
 	fieldKey,
@@ -17,7 +18,7 @@ const Select = ({
 	selectRef,
 	state,
 	selectProps,
-}: PropsWithChildren<SelectProps>) => {
+}) => {
 	const [value, setValue] = useState<string | number | readonly string[] | undefined>("");
 
 	const classNames: LeClassNames = {
@@ -77,5 +78,7 @@ const Select = ({
 		</select>
 	);
 };
+
+const Select = withGlobalConfig(SelectComponent, "select");
 
 export { Select };

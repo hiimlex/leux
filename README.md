@@ -4,7 +4,7 @@
 
 [Docs](https://leux.vercel.app/)
 
-<a href="https://www.npmjs.com/package/leux" target="\_parent">
+<a href="https://www.npmjs.com/package/@leux/ui" target="\_parent">
   <img alt="#npm" src="https://img.shields.io/npm/v/@leux/ui">
 </a>
 <a href="https://www.npmjs.com/package/leux" target="\_parent">

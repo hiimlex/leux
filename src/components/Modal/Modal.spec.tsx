@@ -1,4 +1,4 @@
-import { act, fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, act } from "@testing-library/react";
 
 import "@testing-library/jest-dom";
 import React from "react";

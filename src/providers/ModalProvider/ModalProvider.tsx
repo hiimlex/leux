@@ -8,7 +8,7 @@ type ModalProviderProps = {
 	children: React.ReactNode;
 };
 
-const ModalProvider = ({ children }: ModalProviderProps) => {
+const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
 	const [modals, setModals] = useState<ModalProps[]>([]);
 	const [zIndex, setZIndex] = useState<number>(1000);
 

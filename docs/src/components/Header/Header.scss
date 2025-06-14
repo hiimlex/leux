@@ -7,10 +7,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-bottom: 1px solid $color-variant-default;
+	border-bottom: 1px solid var(--le-color-border);
 
 	position: fixed;
-	background: white;
+	background: var(--le-color-backgroundOne);
 	z-index: 99;
 
 	&--content {
@@ -92,7 +92,7 @@
 
 			.le-nav--item {
 				margin: 0 12px;
-				color: $color-dark-text;
+				color: var(--le-color-textTwo);
 				transition: all 0.2s ease-in-out;
 
 				.le-nav--link {
@@ -105,12 +105,12 @@
 
 					transition: all 0.1s ease-in-out;
 
-					color: $color-dark-text;
+					color: var(--le-color-textTwo);
 
 					&:active,
 					&:visited,
 					&:focus {
-						color: $color-dark-text;
+						color: var(--le-color-textTwo);
 					}
 
 					&:hover {

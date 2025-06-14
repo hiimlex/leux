@@ -59,17 +59,6 @@ Use the `state` prop to change the state of the radio button.
 
 <br />
 
-#### Custom
-
-Use the `custom` prefixed props to customize the radio, label and container elements style.
-
-<div>
-<RadioCustomPreview>
-</RadioCustomPreview>
-</div>
-
-<br />
-
 ### API Reference
 
 <div>

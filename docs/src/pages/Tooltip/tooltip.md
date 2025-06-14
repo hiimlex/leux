@@ -48,17 +48,6 @@ Use the `theme` prop to change the theme of the tooltip.
 
 <br/>
 
-#### Custom
-
-Use the `custom` prefix props to change the tooltip style.
-
-<div>
-<TooltipCustomPreview>
-</TooltipCustomPreview>
-</div>
-
-<br/>
-
 ### API Reference
 
 <div>

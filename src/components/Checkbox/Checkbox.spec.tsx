@@ -129,4 +129,25 @@ describe("Checkbox component test", () => {
 
 		expect(send).toBeFalsy();
 	});
+
+	it("should render a Checkbox component with changable content", () => {
+		let send = false;
+
+		const { getByTestId } = render(
+			<Checkbox
+				fieldKey="test"
+				onChange={() => {
+					send = true;
+				}}
+			/>
+		);
+
+		const checkbox = getByTestId("leuxCheckbox");
+
+		expect(checkbox).toBeTruthy();
+
+		fireEvent.click(checkbox);
+
+		expect(send).toBeFalsy();
+	});
 });

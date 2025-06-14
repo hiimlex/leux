@@ -6,10 +6,11 @@ import {
 	ToastProps,
 	ToastProviderProps,
 	ToastSizes,
-	ToastThemes,
+	ToastColors,
 	useToast,
 } from "../../../../src";
 import { attributes as toastAttr } from "./toast.md";
+import React from "react";
 
 const ToastImportPreview = () => (
 	<LeHighlighter language="tsx" code={`import { Toast, ToastProps, useToast } from "leux";`} />
@@ -30,12 +31,8 @@ const ToastSizePreview = () => {
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Button onClick={() => handleCreateToast("small")} customStyles={{ marginRight: 12 }}>
-					small toast
-				</Button>
-				<Button onClick={() => handleCreateToast("medium")} customStyles={{ marginRight: 12 }}>
-					medium toast
-				</Button>
+				<Button onClick={() => handleCreateToast("small")}>small toast</Button>
+				<Button onClick={() => handleCreateToast("medium")}>medium toast</Button>
 				<Button onClick={() => handleCreateToast("large")}>large toast</Button>
 			</LePreview>
 			{showCode && (
@@ -57,16 +54,10 @@ const Component = () => {
 
 	return (
 		<Box flex flexDirection="row" alignItems="center">
-			<Button
-				onClick={() => handleCreateToast("small")}
-				customStyles={{ marginRight: 12 }}
-			>
+			<Button onClick={() => handleCreateToast("small")} >
 				small toast
 			</Button>
-			<Button
-				onClick={() => handleCreateToast("medium")}
-				customStyles={{ marginRight: 12 }}
-			>
+			<Button onClick={() => handleCreateToast("medium")}>
 				medium toast
 			</Button>
 			<Button onClick={() => handleCreateToast("large")}>
@@ -86,10 +77,10 @@ const ToastThemePreview = () => {
 
 	const { createToast } = useToast();
 
-	const handleCreateToast = (theme: ToastThemes) => {
+	const handleCreateToast = (colorScheme: ToastColors) => {
 		createToast({
-			label: `toast ${theme} preview`,
-			theme,
+			label: `toast ${colorScheme} preview`,
+			colorScheme,
 		});
 	};
 
@@ -98,7 +89,7 @@ const ToastThemePreview = () => {
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
 				<Button
 					onClick={() => handleCreateToast("primary")}
-					theme="primary"
+					colorScheme="primary"
 					customStyles={{ marginRight: 12 }}
 				>
 					primary toast
@@ -106,7 +97,7 @@ const ToastThemePreview = () => {
 
 				<Button
 					onClick={() => handleCreateToast("secondary")}
-					theme="secondary"
+					colorScheme="secondary"
 					customStyles={{ marginRight: 12 }}
 				>
 					secondary toast
@@ -114,7 +105,7 @@ const ToastThemePreview = () => {
 
 				<Button
 					onClick={() => handleCreateToast("success")}
-					theme="success"
+					colorScheme="success"
 					customStyles={{ marginRight: 12 }}
 				>
 					success toast
@@ -122,7 +113,7 @@ const ToastThemePreview = () => {
 
 				<Button
 					onClick={() => handleCreateToast("danger")}
-					theme="danger"
+					colorScheme="danger"
 					customStyles={{ marginRight: 12 }}
 				>
 					danger toast
@@ -130,7 +121,7 @@ const ToastThemePreview = () => {
 
 				<Button
 					onClick={() => handleCreateToast("warning")}
-					theme="warning"
+					colorScheme="warning"
 					customStyles={{ marginRight: 12 }}
 				>
 					warning toast
@@ -138,7 +129,7 @@ const ToastThemePreview = () => {
 
 				<Button
 					onClick={() => handleCreateToast("default")}
-					theme="default"
+					colorScheme="default"
 					customStyles={{ marginRight: 12 }}
 				>
 					default toast
@@ -165,7 +156,7 @@ const Component = () => {
 		<Box flex flexDirection="row" alignItems="center">
 			<Button
 				onClick={() => handleCreateToast("primary")}
-				theme="primary"
+				colorScheme="primary"
 				customStyles={{ marginRight: 12 }}
 			>
 				primary toast
@@ -173,7 +164,7 @@ const Component = () => {
 
 			<Button
 				onClick={() => handleCreateToast("secondary")}
-				theme="secondary"
+				colorScheme="secondary"
 				customStyles={{ marginRight: 12 }}
 			>
 				secondary toast
@@ -181,7 +172,7 @@ const Component = () => {
 
 			<Button
 				onClick={() => handleCreateToast("success")}
-				theme="success"
+				colorScheme="success"
 				customStyles={{ marginRight: 12 }}
 			>
 				success toast
@@ -189,7 +180,7 @@ const Component = () => {
 
 			<Button
 				onClick={() => handleCreateToast("danger")}
-				theme="danger"
+				colorScheme="danger"
 				customStyles={{ marginRight: 12 }}
 			>
 				danger toast
@@ -197,7 +188,7 @@ const Component = () => {
 
 			<Button
 				onClick={() => handleCreateToast("warning")}
-				theme="warning"
+				colorScheme="warning"
 				customStyles={{ marginRight: 12 }}
 			>
 				warning toast
@@ -205,7 +196,7 @@ const Component = () => {
 
 			<Button
 				onClick={() => handleCreateToast("default")}
-				theme="default"
+				colorScheme="default"
 			>
 				default toast
 			</Button>
@@ -454,7 +445,7 @@ const ToastApiTable = () => {
 			type: "'filled'",
 			defaultValue: "'filled'",
 		},
-		theme: {
+		colorScheme: {
 			type: "'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'default'",
 			defaultValue: "'default'",
 		},

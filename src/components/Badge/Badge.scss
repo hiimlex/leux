@@ -1,9 +1,9 @@
-@import "../../styles/variables.scss";
+@use "../../styles/variables.scss" as *;
 
 .le-badge {
 	font-weight: 600;
 	outline: none;
-	border-radius: 4px;
+	border-radius: unit(1);
 	border: none;
 	line-height: 100%;
 
@@ -13,15 +13,15 @@
 
 		@each $color, $value in $variant-colors {
 			&.le-badge--#{$color} {
-				color: $value;
+				color: var(--le-color-#{$color});
 				background: transparent;
-				border-color: $value;
-
-				@if $color == "default" {
-					color: $color-dark-text;
-					border-color: $value;
-				}
+				border-color: var(--le-color-#{$color});
 			}
+		}
+
+		&.le-badge--default {
+			color: var(--le-color-textTwo);
+			border-color: var(--le-color-default);
 		}
 	}
 
@@ -31,24 +31,30 @@
 
 		@each $color, $value in $variant-colors {
 			&.le-badge--#{$color} {
-				color: $value;
+				color: var(--le-color-#{$color});
 				background: transparent;
-				border-color: $value;
-
-				@if $color == "default" {
-					color: $color-dark-text;
-					border-color: $value;
-				}
+				border-color: var(--le-color-#{$color});
 			}
+		}
+
+		&.le-badge--default {
+			color: var(--le-color-textTwo);
+			border-color: var(--le-color-default);
 		}
 	}
 
 	&--ghost {
 		@each $color, $value in $variant-colors {
 			&.le-badge--#{$color} {
-				color: $value;
-				background: rgba($value, 30%);
+				color: var(--le-color-#{$color});
+				background: var(--le-color-#{$color}Ghost);
 			}
+		}
+
+		&.le-badge--default {
+			color: var(--le-color-textTwo);
+			border-color: var(--le-color-default);
+			background-color: var(--le-color-defaultGhost);
 		}
 	}
 

@@ -14,6 +14,7 @@ import {
 	DropdownVariant,
 } from "../../../../src/components/Dropdown/Dropdown.model";
 import { attributes as dropdownAttr } from "./dropdown.md";
+import React from "react";
 
 const DropdownImportPreview = () => (
 	<LeHighlighter language="tsx" code={`import { Dropdown, DropdownProps } from "leux";`} />

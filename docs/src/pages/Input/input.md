@@ -68,17 +68,6 @@ Use the `state` prop to control the field state.
 
 <br />
 
-#### Custom
-
-Use the custom prefixed props to customize Input style.
-
-<div>
-<InputCustomPreview>
-</InputCustomPreview>
-</div>
-
-<br />
-
 ### API Reference
 
 <div>

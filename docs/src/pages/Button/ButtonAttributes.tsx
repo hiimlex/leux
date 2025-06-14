@@ -1,5 +1,5 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button, ButtonProps } from "../../../../src";
 import { attributes as buttonAttr } from "./button.md";
 
@@ -13,34 +13,24 @@ const ButtonThemePreview = () => {
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Button theme="primary" customStyles={{ marginRight: 12 }}>
-					Primary
-				</Button>
-				<Button theme="secondary" customStyles={{ marginRight: 12 }}>
-					Secondary
-				</Button>
-				<Button theme="success" customStyles={{ marginRight: 12 }}>
-					Success
-				</Button>
-				<Button theme="warning" customStyles={{ marginRight: 12 }}>
-					Warning
-				</Button>
-				<Button theme="danger" customStyles={{ marginRight: 12 }}>
-					Danger
-				</Button>
-				<Button theme="default">Default</Button>
+				<Button colorScheme="primary">Primary</Button>
+				<Button colorScheme="secondary">Secondary</Button>
+				<Button colorScheme="success">Success</Button>
+				<Button colorScheme="warning">Warning</Button>
+				<Button colorScheme="danger">Danger</Button>
+				<Button colorScheme="default">Default</Button>
 			</LePreview>
 			{showCode && (
 				<LeHighlighter
 					language="tsx"
 					code={`const Component = () => (
 	<>
-		<Button theme="primary">Primary</Button>
-		<Button theme="secondary">Secondary</Button>
-		<Button theme="success">Success</Button>
-		<Button theme="warning">Warning</Button>
-		<Button theme="danger">Danger</Button>
-		<Button theme="default">Default</Button>
+		<Button colorScheme="primary">Primary</Button>
+		<Button colorScheme="secondary">Secondary</Button>
+		<Button colorScheme="success">Success</Button>
+		<Button colorScheme="warning">Warning</Button>
+		<Button colorScheme="danger">Danger</Button>
+		<Button colorScheme="default">Default</Button>
 	</>
 );`}
 				/>
@@ -55,13 +45,13 @@ const ButtonVariantPreview = () => {
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Button theme="primary" variant="filled" customStyles={{ marginRight: 12 }}>
+				<Button colorScheme="primary" variant="filled">
 					Filled
 				</Button>
-				<Button theme="success" variant="outlined" customStyles={{ marginRight: 12 }}>
+				<Button colorScheme="success" variant="outlined">
 					Outlined
 				</Button>
-				<Button theme="danger" variant="ghost">
+				<Button colorScheme="danger" variant="ghost">
 					Ghost
 				</Button>
 			</LePreview>
@@ -70,13 +60,13 @@ const ButtonVariantPreview = () => {
 					language="tsx"
 					code={`const Component = () => (
 	<>
-		<Button theme="primary" variant="filled">
+		<Button colorScheme="primary" variant="filled">
 			Filled
 		</Button>
-		<Button theme="success" variant="outlined">
+		<Button colorScheme="success" variant="outlined">
 			Outlined
 		</Button>
-		<Button theme="danger" variant="ghost">
+		<Button colorScheme="danger" variant="ghost">
 			Ghost
 		</Button>
 	</>
@@ -93,26 +83,26 @@ const ButtonSizePreview = () => {
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Button theme="default" size="small" customStyles={{ marginRight: 12 }}>
+				<Button colorScheme="default" size="small">
 					Small
 				</Button>
-				<Button theme="default" customStyles={{ marginRight: 12 }}>
-					Medium
-				</Button>
-				<Button theme="default" size="large">
+				<Button colorScheme="default">Medium</Button>
+				<Button colorScheme="default" size="large">
 					Large
 				</Button>
 			</LePreview>
-			<LeHighlighter
-				language="tsx"
-				code={`const Component = () => (
+			{showCode && (
+				<LeHighlighter
+					language="tsx"
+					code={`const Component = () => (
 	<>
-		<Button theme="default" size="small">Small</Button>
-		<Button theme="default" size="medium">Medium</Button>
-		<Button theme="default" size="large">Large</Button>
+		<Button colorScheme="default" size="small">Small</Button>
+		<Button colorScheme="default" size="medium">Medium</Button>
+		<Button colorScheme="default" size="large">Large</Button>
 	</>
 );`}
-			/>
+				/>
+			)}
 		</>
 	);
 };
@@ -128,14 +118,10 @@ const ButtonStatePreview = () => {
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Button
-					theme={disabled ? "primary" : "danger"}
-					onClick={handleOnClick}
-					customStyles={{ marginRight: 12 }}
-				>
+				<Button colorScheme={disabled ? "primary" : "danger"} onClick={handleOnClick}>
 					{disabled ? "on" : "off"}
 				</Button>
-				<Button theme="default" state={{ disabled }}>
+				<Button colorScheme="default" state={{ disabled }}>
 					{disabled ? "disabled" : "enabled"}
 				</Button>
 			</LePreview>
@@ -176,7 +162,7 @@ const ButtonActionPreview = () => {
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Button onClick={handleOnClick} theme="success">
+				<Button onClick={handleOnClick} colorScheme="success">
 					Alert
 				</Button>
 			</LePreview>
@@ -187,7 +173,7 @@ const ButtonActionPreview = () => {
 	const handleOnClick = () => alert("Hello World!");
 
 	return (
-		<Button onClick={handleOnClick} theme="success">Alert</Button>
+		<Button onClick={handleOnClick} colorScheme="success">Alert</Button>
 	);
 };`}
 				/>
@@ -201,7 +187,7 @@ const ButtonApiTable = () => {
 		type: {
 			type: "'button' | 'submit' | 'reset'",
 		},
-		theme: {
+		colorScheme: {
 			type: "'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'",
 			defaultValue: "'default'",
 		},

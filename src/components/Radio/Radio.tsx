@@ -1,8 +1,10 @@
 import React from "react";
+import { withGlobalConfig } from "../../hooks";
+import { leClassNames } from "../../types";
 import { RadioProps } from "./Radio.model";
 import "./Radio.scss";
 
-const Radio = ({
+const RadioComponent: React.FC<RadioProps> = ({
 	fieldKey,
 	size = "medium",
 	onChange,
@@ -18,12 +20,15 @@ const Radio = ({
 	customStyles,
 	customClass,
 	radioRef,
-}: RadioProps) => {
+}) => {
 	return (
 		<div
-			className={`le-radio le-radio--${size} ${customClass || ""} ${
-				state && state.disabled ? "le-radio--disabled" : ""
-			}`}
+			className={leClassNames([
+				"le-radio",
+				`le-radio--${size}`,
+				customClass,
+				state?.disabled && "le-radio--disabled",
+			])}
 			style={{ ...customStyles }}
 		>
 			<input
@@ -33,7 +38,7 @@ const Radio = ({
 				defaultChecked={defaultChecked}
 				type="radio"
 				onChange={onChange}
-				className={`le-radio--input ${customInputClass || ""}`}
+				className={leClassNames(["le-radio--input", customInputClass])}
 				style={{ ...customInputStyles }}
 				data-testid="leuxRadio"
 				value={value}
@@ -42,7 +47,7 @@ const Radio = ({
 			/>
 			<label
 				htmlFor={`${fieldKey}#${value}`}
-				className={`le-radio--label ${customLabelClass || ""}`}
+				className={leClassNames(["le-radio--label", customLabelClass])}
 				style={{ ...customLabelStyles }}
 			>
 				{label}
@@ -50,5 +55,7 @@ const Radio = ({
 		</div>
 	);
 };
+
+const Radio = withGlobalConfig(RadioComponent, "radio");
 
 export { Radio };

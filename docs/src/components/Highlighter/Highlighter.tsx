@@ -1,10 +1,11 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdOutlineContentCopy } from "react-icons/md";
 import Refractor from "react-refractor";
 import bash from "refractor/lang/bash";
 import jsx from "refractor/lang/jsx";
-import tsx from "refractor/lang/tsx";
 import scss from "refractor/lang/scss";
+import tsx from "refractor/lang/tsx";
+import { useTheme } from "../../../../src";
 import "./Highlighter.scss";
 
 interface HighlighterProps {
@@ -25,6 +26,9 @@ const Highlighter: React.FC<HighlighterProps> = ({
 	style = "dracula",
 	copy = "on",
 }) => {
+	const { currentTheme } = useTheme();
+
+	useEffect(() => {});
 	const [copied, setCopied] = useState(false);
 
 	const handleCopyToClipboard = () => {
@@ -39,7 +43,13 @@ const Highlighter: React.FC<HighlighterProps> = ({
 	const refractor = Refractor({ language, value: code });
 
 	return (
-		<div className={"le-highlighter" + (style ? ` le-highlighter--${style}` : "")}>
+		<div
+			className={
+				"le-highlighter" +
+				(style ? ` le-highlighter--${style}` : "") +
+				` le-highlighter--${currentTheme}`
+			}
+		>
 			{refractor}
 
 			{copy === "on" && (

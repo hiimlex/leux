@@ -1,18 +1,19 @@
 import React, { useMemo } from "react";
-import { LeClassNames } from "../../types";
-import { PaginationProps } from "./Pagination.model";
-import { Button } from "../Button";
+import { LeClassNames, LeClassNamesSimple } from "../../types";
+import { PageSizeChanger } from "./PageSizeChanger";
+import { PaginationLabel, PaginationProps } from "./Pagination.model";
 import "./Pagination.scss";
 
-const Pagination = ({
+const defaultPaginationLabel: PaginationLabel = ({ currentPage, totalItems, itemsPerPage }) =>
+	`<strong>${currentPage - 1 > 0 ? (currentPage - 1) * itemsPerPage + 1 : 1} - ${
+		currentPage * itemsPerPage
+	}</strong> of <strong>${totalItems}<strong/>`;
+
+const Pagination: React.FC<PaginationProps> = ({
 	currentPage,
 	itemsPerPage,
-	onPageChange,
 	totalItems,
 	totalPages,
-	justifyContent = "flex-end",
-	showPaginationLabel = ({ currentPage, totalItems, itemsPerPage }) =>
-		`Showing ${currentPage * itemsPerPage} of ${totalItems}`,
 	paginationButtons = {
 		next: true,
 		previous: true,
@@ -21,15 +22,41 @@ const Pagination = ({
 	customClass,
 	size = "medium",
 	simplePagination = true,
-}: PaginationProps) => {
-	const classNames: LeClassNames = {
-		pagination: ({ customClass, size }) =>
-			`le-pagination le-pagination--${size} ${customClass || ""}`,
-		paginationNext: () => "le-pagination--button le-pagination--next",
-		paginationPrev: () => "le-pagination--button le-pagination--prev",
-		paginationLabel: () => "le-pagination--label",
-		paginationButton: () => `le-pagination--button`,
-		paginationButtonGroup: () => `le-pagination--button-group`,
+	justifyContent = "flex-end",
+	onPageChange,
+	onPageSizeChange,
+	showPaginationLabel = defaultPaginationLabel,
+	pageSizeChangerProps,
+	showPageSizeChanger,
+	customWrapperClass,
+	customWrapperStyles,
+}) => {
+	const classNames: LeClassNamesSimple = useMemo(
+		() => ({
+			pagination: `le-pagination le-pagination--${size} ${customClass || ""}`,
+			paginationNext: `le-pagination--button le-pagination--button-${size} le-pagination--next`,
+			paginationPrev: `le-pagination--button le-pagination--button-${size} le-pagination--prev`,
+			paginationLabel: "le-pagination--label",
+			paginationButton: `le-pagination--button le-pagination--button-${size}`,
+			paginationButtonGroup: `le-pagination--button-group`,
+			paginationWrapper: `le-pagination--wrapper ${customWrapperClass || ""}`,
+			horizontalHr: "le-pagination--hr",
+		}),
+		[size, customClass, customWrapperClass]
+	);
+	const buttonsClassNames: LeClassNames = {
+		paginationNext: ({ disabled }) =>
+			`le-pagination--button le-pagination--button-${size} le-pagination--next ${
+				disabled ? "le-pagination--button-disabled" : ""
+			}`,
+		paginationPrev: ({ disabled }) =>
+			`le-pagination--button le-pagination--button-${size} le-pagination--prev ${
+				disabled ? "le-pagination--button-disabled" : ""
+			}`,
+		paginationButton: ({ active }) =>
+			`le-pagination--button le-pagination--button-${size} ${
+				active ? "le-pagination--button-active" : ""
+			}`,
 	};
 
 	const paginationButtonsArr = useMemo(
@@ -38,92 +65,121 @@ const Pagination = ({
 	);
 
 	return (
-		<div
-			className={classNames["pagination"]({ customClass, size })}
-			style={{ justifyContent, ...customStyles }}
-			data-testid="leuxPagination"
-		>
-			{showPaginationLabel && (
-				<span className={classNames["paginationLabel"]()}>
-					{showPaginationLabel({ currentPage, totalItems, itemsPerPage })}
-				</span>
+		<div className={classNames["paginationWrapper"]} style={customWrapperStyles}>
+			{showPageSizeChanger && (
+				<PageSizeChanger
+					{...pageSizeChangerProps}
+					itemsPerPage={itemsPerPage}
+					onPageSizeChange={onPageSizeChange}
+					size={size}
+				/>
 			)}
 
-			{paginationButtons && (
-				<div className={classNames["paginationButtonGroup"]()}>
-					{paginationButtons.previous && (
-						<Button
-							state={{ disabled: currentPage - 1 === 0 }}
-							theme="default"
-							variant="outlined"
-							size={size}
-							onClick={() => onPageChange && onPageChange(currentPage - 1)}
-							customClass={classNames["paginationPrev"]()}
-						>
-							{"<"}
-						</Button>
-					)}
+			<div
+				className={classNames["pagination"]}
+				style={{ justifyContent, ...customStyles }}
+				data-testid="leuxPagination"
+			>
+				{showPaginationLabel && (
+					<span
+						className={classNames["paginationLabel"]}
+						dangerouslySetInnerHTML={{
+							__html: showPaginationLabel({ currentPage, totalItems, itemsPerPage }),
+						}}
+					></span>
+				)}
 
-					{!simplePagination &&
-						paginationButtons &&
-						paginationButtonsArr.map((_, index) => {
-							const pageNumber = index + 1;
+				<div className={classNames["horizontalHr"]}></div>
 
-							const ButtonTsx = (
-								<Button
-									key={index}
-									customClass={classNames["paginationButton"]()}
-									variant={currentPage === pageNumber ? "filled" : "outlined"}
-									theme={currentPage === pageNumber ? "primary" : "default"}
-									size={size}
-									onClick={() => onPageChange && onPageChange(pageNumber)}
+				{paginationButtons && (
+					<div className={classNames["paginationButtonGroup"]}>
+						{paginationButtons.previous && (
+							<button
+								disabled={currentPage - 1 === 0}
+								onClick={() => onPageChange && onPageChange(currentPage - 1)}
+								className={buttonsClassNames["paginationPrev"]({
+									disabled: currentPage - 1 === 0,
+								})}
+							>
+								<svg
+									width="8"
+									height="12"
+									viewBox="0 0 8 12"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
 								>
-									{pageNumber}
-								</Button>
-							);
+									<path d="M7.41 1.41L6 0L0 6L6 12L7.41 10.59L2.83 6L7.41 1.41Z" />
+								</svg>
+							</button>
+						)}
 
-							const { limit } = paginationButtons;
+						{!simplePagination &&
+							paginationButtons &&
+							paginationButtonsArr.map((_, index) => {
+								const pageNumber = index + 1;
 
-							if (!limit) {
-								return ButtonTsx;
-							}
+								const ButtonTsx = (
+									<button
+										key={index}
+										onClick={() => onPageChange && onPageChange(pageNumber)}
+										className={buttonsClassNames["paginationButton"]({
+											active: currentPage === pageNumber,
+										})}
+									>
+										{pageNumber}
+									</button>
+								);
 
-							let rangeStart = 0 + currentPage;
-							let rangeFinal = limit + currentPage - 1;
-							const half = Math.floor(limit / 2);
-							const end = totalPages;
+								const { limit } = paginationButtons;
 
-							if (rangeStart + half <= limit) {
-								rangeStart = 1 + half;
-								rangeFinal = limit + half;
-							}
+								if (!limit) {
+									return ButtonTsx;
+								}
 
-							if (rangeFinal > end) {
-								rangeFinal = end + half;
-								rangeStart = end - limit + 1 + half;
-							}
+								let rangeStart = 0 + currentPage;
+								let rangeFinal = limit + currentPage - 1;
+								const half = Math.floor(limit / 2);
+								const end = totalPages;
 
-							if (pageNumber >= rangeStart - half && pageNumber <= rangeFinal - half) {
-								return ButtonTsx;
-							}
-						})}
+								if (rangeStart + half <= limit) {
+									rangeStart = 1 + half;
+									rangeFinal = limit + half;
+								}
 
-					{paginationButtons.next && (
-						<Button
-							state={{ disabled: currentPage + 1 > totalPages }}
-							theme="default"
-							variant="outlined"
-							size={size}
-							onClick={() => onPageChange && onPageChange(currentPage + 1)}
-							customClass={classNames["paginationNext"]()}
-						>
-							{">"}
-						</Button>
-					)}
-				</div>
-			)}
+								if (rangeFinal > end) {
+									rangeFinal = end + half;
+									rangeStart = end - limit + 1 + half;
+								}
+
+								if (pageNumber >= rangeStart - half && pageNumber <= rangeFinal - half) {
+									return ButtonTsx;
+								}
+							})}
+
+						{paginationButtons.next && (
+							<button
+								disabled={currentPage + 1 > totalPages}
+								onClick={() => onPageChange && onPageChange(currentPage + 1)}
+								className={buttonsClassNames["paginationNext"]({
+									disabled: currentPage + 1 > totalPages,
+								})}
+							>
+								<svg
+									width="8"
+									height="12"
+									viewBox="0 0 8 12"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path d="M1.99997 0L0.589966 1.41L5.16997 6L0.589966 10.59L1.99997 12L7.99997 6L1.99997 0Z" />
+								</svg>
+							</button>
+						)}
+					</div>
+				)}
+			</div>
 		</div>
 	);
 };
 
-export { Pagination };
+export { Pagination, defaultPaginationLabel };

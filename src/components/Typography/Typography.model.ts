@@ -1,5 +1,3 @@
-import React from "react";
-
 type TypographyVariants =
 	| "h1"
 	| "h2"
@@ -18,6 +16,7 @@ type TypographyVariants =
 interface TypographyProps {
 	children?: React.ReactNode;
 	variant?: TypographyVariants;
+	fontFamily?: string;
 	customClass?: string;
 	customStyles?: React.CSSProperties;
 }

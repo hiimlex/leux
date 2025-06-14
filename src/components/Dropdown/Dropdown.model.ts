@@ -12,6 +12,7 @@ type DropdownPosition =
 type DropdownTrigger = "click" | "hover";
 
 interface DropdownProps {
+	menuId?: string;
 	variant?: DropdownVariant;
 	size?: DropdownSize;
 	children?: React.ReactNode;

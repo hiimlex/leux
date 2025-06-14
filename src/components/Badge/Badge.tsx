@@ -1,26 +1,42 @@
-import React from "react";
+import React, { useMemo } from "react";
+import { withGlobalConfig } from "../../hooks";
+import { leClassNames, TestId } from "../../types";
 import { BadgeProps } from "./Badge.model";
 import "./Badge.scss";
 
-const Badge = ({
+const BadgeComponent: React.FC<BadgeProps> = ({
 	variant = "ghost",
 	theme = "default",
 	children,
 	size = "medium",
 	customStyles,
 	customClass,
-}: BadgeProps) => {
+}) => {
+	const classNames = useMemo(
+		() =>
+			leClassNames([
+				"le-badge",
+				`le-badge--${variant}`,
+				`le-badge--${theme}`,
+				`le-badge--${size}`,
+				customClass,
+			]),
+		[variant, theme, size, customClass]
+	);
+
+	const styles = useMemo(() => {
+		return {
+			...customStyles,
+		};
+	}, [customStyles]);
+
 	return (
-		<span
-			className={`le-badge${variant ? ` le-badge--${variant}` : ""}${
-				theme ? ` le-badge--${theme}` : ""
-			}${size ? ` le-badge--${size}` : ""}${customClass ? ` ${customClass}` : ""}`}
-			style={customStyles}
-			data-testid="leuxBadge"
-		>
+		<span className={classNames} style={styles} data-testid={TestId.Badge}>
 			{children}
 		</span>
 	);
 };
+
+const Badge = withGlobalConfig(BadgeComponent, "badge");
 
 export { Badge };

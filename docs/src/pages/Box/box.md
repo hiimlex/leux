@@ -28,7 +28,7 @@ Some of the CSS properties that can be used to style the Box component as props.
 
 #### Centered
 
-The content of Box component can be centered using the `center` prop.
+The content of Box component can be centered using the `centered` prop.
 
 <div>
 	<BoxCenteredPreview></BoxCenteredPreview>
@@ -39,16 +39,6 @@ The content of Box component can be centered using the `center` prop.
 #### Grid Span
 
 The Box component can be used to create a grid layout. Check <NavLink to="/layout/grid#span">this</NavLink> session to see how to create a grid layout.
-
-<br/>
-
-#### Custom
-
-Use the `customClass` and `customStyles` prop to add custom CSS to the Box component.
-
-<div>
-	<BoxCustomPreview></BoxCustomPreview>
-</div>
 
 <br/>
 

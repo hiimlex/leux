@@ -1,105 +1,13 @@
 import React, { useMemo } from "react";
 import { LeClassNames } from "../../types";
 import { Spinner } from "../Spinner";
-import {
-	TableBodyProps,
-	TableHeaderProps,
-	TableOrder,
-	TableProps,
-	TableSizes,
-	TableVariants,
-} from "./Table.model";
+import { TableProps } from "./Table.model";
+
 import "./Table.scss";
+import { TableHeader } from "./TableHeader";
+import { TableBody } from "./TableBody";
 
-const TableHeader = ({
-	children,
-	columns,
-	gridTemplateColumns,
-	customHeaderClass,
-	customHeaderStyles,
-}: TableHeaderProps) => {
-	const classNames: LeClassNames = {
-		tableHeader: ({ customHeaderClass }: { customHeaderClass?: string }) =>
-			`le-table--header ${customHeaderClass || ""}`,
-		tableHeaderRow: () => "le-table--header-row",
-		tableHeaderRowItem: ({ order, orderActive }: { order?: TableOrder; orderActive?: boolean }) =>
-			`le-table--header-row-item ${order ? "le-table--header-row-item--" + order : ""} ${
-				orderActive ? "le-table--header-row-item--" + order + "--active" : ""
-			}`,
-	};
-
-	return (
-		<thead
-			data-testid="leuxTableHeader"
-			className={classNames["tableHeader"]({ customHeaderClass })}
-			style={{ ...customHeaderStyles }}
-		>
-			{children ? (
-				children
-			) : (
-				<tr className={classNames["tableHeaderRow"]()} style={{ gridTemplateColumns }}>
-					{columns &&
-						columns.map(({ header, key, order, orderFn, orderActive }) => (
-							<th
-								key={key}
-								className={classNames["tableHeaderRowItem"]({ order, orderActive })}
-								onClick={() =>
-									order && orderFn && orderFn({ order, key, header, orderFn, orderActive })
-								}
-							>
-								{header}
-							</th>
-						))}
-				</tr>
-			)}
-		</thead>
-	);
-};
-
-const TableBody = ({
-	children,
-	rows,
-	keys,
-	gridTemplateColumns,
-	emptyValue,
-	customBodyClass,
-	customBodyStyles,
-}: TableBodyProps) => {
-	const classNames: LeClassNames = {
-		tableBody: ({ customBodyClass }: { customBodyClass?: string }) =>
-			`le-table--body ${customBodyClass || ""}`,
-		tableBodyRow: () => "le-table--body-row",
-		tableBodyRowItem: () => "le-table--body-row-item",
-	};
-
-	return (
-		<tbody
-			data-testid="leuxTableBody"
-			className={classNames["tableBody"]({ customBodyClass })}
-			style={{ ...customBodyStyles }}
-		>
-			{children
-				? children
-				: rows &&
-				  rows.map((row, rowIndex) => (
-						<tr
-							className={classNames["tableBodyRow"]()}
-							key={rowIndex}
-							style={{ gridTemplateColumns }}
-						>
-							{keys &&
-								keys.map((key, keyIndex) => (
-									<td className={classNames["tableBodyRowItem"]()} key={keyIndex}>
-										{row[key] || emptyValue}
-									</td>
-								))}
-						</tr>
-				  ))}
-		</tbody>
-	);
-};
-
-const Table = ({
+const Table: React.FC<TableProps> = ({
 	columns,
 	children,
 	rows,
@@ -118,32 +26,25 @@ const Table = ({
 	height,
 	customWrapperClass,
 	customWrapperStyles,
+	sortFn,
+	scrollHeight,
+	scrollWhen,
+	scrollWidth,
+	scrollable,
 }: TableProps) => {
 	const keys = useMemo(() => columns && columns.map(({ key }) => key), [columns]);
 
-	const classNames: LeClassNames = {
-		table: ({
-			size,
-			variant,
-			customClass,
-		}: {
-			size: TableSizes;
-			variant: TableVariants;
-			customClass?: string;
-		}) => `le-table le-table--${size} le-table--${variant} ${customClass || ""}`,
-		tableWrapper: ({
-			disabled,
-			customWrapperClass,
-		}: {
-			disabled?: boolean;
-			customWrapperClass?: string;
-		}) =>
-			`le-table--wrapper ${disabled ? "le-table--wrapper-disabled" : ""} ${
-				customWrapperClass || ""
-			}`,
-		spinnerWrapper: ({ size }: { size: TableSizes }) =>
-			`le-table--spinner-wrapper le-table--spinner-wrapper-${size} `,
-	};
+	const classNames: LeClassNames = useMemo(
+		() => ({
+			table: () => `le-table le-table--${size} le-table--${variant} ${customClass || ""}`,
+			tableWrapper: ({ disabled }) =>
+				`le-table--wrapper ${disabled ? "le-table--wrapper-disabled" : ""} ${
+					customWrapperClass || ""
+				}`,
+			spinnerWrapper: () => `le-table--spinner-wrapper le-table--spinner-wrapper-${size} `,
+		}),
+		[size, variant, customClass, customWrapperClass]
+	);
 
 	const canShowContent = useMemo(
 		() => !state || (state && !state.loading && !state.empty),
@@ -153,7 +54,7 @@ const Table = ({
 	const canShowEmpty = useMemo(() => state && state.empty, [state]);
 
 	const TableLoaderJSX = state && state.loading && (
-		<div className={classNames["spinnerWrapper"]({ size })}>
+		<div className={classNames["spinnerWrapper"]()}>
 			<Spinner {...state.spinnerProps} />
 		</div>
 	);
@@ -175,6 +76,9 @@ const Table = ({
 				gridTemplateColumns={gridTemplateColumns}
 				customHeaderClass={customHeaderClass}
 				customHeaderStyles={customHeaderStyles}
+				variant={variant}
+				size={size}
+				sortFn={sortFn}
 			/>
 			{canShowEmpty && TableEmptyJSX}
 			{canShowContent && (
@@ -185,6 +89,12 @@ const Table = ({
 					customBodyClass={customBodyClass}
 					customBodyStyles={customBodyStyles}
 					emptyValue={emptyValue}
+					scrollHeight={scrollHeight}
+					scrollWhen={scrollWhen}
+					scrollWidth={scrollWidth}
+					scrollable={scrollable}
+					variant={variant}
+					size={size}
 				/>
 			)}
 		</>
@@ -194,7 +104,7 @@ const Table = ({
 		<table
 			data-testid="leuxTable"
 			style={{ width, height, ...customStyles }}
-			className={classNames["table"]({ size, variant, customClass })}
+			className={classNames["table"]()}
 		>
 			{TableContentJSX}
 		</table>
@@ -205,7 +115,6 @@ const Table = ({
 			style={{ height, ...customWrapperStyles }}
 			className={classNames["tableWrapper"]({
 				disabled: state && state.disabled,
-				customWrapperClass,
 			})}
 		>
 			{TableJSX}
@@ -214,4 +123,4 @@ const Table = ({
 	);
 };
 
-export { Table, TableHeader, TableBody };
+export { Table, TableBody, TableHeader };

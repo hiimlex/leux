@@ -26,7 +26,7 @@
 	},
 	"settings": {
 		"node": {
-			"tryExtensions": [".scss", ".json", ".ts", ".tsx"]
+			"tryExtensions": [".ts", ".tsx"]
 		}
 	}
 }

@@ -1,12 +1,12 @@
-@import "../../styles/variables.scss";
+@use "../../styles/variables.scss" as *;
 
 .le-select {
-	border-radius: 4px;
+	border-radius: 6px;
 	outline: 0;
 	border: 0;
 	font-weight: 500;
 	line-height: normal;
-	color: $color-dark-text;
+	color: var(--le-color-textTwo);
 
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -30,26 +30,26 @@
 		right: 8px;
 		z-index: 3;
 		font-size: 14px;
-		color: $color-dark-text;
+		color: var(--le-color-textTwo);
 
 		&:hover {
 			cursor: pointer;
-			color: $color-darker-text;
+			color: var(--le-color-textOne);
 		}
 	}
 
 	&--filled {
-		background-color: $color-variant-border;
-		color: $color-dark-text;
+		background-color: var(--le-color-inputBackground);
+		color: var(--le-color-textTwo);
 	}
 
 	&--outlined {
-		border: 1px solid $color-variant-border;
-		color: $color-dark-text;
+		border: 1px solid var(--le-color-inputBackground);
+		color: var(--le-color-textTwo);
 	}
 
 	&--option {
-		color: $color-dark-text !important;
+		color: var(--le-color-textTwo) !important;
 
 		&-disabled {
 			color: $color-variant-disabled !important;
@@ -85,27 +85,27 @@
 	}
 
 	&:-ms-input-placeholder {
-		color: $color-placeholder-text;
+		color: var(--le-color-placeholder);
 	}
 
 	&::-ms-input-placeholder {
-		color: $color-placeholder-text;
+		color: var(--le-color-placeholder);
 	}
 
 	&--disabled {
 		cursor: not-allowed !important;
 		background: $color-variant-disabled !important;
-		color: $color-darker-text !important;
+		color: var(--le-color-textOne) !important;
 	}
 
 	&--placeholder-color {
-		color: $color-placeholder-text !important;
+		color: var(--le-color-placeholder) !important;
 	}
 
 	&--disabled {
 		cursor: not-allowed !important;
 		background: $color-variant-disabled !important;
-		color: $color-darker-text !important;
+		color: var(--le-color-textOne) !important;
 	}
 }
 

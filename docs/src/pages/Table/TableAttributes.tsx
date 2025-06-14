@@ -11,14 +11,15 @@ import {
 	TableHeader,
 } from "../../../../src";
 import {
-	TableColumn,
-	TableOrder,
+	TableFilter,
 	TableProps,
 	TableSizes,
+	TableSortFn,
 	TableState,
 	TableVariants,
 } from "../../../../src/components/Table/Table.model";
 import { attributes as tableAttr } from "./table.md";
+import React from "react";
 
 const TableImportPreview = () => (
 	<LeHighlighter
@@ -199,14 +200,14 @@ const TableVariantPreview = () => {
 			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
 				<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
 					<Button
-						theme={tableConfig.variant === "default" ? "primary" : "default"}
+						colorScheme={tableConfig.variant === "default" ? "primary" : "default"}
 						onClick={() => changeVariant("default")}
 						customStyles={{ marginRight: 12 }}
 					>
 						Default
 					</Button>
 					<Button
-						theme={tableConfig.variant === "bordered" ? "primary" : "default"}
+						colorScheme={tableConfig.variant === "bordered" ? "primary" : "default"}
 						onClick={() => changeVariant("bordered")}
 					>
 						Bordered
@@ -241,14 +242,14 @@ const TableVariantPreview = () => {
 	return (
 		<>
 			<Button
-				theme={tableConfig.variant === "default" ? "primary" : "default"}
+				colorScheme={tableConfig.variant === "default" ? "primary" : "default"}
 				onClick={() => changeVariant("default")}
 				customStyles={{ marginRight: 12 }}
 			>
 				Default
 			</Button>
 			<Button
-				theme={tableConfig.variant === "bordered" ? "primary" : "default"}
+				colorScheme={tableConfig.variant === "bordered" ? "primary" : "default"}
 				onClick={() => changeVariant("bordered")}
 			>
 				Bordered
@@ -291,10 +292,9 @@ const TableSizePreview = () => {
 	return (
 		<>
 			<LePreview direction="column" showCode={showCode} setShowCode={setShowCode}>
-				{tableConfig.columns && tableConfig.columns[0].order}
 				<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
 					<Button
-						theme={tableConfig.size === "small" ? "primary" : "default"}
+						colorScheme={tableConfig.size === "small" ? "primary" : "default"}
 						onClick={() => changeSize("small")}
 						customStyles={{ marginRight: 12 }}
 						size="small"
@@ -302,7 +302,7 @@ const TableSizePreview = () => {
 						Small
 					</Button>
 					<Button
-						theme={tableConfig.size === "medium" ? "primary" : "default"}
+						colorScheme={tableConfig.size === "medium" ? "primary" : "default"}
 						onClick={() => changeSize("medium")}
 						customStyles={{ marginRight: 12 }}
 						size="medium"
@@ -310,7 +310,7 @@ const TableSizePreview = () => {
 						Medium
 					</Button>
 					<Button
-						theme={tableConfig.size === "large" ? "primary" : "default"}
+						colorScheme={tableConfig.size === "large" ? "primary" : "default"}
 						onClick={() => changeSize("large")}
 						size="large"
 					>
@@ -346,21 +346,21 @@ const TableSizePreview = () => {
 	return (
 		<>
 			<Button
-				theme={tableConfig.size === "small" ? "primary" : "default"}
+				colorScheme={tableConfig.size === "small" ? "primary" : "default"}
 				onClick={() => changeSize("small")}
 				customStyles={{ marginRight: 12 }}
 			>
 				Small
 			</Button>
 			<Button
-				theme={tableConfig.size === "medium" ? "primary" : "default"}
+				colorScheme={tableConfig.size === "medium" ? "primary" : "default"}
 				onClick={() => changeSize("medium")}
 				customStyles={{ marginRight: 12 }}
 			>
 				Medium
 			</Button>
 			<Button
-				theme={tableConfig.size === "large" ? "primary" : "default"}
+				colorScheme={tableConfig.size === "large" ? "primary" : "default"}
 				onClick={() => changeSize("large")}
 			>
 				Large
@@ -376,11 +376,11 @@ const TableSizePreview = () => {
 	);
 };
 
-const TableOrderPreview = () => {
+const TableFiltersPreview = () => {
 	const [showCode, setShowCode] = useState<boolean>(false);
 
-	const orderFn = ({ key, order }: TableColumn) => {
-		getTodos({ key, order: order === "asc" ? "desc" : "asc" });
+	const sortFn: TableSortFn = (tableFilter) => {
+		getTodos(tableFilter);
 	};
 
 	const [tableConfig, setTableConfig] = useState<TableProps>({
@@ -388,39 +388,25 @@ const TableOrderPreview = () => {
 			{
 				header: "#ID",
 				key: "id",
-				order: "asc",
-				orderFn,
+				sortable: true,
 			},
-			{ header: "User ID", key: "userId", order: "asc", orderFn },
-			{ header: "Title", key: "title", order: "asc", orderFn },
+			{ header: "User ID", key: "userId", sortable: true },
+			{ header: "Title", key: "title", sortable: true },
 			{ header: "Completed", key: "completedString" },
 		],
 		rows: [],
 		gridTemplateColumns: "repeat(2, 1fr) 2fr 1fr",
 		variant: "default",
 		size: "medium",
+		sortFn,
 	});
 
-	const getTodos = useCallback(async (sort?: { key: string; order: TableOrder }) => {
+	const getTodos = useCallback(async (filter?: TableFilter) => {
 		try {
 			let url = `https://jsonplaceholder.typicode.com/todos?_limit=10`;
-			let { columns } = tableConfig;
-
-			if (sort && columns) {
-				url = `${url}&_sort=${sort.key}&_order=${sort.order}`;
-
-				columns = columns.map((item) => {
-					if (sort.key === item.key) {
-						item.orderActive = true;
-						item.order = sort.order;
-					} else if (item.key && item.orderActive) {
-						item.orderActive = false;
-					}
-
-					return item;
-				});
+			if (filter && filter.sort) {
+				url = `${url}&_sort=${filter.header}&_order=${filter.sort}`;
 			}
-
 			const response = await axios.get<
 				{
 					userId: number;
@@ -429,16 +415,13 @@ const TableOrderPreview = () => {
 					completed: boolean;
 				}[]
 			>(url);
-
 			const { data } = response;
-
 			if (data && data.length) {
 				const newData = data.map((item) => ({
 					...item,
 					completedString: item.completed ? "Yes" : "No",
 				}));
-
-				setTableConfig((curr) => ({ ...curr, rows: newData, columns }));
+				setTableConfig((curr) => ({ ...curr, rows: newData }));
 			}
 		} catch (error) {
 			console.error(error);
@@ -459,8 +442,8 @@ const TableOrderPreview = () => {
 					code={`import axios from "axios";
 
 const Component = () => {
-	const orderFn = ({ key, order }: TableColumn) => {
-		getTodos({ key, order: order === "asc" ? "desc" : "asc" });
+	const sortFn: TableSortFn = (tableFilter) => {
+		getTodos(tableFilter);
 	};
 
 	const [tableConfig, setTableConfig] = useState<TableProps>({
@@ -479,26 +462,16 @@ const Component = () => {
 		gridTemplateColumns: "repeat(2, 1fr) 2fr 1fr",
 		variant: "default",
 		size: "medium",
+		sortFn,
 	});
 
-	const getTodos = useCallback(async (sort?: { key: string; order: TableOrder }) => {
+	const getTodos = useCallback(async (filter?: TableFilter) => {
 		try {
 			let url = \`https://jsonplaceholder.typicode.com/todos?_limit=10\`;
 			let { columns } = tableConfig;
 
-			if (sort && columns) {
-				url = \`$\{url}&_sort=$\{sort.key}&_order=$\{sort.order}\`;
-
-				columns = columns.map((item) => {
-					if (sort.key === item.key) {
-						item.orderActive = true;
-						item.order = sort.order;
-					} else if (item.key && item.orderActive) {
-						item.orderActive = false;
-					}
-
-					return item;
-				});
+			if (filter && filter.sort) {
+				url = \`$\{url}&_sort=$\{filter.header}&_order=$\{filter.order}\`;
 			}
 
 			const response = await axios.get<
@@ -550,19 +523,18 @@ const TablePaginationPreview = () => {
 		],
 		rows: [],
 		gridTemplateColumns: "repeat(2, 1fr) 2fr 1fr",
-		variant: "default",
+		variant: "bordered",
 		size: "medium",
-		customBodyStyles: {
-			maxHeight: "420px",
-			overflowY: "auto",
-		},
+		scrollable: true,
+		scrollHeight: "420px",
+		scrollWidth: "200px",
 	});
 
 	const [pagination, setPagination] = useState<PaginationProps>({
 		currentPage: 1,
 		itemsPerPage: 10,
 		onPageChange: (page) => {
-			setTableConfig((curr) => ({ ...curr, state: { ...curr.state, loading: true } }));
+			setTableConfig((curr) => ({ ...curr, state: { ...curr.state } }));
 			getTodos(page);
 		},
 		totalItems: 0,
@@ -572,10 +544,8 @@ const TablePaginationPreview = () => {
 			previous: true,
 		},
 		justifyContent: "space-between",
-		showPaginationLabel: ({ currentPage, itemsPerPage, totalItems }) =>
-			`Showing ${currentPage * itemsPerPage - itemsPerPage + 1}-${
-				currentPage * itemsPerPage
-			} of ${totalItems} todos`,
+		showPageSizeChanger: true,
+		customWrapperClass: "le-mt-3",
 	});
 
 	const getTodos = useCallback(async (page?: number) => {
@@ -781,7 +751,7 @@ const TableStatePreview = () => {
 				{tableState && (
 					<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
 						<Button
-							theme={tableState.loading ? "primary" : "default"}
+							colorScheme={tableState.loading ? "primary" : "default"}
 							variant="filled"
 							onClick={() => {
 								setTableState((curr) => ({ ...curr, loading: !curr.loading }));
@@ -791,7 +761,7 @@ const TableStatePreview = () => {
 							{tableState.loading ? "Stop Loading" : "Start Loading"}
 						</Button>
 						<Button
-							theme={!tableState.disabled ? "primary" : "danger"}
+							colorScheme={!tableState.disabled ? "primary" : "danger"}
 							variant="filled"
 							onClick={() => {
 								setTableState((curr) => ({ ...curr, disabled: !curr.disabled }));
@@ -801,7 +771,7 @@ const TableStatePreview = () => {
 							{!tableState.disabled ? "On" : "Off"}
 						</Button>
 						<Button
-							theme={tableState.empty ? "danger" : "primary"}
+							colorScheme={tableState.empty ? "danger" : "primary"}
 							variant="filled"
 							onClick={() => {
 								setTableState((curr) => ({ ...curr, empty: !curr.empty }));
@@ -845,7 +815,7 @@ return (
 		{tableState && (
 			<div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
 				<Button
-					theme={tableState.loading ? "primary" : "default"}
+					colorScheme={tableState.loading ? "primary" : "default"}
 					variant="filled"
 					onClick={() => {
 						setTableState((curr) => ({ ...curr, loading: !curr.loading }));
@@ -855,7 +825,7 @@ return (
 					{tableState.loading ? "Stop Loading" : "Start Loading"}
 				</Button>
 				<Button
-					theme={!tableState.disabled ? "primary" : "danger"}
+					colorScheme={!tableState.disabled ? "primary" : "danger"}
 					variant="filled"
 					onClick={() => {
 						setTableState((curr) => ({ ...curr, disabled: !curr.disabled }));
@@ -865,7 +835,7 @@ return (
 					{!tableState.disabled ? "On" : "Off"}
 				</Button>
 				<Button
-					theme={tableState.empty ? "danger" : "primary"}
+					colorScheme={tableState.empty ? "danger" : "primary"}
 					variant="filled"
 					onClick={() => {
 						setTableState((curr) => ({ ...curr, empty: !curr.empty }));
@@ -943,6 +913,21 @@ const TableApiTable = () => {
 		customWrapperStyles: {
 			type: "React.CSSProperties",
 		},
+		sortFn: {
+			type: "(column: TableSortFn) => void",
+		},
+		scrollable: {
+			type: "boolean",
+		},
+		scrollHeight: {
+			type: "React.CSSProperties['maxHeight']",
+		},
+		scrollWidth: {
+			type: "React.CSSProperties['maxWidth']",
+		},
+		scrollWhen: {
+			type: "() => boolean",
+		},
 	};
 
 	return <LeApiTable props={props} />;
@@ -955,7 +940,7 @@ tableAttr["TableConfigurationPreview"] = TableConfigurationPreview;
 tableAttr["TableChildrenPreview"] = TableChildrenPreview;
 tableAttr["TableVariantPreview"] = TableVariantPreview;
 tableAttr["TableSizePreview"] = TableSizePreview;
-tableAttr["TableOrderPreview"] = TableOrderPreview;
+tableAttr["TableFiltersPreview"] = TableFiltersPreview;
 tableAttr["TablePaginationPreview"] = TablePaginationPreview;
 tableAttr["TableStatePreview"] = TableStatePreview;
 tableAttr["TableApiTable"] = TableApiTable;
