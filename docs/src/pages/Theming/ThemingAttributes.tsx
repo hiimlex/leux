@@ -1,6 +1,6 @@
 import { LeHighlighter, LeSourceButton } from "@/components";
 import { attributes as themingAttr } from "./theming.md";
-import React from "react";
+import React, { PropsWithChildren } from "react";
 
 const ThemingUsage: React.FC = () => {
 	return (
@@ -58,6 +58,9 @@ const MyComponent = () => {
 	);
 };
 
+themingAttr["LeSourceWrapper"] = ({ children }: PropsWithChildren) => (
+	<div className="le-flex le-gap-2">{children}</div>
+);
 themingAttr["LeSourceButton"] = LeSourceButton;
 themingAttr["ThemingUsage"] = ThemingUsage;
 themingAttr["UseThemeUsage"] = UseThemeUsage;

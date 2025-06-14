@@ -2,10 +2,10 @@
 
 Learn how to customize your app's look with our `ThemeProvider` and `useTheme` hook. Quickly switch between light, dark, or custom themes with ease. Let's get started!
 
-<div class="le-flex le-gap-2">
+<LeSourceWrapper>
 <div><LeSourceButton label="ThemeProvider" url="https://github.com/hiimlex/leux/tree/main/src/providers/ThemeProvider"></LeSourceButton></div>
 <div><LeSourceButton label="useTheme" url="https://github.com/hiimlex/leux/tree/main/src/hooks/useTheme"></LeSourceButton></div>
-</div>
+</LeSourceWrapper>
 
 <br/>
 

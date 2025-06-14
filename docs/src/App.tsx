@@ -1,6 +1,6 @@
-import React from "react";
 import { LeHeader, LeWrapper } from "@/components";
 import AppRouter from "@/core/router/AppRouter";
+import React from "react";
 import { OverlayProvider, ThemeProvider } from "../../src";
 import "../../src/styles/global.scss";
 import "../../src/styles/utils.scss";
