@@ -3,6 +3,7 @@ import React from "react";
 
 import "@testing-library/jest-dom";
 import { Avatar } from "./Avatar";
+import { TestId } from "../../types";
 
 describe("Avatar component test", () => {
 	it("should render an Avatar component", () => {
@@ -10,7 +11,7 @@ describe("Avatar component test", () => {
 			<Avatar src="https://avatars.githubusercontent.com/u/49082043?v=4" />
 		);
 
-		const avatar = getByTestId("leuxAvatar");
+		const avatar = getByTestId(TestId.Avatar);
 
 		expect(avatar).toBeTruthy();
 	});
@@ -20,7 +21,7 @@ describe("Avatar component test", () => {
 			<Avatar src="https://avatars.githubusercontent.com/u/49082043?v=4" size="small" />
 		);
 
-		const avatar = getByTestId("leuxAvatar");
+		const avatar = getByTestId(TestId.Avatar);
 
 		expect(avatar).toHaveClass("le-avatar--small");
 	});
@@ -28,7 +29,7 @@ describe("Avatar component test", () => {
 	it("should display an Avatar component src as text", () => {
 		const { getByTestId } = render(<Avatar src="simple text" asText />);
 
-		const avatar = getByTestId("leuxAvatar");
+		const avatar = getByTestId(TestId.Avatar);
 
 		expect(avatar).toHaveTextContent("ST");
 	});
@@ -38,7 +39,7 @@ describe("Avatar component test", () => {
 			<Avatar src="https://avatars.githubusercontent.com/u/49082043?v=4" customSize={48} />
 		);
 
-		const avatar = getByTestId("leuxAvatar");
+		const avatar = getByTestId(TestId.Avatar);
 
 		expect(avatar).toHaveStyle("width: 48px; height: 48px;");
 	});
@@ -53,7 +54,7 @@ describe("Avatar component test", () => {
 			/>
 		);
 
-		const avatar = getByTestId("leuxAvatar");
+		const avatar = getByTestId(TestId.Avatar);
 
 		expect(avatar).toHaveStyle("width: 52px; height: 52px;");
 		expect(avatar).toHaveClass("le-bg-primary");

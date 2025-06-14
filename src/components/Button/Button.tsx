@@ -1,10 +1,11 @@
-import React, { MouseEvent } from "react";
+import React, { MouseEvent, useMemo } from "react";
+import { useTheme } from "../../hooks";
+import { leClassNames, TestId } from "../../types";
 import { ButtonProps } from "./Button.model";
 import "./Button.scss";
-import { useTheme } from "../../hooks";
-import { LeClassNames } from "../../types";
+import { withGlobalConfig } from "../../contexts";
 
-const Button: React.FC<ButtonProps> = ({
+const ButtonComponent: React.FC<ButtonProps> = ({
 	colorScheme = "default",
 	size = "medium",
 	variant = "filled",
@@ -24,18 +25,25 @@ const Button: React.FC<ButtonProps> = ({
 		}
 	};
 
-	const classNames: LeClassNames = {
-		button: () =>
-			`le-button le-button--${variant} le-button--${size} le-button--${colorScheme} + ${
-				state && state.disabled ? " le-button--disabled" : ""
-			} ${customClass ? customClass : ""} le-button--${currentTheme}`,
-	};
+	const classNames = useMemo(
+		() =>
+			leClassNames([
+				"le-button",
+				`le-button--${variant}`,
+				`le-button--${size}`,
+				`le-button--${colorScheme}`,
+				customClass,
+				`le-button--${currentTheme}`,
+				state?.disabled && "le-button--disabled",
+			]),
+		[variant, size, colorScheme, customClass, currentTheme, state?.disabled]
+	);
 
 	return (
 		<button
-			className={classNames["button"]()}
+			className={classNames}
 			type={type}
-			data-testid="leuxButton"
+			data-testid={TestId.Button}
 			onClick={(event) => handleOnCLick(event)}
 			disabled={state && state.disabled}
 			style={customStyles}
@@ -45,5 +53,7 @@ const Button: React.FC<ButtonProps> = ({
 		</button>
 	);
 };
+
+const Button = withGlobalConfig(ButtonComponent, "button");
 
 export { Button };

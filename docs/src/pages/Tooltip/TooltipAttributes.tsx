@@ -84,7 +84,7 @@ const TooltipThemePreview = () => {
 	return (
 		<>
 			<LePreview direction="row" showCode={showCode} setShowCode={setShowCode}>
-				<Tooltip title="primary style" theme="primary">
+				<Tooltip title="primary style" colorScheme="primary">
 					<Typography
 						children="primary"
 						variant="body-1"
@@ -92,7 +92,7 @@ const TooltipThemePreview = () => {
 						customStyles={{ margin: "0 12px 0 0" }}
 					/>
 				</Tooltip>
-				<Tooltip title="danger style" theme="danger">
+				<Tooltip title="danger style" colorScheme="danger">
 					<Typography
 						children="danger"
 						variant="body-1"
@@ -100,7 +100,7 @@ const TooltipThemePreview = () => {
 						customStyles={{ margin: "0 12px 0 0" }}
 					/>
 				</Tooltip>
-				<Tooltip title="default style" theme="default">
+				<Tooltip title="default style" colorScheme="default">
 					<Typography
 						children="default"
 						variant="body-1"
@@ -113,7 +113,7 @@ const TooltipThemePreview = () => {
 				<LeHighlighter
 					code={`const Component = () => (
 	<>
-		<Tooltip title="primary style" theme="primary">
+		<Tooltip title="primary style" colorScheme="primary">
 			<Typography
 				children="primary"
 				variant="body-1"
@@ -121,7 +121,7 @@ const TooltipThemePreview = () => {
 				customStyles={{ margin: "0 12px 0 0" }}
 			/>
 		</Tooltip>
-		<Tooltip title="danger style" theme="danger">
+		<Tooltip title="danger style" colorScheme="danger">
 			<Typography
 				children="danger"
 				variant="body-1"
@@ -129,7 +129,7 @@ const TooltipThemePreview = () => {
 				customStyles={{ margin: "0 12px 0 0" }}
 			/>
 		</Tooltip>
-		<Tooltip title="default style" theme="default">
+		<Tooltip title="default style" colorScheme="default">
 			<Typography
 				children="default"
 				variant="body-1"
@@ -201,8 +201,8 @@ const TooltipApiTable = () => {
 			type: "TooltipDirections | 'top' | 'bottom' | 'left' | 'right'",
 			defaultValue: "top",
 		},
-		theme: {
-			type: "TooltipThemes | 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'",
+		colorScheme: {
+			type: "TooltipColorScheme | 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'",
 			defaultValue: "default",
 		},
 		children: {

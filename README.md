@@ -32,9 +32,9 @@ The idea came when i have to redesign my own projects with the same UI/UX identi
 You can install this package using the following commands
 
 ```bash
-npm install leux
+npm install @leux/ui
 
-yarn add leux
+yarn add @leux/ui
 ```
 
 ## 🚀 Usage

@@ -1,6 +1,6 @@
 {
-	"name": "leux",
-	"version": "0.4.2",
+	"name": "@leux/ui",
+	"version": "0.5.0",
 	"homepage": "https://leux.vercel.app/",
 	"description": "React components library",
 	"publishConfig": {
@@ -16,9 +16,11 @@
 	"scripts": {
 		"build": "rollup -c",
 		"test": "jest",
+		"update-version": "node scripts/update-version.js",
 		"test:watch": "jest --watch --silent=false",
 		"test:coverage": "jest --coverage --collectCoverageFrom='./src/**'",
 		"test:badges": "npm run test:coverage && npx jest-coverage-badges",
+		"docs": "cd docs",
 		"prepare": "npx husky install && npx husky add ./.husky/pre-commit 'npx lint-staged'",
 		"prepare:win": "npx husky install && npx husky add .\\.husky\\pre-commit 'npx lint-staged'"
 	},
@@ -68,7 +70,6 @@
 		"jest": "^29.0.2",
 		"jest-environment-jsdom": "^29.0.2",
 		"lint-staged": "^13.0.3",
-		"node-sass": "^9.0.0",
 		"postcss-import": "^15.1.0",
 		"postcss-nested": "^6.0.1",
 		"postcss-simple-vars": "^7.0.1",

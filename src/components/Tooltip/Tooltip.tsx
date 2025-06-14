@@ -1,25 +1,20 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
+import { withGlobalConfig } from "../../contexts";
+import { useTheme } from "../../hooks";
+import { LeClassNames, LeSafeAny, TestId } from "../../types";
 import { TooltipProps } from "./Tooltip.model";
 import "./Tooltip.scss";
-import { LeClassNames } from "../../types";
 
-const Tooltip: React.FC<TooltipProps> = ({
+const TooltipComponent: React.FC<TooltipProps> = ({
 	children,
 	title,
 	direction = "top",
 	customClass,
 	customStyles,
-	theme = "default",
+	colorScheme = "default",
 }) => {
+	const { theme } = useTheme();
 	const [showTooltip, setShowTooltip] = useState(false);
-
-	const classNames: LeClassNames = {
-		leTooltipProvider: () => "le-tooltip--provider",
-		leTooltip: () =>
-			`le-tooltip le-tooltip--${direction} le-tooltip--${theme}${
-				customClass ? ` ${customClass}` : ""
-			}`,
-	};
 
 	const handleMouseEnter = () => {
 		setShowTooltip(true);
@@ -29,21 +24,58 @@ const Tooltip: React.FC<TooltipProps> = ({
 		setShowTooltip(false);
 	};
 
+	const arrowColor = useMemo(() => {
+		return theme?.[colorScheme as LeSafeAny];
+	}, [theme]);
+	const arrowBorder = useMemo(
+		() =>
+			theme
+				? [
+						direction === "top" ? arrowColor : "transparent",
+						direction === "right" ? arrowColor : "transparent",
+						direction === "bottom" ? arrowColor : "transparent",
+						direction === "left" ? arrowColor : "transparent",
+				  ].join(" ")
+				: undefined,
+		[direction, arrowColor]
+	);
+
+	const classNames: LeClassNames = {
+		leTooltipProvider: () => "le-tooltip--provider",
+		leTooltip: () =>
+			`le-tooltip le-tooltip--${colorScheme} le-tooltip--${direction} ${
+				customClass ? ` ${customClass}` : ""
+			}`,
+		leTooltipArrow: () => `le-tooltip--arrow le-tooltip--arrow-${direction}`,
+	};
+
 	return (
 		<div
 			className={classNames["leTooltipProvider"]()}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
-			data-testid="leuxTooltipProvider"
+			data-testid={TestId.TooltipProvider}
 		>
 			{showTooltip && (
-				<span className={classNames["leTooltip"]()} data-testid="leuxTooltip" style={customStyles}>
+				<span
+					className={classNames["leTooltip"]()}
+					data-testid={TestId.Tooltip}
+					style={customStyles}
+				>
 					{title}
+					{showTooltip && (
+						<div
+							className={classNames["leTooltipArrow"]()}
+							style={{ borderColor: arrowBorder }}
+						></div>
+					)}
 				</span>
 			)}
 			{children}
 		</div>
 	);
 };
+
+const Tooltip = withGlobalConfig(TooltipComponent, "tooltip");
 
 export { Tooltip };

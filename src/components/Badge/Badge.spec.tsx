@@ -3,12 +3,13 @@ import React from "react";
 
 import "@testing-library/jest-dom";
 import { Badge } from "./Badge";
+import { TestId } from "../../types";
 
 describe("Badge component test", () => {
 	it("should render a Badge component", () => {
 		const { getByTestId } = render(<Badge />);
 
-		const badge = getByTestId("leuxBadge");
+		const badge = getByTestId(TestId.Badge);
 
 		expect(badge).toBeTruthy();
 	});
@@ -16,7 +17,7 @@ describe("Badge component test", () => {
 	it("should render a Badge component with primary theme", () => {
 		const { getByTestId } = render(<Badge theme="primary" />);
 
-		const badge = getByTestId("leuxBadge");
+		const badge = getByTestId(TestId.Badge);
 
 		expect(badge).toHaveClass("le-badge--primary");
 	});
@@ -24,7 +25,7 @@ describe("Badge component test", () => {
 	it("should render a Badge component with large size", () => {
 		const { getByTestId } = render(<Badge size="large" children="large" />);
 
-		const badge = getByTestId("leuxBadge");
+		const badge = getByTestId(TestId.Badge);
 
 		expect(badge).toHaveClass("le-badge--large");
 	});
@@ -32,7 +33,7 @@ describe("Badge component test", () => {
 	it("should render a Badge component with outlined variant", () => {
 		const { getByTestId } = render(<Badge variant="outlined" />);
 
-		const badge = getByTestId("leuxBadge");
+		const badge = getByTestId(TestId.Badge);
 
 		expect(badge).toHaveClass("le-badge--outlined");
 	});
@@ -42,7 +43,7 @@ describe("Badge component test", () => {
 			<Badge children="test" customClass="le-bg-primary" customStyles={{ padding: 0 }} />
 		);
 
-		const badge = getByTestId("leuxBadge");
+		const badge = getByTestId(TestId.Badge);
 
 		expect(badge).toHaveStyle("padding: 0;");
 	});
@@ -52,7 +53,7 @@ describe("Badge component test", () => {
 			<Badge children="test" variant="outlined" theme="primary" size="small" />
 		);
 
-		const badge = getByTestId("leuxBadge");
+		const badge = getByTestId(TestId.Badge);
 
 		expect(badge).toHaveClass("le-badge--outlined le-badge--primary le-badge--small");
 	});

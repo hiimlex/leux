@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: '20.16.0'
           registry-url: 'https://registry.npmjs.org'
-          scope: 'noyu'
+          scope: '@leux'
       - name: Install dependencies and build 🔧
         run: |
           npm install

@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useMemo } from "react";
+import { leClassNames, TestId } from "../../types";
 import { AvatarProps } from "./Avatar.model";
 import "./Avatar.scss";
+import { getCapitals } from "../../utils";
 
 const Avatar: React.FC<AvatarProps> = ({
 	alt,
@@ -11,35 +13,29 @@ const Avatar: React.FC<AvatarProps> = ({
 	customStyles,
 	customSize,
 }) => {
-	const getCapitals = (str: string) =>
-		str
-			.split(" ")
-			.map((el) => el[0])
-			.join("")
-			.toLocaleUpperCase();
-
-	if (customSize) {
-		customStyles = {
+	const styles = useMemo(
+		() => ({
 			...customStyles,
-			width: customSize,
-			height: customSize,
-		};
-	}
+			width: customSize || customStyles?.width,
+			height: customSize || customStyles?.height,
+		}),
+		[customStyles, customSize]
+	);
+
+	const capital = useMemo(() => getCapitals(src), [src]);
+
+	const classNames = useMemo(
+		() =>
+			leClassNames(["le-avatar", `le-avatar--${size}`, asText && "le-avatar--text", customClass]),
+		[size, asText, customClass]
+	);
 
 	return (
-		<div
-			className={`le-avatar ${size ? " le-avatar--" + size : ""}${
-				asText ? " le-avatar--text" : ""
-			} ${customClass ? customClass : ""}`}
-			style={{
-				...customStyles,
-			}}
-			data-testid="leuxAvatar"
-		>
+		<div className={classNames} style={styles} data-testid={TestId.Avatar}>
 			{!asText ? (
-				<img src={src} alt={alt} className={`le-avatar--img`} />
+				<img src={src} alt={alt} className="le-avatar--img" />
 			) : (
-				<span className="le-avatar--text">{getCapitals(src)}</span>
+				<span className="le-avatar--text">{capital}</span>
 			)}
 		</div>
 	);

@@ -3,12 +3,13 @@ import React from "react";
 import { Button } from "./Button";
 
 import "@testing-library/jest-dom";
+import { TestId } from "../../types";
 
 describe("Button component test", () => {
 	it("should render Button component", () => {
 		const { getByTestId } = render(<Button children="Button test" />);
 
-		const button = getByTestId("leuxButton");
+		const button = getByTestId(TestId.Button);
 
 		expect(button).toBeTruthy();
 	});
@@ -20,7 +21,7 @@ describe("Button component test", () => {
 			</Button>
 		);
 
-		const button = getByTestId("leuxButton");
+		const button = getByTestId(TestId.Button);
 
 		expect(button).toHaveClass("le-button--outlined le-button--secondary le-button--large");
 	});
@@ -34,7 +35,7 @@ describe("Button component test", () => {
 
 		const { getByTestId } = render(<Button children="Increment" onClick={cb} />);
 
-		const button = getByTestId("leuxButton");
+		const button = getByTestId(TestId.Button);
 		fireEvent.click(button);
 
 		expect(testIncrement).toBe(1);
@@ -51,7 +52,7 @@ describe("Button component test", () => {
 			<Button children="Increment" onClick={cb} state={{ disabled: true }} />
 		);
 
-		const button = getByTestId("leuxButton");
+		const button = getByTestId(TestId.Button);
 		button.click();
 
 		expect(testIncrement).toBe(0);
@@ -62,7 +63,7 @@ describe("Button component test", () => {
 			<Button children="Custom Button" customClass="custom-class" customStyles={{ color: "red" }} />
 		);
 
-		const button = getByTestId("leuxButton");
+		const button = getByTestId(TestId.Button);
 
 		expect(button).toHaveClass("custom-class");
 		expect(button).toHaveStyle("color: red");

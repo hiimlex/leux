@@ -1,126 +1,131 @@
-import React from "react";
+import React, { useMemo } from "react";
+import { withGlobalConfig } from "../../contexts";
+import { leClassNames, TestId } from "../../types";
 import { TypographyProps } from "./Typography.model";
 
-const Typography: React.FC<TypographyProps> = ({
+const TypographyInstance: React.FC<TypographyProps> = ({
 	variant = "body-1",
 	children,
-	customClass = "",
+	customClass: _customClass,
 	customStyles,
 }) => {
+	const customClass = useMemo(() => leClassNames([_customClass]), [_customClass]);
+	const styles = useMemo(() => ({ ...customStyles }), [customStyles]);
+
 	const typesArr: Record<string, React.ReactElement> = {
 		h1: (
 			<h1
-				className={"le-text--h1 " + customClass}
-				style={customStyles}
-				data-testid="leuxTypography"
+				className={leClassNames(["le-text--h1", customClass])}
+				style={styles}
+				data-testid={TestId.Typography}
 			>
 				{children}
 			</h1>
 		),
 		h2: (
 			<h2
-				className={"le-text--h2 " + customClass}
-				style={customStyles}
-				data-testid="leuxTypography"
+				className={leClassNames(["le-text--h2", customClass])}
+				style={styles}
+				data-testid={TestId.Typography}
 			>
 				{children}
 			</h2>
 		),
 		h3: (
 			<h3
-				className={"le-text--h3 " + customClass}
-				style={customStyles}
-				data-testid="leuxTypography"
+				className={leClassNames(["le-text--h3", customClass])}
+				style={styles}
+				data-testid={TestId.Typography}
 			>
 				{children}
 			</h3>
 		),
 		h4: (
 			<h4
-				className={"le-text--h4 " + customClass}
-				style={customStyles}
-				data-testid="leuxTypography"
+				className={leClassNames(["le-text--h4", customClass])}
+				style={styles}
+				data-testid={TestId.Typography}
 			>
 				{children}
 			</h4>
 		),
 		h5: (
 			<h5
-				className={"le-text--h5 " + customClass}
-				style={customStyles}
-				data-testid="leuxTypography"
+				className={leClassNames(["le-text--h5", customClass])}
+				style={styles}
+				data-testid={TestId.Typography}
 			>
 				{children}
 			</h5>
 		),
 		h6: (
 			<h6
-				className={"le-text--h6 " + customClass}
-				style={customStyles}
-				data-testid="leuxTypography"
+				className={leClassNames(["le-text--h6", customClass])}
+				style={styles}
+				data-testid={TestId.Typography}
 			>
 				{children}
 			</h6>
 		),
 		"subtitle-1": (
 			<h6
-				className={"le-text--subtitle-1 " + customClass}
-				style={customStyles}
-				data-testid="leuxTypography"
+				className={leClassNames(["le-text--subtitle-1", customClass])}
+				style={styles}
+				data-testid={TestId.Typography}
 			>
 				{children}
 			</h6>
 		),
 		"subtitle-2": (
 			<h6
-				className={"le-text--subtitle-2 " + customClass}
-				style={customStyles}
-				data-testid="leuxTypography"
+				className={leClassNames(["le-text--subtitle-2", customClass])}
+				style={styles}
+				data-testid={TestId.Typography}
 			>
 				{children}
 			</h6>
 		),
 		"body-1": (
 			<p
-				className={"le-text--body-1 " + customClass}
-				style={customStyles}
-				data-testid="leuxTypography"
+				className={leClassNames(["le-text--body-1", customClass])}
+				style={styles}
+				data-testid={TestId.Typography}
 			>
 				{children}
 			</p>
 		),
 		"body-2": (
 			<p
-				className={"le-text--body-2 " + customClass}
-				style={customStyles}
-				data-testid="leuxTypography"
+				className={leClassNames(["le-text--body-2", customClass])}
+				style={styles}
+				data-testid={TestId.Typography}
 			>
 				{children}
 			</p>
 		),
 		button: (
-			<p
-				className={"le-text--button " + customClass}
-				style={customStyles}
-				data-testid="leuxTypography"
+			<strong
+				className={leClassNames(["le-text--button", customClass])}
+				style={styles}
+				data-testid={TestId.Typography}
 			>
 				{children}
-			</p>
+			</strong>
 		),
 		overline: (
 			<span
-				className={"le-text--overline " + customClass}
-				style={customStyles}
-				data-testid="leuxTypography"
+				className={leClassNames(["le-text--overline", customClass])}
+				style={styles}
+				data-testid={TestId.Typography}
 			>
 				{children}
 			</span>
 		),
 		caption: (
 			<span
-				className={"le-text--caption " + customClass}
-				style={customStyles}
-				data-testid="leuxTypography"
+				className={leClassNames(["le-text--caption", customClass])}
+				style={styles}
+				data-testid={TestId.Typography}
 			>
 				{children}
 			</span>
@@ -129,5 +134,7 @@ const Typography: React.FC<TypographyProps> = ({
 
 	return typesArr[variant];
 };
+
+const Typography = withGlobalConfig(TypographyInstance, "typography");
 
 export { Typography };

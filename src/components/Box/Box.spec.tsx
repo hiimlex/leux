@@ -3,12 +3,13 @@ import React from "react";
 
 import "@testing-library/jest-dom";
 import { Box } from "./Box";
+import { TestId } from "../../types";
 
 describe("Box component test", () => {
 	it("should render a Box component", () => {
 		const { getByTestId } = render(<Box />);
 
-		const box = getByTestId("leuxBox");
+		const box = getByTestId(TestId.Box);
 
 		expect(box).toBeTruthy();
 	});
@@ -22,7 +23,7 @@ describe("Box component test", () => {
 			/>
 		);
 
-		const box = getByTestId("leuxBox");
+		const box = getByTestId(TestId.Box);
 
 		expect(box).toHaveStyle("top: 10px");
 		expect(box).toHaveStyle("bottom: 10px");
@@ -41,7 +42,7 @@ describe("Box component test", () => {
 	it("should create a box with gridSpan", () => {
 		const { getByTestId } = render(<Box gridSpan={{ row: 2, col: 3 }} />);
 
-		const box = getByTestId("leuxBox");
+		const box = getByTestId(TestId.Box);
 
 		expect(box).toHaveStyle("grid-row-end: span 2");
 		expect(box).toHaveStyle("grid-column-end: span 3");
@@ -50,7 +51,7 @@ describe("Box component test", () => {
 	it("should create a centered box", () => {
 		const { getByTestId } = render(<Box centered />);
 
-		const box = getByTestId("leuxBox");
+		const box = getByTestId(TestId.Box);
 
 		expect(box).toHaveClass("le-box--centered");
 	});

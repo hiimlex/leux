@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
-import { LeClassNamesArray } from "../../types";
-import { BoxProps } from "./Box.model";
+import { leClassNames, TestId } from "../../types";
+import { BoxGridSpanStyles, BoxProps } from "./Box.model";
 import "./Box.scss";
 
 const Box: React.FC<BoxProps> = ({
@@ -27,12 +27,7 @@ const Box: React.FC<BoxProps> = ({
 	margins,
 	paddings,
 }: BoxProps) => {
-	const gridSpanStyles:
-		| {
-				gridRowEnd: React.CSSProperties["gridRowEnd"];
-				gridColumnEnd: React.CSSProperties["gridColumnEnd"];
-		  }
-		| undefined = useMemo(() => {
+	const gridSpanStyles: BoxGridSpanStyles | undefined = useMemo(() => {
 		if (gridSpan) {
 			return {
 				gridRowEnd: `span ${gridSpan.row || 1}`,
@@ -41,16 +36,18 @@ const Box: React.FC<BoxProps> = ({
 		}
 	}, [gridSpan]);
 
-	const classNames: LeClassNamesArray = {
-		leBox: () => [
-			bgColor ? `le-bg-${bgColor}` : "",
-			customClass || "",
-			centered ? `le-box--centered` : "",
-			textColor ? `le-color-${textColor}` : "",
-		],
-	};
+	const classNames = useMemo(
+		() =>
+			leClassNames([
+				bgColor && `le-bg-${bgColor}`,
+				customClass,
+				centered && `le-box--centered`,
+				textColor && `le-color-${textColor}`,
+			]),
+		[bgColor, customClass, centered, textColor]
+	);
 
-	const boxBoundingStyles: React.CSSProperties = useMemo(
+	const boxBoundingStyles = useMemo(
 		() => ({
 			top: insets?.all || insets?.horizontal || insets?.top,
 			bottom: insets?.all || insets?.horizontal || insets?.bottom,
@@ -73,23 +70,35 @@ const Box: React.FC<BoxProps> = ({
 		[padding, margin, height, width, paddings, insets, margins]
 	);
 
+	const styles = useMemo(
+		() => ({
+			borderRadius,
+			display: flex ? "flex" : undefined,
+			justifyContent,
+			alignItems,
+			flexDirection,
+			flexWrap,
+			gap: flexGap,
+			...boxBoundingStyles,
+			...gridSpanStyles,
+			...customStyles,
+		}),
+		[
+			borderRadius,
+			flex,
+			justifyContent,
+			alignItems,
+			flexDirection,
+			flexWrap,
+			flexGap,
+			boxBoundingStyles,
+			gridSpanStyles,
+			customStyles,
+		]
+	);
+
 	return (
-		<div
-			style={{
-				borderRadius,
-				display: flex ? "flex" : undefined,
-				justifyContent,
-				alignItems,
-				flexDirection,
-				flexWrap,
-				gap: flexGap,
-				...boxBoundingStyles,
-				...gridSpanStyles,
-				...customStyles,
-			}}
-			className={classNames["leBox"]().join(" ")}
-			data-testid="leuxBox"
-		>
+		<div style={styles} className={classNames} data-testid={TestId.Box}>
 			{children}
 		</div>
 	);

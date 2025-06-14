@@ -21,6 +21,7 @@ import {
 	TextAreaPage,
 	ThemingPage,
 	ToastPage,
+	TooltipPage,
 	TypographyPage,
 } from "@/pages";
 import React from "react";
@@ -85,10 +86,10 @@ export const routes: LeRoute[] = [
 		path: RoutesPath.Checkbox,
 		element: <LeRenderDocPage doc={<CheckboxPage />} title="Checkbox" />,
 	},
-	// {
-	// 	path: RoutesPath.Tooltip,
-	// 	element: <LeRenderDocPage doc={<TooltipPage />} title="Tooltip" />,
-	// },
+	{
+		path: RoutesPath.Tooltip,
+		element: <LeRenderDocPage doc={<TooltipPage />} title="Tooltip" />,
+	},
 	{
 		path: RoutesPath.Table,
 		element: <LeRenderDocPage doc={<TablePage />} title="Table" />,
