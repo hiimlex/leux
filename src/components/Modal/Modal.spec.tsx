@@ -1,7 +1,7 @@
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, act } from "@testing-library/react";
 
 import "@testing-library/jest-dom";
-import React, { act } from "react";
+import React from "react";
 import { useModal } from "../../hooks";
 import { Button } from "../Button";
 import { ModalProvider } from "../../providers";

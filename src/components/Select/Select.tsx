@@ -1,8 +1,8 @@
 import React, { PropsWithChildren, useState } from "react";
+import { withGlobalConfig } from "../../hooks";
 import { LeClassNames } from "../../types";
 import { SelectProps } from "./Select.model";
 import "./Select.scss";
-import { withGlobalConfig } from "../../contexts";
 
 const SelectComponent: React.FC<PropsWithChildren<SelectProps>> = ({
 	customClass,

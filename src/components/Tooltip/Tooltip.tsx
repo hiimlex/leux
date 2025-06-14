@@ -1,6 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { withGlobalConfig } from "../../contexts";
-import { useTheme } from "../../hooks";
+import { useTheme, withGlobalConfig } from "../../hooks";
 import { LeClassNames, LeSafeAny, TestId } from "../../types";
 import { TooltipProps } from "./Tooltip.model";
 import "./Tooltip.scss";

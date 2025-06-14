@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@use "../../styles/variables.scss" as *;
 
 .le-button {
 	font-weight: 600;

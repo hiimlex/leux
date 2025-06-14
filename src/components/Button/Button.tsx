@@ -1,9 +1,8 @@
 import React, { MouseEvent, useMemo } from "react";
-import { useTheme } from "../../hooks";
+import { useTheme, withGlobalConfig } from "../../hooks";
 import { leClassNames, TestId } from "../../types";
 import { ButtonProps } from "./Button.model";
 import "./Button.scss";
-import { withGlobalConfig } from "../../contexts";
 
 const ButtonComponent: React.FC<ButtonProps> = ({
 	colorScheme = "default",

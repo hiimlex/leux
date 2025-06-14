@@ -1,16 +1,16 @@
 import React, {
+	Children,
 	MouseEvent as ReactMouseEvent,
 	cloneElement,
 	useEffect,
-	useState,
-	Children,
 	useMemo,
+	useState,
 } from "react";
+import { withGlobalConfig } from "../../hooks";
 import { LeClassNamesSimple } from "../../types";
+import { Button } from "../Button";
 import { DropdownItemProps, DropdownProps } from "./Dropdown.model";
 import "./Dropdown.scss";
-import { Button } from "../Button";
-import { withGlobalConfig } from "../../contexts";
 
 const DropdownComponent: React.FC<DropdownProps> = ({
 	menuId,

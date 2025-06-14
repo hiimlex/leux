@@ -1,8 +1,8 @@
 import React from "react";
+import { withGlobalConfig } from "../../hooks";
+import { TestId } from "../../types";
 import { CheckboxProps } from "./Checkbox.model";
 import "./Checkbox.scss";
-import { TestId } from "../../types";
-import { withGlobalConfig } from "../../contexts";
 
 const CheckboxComponent: React.FC<CheckboxProps> = ({
 	fieldKey,

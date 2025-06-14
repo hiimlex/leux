@@ -1,4 +1,4 @@
-import { TextAreaSizes } from "..";
+import { TextAreaSizes } from "../components";
 
 export const TEXTAREA_ROW_SIZES: Record<TextAreaSizes, { rowHeight: number }> = {
 	small: { rowHeight: 1.5 },

@@ -1,4 +1,4 @@
-import { LeGlobalConfig } from "./global-config.model";
+import { LeGlobalConfig } from "../../hooks/withGlobalConfig/global-config.model";
 /**
  * Le Theme
  *

@@ -1,8 +1,8 @@
 import React from "react";
+import { withGlobalConfig } from "../../hooks";
+import { leClassNames } from "../../types";
 import { RadioProps } from "./Radio.model";
 import "./Radio.scss";
-import { withGlobalConfig } from "../../contexts";
-import { leClassNames } from "../../types";
 
 const RadioComponent: React.FC<RadioProps> = ({
 	fieldKey,

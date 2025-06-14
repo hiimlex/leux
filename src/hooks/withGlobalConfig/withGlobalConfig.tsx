@@ -1,5 +1,5 @@
 import React, { ComponentType, useMemo } from "react";
-import { useTheme } from "../../hooks";
+import { useTheme } from "../useTheme";
 import { ConfigKey } from "./global-config.model";
 
 export function withGlobalConfig<K extends ConfigKey, P extends object>(

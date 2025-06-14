@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { withGlobalConfig } from "../../contexts";
+import { withGlobalConfig } from "../../hooks";
 import { leClassNames, TestId } from "../../types";
 import { BadgeProps } from "./Badge.model";
 import "./Badge.scss";

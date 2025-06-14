@@ -20,8 +20,8 @@
 		"test:watch": "jest --watch --silent=false",
 		"test:coverage": "jest --coverage --collectCoverageFrom='./src/**'",
 		"test:badges": "npm run test:coverage && npx jest-coverage-badges",
-		"docs": "cd docs",
-		"prepare": "npx husky install && npx husky add ./.husky/pre-commit 'npx lint-staged'",
+		"docs": "cd docs && npm run dev",
+		"setup:husky": "npx husky install && npx husky add ./.husky/pre-commit 'npx lint-staged'",
 		"prepare:win": "npx husky install && npx husky add .\\.husky\\pre-commit 'npx lint-staged'"
 	},
 	"bugs": {
@@ -115,5 +115,8 @@
 	},
 	"resolutions": {
 		"@types/react": "18.3.3"
-	}
+	},
+	"workspaces": [
+		"src/packages/*"
+	]
 }

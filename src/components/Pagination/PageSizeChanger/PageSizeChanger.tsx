@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { LeClassNamesSimple } from "../../../types";
-import { Dropdown, DropdownItem } from "../../index";
+import { Dropdown, DropdownItem } from "../../Dropdown";
 import {
 	PageSizeChangerLabel,
 	PageSizeChangerOptions,

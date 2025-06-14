@@ -1,6 +1,5 @@
 import React, { PropsWithChildren, useEffect, useMemo, useState } from "react";
 import {
-	LeGlobalConfig,
 	LeThemeMapper,
 	LeThemeType,
 	LeThemes,
@@ -8,6 +7,7 @@ import {
 	ThemeContextProps,
 } from "../../contexts";
 import "../../styles/theme.scss";
+import { LeGlobalConfig } from "../../hooks";
 
 interface ThemeProviderProps extends PropsWithChildren {
 	themes?: ThemeContextProps["themes"];

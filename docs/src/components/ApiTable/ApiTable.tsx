@@ -1,6 +1,6 @@
 import { useMemo } from "react";
-import { LeHighlighter } from "..";
-import { LeSafeAny } from "../../../../src";
+import LeHighlighter from "../Highlighter";
+import { LeSafeAny } from "../../../../src/types";
 import "./ApiTable.scss";
 import React from "react";
 
