@@ -14,7 +14,7 @@ import {
 	TypographyProps,
 } from "../../components";
 // Package imports
-import { ButtonProps } from "../../packages";
+import { ButtonProps } from "../../packages/Button/src";
 
 type LeGlobalConfigComponents = {
 	button?: Partial<ButtonProps>;
