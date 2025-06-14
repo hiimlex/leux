@@ -1,5 +1,3 @@
-import React from "react";
-
 type BoxVariants = "primary" | "secondary" | "success" | "danger" | "warning" | "default";
 type BoxTextColor = "dark" | "light" | "darker" | "lighter";
 
@@ -55,4 +53,9 @@ interface BoxProps {
 	};
 }
 
-export { BoxVariants, BoxProps, BoxTextColor };
+type BoxGridSpanStyles = {
+	gridRowEnd: React.CSSProperties["gridRowEnd"];
+	gridColumnEnd: React.CSSProperties["gridColumnEnd"];
+};
+
+export { BoxVariants, BoxProps, BoxTextColor, BoxGridSpanStyles };

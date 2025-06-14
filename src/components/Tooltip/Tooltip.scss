@@ -6,6 +6,7 @@
 	align-items: center;
 	width: fit-content;
 	height: fit-content;
+	cursor: pointer;
 }
 
 .le-tooltip {
@@ -24,126 +25,105 @@
 	font-weight: 500;
 	white-space: nowrap;
 	color: var(--le-color-textTwo);
-	background: var(--le-color-border);
+	background: var(--le-color-default);
 	box-shadow: rgba(149, 157, 165, 0.1) 0px 2px 24px;
 
 	@each $color, $value in $variant-colors {
 		&--#{$color} {
 			color: var(--le-color-textInverse);
 			background: $value;
-
-			&.le-tooltip--top {
-				animation: animationFromBottom 0.2s ease-in-out;
-				bottom: calc(100% + 10px);
-				margin: 0 auto;
-
-				&::after {
-					content: "";
-					position: absolute;
-					width: 0;
-					height: 0;
-					top: calc(100% - 2px);
-					border-style: solid;
-					border-width: 10px 6px 0px 6px;
-					border-color: $value transparent transparent transparent;
-				}
-			}
-
-			&.le-tooltip--bottom {
-				animation: animationFromTop 0.2s ease-in-out;
-				top: calc(100% + 10px);
-
-				&::after {
-					content: "";
-					position: absolute;
-					width: 0;
-					height: 0;
-					bottom: calc(100% - 2px);
-					border-style: solid;
-					border-width: 0px 6px 10px 6px;
-					border-color: transparent transparent $value transparent;
-				}
-			}
-
-			&.le-tooltip--left {
-				animation: animationFromRight 0.2s ease-in-out;
-				right: calc(100% + 14px);
-
-				&::after {
-					content: "";
-					position: absolute;
-					width: 0;
-					height: 0;
-					left: calc(100% - 2px);
-					border-style: solid;
-					border-width: 6px 0 6px 10px;
-					border-color: transparent transparent transparent $value;
-				}
-			}
-
-			&.le-tooltip--right {
-				animation: animationFromLeft 0.2s ease-in-out;
-				left: calc(100% + 14px);
-
-				&::after {
-					content: "";
-					position: absolute;
-					width: 0;
-					height: 0;
-					right: calc(100% - 2px);
-					border-style: solid;
-					border-width: 6px 10px 6px 0;
-					border-color: transparent $value transparent transparent;
-				}
-			}
-
-			@if $color == "default" {
-				color: var(--le-color-textTwo);
-			}
 		}
 	}
 
-	@keyframes animationFromBottom {
-		0% {
-			opacity: 0;
-			transform: translateY(10px);
-		}
-		100% {
-			opacity: 1;
-			transform: translateY(0);
-		}
+	&.le-tooltip--top {
+		animation: animationFromBottom 0.2s ease-in-out;
+		bottom: calc(100% + 10px);
+		margin: 0 auto;
 	}
 
-	@keyframes animationFromTop {
-		0% {
-			opacity: 0;
-			transform: translateY(-10px);
-		}
-		100% {
-			opacity: 1;
-			transform: translateY(0);
-		}
+	&.le-tooltip--bottom {
+		animation: animationFromTop 0.2s ease-in-out;
+		top: calc(100% + 10px);
 	}
 
-	@keyframes animationFromLeft {
-		0% {
-			opacity: 0;
-			transform: translateX(-10px);
-		}
-		100% {
-			opacity: 1;
-			transform: translateX(0);
-		}
+	&.le-tooltip--left {
+		animation: animationFromRight 0.2s ease-in-out;
+		right: calc(100% + 14px);
 	}
 
-	@keyframes animationFromRight {
-		0% {
-			opacity: 0;
-			transform: translateX(10px);
-		}
-		100% {
-			opacity: 1;
-			transform: translateX(0);
-		}
+	&.le-tooltip--right {
+		animation: animationFromLeft 0.2s ease-in-out;
+		left: calc(100% + 14px);
+	}
+}
+
+@keyframes animationFromBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes animationFromTop {
+	0% {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes animationFromLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes animationFromRight {
+	0% {
+		opacity: 0;
+		transform: translateX(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.le-tooltip--arrow {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+
+	&-top {
+		top: calc(100% - 2px);
+		border-width: 10px 6px 0px 6px;
+	}
+
+	&-bottom {
+		bottom: calc(100% - 2px);
+		border-width: 0px 6px 10px 6px;
+	}
+
+	&-left {
+		left: calc(100% - 2px);
+		border-width: 6px 0 6px 10px;
+	}
+
+	&-right {
+		right: calc(100% - 2px);
+		border-width: 6px 10px 6px 0;
 	}
 }

@@ -1,4 +1,12 @@
 export enum TestId {
 	Avatar = "leuxAvatar",
 	Badge = "leuxBadge",
+	Box = "leuxBox",
+	Button = "leuxButton",
+	Checkbox = "leuxCheckbox",
+	CheckboxInput = "leuxCheckboxInput",
+	CheckboxLabel = "leuxCheckboxLabel",
+	Typography = "leuxTypography",
+	Tooltip = "leuxTooltip",
+	TooltipProvider = "leuxTooltipProvider",
 }

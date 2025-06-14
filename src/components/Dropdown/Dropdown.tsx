@@ -10,8 +10,9 @@ import { LeClassNamesSimple } from "../../types";
 import { DropdownItemProps, DropdownProps } from "./Dropdown.model";
 import "./Dropdown.scss";
 import { Button } from "../Button";
+import { withGlobalConfig } from "../../contexts";
 
-const Dropdown: React.FC<DropdownProps> = ({
+const DropdownComponent: React.FC<DropdownProps> = ({
 	menuId,
 	anchor,
 	menuProps,
@@ -117,7 +118,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 	);
 };
 
-const DropdownItem = ({
+const DropdownItem: React.FC<DropdownItemProps> = ({
 	children,
 	noBreakWord = true,
 	onClick,
@@ -160,8 +161,10 @@ const DropdownItem = ({
 	);
 };
 
-const DropdownSeparator = () => (
+const DropdownSeparator: React.FC = () => (
 	<li className="le-dropdown--separator" data-testid="leuxDropdownSeparator"></li>
 );
+
+const Dropdown = withGlobalConfig(DropdownComponent, "dropdown");
 
 export { Dropdown, DropdownItem, DropdownSeparator };

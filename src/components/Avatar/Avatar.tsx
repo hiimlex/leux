@@ -17,19 +17,12 @@ const Avatar: React.FC<AvatarProps> = ({
 		() => ({
 			...customStyles,
 			width: customSize || customStyles?.width,
+			height: customSize || customStyles?.height,
 		}),
 		[customStyles, customSize]
 	);
 
 	const capital = useMemo(() => getCapitals(src), [src]);
-
-	if (customSize) {
-		customStyles = {
-			...customStyles,
-			width: customSize,
-			height: customSize,
-		};
-	}
 
 	const classNames = useMemo(
 		() =>

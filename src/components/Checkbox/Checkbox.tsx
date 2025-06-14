@@ -1,8 +1,10 @@
 import React from "react";
 import { CheckboxProps } from "./Checkbox.model";
 import "./Checkbox.scss";
+import { TestId } from "../../types";
+import { withGlobalConfig } from "../../contexts";
 
-const Checkbox: React.FC<CheckboxProps> = ({
+const CheckboxComponent: React.FC<CheckboxProps> = ({
 	fieldKey,
 	label,
 	size = "medium",
@@ -18,6 +20,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
 	customLabelStyles,
 	checkBoxProps,
 	checkboxRef,
+	checked,
 }) => {
 	const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		if (onChange) {
@@ -31,7 +34,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
 				state && state.disabled ? "le-checkbox--disabled" : ""
 			} ${customClass ? customClass : ""}`}
 			style={{ ...customStyles, width }}
-			data-testid="leuxCheckbox"
+			data-testid={TestId.Checkbox}
 		>
 			<input
 				ref={checkboxRef}
@@ -42,14 +45,15 @@ const Checkbox: React.FC<CheckboxProps> = ({
 				className={"le-checkbox--input" + (customInputClass ? ` ${customInputClass}` : "")}
 				onChange={handleOnChange}
 				disabled={state && state.disabled}
-				data-testid="leuxCheckboxInput"
+				data-testid={TestId.CheckboxInput}
 				style={customInputStyles}
+				checked={checked}
 				{...checkBoxProps}
 			/>
 			<label
 				htmlFor={fieldKey}
 				className={"le-checkbox--label" + (customLabelClass ? ` ${customLabelClass}` : "")}
-				data-testid="leuxCheckboxLabel"
+				data-testid={TestId.CheckboxLabel}
 				style={customLabelStyles}
 			>
 				{label}
@@ -57,5 +61,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
 		</div>
 	);
 };
+
+const Checkbox = withGlobalConfig(CheckboxComponent, "checkbox");
 
 export { Checkbox };

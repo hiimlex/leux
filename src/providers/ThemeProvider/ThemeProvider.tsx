@@ -67,7 +67,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
 	shouldPersist = true,
 	globalConfig,
 }) => {
-	const [config, setConfig] = useState<LeGlobalConfig>(
+	const [config] = useState<LeGlobalConfig>(
 		globalConfig || {
 			fontFamily: "Poppins, sans-serif",
 		}
@@ -79,6 +79,10 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
 	const [currentTheme, setCurrentTheme] = useState<ThemeContextProps["currentTheme"]>(
 		defaultTheme || "light"
 	);
+	const theme = useMemo(() => {
+		return appThemes[currentTheme];
+	}, [appThemes, currentTheme]);
+
 	const PERSIST_THEME_KEY = persistThemeKey || "le-theme";
 
 	const getPersistedTheme = () => {
@@ -117,6 +121,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
 	const setThemeCSSVariables = (theme: LeThemes) => {
 		Object.keys(appThemes[theme]).forEach((colorKey) => {
 			const colorValue = appThemes[theme][colorKey];
+
 			document.body.style.setProperty(`--le-color-${colorKey}`, colorValue);
 		});
 	};
@@ -144,10 +149,6 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
 			setTypographyFontFamily(config.fontFamily);
 		}
 	}, [config?.fontFamily]);
-
-	const theme = useMemo(() => {
-		return appThemes[currentTheme];
-	}, [defaultTheme, appThemes]);
 
 	const swap = (newtheme: LeThemes) => {
 		setCurrentTheme(newtheme);

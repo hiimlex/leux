@@ -9,6 +9,7 @@ interface CheckboxProps {
 	label?: string;
 	size?: CheckboxSizes;
 	defaultChecked?: boolean;
+	checked?: boolean;
 	state?: CheckboxState;
 	width?: React.CSSProperties["width"];
 	customClass?: string;

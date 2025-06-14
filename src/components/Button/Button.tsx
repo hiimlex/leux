@@ -1,10 +1,11 @@
 import React, { MouseEvent, useMemo } from "react";
 import { useTheme } from "../../hooks";
-import { leClassNames } from "../../types";
+import { leClassNames, TestId } from "../../types";
 import { ButtonProps } from "./Button.model";
 import "./Button.scss";
+import { withGlobalConfig } from "../../contexts";
 
-const Button: React.FC<ButtonProps> = ({
+const ButtonComponent: React.FC<ButtonProps> = ({
 	colorScheme = "default",
 	size = "medium",
 	variant = "filled",
@@ -16,8 +17,7 @@ const Button: React.FC<ButtonProps> = ({
 	customStyles,
 	buttonProps,
 }) => {
-	const { currentTheme, globalConfig } = useTheme();
-	const defaultProps = useMemo(() => globalConfig?.button || {}, [globalConfig?.button]);
+	const { currentTheme } = useTheme();
 
 	const handleOnCLick = (event: MouseEvent<HTMLButtonElement>) => {
 		if (onClick) {
@@ -35,24 +35,15 @@ const Button: React.FC<ButtonProps> = ({
 				customClass,
 				`le-button--${currentTheme}`,
 				state?.disabled && "le-button--disabled",
-				defaultProps?.customClass,
 			]),
-		[
-			variant,
-			size,
-			colorScheme,
-			customClass,
-			currentTheme,
-			state?.disabled,
-			defaultProps?.customClass,
-		]
+		[variant, size, colorScheme, customClass, currentTheme, state?.disabled]
 	);
 
 	return (
 		<button
 			className={classNames}
 			type={type}
-			data-testid="leuxButton"
+			data-testid={TestId.Button}
 			onClick={(event) => handleOnCLick(event)}
 			disabled={state && state.disabled}
 			style={customStyles}
@@ -62,5 +53,7 @@ const Button: React.FC<ButtonProps> = ({
 		</button>
 	);
 };
+
+const Button = withGlobalConfig(ButtonComponent, "button");
 
 export { Button };

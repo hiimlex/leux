@@ -2,8 +2,9 @@ import React, { PropsWithChildren, useState } from "react";
 import { LeClassNames } from "../../types";
 import { SelectProps } from "./Select.model";
 import "./Select.scss";
+import { withGlobalConfig } from "../../contexts";
 
-const Select: React.FC<PropsWithChildren<SelectProps>> = ({
+const SelectComponent: React.FC<PropsWithChildren<SelectProps>> = ({
 	customClass,
 	customStyles,
 	fieldKey,
@@ -77,5 +78,7 @@ const Select: React.FC<PropsWithChildren<SelectProps>> = ({
 		</select>
 	);
 };
+
+const Select = withGlobalConfig(SelectComponent, "select");
 
 export { Select };
