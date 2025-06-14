@@ -4,11 +4,11 @@
 
 [Docs](https://leux.vercel.app/)
 
-<a href="https://www.npmjs.com/package/leux" target="\_parent">
-  <img alt="#npm" src="https://img.shields.io/npm/v/leux">
+<a href="https://www.npmjs.com/package/@leux/ui" target="\_parent">
+  <img alt="#npm" src="https://img.shields.io/npm/v/@leux/ui">
 </a>
 <a href="https://www.npmjs.com/package/leux" target="\_parent">
-  <img alt="#npm" src="https://img.shields.io/npm/dm/leux">
+  <img alt="#npm" src="https://img.shields.io/npm/dm/@leux/ui">
 </a>
 <a href="https://nodejs.org/en/blog/release/v14.17.3/" target="\_parent">
   <img alt="#node" src="https://img.shields.io/badge/node-%3D%3E16.14.0-purple">
