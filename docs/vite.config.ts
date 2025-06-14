@@ -27,4 +27,5 @@ export default defineConfig(async () => ({
 		},
 	},
 	assetsInclude: ["**/*.svg"],
+	build: { rollupOptions: { external: "classnames" } },
 }));
