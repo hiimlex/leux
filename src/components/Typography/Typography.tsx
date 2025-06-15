@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { withGlobalConfig } from "../../hooks";
 import { leClassNames, TestId } from "../../types";
 import { TypographyProps } from "./Typography.model";
+import "./Typography.scss";
 
 const TypographyInstance: React.FC<TypographyProps> = ({
 	variant = "body-1",
