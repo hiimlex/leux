@@ -2,8 +2,9 @@ import React, { useCallback, useEffect, useRef } from "react";
 import { LeClassNames } from "../../types";
 import { SpinnerProps } from "./Spinner.model";
 import "./Spinner.scss";
+import { withGlobalConfig } from "../../hooks";
 
-const Spinner: React.FC<SpinnerProps> = ({
+const SpinnerComponent: React.FC<SpinnerProps> = ({
 	size = "medium",
 	theme = "primary",
 	variant = "circle",
@@ -87,5 +88,7 @@ const Spinner: React.FC<SpinnerProps> = ({
 		></div>
 	);
 };
+
+const Spinner = withGlobalConfig(SpinnerComponent, "spinner");
 
 export { Spinner };

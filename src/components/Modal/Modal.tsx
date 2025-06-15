@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { useModal } from "../../hooks";
+import { useModal, withGlobalConfig } from "../../hooks";
 import { LeClassNames } from "../../types";
 import { Button } from "../Button";
 import { ModalFooterButton, ModalFooterProps, ModalProps } from "./Modal.model";
@@ -20,7 +20,7 @@ const defaultFooterButtons: ModalFooterProps = [
 	},
 ];
 
-const Modal: React.FC<ModalProps> = ({
+const ModalComponent: React.FC<ModalProps> = ({
 	id,
 	title,
 	width = "40%",
@@ -163,5 +163,7 @@ const Modal: React.FC<ModalProps> = ({
 		</div>
 	);
 };
+
+const Modal = withGlobalConfig(ModalComponent, "modal");
 
 export { Modal };

@@ -3,8 +3,9 @@ import { InputProps } from "./Input.model";
 
 import "./Input.scss";
 import { LeClassNames } from "../../types";
+import { withGlobalConfig } from "../../hooks";
 
-const Input: React.FC<InputProps> = ({
+const InputComponent: React.FC<InputProps> = ({
 	fieldKey,
 	type = "text",
 	variant = "filled",
@@ -41,5 +42,7 @@ const Input: React.FC<InputProps> = ({
 		/>
 	);
 };
+
+const Input = withGlobalConfig(InputComponent, "input");
 
 export { Input };
