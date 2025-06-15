@@ -11,7 +11,8 @@ type TypographyVariants =
 	| "body-2"
 	| "caption"
 	| "button"
-	| "overline";
+	| "overline"
+	| "tip";
 
 interface TypographyProps {
 	children?: React.ReactNode;

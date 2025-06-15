@@ -11,7 +11,7 @@ describe("Typography component test", () => {
 
 		const typography = getByTestId("leuxTypography");
 
-		expect(typography).toHaveClass("le-text--h1");
+		expect(typography).toHaveClass("le-text-h1");
 	});
 
 	it("should render a Typography H2 component", () => {
@@ -19,7 +19,7 @@ describe("Typography component test", () => {
 
 		const typography = getByTestId("leuxTypography");
 
-		expect(typography).toHaveClass("le-text--h2");
+		expect(typography).toHaveClass("le-text-h2");
 	});
 
 	it("should render a Typography H3 component", () => {
@@ -27,7 +27,7 @@ describe("Typography component test", () => {
 
 		const typography = getByTestId("leuxTypography");
 
-		expect(typography).toHaveClass("le-text--h3");
+		expect(typography).toHaveClass("le-text-h3");
 	});
 
 	it("should render a Typography H4 component", () => {
@@ -35,14 +35,14 @@ describe("Typography component test", () => {
 
 		const typography = getByTestId("leuxTypography");
 
-		expect(typography).toHaveClass("le-text--h4");
+		expect(typography).toHaveClass("le-text-h4");
 	});
 	it("should render a Typography H5 component", () => {
 		const { getByTestId } = render(<Typography variant="h5" children="Test" />);
 
 		const typography = getByTestId("leuxTypography");
 
-		expect(typography).toHaveClass("le-text--h5");
+		expect(typography).toHaveClass("le-text-h5");
 	});
 
 	it("should render a Typography H6 component", () => {
@@ -50,7 +50,7 @@ describe("Typography component test", () => {
 
 		const typography = getByTestId("leuxTypography");
 
-		expect(typography).toHaveClass("le-text--h6");
+		expect(typography).toHaveClass("le-text-h6");
 	});
 
 	it("should render a Typography subtitle-1 component", () => {
@@ -58,7 +58,7 @@ describe("Typography component test", () => {
 
 		const typography = getByTestId("leuxTypography");
 
-		expect(typography).toHaveClass("le-text--subtitle-1");
+		expect(typography).toHaveClass("le-text-subtitle-1");
 	});
 
 	it("should render a Typography subtitle-2 component", () => {
@@ -66,7 +66,7 @@ describe("Typography component test", () => {
 
 		const typography = getByTestId("leuxTypography");
 
-		expect(typography).toHaveClass("le-text--subtitle-2");
+		expect(typography).toHaveClass("le-text-subtitle-2");
 	});
 
 	it("should render a Typography body-1 component", () => {
@@ -74,7 +74,7 @@ describe("Typography component test", () => {
 
 		const typography = getByTestId("leuxTypography");
 
-		expect(typography).toHaveClass("le-text--body-1");
+		expect(typography).toHaveClass("le-text-body-1");
 	});
 
 	it("should render a Typography body-2 component", () => {
@@ -82,7 +82,7 @@ describe("Typography component test", () => {
 
 		const typography = getByTestId("leuxTypography");
 
-		expect(typography).toHaveClass("le-text--body-2");
+		expect(typography).toHaveClass("le-text-body-2");
 	});
 
 	it("should render a Typography caption component", () => {
@@ -90,7 +90,7 @@ describe("Typography component test", () => {
 
 		const typography = getByTestId("leuxTypography");
 
-		expect(typography).toHaveClass("le-text--caption");
+		expect(typography).toHaveClass("le-text-caption");
 	});
 
 	it("should render a Typography button component", () => {
@@ -98,7 +98,7 @@ describe("Typography component test", () => {
 
 		const typography = getByTestId("leuxTypography");
 
-		expect(typography).toHaveClass("le-text--button");
+		expect(typography).toHaveClass("le-text-button");
 	});
 
 	it("should render a Typography overline component", () => {
@@ -106,17 +106,17 @@ describe("Typography component test", () => {
 
 		const typography = getByTestId("leuxTypography");
 
-		expect(typography).toHaveClass("le-text--overline");
+		expect(typography).toHaveClass("le-text-overline");
 	});
 
 	it("should render a Custom Class Typography component", () => {
 		const { getByTestId } = render(
-			<Typography variant="h1" children="Test" customClass="le-text--body-1" />
+			<Typography variant="h1" children="Test" customClass="le-text-body-1" />
 		);
 
 		const typography = getByTestId("leuxTypography");
 
-		expect(typography).toHaveClass("le-text--body-1");
+		expect(typography).toHaveClass("le-text-body-1");
 	});
 
 	it("should render a Custom Styles Typography component", () => {

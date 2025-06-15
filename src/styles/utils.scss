@@ -1,6 +1,7 @@
 @use "./variables.scss" as *;
 
-h1 {
+h1,
+.le-text-h1 {
 	font-size: 2.5rem;
 	line-height: 3rem;
 	font-weight: bold;
@@ -9,7 +10,8 @@ h1 {
 	font-family: var(--le-font-family);
 }
 
-h2 {
+h2,
+.le-text-h2 {
 	font-size: 2rem;
 	line-height: 2.5rem;
 	font-weight: 600;
@@ -18,7 +20,8 @@ h2 {
 	font-family: var(--le-font-family);
 }
 
-h3 {
+h3,
+.le-text-h3 {
 	font-size: 1.75rem;
 	line-height: 2.25rem;
 	font-weight: 500;
@@ -27,7 +30,8 @@ h3 {
 	font-family: var(--le-font-family);
 }
 
-h4 {
+h4,
+.le-text-h4 {
 	font-size: 1.5rem;
 	line-height: 2rem;
 	font-weight: 500;
@@ -36,7 +40,8 @@ h4 {
 	font-family: var(--le-font-family);
 }
 
-h5 {
+h5,
+.le-text-h5 {
 	font-size: 1.25rem;
 	line-height: 1.75rem;
 	font-weight: 500;
@@ -45,7 +50,8 @@ h5 {
 	font-family: var(--le-font-family);
 }
 
-h6 {
+h6,
+.le-text-h6 {
 	font-size: 1rem;
 	line-height: 1.5rem;
 	font-weight: 400;
@@ -74,10 +80,6 @@ p {
 		font-weight: nth($values, 2);
 		letter-spacing: nth($values, 3);
 		font-family: var(--le-font-family);
-
-		@if $typography == "button" {
-			text-transform: uppercase;
-		}
 
 		@if $typography == "overline" {
 			text-transform: uppercase;

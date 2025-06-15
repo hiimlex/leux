@@ -37,6 +37,7 @@ const CodePreview = () => {
 				<Typography variant="caption">caption. Caption</Typography>
 				<Typography variant="button">button. Button</Typography>
 				<Typography variant="overline">overline. Overline</Typography>
+				<Typography variant="tip">tip. Tip</Typography>
 			</LePreview>
 			{showCode && (
 				<LeHighlighter
@@ -56,6 +57,7 @@ const CodePreview = () => {
 		<Typography variant="caption">caption. Caption</Typography>
 		<Typography variant="button">button. Button</Typography>
 		<Typography variant="overline">overline. Overline</Typography>
+		<Typography variant="tip">tip. Tip</Typography>
 	</>
 );`}
 				/>
@@ -109,6 +111,9 @@ const TypographyApiTable = () => {
 		},
 		children: {
 			type: "React.ReactNode",
+		},
+		fontFamily: {
+			type: "string",
 		},
 	};
 
