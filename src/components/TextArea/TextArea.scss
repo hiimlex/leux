@@ -5,6 +5,7 @@
 	border: none;
 	line-height: normal;
 	transition: all 0.1s ease-in-out;
+	font-weight: 500;
 
 	&--filled {
 		background-color: var(--le-color-inputBackground);
