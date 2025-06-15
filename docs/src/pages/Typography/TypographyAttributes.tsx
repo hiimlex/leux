@@ -31,12 +31,13 @@ const CodePreview = () => {
 				<Typography variant="h5">h5. Heading</Typography>
 				<Typography variant="h6">h6. Heading</Typography>
 				<Typography variant="subtitle-1">subtitle-1. Subtitle</Typography>
-				<Typography variant="subtitle-2">subtitle-1. Subtitle</Typography>
+				<Typography variant="subtitle-2">subtitle-2. Subtitle</Typography>
 				<Typography variant="body-1">body-1. Body</Typography>
-				<Typography variant="subtitle-2">subtitle-1. Subtitle</Typography>
+				<Typography variant="body-2">body-2. Body</Typography>
 				<Typography variant="caption">caption. Caption</Typography>
 				<Typography variant="button">button. Button</Typography>
 				<Typography variant="overline">overline. Overline</Typography>
+				<Typography variant="tip">tip. Tip</Typography>
 			</LePreview>
 			{showCode && (
 				<LeHighlighter
@@ -50,12 +51,13 @@ const CodePreview = () => {
 		<Typography variant="h5">h5. Heading</Typography>
 		<Typography variant="h6">h6. Heading</Typography>
 		<Typography variant="subtitle-1">subtitle-1. Subtitle</Typography>
-		<Typography variant="subtitle-2">subtitle-1. Subtitle</Typography>
+		<Typography variant="subtitle-2">subtitle-2. Subtitle</Typography>
 		<Typography variant="body-1">body-1. Body</Typography>
-		<Typography variant="subtitle-2">subtitle-1. Subtitle</Typography>
+		<Typography variant="body-2">body-2. Body</Typography>
 		<Typography variant="caption">caption. Caption</Typography>
 		<Typography variant="button">button. Button</Typography>
 		<Typography variant="overline">overline. Overline</Typography>
+		<Typography variant="tip">tip. Tip</Typography>
 	</>
 );`}
 				/>
@@ -109,6 +111,9 @@ const TypographyApiTable = () => {
 		},
 		children: {
 			type: "React.ReactNode",
+		},
+		fontFamily: {
+			type: "string",
 		},
 	};
 

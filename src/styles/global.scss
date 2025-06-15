@@ -1,3 +1,6 @@
+@use "./variables.scss" as *;
+@use "./theme.scss" as *;
+
 body {
 	font-size: 62.5%;
 	padding: 0;

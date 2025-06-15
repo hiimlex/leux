@@ -15,7 +15,7 @@ const TypographyInstance: React.FC<TypographyProps> = ({
 	const typesArr: Record<string, React.ReactElement> = {
 		h1: (
 			<h1
-				className={leClassNames(["le-text--h1", customClass])}
+				className={leClassNames(["le-text-h1", customClass])}
 				style={styles}
 				data-testid={TestId.Typography}
 			>
@@ -24,7 +24,7 @@ const TypographyInstance: React.FC<TypographyProps> = ({
 		),
 		h2: (
 			<h2
-				className={leClassNames(["le-text--h2", customClass])}
+				className={leClassNames(["le-text-h2", customClass])}
 				style={styles}
 				data-testid={TestId.Typography}
 			>
@@ -33,7 +33,7 @@ const TypographyInstance: React.FC<TypographyProps> = ({
 		),
 		h3: (
 			<h3
-				className={leClassNames(["le-text--h3", customClass])}
+				className={leClassNames(["le-text-h3", customClass])}
 				style={styles}
 				data-testid={TestId.Typography}
 			>
@@ -42,7 +42,7 @@ const TypographyInstance: React.FC<TypographyProps> = ({
 		),
 		h4: (
 			<h4
-				className={leClassNames(["le-text--h4", customClass])}
+				className={leClassNames(["le-text-h4", customClass])}
 				style={styles}
 				data-testid={TestId.Typography}
 			>
@@ -51,7 +51,7 @@ const TypographyInstance: React.FC<TypographyProps> = ({
 		),
 		h5: (
 			<h5
-				className={leClassNames(["le-text--h5", customClass])}
+				className={leClassNames(["le-text-h5", customClass])}
 				style={styles}
 				data-testid={TestId.Typography}
 			>
@@ -60,7 +60,7 @@ const TypographyInstance: React.FC<TypographyProps> = ({
 		),
 		h6: (
 			<h6
-				className={leClassNames(["le-text--h6", customClass])}
+				className={leClassNames(["le-text-h6", customClass])}
 				style={styles}
 				data-testid={TestId.Typography}
 			>
@@ -69,7 +69,7 @@ const TypographyInstance: React.FC<TypographyProps> = ({
 		),
 		"subtitle-1": (
 			<h6
-				className={leClassNames(["le-text--subtitle-1", customClass])}
+				className={leClassNames(["le-text-subtitle-1", customClass])}
 				style={styles}
 				data-testid={TestId.Typography}
 			>
@@ -78,7 +78,7 @@ const TypographyInstance: React.FC<TypographyProps> = ({
 		),
 		"subtitle-2": (
 			<h6
-				className={leClassNames(["le-text--subtitle-2", customClass])}
+				className={leClassNames(["le-text-subtitle-2", customClass])}
 				style={styles}
 				data-testid={TestId.Typography}
 			>
@@ -87,7 +87,7 @@ const TypographyInstance: React.FC<TypographyProps> = ({
 		),
 		"body-1": (
 			<p
-				className={leClassNames(["le-text--body-1", customClass])}
+				className={leClassNames(["le-text-body-1", customClass])}
 				style={styles}
 				data-testid={TestId.Typography}
 			>
@@ -96,7 +96,7 @@ const TypographyInstance: React.FC<TypographyProps> = ({
 		),
 		"body-2": (
 			<p
-				className={leClassNames(["le-text--body-2", customClass])}
+				className={leClassNames(["le-text-body-2", customClass])}
 				style={styles}
 				data-testid={TestId.Typography}
 			>
@@ -105,7 +105,7 @@ const TypographyInstance: React.FC<TypographyProps> = ({
 		),
 		button: (
 			<strong
-				className={leClassNames(["le-text--button", customClass])}
+				className={leClassNames(["le-text-button", customClass])}
 				style={styles}
 				data-testid={TestId.Typography}
 			>
@@ -114,7 +114,7 @@ const TypographyInstance: React.FC<TypographyProps> = ({
 		),
 		overline: (
 			<span
-				className={leClassNames(["le-text--overline", customClass])}
+				className={leClassNames(["le-text-overline", customClass])}
 				style={styles}
 				data-testid={TestId.Typography}
 			>
@@ -123,7 +123,7 @@ const TypographyInstance: React.FC<TypographyProps> = ({
 		),
 		caption: (
 			<span
-				className={leClassNames(["le-text--caption", customClass])}
+				className={leClassNames(["le-text-caption", customClass])}
 				style={styles}
 				data-testid={TestId.Typography}
 			>
