@@ -6,8 +6,9 @@ import { TableProps } from "./Table.model";
 import "./Table.scss";
 import { TableHeader } from "./TableHeader";
 import { TableBody } from "./TableBody";
+import { withGlobalConfig } from "../../hooks";
 
-const Table: React.FC<TableProps> = ({
+const TableComponent: React.FC<TableProps> = ({
 	columns,
 	children,
 	rows,
@@ -122,5 +123,7 @@ const Table: React.FC<TableProps> = ({
 		</div>
 	);
 };
+
+const Table = withGlobalConfig(TableComponent, "table");
 
 export { Table, TableBody, TableHeader };

@@ -3,8 +3,9 @@ import { LeClassNamesSimple } from "../../types";
 import { getTextAreaRowHeight } from "../../utils";
 import { TextAreaProps } from "./TextArea.model";
 import "./TextArea.scss";
+import { withGlobalConfig } from "../../hooks";
 
-const TextArea: React.FC<TextAreaProps> = ({
+const TextAreaComponent: React.FC<TextAreaProps> = ({
 	fieldKey,
 	variant = "filled",
 	width,
@@ -70,5 +71,7 @@ const TextArea: React.FC<TextAreaProps> = ({
 		></textarea>
 	);
 };
+
+const TextArea = withGlobalConfig(TextAreaComponent, "textarea");
 
 export { TextArea };
