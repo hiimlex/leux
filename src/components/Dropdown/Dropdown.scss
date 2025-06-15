@@ -28,6 +28,7 @@
 	padding: 0;
 	margin: 0;
 	appearance: none;
+	gap: 0;
 
 	display: flex;
 	flex-direction: column;
@@ -51,7 +52,7 @@
 	}
 
 	&--filled {
-		background-color: var(--le-color-border);
+		background-color: var(--le-color-inputBackground);
 	}
 
 	&--outlined {
@@ -197,6 +198,6 @@
 	height: 1px;
 	display: flex;
 	width: 100%;
-	background-color: var(--le-color-inputBackground);
+	background-color: var(--le-color-border);
 	pointer-events: none;
 }

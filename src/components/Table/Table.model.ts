@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { SpinnerProps } from "../Spinner";
 
 type TableSort = "asc" | "desc" | "none";

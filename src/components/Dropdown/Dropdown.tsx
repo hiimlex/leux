@@ -80,7 +80,7 @@ const DropdownComponent: React.FC<DropdownProps> = ({
 		}
 	}, [trigger]);
 
-	const childrenArr = Children.toArray(children);
+	const childrenArr = Children.toArray(children) as React.ReactElement<DropdownItemProps>[];
 
 	return (
 		<div
@@ -109,7 +109,7 @@ const DropdownComponent: React.FC<DropdownProps> = ({
 						style={customMenuStyles}
 					>
 						{Children.map(childrenArr, (child) => {
-							return cloneElement(child as React.ReactElement, { setShow, closeOnClick, trigger });
+							return cloneElement<DropdownItemProps>(child, { setShow, closeOnClick, trigger });
 						})}
 					</ul>
 				</div>
