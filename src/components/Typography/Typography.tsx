@@ -130,15 +130,6 @@ const TypographyInstance: React.FC<TypographyProps> = ({
 				{children}
 			</span>
 		),
-		tip: (
-			<span
-				className={leClassNames(["le-text-tip", customClass])}
-				style={styles}
-				data-testid={TestId.Typography}
-			>
-				{children}
-			</span>
-		),
 	};
 
 	return typesArr[variant];
