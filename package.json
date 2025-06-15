@@ -1,6 +1,6 @@
 {
 	"name": "@leux/ui",
-	"version": "0.5.0",
+	"version": "0.5.1",
 	"homepage": "https://leux.vercel.app/",
 	"description": "React components library",
 	"publishConfig": {
@@ -45,11 +45,11 @@
 		"@rollup/plugin-eslint": "^9.0.0",
 		"@rollup/plugin-node-resolve": "^13.3.0",
 		"@rollup/plugin-typescript": "^8.4.0",
-		"@testing-library/dom": "6.1",
-		"@testing-library/jest-dom": "^5.16.5",
-		"@testing-library/react": "^15.0.7",
+		"@testing-library/dom": "^10.4.0",
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/react": "^16.3.0",
 		"@types/jest": "^29.0.0",
-		"@types/react": "^18.3.3",
+		"@types/react": "19.1.8",
 		"@typescript-eslint/eslint-plugin": "^5.39.0",
 		"@typescript-eslint/parser": "^5.39.0",
 		"babel-jest": "^29.0.2",
@@ -74,8 +74,8 @@
 		"postcss-nested": "^6.0.1",
 		"postcss-simple-vars": "^7.0.1",
 		"prettier": "^2.7.1",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
+		"react": "19.1.0",
+		"react-dom": "19.1.0",
 		"rollup": "^2.79.0",
 		"rollup-plugin-dts": "^4.2.2",
 		"rollup-plugin-includepaths": "^0.2.4",
@@ -88,7 +88,7 @@
 		"webpack": "^5.74.0"
 	},
 	"peerDependencies": {
-		"react": "^18.2.0"
+		"react": "19.1.0"
 	},
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
@@ -116,7 +116,7 @@
 	"resolutions": {
 		"@types/react": "18.3.3"
 	},
-	"workspaces": [
-		"src/packages/*"
-	]
+	"dependencies": {
+		"@types/react-dom": "19.1.6"
+	}
 }
