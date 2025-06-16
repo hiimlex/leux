@@ -12,7 +12,7 @@ const TypographyInstance: React.FC<TypographyProps> = ({
 	textColor = "textOne",
 }) => {
 	const customClass = useMemo(
-		() => leClassNames([_customClass, `le-text-${textColor}`]),
+		() => leClassNames([_customClass, `le-color-${textColor}`]),
 		[_customClass, textColor]
 	);
 	const styles = useMemo(() => ({ ...customStyles }), [customStyles]);
