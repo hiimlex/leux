@@ -5,7 +5,7 @@ import { useState } from "react";
 import React from "react";
 
 const PaginationImportPreview = () => (
-	<LeHighlighter language="tsx" code={`import { Pagination, PaginationProps } from "leux";`} />
+	<LeHighlighter language="tsx" code={`import { Pagination, PaginationProps } from "@leux/ui";`} />
 );
 
 const PaginationActionPreview = () => {

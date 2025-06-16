@@ -43,7 +43,7 @@ Import the components you want to use from the library and use them in your appl
 
 ```tsx
 import React from "react";
-import { Button } from "leux";
+import { Button } from "@leux/ui";
 
 const App = () => {
 	return (

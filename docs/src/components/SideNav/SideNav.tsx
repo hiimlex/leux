@@ -13,6 +13,7 @@ export const LINKS: Record<string, ILink[]> = {
 		{ name: "Overview", path: RoutesPath.Overview },
 		{ name: "Installation", path: RoutesPath.Installation },
 		{ name: "Theming", path: RoutesPath.Theming },
+		{ name: "Global Config", path: RoutesPath.GlobalConfig },
 	],
 	Layout: [
 		{

@@ -17,7 +17,7 @@ import { attributes as dropdownAttr } from "./dropdown.md";
 import React from "react";
 
 const DropdownImportPreview = () => (
-	<LeHighlighter language="tsx" code={`import { Dropdown, DropdownProps } from "leux";`} />
+	<LeHighlighter language="tsx" code={`import { Dropdown, DropdownProps } from "@leux/ui";`} />
 );
 
 const DropdownAnchorPreview = () => {

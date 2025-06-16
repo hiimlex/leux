@@ -3,6 +3,7 @@ export enum RoutesPath {
 	Overview = "/started/overview",
 	Installation = "/started/installation",
 	Theming = "/started/theming",
+	GlobalConfig = "/started/global-config",
 	Typography = "/layout/typography",
 	Grid = "/layout/grid",
 	Box = "/layout/box",

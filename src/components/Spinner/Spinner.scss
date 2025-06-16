@@ -37,35 +37,35 @@
 	}
 
 	&--small {
-		padding: 0.5rem;
+		padding: 0.25rem;
 
 		&::after,
 		&::before {
-			width: 32px;
-			height: 32px;
-			border-width: 4px;
+			width: 16px;
+			height: 16px;
+			border-width: 3px;
 		}
 	}
 
 	&--medium {
-		padding: 1rem;
+		padding: 0.325rem;
 
 		&::after,
 		&::before {
-			width: 64px;
-			height: 64px;
-			border-width: 5px;
+			width: 24px;
+			height: 24px;
+			border-width: 4px;
 		}
 	}
 
 	&--large {
-		padding: 1.5rem;
+		padding: 0.5rem;
 
 		&::after,
 		&::before {
-			width: 128px;
-			height: 128px;
-			border-width: 6px;
+			width: 48px;
+			height: 48px;
+			border-width: 5px;
 		}
 	}
 

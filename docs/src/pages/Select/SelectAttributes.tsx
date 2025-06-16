@@ -10,7 +10,7 @@ import { attributes as selectAttr } from "./select.md";
 import React from "react";
 
 const SelectImportPreview = () => (
-	<LeHighlighter code={`import { Select, SelectProps } from "leux";`} language="tsx" />
+	<LeHighlighter code={`import { Select, SelectProps } from "@leux/ui";`} language="tsx" />
 );
 
 const SelectOptionsPreview = () => {

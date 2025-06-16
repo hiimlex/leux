@@ -13,7 +13,7 @@ import { useState } from "react";
 import React from "react";
 
 const SkeletonImportPreview = () => (
-	<LeHighlighter code={`import { Skeleton, SkeletonProps } from "leux";`} language="tsx" />
+	<LeHighlighter code={`import { Skeleton, SkeletonProps } from "@leux/ui";`} language="tsx" />
 );
 
 const SkeletonVariantPreview = () => {

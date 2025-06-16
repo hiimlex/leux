@@ -5,7 +5,7 @@ import { useState } from "react";
 import React from "react";
 
 const AvatarImportPreview = () => (
-	<LeHighlighter code={`import { Avatar, AvatarProps } from "leux";`} language="tsx" />
+	<LeHighlighter code={`import { Avatar, AvatarProps } from "@leux/ui";`} language="tsx" />
 );
 
 const AvatarSrcPreview = () => {

@@ -6,7 +6,7 @@ import { useState } from "react";
 import React from "react";
 
 const BadgeImportPreview = () => (
-	<LeHighlighter code={`import { Badge, BadgeProps } from "leux";`} language="tsx" />
+	<LeHighlighter code={`import { Badge, BadgeProps } from "@leux/ui";`} language="tsx" />
 );
 
 const BadgeVariantPreview = () => {

@@ -32,7 +32,7 @@ const TableImportPreview = () => (
 	TableHeaderProps,
 	TablePagination,
 	TablePaginationProps,
-} from "leux";`}
+} from "@leux/ui";`}
 		language="tsx"
 	/>
 );

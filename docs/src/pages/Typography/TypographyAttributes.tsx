@@ -14,7 +14,10 @@ import React from "react";
 
 const ImportPreview = () => {
 	return (
-		<LeHighlighter language="tsx" code={`import { Typography, TypographyProps } from "leux";`} />
+		<LeHighlighter
+			language="tsx"
+			code={`import { Typography, TypographyProps } from "@leux/ui";`}
+		/>
 	);
 };
 

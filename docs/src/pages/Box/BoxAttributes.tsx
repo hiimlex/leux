@@ -6,7 +6,7 @@ import { useState } from "react";
 import React from "react";
 
 const ImportPreview = () => {
-	return <LeHighlighter code={`import { Box, BoxProps } from "leux";`} language="tsx" />;
+	return <LeHighlighter code={`import { Box, BoxProps } from "@leux/ui";`} language="tsx" />;
 };
 
 const BoxCssPreview = () => {

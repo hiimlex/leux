@@ -5,7 +5,7 @@ import { attributes as gridAttr } from "./grid.md";
 import { useState } from "react";
 
 const GridImportPreview = () => {
-	return <LeHighlighter language="tsx" code={`import { Grid, GridProps, Box } from "leux";`} />;
+	return <LeHighlighter language="tsx" code={`import { Grid, GridProps, Box } from "@leux/ui";`} />;
 };
 
 const GridColPreview = () => {

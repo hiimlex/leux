@@ -13,7 +13,7 @@ import { attributes as toastAttr } from "./toast.md";
 import React from "react";
 
 const ToastImportPreview = () => (
-	<LeHighlighter language="tsx" code={`import { Toast, ToastProps, useToast } from "leux";`} />
+	<LeHighlighter language="tsx" code={`import { Toast, ToastProps, useToast } from "@leux/ui";`} />
 );
 
 const ToastSizePreview = () => {
@@ -39,7 +39,7 @@ const ToastSizePreview = () => {
 				<LeHighlighter
 					language="tsx"
 					code={`// Component.tsx
-import { Box, Button, useToast, ToastSizes } from "leux";
+import { Box, Button, useToast, ToastSizes } from "@leux/ui";
 
 const Component = () => {
 	const { createToast } = useToast();
@@ -139,7 +139,7 @@ const ToastThemePreview = () => {
 				<LeHighlighter
 					language="tsx"
 					code={`// Component.tsx
-import { Box, Button, useToast, ToastThemes } from "leux";
+import { Box, Button, useToast, ToastThemes } from "@leux/ui";
 
 const Component = () => {
 	const { createToast } = useToast();
@@ -238,7 +238,7 @@ const ToastDurationPreview = () => {
 				<LeHighlighter
 					language="tsx"
 					code={`// Component.tsx
-import { Box, Button, useToast } from "leux";
+import { Box, Button, useToast } from "@leux/ui";
 
 const Component = () => {
 	const { createToast } = useToast();
@@ -296,7 +296,7 @@ const ToastClosablePreview = () => {
 				<LeHighlighter
 					language="tsx"
 					code={`// Component.tsx
-import { Box, Button, useToast } from "leux";
+import { Box, Button, useToast } from "@leux/ui";
 
 const Component = () => {
 	const { createToast } = useToast();
@@ -350,7 +350,7 @@ const ToastCustomPreview = () => {
 				<LeHighlighter
 					language="tsx"
 					code={`// Component.tsx
-import { Box, Button, useToast } from "leux";
+import { Box, Button, useToast } from "@leux/ui";
 
 const Component = () => {
 	const { createToast } = useToast();
@@ -402,7 +402,7 @@ const ToastActionPreview = () => {
 				<LeHighlighter
 					language="tsx"
 					code={`// Component.tsx
-import { Box, Button, useToast } from "leux";
+import { Box, Button, useToast } from "@leux/ui";
 
 const Component = () => {
 	const { createToast } = useToast();
