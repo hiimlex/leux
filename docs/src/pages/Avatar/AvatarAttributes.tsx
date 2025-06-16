@@ -5,7 +5,7 @@ import { useState } from "react";
 import React from "react";
 
 const AvatarImportPreview = () => (
-	<LeHighlighter code={`import { Avatar, AvatarProps } from "leux";`} language="tsx" />
+	<LeHighlighter code={`import { Avatar, AvatarProps } from "@leux/ui";`} language="tsx" />
 );
 
 const AvatarSrcPreview = () => {
@@ -153,11 +153,49 @@ const AvatarCustomPreview = () => {
 	);
 };
 
+const AvatarVariantPreview = () => {
+	const [showCode, setShowCode] = useState<boolean>(false);
+
+	return (
+		<>
+			<LePreview showCode={showCode} setShowCode={setShowCode}>
+				<Avatar src="Alex" asText variant="filled" />
+				<Avatar src="Alex" asText variant="outlined" />
+			</LePreview>
+			{showCode && (
+				<LeHighlighter
+					code={`const Component = () => {
+	return (
+		<>
+			<Avatar
+					src="https://avatars.githubusercontent.com/u/49082043?v=4"
+					alt="hiimlex github avatar"
+					variant="filled"
+				/>
+				<Avatar
+					src="https://avatars.githubusercontent.com/u/49082043?v=4"
+					alt="hiimlex github avatar"
+					variant="outlined"
+				/>
+		</>
+	)
+};
+`}
+					language="tsx"
+				/>
+			)}
+		</>
+	);
+};
+
 const AvatarApiTable = () => {
 	const props: PropsMapping<AvatarProps> = {
 		src: {
 			type: "string",
 			required: true,
+		},
+		variant: {
+			type: "'filled' | 'outlined'",
 		},
 		size: {
 			type: "AvatarSizes | 'small' | 'medium' | 'large'",
@@ -193,6 +231,7 @@ avatarAttr["AvatarAsTextPreview"] = AvatarAsTextPreview;
 avatarAttr["AvatarSizePreview"] = AvatarSizePreview;
 avatarAttr["AvatarCustomPreview"] = AvatarCustomPreview;
 avatarAttr["AvatarApiTable"] = AvatarApiTable;
+avatarAttr["AvatarVariantPreview"] = AvatarVariantPreview;
 avatarAttr["LeHighlighter"] = LeHighlighter;
 
 export { avatarAttr };

@@ -32,7 +32,14 @@ type LeGlobalConfigComponents = {
 	typography?: Partial<TypographyProps>;
 };
 
-type LeGlobalConfig = LeGlobalConfigComponents & { fontFamily?: string };
+type LeGlobalConfigStyling = {
+	fontFamily?: string;
+	borderRadius?: string;
+	boxShadow?: string;
+	variant?: "filled" | "outlined";
+};
+
+type LeGlobalConfig = LeGlobalConfigComponents & { styling?: LeGlobalConfigStyling };
 
 type ConfigKey = keyof LeGlobalConfigComponents;
 

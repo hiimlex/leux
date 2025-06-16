@@ -4,7 +4,7 @@ import { Button, LeSizes, TextArea, Box, TextAreaProps, Typography } from "../..
 import { attributes as textAreaAttr } from "./textarea.md";
 
 const TextAreaImportPreview = () => (
-	<LeHighlighter code={`import { TextArea, TextAreaProps } from "leux";`} language="tsx" />
+	<LeHighlighter code={`import { TextArea, TextAreaProps } from "@leux/ui";`} language="tsx" />
 );
 
 const TextAreaVariantPreview = () => {

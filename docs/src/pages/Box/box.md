@@ -16,29 +16,13 @@ The Box component is a simple wrapper component that can be used to display data
 
 <br/>
 
-#### CSS
+#### Versatile
 
-Some of the CSS properties that can be used to style the Box component as props. Like the `width`, `height`, `margin`, `padding` and `borderRadius`.
+The box component is the div of Leux. It can be used to wrap any content and is very flexible in terms of styling. You can use it to create layouts, display images, text, or any other content.
 
 <div>
 	<BoxCssPreview></BoxCssPreview>
 </div>
-
-<br/>
-
-#### Centered
-
-The content of Box component can be centered using the `centered` prop.
-
-<div>
-	<BoxCenteredPreview></BoxCenteredPreview>
-</div>
-
-<br/>
-
-#### Grid Span
-
-The Box component can be used to create a grid layout. Check <NavLink to="/layout/grid#span">this</NavLink> session to see how to create a grid layout.
 
 <br/>
 

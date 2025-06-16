@@ -8,7 +8,7 @@ import React from "react";
 const ModalImportPreview = () => (
 	<LeHighlighter
 		language="tsx"
-		code={`import { Modal, ModalProps, useModal } from "leux";`}
+		code={`import { Modal, ModalProps, useModal } from "@leux/ui";`}
 	></LeHighlighter>
 );
 

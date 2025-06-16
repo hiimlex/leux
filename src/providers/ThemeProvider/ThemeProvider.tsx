@@ -120,7 +120,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
 
 	const setThemeCSSVariables = (theme: LeThemes) => {
 		Object.keys(appThemes[theme]).forEach((colorKey) => {
-			const colorValue = appThemes[theme][colorKey];
+			const colorValue = appThemes[theme][colorKey as keyof LeThemeType] || "";
 
 			document.body.style.setProperty(`--le-color-${colorKey}`, colorValue);
 		});

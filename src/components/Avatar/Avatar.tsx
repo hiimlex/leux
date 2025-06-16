@@ -12,6 +12,7 @@ const Avatar: React.FC<AvatarProps> = ({
 	customClass,
 	customStyles,
 	customSize,
+	variant = "filled",
 }) => {
 	const styles = useMemo(
 		() => ({
@@ -26,8 +27,14 @@ const Avatar: React.FC<AvatarProps> = ({
 
 	const classNames = useMemo(
 		() =>
-			leClassNames(["le-avatar", `le-avatar--${size}`, asText && "le-avatar--text", customClass]),
-		[size, asText, customClass]
+			leClassNames([
+				"le-avatar",
+				`le-avatar--${size}`,
+				asText && "le-avatar--text",
+				`le-avatar--${variant}`,
+				customClass,
+			]),
+		[size, asText, variant, customClass]
 	);
 
 	return (

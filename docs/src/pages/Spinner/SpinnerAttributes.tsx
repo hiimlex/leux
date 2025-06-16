@@ -4,7 +4,7 @@ import { attributes as spinnerAttr } from "./spinner.md";
 import { useState } from "react";
 
 const SpinnerImportPreview = () => (
-	<LeHighlighter code={`import { Spinner, SpinnerProps } from "leux";`} language="tsx" />
+	<LeHighlighter code={`import { Spinner, SpinnerProps } from "@leux/ui";`} language="tsx" />
 );
 
 const SpinnerSizePreview = () => {

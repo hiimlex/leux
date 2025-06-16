@@ -5,7 +5,7 @@ import { useState } from "react";
 import React from "react";
 
 const TooltipImportPreview = () => (
-	<LeHighlighter code={`import { Tooltip, TooltipProps } from "leux";`} language="tsx" />
+	<LeHighlighter code={`import { Tooltip, TooltipProps } from "@leux/ui";`} language="tsx" />
 );
 
 const TooltipUsagePreview = () => {

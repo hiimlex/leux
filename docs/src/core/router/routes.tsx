@@ -6,6 +6,7 @@ import {
 	ButtonPage,
 	CheckboxPage,
 	DropdownPage,
+	GlobalConfigPage,
 	GridPage,
 	InputPage,
 	InstallationPage,
@@ -24,7 +25,7 @@ import {
 	TooltipPage,
 	TypographyPage,
 } from "@/pages";
-import React from "react";
+import React, { JSX } from "react";
 import { Navigate } from "react-router-dom";
 import { RoutesPath } from "../../models";
 
@@ -49,6 +50,10 @@ export const routes: LeRoute[] = [
 	{
 		path: RoutesPath.Theming,
 		element: <LeRenderDocPage doc={<ThemingPage />} title="Theming" />,
+	},
+	{
+		path: RoutesPath.GlobalConfig,
+		element: <LeRenderDocPage doc={<GlobalConfigPage />} title="Global Config" />,
 	},
 	{
 		path: RoutesPath.Typography,
@@ -126,6 +131,7 @@ export const routes: LeRoute[] = [
 		path: RoutesPath.Toast,
 		element: <LeRenderDocPage doc={<ToastPage />} title="Toast" />,
 	},
+
 	{
 		path: RoutesPath.NotFound,
 		element: <LeRenderDocPage doc={<NotFoundPage />} title="Not Found" />,

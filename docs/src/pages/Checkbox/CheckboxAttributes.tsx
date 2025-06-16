@@ -4,7 +4,7 @@ import { Button, Checkbox, CheckboxProps } from "../../../../src";
 import { attributes as checkboxAttr } from "./checkbox.md";
 
 const CheckboxImportPreview = () => (
-	<LeHighlighter language="tsx" code={`import { Checkbox, CheckboxProps } from "leux";`} />
+	<LeHighlighter language="tsx" code={`import { Checkbox, CheckboxProps } from "@leux/ui";`} />
 );
 
 const CheckboxActionPreview = () => {

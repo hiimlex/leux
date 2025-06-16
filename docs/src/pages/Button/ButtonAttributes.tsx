@@ -4,7 +4,7 @@ import { Button, ButtonProps } from "../../../../src";
 import { attributes as buttonAttr } from "./button.md";
 
 const ButtonImportPreview = () => (
-	<LeHighlighter language="tsx" code={`import { Button, ButtonProps } from "leux";`} />
+	<LeHighlighter language="tsx" code={`import { Button, ButtonProps } from "@leux/ui";`} />
 );
 
 const ButtonThemePreview = () => {

@@ -1,4 +1,5 @@
 type AvatarSizes = "small" | "medium" | "large";
+type AvatarVariants = "filled" | "outlined";
 
 interface AvatarProps {
 	src: string;
@@ -9,6 +10,7 @@ interface AvatarProps {
 	rounded?: boolean;
 	customClass?: string;
 	customStyles?: React.CSSProperties;
+	variant?: AvatarVariants;
 }
 
-export { AvatarProps, AvatarSizes };
+export { AvatarProps, AvatarSizes, AvatarVariants };

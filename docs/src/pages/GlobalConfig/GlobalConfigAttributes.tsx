@@ -1,29 +1,27 @@
 import { LeHighlighter, LeSourceButton } from "@/components";
-import { attributes as themingAttr } from "./theming.md";
+import { attributes as themingAttr } from "./globalconfig.md";
 import React, { PropsWithChildren } from "react";
 
-const ThemingUsage: React.FC = () => {
+const GlobalConfigUsage: React.FC = () => {
 	return (
 		<LeHighlighter
 			code={`import React from "react";
-import { ThemeProvider, LeThemeMapper, Button } from "@leux/ui";
+import { ThemeProvider, LeGlobal, Input } from "@leux/ui";
 
-const themes: LeThemeMapper = {
-	light: {
-		primary: "#ffffff",
-		secondary: "#000000",
+const globalConfig: LeGlobalConfig = {
+	styling: {
+		fontFamily: "Poppins, sans-serif",
+		borderRadius: "8px",
 	},
-	dark: {
-		primary: "#000000",
-		secondary: "#ffffff",
-	},
+	input: {
+		variant: "filled",
+	}
 };
 
 function App() {
 	return (
-		<ThemeProvider themes={themes} defaultTheme="light">
-			<YourAppComponents />
-			<Button>Leux Button</Button>
+		<ThemeProvider globalConfig={globalConfig}>
+			<Input placeholder="Leux Input with variant" />
 		</ThemeProvider>
 	);
 }`}
@@ -61,8 +59,7 @@ const MyComponent = () => {
 themingAttr["LeSourceWrapper"] = ({ children }: PropsWithChildren) => (
 	<div className="le-flex le-gap-2">{children}</div>
 );
-themingAttr["LeSourceButton"] = LeSourceButton;
-themingAttr["ThemingUsage"] = ThemingUsage;
+themingAttr["GlobalConfigUsage"] = GlobalConfigUsage;
 themingAttr["UseThemeUsage"] = UseThemeUsage;
 
 export default themingAttr;

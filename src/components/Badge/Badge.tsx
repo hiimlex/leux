@@ -11,6 +11,8 @@ const BadgeComponent: React.FC<BadgeProps> = ({
 	size = "medium",
 	customStyles,
 	customClass,
+	clickable,
+	onClick,
 }) => {
 	const classNames = useMemo(
 		() =>
@@ -20,8 +22,9 @@ const BadgeComponent: React.FC<BadgeProps> = ({
 				`le-badge--${theme}`,
 				`le-badge--${size}`,
 				customClass,
+				clickable && `le-badge--clickable`,
 			]),
-		[variant, theme, size, customClass]
+		[variant, theme, size, customClass, clickable]
 	);
 
 	const styles = useMemo(() => {
@@ -31,9 +34,9 @@ const BadgeComponent: React.FC<BadgeProps> = ({
 	}, [customStyles]);
 
 	return (
-		<span className={classNames} style={styles} data-testid={TestId.Badge}>
+		<div onClick={onClick} className={classNames} style={styles} data-testid={TestId.Badge}>
 			{children}
-		</span>
+		</div>
 	);
 };
 

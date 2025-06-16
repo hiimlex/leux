@@ -13,7 +13,7 @@ const SourceButton: React.FC<SourceButtonProps> = ({ url, label }) => {
 	};
 
 	return (
-		<button className="le-source--button" onClick={navigateToSource}>
+		<button className="le-source--button le-text-button" onClick={navigateToSource}>
 			<FaGithub size={"1rem"} className="le-source--icon" /> {label || "Code"}
 		</button>
 	);

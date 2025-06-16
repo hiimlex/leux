@@ -3,6 +3,7 @@ import { useTheme, withGlobalConfig } from "../../hooks";
 import { LeClassNames, LeSafeAny, TestId } from "../../types";
 import { TooltipProps } from "./Tooltip.model";
 import "./Tooltip.scss";
+import { LeThemeMain } from "../../contexts";
 
 const TooltipComponent: React.FC<TooltipProps> = ({
 	children,
@@ -24,7 +25,7 @@ const TooltipComponent: React.FC<TooltipProps> = ({
 	};
 
 	const arrowColor = useMemo(() => {
-		return theme?.[colorScheme as LeSafeAny];
+		return theme?.[colorScheme as keyof LeThemeMain];
 	}, [theme]);
 	const arrowBorder = useMemo(
 		() =>

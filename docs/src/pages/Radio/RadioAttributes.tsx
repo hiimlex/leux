@@ -7,7 +7,7 @@ import React from "react";
 const RadioImportPreview = () => {
 	return (
 		<>
-			<LeHighlighter code={`import { Radio, RadioProps } from "leux";`} language="tsx" />
+			<LeHighlighter code={`import { Radio, RadioProps } from "@leux/ui";`} language="tsx" />
 		</>
 	);
 };

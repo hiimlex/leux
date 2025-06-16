@@ -39,6 +39,15 @@ Use the `asText` prop to render the `src` as a text. The text displayed is the c
 
 <br/>
 
+#### Variants
+
+Use the `variant` prop to change the avatar variant. The available variants are `filled`, `outlined`.
+
+<div>
+<AvatarVariantPreview>
+</AvatarVariantPreview>
+</div>
+
 #### Sizes
 
 Use the `size` prop to change the avatar size.

@@ -37,9 +37,9 @@ Use the `direction` prop to change the diplay direction of the tooltip.
 
 <br/>
 
-#### Theme
+#### Colors
 
-Use the `theme` prop to change the theme of the tooltip.
+Use the `colorScheme` prop to change the theme of the tooltip.
 
 <div>
 <TooltipThemePreview>
