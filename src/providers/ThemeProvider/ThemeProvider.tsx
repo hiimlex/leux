@@ -69,7 +69,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
 }) => {
 	const [config] = useState<LeGlobalConfig>(
 		globalConfig || {
-			fontFamily: "Poppins, sans-serif",
+			styling: { fontFamily: "Poppins, sans-serif" },
 		}
 	);
 	const appThemes = useMemo(() => {
@@ -145,10 +145,10 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
 	}, [appThemes, currentTheme]);
 
 	useEffect(() => {
-		if (config?.fontFamily) {
-			setTypographyFontFamily(config.fontFamily);
+		if (config?.styling?.fontFamily) {
+			setTypographyFontFamily(config.styling.fontFamily);
 		}
-	}, [config?.fontFamily]);
+	}, [config?.styling?.fontFamily]);
 
 	const swap = (newtheme: LeThemes) => {
 		setCurrentTheme(newtheme);
