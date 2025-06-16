@@ -1,10 +1,10 @@
 type BadgeVariants = "dashed" | "ghost" | "outlined" | "filled";
-type BadgeThemes = "primary" | "secondary" | "success" | "danger" | "warning" | "default";
+type BadgeColorScheme = "primary" | "secondary" | "success" | "danger" | "warning" | "default";
 type BadgeSizes = "small" | "medium" | "large";
 
 interface BadgeProps {
 	variant?: BadgeVariants;
-	theme?: BadgeThemes;
+	colorScheme?: BadgeColorScheme;
 	children?: React.ReactNode | string;
 	size?: BadgeSizes;
 	customClass?: string;
@@ -13,4 +13,4 @@ interface BadgeProps {
 	onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
-export { BadgeProps, BadgeThemes, BadgeSizes, BadgeVariants };
+export { BadgeProps, BadgeColorScheme, BadgeSizes, BadgeVariants };

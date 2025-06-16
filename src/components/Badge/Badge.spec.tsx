@@ -15,7 +15,7 @@ describe("Badge component test", () => {
 	});
 
 	it("should render a Badge component with primary theme", () => {
-		const { getByTestId } = render(<Badge theme="primary" />);
+		const { getByTestId } = render(<Badge colorScheme="primary" />);
 
 		const badge = getByTestId(TestId.Badge);
 
@@ -50,7 +50,7 @@ describe("Badge component test", () => {
 
 	it("should check if the class styles are being applied on Badge component", () => {
 		const { getByTestId } = render(
-			<Badge children="test" variant="outlined" theme="primary" size="small" />
+			<Badge children="test" variant="outlined" colorScheme="primary" size="small" />
 		);
 
 		const badge = getByTestId(TestId.Badge);

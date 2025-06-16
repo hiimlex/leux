@@ -15,16 +15,16 @@ const BadgeVariantPreview = () => {
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Badge variant="filled" theme="primary">
+				<Badge variant="filled" colorScheme="primary">
 					Dashed
 				</Badge>
-				<Badge variant="dashed" theme="primary">
+				<Badge variant="dashed" colorScheme="primary">
 					Dashed
 				</Badge>
-				<Badge variant="outlined" theme="primary">
+				<Badge variant="outlined" colorScheme="primary">
 					Outlined
 				</Badge>
-				<Badge variant="ghost" theme="primary">
+				<Badge variant="ghost" colorScheme="primary">
 					Ghost
 				</Badge>
 			</LePreview>
@@ -32,16 +32,16 @@ const BadgeVariantPreview = () => {
 				<LeHighlighter
 					code={`const Component = () => (
 	<>
-		<Badge variant="filled" theme="primary">
+		<Badge variant="filled" colorScheme="primary">
 			Dashed
 		</Badge>
-		<Badge variant="dashed" theme="primary">
+		<Badge variant="dashed" colorScheme="primary">
 			Dashed
 		</Badge>
-		<Badge variant="outlined" theme="primary">
+		<Badge variant="outlined" colorScheme="primary">
 			Outlined
 		</Badge>
-		<Badge variant="ghost" theme="primary">
+		<Badge variant="ghost" colorScheme="primary">
 			Ghost
 		</Badge>
 	</>
@@ -59,23 +59,23 @@ const BadgeThemePreview = () => {
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Badge theme="primary">Primary</Badge>
-				<Badge theme="secondary">Secondary</Badge>
-				<Badge theme="success">Success</Badge>
-				<Badge theme="danger">Danger</Badge>
-				<Badge theme="warning">Warning</Badge>
-				<Badge theme="default">Default</Badge>
+				<Badge colorScheme="primary">Primary</Badge>
+				<Badge colorScheme="secondary">Secondary</Badge>
+				<Badge colorScheme="success">Success</Badge>
+				<Badge colorScheme="danger">Danger</Badge>
+				<Badge colorScheme="warning">Warning</Badge>
+				<Badge colorScheme="default">Default</Badge>
 			</LePreview>
 			{showCode && (
 				<LeHighlighter
 					code={`const Component = () => (
 	<>
-		<Badge theme="primary">Primary</Badge>
-		<Badge theme="secondary">Secondary</Badge>
-		<Badge theme="success">Success</Badge>
-		<Badge theme="danger">Danger</Badge>
-		<Badge theme="warning">Warning</Badge>
-		<Badge theme="default">Default</Badge>
+		<Badge colorScheme="primary">Primary</Badge>
+		<Badge colorScheme="secondary">Secondary</Badge>
+		<Badge colorScheme="success">Success</Badge>
+		<Badge colorScheme="danger">Danger</Badge>
+		<Badge colorScheme="warning">Warning</Badge>
+		<Badge colorScheme="default">Default</Badge>
 	</>
 );`}
 					language="tsx"
@@ -162,7 +162,7 @@ const BadgeApiTable = () => {
 			type: "BadgeVariants | 'dash' | 'outlined' | 'ghost'",
 			defaultValue: "ghost",
 		},
-		theme: {
+		colorScheme: {
 			type: "BadgeThemes | 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'default'",
 			defaultValue: "default",
 		},

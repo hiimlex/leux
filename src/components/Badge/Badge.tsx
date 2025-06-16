@@ -6,7 +6,7 @@ import "./Badge.scss";
 
 const BadgeComponent: React.FC<BadgeProps> = ({
 	variant = "ghost",
-	theme = "default",
+	colorScheme = "default",
 	children,
 	size = "medium",
 	customStyles,
@@ -19,12 +19,12 @@ const BadgeComponent: React.FC<BadgeProps> = ({
 			leClassNames([
 				"le-badge",
 				`le-badge--${variant}`,
-				`le-badge--${theme}`,
+				`le-badge--${colorScheme}`,
 				`le-badge--${size}`,
 				customClass,
 				clickable && `le-badge--clickable`,
 			]),
-		[variant, theme, size, customClass, clickable]
+		[variant, colorScheme, size, customClass, clickable]
 	);
 
 	const styles = useMemo(() => {
