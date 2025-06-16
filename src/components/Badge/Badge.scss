@@ -6,6 +6,10 @@
 	border-radius: unit(1);
 	border: none;
 	line-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 
 	&--outlined {
 		border-width: 1px;
