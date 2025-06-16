@@ -1,12 +1,6 @@
 import { LeGlobalConfig } from "../../hooks/withGlobalConfig/global-config.model";
-/**
- * Le Theme
- *
- * @typedef {Object} LeThemeType
- * @property {string} border
- * @property {string} backgroundOne
- */
-type LeThemeType = {
+
+type LeThemeMain = {
 	border?: string;
 	placeholder?: string;
 	inputBackground?: string;
@@ -18,6 +12,7 @@ type LeThemeType = {
 	textOne?: string;
 	textTwo?: string;
 	textThree?: string;
+	textInverse?: string;
 
 	default?: string;
 	defaultHover?: string;
@@ -37,7 +32,9 @@ type LeThemeType = {
 	warning?: string;
 	warningHover?: string;
 	warningGhost?: string;
-} & Record<string, string>;
+};
+
+type LeThemeType = LeThemeMain;
 
 type LeThemes = "light" | "dark" | string;
 type LeThemeMapper = Record<string, LeThemeType>;
@@ -51,4 +48,4 @@ type ThemeContextProps = {
 	globalConfig?: LeGlobalConfig;
 };
 
-export { LeThemeMapper, LeThemes, LeThemeType, ThemeContextProps };
+export { LeThemeMapper, LeThemes, LeThemeType, ThemeContextProps, LeThemeMain };

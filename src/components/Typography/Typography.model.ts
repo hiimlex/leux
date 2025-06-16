@@ -1,3 +1,5 @@
+import { LeThemeType } from "../../contexts";
+
 type TypographyVariants =
 	| "h1"
 	| "h2"
@@ -16,6 +18,7 @@ type TypographyVariants =
 interface TypographyProps {
 	children?: React.ReactNode;
 	variant?: TypographyVariants;
+	textColor?: keyof LeThemeType;
 	fontFamily?: string;
 	customClass?: string;
 	customStyles?: React.CSSProperties;

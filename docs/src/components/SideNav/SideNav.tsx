@@ -65,11 +65,11 @@ const SideNav = () => {
 					{Object.keys(LINKS).map((category) => (
 						<section key={category} className="le-sidenav--section">
 							<div className="le-sidenav--header">
-								<span className="le-text-subtitle-2">{category}</span>
+								<span className="le-text-body-2">{category}</span>
 							</div>
 							<div className="le-sidenav--links">
 								{LINKS[category].map(({ name, path }) => (
-									<NavLink key={path} to={path} className="le-text-body-1">
+									<NavLink key={path} to={path} className="le-text-caption">
 										{name}
 									</NavLink>
 								))}

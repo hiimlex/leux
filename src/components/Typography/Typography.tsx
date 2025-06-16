@@ -9,8 +9,12 @@ const TypographyInstance: React.FC<TypographyProps> = ({
 	children,
 	customClass: _customClass,
 	customStyles,
+	textColor = "textOne",
 }) => {
-	const customClass = useMemo(() => leClassNames([_customClass]), [_customClass]);
+	const customClass = useMemo(
+		() => leClassNames([_customClass, `le-text-${textColor}`]),
+		[_customClass, textColor]
+	);
 	const styles = useMemo(() => ({ ...customStyles }), [customStyles]);
 
 	const typesArr: Record<string, React.ReactElement> = {

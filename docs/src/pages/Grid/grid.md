@@ -52,7 +52,7 @@ Use the `gap` prop to change the space between the grid cols and rows.
 
 #### Span
 
-To increase the size of a item on grid, use the `gridSpan` props from <NavLink to="/layout/box">Box component</NavLink>.
+To increase the size of a item on grid, use the `gridSpan` props from Box.
 
 <div>
 	<GridSpanPreview></GridSpanPreview>

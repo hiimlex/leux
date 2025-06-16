@@ -1,4 +1,4 @@
-@use "../../styles/variables.scss" as *;
+@import "../../styles/variables.scss";
 
 .le-tooltip--provider {
 	position: relative;
@@ -30,7 +30,7 @@
 
 	@each $color, $value in $variant-colors {
 		&--#{$color} {
-			color: var(--le-color-textInverse);
+			color: white;
 			background: $value;
 		}
 	}

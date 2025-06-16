@@ -15,13 +15,16 @@ const BadgeVariantPreview = () => {
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
+				<Badge variant="filled" theme="primary">
+					Dashed
+				</Badge>
 				<Badge variant="dashed" theme="primary">
 					Dashed
 				</Badge>
 				<Badge variant="outlined" theme="primary">
 					Outlined
 				</Badge>
-				<Badge variant="ghost" theme="danger">
+				<Badge variant="ghost" theme="primary">
 					Ghost
 				</Badge>
 			</LePreview>
@@ -29,8 +32,18 @@ const BadgeVariantPreview = () => {
 				<LeHighlighter
 					code={`const Component = () => (
 	<>
-		<Badge variant="dashed" theme="primary">Dashed</Badge>
-		<Badge variant="ghost" theme="primary">Ghost</Badge>)
+		<Badge variant="filled" theme="primary">
+			Dashed
+		</Badge>
+		<Badge variant="dashed" theme="primary">
+			Dashed
+		</Badge>
+		<Badge variant="outlined" theme="primary">
+			Outlined
+		</Badge>
+		<Badge variant="ghost" theme="primary">
+			Ghost
+		</Badge>
 	</>
 );`}
 					language="tsx"
@@ -158,6 +171,14 @@ const BadgeApiTable = () => {
 		},
 		customClass: {
 			type: "string",
+		},
+		clickable: {
+			type: "boolean",
+			defaultValue: "false",
+		},
+		onClick: {
+			type: "React.MouseEventHandler<HTMLDivElement>",
+			defaultValue: "undefined",
 		},
 	};
 

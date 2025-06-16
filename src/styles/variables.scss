@@ -28,19 +28,19 @@ $variant-colors-hover: (
 );
 
 $text-typography: (
-	h1: 2.5rem bold -1.5px,
-	h2: 2rem 600 -0.5px,
-	h3: 1.75rem 500 0,
-	h4: 1.5rem 500 0.25px,
-	h5: 1.25rem 500 0,
-	h6: 1rem 400 0.15px,
-	subtitle-1: 1.125rem 400 0.15px,
-	subtitle-2: 1.125rem 600 0.1px,
-	body-1: 1rem 400 0.5px,
-	body-2: 1rem 500 0.25px,
-	button: 0.875rem 600 1.25px,
-	caption: 0.875rem 400 1.2px,
-	overline: 0.625rem 400 1.2px,
+	h1: 2.5rem bold,
+	h2: 2rem 600,
+	h3: 1.75rem 500,
+	h4: 1.5rem 500,
+	h5: 1.25rem 500,
+	h6: 1rem 400,
+	subtitle-1: 1.125rem 400,
+	subtitle-2: 1.125rem 600,
+	body-1: 1rem 400,
+	body-2: 1rem 500,
+	button: 0.875rem 600,
+	caption: 0.875rem 400,
+	overline: 0.75rem 400,
 );
 
 $justify-classes: (flex-start, center, flex-end, space-between, space-around);
