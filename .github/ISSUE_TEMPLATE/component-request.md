@@ -2,7 +2,7 @@
 name: Component Request
 about: Create a new component from sketch
 title: Component =
-labels: ''
+labels: library
 assignees: hiimlex
 
 ---
