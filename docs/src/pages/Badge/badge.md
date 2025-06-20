@@ -28,9 +28,9 @@ Use the `variant` prop to change the badge style type.
 
 <br/>
 
-#### Theme
+#### Colors
 
-Use the `theme` prop to change the badge color theme.
+Use the `colorScheme` prop to change the badge color theme.
 
 <div>
 <BadgeThemePreview>

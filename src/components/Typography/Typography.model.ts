@@ -19,6 +19,7 @@ interface TypographyProps {
 	children?: React.ReactNode;
 	variant?: TypographyVariants;
 	textColor?: keyof LeThemeType;
+	textAlign?: React.CSSProperties["textAlign"];
 	fontFamily?: string;
 	customClass?: string;
 	customStyles?: React.CSSProperties;

@@ -1,10 +1,15 @@
 @import "../../styles/variables.scss";
 
 .le-table {
-	display: flex;
-	flex-direction: column;
+	width: 100%;
 	overflow: hidden;
 	overflow-x: auto;
+	text-align: center;
+	table-layout: fixed;
+
+	* {
+		box-sizing: border-box;
+	}
 
 	&--wrapper {
 		width: 100%;
@@ -29,6 +34,12 @@
 				color: var(--le-color-textTwo);
 			}
 		}
+
+		&-bordered {
+			border: 1px solid var(--le-color-border);
+			border-radius: 6px;
+			overflow: hidden;
+		}
 	}
 
 	&--spinner-wrapper {
@@ -52,11 +63,16 @@
 
 	&--default {
 		border: none;
+		border-spacing: 0;
 	}
 
 	&--bordered {
-		border: 1px solid var(--le-color-border);
-		border-radius: 8px;
+		border-collapse: separate;
+		border-spacing: 0;
+
+		* {
+			border-spacing: 0;
+		}
 	}
 
 	&--small {

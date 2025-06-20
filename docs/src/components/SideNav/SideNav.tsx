@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./SideNav.scss";
-import React from "react";
+import React, { useEffect } from "react";
 import { RoutesPath } from "../../models";
 
 export interface ILink {
@@ -59,6 +59,14 @@ export const LINKS: Record<string, ILink[]> = {
 export const linksArr: ILink[] = Object.values(LINKS).flat();
 
 const SideNav = () => {
+	useEffect(() => {
+		const isDev = window.origin?.includes("localhost");
+
+		if (isDev && !LINKS["Getting Started"].some((link) => link.path === RoutesPath.Dev)) {
+			LINKS["Getting Started"].push({ name: "Dev playground", path: RoutesPath.Dev });
+		}
+	}, []);
+
 	return (
 		<aside className="le-sidenav">
 			<div className="fixed-content">

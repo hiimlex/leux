@@ -171,6 +171,10 @@ const CheckboxApiTable = () => {
 		label: {
 			type: "string",
 		},
+		checked: {
+			type: "boolean",
+			defaultValue: "false",
+		},
 		size: {
 			type: "'small' | 'medium' | 'large'",
 			defaultValue: "'medium'",

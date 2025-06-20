@@ -5,6 +5,7 @@ import {
 	BoxPage,
 	ButtonPage,
 	CheckboxPage,
+	DevPage,
 	DropdownPage,
 	GlobalConfigPage,
 	GridPage,
@@ -28,6 +29,7 @@ import {
 import React, { JSX } from "react";
 import { Navigate } from "react-router-dom";
 import { RoutesPath } from "../../models";
+import Dev from "@/pages/Dev";
 
 type LeRoute = {
 	path: string;
@@ -130,6 +132,10 @@ export const routes: LeRoute[] = [
 	{
 		path: RoutesPath.Toast,
 		element: <LeRenderDocPage doc={<ToastPage />} title="Toast" />,
+	},
+	{
+		path: RoutesPath.Dev,
+		element: <DevPage />,
 	},
 
 	{

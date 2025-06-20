@@ -18,10 +18,13 @@ export default defineConfig(async () => ({
 		}),
 	],
 	resolve: {
-		alias: [{ find: "@", replacement: resolve(__dirname, "src") }],
+		alias: [
+			{ find: "@", replacement: resolve(__dirname, "src") },
+			{ find: "lib", replacement: resolve(__dirname, "../src") },
+		],
 	},
 	server: {
-		port: 3000,
+		port: 5000,
 		fs: {
 			allow: [".."],
 		},

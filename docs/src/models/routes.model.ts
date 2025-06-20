@@ -24,4 +24,5 @@ export enum RoutesPath {
 	Skeleton = "/components/skeleton",
 	Toast = "/components/toast",
 	NotFound = "*",
+	Dev = "/dev",
 }

@@ -3,6 +3,7 @@ export { default as BadgePage } from "./Badge";
 export { default as BoxPage } from "./Box";
 export { default as ButtonPage } from "./Button";
 export { default as CheckboxPage } from "./Checkbox";
+export { default as DevPage } from "./Dev";
 export { default as DropdownPage } from "./Dropdown";
 export { default as GlobalConfigPage } from "./GlobalConfig";
 export { default as GridPage } from "./Grid";

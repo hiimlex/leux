@@ -2,22 +2,18 @@
 
 .le-table-body {
 	width: 100%;
-	display: flex;
-	flex-direction: column;
-	position: relative;
 	word-wrap: break-word;
 	word-break: break-all;
 
 	&--row,
 	tr {
 		width: 100%;
-		display: grid !important;
 
 		&-item,
 		td {
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			// display: flex;
+			// align-items: center;
+			// justify-content: center;
 			font-weight: 400;
 		}
 	}
@@ -25,8 +21,6 @@
 	&--default {
 		.le-table-body--row,
 		tr {
-			border-bottom: 1px solid var(--le-color-border);
-
 			&-item,
 			td {
 				border: none;
@@ -39,24 +33,17 @@
 	&--bordered {
 		.le-table-body--row,
 		tr {
-			border-radius: 0 !important;
-			border: none;
-			border-bottom: 1px solid var(--le-color-border);
-
 			&-item,
 			td {
 				border: none;
-				border-radius: 0 !important;
 				border-right: 1px solid var(--le-color-border);
+				border-bottom: 1px solid var(--le-color-border);
+
 				color: var(--le-color-textOne);
 
 				&:last-child {
 					border-right: none;
 				}
-			}
-
-			&:last-child {
-				border-bottom: none;
 			}
 		}
 	}
@@ -64,18 +51,21 @@
 	&--small {
 		&.le-table-body tr td {
 			padding: 0.75rem 1rem;
+			height: 36px;
 		}
 	}
 
 	&--medium {
 		&.le-table-body tr td {
 			padding: 0.875rem 1rem;
+			height: 42px;
 		}
 	}
 
 	&--large {
 		&.le-table-body tr td {
 			padding: 1rem 1.5rem;
+			height: 48px;
 		}
 	}
 

@@ -17,68 +17,24 @@ The Table component is used to display data in a tabular format. This table is b
 
 <br />
 
-#### Configuration
-
-A simple Table with a header and a body using the `TableProps` as a configuration object.
-
-<div>
-<TableConfigurationPreview>
-</TableConfigurationPreview>
-</div>
-
-<br />
-
-#### Children
-
-A simple table with a header and a body using the `children` prop.
-
-<div>
-<TableChildrenPreview>
-</TableChildrenPreview>
-</div>
-
-<br />
-
 #### Variants
 
-Use the `variant` prop to change the table style.
+Use the `variant` prop to change the appearance of the table. The available variants are `default` and `bordered`.
 
 <div>
-<TableVariantPreview>
-</TableVariantPreview>
+<TableVariantsPreview>
+</TableVariantsPreview>
 </div>
 
 <br />
 
 #### Sizes
 
-Use the `size` prop to change the table size.
+Use the `size` prop to change the size of the table. The available sizes are `small`, `medium`, and `large`.
 
 <div>
-<TableSizePreview>
-</TableSizePreview>
-</div>
-
-<br />
-
-#### Filters
-
-Use the `sort` and `sortFn` props on header to add a order to the Table Header.
-
-<div>
-<TableFiltersPreview>
-</TableFiltersPreview>
-</div>
-
-<br />
-
-#### Pagination
-
-Use the `pagination` prop to add a pagination to the Table.
-
-<div>
-<TablePaginationPreview>
-</TablePaginationPreview>
+<TableSizesPreview>
+</TableSizesPreview>
 </div>
 
 <br />

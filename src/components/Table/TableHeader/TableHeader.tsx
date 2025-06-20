@@ -1,19 +1,29 @@
-import React, { useMemo, useState } from "react";
+import React, { JSX, useMemo, useState } from "react";
 import { LeClassNames } from "../../../types";
-import { TableColumn, TableFilter, TableHeaderProps, TableSort } from "../Table.model";
+import {
+	TableFilter,
+	TableHeaderColumnProps,
+	TableHeaderProps,
+	TableHeaderRowProps,
+	TableSort,
+} from "./TableHeader.model";
 
+import { useTableContext } from "../TableContext";
 import "./TableHeader.scss";
 
-const TableHeader = ({
+const TableHeader = <DataType extends object = object>({
 	children,
 	columns,
-	gridTemplateColumns,
 	customHeaderClass,
 	customHeaderStyles,
-	variant = "default",
-	size = "medium",
-	sortFn,
-}: TableHeaderProps) => {
+	...props
+}: TableHeaderProps<DataType>) => {
+	const ctx = useTableContext();
+
+	const size = useMemo(() => ctx.size || props.size, [ctx.size, props.size]);
+	const variant = useMemo(() => ctx.variant || props.variant, [ctx.variant, props.variant]);
+	const sortFn = useMemo(() => ctx.sortFn || props.sortFn, [ctx.sortFn, props.sortFn]);
+
 	const [filters, setFilters] = useState<TableFilter[]>([]);
 	const classNames: LeClassNames = useMemo(
 		() => ({
@@ -22,15 +32,15 @@ const TableHeader = ({
 					size ? `le-table--header-${size}` : ""
 				} ${customHeaderClass ?? ""}`,
 			tableHeaderRow: () => "le-table--header-row",
-			tableHeaderRowItem: ({ sort, sortable }) =>
-				`le-table--header-row-item ${sort ? `le-table--header-row-item--${sort}` : ""} ${
-					sortable ? `le-table--header-row-item--sortable` : ""
-				} ${sortable && sort ? `le-table--header-row-item--${sort}--active` : ""}`,
 		}),
 		[customHeaderClass, variant, size]
 	);
 
-	const getFilter = (columnKey: string): TableFilter | undefined => {
+	const getFilter = (columnKey?: string): TableFilter | undefined => {
+		if (!columnKey) {
+			return undefined;
+		}
+
 		return filters.find((filter) => filter.header === columnKey);
 	};
 
@@ -44,22 +54,26 @@ const TableHeader = ({
 		);
 	};
 
-	const handleColumnClick = (column: TableColumn): void => {
+	const handleColumnClick = (column: TableHeaderColumnProps<DataType>): void => {
 		if (column.sortable) {
 			handleSort(column);
 		}
 	};
 
-	const handleSort = (column: TableColumn): void => {
+	const handleSort = (column: TableHeaderColumnProps<DataType>): void => {
 		if (!sortFn) {
 			return;
 		}
 
-		const tableFilter = getFilter(column.key);
+		if (!column.columnKey) {
+			return;
+		}
+
+		const tableFilter = getFilter(column.columnKey.toString());
 
 		if (!tableFilter || tableFilter === null) {
-			addFilter({ header: column.key, sort: "asc" });
-			sortFn({ header: column.key, sort: "asc" });
+			addFilter({ header: column.columnKey.toString(), sort: "asc" });
+			sortFn({ header: column.columnKey.toString(), sort: "asc" });
 
 			return;
 		}
@@ -76,8 +90,8 @@ const TableHeader = ({
 
 		const newSortValue: TableSort = sortValues[tableFilter.sort];
 
-		updateFilter({ header: column.key, sort: newSortValue });
-		sortFn({ header: column.key, sort: newSortValue });
+		updateFilter({ header: column.columnKey.toString(), sort: newSortValue });
+		sortFn({ header: column.columnKey.toString(), sort: newSortValue });
 	};
 
 	return (
@@ -89,28 +103,55 @@ const TableHeader = ({
 			{children ? (
 				children
 			) : (
-				<tr className={classNames["tableHeaderRow"]()} style={{ gridTemplateColumns }}>
+				<TableHeaderRow>
 					{columns &&
 						columns.map((column) => {
-							const tableFilter = getFilter(column.key);
+							const tableFilter = getFilter(column?.columnKey?.toString());
 
 							return (
-								<th
-									key={column.key}
-									className={classNames["tableHeaderRowItem"]({
-										sort: tableFilter?.sort,
-										sortable: column.sortable,
-									})}
-									onClick={() => handleColumnClick(column)}
-								>
-									{column.header}
-								</th>
+								<TableHeaderColumn
+									key={column?.columnKey?.toString()}
+									{...column}
+									filter={tableFilter}
+									onClick={handleColumnClick}
+								/>
 							);
 						})}
-				</tr>
+				</TableHeaderRow>
 			)}
 		</thead>
 	);
 };
 
-export { TableHeader };
+const TableHeaderRow = (props: TableHeaderRowProps) => {
+	const isChildren = useMemo(() => "children" in props, [props]);
+
+	const ColumnsJSX =
+		props.columns && props.columns.map((column) => <TableHeaderColumn {...column} />);
+
+	return <tr className="le-table--header-row">{isChildren ? props.children : ColumnsJSX}</tr>;
+};
+
+const TableHeaderColumn = <ColumnType extends object = object>({
+	onClick,
+	...column
+}: TableHeaderColumnProps<ColumnType>): JSX.Element => {
+	const { filter } = column;
+
+	const useChildren = useMemo(() => "children" in column, [column]);
+
+	return (
+		<th
+			className={`le-table--header-row-item ${
+				filter?.sort ? `le-table--header-row-item--${filter.sort}` : ""
+			} ${column.sortable ? `le-table--header-row-item--sortable` : ""} ${
+				column.sortable && filter?.sort ? `le-table--header-row-item--${filter.sort}--active` : ""
+			}`}
+			onClick={() => onClick?.(column)}
+		>
+			{useChildren ? column.children : column.header}
+		</th>
+	);
+};
+
+export { TableHeader, TableHeaderColumn, TableHeaderRow };

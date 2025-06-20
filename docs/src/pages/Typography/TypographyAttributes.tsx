@@ -73,12 +73,8 @@ const TypographyCustomPreview = () => {
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Typography
-					variant="body-1"
-					customClass="le-color-danger"
-					customStyles={{ fontWeight: "bold" }}
-				>
-					Custom CSS
+				<Typography variant="body-1" textAlign="right" textColor="danger">
+					Custom Text
 				</Typography>
 			</LePreview>
 			{showCode && (
@@ -87,10 +83,10 @@ const TypographyCustomPreview = () => {
 					code={`const Component = () => (
 	<Typography
 		variant="body-1"
-		customClass="le-text-color--danger"
-		customStyles={{ fontWeight: "bold" }}
+		textAlign="right"
+		textColor="danger"
 	>
-		Custom CSS
+			Custom Text
 	</Typography>
 );`}
 				/>
@@ -119,6 +115,10 @@ const TypographyApiTable = () => {
 		},
 		fontFamily: {
 			type: "string",
+		},
+		textAlign: {
+			type: "'left' | 'center' | 'right' | 'justify'",
+			defaultValue: "left",
 		},
 	};
 
