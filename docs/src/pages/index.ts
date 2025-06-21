@@ -23,3 +23,4 @@ export { default as ThemingPage } from "./Theming";
 export { default as ToastPage } from "./Toast";
 export { default as TooltipPage } from "./Tooltip";
 export { default as TypographyPage } from "./Typography";
+export { default as ProgressPage } from "./Progress";

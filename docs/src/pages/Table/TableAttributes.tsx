@@ -7,11 +7,15 @@ import {
 	TableSizesType,
 	TableVariants,
 	type TableProps,
+	type TableFilter,
+	Pagination,
+	PaginationProps,
 } from "lib";
 
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { attributes as tableAttr } from "./table.md";
 import { TableHeaderRow } from "../../../../src/components/Table/TableHeader";
+import axios from "axios";
 
 const BaseTable = (props: TableProps) => (
 	<Table.Root {...props}>
@@ -38,7 +42,16 @@ const TableImportPreview = () => (
 	<LeHighlighter
 		code={`import { 
 	Table
-} from "@leux/ui";`}
+} from "@leux/ui";
+ 
+<Table.Root /> // <table> 
+<Table.Header /> // <thead>
+<Table.HeaderRow /> // <tr> for a row in the table header
+<Table.HeaderColumn /> // <th> for a column in the table header
+<Table.Body /> // <tbody>
+<Table.BodyRow /> // <tr> for a row in the table body
+<Table.BodyCell /> // <td> for a cell in the table body
+`}
 		language="tsx"
 	/>
 );
@@ -109,6 +122,32 @@ const Component = () => {
 	);
 };
 
+const TableUsagePreview = () => {
+	return (
+		<LeHighlighter
+			code={`
+import { Table, TableHeaderColumnProps } from "@leux/ui";
+
+const TableWithConfig = () => {
+	const data: DataType[] = [
+		{ id: 1, name: "John Doe" },
+		{ id: 2, name: "John Ary" },
+	];
+	const columns: TableHeaderColumnProps<DataType> = [
+		{ header: "ID", columnKey: "id" },
+		{ header: "Name", columnKey: "name" },
+	]
+
+	return (
+		<Table.Root<DataType> data={data} columns={columns} keysOrder={["id", "name"]}>
+	)
+}
+			`}
+			language="tsx"
+		/>
+	);
+};
+
 const TableVariantsPreview = () => {
 	const [showCode, setShowCode] = useState(false);
 	const [variant, setVariant] = useState<TableVariants>("default");
@@ -169,6 +208,89 @@ const Component = () => {
 	);
 };
 
+const TableSortingPreview = () => {
+	const [showCode, setShowCode] = useState(false);
+
+	type DataType = {
+		id: number;
+		title: string;
+	};
+
+	const [data, setData] = useState<DataType[]>([]);
+	const [pagination, setPagination] = useState<PaginationProps>({
+		currentPage: 0,
+		totalPages: 10,
+		itemsPerPage: 5,
+		totalItems: 50,
+	});
+
+	const getTodos = useCallback(
+		async (filter?: TableFilter) => {
+			try {
+				const itemsPerPage = pagination.itemsPerPage;
+				const offset = pagination.currentPage * itemsPerPage;
+
+				let url = `https://jsonplaceholder.typicode.com/todos?_start=${offset}&_limit=${itemsPerPage}`;
+				if (filter && filter.sort) {
+					url = `${url}&_sort=${filter.header}&_order=${filter.sort}`;
+				}
+				const response = await axios.get<DataType[]>(url);
+				const { data } = response;
+
+				if (data && data.length) {
+					setData(data);
+					setPagination({
+						...pagination,
+					});
+				}
+			} catch (error) {
+				console.error(error);
+			}
+		},
+		[pagination.currentPage, pagination.itemsPerPage]
+	);
+
+	useEffect(() => {
+		getTodos();
+	}, [getTodos]);
+
+	return (
+		<LePreview showCode={showCode} setShowCode={setShowCode}>
+			<Table.Root variant="bordered">
+				<Table.Header>
+					<Table.HeaderRow>
+						<Table.HeaderColumn sortable columnKey={"id"}>
+							ID
+						</Table.HeaderColumn>
+						<Table.HeaderColumn sortable columnKey={"title"}>
+							Title
+						</Table.HeaderColumn>
+					</Table.HeaderRow>
+				</Table.Header>
+				<Table.Body>
+					{data.map((item) => (
+						<Table.BodyRow key={item.id}>
+							<Table.BodyCell>{item.id}</Table.BodyCell>
+							<Table.BodyCell>{item.title}</Table.BodyCell>
+						</Table.BodyRow>
+					))}
+				</Table.Body>
+			</Table.Root>
+			<Pagination
+				{...pagination}
+				showPageSizeChanger
+				onPageSizeChange={(size) => {
+					const totalPages = Math.floor(pagination.totalItems / size);
+					setPagination({ ...pagination, itemsPerPage: size, currentPage: 0, totalPages });
+				}}
+				onPageChange={(page) => {
+					setPagination({ ...pagination, currentPage: page });
+				}}
+			/>
+		</LePreview>
+	);
+};
+
 const TableApiTable = () => {
 	const props: PropsMapping<TableProps> = {
 		variant: {
@@ -202,13 +324,9 @@ const TableApiTable = () => {
 		rowProps: {
 			type: "TableRowProps",
 		},
-		gridTemplateColumns: {
-			type: "React.CSSProperties['gridTemplateColumns']",
-		},
 		emptyValue: {
 			type: "string",
 		},
-
 		customClass: {
 			type: "string",
 		},
@@ -258,6 +376,8 @@ tableAttr["LeHighlighter"] = LeHighlighter;
 tableAttr["TableImportPreview"] = TableImportPreview;
 tableAttr["TableSizesPreview"] = TableSizesPreview;
 tableAttr["TableVariantsPreview"] = TableVariantsPreview;
+tableAttr["TableUsagePreview"] = TableUsagePreview;
+tableAttr["TableSortingPreview"] = TableSortingPreview;
 tableAttr["TableApiTable"] = TableApiTable;
 
 export { tableAttr };

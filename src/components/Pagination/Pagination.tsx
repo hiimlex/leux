@@ -5,8 +5,8 @@ import { PaginationLabel, PaginationProps } from "./Pagination.model";
 import "./Pagination.scss";
 
 const defaultPaginationLabel: PaginationLabel = ({ currentPage, totalItems, itemsPerPage }) =>
-	`<strong>${currentPage - 1 > 0 ? (currentPage - 1) * itemsPerPage + 1 : 1} - ${
-		currentPage * itemsPerPage
+	`<strong>${currentPage >= 0 ? currentPage * itemsPerPage + 1 : "01"} - ${
+		(currentPage + 1) * itemsPerPage
 	}</strong> of <strong>${totalItems}<strong/>`;
 
 const Pagination: React.FC<PaginationProps> = ({
@@ -30,6 +30,8 @@ const Pagination: React.FC<PaginationProps> = ({
 	showPageSizeChanger,
 	customWrapperClass,
 	customWrapperStyles,
+	disableNext,
+	disablePrevious,
 }) => {
 	const classNames: LeClassNamesSimple = useMemo(
 		() => ({
@@ -95,10 +97,10 @@ const Pagination: React.FC<PaginationProps> = ({
 					<div className={classNames["paginationButtonGroup"]}>
 						{paginationButtons.previous && (
 							<button
-								disabled={currentPage - 1 === 0}
+								disabled={disablePrevious ? disablePrevious() : currentPage - 1 < 0}
 								onClick={() => onPageChange && onPageChange(currentPage - 1)}
 								className={buttonsClassNames["paginationPrev"]({
-									disabled: currentPage - 1 === 0,
+									disabled: disablePrevious ? disablePrevious() : currentPage - 1 < 0,
 								})}
 							>
 								<svg
@@ -158,10 +160,10 @@ const Pagination: React.FC<PaginationProps> = ({
 
 						{paginationButtons.next && (
 							<button
-								disabled={currentPage + 1 > totalPages}
+								disabled={disableNext ? disableNext() : currentPage + 1 >= totalPages}
 								onClick={() => onPageChange && onPageChange(currentPage + 1)}
 								className={buttonsClassNames["paginationNext"]({
-									disabled: currentPage + 1 > totalPages,
+									disabled: disableNext ? disableNext() : currentPage + 1 >= totalPages,
 								})}
 							>
 								<svg

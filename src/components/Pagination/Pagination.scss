@@ -122,11 +122,11 @@
 
 		&-disabled {
 			cursor: not-allowed !important;
-			color: var(--le-color-disabled) !important;
+			color: var(--le-color-defaultGhost) !important;
 
 			svg {
 				* {
-					fill: var(--le-color-disabled) !important;
+					fill: var(--le-color-defaultGhost) !important;
 				}
 			}
 		}

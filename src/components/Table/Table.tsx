@@ -33,13 +33,13 @@ const TableComponent = <DataType extends object = object>({
 	const classNames: LeClassNames = useMemo(
 		() => ({
 			table: () => `le-table le-table--${size} le-table--${variant} ${customClass || ""}`,
-			tableWrapper: ({ disabled }) =>
+			tableWrapper: () =>
 				`le-table--wrapper le-table--wrapper-${variant} ${
-					disabled ? "le-table--wrapper-disabled" : ""
+					state?.disabled ? "le-table--wrapper-disabled" : ""
 				} ${customWrapperClass || ""}`,
 			spinnerWrapper: () => `le-table--spinner-wrapper le-table--spinner-wrapper-${size} `,
 		}),
-		[size, variant, customClass, customWrapperClass]
+		[size, variant, customClass, customWrapperClass, state]
 	);
 
 	const canShowContent = useMemo(
@@ -113,12 +113,7 @@ const TableComponent = <DataType extends object = object>({
 				columns: props.columns,
 			}}
 		>
-			<div
-				style={{ height, ...customWrapperStyles }}
-				className={classNames["tableWrapper"]({
-					disabled: state && state.disabled,
-				})}
-			>
+			<div style={{ height, ...customWrapperStyles }} className={classNames["tableWrapper"]()}>
 				{TableJSX}
 				{canShowSpinner && TableLoaderJSX}
 			</div>

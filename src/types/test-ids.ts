@@ -9,4 +9,7 @@ export enum TestId {
 	Typography = "leuxTypography",
 	Tooltip = "leuxTooltip",
 	TooltipProvider = "leuxTooltipProvider",
+	Progress = "leuxProgress",
+	ProgressBar = "leuxProgressBar",
+	ProgressInfo = "leuxProgressInfo",
 }

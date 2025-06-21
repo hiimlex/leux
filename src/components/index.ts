@@ -8,6 +8,7 @@ export * from "./Grid";
 export * from "./Input";
 export * from "./Modal";
 export * from "./Pagination";
+export * from "./Progress";
 export * from "./Radio";
 export * from "./Select";
 export * from "./Skeleton";

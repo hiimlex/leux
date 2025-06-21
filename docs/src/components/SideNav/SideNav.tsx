@@ -51,6 +51,7 @@ export const LINKS: Record<string, ILink[]> = {
 		{ name: "Tooltip", path: RoutesPath.Tooltip },
 	],
 	Loaders: [
+		{ name: "Progress", path: RoutesPath.Progress },
 		{ name: "Skeleton", path: RoutesPath.Skeleton },
 		{ name: "Spinner", path: RoutesPath.Spinner },
 	],

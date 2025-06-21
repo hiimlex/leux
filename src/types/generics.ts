@@ -1,5 +1,6 @@
 export type LeSizes = "small" | "medium" | "large";
-export type LeVariants = "primary" | "secondary" | "success" | "danger" | "warning" | "default";
+export type LeColorScheme = "primary" | "secondary" | "success" | "danger" | "warning" | "default";
+export type LeVariants = "filled" | "outlined" | "text" | "ghost";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type LeSafeAny = any;
 

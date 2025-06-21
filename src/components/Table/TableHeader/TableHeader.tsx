@@ -112,7 +112,7 @@ const TableHeader = <DataType extends object = object>({
 								<TableHeaderColumn
 									key={column?.columnKey?.toString()}
 									{...column}
-									filter={tableFilter}
+									sort={tableFilter?.sort}
 									onClick={handleColumnClick}
 								/>
 							);
@@ -136,16 +136,14 @@ const TableHeaderColumn = <ColumnType extends object = object>({
 	onClick,
 	...column
 }: TableHeaderColumnProps<ColumnType>): JSX.Element => {
-	const { filter } = column;
-
 	const useChildren = useMemo(() => "children" in column, [column]);
 
 	return (
 		<th
 			className={`le-table--header-row-item ${
-				filter?.sort ? `le-table--header-row-item--${filter.sort}` : ""
+				column.sort ? `le-table--header-row-item--${column.sort}` : ""
 			} ${column.sortable ? `le-table--header-row-item--sortable` : ""} ${
-				column.sortable && filter?.sort ? `le-table--header-row-item--${filter.sort}--active` : ""
+				column.sortable && column.sort ? `le-table--header-row-item--${column.sort}--active` : ""
 			}`}
 			onClick={() => onClick?.(column)}
 		>

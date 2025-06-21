@@ -15,6 +15,7 @@ import {
 	NotFoundPage,
 	OverviewPage,
 	PaginationPage,
+	ProgressPage,
 	RadioPage,
 	SelectPage,
 	SkeletonPage,
@@ -132,6 +133,10 @@ export const routes: LeRoute[] = [
 	{
 		path: RoutesPath.Toast,
 		element: <LeRenderDocPage doc={<ToastPage />} title="Toast" />,
+	},
+	{
+		path: RoutesPath.Progress,
+		element: <LeRenderDocPage doc={<ProgressPage />} title="Progress" />,
 	},
 	{
 		path: RoutesPath.Dev,

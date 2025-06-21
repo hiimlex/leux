@@ -6,7 +6,7 @@ type TableHeaderColumnMinimalProps<DataType extends object = object> = {
 	columnKey?: keyof DataType;
 	sortable?: boolean;
 	onClick?: (column: TableHeaderColumnProps<DataType>) => void;
-	filter?: TableFilter;
+	sort?: TableSort;
 	textAlign?: "left" | "center" | "right";
 };
 
@@ -46,7 +46,6 @@ type TableHeaderMinimalProps<DataType extends object = object> = {
 	columns?: TableHeaderColumnProps<DataType>[];
 	customHeaderClass?: string;
 	customHeaderStyles?: React.CSSProperties;
-	gridTemplateColumns?: React.CSSProperties["gridTemplateColumns"];
 	variant?: TableVariants;
 	size?: TableSizesType;
 	sortFn?: TableSortFn;

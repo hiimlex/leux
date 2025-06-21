@@ -31,6 +31,9 @@ interface PaginationProps {
 	onPageSizeChange?: (itemsPerPage: number) => void;
 	showPaginationLabel?: PaginationLabel;
 
+	disableNext?: () => boolean | boolean;
+	disablePrevious?: () => boolean | boolean;
+
 	showPageSizeChanger?: boolean;
 	pageSizeChangerProps?: Omit<PageSizeChangerProps, "onPageSizeChange" | "itemsPerPage" | "size">;
 

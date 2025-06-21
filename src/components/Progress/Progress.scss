@@ -1,0 +1,117 @@
+@import "../../styles/variables.scss";
+
+.le-progress {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 12px;
+	padding: 0.5rem;
+
+	&--info {
+		color: var(--le-color-textTwo);
+		font-weight: 500;
+	}
+
+	&--bar {
+		width: 100%;
+		position: relative;
+		background: var(--le-color-border);
+	}
+
+	&--value {
+		width: var(--progress);
+		position: absolute;
+		left: 0;
+		z-index: 1;
+		transition: width 0.1s ease;
+	}
+
+	@each $color, $value in $variant-colors {
+		&--#{$color} {
+			&.le-progress--active {
+				.le-progress--bar {
+					outline: 1px solid var(--le-color-#{$color}Ghost);
+					outline-offset: 2px;
+				}
+			}
+
+			.le-progress--bar {
+				.le-progress--value {
+					background: $value;
+				}
+			}
+		}
+	}
+
+	&--small {
+		.le-progress--bar,
+		.le-progress--value {
+			height: 8px;
+			border-radius: 8px;
+		}
+
+		.le-progress--info {
+			font-size: 0.625rem;
+		}
+	}
+
+	&--medium {
+		.le-progress--bar,
+		.le-progress--value {
+			height: 10px;
+			border-radius: 10px;
+		}
+
+		.le-progress--info {
+			font-size: 0.75rem;
+		}
+	}
+
+	&--large {
+		.le-progress--bar,
+		.le-progress--value {
+			height: 12px;
+			border-radius: 12px;
+		}
+
+		.le-progress--info {
+			font-size: 0.875;
+		}
+	}
+
+	&--custom {
+		.le-progress--value {
+			background: var(--customColor) !important;
+		}
+	}
+
+	&--active {
+		.le-progress--value {
+			overflow: hidden;
+
+			&::after {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				transform: translateX(-100%);
+				background-image: linear-gradient(
+					270deg,
+					transparent,
+					#efefef66 40%,
+					#efefef66 60%,
+					transparent
+				);
+				animation: leSkeletonActive 2s infinite;
+				content: "";
+			}
+		}
+	}
+
+	@keyframes leSkeletonActive {
+		100% {
+			transform: translateX(100%);
+		}
+	}
+}

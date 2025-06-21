@@ -27,8 +27,8 @@
 				border: 1px solid $value;
 
 				&:hover {
-					background: get-color-hover($color);
-					border-color: get-color-hover($color);
+					background: var(--le-color-#{$color}Hover);
+					border-color: var(--le-color-#{$color}Hover);
 				}
 			}
 		}
