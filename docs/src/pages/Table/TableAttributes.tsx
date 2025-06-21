@@ -218,7 +218,7 @@ const TableSortingPreview = () => {
 
 	const [data, setData] = useState<DataType[]>([]);
 	const [pagination, setPagination] = useState<PaginationProps>({
-		currentPage: 0,
+		currentPage: 1,
 		totalPages: 10,
 		itemsPerPage: 5,
 		totalItems: 50,
@@ -228,7 +228,7 @@ const TableSortingPreview = () => {
 		async (filter?: TableFilter) => {
 			try {
 				const itemsPerPage = pagination.itemsPerPage;
-				const offset = pagination.currentPage * itemsPerPage;
+				const offset = (pagination.currentPage - 1) * itemsPerPage;
 
 				let url = `https://jsonplaceholder.typicode.com/todos?_start=${offset}&_limit=${itemsPerPage}`;
 				if (filter && filter.sort) {
@@ -239,9 +239,6 @@ const TableSortingPreview = () => {
 
 				if (data && data.length) {
 					setData(data);
-					setPagination({
-						...pagination,
-					});
 				}
 			} catch (error) {
 				console.error(error);
@@ -280,8 +277,8 @@ const TableSortingPreview = () => {
 				{...pagination}
 				showPageSizeChanger
 				onPageSizeChange={(size) => {
-					const totalPages = Math.floor(pagination.totalItems / size);
-					setPagination({ ...pagination, itemsPerPage: size, currentPage: 0, totalPages });
+					const totalPages = Math.ceil(pagination.totalItems / size);
+					setPagination({ ...pagination, itemsPerPage: size, currentPage: 1, totalPages });
 				}}
 				onPageChange={(page) => {
 					setPagination({ ...pagination, currentPage: page });

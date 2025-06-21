@@ -356,6 +356,14 @@ const PaginationApiTable = () => {
 		customWrapperStyles: {
 			type: "React.CSSProperties",
 		},
+		disableNext: {
+			type: "boolean | () => boolean",
+			defaultValue: "false",
+		},
+		disablePrevious: {
+			type: "boolean | () => boolean",
+			defaultValue: "false",
+		},
 	};
 
 	return <LeApiTable props={props} />;

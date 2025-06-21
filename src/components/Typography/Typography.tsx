@@ -10,12 +10,13 @@ const TypographyInstance: React.FC<TypographyProps> = ({
 	customClass: _customClass,
 	customStyles,
 	textColor = "textOne",
+	textAlign,
 }) => {
 	const customClass = useMemo(
 		() => leClassNames([_customClass, `le-color-${textColor}`]),
 		[_customClass, textColor]
 	);
-	const styles = useMemo(() => ({ ...customStyles }), [customStyles]);
+	const styles = useMemo(() => ({ textAlign, ...customStyles }), [customStyles, textAlign]);
 
 	const typesArr: Record<string, React.ReactElement> = {
 		h1: (
