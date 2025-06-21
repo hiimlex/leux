@@ -26,6 +26,16 @@ Use the `variant` prop to change the text variant. There's no default variant.
 
 <br/>
 
+#### Customization
+
+Use the `textColor`, `textAlign`, and `custom` props to customize the text appearance.
+
+<div>
+<TypographyCustomPreview></TypographyCustomPreview>
+</div>
+
+<br />
+
 ### API Reference
 
 <div>

@@ -1,51 +1,13 @@
 import { JSX } from "react";
 import { SpinnerProps } from "../Spinner";
+import { TableBodyProps } from "./TableBody";
+import { TableHeaderProps } from "./TableHeader";
+import { TableContextType } from "./TableContext";
 
-type TableSort = "asc" | "desc" | "none";
-interface TableColumn {
-	header: string;
-	key: string;
-	sortable?: boolean;
-}
-
-interface TableFilter {
-	header: string;
-	sort?: TableSort;
-}
-
-interface TableRow {
-	[key: string]: string | number | boolean | undefined;
-}
 type TableVariants = "bordered" | "default";
-type TableSizes = "small" | "medium" | "large";
-type TableSortFn = (tableFilter: TableFilter) => void;
+const TableSizes = { Small: "small", Medium: "medium", Large: "large" };
 
-interface TableHeaderProps {
-	children?: React.ReactNode;
-	columns?: TableColumn[];
-	gridTemplateColumns?: React.CSSProperties["gridTemplateColumns"];
-	customHeaderClass?: string;
-	customHeaderStyles?: React.CSSProperties;
-	variant?: TableVariants;
-	size?: TableSizes;
-	sortFn?: TableSortFn;
-}
-
-interface TableBodyProps {
-	children?: React.ReactNode;
-	rows?: TableRow[];
-	keys?: string[];
-	gridTemplateColumns?: React.CSSProperties["gridTemplateColumns"];
-	customBodyClass?: string;
-	customBodyStyles?: React.CSSProperties;
-	scrollable?: boolean;
-	scrollWhen?: () => boolean;
-	scrollHeight?: React.CSSProperties["maxHeight"];
-	scrollWidth?: React.CSSProperties["maxWidth"];
-	emptyValue?: string;
-	variant?: TableVariants;
-	size?: TableSizes;
-}
+type TableSizesType = (typeof TableSizes)[keyof typeof TableSizes];
 
 type TableState = {
 	empty?: boolean;
@@ -55,9 +17,13 @@ type TableState = {
 	emptyContent?: JSX.Element;
 };
 
-interface TableProps extends TableHeaderProps, Omit<TableBodyProps, "keys"> {
+interface TableProps<RowType extends object = object>
+	extends Omit<TableHeaderProps<RowType>, "children" | "columns">,
+		Omit<TableBodyProps<RowType>, "children" | "keysOrder" | "rows">,
+		TableContextType<RowType> {
+	children?: React.ReactNode;
 	variant?: TableVariants;
-	size?: TableSizes;
+	size?: TableSizesType;
 	customClass?: string;
 	customStyles?: React.CSSProperties;
 	width?: React.CSSProperties["width"];
@@ -67,16 +33,4 @@ interface TableProps extends TableHeaderProps, Omit<TableBodyProps, "keys"> {
 	customWrapperStyles?: React.CSSProperties;
 }
 
-export {
-	TableProps,
-	TableHeaderProps,
-	TableBodyProps,
-	TableColumn,
-	TableRow,
-	TableSizes,
-	TableVariants,
-	TableSort,
-	TableState,
-	TableFilter,
-	TableSortFn,
-};
+export { TableProps, TableSizes, TableState, TableVariants, TableSizesType };

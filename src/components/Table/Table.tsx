@@ -1,50 +1,45 @@
-import React, { useMemo } from "react";
+import React, { JSX, useMemo } from "react";
 import { LeClassNames } from "../../types";
 import { Spinner } from "../Spinner";
 import { TableProps } from "./Table.model";
 
-import "./Table.scss";
-import { TableHeader } from "./TableHeader";
-import { TableBody } from "./TableBody";
 import { withGlobalConfig } from "../../hooks";
+import "./Table.scss";
+import { TableBody, TableBodyRow, TableBodyRowItem } from "./TableBody";
+import { TableContext } from "./TableContext";
+import { TableHeader, TableHeaderColumn, TableHeaderRow } from "./TableHeader";
 
-const TableComponent: React.FC<TableProps> = ({
-	columns,
+const TableComponent = <DataType extends object = object>({
 	children,
-	rows,
+	keysOrder,
 	customBodyClass,
 	customBodyStyles,
 	customClass,
-	customHeaderClass,
-	customHeaderStyles,
 	customStyles,
 	width = "100%",
 	variant = "default",
 	size = "medium",
-	gridTemplateColumns,
 	emptyValue = "---",
 	state,
 	height,
 	customWrapperClass,
 	customWrapperStyles,
-	sortFn,
 	scrollHeight,
 	scrollWhen,
 	scrollWidth,
 	scrollable,
-}: TableProps) => {
-	const keys = useMemo(() => columns && columns.map(({ key }) => key), [columns]);
-
+	...props
+}: TableProps<DataType>): JSX.Element => {
 	const classNames: LeClassNames = useMemo(
 		() => ({
 			table: () => `le-table le-table--${size} le-table--${variant} ${customClass || ""}`,
-			tableWrapper: ({ disabled }) =>
-				`le-table--wrapper ${disabled ? "le-table--wrapper-disabled" : ""} ${
-					customWrapperClass || ""
-				}`,
+			tableWrapper: () =>
+				`le-table--wrapper le-table--wrapper-${variant} ${
+					state?.disabled ? "le-table--wrapper-disabled" : ""
+				} ${customWrapperClass || ""}`,
 			spinnerWrapper: () => `le-table--spinner-wrapper le-table--spinner-wrapper-${size} `,
 		}),
-		[size, variant, customClass, customWrapperClass]
+		[size, variant, customClass, customWrapperClass, state]
 	);
 
 	const canShowContent = useMemo(
@@ -72,21 +67,18 @@ const TableComponent: React.FC<TableProps> = ({
 		children
 	) : (
 		<>
-			<TableHeader
-				columns={columns}
-				gridTemplateColumns={gridTemplateColumns}
-				customHeaderClass={customHeaderClass}
-				customHeaderStyles={customHeaderStyles}
+			<TableHeader<DataType>
+				columns={props.columns || []}
+				customHeaderClass={props.customHeaderClass}
+				customHeaderStyles={props.customHeaderStyles}
 				variant={variant}
 				size={size}
-				sortFn={sortFn}
+				sortFn={props.sortFn}
 			/>
 			{canShowEmpty && TableEmptyJSX}
 			{canShowContent && (
-				<TableBody
-					rows={rows}
-					keys={keys}
-					gridTemplateColumns={gridTemplateColumns}
+				<TableBody<DataType>
+					rows={props.rows || []}
 					customBodyClass={customBodyClass}
 					customBodyStyles={customBodyStyles}
 					emptyValue={emptyValue}
@@ -104,7 +96,7 @@ const TableComponent: React.FC<TableProps> = ({
 	const TableJSX = (
 		<table
 			data-testid="leuxTable"
-			style={{ width, height, ...customStyles }}
+			style={{ width, ...customStyles }}
 			className={classNames["table"]()}
 		>
 			{TableContentJSX}
@@ -112,18 +104,37 @@ const TableComponent: React.FC<TableProps> = ({
 	);
 
 	return (
-		<div
-			style={{ height, ...customWrapperStyles }}
-			className={classNames["tableWrapper"]({
-				disabled: state && state.disabled,
-			})}
+		<TableContext.Provider
+			value={{
+				keysOrder,
+				rows: props.rows,
+				variant,
+				size,
+				columns: props.columns,
+			}}
 		>
-			{TableJSX}
-			{canShowSpinner && TableLoaderJSX}
-		</div>
+			<div style={{ height, ...customWrapperStyles }} className={classNames["tableWrapper"]()}>
+				{TableJSX}
+				{canShowSpinner && TableLoaderJSX}
+			</div>
+		</TableContext.Provider>
 	);
 };
 
-const Table = withGlobalConfig(TableComponent, "table");
+const Root = <DataType extends object>(props: TableProps<DataType>) => {
+	const Global = withGlobalConfig<"table", TableProps<DataType>>(TableComponent, "table");
 
-export { Table, TableBody, TableHeader };
+	return <Global {...props} />;
+};
+
+const Table = {
+	Root,
+	Body: TableBody,
+	Header: TableHeader,
+	HeaderRow: TableHeaderRow,
+	HeaderColumn: TableHeaderColumn,
+	BodyRow: TableBodyRow,
+	BodyCell: TableBodyRowItem,
+};
+
+export { Table };

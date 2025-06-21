@@ -1,19 +1,14 @@
 @import "../../../styles/variables.scss";
 
 .le-table--header {
-	display: flex;
 	width: 100%;
 
 	&-row,
 	tr {
 		width: 100%;
-		display: grid !important;
 
 		&-item,
 		th {
-			display: flex;
-			align-items: center;
-			justify-content: center;
 			font-weight: 500;
 
 			&--desc {
@@ -40,12 +35,12 @@
 
 				&--active {
 					&::after {
-						border-top-color: $color-variant-primary;
+						border-top-color: var(--le-color-primary);
 					}
 
 					&:hover {
 						&::after {
-							border-top-color: $color-variant-primary;
+							border-top-color: var(--le-color-primary);
 						}
 					}
 				}
@@ -75,12 +70,12 @@
 
 				&--active {
 					&::after {
-						border-bottom-color: $color-variant-primary;
+						border-bottom-color: var(--le-color-primary);
 					}
 
 					&:hover {
 						&::after {
-							border-bottom-color: $color-variant-primary;
+							border-bottom-color: var(--le-color-primary);
 						}
 					}
 				}

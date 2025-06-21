@@ -1,20 +1,17 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
-import { useState } from "react";
 import {
 	Box,
 	Button,
 	Dropdown,
 	DropdownItem,
-	DropdownSeparator,
-	Typography,
-} from "../../../../src";
-import {
 	DropdownItemProps,
 	DropdownProps,
+	DropdownSeparator,
 	DropdownVariant,
-} from "../../../../src/components/Dropdown/Dropdown.model";
+	Typography,
+} from "lib";
+import React, { useState } from "react";
 import { attributes as dropdownAttr } from "./dropdown.md";
-import React from "react";
 
 const DropdownImportPreview = () => (
 	<LeHighlighter language="tsx" code={`import { Dropdown, DropdownProps } from "@leux/ui";`} />
@@ -400,6 +397,10 @@ const DropdownApiTable = () => {
 	const props: PropsMapping<DropdownProps> = {
 		anchor: {
 			type: "React.ReactNode",
+		},
+		menuId: {
+			type: "string",
+			defaultValue: "undefined",
 		},
 		children: {
 			type: "React.ReactNode",

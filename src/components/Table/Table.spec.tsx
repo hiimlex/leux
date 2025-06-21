@@ -6,7 +6,7 @@ import React from "react";
 
 describe("Table component test", () => {
 	it("should render a Table component", () => {
-		const { getByTestId } = render(<Table columns={[]} />);
+		const { getByTestId } = render(<Table.Root />);
 
 		const table = getByTestId("leuxTable");
 

@@ -17,68 +17,50 @@ The Table component is used to display data in a tabular format. This table is b
 
 <br />
 
-#### Configuration
-
-A simple Table with a header and a body using the `TableProps` as a configuration object.
-
-<div>
-<TableConfigurationPreview>
-</TableConfigurationPreview>
-</div>
-
-<br />
-
-#### Children
-
-A simple table with a header and a body using the `children` prop.
-
-<div>
-<TableChildrenPreview>
-</TableChildrenPreview>
-</div>
-
-<br />
-
 #### Variants
 
-Use the `variant` prop to change the table style.
+Use the `variant` prop to change the appearance of the table. The available variants are `default` and `bordered`.
 
 <div>
-<TableVariantPreview>
-</TableVariantPreview>
+<TableVariantsPreview>
+</TableVariantsPreview>
 </div>
 
 <br />
 
 #### Sizes
 
-Use the `size` prop to change the table size.
+Use the `size` prop to change the size of the table. The available sizes are `small`, `medium`, and `large`.
 
 <div>
-<TableSizePreview>
-</TableSizePreview>
+<TableSizesPreview>
+</TableSizesPreview>
 </div>
 
 <br />
 
-#### Filters
+#### Configuration
 
-Use the `sort` and `sortFn` props on header to add a order to the Table Header.
+In config mode, pass the `columns` and `rows` props with the data, use the `keysOrder` prop to define the order of the columns. Most of Table component can accept a generic type object that defines the type of the data to be displayed in the table.
 
 <div>
-<TableFiltersPreview>
-</TableFiltersPreview>
+<TableUsagePreview>
+</TableUsagePreview>
 </div>
 
 <br />
 
-#### Pagination
+#### Sort & Pagination
 
-Use the `pagination` prop to add a pagination to the Table.
+You can enable sorting on the table by passing the `sortable` prop on `HeaderColumn`. This will allow users to sort the table by clicking on the column headers.
+
+Use the `sortFn` and `HeaderColumn.onClick` props to handle the sorting logic.
+
+Use the table with the Pagination component to paginate the data.
 
 <div>
-<TablePaginationPreview>
-</TablePaginationPreview>
+<TableSortingPreview>
+</TableSortingPreview>
 </div>
 
 <br />

@@ -23,5 +23,7 @@ export enum RoutesPath {
 	Spinner = "/components/spinner",
 	Skeleton = "/components/skeleton",
 	Toast = "/components/toast",
+	Progress = "/components/progress",
 	NotFound = "*",
+	Dev = "/dev",
 }
