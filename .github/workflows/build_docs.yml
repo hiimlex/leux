@@ -18,6 +18,8 @@ jobs:
           node-version: 20.16.x
       - name: Install package dependencies
         run: npm install
+      - name: Install package in docs
+        run: npm run build
       - name: Install docs dependencies
         working-directory: ./docs
         run: npm install

@@ -18,7 +18,6 @@
 		"paths": {
 			"@/*": ["src/*"],
 			"react": ["./node_modules/@types/react"],
-			"lib": ["../src"]
 		},
 		"baseUrl": "./"
 	},
