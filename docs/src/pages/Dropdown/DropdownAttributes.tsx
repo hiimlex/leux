@@ -1,13 +1,5 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
-import {
-	Box,
-	Button,
-	Dropdown,
-	DropdownItemProps,
-	DropdownProps,
-	DropdownVariant,
-	Typography,
-} from "lib";
+import { Box, Button, Dropdown, DropdownItemProps, DropdownProps, DropdownVariant } from "lib";
 import React, { useState } from "react";
 import { attributes as dropdownAttr } from "./dropdown.md";
 
@@ -308,6 +300,14 @@ const DropdownApiTable = () => {
 		anchor: {
 			type: "React.ReactNode",
 		},
+		autoPlacement: {
+			type: "boolean",
+			defaultValue: "false",
+		},
+		disabled: {
+			type: "boolean",
+			defaultValue: "false",
+		},
 		menuId: {
 			type: "string",
 			defaultValue: "undefined",
@@ -396,7 +396,7 @@ const DropdownItemApiTable = () => {
 			defaultValue: "readonly",
 		},
 		trigger: {
-			type: "'click' | 'hover'",
+			type: "'click'",
 			defaultValue: "readonly",
 		},
 		customClass: {

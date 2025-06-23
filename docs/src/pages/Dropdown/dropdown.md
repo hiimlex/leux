@@ -59,17 +59,6 @@ Use the `placement` prop to change Dropdown Menu placement component.
 
 <br />
 
-#### Triggers
-
-Use the `trigger` prop to change how to trigger the `Dropdown` component.
-
-<div>
-<DropdownTriggerPreview>
-</DropdownTriggerPreview>
-</div>
-
-<br />
-
 #### Item
 
 Use the `onClick` prop to handle the click event of the `DropdownItem` component.

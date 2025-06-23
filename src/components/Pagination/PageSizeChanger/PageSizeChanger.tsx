@@ -57,7 +57,9 @@ const PageSizeChanger: React.FC<PageSizeChangerProps> = ({
 			}}
 			style={customStyles}
 			data-testid="leuxPageSizeChanger"
-		></button>
+		>
+			{}
+		</button>
 	);
 
 	return (
