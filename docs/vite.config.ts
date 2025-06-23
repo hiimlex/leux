@@ -30,4 +30,7 @@ export default defineConfig(async () => ({
 		},
 	},
 	assetsInclude: ["**/*.svg"],
+	ssr: {
+		noExternal: ["@floating-ui/react-dom"],
+	},
 }));
