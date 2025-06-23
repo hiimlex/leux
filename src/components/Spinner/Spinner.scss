@@ -31,7 +31,7 @@
 	@each $color, $value in $variant-colors {
 		&--#{$color} {
 			&::after {
-				border-color: $value;
+				border-color: var(--le-color-#{$color}) !important;
 			}
 		}
 	}

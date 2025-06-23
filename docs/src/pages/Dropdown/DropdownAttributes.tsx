@@ -17,13 +17,17 @@ const DropdownImportPreview = () => (
 	<LeHighlighter language="tsx" code={`import { Dropdown, DropdownProps } from "@leux/ui";`} />
 );
 
+const RandomAnchor = () => {
+	return <div style={{ background: "red", padding: 12 }}>asdasd</div>;
+};
+
 const DropdownAnchorPreview = () => {
 	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Dropdown anchor={<Button>anchor</Button>}>
+				<Dropdown anchor={<RandomAnchor />}>
 					<DropdownItem>item 1</DropdownItem>
 				</Dropdown>
 			</LePreview>

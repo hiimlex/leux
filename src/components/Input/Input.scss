@@ -34,7 +34,7 @@
 	}
 
 	&:focus {
-		outline: 2px solid $color-variant-primary;
+		outline: 2px solid var(--le-color-primary);
 	}
 
 	&::placeholder {
@@ -52,7 +52,7 @@
 
 	&--disabled {
 		cursor: not-allowed !important;
-		background: $color-variant-disabled !important;
+		background: var(--le-color-disabled) !important;
 		color: var(--le-color-textOne) !important;
 	}
 }

@@ -174,7 +174,7 @@
 
 	&:hover {
 		cursor: pointer;
-		background-color: rgba($color-variant-primary, 0.2);
+		background-color: var(--le-color-primaryGhost);
 	}
 
 	&-centered {
@@ -187,7 +187,7 @@
 
 	&-disabled {
 		cursor: not-allowed !important;
-		background: $color-variant-disabled !important;
+		background: var(--le-color-disabled) !important;
 		color: var(--le-color-placeholder) !important;
 	}
 }

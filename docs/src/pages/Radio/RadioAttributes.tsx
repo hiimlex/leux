@@ -176,100 +176,6 @@ const RadioSizePreview = () => {
 	);
 };
 
-const RadioCustomPreview = () => {
-	const [showCode, setShowCode] = useState<boolean>(false);
-
-	return (
-		<>
-			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Radio
-					fieldKey="style"
-					value="custom"
-					label="Custom"
-					customStyles={{
-						border: "1px solid blue",
-						padding: "12px",
-						marginRight: 12,
-						borderRadius: 4,
-					}}
-					customLabelStyles={{ color: "red" }}
-					customInputClass="custom-dot"
-				/>
-				<Radio fieldKey="style" value="normal" label="Normal" />
-			</LePreview>
-			{showCode && (
-				<>
-					<LeHighlighter
-						code={`// component.tsx
-const Component = () => (
-	<>
-		<Radio
-			fieldKey="style"
-			value="custom"
-			label="Custom"
-			customStyles={{ 
-				border: "1px solid red",
-				padding: "12px",
-				marginRight: 12,
-				borderRadius: 4, 
-			}}
-			customLabelStyles={{ color: "red" }}
-			customInputClass="custom-dot"
-		/>
-		<Radio fieldKey="style" value="normal" label="Normal" />
-	</>
-)`}
-						language="tsx"
-					/>
-					<LeHighlighter
-						code={`// styles.scss
-.custom-dot {
-	appearance: none;
-	position: relative;
-
-	&::before {
-		content: "";
-		display: block;
-		width: 12px;
-		height: 12px;
-		border-radius: 50%;
-		z-index: 1;
-		border: 1px solid var(--le-color-border);
-	}
-
-	&:hover::before {
-		box-shadow: 0 0 12px 2px rgba($color-variant-success, 0.1);
-		border-color: rgba($color-variant-success, 0.8);
-	}
-
-	&:checked::before {
-		border-color: $color-variant-success;
-	}
-
-	&:checked::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		margin: auto;
-
-		width: 4px;
-		height: 4px;
-		border-radius: 50%;
-		padding: 2px;
-		background-color: $color-variant-success;
-	}
-}`}
-						language="scss"
-					/>
-				</>
-			)}
-		</>
-	);
-};
-
 const RadioStatePreview = () => {
 	const [showCode, setShowCode] = useState<boolean>(false);
 	const [disabled, setDisabled] = useState<boolean>(false);
@@ -376,7 +282,6 @@ radioAttr["LeHighlighter"] = LeHighlighter;
 radioAttr["RadioImportPreview"] = RadioImportPreview;
 radioAttr["RadioActionPreview"] = RadioActionPreview;
 radioAttr["RadioSizePreview"] = RadioSizePreview;
-radioAttr["RadioCustomPreview"] = RadioCustomPreview;
 radioAttr["RadioStatePreview"] = RadioStatePreview;
 radioAttr["RadioFieldKeyPreview"] = RadioFieldKeyPreview;
 radioAttr["RadioApiTable"] = RadioApiTable;

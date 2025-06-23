@@ -94,7 +94,7 @@ const DropdownComponent: React.FC<DropdownProps> = ({
 				onClick={handleClickTrigger}
 				data-testid="leuxDropdownAnchor"
 			>
-				{anchor ? anchor : <Button>Toggle</Button>}
+				{anchor || <Button>Toggle</Button>}
 			</div>
 			{show && (
 				<div

@@ -52,7 +52,7 @@
 		color: var(--le-color-textTwo) !important;
 
 		&-disabled {
-			color: $color-variant-disabled !important;
+			color: var(--le-color-disabled) !important;
 		}
 	}
 
@@ -81,7 +81,7 @@
 	}
 
 	&:focus {
-		outline: 2px solid $color-variant-primary;
+		outline: 2px solid var(--le-color-primary);
 	}
 
 	&:-ms-input-placeholder {
@@ -94,7 +94,7 @@
 
 	&--disabled {
 		cursor: not-allowed !important;
-		background: $color-variant-disabled !important;
+		background: var(--le-color-disabled) !important;
 		color: var(--le-color-textOne) !important;
 	}
 
@@ -104,7 +104,7 @@
 
 	&--disabled {
 		cursor: not-allowed !important;
-		background: $color-variant-disabled !important;
+		background: var(--le-color-disabled) !important;
 		color: var(--le-color-textOne) !important;
 	}
 }

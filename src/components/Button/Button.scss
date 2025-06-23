@@ -23,8 +23,8 @@
 		@each $color, $value in $variant-colors {
 			&.le-button--#{$color} {
 				color: var(--le-color-textInverse);
-				background: $value;
-				border: 1px solid $value;
+				background: var(--le-color-#{$color});
+				border: 1px solid var(--le-color-#{$color});
 
 				&:hover {
 					background: var(--le-color-#{$color}Hover);
@@ -43,9 +43,9 @@
 
 		@each $color, $value in $variant-colors {
 			&.le-button--#{$color} {
-				color: $value;
+				color: var(--le-color-#{$color});
 				background: transparent;
-				border-color: $value;
+				border-color: var(--le-color-#{$color});
 
 				&:hover {
 					background: var(--le-color-#{$color}Ghost);
@@ -79,7 +79,7 @@
 
 		@each $color, $value in $variant-colors {
 			&.le-button--#{$color} {
-				color: $value;
+				color: var(--le-color-#{$color});
 				background: transparent;
 
 				&:hover {
@@ -107,8 +107,8 @@
 
 	&--disabled {
 		cursor: not-allowed !important;
-		background: $color-variant-disabled !important;
+		background: var(--le-color-disabled) !important;
 		color: var(--le-color-placeholder) !important;
-		border-color: $color-variant-disabled !important;
+		border-color: var(--le-color-disabled) !important;
 	}
 }

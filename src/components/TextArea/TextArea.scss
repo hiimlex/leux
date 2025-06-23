@@ -37,7 +37,7 @@
 	}
 
 	&:focus {
-		outline: 2px solid $color-variant-primary;
+		outline: 2px solid var(--le-color-primary);
 	}
 
 	&:-ms-input-placeholder {

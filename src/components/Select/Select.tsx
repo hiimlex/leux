@@ -58,6 +58,7 @@ const SelectComponent: React.FC<PropsWithChildren<SelectProps>> = ({
 					className={classNames["leSelectPlaceholder"]()}
 					value=""
 					data-testid="leuxSelectPlaceholder"
+					disabled
 				>
 					{placeholder}
 				</option>
