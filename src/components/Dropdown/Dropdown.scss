@@ -94,8 +94,6 @@
 	}
 
 	&--wrapper {
-		position: relative;
-
 		width: fit-content;
 		height: fit-content;
 
@@ -119,48 +117,6 @@
 		flex-direction: column;
 
 		z-index: 9999;
-
-		&-bottomRight {
-			padding-top: 0.4rem;
-			top: 100%;
-			right: 0;
-		}
-
-		&-bottomLeft {
-			padding-top: 0.4rem;
-			top: 100%;
-			left: 0;
-		}
-
-		&-topRight {
-			padding-bottom: 0.4rem;
-			bottom: 100%;
-			right: 0;
-		}
-
-		&-topLeft {
-			padding-bottom: 0.4rem;
-			bottom: 100%;
-			left: 0;
-		}
-
-		&-topCenter {
-			padding-bottom: 0.4rem;
-			bottom: 100%;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-
-		&-bottomCenter {
-			padding-top: 0.4rem;
-			top: 100%;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-
-		&-hover {
-			display: none;
-		}
 	}
 }
 

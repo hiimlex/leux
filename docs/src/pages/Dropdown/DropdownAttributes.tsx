@@ -3,10 +3,8 @@ import {
 	Box,
 	Button,
 	Dropdown,
-	DropdownItem,
 	DropdownItemProps,
 	DropdownProps,
-	DropdownSeparator,
 	DropdownVariant,
 	Typography,
 } from "lib";
@@ -17,28 +15,24 @@ const DropdownImportPreview = () => (
 	<LeHighlighter language="tsx" code={`import { Dropdown, DropdownProps } from "@leux/ui";`} />
 );
 
-const RandomAnchor = () => {
-	return <div style={{ background: "red", padding: 12 }}>asdasd</div>;
-};
-
 const DropdownAnchorPreview = () => {
 	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Dropdown anchor={<RandomAnchor />}>
-					<DropdownItem>item 1</DropdownItem>
-				</Dropdown>
+				<Dropdown.Root placement="top">
+					<Dropdown.Item>item 1</Dropdown.Item>
+				</Dropdown.Root>
 			</LePreview>
 			{showCode && (
 				<LeHighlighter
 					language="tsx"
 					code={`const Component = () => {
 	return (
-		<Dropdown anchor={<Button>anchor</Button>}>
-			<DropdownItem>item 1</DropdownItem>
-		</Dropdown>
+		<Dropdown.Root anchor={<Button>anchor</Button>}>
+			<Dropdown.Item>item 1</Dropdown.Item>
+		</Dropdown.Root>
 	);
 };`}
 				/>
@@ -53,19 +47,19 @@ const DropdownVariantPreview = () => {
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode} direction="row">
-				<Dropdown
+				<Dropdown.Root
 					variant="filled"
 					anchor={<Button variant="filled">Toggle</Button>}
 					customWrapperStyles={{ marginRight: 12 }}
 				>
-					<DropdownItem>item 1</DropdownItem>
-					<DropdownItem>item 2</DropdownItem>
-				</Dropdown>
+					<Dropdown.Item>item 1</Dropdown.Item>
+					<Dropdown.Item>item 2</Dropdown.Item>
+				</Dropdown.Root>
 
-				<Dropdown variant="outlined" anchor={<Button variant="outlined">Toggle</Button>}>
-					<DropdownItem>item 1</DropdownItem>
-					<DropdownItem>item 2</DropdownItem>
-				</Dropdown>
+				<Dropdown.Root variant="outlined" anchor={<Button variant="outlined">Toggle</Button>}>
+					<Dropdown.Item>item 1</Dropdown.Item>
+					<Dropdown.Item>item 2</Dropdown.Item>
+				</Dropdown.Root>
 			</LePreview>
 			{showCode && (
 				<LeHighlighter
@@ -73,19 +67,19 @@ const DropdownVariantPreview = () => {
 					code={`const Component = () => {
 	return (
 		<>
-			<Dropdown
+			<Dropdown.Root
 				variant="filled"
 				anchor={<Button variant="filled">Toggle</Button>}
 				customWrapperStyles={{ marginRight: 12 }}
 			>
-				<DropdownItem>item 1</DropdownItem>
-				<DropdownItem>item 2</DropdownItem>
-			</Dropdown>
+				<Dropdown.Item>item 1</Dropdown.Item>
+				<Dropdown.Item>item 2</Dropdown.Item>
+			</Dropdown.Root>
 
-			<Dropdown variant="outlined" anchor={<Button variant="outlined">Toggle</Button>}>
-				<DropdownItem>item 1</DropdownItem>
-				<DropdownItem>item 2</DropdownItem>
-			</Dropdown>
+			<Dropdown.Root variant="outlined" anchor={<Button variant="outlined">Toggle</Button>}>
+				<Dropdown.Item>item 1</Dropdown.Item>
+				<Dropdown.Item>item 2</Dropdown.Item>
+			</Dropdown.Root>
 		</>
 	);
 };`}
@@ -101,23 +95,23 @@ const DropdownSizePreview = () => {
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode} direction="row">
-				<Dropdown
+				<Dropdown.Root
 					size="small"
 					anchor={<Button size="small">Toggle</Button>}
 					customWrapperStyles={{ marginRight: 12 }}
 				>
-					<DropdownItem>small</DropdownItem>
-				</Dropdown>
-				<Dropdown
+					<Dropdown.Item>small</Dropdown.Item>
+				</Dropdown.Root>
+				<Dropdown.Root
 					size="medium"
 					anchor={<Button size="medium">Toggle</Button>}
 					customWrapperStyles={{ marginRight: 12 }}
 				>
-					<DropdownItem>medium</DropdownItem>
-				</Dropdown>
-				<Dropdown size="large" anchor={<Button size="large">Toggle</Button>}>
-					<DropdownItem>large</DropdownItem>
-				</Dropdown>
+					<Dropdown.Item>medium</Dropdown.Item>
+				</Dropdown.Root>
+				<Dropdown.Root size="large" anchor={<Button size="large">Toggle</Button>}>
+					<Dropdown.Item>large</Dropdown.Item>
+				</Dropdown.Root>
 			</LePreview>
 			{showCode && (
 				<LeHighlighter
@@ -125,23 +119,23 @@ const DropdownSizePreview = () => {
 					code={`const Component = () => {
 return (
 	<>
-		<Dropdown
+		<Dropdown.Root
 			size="small"
 			anchor={<Button size="small">Toggle</Button>}
 			customWrapperStyles={{ marginRight: 12 }}
 		>
-			<DropdownItem>small</DropdownItem>
-		</Dropdown>
-		<Dropdown
+			<Dropdown.Item>small</Dropdown.Item>
+		</Dropdown.Root>
+		<Dropdown.Root
 			size="medium"
 			anchor={<Button size="medium">Toggle</Button>}
 			customWrapperStyles={{ marginRight: 12 }}
 		>
-			<DropdownItem>medium</DropdownItem>
-		</Dropdown>
-		<Dropdown size="large" anchor={<Button size="large">Toggle</Button>}>
+			<Dropdown.Item>medium</Dropdown.Item>
+		</Dropdown.Root>
+		<Dropdown.Root size="large" anchor={<Button size="large">Toggle</Button>}>
 			<DropdownItem>large</DropdownItem>
-		</Dropdown>
+		</Dropdown.Root>
 	</>
 );
 };`}
@@ -163,46 +157,16 @@ const DropdownPositionPreview = () => {
 					justifyContent="flex-start"
 					customStyles={{ marginBottom: 12 }}
 				>
-					<Dropdown
-						position="bottomLeft"
+					<Dropdown.Root
+						placement="bottom-start"
 						anchor={<Button>Bottom left</Button>}
 						customWrapperStyles={{ marginRight: 12 }}
 					>
-						<DropdownItem>the text direction goes</DropdownItem>
-					</Dropdown>
-					<Dropdown
-						position="bottomCenter"
-						anchor={<Button>Bottom center</Button>}
-						customWrapperStyles={{ marginRight: 12 }}
-					>
-						<DropdownItem>the text direction goes</DropdownItem>
-					</Dropdown>
-					<Dropdown position="bottomRight" anchor={<Button>Bottom right</Button>}>
-						<DropdownItem>the text direction goes</DropdownItem>
-					</Dropdown>
-				</Box>
-				<Box flex justifyContent="flex-start" alignItems="center">
-					<Dropdown
-						position="topLeft"
-						anchor={<Button>Top left</Button>}
-						customWrapperStyles={{ marginRight: 12 }}
-					>
-						<DropdownItem>the text direction goes</DropdownItem>
-					</Dropdown>
-					<Dropdown
-						position="topCenter"
-						anchor={<Button>Top center</Button>}
-						customWrapperStyles={{ marginRight: 12 }}
-					>
-						<DropdownItem>the text direction goes</DropdownItem>
-					</Dropdown>
-					<Dropdown
-						position="topRight"
-						anchor={<Button>Top right</Button>}
-						customWrapperStyles={{ marginRight: 12 }}
-					>
-						<DropdownItem>the text direction goes</DropdownItem>
-					</Dropdown>
+						<Dropdown.Item>the text direction goes</Dropdown.Item>
+					</Dropdown.Root>
+					<Dropdown.Root placement="bottom-end" anchor={<Button>Bottom right</Button>}>
+						<Dropdown.Item>the text direction goes</Dropdown.Item>
+					</Dropdown.Root>
 				</Box>
 			</LePreview>
 			{showCode && (
@@ -217,77 +181,19 @@ return (
 			justifyContent="flex-start"
 			customStyles={{ marginBottom: 12 }}
 		>
-			<Dropdown
-				position="bl"
+			<Dropdown.Root
+				placement="bottom-start"
 				anchor={<Button>Bottom left</Button>}
 				customWrapperStyles={{ marginRight: 12 }}
 			>
-				<DropdownItem>the text direction goes</DropdownItem>
-			</Dropdown>
-			<Dropdown position="br" anchor={<Button>Bottom right</Button>}>
-				<DropdownItem>the text direction goes</DropdownItem>
-			</Dropdown>
-		</Box>
-		<Box flex justifyContent="flex-start" alignItems="center">
-			<Dropdown
-				position="tl"
-				anchor={<Button>Top left</Button>}
-				customWrapperStyles={{ marginRight: 12 }}
-			>
-				<DropdownItem>the text direction goes</DropdownItem>
-			</Dropdown>
-			<Dropdown
-				position="tr"
-				anchor={<Button>Top right</Button>}
-				customWrapperStyles={{ marginRight: 12 }}
-			>
-				<DropdownItem>the text direction goes</DropdownItem>
+				<Dropdown.Item>the text direction goes</Dropdown.Item>
+			</Dropdown.Root>
+			<Dropdown placement="bottom-end" anchor={<Button>Bottom right</Button>}>
+				<Dropdown.Item>the text direction goes</Dropdown.Item>
 			</Dropdown>
 		</Box>
 	</>
 );
-};`}
-				/>
-			)}
-		</>
-	);
-};
-
-const DropdownTriggerPreview = () => {
-	const [showCode, setShowCode] = useState<boolean>(false);
-
-	return (
-		<>
-			<LePreview showCode={showCode} setShowCode={setShowCode} direction="row">
-				<Dropdown
-					trigger="click"
-					anchor={<Button>Click</Button>}
-					customWrapperStyles={{ marginRight: 12 }}
-				>
-					<DropdownItem>Item 1</DropdownItem>
-				</Dropdown>
-				<Dropdown trigger="hover" anchor={<Typography variant="body-2">Hover</Typography>}>
-					<DropdownItem>Item 1</DropdownItem>
-				</Dropdown>
-			</LePreview>
-			{showCode && (
-				<LeHighlighter
-					language="tsx"
-					code={`const Component = () => {
-	return (
-		<>
-			<Dropdown
-				trigger="click"
-				anchor={<Button>Click</Button>}
-				customWrapperStyles={{ marginRight: 12 }}
-			>
-				<DropdownItem>Item 1</DropdownItem>
-			</Dropdown>
-			<Dropdown trigger="hover" anchor={<Typography variant="body-2">Hover</Typography>}>
-				<DropdownItem>Item 1</DropdownItem>
-			</Dropdown>
-		</>
-	);
 };`}
 				/>
 			)}
@@ -301,10 +207,10 @@ const DropdownItemPreview = () => {
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Dropdown>
-					<DropdownItem onClick={() => alert("1")}>Alert 1</DropdownItem>
-					<DropdownItem onClick={() => alert("2")}>Alert 2</DropdownItem>
-				</Dropdown>
+				<Dropdown.Root>
+					<Dropdown.Item onClick={() => alert("1")}>Alert 1</Dropdown.Item>
+					<Dropdown.Item onClick={() => alert("2")}>Alert 2</Dropdown.Item>
+				</Dropdown.Root>
 			</LePreview>
 			{showCode && (
 				<LeHighlighter
@@ -335,11 +241,11 @@ const DropdownSeparatorPreview = () => {
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Dropdown variant={variant}>
-					<DropdownItem onClick={() => handleVariantChange("filled")}>filled</DropdownItem>
-					<DropdownSeparator />
-					<DropdownItem onClick={() => handleVariantChange("outlined")}>outlined</DropdownItem>
-				</Dropdown>
+				<Dropdown.Root variant={variant}>
+					<Dropdown.Item onClick={() => handleVariantChange("filled")}>filled</Dropdown.Item>
+					<Dropdown.Separator />
+					<Dropdown.Item onClick={() => handleVariantChange("outlined")}>outlined</Dropdown.Item>
+				</Dropdown.Root>
 			</LePreview>
 			{showCode && (
 				<LeHighlighter
@@ -371,12 +277,12 @@ const DropdownItemDisabledPreview = () => {
 	return (
 		<>
 			<LePreview showCode={showCode} setShowCode={setShowCode}>
-				<Dropdown>
-					<DropdownItem onClick={() => alert("1")}>Alert 1</DropdownItem>
-					<DropdownItem disabled onClick={() => alert("2")}>
+				<Dropdown.Root>
+					<Dropdown.Item onClick={() => alert("1")}>Alert 1</Dropdown.Item>
+					<Dropdown.Item disabled onClick={() => alert("2")}>
 						Alert 2
-					</DropdownItem>
-				</Dropdown>
+					</Dropdown.Item>
+				</Dropdown.Root>
 			</LePreview>
 			{showCode && (
 				<LeHighlighter
@@ -413,12 +319,20 @@ const DropdownApiTable = () => {
 			type: "'click' | 'hover'",
 			defaultValue: "click",
 		},
-		position: {
-			type: "'bottomLeft' | 'bottomRight' | 'topLeft' | 'topRight' | 'topCentered' | 'bottomCenter'",
+		placement: {
+			type: "'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end' | 'right' | 'right-start' | 'right-end'",
 		},
 		size: {
 			type: "'small' | 'medium' | 'large'",
 			defaultValue: "'medium'",
+		},
+		offset: {
+			type: "number",
+			defaultValue: "12",
+		},
+		strategy: {
+			type: "'fixed' | 'absolute'",
+			defaultValue: "'fixed'",
 		},
 		variant: {
 			type: "'filled' | 'outlined'",
@@ -503,7 +417,6 @@ dropdownAttr["DropdownVariantPreview"] = DropdownVariantPreview;
 dropdownAttr["DropdownAnchorPreview"] = DropdownAnchorPreview;
 dropdownAttr["DropdownSizePreview"] = DropdownSizePreview;
 dropdownAttr["DropdownPositionPreview"] = DropdownPositionPreview;
-dropdownAttr["DropdownTriggerPreview"] = DropdownTriggerPreview;
 dropdownAttr["DropdownItemPreview"] = DropdownItemPreview;
 dropdownAttr["DropdownSeparatorPreview"] = DropdownSeparatorPreview;
 dropdownAttr["DropdownItemDisabledPreview"] = DropdownItemDisabledPreview;

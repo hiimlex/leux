@@ -48,9 +48,9 @@ Use the `size` prop to change the size of the `Dropdown` component.
 
 <br />
 
-#### Position
+#### Placement
 
-Use the `position` prop to change the position of the `Dropdown` component. To use the centered position you might need to set a `width` to the Menu.
+Use the `placement` prop to change Dropdown Menu placement component.
 
 <div>
 <DropdownPositionPreview>

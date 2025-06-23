@@ -72,14 +72,7 @@
 		border: 1px solid var(--le-color-border);
 
 		padding: 12px;
-
-		button {
-			margin-left: 12px;
-
-			&:first-child {
-				margin-left: 0;
-			}
-		}
+		gap: 12px;
 	}
 
 	&--wrapper {

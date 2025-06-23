@@ -1,3 +1,4 @@
+import { autoPlacement, autoUpdate, offset, useFloating } from "@floating-ui/react-dom";
 import React, {
 	Children,
 	MouseEvent as ReactMouseEvent,
@@ -19,7 +20,7 @@ const DropdownComponent: React.FC<DropdownProps> = ({
 	variant = "filled",
 	size = "medium",
 	children,
-	position = "bottomLeft",
+	placement = "bottom",
 	clickOutside = true,
 	closeOnClick = true,
 	trigger = "click",
@@ -28,27 +29,41 @@ const DropdownComponent: React.FC<DropdownProps> = ({
 	customWrapperClass,
 	customMenuClass,
 	customMenuStyles,
+	strategy = "fixed",
+	offset: offsetValue = 12,
+	disabled = false,
+	autoPlacement: _autoPlacement = true,
 }) => {
 	const [show, setShow] = useState(false);
 
 	const randomId = Math.random().toString(36).substr(2, 9);
 	const id = useMemo(() => (menuId ? menuId : randomId), [menuId]);
 
+	const { refs, floatingStyles } = useFloating<HTMLDivElement>({
+		strategy: strategy,
+		placement: placement,
+		middleware: [
+			offset(() => offsetValue, [offsetValue]),
+			_autoPlacement ? autoPlacement() : undefined,
+		],
+		whileElementsMounted: autoUpdate,
+	});
+
 	const classNames: LeClassNamesSimple = useMemo(
 		() => ({
-			leDropdownMenu: `le-dropdown le-dropdown--${variant} le-dropdown--${size} le-dropdown--${position} le-dropdown--${trigger} ${
+			leDropdownMenu: `le-dropdown le-dropdown--${variant} le-dropdown--${size} le-dropdown--${trigger} ${
 				customMenuClass ? customMenuClass : ""
 			}`,
-			leDropdownMenuWrapper: `le-dropdown--menu-wrapper le-dropdown--menu-wrapper-${position} le-dropdown--menu-wrapper-${trigger} ${
+			leDropdownMenuWrapper: `le-dropdown--menu-wrapper le-dropdown--menu-wrapper-${trigger} ${
 				customWrapperClass ? customWrapperClass : ""
 			}`,
 			leDropdownWrapper: `le-dropdown--wrapper le-dropdown--wrapper-${trigger}`,
 			leDropdownAnchor: "le-dropdown--anchor",
 		}),
-		[customWrapperClass, position, size, trigger, variant, position, trigger]
+		[customWrapperClass, size, trigger, variant, trigger]
 	);
 
-	const handleToogle = () => setShow(!show);
+	const handleToggle = () => setShow(!show);
 
 	useEffect(() => {
 		const handleOutsideClick = (e: MouseEvent) => {
@@ -68,39 +83,34 @@ const DropdownComponent: React.FC<DropdownProps> = ({
 		return () => document.removeEventListener("click", handleOutsideClick);
 	}, [show, clickOutside]);
 
-	const handleClickTrigger = () => {
-		if (trigger === "click") {
-			handleToogle();
-		}
-	};
-
-	useEffect(() => {
-		if (trigger === "hover") {
-			setShow(true);
-		}
-	}, [trigger]);
-
 	const childrenArr = Children.toArray(children) as React.ReactElement<DropdownItemProps>[];
+
+	const disablePointerEvents: React.CSSProperties = useMemo(
+		() => (disabled ? { pointerEvents: "none" } : {}),
+		[disabled]
+	);
 
 	return (
 		<div
 			id={id}
 			className={classNames["leDropdownWrapper"]}
-			style={{ ...customWrapperStyles }}
+			style={{ ...customWrapperStyles, ...disablePointerEvents }}
 			data-testid="leuxDropdownWrapper"
 		>
 			<div
 				className={classNames["leDropdownAnchor"]}
-				onClick={handleClickTrigger}
+				onClick={handleToggle}
 				data-testid="leuxDropdownAnchor"
+				ref={refs.setReference}
 			>
 				{anchor || <Button>Toggle</Button>}
 			</div>
 			{show && (
 				<div
 					className={classNames["leDropdownMenuWrapper"]}
-					style={{ width }}
+					style={{ width, ...floatingStyles }}
 					data-testid="leuxDropdownMenuWrapper"
+					ref={refs.setFloating}
 				>
 					<ul
 						className={classNames["leDropdownMenu"]}
@@ -165,6 +175,12 @@ const DropdownSeparator: React.FC = () => (
 	<li className="le-dropdown--separator" data-testid="leuxDropdownSeparator"></li>
 );
 
-const Dropdown = withGlobalConfig(DropdownComponent, "dropdown");
+const Root = withGlobalConfig(DropdownComponent, "dropdown");
 
-export { Dropdown, DropdownItem, DropdownSeparator };
+const Dropdown = {
+	Root,
+	Item: DropdownItem,
+	Separator: DropdownSeparator,
+};
+
+export { Dropdown };
