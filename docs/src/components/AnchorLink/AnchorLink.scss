@@ -6,6 +6,6 @@
 	text-decoration: underline;
 
 	&:hover {
-		color: $color-variant-primary;
+		color: var(--le-color-primary);
 	}
 }

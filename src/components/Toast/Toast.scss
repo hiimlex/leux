@@ -41,8 +41,8 @@
 		@each $color, $value in $variant-colors {
 			&.le-toast--#{$color} {
 				color: var(--le-color-textInverse);
-				background: $value;
-				border: 1px solid $value;
+				background: var(--le-color-#{$color});
+				border: 1px solid var(--le-color-#{$color});
 
 				&.le-toast--closable {
 					&:hover {

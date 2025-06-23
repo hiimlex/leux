@@ -1,19 +1,10 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
+import { Box, Progress, ProgressProps } from "lib";
 import { useState } from "react";
-import {
-	Box,
-	Button,
-	Dropdown,
-	DropdownItem,
-	DropdownSeparator,
-	Progress,
-	ProgressProps,
-	Typography,
-} from "lib";
 
-import { attributes as progressAttr } from "./progress.md";
 import React from "react";
 import { FiInfo } from "react-icons/fi";
+import { attributes as progressAttr } from "./progress.md";
 
 const ProgressImportPreview = () => (
 	<LeHighlighter language="tsx" code={`import { Progress } from "@leux/ui";`} />

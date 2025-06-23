@@ -2,11 +2,11 @@ import { render, fireEvent } from "@testing-library/react";
 
 import "@testing-library/jest-dom";
 import React from "react";
-import { Dropdown, DropdownItem, DropdownSeparator } from "./Dropdown";
+import { Dropdown } from "./Dropdown";
 
 describe("Dropdown component test", () => {
 	it("should render a anchor Button with a Dropdown component", () => {
-		const { getByTestId } = render(<Dropdown anchor={<button>anchor</button>} />);
+		const { getByTestId } = render(<Dropdown.Root anchor={<button>anchor</button>} />);
 
 		const anchor = getByTestId("leuxDropdownAnchor");
 
@@ -14,17 +14,17 @@ describe("Dropdown component test", () => {
 	});
 
 	it("should renders a dropdown button", () => {
-		const { getByTestId } = render(<Dropdown />);
+		const { getByTestId } = render(<Dropdown.Root />);
 		const dropdownButton = getByTestId("leuxDropdownAnchor");
 		expect(dropdownButton).toBeInTheDocument();
 	});
 
 	it("should opens and closes the dropdown menu on click", () => {
 		const { getByTestId } = render(
-			<Dropdown>
-				<DropdownItem>Option 1</DropdownItem>
-				<DropdownItem>Option 2</DropdownItem>
-			</Dropdown>
+			<Dropdown.Root>
+				<Dropdown.Item>Option 1</Dropdown.Item>
+				<Dropdown.Item>Option 2</Dropdown.Item>
+			</Dropdown.Root>
 		);
 
 		const dropdownButton = getByTestId("leuxDropdownAnchor");
@@ -43,10 +43,10 @@ describe("Dropdown component test", () => {
 	it("should closes the dropdown menu on outside click", () => {
 		const { getByTestId } = render(
 			<>
-				<Dropdown>
-					<DropdownItem>Option 1</DropdownItem>
-					<DropdownItem>Option 2</DropdownItem>
-				</Dropdown>
+				<Dropdown.Root>
+					<Dropdown.Item>Option 1</Dropdown.Item>
+					<Dropdown.Item>Option 2</Dropdown.Item>
+				</Dropdown.Root>
 				<div data-testid="outside-click-target"></div>
 			</>
 		);
@@ -66,10 +66,10 @@ describe("Dropdown component test", () => {
 
 	it("should closes the dropdown menu on item click", () => {
 		const { getByTestId, getByText } = render(
-			<Dropdown>
-				<DropdownItem>Option 1</DropdownItem>
-				<DropdownItem>Option 2</DropdownItem>
-			</Dropdown>
+			<Dropdown.Root>
+				<Dropdown.Item>Option 1</Dropdown.Item>
+				<Dropdown.Item>Option 2</Dropdown.Item>
+			</Dropdown.Root>
 		);
 		const dropdownButton = getByTestId("leuxDropdownAnchor");
 		fireEvent.click(dropdownButton);
@@ -85,11 +85,11 @@ describe("Dropdown component test", () => {
 
 	it("should renders a separator", () => {
 		const { getByTestId } = render(
-			<Dropdown>
-				<DropdownItem>Option 1</DropdownItem>
-				<DropdownSeparator />
-				<DropdownItem>Option 2</DropdownItem>
-			</Dropdown>
+			<Dropdown.Root>
+				<Dropdown.Item>Option 1</Dropdown.Item>
+				<Dropdown.Separator />
+				<Dropdown.Item>Option 2</Dropdown.Item>
+			</Dropdown.Root>
 		);
 
 		const dropdownButton = getByTestId("leuxDropdownAnchor");

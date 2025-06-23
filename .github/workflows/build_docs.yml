@@ -16,6 +16,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20.16.x
+      - name: Install package dependencies
+        run: npm install
       - name: Install docs dependencies
         working-directory: ./docs
         run: npm install

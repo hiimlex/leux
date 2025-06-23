@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { LeClassNamesSimple } from "../../../types";
-import { Dropdown, DropdownItem } from "../../Dropdown";
+import { Dropdown } from "../../Dropdown";
 import {
 	PageSizeChangerLabel,
 	PageSizeChangerOptions,
@@ -63,16 +63,22 @@ const PageSizeChanger: React.FC<PageSizeChangerProps> = ({
 	);
 
 	return (
-		<Dropdown variant="outlined" position="topCenter" anchor={PageSizeChangerJSX}>
+		<Dropdown.Root
+			autoPlacement={false}
+			variant="outlined"
+			placement="top"
+			strategy="absolute"
+			anchor={PageSizeChangerJSX}
+		>
 			{options.map((option, index) => (
-				<DropdownItem
+				<Dropdown.Item
 					key={index}
 					onClick={() => onPageSizeChange && onPageSizeChange(option.value)}
 				>
 					{option.label}
-				</DropdownItem>
+				</Dropdown.Item>
 			))}
-		</Dropdown>
+		</Dropdown.Root>
 	);
 };
 

@@ -1,5 +1,3 @@
-@import "../../core/styles/variables.scss";
-
 .le-markdown {
 	color: var(--le-color-textTwo);
 	text-align: justify;
@@ -46,7 +44,7 @@
 	hr {
 		margin: 12px 0;
 		margin-top: 24px;
-		border-color: #efefef33;
+		border-color: var(--le-color-border);
 	}
 
 	.tooltip-custom--arrow::after {
@@ -68,12 +66,12 @@
 		}
 
 		&:hover::before {
-			box-shadow: 0 0 12px 2px rgba($color-variant-success, 0.1);
-			border-color: rgba($color-variant-success, 0.8);
+			box-shadow: 0 0 12px 2px var(--le-color-successGhost);
+			border-color: var(--le-color-success);
 		}
 
 		&:checked::before {
-			border-color: $color-variant-success;
+			border-color: var(--le-color-success);
 		}
 
 		&:checked::after {
@@ -89,7 +87,7 @@
 			height: 4px;
 			border-radius: 50%;
 			padding: 2px;
-			background-color: $color-variant-success;
+			background-color: var(--le-color-success);
 		}
 	}
 

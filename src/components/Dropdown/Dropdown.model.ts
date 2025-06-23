@@ -1,15 +1,10 @@
+import { Placement, Strategy } from "@floating-ui/react-dom";
 import { ReactNode, MouseEvent as ReactMouseEvent } from "react";
 
 type DropdownVariant = "filled" | "outlined";
 type DropdownSize = "small" | "medium" | "large";
-type DropdownPosition =
-	| "bottomLeft"
-	| "bottomRight"
-	| "topLeft"
-	| "topRight"
-	| "bottomCenter"
-	| "topCenter";
-type DropdownTrigger = "click" | "hover";
+type DropdownPosition = Placement;
+type DropdownTrigger = "click";
 
 interface DropdownProps {
 	menuId?: string;
@@ -17,7 +12,7 @@ interface DropdownProps {
 	size?: DropdownSize;
 	children?: React.ReactNode;
 	anchor?: React.ReactNode;
-	position?: DropdownPosition;
+	placement?: DropdownPosition;
 	trigger?: DropdownTrigger;
 	clickOutside?: boolean;
 	closeOnClick?: boolean;
@@ -27,6 +22,10 @@ interface DropdownProps {
 	customMenuStyles?: React.CSSProperties;
 	customMenuClass?: string;
 	menuProps?: React.HTMLAttributes<HTMLUListElement>;
+	strategy?: Strategy;
+	offset?: number;
+	disabled?: boolean;
+	autoPlacement?: boolean;
 }
 
 interface DropdownItemProps {

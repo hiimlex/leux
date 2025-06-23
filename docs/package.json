@@ -1,7 +1,7 @@
 {
 	"name": "docs",
 	"private": true,
-	"version": "0.6.1",
+	"version": "0.6.2",
 	"type": "module",
 	"scripts": {
 		"dev": "vite --port 3000",
@@ -19,7 +19,8 @@
 		"react-router-dom": "^7.6.2",
 		"react-scroll": "^1.9.3",
 		"refractor": "^4.8.0",
-		"sass": "^1.54.8"
+		"sass": "^1.54.8",
+		"@floating-ui/react-dom": "^2.1.3"
 	},
 	"devDependencies": {
 		"@babel/preset-env": "^7.19.1",
@@ -32,7 +33,8 @@
 		"@vitejs/plugin-react": "^2.1.0",
 		"typescript": "^4.6.4",
 		"vite": "^3.1.0",
-		"vite-plugin-markdown": "^2.1.0"
+		"vite-plugin-markdown": "^2.1.0",
+		"@floating-ui/react-dom": "^2.1.3"
 	},
 	"files": [
 		"../src"
