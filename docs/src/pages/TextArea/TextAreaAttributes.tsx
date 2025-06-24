@@ -1,6 +1,6 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import React, { ChangeEvent, useState } from "react";
-import { Button, LeSizes, TextArea, Box, TextAreaProps, Typography } from "../../../../src";
+import { Button, LeSizes, TextArea, Box, TextAreaProps, Typography } from "@leux/ui";
 import { attributes as textAreaAttr } from "./textarea.md";
 
 const TextAreaImportPreview = () => (

@@ -1,14 +1,6 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { attributes as skeletonAttr } from "./skeleton.md";
-import {
-	Avatar,
-	Box,
-	Button,
-	Skeleton,
-	SkeletonProps,
-	SkeletonSizes,
-	Typography,
-} from "../../../../src";
+import { Avatar, Box, Button, Skeleton, SkeletonProps, SkeletonSizes, Typography } from "@leux/ui";
 import { useState } from "react";
 import React from "react";
 

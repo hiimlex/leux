@@ -17,8 +17,7 @@
 		"jsx": "react",
 		"paths": {
 			"@/*": ["src/*"],
-			"react": ["./node_modules/@types/react"],
-			"lib": ["../src"]
+			"react": ["./node_modules/@types/react"]
 		},
 		"baseUrl": "./"
 	},

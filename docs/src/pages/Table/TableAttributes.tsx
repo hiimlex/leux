@@ -10,20 +10,19 @@ import {
 	type TableFilter,
 	Pagination,
 	PaginationProps,
-} from "lib";
+} from "@leux/ui";
 
 import React, { useCallback, useEffect, useState } from "react";
 import { attributes as tableAttr } from "./table.md";
-import { TableHeaderRow } from "../../../../src/components/Table/TableHeader";
 import axios from "axios";
 
 const BaseTable = (props: TableProps) => (
 	<Table.Root {...props}>
 		<Table.Header>
-			<TableHeaderRow>
+			<Table.HeaderRow>
 				<Table.HeaderColumn>ID</Table.HeaderColumn>
 				<Table.HeaderColumn>Name</Table.HeaderColumn>
-			</TableHeaderRow>
+			</Table.HeaderRow>
 		</Table.Header>
 		<Table.Body>
 			<Table.BodyRow>

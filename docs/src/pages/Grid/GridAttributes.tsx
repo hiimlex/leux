@@ -1,8 +1,9 @@
 import { PropsMapping, LeApiTable, LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { NavLink } from "react-router-dom";
-import { Box, BoxVariants, Grid, GridProps, Typography } from "../../../../src";
+import { Box, BoxVariants, Grid, GridProps, Typography } from "@leux/ui";
 import { attributes as gridAttr } from "./grid.md";
 import { useState } from "react";
+import React from "react";
 
 const GridImportPreview = () => {
 	return <LeHighlighter language="tsx" code={`import { Grid, GridProps, Box } from "@leux/ui";`} />;

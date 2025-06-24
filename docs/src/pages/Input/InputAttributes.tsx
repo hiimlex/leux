@@ -1,6 +1,6 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { ChangeEvent, useState } from "react";
-import { Button, Input, InputProps, InputSizes, InputVariant, Typography } from "../../../../src";
+import { Button, Input, InputProps, InputSizes, InputVariant, Typography } from "@leux/ui";
 import { attributes as inputAttr } from "./input.md";
 import React from "react";
 

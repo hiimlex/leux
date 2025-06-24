@@ -1,6 +1,6 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import React, { ChangeEvent, useState } from "react";
-import { Button, Checkbox, CheckboxProps } from "../../../../src";
+import { Button, Checkbox, CheckboxProps } from "@leux/ui";
 import { attributes as checkboxAttr } from "./checkbox.md";
 
 const CheckboxImportPreview = () => (

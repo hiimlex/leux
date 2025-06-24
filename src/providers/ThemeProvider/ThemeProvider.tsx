@@ -7,6 +7,7 @@ import {
 	ThemeContextProps,
 } from "../../contexts";
 import "../../styles/theme.scss";
+import "../../styles/utils.scss";
 import { LeGlobalConfig } from "../../hooks";
 
 interface ThemeProviderProps extends PropsWithChildren {

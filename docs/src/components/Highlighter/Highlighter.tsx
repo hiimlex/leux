@@ -5,7 +5,7 @@ import bash from "refractor/lang/bash";
 import jsx from "refractor/lang/jsx";
 import scss from "refractor/lang/scss";
 import tsx from "refractor/lang/tsx";
-import { useTheme } from "../../../../src";
+import { useTheme } from "@leux/ui";
 import "./Highlighter.scss";
 
 interface HighlighterProps {

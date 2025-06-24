@@ -1,6 +1,6 @@
-import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { resolve } from "path";
+import { defineConfig } from "vite";
 import mdPlugin, { Mode } from "vite-plugin-markdown";
 
 import markdownIt from "markdown-it";
@@ -20,7 +20,7 @@ export default defineConfig(async () => ({
 	resolve: {
 		alias: [
 			{ find: "@", replacement: resolve(__dirname, "src") },
-			{ find: "lib", replacement: resolve(__dirname, "../src") },
+			{ find: "@leux/ui", replacement: resolve(__dirname, "../src") },
 		],
 	},
 	server: {
@@ -30,7 +30,4 @@ export default defineConfig(async () => ({
 		},
 	},
 	assetsInclude: ["**/*.svg"],
-	ssr: {
-		noExternal: ["@floating-ui/react-dom"],
-	},
 }));

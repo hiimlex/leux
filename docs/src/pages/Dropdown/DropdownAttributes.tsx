@@ -1,5 +1,5 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
-import { Box, Button, Dropdown, DropdownItemProps, DropdownProps, DropdownVariant } from "lib";
+import { Box, Button, Dropdown, DropdownItemProps, DropdownProps, DropdownVariant } from "@leux/ui";
 import React, { useState } from "react";
 import { attributes as dropdownAttr } from "./dropdown.md";
 

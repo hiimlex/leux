@@ -1,7 +1,7 @@
 import { attributes as badgeAttr } from "./badge.md";
 
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
-import { Badge, BadgeProps } from "../../../../src";
+import { Badge, BadgeProps } from "@leux/ui";
 import { useState } from "react";
 import React from "react";
 

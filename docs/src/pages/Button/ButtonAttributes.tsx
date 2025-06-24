@@ -1,6 +1,6 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import React, { useState } from "react";
-import { Button, ButtonProps } from "../../../../src";
+import { Button, ButtonProps } from "@leux/ui";
 import { attributes as buttonAttr } from "./button.md";
 
 const ButtonImportPreview = () => (

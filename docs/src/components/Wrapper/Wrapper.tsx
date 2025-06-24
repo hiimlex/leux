@@ -1,6 +1,7 @@
 import { LeSideAnchorNav, LeSideNav } from "..";
-import { useBreakpoint } from "../../../../src";
+import { useBreakpoint } from "@leux/ui";
 import "./Wrapper.scss";
+import React from "react";
 
 interface WrapperProps {
 	children: React.ReactNode;

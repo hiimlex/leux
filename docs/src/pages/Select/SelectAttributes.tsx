@@ -1,13 +1,7 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
-import { ChangeEvent, useState } from "react";
-import { Box, Button, Select, Typography } from "../../../../src";
-import {
-	SelectOption,
-	SelectProps,
-	SelectState,
-} from "../../../../src/components/Select/Select.model";
+import { Box, Button, Select, SelectOption, SelectProps, SelectState, Typography } from "@leux/ui";
+import React, { ChangeEvent, useState } from "react";
 import { attributes as selectAttr } from "./select.md";
-import React from "react";
 
 const SelectImportPreview = () => (
 	<LeHighlighter code={`import { Select, SelectProps } from "@leux/ui";`} language="tsx" />

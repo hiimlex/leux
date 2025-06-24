@@ -1,6 +1,6 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { useEffect, useRef, useState } from "react";
-import { Button, Radio, RadioProps, Typography } from "../../../../src";
+import { Button, Radio, RadioProps, Typography } from "@leux/ui";
 import { attributes as radioAttr } from "./radio.md";
 import React from "react";
 

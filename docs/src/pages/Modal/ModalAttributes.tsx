@@ -1,7 +1,7 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { PropsWithChildren, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Button, ModalProps, Typography, useModal } from "../../../../src";
+import { Button, ModalProps, Typography, useModal } from "@leux/ui";
 import { attributes as modalAttr } from "./modal.md";
 import React from "react";
 

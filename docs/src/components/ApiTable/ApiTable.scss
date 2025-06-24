@@ -1,5 +1,3 @@
-@import "../../core/styles/variables.scss";
-
 .api-table {
 	font-size: 0.875rem;
 	background: var(--le-color-backgroundTwo);
@@ -28,13 +26,13 @@
 
 .api-table th,
 .api-table td {
-	padding: unit(1);
+	padding: 6px;
 	text-align: center;
 
 	pre {
 		padding: 0;
 		margin: 0;
-		border-radius: unit(1);
+		border-radius: 6px;
 		background-color: var(--le-color-backgroundOne) !important;
 		padding: 0 !important;
 

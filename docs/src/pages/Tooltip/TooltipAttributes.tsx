@@ -1,5 +1,5 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
-import { Button, Tooltip, TooltipProps, Typography } from "../../../../src";
+import { Button, Tooltip, TooltipProps, Typography } from "@leux/ui";
 import { attributes as tooltipAttr } from "./tooltip.md";
 import { useState } from "react";
 import React from "react";

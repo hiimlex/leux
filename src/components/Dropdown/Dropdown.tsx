@@ -52,11 +52,11 @@ const DropdownComponent: React.FC<DropdownProps> = ({
 			}`,
 			leDropdownMenuWrapper: `le-dropdown--menu-wrapper le-dropdown--menu-wrapper-${trigger} ${
 				customWrapperClass ? customWrapperClass : ""
-			}`,
+			} le-dropdown--menu-wrapper-${placement}`,
 			leDropdownWrapper: `le-dropdown--wrapper le-dropdown--wrapper-${trigger}`,
 			leDropdownAnchor: "le-dropdown--anchor",
 		}),
-		[customWrapperClass, size, trigger, variant, trigger]
+		[customWrapperClass, size, trigger, variant, placement]
 	);
 
 	const handleToggle = () => setShow(!show);

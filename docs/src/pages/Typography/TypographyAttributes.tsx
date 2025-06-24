@@ -8,7 +8,7 @@ import {
 } from "@/components";
 
 import { useState } from "react";
-import { Typography, TypographyProps } from "../../../../src";
+import { Typography, TypographyProps } from "@leux/ui";
 import { attributes as typographyAttr } from "./typography.md";
 import React from "react";
 
