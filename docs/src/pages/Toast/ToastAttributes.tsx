@@ -8,7 +8,7 @@ import {
 	ToastSizes,
 	ToastColors,
 	useToast,
-} from "../../../../src";
+} from "@leux/ui";
 import { attributes as toastAttr } from "./toast.md";
 import React from "react";
 

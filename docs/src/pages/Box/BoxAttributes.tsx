@@ -1,6 +1,6 @@
 import { PropsMapping, LeApiTable, LeHighlighter, LePreview, LeSourceButton } from "@/components";
 import { NavLink } from "react-router-dom";
-import { Box, BoxProps } from "../../../../src";
+import { Box, BoxProps } from "@leux/ui";
 import { attributes as boxAttr } from "./box.md";
 import { useState } from "react";
 import React from "react";

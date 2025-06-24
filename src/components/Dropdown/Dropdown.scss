@@ -1,27 +1,5 @@
 @import "../../styles/variables.scss";
 
-@keyframes dropdownMenuAnimationTop {
-	0% {
-		opacity: 0;
-		transform: translateY(12px);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-@keyframes dropdownMenuAnimationBottom {
-	0% {
-		opacity: 0;
-		transform: translateY(-12px);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
 .le-dropdown {
 	width: fit-content;
 	height: fit-content;
@@ -38,18 +16,6 @@
 	box-shadow: #959da51a 0px 2px 24px;
 
 	overflow: hidden;
-
-	&--topRight,
-	&--topLeft,
-	&--topCenter {
-		animation: dropdownMenuAnimationTop 0.3s ease-in-out;
-	}
-
-	&--bottomRight,
-	&--bottomLeft,
-	&--bottomCenter {
-		animation: dropdownMenuAnimationBottom 0.3s ease-in-out;
-	}
 
 	&--filled {
 		background-color: var(--le-color-inputBackground);
@@ -117,6 +83,8 @@
 		flex-direction: column;
 
 		z-index: 9999;
+
+		animation: dropdownMenuAnimation 0.1s ease-in-out;
 	}
 }
 
@@ -156,4 +124,13 @@
 	width: 100%;
 	background-color: var(--le-color-border);
 	pointer-events: none;
+}
+
+@keyframes dropdownMenuAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }

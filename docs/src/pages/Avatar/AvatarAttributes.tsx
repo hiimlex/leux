@@ -1,5 +1,5 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
-import { Avatar, AvatarProps } from "../../../../src";
+import { Avatar, AvatarProps } from "@leux/ui";
 import { attributes as avatarAttr } from "./avatar.md";
 import { useState } from "react";
 import React from "react";

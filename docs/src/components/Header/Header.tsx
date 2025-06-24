@@ -1,6 +1,6 @@
 import React from "react";
 import { FaGithub, FaMoon, FaSun } from "react-icons/fa";
-import { Typography, useBreakpoint, useTheme } from "../../../../src";
+import { Typography, useBreakpoint, useTheme } from "@leux/ui";
 import "./Header.scss";
 
 import { version } from "../../../../package.json";

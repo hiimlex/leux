@@ -1,6 +1,6 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
 import { attributes as paginationAttr } from "./pagination.md";
-import { PageSizeChangerProps, Pagination, PaginationProps } from "../../../../src";
+import { PageSizeChangerProps, Pagination, PaginationProps } from "@leux/ui";
 import { useState } from "react";
 import React from "react";
 

@@ -1,7 +1,7 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
-import { Spinner, SpinnerProps } from "../../../../src";
+import { Spinner, SpinnerProps } from "@leux/ui";
 import { attributes as spinnerAttr } from "./spinner.md";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const SpinnerImportPreview = () => (
 	<LeHighlighter code={`import { Spinner, SpinnerProps } from "@leux/ui";`} language="tsx" />

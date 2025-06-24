@@ -18,7 +18,13 @@ export default defineConfig(async () => ({
 		}),
 	],
 	resolve: {
-		alias: [{ find: "@", replacement: resolve(__dirname, "src") }],
+		alias: [
+			{ find: "@", replacement: resolve(__dirname, "src") },
+			{
+				find: "@leux/ui",
+				replacement: resolve(__dirname, "../src"),
+			},
+		],
 	},
 	server: {
 		port: 5000,

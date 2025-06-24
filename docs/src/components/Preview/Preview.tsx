@@ -1,5 +1,5 @@
 import { Dispatch, ReactNode, SetStateAction } from "react";
-import { LeClassNames } from "../../../../src";
+import { LeClassNames } from "@leux/ui";
 import "./Preview.scss";
 import React from "react";
 
