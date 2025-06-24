@@ -28,6 +28,7 @@ export default [
 				sourcemap: true,
 			},
 		],
+		external: ["react", "react-dom"],
 		plugins: [
 			styles({
 				// minify css
