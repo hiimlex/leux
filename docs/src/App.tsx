@@ -4,12 +4,8 @@ import AppRouter from "@/core/router/AppRouter";
 import { LeGlobalConfig, OverlayProvider, ThemeProvider } from "@leux/ui";
 import "./core/styles/global.scss";
 
-const isDev = process.env.NODE_ENV === "development";
-
 function App() {
 	const defaultComponentsConfig: LeGlobalConfig = {};
-
-	console.log({ isDev });
 
 	return (
 		<ThemeProvider globalConfig={defaultComponentsConfig}>
