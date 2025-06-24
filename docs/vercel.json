@@ -1,3 +1,6 @@
 {
-	"rewrites": [{ "source": "/(.*)", "destination": "/" }]
+	"rewrites": [{ "source": "/(.*)", "destination": "/" }],
+	"scripts": {
+		"vercel-build": "npm install @leux/ui@latest && npm run build"
+	}
 }
