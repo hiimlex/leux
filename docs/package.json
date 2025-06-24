@@ -4,8 +4,8 @@
 	"version": "0.6.2",
 	"type": "module",
 	"scripts": {
-		"dev": "vite --port 3000",
-		"build": "vite build",
+		"dev": "vite --port 3000 --config vite.config.dev.ts",
+		"build": "vite build --config vite.config.prod.ts",
 		"preview": "vite preview"
 	},
 	"dependencies": {
