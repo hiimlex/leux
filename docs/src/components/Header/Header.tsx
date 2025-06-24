@@ -3,7 +3,7 @@ import { FaGithub, FaMoon, FaSun } from "react-icons/fa";
 import { Typography, useBreakpoint, useTheme } from "@leux/ui";
 import "./Header.scss";
 
-import { version } from "../../../../package.json";
+import { version } from "../../../package.json";
 import LeSearch from "../Search";
 
 const Header: React.FC = () => {
