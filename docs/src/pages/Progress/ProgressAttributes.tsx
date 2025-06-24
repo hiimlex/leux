@@ -1,5 +1,5 @@
 import { LeApiTable, LeHighlighter, LePreview, LeSourceButton, PropsMapping } from "@/components";
-import { Box, Progress, ProgressProps } from "lib";
+import { Box, Progress, ProgressProps } from "@leux/ui";
 import { useState } from "react";
 
 import React from "react";

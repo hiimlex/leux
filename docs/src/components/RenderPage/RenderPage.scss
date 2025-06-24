@@ -9,7 +9,7 @@
 
 	pre {
 		width: 100%;
-		border-radius: unit(1);
+		border-radius: 6px;
 		font-weight: 500;
 		margin: 12px 0;
 		padding: 18px !important;
@@ -25,7 +25,7 @@
 
 	code {
 		padding: 2px 6px;
-		border-radius: unit(1);
+		border-radius: 6px;
 		font-weight: 500;
 		background: var(--le-color-border);
 	}

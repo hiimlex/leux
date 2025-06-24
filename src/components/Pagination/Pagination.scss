@@ -6,7 +6,7 @@
 	align-items: center;
 
 	line-height: normal;
-	gap: unit(2);
+	gap: 12px;
 	border: 1px solid var(--le-color-border);
 	border-radius: 6px;
 
@@ -15,7 +15,7 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: flex-end;
-		gap: unit(2);
+		gap: 12px;
 		width: 100%;
 	}
 
@@ -47,7 +47,7 @@
 	&--small {
 		font-size: 0.75rem;
 		line-height: normal;
-		padding: unit(1) unit(1);
+		padding: 6px 6px;
 		max-height: 38px;
 		min-height: 38px;
 		height: 38px;
@@ -56,7 +56,7 @@
 	&--medium {
 		font-size: 0.875rem;
 		line-height: normal;
-		padding: unit(1) unit(2);
+		padding: 6px 12px;
 		max-height: 42px;
 		min-height: 42px;
 		height: 42px;
@@ -65,7 +65,7 @@
 	&--large {
 		font-size: 1rem;
 		line-height: normal;
-		padding: unit(1) unit(3);
+		padding: 6px 18px;
 		max-height: 46px;
 		min-height: 46px;
 		height: 46px;
@@ -92,7 +92,7 @@
 			align-items: center;
 			justify-content: center;
 
-			gap: unit(1);
+			gap: 6px;
 		}
 
 		svg {

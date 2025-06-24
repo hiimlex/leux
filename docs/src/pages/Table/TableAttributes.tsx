@@ -10,7 +10,7 @@ import {
 	type TableFilter,
 	Pagination,
 	PaginationProps,
-} from "lib";
+} from "@leux/ui";
 
 import React, { useCallback, useEffect, useState } from "react";
 import { attributes as tableAttr } from "./table.md";

@@ -9,7 +9,7 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@leux/ui": "file:../dist",
+		"@leux/ui": "file:..",
 		"axios": "^1.2.2",
 		"markdown-it": "^13.0.1",
 		"markdown-it-anchor": "^8.6.5",
@@ -35,9 +35,6 @@
 		"vite": "^3.1.0",
 		"vite-plugin-markdown": "^2.1.0"
 	},
-	"files": [
-		"../src"
-	],
 	"resolutions": {
 		"@types/react": "18.3.3"
 	}

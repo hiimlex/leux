@@ -1,4 +1,4 @@
-import { Box, Typography } from "lib";
+import { Box, Typography } from "@leux/ui";
 import React from "react";
 
 const Dev: React.FC = () => {

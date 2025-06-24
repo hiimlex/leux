@@ -7,12 +7,12 @@
 
 	color: var(--le-color-textTwo);
 	border: 1px solid var(--le-color-border);
-	border-radius: unit(1);
+	border-radius: 6px;
 	background: var(--le-color-backgroundTwo);
 	cursor: pointer;
 	transition: all 0.1s ease-in-out;
 
-	gap: unit(1);
+	gap: 6px;
 
 	&:hover {
 		color: var(--le-color-primary);
