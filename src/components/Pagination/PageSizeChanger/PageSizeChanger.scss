@@ -14,10 +14,10 @@
 
 	outline: none;
 	background: transparent;
-	color: var(--le-color-textPlaceholder);
+	color: var(--le-color-placeholder);
+	font-weight: 500;
 	gap: 6px;
 	white-space: nowrap;
-	font-weight: 600;
 
 	transition: all 0.1s ease-in-out;
 

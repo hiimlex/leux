@@ -32,6 +32,7 @@ const DropdownComponent: React.FC<DropdownProps> = ({
 	strategy = "fixed",
 	offset: offsetValue = 12,
 	disabled = false,
+	autoPlacement: _autoPlacement = true,
 }) => {
 	const [show, setShow] = useState(false);
 
@@ -41,7 +42,7 @@ const DropdownComponent: React.FC<DropdownProps> = ({
 	const { refs, floatingStyles } = useFloating<HTMLDivElement>({
 		strategy: strategy,
 		placement: placement,
-		middleware: [offset(() => offsetValue, [offsetValue]), autoPlacement()],
+		middleware: [offset(() => offsetValue, [offsetValue]), _autoPlacement && autoPlacement()],
 		whileElementsMounted: autoUpdate,
 	});
 
