@@ -20,7 +20,7 @@
 		"react-scroll": "^1.9.3",
 		"refractor": "^4.8.0",
 		"sass": "^1.54.8",
-		"@leux/ui": "../src"
+		"@leux/ui": "*"
 	},
 	"devDependencies": {
 		"@babel/preset-env": "^7.19.1",

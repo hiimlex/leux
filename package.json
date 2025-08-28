@@ -117,5 +117,9 @@
 	},
 	"resolutions": {
 		"@types/react": "18.3.3"
-	}
+	},
+	"workspaces": [
+		"./docs",
+		"./src"
+	]
 }
