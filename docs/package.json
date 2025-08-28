@@ -9,6 +9,7 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@leux/ui": "^0.6.5",
 		"axios": "^1.2.2",
 		"markdown-it": "^13.0.1",
 		"markdown-it-anchor": "^8.6.5",
@@ -19,8 +20,7 @@
 		"react-router-dom": "^7.6.2",
 		"react-scroll": "^1.9.3",
 		"refractor": "^4.8.0",
-		"sass": "^1.54.8",
-		"@leux/ui": "*"
+		"sass": "^1.54.8"
 	},
 	"devDependencies": {
 		"@babel/preset-env": "^7.19.1",
@@ -33,7 +33,7 @@
 		"@vitejs/plugin-react": "^2.2.0",
 		"typescript": "^4.6.4",
 		"vite": "^3.1.0",
-		"vite-plugin-markdown": "^2.1.0"
+		"vite-plugin-markdown": "^2.2.0"
 	},
 	"resolutions": {
 		"@types/react": "18.3.3"
