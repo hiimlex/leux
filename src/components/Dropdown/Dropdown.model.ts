@@ -23,9 +23,10 @@ interface DropdownProps {
 	customMenuClass?: string;
 	menuProps?: React.HTMLAttributes<HTMLUListElement>;
 	strategy?: Strategy;
-	offset?: number;
 	disabled?: boolean;
-	autoPlacement?: boolean;
+
+	offset?: number;
+	behavior?: "flip" | "shift" | "autoPlacement" | "flip_shift" | "none";
 }
 
 interface DropdownItemProps {

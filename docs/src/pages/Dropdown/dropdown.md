@@ -26,6 +26,8 @@ To show the `Dropdown` component needs an `Anchor` component. The `Dropdown` com
 
 <br />
 
+#### Behavior
+
 #### Variant
 
 Use the `variant` prop to change the style of the `Dropdown` component.
@@ -53,8 +55,8 @@ Use the `size` prop to change the size of the `Dropdown` component.
 Use the `placement` prop to change Dropdown Menu placement component.
 
 <div>
-<DropdownPositionPreview>
-</DropdownPositionPreview>
+<DropdownPlacementPreview>
+</DropdownPlacementPreview>
 </div>
 
 <br />

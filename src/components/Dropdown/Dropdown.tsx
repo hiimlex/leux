@@ -1,4 +1,11 @@
-import { autoPlacement, autoUpdate, offset, useFloating } from "@floating-ui/react-dom";
+import {
+	autoPlacement,
+	autoUpdate,
+	flip,
+	offset,
+	shift,
+	useFloating,
+} from "@floating-ui/react-dom";
 import React, {
 	Children,
 	MouseEvent as ReactMouseEvent,
@@ -32,7 +39,7 @@ const DropdownComponent: React.FC<DropdownProps> = ({
 	strategy = "fixed",
 	offset: offsetValue = 12,
 	disabled = false,
-	autoPlacement: _autoPlacement = true,
+	behavior = "flip_shift",
 }) => {
 	const [show, setShow] = useState(false);
 
@@ -42,7 +49,12 @@ const DropdownComponent: React.FC<DropdownProps> = ({
 	const { refs, floatingStyles } = useFloating<HTMLDivElement>({
 		strategy: strategy,
 		placement: placement,
-		middleware: [offset(() => offsetValue, [offsetValue]), _autoPlacement && autoPlacement()],
+		middleware: [
+			offset(() => offsetValue, [offsetValue]),
+			behavior?.includes("shift") && shift(),
+			behavior?.includes("flip") && flip(),
+			behavior?.includes("autoPlacement") && autoPlacement(),
+		],
 		whileElementsMounted: autoUpdate,
 	});
 

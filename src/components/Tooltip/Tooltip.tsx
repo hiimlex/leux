@@ -27,6 +27,7 @@ const TooltipComponent: React.FC<TooltipProps> = ({
 	const arrowColor = useMemo(() => {
 		return theme?.[colorScheme as keyof LeThemeMain];
 	}, [theme]);
+
 	const arrowBorder = useMemo(
 		() =>
 			theme

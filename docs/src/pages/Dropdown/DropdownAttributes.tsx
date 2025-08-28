@@ -137,7 +137,7 @@ return (
 	);
 };
 
-const DropdownPositionPreview = () => {
+const DropdownPlacementPreview = () => {
 	const [showCode, setShowCode] = useState<boolean>(false);
 
 	return (
@@ -148,15 +148,15 @@ const DropdownPositionPreview = () => {
 					alignItems="center"
 					justifyContent="flex-start"
 					customStyles={{ marginBottom: 12 }}
+					flexGap={12}
 				>
-					<Dropdown.Root
-						placement="bottom-start"
-						anchor={<Button>Bottom left</Button>}
-						customWrapperStyles={{ marginRight: 12 }}
-					>
+					<Dropdown.Root placement="bottom-start" anchor={<Button>Bottom start</Button>}>
 						<Dropdown.Item>the text direction goes</Dropdown.Item>
 					</Dropdown.Root>
-					<Dropdown.Root placement="bottom-end" anchor={<Button>Bottom right</Button>}>
+					<Dropdown.Root placement="bottom" anchor={<Button>Bottom</Button>}>
+						<Dropdown.Item>the text direction goes</Dropdown.Item>
+					</Dropdown.Root>
+					<Dropdown.Root placement="bottom-end" anchor={<Button>Bottom end</Button>}>
 						<Dropdown.Item>the text direction goes</Dropdown.Item>
 					</Dropdown.Root>
 				</Box>
@@ -297,12 +297,12 @@ const DropdownItemDisabledPreview = () => {
 
 const DropdownApiTable = () => {
 	const props: PropsMapping<DropdownProps> = {
+		behavior: {
+			type: "'flip' | 'shift' | 'autoPlacement' |'flip_shift'",
+			defaultValue: "'flip_shift'",
+		},
 		anchor: {
 			type: "React.ReactNode",
-		},
-		autoPlacement: {
-			type: "boolean",
-			defaultValue: "false",
 		},
 		disabled: {
 			type: "boolean",
@@ -416,7 +416,7 @@ dropdownAttr["DropdownImportPreview"] = DropdownImportPreview;
 dropdownAttr["DropdownVariantPreview"] = DropdownVariantPreview;
 dropdownAttr["DropdownAnchorPreview"] = DropdownAnchorPreview;
 dropdownAttr["DropdownSizePreview"] = DropdownSizePreview;
-dropdownAttr["DropdownPositionPreview"] = DropdownPositionPreview;
+dropdownAttr["DropdownPlacementPreview"] = DropdownPlacementPreview;
 dropdownAttr["DropdownItemPreview"] = DropdownItemPreview;
 dropdownAttr["DropdownSeparatorPreview"] = DropdownSeparatorPreview;
 dropdownAttr["DropdownItemDisabledPreview"] = DropdownItemDisabledPreview;

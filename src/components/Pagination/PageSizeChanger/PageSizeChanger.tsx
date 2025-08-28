@@ -64,7 +64,7 @@ const PageSizeChanger: React.FC<PageSizeChangerProps> = ({
 
 	return (
 		<Dropdown.Root
-			autoPlacement={false}
+			behavior="none"
 			variant="outlined"
 			placement="top"
 			strategy="absolute"
