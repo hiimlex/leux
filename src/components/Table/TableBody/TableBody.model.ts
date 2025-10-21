@@ -7,11 +7,13 @@ type TableBodyRowMinimal<DataType extends object = object> = {
 	children?: React.ReactNode;
 	item?: RowTypeRecord<DataType>;
 	keysOrder?: (keyof DataType)[];
-	customRowClass?: string;
-	customRowStyles?: React.CSSProperties;
+	className?: string;
+	styles?: React.CSSProperties;
+	clickable?: boolean;
+	onClick?: (item?: RowTypeRecord<DataType>) => void;
 };
 
-type TableBodyRowWithChildren = TableBodyRowMinimal<object> & {
+type TableBodyRowWithChildren<DataType extends object> = TableBodyRowMinimal<DataType> & {
 	children: React.ReactNode;
 };
 
@@ -25,7 +27,7 @@ type TableBodyRowWithItems<DataType extends object = object> = TableBodyRowMinim
  * It can accept either children or items, along with various optional properties.
  */
 type TableBodyRowProps<DataType extends object = object> =
-	| TableBodyRowWithChildren
+	| TableBodyRowWithChildren<DataType>
 	| TableBodyRowWithItems<DataType>;
 
 type TableBodyRowItemWithChildren = {
@@ -55,14 +57,15 @@ type TableBodyMinimalProps<DataType extends object = object> = {
 	emptyValue?: string;
 	variant?: TableVariants;
 	size?: TableSizesType;
-	rowProps?: TableBodyRowMinimal<object>;
+	rowProps?: TableBodyRowMinimal<DataType>;
 };
 
 type TableBodyWithRows<DataType extends object = object> = TableBodyMinimalProps<DataType> & {
 	rows: RowTypeRecord<DataType>[];
+	keysOrder: (keyof DataType)[];
 };
 
-type TableBodyWithChildren = TableBodyMinimalProps<object> & {
+type TableBodyWithChildren<DataType extends object> = TableBodyMinimalProps<DataType> & {
 	children: React.ReactNode;
 };
 
@@ -71,7 +74,7 @@ type TableBodyWithChildren = TableBodyMinimalProps<object> & {
  * It can accept either children or rows and keys, along with various optional properties.
  */
 type TableBodyProps<DataType extends object = object> =
-	| TableBodyWithChildren
+	| TableBodyWithChildren<DataType>
 	| TableBodyWithRows<DataType>;
 
 export {

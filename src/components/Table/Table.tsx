@@ -79,6 +79,7 @@ const TableComponent = <DataType extends object = object>({
 			{canShowContent && (
 				<TableBody<DataType>
 					rows={props.rows || []}
+					keysOrder={keysOrder || []}
 					customBodyClass={customBodyClass}
 					customBodyStyles={customBodyStyles}
 					emptyValue={emptyValue}
