@@ -36,7 +36,7 @@ type TableHeaderRowMinimalProps<DataType extends object = object> = {
 type TableHeaderRowProps<DataType extends object = object> =
 	| ({
 			children?: React.ReactNode;
-	  } & TableHeaderRowMinimalProps)
+	  } & TableHeaderRowMinimalProps<DataType>)
 	| ({
 			columns: TableHeaderColumnProps<DataType>[];
 	  } & TableHeaderRowMinimalProps<DataType>);
@@ -51,9 +51,9 @@ type TableHeaderMinimalProps<DataType extends object = object> = {
 	sortFn?: TableSortFn;
 };
 
-type TableHeaderWithChildren = {
+type TableHeaderWithChildren<DataType extends object> = {
 	children: React.ReactNode;
-} & TableHeaderMinimalProps;
+} & TableHeaderMinimalProps<DataType>;
 
 type TableHeaderWithColumns<DataType extends object = object> = {
 	columns: TableHeaderColumnProps<DataType>[];
@@ -64,7 +64,7 @@ type TableHeaderWithColumns<DataType extends object = object> = {
  * It can accept either children or columns, along with various optional properties.
  */
 type TableHeaderProps<DataType extends object = object> =
-	| TableHeaderWithChildren
+	| TableHeaderWithChildren<DataType>
 	| TableHeaderWithColumns<DataType>;
 
 export {

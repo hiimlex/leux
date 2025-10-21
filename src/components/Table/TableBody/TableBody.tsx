@@ -1,4 +1,4 @@
-import React, { JSX, useMemo } from "react";
+import React, { CSSProperties, JSX, useMemo } from "react";
 import { LeClassNamesSimple } from "../../../types";
 import { useTableContext } from "../TableContext";
 import {
@@ -9,6 +9,7 @@ import {
 	TableRowItemValueType,
 } from "./TableBody.model";
 import "./TableBody.scss";
+import { cn } from "../../../utils";
 
 const TableBody = <RowType extends object = object>({
 	customBodyClass,
@@ -63,8 +64,10 @@ const TableBody = <RowType extends object = object>({
 				key={index}
 				item={item}
 				keysOrder={keysOrder}
-				customRowStyles={rowProps?.customRowStyles}
-				customRowClass={rowProps?.customRowClass}
+				styles={rowProps?.styles}
+				className={rowProps?.className}
+				clickable={rowProps?.clickable}
+				onClick={rowProps?.onClick}
 			/>
 		));
 
@@ -80,13 +83,6 @@ const TableBody = <RowType extends object = object>({
 };
 
 const TableBodyRow = <RowType extends object>(props: TableBodyRowProps<RowType>): JSX.Element => {
-	const styles = useMemo(
-		() => ({
-			...props.customRowStyles,
-		}),
-		[props.customRowStyles]
-	);
-
 	const useChildren = useMemo(() => !!props.children, []);
 
 	const item = useMemo(
@@ -99,8 +95,20 @@ const TableBodyRow = <RowType extends object>(props: TableBodyRowProps<RowType>)
 		props.keysOrder &&
 		props.keysOrder.map((key, keyIndex) => <TableBodyRowItem key={keyIndex} value={item[key]} />);
 
+	const ms: CSSProperties = useMemo(
+		() => ({
+			cursor: props?.clickable ? "pointer" : "default",
+			...props?.styles,
+		}),
+		[props?.clickable, props?.styles]
+	);
+
 	return (
-		<tr className={"le-table-body--row " + (props.customRowClass || "")} style={styles}>
+		<tr
+			className={cn("le-table-body--row", props.className)}
+			style={ms}
+			onClick={() => props?.onClick?.(item)}
+		>
 			{useChildren ? props.children : RowItemsJSX}
 		</tr>
 	);
